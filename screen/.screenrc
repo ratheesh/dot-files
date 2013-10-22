@@ -1,0 +1,47 @@
+# ~/.screenrc
+
+# main options
+#escape ^za
+altscreen on
+attrcolor b ".I"
+autodetach on
+bell_msg '^Gbell in window %n...'
+bufferfile "$HOME/.screen/exchange"
+deflogin on
+defbce on
+defflow off
+defshell $SHELL
+defscrollback 10000
+defutf8 on
+encoding UTF-8
+hardcopydir "$HOME/.screen/hardcopy"
+nonblock on
+setenv LC_CTYPE en_US.UTF-8
+shelltitle '/ |bash'
+startup_message off
+term xterm-256color
+vbell off
+
+#Die Setzing startet ab Nummber 1
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
+
+# display settings
+sorendition '+b kG'
+hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} | %h | %H %{..Y} | %d-%M-%Y | %C:%s%A "
+
+# keybindings
+#None for now
+
+# make scroll work
+termcapinfo rxvt-256color ti@:te@
+termcapinfo xterm-256color ti@:te@
+
+# make colors work
+termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+#EOF
+
