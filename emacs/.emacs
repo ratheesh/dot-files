@@ -126,6 +126,9 @@ display-time       't
     (require 'dtrt-indent)
     (dtrt-indent-mode t)))
 
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
+
 (require 'cc-mode)
 (setq-default c-basic-offset 8 c-default-style "linux")
 (setq-default tab-width 8 indent-tabs-mode t)
@@ -252,4 +255,3 @@ display-time       't
 (icy-mode 1)
 
 
-(setq load-home-init-file t) ; don't load init file from ~/.xemacs/init.el

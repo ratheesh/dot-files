@@ -1,0 +1,32 @@
+{
+	"default_module": "powerline.segments.common",
+	"segment_data": {
+		"uptime": {
+			"before": "⇑  "
+		},
+		"external_ip": {
+			"before": "ⓦ  "
+		},
+		"email_imap_alert": {
+			"before": "✉ ",
+			"args": {
+				"username": "",
+				"password": ""
+			}
+		}
+	},
+	"segments": {
+		"right": [
+			{
+				"name": "date"
+			},
+			{
+				"name": "date",
+				"args": {
+					"format": "%H:%M%p %Z",
+					"istime": true
+				}
+			}
+		]
+	}
+}

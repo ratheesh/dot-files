@@ -40,11 +40,15 @@ alias mkdir='nocorrect mkdir'
 
 # Enwicklung Optionen
 export PATH=/usr/local/bin:/usr/bin:/home/ratheesh/bin:/usr/local/sbin:/usr/sbin
-export PATH=/opt/arm-2013.05/bin/:$PATH
+export PATH=$HOME/.local/bin:/opt/arm-2013.05/bin/:$PATH
 export ALTERNATE_EDITOR=""
 export SRC='/data/ratheesh/beagle_Bone/git'
 export arm='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
 alias ec='emacsclient -t'
 export GIT_EDITOR='emacsclient -t'
+
+if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
 #End of File
