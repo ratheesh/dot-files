@@ -80,12 +80,18 @@ line-number-mode   't
 display-time       't
 )
 
+(require 'powerline)
+(powerline-default-theme)
 
 ;save the file modification timstamp at the time os saving
 (add-hook 'before-save-hook 'time-stamp)
 
 ;(setq show-trailing-whitespace)
 (setq whitespace-style '(face trailing))
+
+;;; C Mode
+(require 'ascope)
+(setq cscope-do-not-update-database t)
 
 ;;fci-column-indicator mode
 (require 'fill-column-indicator)
@@ -226,17 +232,83 @@ display-time       't
 
 (load "auctex-pkg.el" nil t t)
 
+;;;;;;;;; Org Mode setup
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+
+;; Org mode setup
+(require 'org-install)
+(require 'org-bullets)
+(require 'org-habit)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-startup-indented t)
+(setq org-indent-mode t)
+(global-auto-revert-mode t)
+
+(add-hook 'message-mode-hook 'turn-on-orgtbl)
+(add-hook 'org-mode-hook 'turn-on-font-lock)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+(setq org-log-done 'time);log time of DONE items
+(setq org-log-done 'note);record time with note
+
+(setq org-todo-keyword-faces
+           '(("TODO" . org-warning) ("STARTED" . "color-161")
+             ("CANCELED" . (:foreground "brightblue" :weight bold))
+	          ("DONE" . (:foreground "brightgreen" :weight bold))
+))
+
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+;;MobileOrg setup - make sure to set the appropriate pass in the App
+(setq org-directory "~/Dropbox/org");local org folder
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg");MobileOrg folder
+(setq org-mobile-files '("~/Dropbox/org"));MobileOrg folder
+;(setq org-agenda-files (quote ( "~/Dropbox/org/agenda.org")));agenda file
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org");new notes file
+;(setq org-mobile-use-encryption t);use encryption
+(setq org-todo-keywords
+ '((type "TODO(t)" "STARTED(s)" "APPT(a)" "|" "CANCELLED(c)" "DEFERRED(e)" "DONE(d)")
+   (sequence "PROJECT(p)" "|" "FINISHED(f)")
+   (sequence "INVOICE(i)" "SENT(n)" "|" "RCVS(r)")))
+
+;; Emacs custom variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(compilation-message-face (quote default))
  '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(ecb-options-version "2.40")
- '(ecb-source-path (quote (("/home/ratheesh/development/ratheesh/beagle_Bone/git/linux-stable" "stock-kernel") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/u-boot" "u-boot") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "bone-kernel") ("/data/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "ang-bone-kernel") ("/data/ratheesh/beagle_Bone/git/linux-stable" "linux-stable"))))
+ '(ecb-source-path (quote (("/home/ratheesh/development/ratheesh/beagle_Bone/git/linux-stable" "stock-kernel") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/u-boot" "u-boot") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "bone-kernel") ("/data/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "ang-bone-kernel") ("/data/ratheesh/beagle_Bone/git/linux-stable" "linux-stable")))) 
+ '(highlight-tail-colors (quote (("#073642" . 0) ("#546E00" . 20) ("#00736F" . 30) ("#00629D" . 50) ("#7B6000" . 60) ("#8B2C02" . 70) ("#93115C" . 85) ("#073642" . 100))))
+ '(magit-diff-use-overlays nil)
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("MELPA" . "http://melpa.milkbox.net/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
- '(tramp-default-user "ratheesh"))
+ '(solarized-colors 256)
+ '(solarized-termcolors 256)
+ '(syslog-debug-face (quote ((t :background unspecified :foreground "#2aa198" :weight bold))))
+ '(syslog-error-face (quote ((t :background unspecified :foreground "#dc322f" :weight bold))))
+ '(syslog-hour-face (quote ((t :background unspecified :foreground "#859900"))))
+ '(syslog-info-face (quote ((t :background unspecified :foreground "#268bd2" :weight bold))))
+ '(syslog-ip-face (quote ((t :background unspecified :foreground "#b58900"))))
+ '(syslog-su-face (quote ((t :background unspecified :foreground "#d33682"))))
+ '(syslog-warn-face (quote ((t :background unspecified :foreground "#cb4b16" :weight bold))))
+ '(tramp-default-user "ratheesh")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map (quote ((20 . "#dc322f") (40 . "#CF4F1F") (60 . "#C26C0F") (80 . "#b58900") (100 . "#AB8C00") (120 . "#A18F00") (140 . "#989200") (160 . "#8E9500") (180 . "#859900") (200 . "#729A1E") (220 . "#609C3C") (240 . "#4E9D5B") (260 . "#3C9F79") (280 . "#2aa198") (300 . "#299BA6") (320 . "#2896B5") (340 . "#2790C3") (360 . "#268bd2"))))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list (quote (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
