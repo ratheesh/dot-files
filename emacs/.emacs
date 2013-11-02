@@ -82,6 +82,17 @@ display-time       't
 
 (require 'powerline)
 (powerline-default-theme)
+(setq powerline-color1 "#073642")
+(setq powerline-color2 "#002b36")
+
+(set-face-attribute 'mode-line nil
+                    :foreground "#fdf6e3"
+                    :background "color-27"
+		    :inverse-video nil
+                    :box nil)
+(set-face-attribute 'mode-line-inactive nil
+		    :inverse-video nil
+                    :box nil)
 
 ;save the file modification timstamp at the time os saving
 (add-hook 'before-save-hook 'time-stamp)
@@ -243,11 +254,39 @@ display-time       't
 (require 'org-install)
 (require 'org-bullets)
 (require 'org-habit)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(require 'remember)
+;(require 'remember-autoloads)
+
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+
+;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (setq org-startup-indented t)
 (setq org-indent-mode t)
 (global-auto-revert-mode t)
+
+(setq org-remember-templates
+      '(("Tasks" ?t "* TODO %?\n  %i\n  %a" "~/organizer.org")
+        ("Appointments" ?a "* Appointment: %?\n%^T\n%i\n  %a" "~/organizer.org")))
+   (setq remember-annotation-functions '(org-remember-annotation))
+   (setq remember-handler-functions '(org-remember-handler))
+   (eval-after-load 'remember
+     '(add-hook 'remember-mode-hook 'org-remember-apply-template))
+   (global-set-key (kbd "C-c r") 'remember)
+
+(add-hook 'remember-mode-hook 'org-remember-apply-template)
+(define-key global-map [(control meta ?r)] 'remember)
+
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+(setq org-log-done t)
+(setq org-log-repeat "time")
+(setq org-agenda-include-diary t)
+(setq org-agenda-include-all-todo t)
+
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'message-mode-hook 'turn-on-orgtbl)
 (add-hook 'org-mode-hook 'turn-on-font-lock)
@@ -256,13 +295,13 @@ display-time       't
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-(setq org-log-done 'time);log time of DONE items
-(setq org-log-done 'note);record time with note
-
 (setq org-todo-keyword-faces
-           '(("TODO" . org-warning) ("STARTED" . "color-161")
-             ("CANCELED" . (:foreground "brightblue" :weight bold))
-	          ("DONE" . (:foreground "brightgreen" :weight bold))
+     '(("TODO" . "color-184")
+       ("STARTED" . "color-161")
+       ("DELAYED" . "color-94")
+       ("CANCELED" . (:foreground "color-144" :weight bold))
+       ("DEFERRED" . (:foreground "color-154" :weight bold))
+       ("DONE" . (:foreground "green" :weight bold))
 ))
 
 (setq org-clock-persist 'history)
@@ -270,15 +309,15 @@ display-time       't
 
 ;;MobileOrg setup - make sure to set the appropriate pass in the App
 (setq org-directory "~/Dropbox/org");local org folder
+(setq org-agenda-files (file-expand-wildcards "~/Dropbox/org/*.org"))
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg");MobileOrg folder
-(setq org-mobile-files '("~/Dropbox/org"));MobileOrg folder
+(setq org-mobile-files '("~/Dropbox/org"));files to be pushed
 ;(setq org-agenda-files (quote ( "~/Dropbox/org/agenda.org")));agenda file
 (setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org");new notes file
 ;(setq org-mobile-use-encryption t);use encryption
 (setq org-todo-keywords
- '((type "TODO(t)" "STARTED(s)" "APPT(a)" "|" "CANCELLED(c)" "DEFERRED(e)" "DONE(d)")
-   (sequence "PROJECT(p)" "|" "FINISHED(f)")
-   (sequence "INVOICE(i)" "SENT(n)" "|" "RCVS(r)")))
+ '((type "TODO(t)" "STARTED(s)" "DELAYED(q)" "|" "CANCELLED(c)" "DEFERRED(e)" "DONE(d)")
+))
 
 ;; Emacs custom variables
 (custom-set-variables
@@ -291,9 +330,10 @@ display-time       't
  '(custom-enabled-themes (quote (tango-dark)))
  '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(ecb-options-version "2.40")
- '(ecb-source-path (quote (("/home/ratheesh/development/ratheesh/beagle_Bone/git/linux-stable" "stock-kernel") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/u-boot" "u-boot") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "bone-kernel") ("/data/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "ang-bone-kernel") ("/data/ratheesh/beagle_Bone/git/linux-stable" "linux-stable")))) 
+ '(ecb-source-path (quote (("/home/ratheesh/development/ratheesh/beagle_Bone/git/linux-stable" "stock-kernel") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/u-boot" "u-boot") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "bone-kernel") ("/data/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "ang-bone-kernel") ("/data/ratheesh/beagle_Bone/git/linux-stable" "linux-stable"))))
  '(highlight-tail-colors (quote (("#073642" . 0) ("#546E00" . 20) ("#00736F" . 30) ("#00629D" . 50) ("#7B6000" . 60) ("#8B2C02" . 70) ("#93115C" . 85) ("#073642" . 100))))
  '(magit-diff-use-overlays nil)
+ '(org-agenda-files (quote ("~/Dropbox/org/routines.org" "~/Dropbox/org/agenda.org" "~/Dropbox/org/flagged.org" "~/Dropbox/org/organiser.org")))
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("MELPA" . "http://melpa.milkbox.net/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
  '(solarized-colors 256)
  '(solarized-termcolors 256)
