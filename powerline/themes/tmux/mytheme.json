@@ -18,12 +18,21 @@
 	"segments": {
 		"right": [
 			{
-				"name": "date"
+				"name": "date",
+				"args": {
+					"format": "Week-%V"
+				}
 			},
 			{
 				"name": "date",
 				"args": {
-					"format": "%H:%M%p %Z",
+					"format": "%a %d-%b-%Y"
+				}
+			},
+			{
+				"name": "date",
+				"args": {
+					"format": "%I:%M%p %Z",
 					"istime": true
 				}
 			}

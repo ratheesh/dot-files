@@ -16,19 +16,16 @@
 	},
 	"segments": {
 		"left": [
-			{
-				"name": "hostname"
-			},
-			{
-				"name": "user"
-			},
+		        {
+		                "name": "user"
+		        },
 			{
 				"name": "virtualenv"
 			},
 			{
 				"name": "cwd",
 				"args": {
-					"dir_limit_depth": 1
+					"dir_limit_depth": 2
 				}
 			}
 		],
