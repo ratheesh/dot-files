@@ -265,14 +265,7 @@ display-time       't
 (setq org-indent-mode t)
 (global-auto-revert-mode t)
 
-(setq org-remember-templates
-      '(("Tasks" ?t "* TODO %?\n  %i\n  %a" "~/organizer.org")
-        ("Appointments" ?a "* Appointment: %?\n%^T\n%i\n  %a" "~/organizer.org")))
-   (setq remember-annotation-functions '(org-remember-annotation))
-   (setq remember-handler-functions '(org-remember-handler))
-   (eval-after-load 'remember
-     '(add-hook 'remember-mode-hook 'org-remember-apply-template))
-   (global-set-key (kbd "C-c r") 'remember)
+(global-set-key (kbd "C-c r") 'remember)
 
 (add-hook 'remember-mode-hook 'org-remember-apply-template)
 (define-key global-map [(control meta ?r)] 'remember)
@@ -282,6 +275,7 @@ display-time       't
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (setq org-log-done t)
+(setq org-agenda-show-log t)
 (setq org-log-repeat "time")
 (setq org-agenda-include-diary t)
 (setq org-agenda-include-all-todo t)
@@ -306,6 +300,44 @@ display-time       't
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+(setq org-agenda-include-diary t)
+
+;;;;;;;;;; Fix arrow key issue when running emacs inside tmux env
+(if (getenv "TMUX")
+  (progn
+    (let ((x 2) (tkey ""))
+      (while (<= x 8)
+	  ;; shift
+	  (if (= x 2)
+	     (setq tkey "S-"))
+	  ;; alt
+	  (if (= x 3)
+	     (setq tkey "M-"))
+	  ;; alt + shift
+	  (if (= x 4)
+	     (setq tkey "M-S-"))
+	  ;; ctrl
+	  (if (= x 5)
+	     (setq tkey "C-"))
+	  ;; ctrl + shift
+	  (if (= x 6)
+	     (setq tkey "C-S-"))
+	  ;; ctrl + alt
+	  (if (= x 7)
+	     (setq tkey "C-M-"))
+	  ;; ctrl + alt + shift
+	  (if (= x 8)
+	     (setq tkey "C-M-S-"))
+	  ;; arrows
+	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d A" x)) (kbd (format "%s<up>" tkey)))
+	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d B" x)) (kbd (format "%s<down>" tkey)))
+	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d C" x)) (kbd (format "%s<right>" tkey)))
+	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d D" x)) (kbd (format "%s<left>" tkey)))
+	  (setq x (+ x 1))
+      )
+     )
+  )
+)
 
 ;;MobileOrg setup - make sure to set the appropriate pass in the App
 (setq org-directory "~/Dropbox/org");local org folder
@@ -333,7 +365,7 @@ display-time       't
  '(ecb-source-path (quote (("/home/ratheesh/development/ratheesh/beagle_Bone/git/linux-stable" "stock-kernel") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/u-boot" "u-boot") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "bone-kernel") ("/data/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "ang-bone-kernel") ("/data/ratheesh/beagle_Bone/git/linux-stable" "linux-stable"))))
  '(highlight-tail-colors (quote (("#073642" . 0) ("#546E00" . 20) ("#00736F" . 30) ("#00629D" . 50) ("#7B6000" . 60) ("#8B2C02" . 70) ("#93115C" . 85) ("#073642" . 100))))
  '(magit-diff-use-overlays nil)
- '(org-agenda-files (quote ("~/Dropbox/org/routines.org" "~/Dropbox/org/agenda.org" "~/Dropbox/org/flagged.org" "~/Dropbox/org/organiser.org")))
+ '(org-agenda-files (quote ("/home/ratheesh/Dropbox/org/agenda.org" "/home/ratheesh/Dropbox/org/flagged.org" "/home/ratheesh/Dropbox/org/organiser.org" "/home/ratheesh/Dropbox/org/routines.org")))
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("MELPA" . "http://melpa.milkbox.net/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
  '(solarized-colors 256)
  '(solarized-termcolors 256)
