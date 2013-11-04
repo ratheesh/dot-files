@@ -26,7 +26,13 @@
 			{
 				"name": "date",
 				"args": {
-					"format": "%a %d-%b-%Y"
+					"format": "%a"
+				}
+			},
+			{
+				"name": "date",
+				"args": {
+					"format": "%d-%b-%Y"
 				}
 			},
 			{
