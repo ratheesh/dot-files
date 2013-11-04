@@ -9,9 +9,9 @@ ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="jnrowe"
 #export ZSH_THEME="agnoster"
 export ZSH_THEME="muse"
+#export ZSH_THEME="miloshadzic"
+#export ZSH_THEME="sorin"
 
-#Set split sh word
-setopt shwordsplit
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,25 +30,40 @@ setopt shwordsplit
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(tmux)
+plugins=(tmux git github git-flow bundler)
 
 source $ZSH/oh-my-zsh.sh
 
+TZ='Asia/Kolkata'; export TZ
+
+#enable 256color for terminal multiplexs
+#DISABLE_AUTO_TITLE=true #No auto title rename, keeps my tmux happy
 # Customize to your needs...
+
 #ZSH specific
 alias mkdir='nocorrect mkdir'
+setopt shwordsplit
+unsetopt correct_all
 
 # Enwicklung Optionen
-export PATH=/usr/local/bin:/usr/bin:/home/ratheesh/bin:/usr/local/sbin:/usr/sbin
-export PATH=$HOME/.local/bin:/opt/arm-2013.05/bin/:$PATH
+# Emacs
 export ALTERNATE_EDITOR=""
-export SRC='/data/ratheesh/beagle_Bone/git'
+alias e="emacsclient -nc"
+alias ec="emacsclient -t"
+alias eckill="emacsclient -e '(kill-emacs)'"
+
 export arm='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
-alias ec='emacsclient -t'
 export GIT_EDITOR='emacsclient -t'
 
-if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
+# Machine dependent - change as per the need
+export PATH=/usr/local/bin:/usr/bin:/home/ratheesh/bin:/usr/local/sbin:/usr/sbin
+export PATH=$HOME/.local/bin:/opt/arm-2013.05/bin/:$PATH
+export SRC='/data/ratheesh/beagle_Bone/git'
+
+# Powerline specific
+#if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+#    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#fi
 
 #End of File
+
