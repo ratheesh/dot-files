@@ -20,13 +20,15 @@
 			{
 				"name": "date",
 				"args": {
-					"format": "Week-%V"
+					"format": "Week-%V",
+					"isweek": true
 				}
 			},
 			{
 				"name": "date",
 				"args": {
-					"format": "%a"
+					"format": "%a",
+					"isday": true
 				}
 			},
 			{
