@@ -8,9 +8,9 @@ ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="random"
 #export ZSH_THEME="jnrowe"
 #export ZSH_THEME="agnoster"
-#export ZSH_THEME="muse"
+export ZSH_THEME="muse"
 #export ZSH_THEME="miloshadzic"
-export ZSH_THEME="robbyrussell"
+#export ZSH_THEME="robbyrussell"
 
 
 # Set to this to use case-sensitive completion
@@ -66,9 +66,9 @@ export PATH=$HOME/.local/bin:/opt/arm-2013.05/bin/:$PATH
 export SRC='/data/ratheesh/beagle_Bone/git'
 
 # Powerline specific
-if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
+#if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+#    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#fi
 
 #End of File
 
