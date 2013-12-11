@@ -6,350 +6,12 @@
 ;; Special thanks to santosh shivraj
 
 ; Meine Emacs Einstellungen
+;; This file does not work with XEmacs.
+(when (featurep 'xemacs)
+  (error "This .emacs file does not work with XEmacs."))
 
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-
-;; higlight changes in documents
-(global-highlight-changes-mode t)
-(setq highlight-changes-visibility-initial-state nil); initially hide
-
-;; highlight the current line; set a custom face, so we can
-;; recognize from the normal marking (selection)
-(defface hl-line '((t (:background "Gray")))
-  "Face to use for `hl-line-face'." :group 'hl-line)
-(setq hl-line-face 'hl-line)
-;(global-hl-line-mode t) ; turn it on for all modes by default
-
-;;(global-hl-line-mode 1)
-(global-linum-mode t)
-(require 'linum+)
-
-(setq make-backup-files nil)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; general settings
-;;
-(menu-bar-mode  t)                       ;; show the menu...
-(mouse-avoidance-mode 'jump)             ;; mouse ptr when cursor is too close
-(tool-bar-mode -1)                       ;; turn-off toolbar 
-(size-indication-mode t)                 ;; show file size (emacs 22+)
-
-(setq fringe-mode '(1 . 0))              ;; emacs 22+
-;(delete-selection-mode 1)                ;; delete the sel with a keyp
-
-;;; General setup
-(setq
- frame-title-format '("%b %* %m")
- delete-key-deletes-forward t
- mouse-yank-at-point t
- scroll-step 1 ;; keyboard scroll one line at a time
- minibuffer-max-depth nil
- Man-swtiches "-a"
- require-final-newline t   ; file ends with new line?
-; show-paren-style 'expression
- confirm-kill-emacs 'y-or-n-p
- completion-ignored-extensions '(".o" ".elc" )
- scroll-preserve-screen-position 1
- calendar-latitude 12.971599
- calendar-longitude 77.594563
- line-spacing 1
- visible-bell t
- global-auto-revert-mode t
- scroll-preserve-screen-position 1 ; Pgup/dn will return exactly to the starting
-                                   ; point.
- text-mode-hook 'turn-on-auto-fill ; Sets autofill on in text mode automatically
- ;; Some pretty stuff
- font-lock-maximum-decoration t
- inhibit-startup-message t
- query-replace-highlight t
- search-highlight t
- global-font-lock-mode 1
- transient-mark-mode t
- winner-mode 1)
-
-(setq-default
-user-mail-address "ratheesh@gmail.com"
-cursor-in-non-selected-windows nil
-cursor-in-non-selected-windows nil
-x-stretch-cursor t              ; when on a tab, make the cursor the tab length
-fill-column 80                  ; Nothing over 80 characters please
-indent-tabs-mode nil
-column-number-mode 't
-line-number-mode   't
-display-time       't
-)
-
-(require 'powerline)
-(powerline-default-theme)
-(setq powerline-color1 "#073642")
-(setq powerline-color2 "#002b36")
-
-(set-face-attribute 'mode-line nil
-                    :foreground "#fdf6e3"
-                    :background "color-27"
-		    :inverse-video nil
-                    :box nil)
-(set-face-attribute 'mode-line-inactive nil
-		    :inverse-video nil
-                    :box nil)
-
-;save the file modification timstamp at the time os saving
-(add-hook 'before-save-hook 'time-stamp)
-
-;(setq show-trailing-whitespace)
-(setq whitespace-style '(face trailing))
-
-;;; C Mode
-(require 'ascope)
-(setq cscope-do-not-update-database t)
-
-;;fci-column-indicator mode
-(require 'fill-column-indicator)
-(setq-default fci-rule-column 80)
-(setq fci-handle-truncate-lines nil)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-;(global-fci-mode 1)
-(setq fci-rule-width 1)
-(setq fci-rule-color "cyan")
-(defun auto-fci-mode (&optional unused)
-(if (> (window-width) fci-rule-column)
-      (fci-mode 1)
-      (fci-mode 0))
-)
-
-(setq c-default-style "linux")
-
-(add-hook 'after-change-major-mode-hook 'auto-fci-mode)
-(add-hook 'window-configuration-change-hook 'auto-fci-mode)
-(add-hook 'c-mode-common-hook 'fci-mode)
-
-(add-hook 'c-mode-common-hook
-            (lambda ()
-            (font-lock-add-keywords nil
-            '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
-
-(add-hook 'c-mode-hook
-  (lambda ()
-    (font-lock-add-keywords nil
-      '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
-
-(add-hook 'makefile-mode-hook 
-  (lambda()
-    (setq show-trailing-whitespace t)))
-
-(add-hook 'c-mode-common-hook 
-  (lambda()
-    (require 'dtrt-indent)
-    (dtrt-indent-mode t)))
-
-(require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
-
-(require 'cc-mode)
-(setq-default c-basic-offset 8 c-default-style "linux")
-(setq-default tab-width 8 indent-tabs-mode t)
-
-(require 'autopair)
-(autopair-global-mode 1)
-(setq autopair-autowrap t)
-
-(require 'yasnippet-bundle)
-;(yas-global-mode 1)
-
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
-
-(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
-(add-hook 'text-mode-hook 'turn-on-flyspell)
-(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
-
-(require 'whitespace)
-;(setq-default show-trailing-whitespace t)
-(add-hook 'c-mode-hook 
-   '(lambda () 
-      (whitespace-toggle-options t)
-))
-
-;;; Whitespace mode setup
-(setq whitespace-style '(face lines-tail trailing empty space-before-tab))
-;(toggle-hl-line-when-idle 10)
-
-(iswitchb-mode t)
-
-(require 'ido)
-(ido-mode t)
-(ido-mode 'both) ;; for buffers and files
-;(setq ido-enable-flex-matching t)
-
-;;(modeline ((t (:background "darkblue" :foreground "yellow"))))
-;;(set-face-background 'modeline "Blue"
-
-(setq show-paren-delay 0)           ; how long to wait?
-(show-paren-mode t)                 ; turn paren-mode on
-(setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
-
-(defun set-newline-and-indent ()
-  (local-set-key (kbd "RET") 'newline-and-indent))
-
-(add-hook 'c-mode 'set-newline-and-indent)
-
-(add-hook 'c-mode-common-hook 
-  (lambda ()
-    (which-function-mode t)))
-
-(load "gtags.el" nil t t)
-(add-hook 'gtags-mode-hook 
-	  '(lambda () 
-	     (require 'gtags)
-	     (gtags-mode t)))
-
-;(autoload 'gtags-mode "gtags" "" t)
-
-(require 'ecb)
-;(require 'ecb-autoloads)
-(setq ecb-layout-name "rathy-dh-layout")
-(setq ecb-show-sources-in-directories-buffer 'always)
-(setq ecb-compile-window-height nil)
-;;; activate and deactivate ecb
-(global-set-key "\C-c(" 'ecb-activate)
-(global-set-key "\C-c)" 'ecb-deactivate)
-;;; show/hide ecb window
-;(global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
-;(global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
-;;; quick navigation between ecb windows
-(global-set-key "\C-c1" 'ecb-goto-window-edit1)
-(global-set-key "\C-c2" 'ecb-goto-window-directories)
-(global-set-key "\C-c3" 'ecb-goto-window-history)
-;(global-set-key "\C-c4" 'ecb-goto-window-sources)
-;(global-set-key "\C-c5" 'ecb-goto-window-methods)
-;(global-set-key "\C-c6" 'ecb-goto-window-compilation)
- 
-
-(defun duplicate-current-line ()
-  (interactive)
-  (beginning-of-line nil)
-  (let ((b (point)))
-    (end-of-line nil)
-    (copy-region-as-kill b (point)))
-  (beginning-of-line 2)
-  (open-line 1)
-  (yank)
-  (back-to-indentation))
-(global-set-key "\C-cd" 'duplicate-current-line)
-
-(load "auctex-pkg.el" nil t t)
-
-;;;;;;;;; Org Mode setup
-(prefer-coding-system       'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
-
-;; Org mode setup
-(require 'org-install)
-(require 'org-bullets)
-(require 'org-habit)
-(require 'remember)
-;(require 'remember-autoloads)
-
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-
-;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-(setq org-startup-indented t)
-(setq org-indent-mode t)
-(global-auto-revert-mode t)
-
-(global-set-key (kbd "C-c r") 'remember)
-
-(add-hook 'remember-mode-hook 'org-remember-apply-template)
-(define-key global-map [(control meta ?r)] 'remember)
-
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
-(setq org-log-done t)
-(setq org-agenda-show-log t)
-(setq org-log-repeat "time")
-(setq org-agenda-include-diary t)
-(setq org-agenda-include-all-todo t)
-
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-
-(add-hook 'message-mode-hook 'turn-on-orgtbl)
-(add-hook 'org-mode-hook 'turn-on-font-lock)
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
-(setq org-todo-keyword-faces
-     '(("TODO" . "color-184")
-       ("STARTED" . "color-161")
-       ("DELAYED" . "color-94")
-       ("CANCELED" . (:foreground "color-144" :weight bold))
-       ("DEFERRED" . (:foreground "color-154" :weight bold))
-       ("DONE" . (:foreground "green" :weight bold))
-))
-
-(setq org-clock-persist 'history)
-(org-clock-persistence-insinuate)
-(setq org-agenda-include-diary t)
-
-;;;;;;;;;; Fix arrow key issue when running emacs inside tmux env
-(if (getenv "TMUX")
-  (progn
-    (let ((x 2) (tkey ""))
-      (while (<= x 8)
-	  ;; shift
-	  (if (= x 2)
-	     (setq tkey "S-"))
-	  ;; alt
-	  (if (= x 3)
-	     (setq tkey "M-"))
-	  ;; alt + shift
-	  (if (= x 4)
-	     (setq tkey "M-S-"))
-	  ;; ctrl
-	  (if (= x 5)
-	     (setq tkey "C-"))
-	  ;; ctrl + shift
-	  (if (= x 6)
-	     (setq tkey "C-S-"))
-	  ;; ctrl + alt
-	  (if (= x 7)
-	     (setq tkey "C-M-"))
-	  ;; ctrl + alt + shift
-	  (if (= x 8)
-	     (setq tkey "C-M-S-"))
-	  ;; arrows
-	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d A" x)) (kbd (format "%s<up>" tkey)))
-	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d B" x)) (kbd (format "%s<down>" tkey)))
-	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d C" x)) (kbd (format "%s<right>" tkey)))
-	  (define-key key-translation-map (kbd (format "M-[ 1 ; %d D" x)) (kbd (format "%s<left>" tkey)))
-	  (setq x (+ x 1))
-      )
-     )
-  )
-)
-
-;;MobileOrg setup - make sure to set the appropriate pass in the App
-(setq org-directory "~/Dropbox/org");local org folder
-(setq org-agenda-files (file-expand-wildcards "~/Dropbox/org/*.org"))
-(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg");MobileOrg folder
-(setq org-mobile-files '("~/Dropbox/org"));files to be pushed
-;(setq org-agenda-files (quote ( "~/Dropbox/org/agenda.org")));agenda file
-(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org");new notes file
-;(setq org-mobile-use-encryption t);use encryption
-(setq org-todo-keywords
- '((type "TODO(t)" "STARTED(s)" "DELAYED(q)" "|" "CANCELLED(c)" "DEFERRED(e)" "DONE(d)")
-))
 
 ;; Emacs custom variables
 (custom-set-variables
@@ -357,15 +19,16 @@ display-time       't
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(ansi-color-names-vector ["#242424" "#E5786D" "#95E454" "#CAE682" "#8AC6F2" "#333366" "#CCAA8F" "#F6F3E8"])
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (tango-dark)))
- '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(custom-enabled-themes nil)
+ '(custom-safe-themes (quote ("1c62a630c5c83db30a2d6bfda0b10f749d9b5ea8e2d23376b2d3a57798f401a9" "e33028893a2eecc1cc5a02fbabc7cda3954be3879adc0084470d30619b59ac64" "0ac706cfca8506474164cfc633a91dba15782aa7692785163121142ff72ab099" "75d4ccc5e912b93f722e57cca3ca1a15e079032cd69fd9bc67268b4c85639663" "99cbc2aaa2b77374c2c06091494bd9d2ebfe6dc5f64c7ccdb36c083aff892f7d" "690585947abcb3fc7f52e6683b8375f00eef7ea55d028dcf81c9f5accb4dffe5" "7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "a0feb1322de9e26a4d209d1cfa236deaf64662bb604fa513cca6a057ddf0ef64" "446c73cdfb49f1dab4c322e51ac00a536fb0e3cb7e6809b9f4616e0858012e92" "41c8deb49dea6ee40db394acda39f5ebc649c13559534c9faaebcb320d044aef" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(ecb-options-version "2.40")
- '(ecb-source-path (quote (("/home/ratheesh/development/ratheesh/beagle_Bone/git/linux-stable" "stock-kernel") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/u-boot" "u-boot") ("/home/ratheesh/development/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "bone-kernel") ("/data/ratheesh/beagle_Bone/git/kernel_beaglebone_web/kernel" "ang-bone-kernel") ("/data/ratheesh/beagle_Bone/git/linux-stable" "linux-stable"))))
+ '(ecb-source-path (quote ("")))
+ '(fci-rule-color "#eee8d5")
+ '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-tail-colors (quote (("#073642" . 0) ("#546E00" . 20) ("#00736F" . 30) ("#00629D" . 50) ("#7B6000" . 60) ("#8B2C02" . 70) ("#93115C" . 85) ("#073642" . 100))))
  '(magit-diff-use-overlays nil)
- '(org-agenda-files (quote ("/home/ratheesh/Dropbox/org/agenda.org" "/home/ratheesh/Dropbox/org/flagged.org" "/home/ratheesh/Dropbox/org/organiser.org" "/home/ratheesh/Dropbox/org/routines.org")))
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("MELPA" . "http://melpa.milkbox.net/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
  '(solarized-colors 256)
  '(solarized-termcolors 256)
@@ -386,16 +49,23 @@ display-time       't
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((((class color)) (:background "#303030"))))
- '(font-lock-doc-face ((((class color)) (:background "#282828"))))
- '(font-lock-function-name-face ((((class color)) (:foreground "#00bfff"))))
- '(font-lock-keyword-face ((((class color)) (:foreground "#483d8b"))))
- '(font-lock-string-face ((((class color)) (:italic t :foreground "orange"))))
- '(font-lock-type-face ((((class color)) (:foreground "#483d8b"))))
- '(font-lock-variable-name-face ((((class color)) (:foreground "white"))))
- '(linum ((t (:background "gray30" :foreground "gray90")))))
+ )
+
+(load-theme 'my-emacs-term t)
+(load "~/.emacs.d/init.el")
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(load-file "~/.emacs.d/lisp/ido-goto-symbol.el")
+
+(require 'smart-mode-line)
+(setq sml/theme 'light)
+(add-to-list 'sml/replacer-regexp-list '("^/home/ratheesh" ":HOME:"))
+(sml/setup)
+;(setq sml/active-background-color "gray60")
 
 ;; Turn on Icicles mode, do this last
-(icy-mode 1)
-
-
+;
+;(require 'icicles)
+;(icy-mode 1)
