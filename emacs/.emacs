@@ -17,12 +17,14 @@
 ;; Add the original Emacs Lisp Package Archive
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;;save all my local customization to a seperate file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
-(setq package-list '(identica-mode  dropdown-list whitespace tramp
+(setq package-list '(identica-mode dropdown-list whitespace tramp
       fill-column-indicator icicles hl-line+ bookmark+
        org paredit highlight-parentheses c-eldoc
        auto-complete autopair auctex auto-complete-clang sr-speedbar
@@ -46,7 +48,7 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 (require 'smart-mode-line)
-(Setq sml/theme 'dark)
+(setq sml/theme 'dark)
 (add-to-list 'sml/replacer-regexp-list '("^/home/ratheesh" ":HOME:"))
 (sml/setup)
 
