@@ -1,5 +1,5 @@
 ;;--*-- Mode: Lisp --*--
-
+(provide 'package)
 ;; Load other config file
 (load "~/.emacs.d/org-init")
 (load "~/.emacs.d/devel-init")

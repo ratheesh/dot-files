@@ -1,5 +1,5 @@
 ;; -*- Mode: Lisp -*-
-
+(provide 'package)
 ;; Required packages
 (require 'cc-mode)
 (require 'autopair)
@@ -9,7 +9,7 @@
 (require 'xcscope)
 (require 'whitespace)
 (require 'auto-complete-config)
-(require 'dtrt-indent)
+;(require 'dtrt-indent)
 (require 'ecb)
 ;(require 'ecb-autoloads)
 
@@ -89,11 +89,11 @@
   (lambda ()
     (which-function-mode t)))
 
-(load "gtags.el" nil t t)
-(add-hook 'gtags-mode-hook 
-	  '(lambda () 
-	     (require 'gtags)
-	     (gtags-mode t)))
+;(load "gtags.el" nil t t)
+;(add-hook 'gtags-mode-hook 
+;	  '(lambda () 
+;	     (require 'gtags)
+;	     (gtags-mode t)))
 
 ;(autoload 'gtags-mode "gtags" "" t)
 

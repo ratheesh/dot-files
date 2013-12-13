@@ -1,6 +1,5 @@
-;; -*- Mode: Org -*-
-
 ;; Org Mode setup
+(provide 'package)
 
 ;; Required elisp packages
 (require 'org-install)
