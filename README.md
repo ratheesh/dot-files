@@ -2,25 +2,28 @@ README:
 
 This is the readme for the my-linux-config GIT repository. This is to keep
 a copy of common and essential Linux Tools I use for my Linux developement at 
-the work place.
+the work place and at home.
 
-Current Linux Tools configuration added:
+Current Linux Tools configuration:
 
-	+------+---------------+------------------------------+
-	|Sl No |Tool           |Remarks                       |
-	+------+---------------+------------------------------+
-	|  1   |Emacs          |$HOME/.emacs                  |
-	+------+---------------+------------------------------+
-	|  2   |screen         |$HOME/.screenrc               |
-	+------+---------------+------------------------------+
-	|  3   |tmux           |$HOME/.tmux.conf              |
-	+------+---------------+------------------------------+
-	|  4   |zsh            |$HOME/.zshrc                  |
-	+------+---------------+------------------------------+
-	|  5   |vim            |$HOME/.vimrc                  |
-	+------+---------------+------------------------------+
-	|  6   |powerline      |$HOME/.config/powerline/*     |
-	+------+---------------+------------------------------+
+	+------+----------+-------------------------+
+	|Sl No |Tool      |Installation target      |
+	+------+----------+-------------------------+
+	|  1   |Emacs     |$HOME/.emacs             |
+	+------+----------+-------------------------+
+	|  2   |screen    |$HOME/.screenrc          |
+	+------+----------+-------------------------+
+	|  3   |tmux      |$HOME/.tmux.conf         |
+	+------+----------+-------------------------+
+	|  4   |zsh       |$HOME/.zshrc             |
+	+------+----------+-------------------------+
+	|  5   |vim       |$HOME/.vimrc             |
+	+------+----------+-------------------------+
+	|  6   |powerline |$HOME/.config/powerline/*|
+	+------+----------+-------------------------+
+        |  7   |git       |$HOME/.gitconfig         |
+        +------+----------+-------------------------+
 
-Note: all the above should be placed in the $HOME directory.
+
+-- End of File --
 
