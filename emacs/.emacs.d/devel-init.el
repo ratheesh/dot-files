@@ -45,6 +45,8 @@
       (fci-mode 0))
 )
 
+(electric-indent-mode 1)
+
 (add-hook 'after-change-major-mode-hook 'auto-fci-mode)
 (add-hook 'window-configuration-change-hook 'auto-fci-mode)
 (add-hook 'c-mode-common-hook 'fci-mode)

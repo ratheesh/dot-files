@@ -3,6 +3,7 @@
 ;; Load other config file
 (load "~/.emacs.d/org-init")
 (load "~/.emacs.d/devel-init")
+(load-file "~/.emacs.d/lisp/snippets.el")
 
 (require 'linum+)
 
@@ -205,6 +206,8 @@
 (ido-mode t)
 (ido-mode 'both) ;; for buffers and files
 ;(setq ido-enable-flex-matching t)
+(setq completion-ignored-extensions
+  '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod" ".cmd"))
 
 ;;(modeline ((t (:background "darkblue" :foreground "yellow"))))
 ;;(set-face-background 'modeline "Blue"
@@ -213,7 +216,19 @@
 (show-paren-mode t)                 ; turn paren-mode on
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
 
+;;key chord config
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define c-mode-map ";;"  "\C-e")
+
+;; expand region
+(require 'expand-region)
+(global-set-key (kbd "M-=") 'er/expand-region)
+(global-set-key (kbd "M--") 'er/contract-region)
+(delete-selection-mode 1)
 
 ;; Mutt support.
 (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
+
+;;scratch test
 

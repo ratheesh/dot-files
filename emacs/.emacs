@@ -25,11 +25,13 @@
 (load custom-file 'noerror)
 
 (setq package-list '(identica-mode dropdown-list whitespace tramp
-      fill-column-indicator icicles hl-line+ bookmark+
-       org paredit highlight-parentheses c-eldoc
+       cedit fill-column-indicator icicles hl-line+ bookmark+
+       org paredit highlight-parentheses c-eldoc emamux figlet
        auto-complete autopair auctex auto-complete-clang sr-speedbar
        rainbow-mode rainbow-delimiters ace-jump-mode smart-mode-line
-       ido-vertical-mode org-gnome figlet magit ))
+       ido-vertical-mode org-gnome figlet magit autopair auto-auto-indent
+       key-chord expand-region
+ ))
 
 (defun check-and-install (list)
   (let (v)
@@ -38,11 +40,9 @@
           (package-install p))))
   (message "Package check and installation done."))
 
-(package-initialize)
 (check-and-install package-list)
 
 (load "~/.emacs.d/init.el")
-(load-file "~/.emacs.d/lisp/ido-goto-symbol.el")
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)

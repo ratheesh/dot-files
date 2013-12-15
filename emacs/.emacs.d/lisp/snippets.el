@@ -1,3 +1,7 @@
+;; My useful Snippets collections
+
+;; goto symbol inside buffer with ido
+;; key binding: M-i
 (defun ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
   (interactive)
@@ -48,3 +52,9 @@
 
 ;;; Navigate via imenu (ido-y) bound to M-i
 (global-set-key (kbd "M-i") 'ido-goto-symbol)
+
+;; jabber command
+(defun jabber ()
+    (interactive)
+    (jabber-connect)
+    (switch-to-buffer "*-jabber-*"))
