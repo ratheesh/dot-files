@@ -21,8 +21,10 @@
 )
 
 (setq-default
- c-basic-offset 8 c-default-style "linux"
- tab-width 8 indent-tabs-mode t
+ c-basic-offset 8
+ c-default-style "linux"
+ tab-width 8
+ indent-tabs-mode t
  fci-rule-column 80
 ;show-trailing-whitespace t
 )
