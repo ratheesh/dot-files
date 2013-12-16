@@ -24,13 +24,13 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
-(setq package-list '(identica-mode dropdown-list whitespace tramp
-       cedit fill-column-indicator icicles hl-line+ bookmark+
-       org paredit highlight-parentheses c-eldoc emamux figlet
-       auto-complete autopair auctex auto-complete-clang sr-speedbar
-       rainbow-mode rainbow-delimiters ace-jump-mode smart-mode-line
-       ido-vertical-mode org-gnome figlet magit autopair auto-auto-indent
-       key-chord expand-region
+(setq package-list '(identica-mode dropdown-list whitespace
+                     cedit fill-column-indicator icicles hl-line+
+                     paredit highlight-parentheses c-eldoc emamux figlet
+                     auto-complete autopair auctex auto-complete-clang
+                     rainbow-mode rainbow-delimiters ace-jump-mode
+                     smart-mode-line ido-vertical-mode org-gnome figlet magit
+                     autopair auto-auto-indent key-chord expand-region
  ))
 
 (defun check-and-install (list)
@@ -44,13 +44,4 @@
 
 (load "~/.emacs.d/init.el")
 
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-(require 'smart-mode-line)
-(setq sml/theme 'dark)
-(add-to-list 'sml/replacer-regexp-list '("^/home/ratheesh" ":HOME:"))
-(sml/setup)
-
-;(require 'icicles)
-;(icy-mode 1)

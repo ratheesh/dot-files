@@ -216,6 +216,17 @@
 (show-paren-mode t)                 ; turn paren-mode on
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
 
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(require 'smart-mode-line)
+(setq sml/theme 'dark)
+;(add-to-list 'sml/replacer-regexp-list '("^/home/ratheesh" ":HOME:"))
+(sml/setup)
+
+;(require 'icicles)
+;(icy-mode 1)
+
 ;;key chord config
 (require 'key-chord)
 (key-chord-mode 1)
