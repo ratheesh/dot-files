@@ -13,6 +13,13 @@
 (require 'ecb)
 ;(require 'ecb-autoloads)
 
+;;global keybindings
+(global-set-key (kbd "<f5>") 'revert-buffer)
+(global-set-key (kbd "<f6>") 'cscope-find-this-text-string)
+(global-set-key (kbd "<f7>") 'cscope-find-global-definition-no-prompting)
+(global-set-key (kbd "<f8>") 'cscope-pop-mark)
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (setq
  c-default-style "linux"
  autopair-autowrap t
@@ -54,7 +61,6 @@
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'c-mode-common-hook
             (lambda ()
-              B
             (font-lock-add-keywords nil
             '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
@@ -66,10 +72,6 @@
 (add-hook 'makefile-mode-hook 
   (lambda()
     (setq show-trailing-whitespace t)))
-
-(add-hook 'c-mode-common-hook
-  (lambda()
-    (dtrt-indent-mode t)))
 
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
@@ -131,6 +133,7 @@
 
   (local-unset-key (kbd "."))
   (local-unset-key (kbd ":"))
+  (local-unset-key (kbd "%"))
   (local-set-key (kbd "*") 'c-electric-star))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
@@ -156,24 +159,5 @@
 ;(global-set-key "\C-c4" 'ecb-goto-window-sources)
 ;(global-set-key "\C-c5" 'ecb-goto-window-methods)
 ;(global-set-key "\C-c6" 'ecb-goto-window-compilation)
- 
-;;paredit - use it wth care!!!
-(defvar electrify-return-match
-  "[\]}\)\"]"
-      "If this regexp matches the text after the cursor, do an \"electric\"
-  return.")
 
-(defun electrify-return-if-match (arg)
-      "If the text after the cursor matches `electrify-return-match' then
-  open and indent an empty line between the cursor and the text.  Move the
-  cursor to the new line."
-      (interactive "P")
-      (let ((case-fold-search nil))
-        (if (looking-at electrify-return-match)
-            (save-excursion (newline-and-indent)))
-        (newline arg)
-        (indent-according-to-mode)))
-
-;; Using local-set-key in a mode-hook is a better idea.
-(global-set-key (kbd "RET") 'electrify-return-if-match)
 

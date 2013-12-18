@@ -30,7 +30,7 @@
 
 (menu-bar-mode  t)                       ;; show the menu...
 (mouse-avoidance-mode 'jump)             ;; mouse ptr when cursor is too close
-(tool-bar-mode -1)                       ;; turn-off toolbar 
+(tool-bar-mode -1)                       ;; turn-off toolbar
 (size-indication-mode t)                 ;; show file size (emacs 22+)
 
 (setq fringe-mode '(1 . 0))              ;; emacs 22+
@@ -222,9 +222,12 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+(require 'ace-jump-buffer)
+(define-key global-map (kbd "C-x SPC") 'ace-jump-buffer)
+
 (require 'smart-mode-line)
-(setq sml/theme 'dark)
-;(add-to-list 'sml/replacer-regexp-list '("^/home/ratheesh" ":HOME:"))
+(setq sml/theme 'light)
+(add-to-list 'sml/replacer-regexp-list '("^/home/ratreddy" ":HOME:"))
 (sml/setup)
 
 ;(require 'icicles)
@@ -237,7 +240,6 @@
 (require 'key-chord)
 (key-chord-mode 1)
 (key-chord-define c-mode-map ";;"  "\C-e") ;end of the line
-(key-chord-define c-mode-map "jj"  "\C-a") ;beginning of the line
 
 ;; expand region
 (require 'expand-region)
