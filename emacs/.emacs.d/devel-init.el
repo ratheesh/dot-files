@@ -54,6 +54,7 @@
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'c-mode-common-hook
             (lambda ()
+              B
             (font-lock-add-keywords nil
             '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
@@ -78,6 +79,36 @@
       (whitespace-toggle-options t)
 ))
 
+;;From Linux source
+(defun c-lineup-arglist-tabs-only (ignored)
+  "Line up argument lists by tabs, not spaces"
+  (let* ((anchor (c-langelem-pos c-syntactic-element))
+	 (column (c-langelem-2nd-pos c-syntactic-element))
+	 (offset (- (1+ column) anchor))
+	 (steps (floor offset c-basic-offset)))
+    (* (max steps 1)
+       c-basic-offset)))
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            ;; Add kernel style
+            (c-add-style
+             "linux-tabs-only"
+             '("linux" (c-offsets-alist
+                        (arglist-cont-nonempty
+                         c-lineup-gcc-asm-reg
+                         c-lineup-arglist-tabs-only))))))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name)))
+              ;; Enable kernel mode for the appropriate files
+              (when (and filename
+                         (string-match (expand-file-name "~/.")
+                                       filename))
+                (setq indent-tabs-mode t)
+                (c-set-style "linux-tabs-only")))))
+
 ;; Auto complete configuration
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
@@ -93,29 +124,19 @@
   (lambda ()
     (which-function-mode t)))
 
-;(load "gtags.el" nil t t)
-;(add-hook 'gtags-mode-hook 
-;	  '(lambda () 
-;	     (require 'gtags)
-;	     (gtags-mode t)))
+;; smart operator - really smart!
+(require 'smart-operator)
+(defun my-c-mode-common-hook()
+  (smart-insert-operator-hook)
 
-;(autoload 'gtags-mode "gtags" "" t)
+  (local-unset-key (kbd "."))
+  (local-unset-key (kbd ":"))
+  (local-set-key (kbd "*") 'c-electric-star))
 
-(defun duplicate-current-line ()
-  (interactive)
-  (beginning-of-line nil)
-  (let ((b (point)))
-    (end-of-line nil)
-    (copy-region-as-kill b (point)))
-  (beginning-of-line 2)
-  (open-line 1)
-  (yank)
-  (back-to-indentation))
-(global-set-key "\C-cd" 'duplicate-current-line)
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
 
 ;; ECB env settings
-
-
 (setq
  ecb-layout-name "rathy-dh-layout"
  ecb-show-sources-in-directories-buffer 'always
@@ -136,9 +157,23 @@
 ;(global-set-key "\C-c5" 'ecb-goto-window-methods)
 ;(global-set-key "\C-c6" 'ecb-goto-window-compilation)
  
+;;paredit - use it wth care!!!
+(defvar electrify-return-match
+  "[\]}\)\"]"
+      "If this regexp matches the text after the cursor, do an \"electric\"
+  return.")
 
-; Tex env settings
+(defun electrify-return-if-match (arg)
+      "If the text after the cursor matches `electrify-return-match' then
+  open and indent an empty line between the cursor and the text.  Move the
+  cursor to the new line."
+      (interactive "P")
+      (let ((case-fold-search nil))
+        (if (looking-at electrify-return-match)
+            (save-excursion (newline-and-indent)))
+        (newline arg)
+        (indent-according-to-mode)))
 
-(load "auctex-pkg.el" nil t t)
-
+;; Using local-set-key in a mode-hook is a better idea.
+(global-set-key (kbd "RET") 'electrify-return-if-match)
 

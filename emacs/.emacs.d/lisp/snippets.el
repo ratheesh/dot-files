@@ -53,6 +53,18 @@
 ;;; Navigate via imenu (ido-y) bound to M-i
 (global-set-key (kbd "M-i") 'ido-goto-symbol)
 
+(defun duplicate-current-line ()
+  (interactive)
+  (beginning-of-line nil)
+  (let ((b (point)))
+    (end-of-line nil)
+    (copy-region-as-kill b (point)))
+  (beginning-of-line 2)
+  (open-line 1)
+  (yank)
+  (back-to-indentation))
+(global-set-key "\C-cd" 'duplicate-current-line)
+
 ;; jabber command
 (defun jabber ()
     (interactive)

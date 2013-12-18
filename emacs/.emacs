@@ -31,6 +31,7 @@
                      rainbow-mode rainbow-delimiters ace-jump-mode
                      smart-mode-line ido-vertical-mode org-gnome figlet magit
                      autopair auto-auto-indent key-chord expand-region
+                     smart-operator smart-newline
  ))
 
 (defun check-and-install (list)

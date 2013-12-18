@@ -230,10 +230,14 @@
 ;(require 'icicles)
 ;(icy-mode 1)
 
+(require 'smart-newline)
+(smart-newline-mode 1)
+
 ;;key chord config
 (require 'key-chord)
 (key-chord-mode 1)
-(key-chord-define c-mode-map ";;"  "\C-e")
+(key-chord-define c-mode-map ";;"  "\C-e") ;end of the line
+(key-chord-define c-mode-map "jj"  "\C-a") ;beginning of the line
 
 ;; expand region
 (require 'expand-region)
