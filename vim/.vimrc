@@ -1,12 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+execute pathogen#infect()
 
 filetype plugin indent on
 set number
@@ -31,10 +26,8 @@ set autoindent
 set copyindent
 syntax on
 set encoding=utf-8
-
-set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256
-" colours)
 set t_Co=256
+
+"set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 
