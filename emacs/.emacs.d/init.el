@@ -86,8 +86,7 @@
 (require 'org-init)
 (require 'snippets)
 (require 'key-bindings)
+(require 'user-init)
+
 ;; End of the File
-
-
-
 
