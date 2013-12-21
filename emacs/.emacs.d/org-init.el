@@ -53,17 +53,6 @@
 (add-hook 'message-mode-hook 'turn-on-orgtbl)
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 
-;; org mode key-bindings
-(define-key global-map [(control meta ?r)] 'remember)
-(global-set-key (kbd "C-c r") 'remember)
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
 ;;;;;;;;;; Fix arrow key issue when running emacs inside tmux env
 (if (getenv "TMUX")
   (progn
@@ -112,5 +101,6 @@
 ; org-mobile-use-encryption t ;use encryption
 )
 
+(provide 'org-init)
 ;; End of the File
 

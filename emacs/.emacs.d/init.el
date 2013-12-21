@@ -1,271 +1,93 @@
-;;--*-- Mode: Lisp --*--
-(provide 'package)
-;; Load other config file
-(load "~/.emacs.d/org-init")
-(load "~/.emacs.d/devel-init")
-(load-file "~/.emacs.d/lisp/snippets.el")
+;;-*-Emacs-Lisp-*-
+;; .init.el
+;; Ratheesh
+;; Dec 2013
+;; Some stuff is taken from http://www.dgp.toronto.edu/~ghali/emacs.html
+;; Special thanks to santosh shivraj
 
-(require 'linum+)
+; Meine Emacs Einstellungen
+;; This file does not work with XEmacs.
+(when (featurep 'xemacs)
+  (error "This .emacs file does not work with XEmacs."))
 
-;;(global-hl-line-mode 1)
-(global-linum-mode t)
-(global-highlight-changes-mode t)
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(setq make-backup-files nil)
+;; No splash screen
+(setq inhibit-startup-message t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; general settings
-;;
-;; we speak utf-8 here
-(prefer-coding-system 'latin-1)
-(if (not (assoc "UTF-8" language-info-alist))
-    (set-language-environment "latin-1")
-  (set-language-environment "utf-8")
-  (set-keyboard-coding-system 'utf-8)
-  (set-terminal-coding-system 'utf-8)
-  (prefer-coding-system 'utf-8))
+;; Set path to dependencies
+(setq site-lisp-dir
+      (expand-file-name "lisp" user-emacs-directory))
 
-;; get rid of yes-or-no questions - y or n is enough
-(defalias 'yes-or-no-p 'y-or-n-p)
+;; Set up load path
+(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path site-lisp-dir)
 
-(menu-bar-mode  t)                       ;; show the menu...
-(mouse-avoidance-mode 'jump)             ;; mouse ptr when cursor is too close
-(tool-bar-mode -1)                       ;; turn-off toolbar
-(size-indication-mode t)                 ;; show file size (emacs 22+)
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
 
-(setq fringe-mode '(1 . 0))              ;; emacs 22+
-;(delete-selection-mode 1)                ;; delete the sel with a keyp
+;; Write backup files to own directory
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
+
+;; Make backups of files, even when they're in version control
+(setq vc-make-backup-files t)
+
+;; Save point position between sessions
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+; Are we on a mac?
+(setq is-mac (equal system-type 'darwin))
+
+;; Setup packages
+(require 'package)
+
+;; Add the original Emacs Lisp Package Archive
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
 
 
-(setq mac-option-modifier 'command)
-(setq mac-command-modifier 'meta)
+(setq package-list '(
+    identica-mode dropdown-list whitespace
+    cedit fill-column-indicator icicles hl-line+
+    paredit highlight-parentheses c-eldoc emamux figlet
+    auto-complete autopair auctex auto-complete-clang
+    rainbow-mode rainbow-delimiters ace-jump-mode
+    smart-mode-line ido-vertical-mode org-gnome figlet magit
+    autopair auto-auto-indent key-chord expand-region
+    smart-operator smart-newline duplicate-thing multiple-cursors
+    mark-multiple smex smooth-scrolling undo-tree yasnippet-bundle
+    ecb jump-char smart-forward org-bullets
+))
 
-;; higlight changes in documents
+(defun check-and-install (list)
+  (let (v)
+    (dolist (p list v)
+      (if (not (package-installed-p p))
+          (package-install p))))
+  (message "Package check and installation done."))
 
-(setq highlight-changes-visibility-initial-state nil); initially hide
+(check-and-install package-list)
 
-;; highlight the current line; set a custom face, so we can
-;; recognize from the normal marking (selection)
-(defface hl-line '((t (:background "Gray")))
-  "Face to use for `hl-line-face'." :group 'hl-line)
-(setq hl-line-face 'hl-line)
-;(global-hl-line-mode t) ; turn it on for all modes by default
+(require 'sane-defaults)
+(require 'common-init)
+(require 'mode-mappings)
+(require 'cc-mode-init)
+(require 'org-init)
+(require 'snippets)
+(require 'key-bindings)
+;; End of the File
 
-;;; General setup
-(setq
- frame-title-format '("%b %* %m")
- delete-key-deletes-forward t
- mouse-yank-at-point t
- scroll-step 1 ;; keyboard scroll one line at a time
- minibuffer-max-depth nil
- man-switches "-a"
- require-final-newline t   ; file ends with new line?
- ; show-paren-style 'expression
- confirm-kill-emacs 'y-or-n-p
- completion-ignored-extensions '(".o" ".elc" )
- scroll-preserve-screen-position 1
- calendar-latitude 12.971599
- calendar-longitude 77.594563
- line-spacing 1
- visible-bell t
- global-auto-revert-mode t
- scroll-preserve-screen-position 1 ; Pgup/dn will return exactly to the starting
-                                   ; point.
- text-mode-hook 'turn-on-auto-fill ; Sets autofill on in text mode automatically
- ;; Some pretty stuff
- font-lock-maximum-decoration t
- inhibit-startup-message t
- query-replace-highlight t
- search-highlight t
- global-font-lock-mode 1
- transient-mark-mode t
-)
 
-(setq-default
- user-mail-address "ratheesh@gmail.com"
- cursor-in-non-selected-windows nil
- cursor-in-non-selected-windows nil
- x-stretch-cursor t              ; when on a tab, make the cursor the tab length
- fill-column 80                  ; Nothing over 80 characters please
- indent-tabs-mode nil
- column-number-mode 't
- line-number-mode   't
- display-time       't
- ;; we usually want a final newline...
- require-final-newline 'ask
- ;; If you don't know, just give me text-mode
- default-major-mode 'text-mode
- ;; I don't like emacs destroying my window setup
- even-window-heights nil
- ;; Same here
- resize-mini-windows nil
- ;; No am/pm here
- display-time-24hr-format t
- ;; A tab is 8 spaces is 8 spaces is 8 spaces
- default-tab-width 8
- ;; Scrolling is moving the document, not moving my eyes
- scroll-preserve-screen-position 'keep
- ;; I kinda know my emacs
- inhibit-startup-message t
- ;; nice comment format
- comment-style 'extra-line
- ;; Don't show a cursor in other windows
- cursor-in-non-selected-windows nil
- ;; A wide characters ask for a wide cursor
- x-stretch-cursor t
- ;; i want a mouse yank to be inserted where the point is, not where i click
- mouse-yank-at-point t
- ;; Don't highlight stuff that I can click on all the time. I don't click
- ;; anyways.
- mouse-highlight 1
-)
-
-;;;;;;;;;;;;;;;;;;;;
-;;; Global modes ;;;
-;;;;;;;;;;;;;;;;;;;;
-
-;; no menu bar
-;; On Macs, this causes weird behavior, though.
-(when (not (eq window-system 'mac))
-  (menu-bar-mode -1))
-
-;; and no toolbar in emacs21 either
-(when (and (featurep 'tool-bar)
-           window-system)
-  (tool-bar-mode -1))
-
-(when (fboundp 'blink-cursor-mode)
-  (blink-cursor-mode -1))
-
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-
-;; But I like syntax highlighting
-(global-font-lock-mode 1)
-
-;; transparently work with compressed files
-(auto-compression-mode 1)
-
-; I liebe rainbow-mode
-(rainbow-mode t)
-
-;; Give me columns and lines
-(column-number-mode 1)
-(line-number-mode 1)
-
-;; Display time
-(display-time)
-
-;; Show the region by default
-(transient-mark-mode 1)
-;; But don't bitch if it's not shown
-(setq mark-even-if-inactive t)
-
-;; Do random numbers
-(random t)
-
-;; Show me your parens!
-(setq show-paren-delay 0
-      show-paren-style 'parenthesis)
-(show-paren-mode 1)
-
-;; Sometimes, Emacs fucks up my window config.
-;; Let me fix it easily.
-(winner-mode 1)
-
-(global-auto-revert-mode t)
-
-;(require 'powerline)
-;(powerline-default-theme)
-;(setq powerline-color1 "#073642")
-;(setq powerline-color2 "#002b36")
-
-;(set-face-attribute 'mode-line nil
-;                    :foreground "#fdf6e3"
-;                    :background "color-27"
-;		    :inverse-video nil
-;                    :box nil)
-;(set-face-attribute 'mode-line-inactive nil
-;		    :inverse-video nil
-;                    :box nil)
-
-;save the file modification timstamp at the time os saving
-(add-hook 'before-save-hook 'time-stamp)
-
-;(setq show-trailing-whitespace)
-(setq whitespace-style '(face trailing))
-
-;(toggle-hl-line-when-idle 10)
-
-(iswitchb-mode t)
-
-(require 'magit)
-(autoload 'magit-status "magit" nil t)
-
-;;ido mode
-(require 'ido)
-(ido-mode t)
-(ido-mode 'both) ;; for buffers and files
-(setq ido-enable-flex-matching t)
-(setq resize-mini-windows 'grow-only)
-(setq max-mini-window-height 0.5)
-(setq ido-enable-flex-matching t)
-(setq completion-ignored-extensions
-  '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod" ".cmd"))
-
-;;smex
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c M-x") 'smex-update)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;;(modeline ((t (:background "darkblue" :foreground "yellow"))))
-;;(set-face-background 'modeline "Blue"
-
-(setq show-paren-delay 0)           ; how long to wait?
-(show-paren-mode t)                 ; turn paren-mode on
-(setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
-
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-(require 'ace-jump-buffer)
-(define-key global-map (kbd "C-x SPC") 'ace-jump-buffer)
-
-(require 'smart-mode-line)
-(setq sml/theme 'light)
-(add-to-list 'sml/replacer-regexp-list '("^/home/ratreddy" ":HOME:"))
-(sml/setup)
-
-;(require 'icicles)
-;(icy-mode 1)
-
-(require 'smart-newline)
-(smart-newline-mode 1)
-
-;;key chord config
-(require 'key-chord)
-(key-chord-mode 1)
-(key-chord-define c-mode-map ";;"  "\C-e") ;end of the line
-
-;; expand region
-(require 'expand-region)
-(global-set-key (kbd "M-=") 'er/expand-region)
-(global-set-key (kbd "M--") 'er/contract-region)
-
-(delete-selection-mode 1)
-
-;; Mutt support.
-(setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
-
-;;scratch test
-;(require 'multiple-cursors)
-;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;(global-set-key (kbd "M-\[") 'mc/mark-next-like-this)
-;(global-set-key (kbd "M-\]") 'mc/keyboard-quit)
-;(global-set-key (kbd "M-8") 'mc/mark-previous-like-this)
-;(global-set-key (kbd "M-9") 'mc/mark-all-like-this)
 
 

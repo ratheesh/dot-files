@@ -1,5 +1,5 @@
 ;; -*- Mode: Lisp -*-
-(provide 'package)
+
 ;; Required packages
 (require 'cc-mode)
 (require 'autopair)
@@ -9,16 +9,8 @@
 (require 'xcscope)
 (require 'whitespace)
 (require 'auto-complete-config)
-;(require 'dtrt-indent)
 (require 'ecb)
-;(require 'ecb-autoloads)
-
-;;global keybindings
-(global-set-key (kbd "<f5>") 'revert-buffer)
-(global-set-key (kbd "<f6>") 'cscope-find-this-text-string)
-(global-set-key (kbd "<f7>") 'cscope-find-global-definition-no-prompting)
-(global-set-key (kbd "<f8>") 'cscope-pop-mark)
-(global-set-key (kbd "C-x g") 'magit-status)
+(require 'magit)
 
 (setq
  c-default-style "linux"
@@ -38,7 +30,6 @@
 
 (autopair-global-mode 1)
 (global-rainbow-delimiters-mode)
-;(yas-global-mode 1)
 
 ;;fci-column-indicator mode
 (setq
@@ -106,7 +97,7 @@
             (let ((filename (buffer-file-name)))
               ;; Enable kernel mode for the appropriate files
               (when (and filename
-                         (string-match (expand-file-name "~/.")
+                         (string-match (expand-file-name "/")
                                        filename))
                 (setq indent-tabs-mode t)
                 (c-set-style "linux-tabs-only")))))
@@ -126,6 +117,11 @@
   (lambda ()
     (which-function-mode t)))
 
+;;key chord config
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define c-mode-map ";;" "\C-e") ;end of the line
+
 ;; smart operator - really smart!
 (require 'smart-operator)
 (defun my-c-mode-common-hook()
@@ -138,7 +134,6 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
-
 ;; ECB env settings
 (setq
  ecb-layout-name "rathy-dh-layout"
@@ -146,18 +141,4 @@
  ecb-compile-window-height nil
 )
 
-;;; activate and deactivate ecb
-(global-set-key "\C-c(" 'ecb-activate)
-(global-set-key "\C-c)" 'ecb-deactivate)
-;;; show/hide ecb window
-;(global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
-;(global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
-;;; quick navigation between ecb windows
-(global-set-key "\C-c1" 'ecb-goto-window-edit1)
-(global-set-key "\C-c2" 'ecb-goto-window-directories)
-(global-set-key "\C-c3" 'ecb-goto-window-history)
-;(global-set-key "\C-c4" 'ecb-goto-window-sources)
-;(global-set-key "\C-c5" 'ecb-goto-window-methods)
-;(global-set-key "\C-c6" 'ecb-goto-window-compilation)
-
-
+(provide 'cc-mode-init)

@@ -50,8 +50,6 @@
           (add-to-list 'symbol-names name)
           (add-to-list 'name-and-pos (cons name position))))))))
 
-;;; Navigate via imenu (ido-y) bound to M-i
-(global-set-key (kbd "M-i") 'ido-goto-symbol)
 
 (defun duplicate-current-line ()
   (interactive)
@@ -63,10 +61,13 @@
   (open-line 1)
   (yank)
   (back-to-indentation))
-(global-set-key "\C-cd" 'duplicate-current-line)
 
 ;; jabber command
 (defun jabber ()
     (interactive)
     (jabber-connect)
     (switch-to-buffer "*-jabber-*"))
+
+(provide 'snippets)
+
+
