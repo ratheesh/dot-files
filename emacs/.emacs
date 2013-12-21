@@ -10,7 +10,6 @@
 (when (featurep 'xemacs)
   (error "This .emacs file does not work with XEmacs."))
 
-(package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'package)
@@ -19,10 +18,8 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
 
-;;save all my local customization to a seperate file
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror)
 
 (setq package-list '(identica-mode dropdown-list whitespace
                      cedit fill-column-indicator icicles hl-line+
@@ -32,6 +29,7 @@
                      smart-mode-line ido-vertical-mode org-gnome figlet magit
                      autopair auto-auto-indent key-chord expand-region
                      smart-operator smart-newline duplicate-thing multiple-cursors
+                     mark-multiple smex
  ))
 
 (defun check-and-install (list)
@@ -44,6 +42,10 @@
 (check-and-install package-list)
 
 (load "~/.emacs.d/init.el")
+
+;;save all my local customization to a seperate file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 
 ;; End of File
 

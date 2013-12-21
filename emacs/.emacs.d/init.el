@@ -202,6 +202,7 @@
 (require 'magit)
 (autoload 'magit-status "magit" nil t)
 
+;;ido mode
 (require 'ido)
 (ido-mode t)
 (ido-mode 'both) ;; for buffers and files
@@ -211,6 +212,14 @@
 (setq ido-enable-flex-matching t)
 (setq completion-ignored-extensions
   '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod" ".cmd"))
+
+;;smex
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c M-x") 'smex-update)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;;(modeline ((t (:background "darkblue" :foreground "yellow"))))
 ;;(set-face-background 'modeline "Blue"
@@ -245,10 +254,18 @@
 (require 'expand-region)
 (global-set-key (kbd "M-=") 'er/expand-region)
 (global-set-key (kbd "M--") 'er/contract-region)
+
 (delete-selection-mode 1)
 
 ;; Mutt support.
 (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
 
 ;;scratch test
+;(require 'multiple-cursors)
+;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;(global-set-key (kbd "M-\[") 'mc/mark-next-like-this)
+;(global-set-key (kbd "M-\]") 'mc/keyboard-quit)
+;(global-set-key (kbd "M-8") 'mc/mark-previous-like-this)
+;(global-set-key (kbd "M-9") 'mc/mark-all-like-this)
+
 
