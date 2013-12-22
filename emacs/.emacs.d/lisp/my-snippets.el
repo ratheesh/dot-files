@@ -68,6 +68,6 @@
     (jabber-connect)
     (switch-to-buffer "*-jabber-*"))
 
-(provide 'snippets)
+(provide 'my-snippets)
 
 

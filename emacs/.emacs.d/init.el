@@ -67,7 +67,9 @@
     autopair auto-auto-indent key-chord expand-region
     smart-operator smart-newline duplicate-thing multiple-cursors
     mark-multiple smex smooth-scrolling undo-tree yasnippet-bundle
-    ecb jump-char smart-forward org-bullets
+    ecb jump-char smart-forward org-bullets git-gutter git-gutter+
+    xclip sudo-ext stripe-buffer iy-go-to-char isearch-symbol-at-point
+    idomenu ido-at-point emacs-setup boxquote
 ))
 
 (defun check-and-install (list)
@@ -84,7 +86,7 @@
 (require 'mode-mappings)
 (require 'cc-mode-init)
 (require 'org-init)
-(require 'snippets)
+(require 'my-snippets)
 (require 'key-bindings)
 (require 'user-init)
 
