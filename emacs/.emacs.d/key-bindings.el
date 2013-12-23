@@ -46,6 +46,23 @@
 (global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")
 
+(global-set-key (kbd "C-c f") 'iy-go-to-char)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+(global-set-key (kbd "C-c ,") 'iy-go-to-or-up-to-continue)
+
+;; redo
+(global-set-key (kbd "C-?") 'redo)
+
+;; Jump to a definition in the current file. (This is awesome)
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
+
+;; toggle two most recent buffers
+(fset 'quick-switch-buffer [?\C-x ?b return])
+(global-set-key (kbd "s-b") 'quick-switch-buffer)
+
+;; Edit file with sudo
+(global-set-key (kbd "M-s e") 'sudo-edit)
+
 ;; common key-bindings
 ;; C mode key bindings
 ;; ecb
@@ -85,7 +102,9 @@
 
 ;; from snippets.el
 (global-set-key (kbd "M-i") 'ido-goto-symbol)
-(global-set-key "\C-cd" 'duplicate-current-line)
+;(global-set-key "\C-cd" 'duplicate-current-line)
+(global-set-key (kbd "C-c d") 'duplicate-thing)
+
 
 (provide 'key-bindings)
 

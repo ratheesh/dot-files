@@ -49,27 +49,27 @@
 ;; Setup packages
 (require 'package)
 
-;; Add the original Emacs Lisp Package Archive
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+ ("gnu" . "http://elpa.gnu.org/packages/")
+ ("melpa" . "http://melpa.milkbox.net/packages/")
+ ("marmalade" . "http://marmalade-repo.org/packages/")
+ ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
 
+; fetch the list of packages available
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
 (setq package-list '(
-    identica-mode dropdown-list whitespace
-    cedit fill-column-indicator icicles hl-line+
-    paredit highlight-parentheses c-eldoc emamux figlet
-    auto-complete autopair auctex auto-complete-clang
-    rainbow-mode rainbow-delimiters ace-jump-mode
-    smart-mode-line ido-vertical-mode org-gnome figlet magit
-    autopair auto-auto-indent key-chord expand-region
-    smart-operator smart-newline duplicate-thing multiple-cursors
-    mark-multiple smex smooth-scrolling undo-tree yasnippet-bundle
-    ecb jump-char smart-forward org-bullets git-gutter git-gutter+
-    xclip sudo-ext stripe-buffer iy-go-to-char isearch-symbol-at-point
-    idomenu ido-at-point emacs-setup boxquote
+    whitespace fill-column-indicator icicles hl-line+ paredit
+    highlight-parentheses c-eldoc emamux figlet auto-complete autopair
+    auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode
+    smart-mode-line ido-vertical-mode org-gnome magit auto-auto-indent key-chord
+    expand-region smart-operator smart-newline duplicate-thing multiple-cursors
+    smex smooth-scrolling undo-tree yasnippet-bundle ecb smart-forward
+    org-bullets git-gutter+ xclip sudo-ext iy-go-to-char isearch-symbol-at-point
+    idomenu ido-at-point emacs-setup boxquote git-commit-training-wheels-mode
+    git-commit
 ))
 
 (defun check-and-install (list)
