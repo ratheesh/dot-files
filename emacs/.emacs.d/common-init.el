@@ -46,7 +46,6 @@
 
 ;; smart mode line
 (require 'smart-mode-line)
-(setq sml/theme 'light)
 (sml/setup)
 
 ;git mode configuration
@@ -62,6 +61,18 @@
 (require 'git-commit)
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
+
+(when (window-system)
+  (require 'git-gutter+-fringe))
+
+(require 'git-gutter+)
+;; If you enable global minor mode
+(global-git-gutter+-mode t)
+(setq git-gutter+-separator-sign "|")
+(set-face-foreground 'git-gutter+-separator "yellow")
+
+;(setq-default indicate-buffer-boundaries 'left)
+;(setq-default indicate-empty-lines +1)
 
 (require 'iy-go-to-char)
 
