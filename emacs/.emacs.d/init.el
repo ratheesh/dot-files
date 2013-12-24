@@ -28,7 +28,7 @@
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file 'noerror)
+;(load custom-file 'noerror)
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -90,5 +90,7 @@
 (require 'key-bindings)
 (require 'user-init)
 
+;; Load custom.el now to avoid any unwanted setting overwrites
+(load custom-file 'noerror)
 ;; End of the File
 
