@@ -10,6 +10,34 @@
 (when (featurep 'xemacs)
   (error "This .emacs file does not work with XEmacs."))
 
+;; get the system type
+(defvar system-type-as-string (prin1-to-string system-type))
+
+(defvar on_windows_nt (string-match "windows-nt" system-type-as-string))
+(defvar on_darwin     (string-match "darwin" system-type-as-string))
+(defvar on_gnu_linux  (string-match "gnu/linux" system-type-as-string))
+
+(defvar set-default-font "Inconsolata-12")
+;; set the default font and size
+(cond (on_darwin
+       (set-default-font "-apple-monaco-medium-r-normal--14-*-*-*-*-*-*-*")
+        ;; (set-default-font "-apple-monaco-medium-r-normal--14-140-72-72-m-140-iso10646-1")
+       ;;   (set-default-font "-apple-monaco-medium-r-normal--18-*-*-*-*-*-*-*")
+        ))
+
+(cond (on_gnu_linux
+       (set-default-font "Inconsolata-12")
+       (setq default-frame-alist '((font . "Inconsolata-12")))
+       ;; (set-default-font "12x24")
+       ))
+
+(cond (on_windows_nt
+       ;; (set-default-font "Lucida Console-9:bold")
+       (set-default-font "Lucida Console-11:bold")
+       ;; (set-default-font "Lucida Console-15:bold")
+       ;; (set-default-font "Consolas-12")
+       ))
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -92,5 +120,6 @@
 
 ;; Load custom.el now to avoid any unwanted setting overwrites
 (load custom-file 'noerror)
+
 ;; End of the File
 

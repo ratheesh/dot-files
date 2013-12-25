@@ -52,7 +52,7 @@
 (global-set-key (kbd "C-c ,") 'iy-go-to-or-up-to-continue)
 
 ;; redo
-(global-set-key (kbd "C-?") 'redo)
+(global-set-key (kbd "C-?") 'undo-tree-redo)
 
 ;; Jump to a definition in the current file. (This is awesome)
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
