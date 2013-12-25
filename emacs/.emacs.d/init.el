@@ -20,9 +20,7 @@
 (defvar set-default-font "Inconsolata-12")
 ;; set the default font and size
 (cond (on_darwin
-       (set-default-font "-apple-monaco-medium-r-normal--14-*-*-*-*-*-*-*")
-        ;; (set-default-font "-apple-monaco-medium-r-normal--14-140-72-72-m-140-iso10646-1")
-       ;;   (set-default-font "-apple-monaco-medium-r-normal--18-*-*-*-*-*-*-*")
+       (set-default-font "Monaco-16")
         ))
 
 (cond (on_gnu_linux
@@ -32,10 +30,7 @@
        ))
 
 (cond (on_windows_nt
-       ;; (set-default-font "Lucida Console-9:bold")
-       (set-default-font "Lucida Console-11:bold")
-       ;; (set-default-font "Lucida Console-15:bold")
-       ;; (set-default-font "Consolas-12")
+       (set-default-font "Lucida Console-11")
        ))
 
 ;; Turn off mouse interface early in startup to avoid momentary display

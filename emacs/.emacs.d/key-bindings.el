@@ -51,6 +51,9 @@
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 (global-set-key (kbd "C-c ,") 'iy-go-to-or-up-to-continue)
 
+;; isearch-symbol-at-point
+(global-set-key (kbd "M-s s") 'isearch-symbol-at-point)
+
 ;; redo
 (global-set-key (kbd "C-?") 'undo-tree-redo)
 
@@ -64,15 +67,16 @@
 ;; Edit file with sudo
 (global-set-key (kbd "M-s e") 'sudo-edit)
 
-;; common key-bindings
 ;; C mode key bindings
 ;; ecb
 ;; activate and deactivate ecb
 (global-set-key "\C-c(" 'ecb-activate)
 (global-set-key "\C-c)" 'ecb-deactivate)
+
 ;; show/hide ecb window
 ;; (global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
 ;; (global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
+
 ;; quick navigation between ecb windows
 (global-set-key "\C-c1" 'ecb-goto-window-edit1)
 (global-set-key "\C-c2" 'ecb-goto-window-directories)

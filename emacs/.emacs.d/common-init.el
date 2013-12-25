@@ -70,11 +70,12 @@
 ;; If you enable global minor mode
 (global-git-gutter+-mode t)
 (setq git-gutter+-separator-sign "|")
-(set-face-foreground 'git-gutter+-separator "yellow:nobold")
+(set-face-foreground 'git-gutter+-separator "yellow")
 
 ;(setq-default indicate-buffer-boundaries 'left)
 ;(setq-default indicate-empty-lines +1)
 
 (require 'iy-go-to-char)
+(require 'isearch-symbol-at-point)
 
 (provide 'common-init)
