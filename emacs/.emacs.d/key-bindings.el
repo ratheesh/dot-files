@@ -42,9 +42,17 @@
 ;; Eval buffer
 (global-set-key (kbd "C-c C-k") 'eval-buffer)
 
+;; recentf
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
 ;; Magit
 (global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")
+
+;; git-gutter+
+(global-set-key (kbd "C-x p") 'git-gutter+-previous-hunk)
+(global-set-key (kbd "C-x n") 'git-gutter+-next-hunk)
+(global-set-key (kbd "C-x v r") 'git-gutter+-revert-hunk)
 
 ;; iy-go-to-char
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
@@ -110,6 +118,4 @@
 ;(global-set-key "\C-cd" 'duplicate-current-line)
 (global-set-key (kbd "C-c d") 'duplicate-thing)
 
-
 (provide 'key-bindings)
-
