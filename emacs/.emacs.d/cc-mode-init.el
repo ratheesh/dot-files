@@ -60,15 +60,15 @@
     (font-lock-add-keywords nil
       '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
 
-(add-hook 'makefile-mode-hook 
+(add-hook 'makefile-mode-hook
   (lambda()
     (setq show-trailing-whitespace t)))
 
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
-(add-hook 'c-mode-hook 
-   '(lambda () 
+(add-hook 'c-mode-hook
+   '(lambda ()
       (whitespace-toggle-options t)
 ))
 
@@ -113,7 +113,7 @@
 
 (add-hook 'c-mode 'set-newline-and-indent)
 
-(add-hook 'c-mode-common-hook 
+(add-hook 'c-mode-common-hook
   (lambda ()
     (which-function-mode t)))
 
@@ -123,16 +123,16 @@
 (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
 
 ;; smart operator - really smart!
-(require 'smart-operator)
-(defun my-c-mode-common-hook()
-  (smart-insert-operator-hook)
+;(require 'smart-operator)
+;(defun my-c-mode-common-hook()
+;  (smart-insert-operator-hook)
 
-  (local-unset-key (kbd "."))
-  (local-unset-key (kbd ":"))
-  (local-unset-key (kbd "%"))
-  (local-set-key (kbd "*") 'c-electric-star))
+;  (local-unset-key (kbd "."))
+;  (local-unset-key (kbd ":"))
+;  (local-unset-key (kbd "%"))
+;  (local-set-key (kbd "*") 'c-electric-star))
 
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+;(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;; ECB env settings
 (setq
