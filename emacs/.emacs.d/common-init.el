@@ -51,6 +51,9 @@
 (require 'smart-mode-line)
 (sml/setup)
 
+;;; smart tab
+(require 'smart-tab)
+
 ;git mode configuration
 (require 'git-commit-training-wheels-mode)
 (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)

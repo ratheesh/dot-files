@@ -92,7 +92,7 @@
     smex smooth-scrolling undo-tree yasnippet-bundle ecb smart-forward
     org-bullets git-gutter+ xclip sudo-ext iy-go-to-char isearch-symbol-at-point
     idomenu ido-at-point emacs-setup boxquote git-commit-training-wheels-mode
-    git-commit flx-ido jump-char
+    git-commit flx-ido jump-char smart-tab
 ))
 
 (defun check-and-install (list)

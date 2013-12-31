@@ -67,6 +67,7 @@
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
+(add-hook 'c-mode-common-hook 'smart-tab-mode)
 (add-hook 'c-mode-hook
    '(lambda ()
       (whitespace-toggle-options t)
