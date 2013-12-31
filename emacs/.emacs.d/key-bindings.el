@@ -45,6 +45,9 @@
 ;; recentf
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
+;;; footnote mode
+(global-set-key (kbd " C-c fi") 'Footnote-add-footnote)
+
 ;; Magit
 (global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")

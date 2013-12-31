@@ -44,6 +44,9 @@
 (require 'smex)
 (smex-initialize)
 
+;;; Enable footnote mode for text files
+(add-hook 'text-mode-hook 'footnote-mode)
+
 ;; smart mode line
 (require 'smart-mode-line)
 (sml/setup)
