@@ -3,7 +3,6 @@
 ;; Required packages
 (require 'cc-mode)
 (require 'autopair)
-(require 'yasnippet-bundle)
 (require 'fill-column-indicator)
 (require 'rainbow-delimiters)
 (require 'xcscope)
@@ -28,7 +27,6 @@
 ;show-trailing-whitespace t
 )
 
-(autopair-global-mode 1)
 (global-rainbow-delimiters-mode)
 
 ;;fci-column-indicator mode
@@ -73,6 +71,11 @@
       (whitespace-toggle-options t)
 ))
 
+(add-hook 'c-mode-common-hook
+          #'(lambda ()
+            (setq autopair-dont-activate t)
+            (autopair-mode -1)))
+
 ;;From Linux source
 (defun c-lineup-arglist-tabs-only (ignored)
   "Line up argument lists by tabs, not spaces"
@@ -106,13 +109,13 @@
 ;; Auto complete configuration
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+;; (ac-set-trigger-key "TAB")
+;; (ac-set-trigger-key "<tab>")
 
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
 
-(add-hook 'c-mode 'set-newline-and-indent)
+(add-hook 'c-mode-hook 'set-newline-and-indent)
 
 (add-hook 'c-mode-common-hook
   (lambda ()

@@ -40,6 +40,9 @@
 (require 'ido-at-point)
 (ido-at-point-mode)
 
+;;; configure yasnippet
+(require 'setup-yasnippet)
+
 ;;smex
 (require 'smex)
 (smex-initialize)

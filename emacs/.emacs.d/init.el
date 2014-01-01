@@ -1,8 +1,9 @@
 ;;-*-Emacs-Lisp-*-
 ;; .init.el
-;; Ratheesh
-;; Dec 2013
+;; Ratheesh S
+;; Jan 2014
 ;; Some stuff is taken from http://www.dgp.toronto.edu/~ghali/emacs.html
+;; Based on magnar's https://github.com/magnars/.emacs.d
 ;; Special thanks to santosh shivraj
 
 ; Meine Emacs Einstellungen
@@ -73,10 +74,10 @@
 (require 'package)
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
- ("gnu" . "http://elpa.gnu.org/packages/")
- ("melpa" . "http://melpa.milkbox.net/packages/")
- ("marmalade" . "http://marmalade-repo.org/packages/")
- ("org" . "http://orgmode.org/elpa/")))
+			 ("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "http://melpa.milkbox.net/packages/")
+			 ("marmalade" . "http://marmalade-repo.org/packages/")
+			 ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
 
 ; fetch the list of packages available
@@ -84,12 +85,12 @@
     (package-refresh-contents))
 
 (setq package-list '(
-    whitespace fill-column-indicator icicles hl-line+ paredit
+    whitespace fill-column-indicator paredit dropdown-list
     highlight-parentheses c-eldoc emamux figlet auto-complete autopair
     auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode
-    smart-mode-line ido-vertical-mode org-gnome magit auto-auto-indent key-chord
+    smart-mode-line ido-vertical-mode org-gnome magit key-chord
     expand-region smart-operator smart-newline duplicate-thing multiple-cursors
-    smex smooth-scrolling undo-tree yasnippet-bundle ecb smart-forward
+    smex smooth-scrolling undo-tree yasnippet ecb smart-forward
     org-bullets git-gutter+ xclip sudo-ext iy-go-to-char isearch-symbol-at-point
     idomenu ido-at-point emacs-setup boxquote git-commit-training-wheels-mode
     git-commit flx-ido jump-char smart-tab
