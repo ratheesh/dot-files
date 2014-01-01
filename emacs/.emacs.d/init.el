@@ -52,6 +52,7 @@
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq user-file (expand-file-name "user-init.el" user-emacs-directory))
 ;(load custom-file 'noerror)
 
 ;; Write backup files to own directory
@@ -112,7 +113,8 @@
 (require 'org-init)
 (require 'my-snippets)
 (require 'key-bindings)
-(require 'user-init)
+;;; Load user initialization code
+(load user-file 'noerror)
 
 ;; Load custom.el now to avoid any unwanted setting overwrites
 (load custom-file 'noerror)
