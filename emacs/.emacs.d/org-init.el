@@ -53,6 +53,14 @@
 (add-hook 'message-mode-hook 'turn-on-orgtbl)
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 
+;;; fix for yasnippet and autoconfig
+;;; from http://iany.me/2012/03/fix-tab-binding-for-yasnippet-and-auto-complete/
+(defun yas-ac-tab-noconflict ()
+  (let ((command (key-binding [tab]))) ; remember command
+    (local-unset-key [tab]) ; unset from (kbd "<tab>")
+    (local-set-key (kbd "TAB") command))) ; bind to (kbd "TAB")
+(add-hook 'org-mode-hook 'yas-ac-tab-noconflict)
+
 ;;;;;;;;;; Fix arrow key issue when running emacs inside tmux env
 (if (getenv "TMUX")
   (progn

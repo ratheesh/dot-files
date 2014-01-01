@@ -65,7 +65,7 @@
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
-(add-hook 'c-mode-common-hook 'smart-tab-mode)
+;(add-hook 'c-mode-common-hook 'smart-tab-mode)
 (add-hook 'c-mode-hook
    '(lambda ()
       (whitespace-toggle-options t)
@@ -106,11 +106,14 @@
                 (setq indent-tabs-mode t)
                 (c-set-style "linux-tabs-only")))))
 
-;; Auto complete configuration
+(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+
+;; ;; Auto complete configuration
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
-;; (ac-set-trigger-key "TAB")
-;; (ac-set-trigger-key "<tab>")
+;(setq ac-source-yasnippet nil)
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))

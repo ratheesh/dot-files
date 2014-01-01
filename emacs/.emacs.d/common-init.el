@@ -55,7 +55,7 @@
 (sml/setup)
 
 ;;; smart tab
-(require 'smart-tab)
+;(require 'smart-tab)
 
 ;git mode configuration
 (require 'git-commit-training-wheels-mode)

@@ -86,7 +86,7 @@
     (package-refresh-contents))
 
 (setq package-list '(
-    whitespace fill-column-indicator paredit dropdown-list
+    whitespace fill-column-indicator paredit dropdown-list popup
     highlight-parentheses c-eldoc emamux figlet auto-complete autopair
     auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode
     smart-mode-line ido-vertical-mode org-gnome magit key-chord
