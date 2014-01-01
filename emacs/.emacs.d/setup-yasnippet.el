@@ -3,7 +3,7 @@
 (require 'popup)
 (require 'yasnippet)
 
-(setq yas-snippet-dirs '("~/.emacs.d/my-snippets/"))
+(setq yas-snippet-dirs '("~/.emacs.d/my-snippets/" "~/.emacs.d/elpa/yasnippet-20131224.143/snippets"))
 ;(yas--initialize)
 (yas-global-mode 1)
 ;(yas/reload-all)
@@ -23,6 +23,8 @@
 
 ;; No need to be so verbose
 ;(setq yas-verbosity 1)
+
+(setq yas/triggers-in-field t); Enable nested triggering of snippets
 
 ;; Wrap around region
 (setq yas-wrap-around-region t)
@@ -50,6 +52,30 @@
      :isearch t)))
 
 (setq yas/prompt-functions '(yas/popup-isearch-prompt yas/no-prompt))
+
+;; Completing point by some yasnippet key
+(defun yas-ido-expand ()
+  "Lets you select (and expand) a yasnippet key"
+  (interactive)
+  (let ((original-point (point)))
+    (while (and
+	    (not (= (point) (point-min)))
+	    (not
+	     (string-match "[[:space:]\n]" (char-to-string (char-before)))))
+      (backward-word 1))
+    (let* ((init-word (point))
+	   (word (buffer-substring init-word original-point))
+	   (list (yas-active-keys)))
+      (goto-char original-point)
+      (let ((key (remove-if-not
+		  (lambda (s) (string-match (concat "^" word) s)) list)))
+	(if (= (length key) 1)
+	    (setq key (pop key))
+	  (setq key (ido-completing-read "key: " list nil nil word)))
+	(delete-char (- init-word original-point))
+	(insert key)
+	        (yas-expand)))))
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-ido-expand)
 
 (provide 'setup-yasnippet)
 ;;; End of File
