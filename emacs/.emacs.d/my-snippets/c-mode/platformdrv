@@ -1,0 +1,112 @@
+# -*- mode: snippet -*-
+# name: platformdrv
+# key: platformdrv
+# binding: direct-keybinding
+# --
+/*
+ * Platform driver for ${1:test_driver}
+ *
+ * Copyright (C) ${2:2014} ${3:Ratheesh S} <${4:ratheeshreddy@gmail.com}>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 2 dated June, 1991.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+#include <linux/module.h>
+#include <linux/of.h>
+#include <linux/platform_device.h>
+#include <linux/of_platform.h>
+#include <linux/mod_devicetable.h>
+#include <linux/of_irq.h>
+
+#define	DRV_NAME "${5:ldt}"
+
+/*
+ * $5 driver's platform data
+ * move this to drivers own header file and use it in the system setup file
+ */
+/*
+struct $5_platform_data
+{
+	int irq; /* interrupt for the driver */
+	void (*init_drv)(void);	/* so system specific init */
+};
+ */
+
+/* $5's private data */
+/*
+struct $5_data
+{
+	int irq;
+	int port
+	int port_size;
+	struct of_node *node;
+};
+ */
+
+static __devinit int $5_probe(struct platform_device *pdev)
+{
+	dev_dbg(dev, "probe\n");
+	return 0;
+}
+
+static int __devexit $5_remove(struct platform_device *pdev)
+{
+	return 0;
+}
+
+static const struct of_device_id $5_of_match[] = {
+	{.compatible = "$5",},
+	{},
+};
+
+MODULE_DEVICE_TABLE(of, $5_of_match);
+
+#ifdef CONFIG_PM
+static int $5_suspend(struct device *dev)
+{
+	return 0;
+}
+
+static int $5_resume(struct device *dev)
+{
+	return 0;
+}
+
+static const struct dev_pm_ops $5_pm = {
+	.suspend = $5_suspend,
+	.resume  = $5_resume,
+};
+
+#define $5_pm_ops (&$5_pm)
+#else
+#define $5_pm_ops NULL
+#endif
+
+static struct platform_driver $5_driver = {
+	.driver = {
+		.name		= DRV_NAME,
+		.owner		= THIS_MODULE,
+		.pm		= $5_pm_ops,
+		.of_match_table	= of_match_ptr($5_of_match),
+	},
+	.probe = $5_probe,
+	.remove = __devexit_p($5_remove),
+};
+
+module_platform_driver($5_driver);
+
+MODULE_DESCRIPTION("$5:platform driver");
+MODULE_AUTHOR("$3 $4");
+MODULE_LICENSE("GPL v2");
+/* End of File */
