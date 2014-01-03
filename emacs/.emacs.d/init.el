@@ -113,6 +113,8 @@
 (require 'org-init)
 (require 'my-snippets)
 (require 'key-bindings)
+(require 'appearance)
+
 ;;; Load user initialization code
 (load user-file 'noerror)
 
