@@ -86,12 +86,12 @@
     (package-refresh-contents))
 
 (setq package-list '(
-    whitespace fill-column-indicator paredit dropdown-list popup
+    whitespace fill-column-indicator paredit dropdown-list popup telepathy
     highlight-parentheses c-eldoc emamux figlet auto-complete autopair
     auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode
-    smart-mode-line ido-vertical-mode org-gnome magit key-chord
+    smart-mode-line ido-vertical-mode org-gnome magit key-chord xcscope
     expand-region smart-operator smart-newline duplicate-thing multiple-cursors
-    smex smooth-scrolling undo-tree yasnippet ecb smart-forward
+    smex smooth-scrolling undo-tree yasnippet ecb smart-forward scratch-ext
     org-bullets git-gutter+ xclip sudo-ext iy-go-to-char isearch-symbol-at-point
     idomenu ido-at-point emacs-setup boxquote git-commit-training-wheels-mode
     git-commit flx-ido jump-char smart-tab

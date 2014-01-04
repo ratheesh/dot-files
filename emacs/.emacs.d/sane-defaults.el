@@ -161,6 +161,7 @@
 
 (iswitchb-mode t)
 
+(require 'scratch-ext)
 (require 'expand-region)
 (require 'multiple-cursors)
 (require 'jump-char)
