@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dbgprintk
+# key: dbgprintk
+# --
+printk("%s:%s:%d:${1:debug message}", __FILE__, __func__, __LINE__${2:, args});$0
