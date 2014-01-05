@@ -31,6 +31,13 @@
 (global-set-key (kbd "M-t s") 'transpose-sexps)
 (global-set-key (kbd "M-t p") 'transpose-params)
 
+(global-unset-key (kbd "C-o")); used for newline below
+(global-unset-key (kbd "C-S-o")); used for newline above
+(global-unset-key (kbd "C-:")); used for newline above
+(global-set-key (kbd "C-o") 'insert-line-below)
+(global-set-key (kbd "C-S-o") 'insert-line-above)
+(global-set-key (kbd "C-:") 'select-current-line)
+
 ;; toggle two most recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
 (global-set-key (kbd "s-b") 'quick-switch-buffer)

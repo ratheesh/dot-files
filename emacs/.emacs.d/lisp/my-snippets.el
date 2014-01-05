@@ -50,7 +50,13 @@
           (add-to-list 'symbol-names name)
           (add-to-list 'name-and-pos (cons name position))))))))
 
+;; connect to jabber and switch to active jabber window
+(defun jabber ()
+    (interactive)
+    (jabber-connect)
+    (switch-to-buffer "*-jabber-*"))
 
+;;; duplicate current line
 (defun duplicate-current-line ()
   (interactive)
   (beginning-of-line nil)
@@ -62,19 +68,28 @@
   (yank)
   (back-to-indentation))
 
-(transient-mark-mode 1)
+;;; select the current line
 (defun select-current-line ()
   "Select the current line"
   (interactive)
-  (end-of-line) ; move to end of line
-  (set-mark (line-beginning-position)))
+  (progn
+    (transient-mark-mode 1)
+    (set-mark(end-of-line))
+    (line-beginning-position)))
 
-;; jabber command
-(defun jabber ()
-    (interactive)
-    (jabber-connect)
-    (switch-to-buffer "*-jabber-*"))
+;;; My handwritten eLisp functions :-)
+(defun insert-line-above ()
+  "Insert empty line above current one"
+  (interactive)
+  (progn
+    (beginning-of-line)
+    (open-line 1)))
+
+(defun insert-line-below ()
+  "Insert empty line below the current one"
+  (interactive)
+  (progn
+    (end-of-line)
+    (newline)))
 
 (provide 'my-snippets)
-
-
