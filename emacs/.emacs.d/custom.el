@@ -22,7 +22,7 @@
  '(rainbow-delimiters-depth-4-face ((t (:foreground "brightyellow"))))
  '(rainbow-delimiters-depth-5-face ((t (:foreground "brightblue"))))
  '(rainbow-delimiters-depth-6-face ((t (:foreground "magenta"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "color-53"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "brightmagenta"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "brightred"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "brightyellow"))))
  '(sml/col-number ((t nil)))
