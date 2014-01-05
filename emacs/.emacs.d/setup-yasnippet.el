@@ -24,7 +24,7 @@
 ;; No need to be so verbose
 ;(setq yas-verbosity 1)
 
-(setq yas/triggers-in-field t); Enable nested triggering of snippets
+;(setq yas/triggers-in-field t); Enable nested triggering of snippets
 
 ;; Wrap around region
 (setq yas-wrap-around-region t)
