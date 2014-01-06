@@ -1,6 +1,7 @@
 ;; global key bindings
 
 (global-set-key (kbd "C-x C-c") 'delete-frame)
+(global-set-key (kbd "C-S-k") 'kill-line-backward)
 
 ;; Completion that uses many different methods to find options.
 (global-set-key (kbd "C-,") 'completion-at-point)

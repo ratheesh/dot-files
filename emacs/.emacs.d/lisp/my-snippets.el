@@ -77,6 +77,12 @@
     (set-mark(end-of-line))
     (line-beginning-position)))
 
+;;; kill line backwards
+(defun kill-line-backward ()
+  "kill line backwards from point to beginning of the line"
+  (interactive)
+  (kill-line 0))
+
 ;;; My handwritten eLisp functions :-)
 (defun insert-line-above ()
   "Insert empty line above current one"
