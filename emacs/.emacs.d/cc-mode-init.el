@@ -33,7 +33,7 @@
 (setq
  fci-handle-truncate-lines nil
  fci-rule-width 1
- fci-rule-color "cyan"
+ fci-rule-color "#ff4500"
 )
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;(global-fci-mode 1)

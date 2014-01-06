@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dbgprintf
+# key: dbgprintf
+# --
+printf("%s:%s:%d:${1:message}\n", __FILE__, __func__, __LINE__${2:, args});$0
