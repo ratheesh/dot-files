@@ -58,6 +58,10 @@
 
 ;;; Enable footnote mode for text files
 (add-hook 'text-mode-hook 'footnote-mode)
+;;; call footnote-init when entering footnote mode for realligning
+;;; across sessions
+(require 'footnote-init)
+(add-hook 'footnote-mode-hook 'footnote-init)
 
 ;; smart mode line
 (require 'smart-mode-line)
