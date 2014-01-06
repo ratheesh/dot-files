@@ -1,6 +1,9 @@
 ;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
 
+(setq auto-save-default nil) ; stop creating those #auto-save# files
+(setq backup-by-copying t);preserve file creation timestamp
+
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
