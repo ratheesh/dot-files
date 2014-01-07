@@ -89,13 +89,15 @@
   (interactive)
   (progn
     (beginning-of-line)
-    (open-line 1)))
+    (open-line 1)
+    (indent-for-tab-command)))
 
 (defun insert-line-below ()
   "Insert empty line below the current one"
   (interactive)
   (progn
     (end-of-line)
-    (newline)))
+    (newline)
+    (indent-for-tab-command)))
 
 (provide 'my-snippets)
