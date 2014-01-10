@@ -3,6 +3,9 @@
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 (global-set-key (kbd "C-S-k") 'kill-line-backward)
 
+(global-unset-key (kbd "M-k"))
+(global-set-key (kbd "M-k") 'kill-buffer)
+
 ;; Completion that uses many different methods to find options.
 (global-set-key (kbd "C-,") 'completion-at-point)
 
