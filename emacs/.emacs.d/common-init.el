@@ -19,7 +19,7 @@
       ido-auto-merge-work-directories-length -1
       ido-create-new-buffer 'always
       ido-use-filename-at-point nil
-      ido-max-prospects 10
+      ido-max-prospects 50
       resize-mini-windows 'grow-only
       max-mini-window-height 0.5
       completion-ignored-extensions
@@ -33,8 +33,8 @@
 (setq ido-use-faces nil)
 
 ;; flx-ido looks better with ido-vertical-mode
-(require 'ido-vertical-mode)
-(ido-vertical-mode)
+;; (require 'ido-vertical-mode)
+;; (ido-vertical-mode)
 
 (defun sd/ido-define-keys () ;; C-n/p is more intuitive in vertical layout
   (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
