@@ -111,7 +111,7 @@
 (require 'mode-mappings)
 (require 'cc-mode-init)
 (require 'org-init)
-(require 'my-snippets)
+(require 'my-defuns)
 (require 'key-bindings)
 (require 'appearance)
 

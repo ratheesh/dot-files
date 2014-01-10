@@ -100,4 +100,4 @@
     (newline)
     (indent-for-tab-command)))
 
-(provide 'my-snippets)
+(provide 'my-defuns)
