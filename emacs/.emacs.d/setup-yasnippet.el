@@ -3,7 +3,11 @@
 (require 'popup)
 (require 'yasnippet)
 
-(setq yas-snippet-dirs '("~/.emacs.d/my-snippets/" "~/.emacs.d/elpa/yasnippet-20140106.1009/snippets"))
+(setq yas-melpa-path (file-name-directory (locate-library "yasnippet")))
+(setq yas-package-path (expand-file-name "snippets" yas-melpa-path))
+;; (setq yas-snippet-dirs '("~/.emacs.d/my-snippets/" "~/.emacs.d/elpa/yasnippet-20140106.1009/snippets"))
+(setq yas-snippet-dirs '("~/.emacs.d/my-snippets/"))
+(setq yas-snippet-dirs (cons yas-package-path load-path))
 ;(yas--initialize)
 (yas-global-mode 1)
 ;(yas/reload-all)
