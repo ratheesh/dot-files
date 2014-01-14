@@ -73,9 +73,9 @@
   "Select the current line"
   (interactive)
   (progn
-    (transient-mark-mode 1)
-    (set-mark(end-of-line))
-    (line-beginning-position)))
+    (end-of-line)
+    (set-mark (point))
+    (beginning-of-line)))
 
 ;;; kill line backwards
 (defun kill-line-backward ()
