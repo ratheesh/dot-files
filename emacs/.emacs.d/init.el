@@ -18,20 +18,22 @@
 (defvar on_darwin     (string-match "darwin" system-type-as-string))
 (defvar on_gnu_linux  (string-match "gnu/linux" system-type-as-string))
 
-(defvar set-default-font "Inconsolata-12")
+(defvar set-default-font "Inconsolata-14")
 ;; set the default font and size
 (cond (on_darwin
        (set-default-font "Monaco-16")
+       (setq default-frame-alist '((font . "Monaco-16")))
         ))
 
 (cond (on_gnu_linux
-       (set-default-font "Inconsolata-12")
-       (setq default-frame-alist '((font . "Inconsolata-12")))
+       (set-default-font "Inconsolata-14")
+       (setq default-frame-alist '((font . "Inconsolata-14")))
        ;; (set-default-font "12x24")
        ))
 
 (cond (on_windows_nt
        (set-default-font "Lucida Console-11")
+       (setq default-frame-alist '((font . "Lucida Console-11")))
        ))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
