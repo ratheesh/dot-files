@@ -3,10 +3,10 @@
 (require 'popup)
 (require 'yasnippet)
 
-(setq yas-melpa-path (file-name-directory (locate-library "yasnippet")))
-(setq yas-melpa-path (expand-file-name "snippets" yas-melpa-path))
-(setq yas-snippet-dirs '("~/.emacs.d/my-snippets/"))
-(setq yas-snippet-dirs (cons yas-melpa-path yas-snippet-dirs))
+(setq yas-melpa-path (expand-file-name "snippets" (file-name-directory (locate-library "yasnippet"))))
+(setq yas-snippet-dirs '())
+(add-to-list 'yas-snippet-dirs (expand-file-name "my-snippets" user-emacs-directory))
+(add-to-list 'yas-snippet-dirs yas-melpa-path)
 ;(yas--initialize)
 (yas-global-mode 1)
 ;(yas/reload-all)
@@ -33,7 +33,7 @@
 (setq yas-wrap-around-region t)
 
 ;;; From http://iany.me/2012/03/use-popup-isearch-for-yasnippet-prompt/
-;; add some shotcuts in popup menu mode
+;; add some shortcuts in popup menu mode
 (define-key popup-menu-keymap (kbd "M-n") 'popup-next)
 (define-key popup-menu-keymap (kbd "TAB") 'popup-next)
 (define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
