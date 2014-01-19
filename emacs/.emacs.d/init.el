@@ -79,7 +79,7 @@
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
+			 ;; ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
 
@@ -87,7 +87,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(setq package-list '(
+(defvar packages-list '(
     whitespace fill-column-indicator paredit dropdown-list popup telepathy
     highlight-parentheses c-eldoc emamux figlet auto-complete autopair
     auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode
@@ -96,17 +96,31 @@
     smex smooth-scrolling undo-tree yasnippet ecb smart-forward scratch-ext
     org-bullets git-gutter+ xclip sudo-ext iy-go-to-char isearch-symbol-at-point
     idomenu ido-at-point emacs-setup boxquote git-commit-training-wheels-mode
-    git-commit flx-ido jump-char smart-tab unicode-fonts
-))
+    git-commit flx-ido jump-char smart-tab unicode-fonts)
+  "List of packages needs to be installed at launch")
 
-(defun check-and-install (list)
-  (let (v)
-    (dolist (p list v)
-      (if (not (package-installed-p p))
-          (package-install p))))
-  (message "Package check and installation done."))
+(defun has-package-not-installed ()
+  (loop for p in packages-list
+        when (not (package-installed-p p)) do (return t)
+        finally (return nil)))
+(when (has-package-not-installed)
+  ;; Check for new packages (package versions)
+  (message "%s" "Get latest versions of all packages...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  ;; Install the missing packages
+  (dolist (p packages-list)
+    (when (not (package-installed-p p))
+      (package-install p))))
 
-(check-and-install package-list)
+;; (defun check-and-install (list)
+;;   (let (v)
+;;     (dolist (p list v)
+;;       (if (not (package-installed-p p))
+;;           (package-install p))))
+;;   (message "Package check and installation done."))
+
+;; (check-and-install package-list)
 
 (require 'sane-defaults)
 (require 'common-init)
