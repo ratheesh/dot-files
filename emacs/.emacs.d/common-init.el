@@ -52,6 +52,9 @@
 ;;; configure yasnippet
 (require 'setup-yasnippet)
 
+;;; Make all the themes safe by default
+(setq custom-safe-themes t)
+
 ;;smex
 (require 'smex)
 (smex-initialize)
