@@ -126,7 +126,8 @@
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
 (setq-default
- user-mail-address "ratheesh@gmail.com"
+ user-mail-address "ratheeshreddy@gmail.com"
+ user-full-name "Ratheesh S"
  cursor-in-non-selected-windows nil
  cursor-in-non-selected-windows nil
  x-stretch-cursor t ; when on a tab, make the cursor the tab length
