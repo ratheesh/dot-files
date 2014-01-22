@@ -6,6 +6,10 @@
 (global-unset-key (kbd "M-k"))
 (global-set-key (kbd "M-k") 'kill-buffer)
 
+;;; easy short cuts for window management
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-0") 'delete-window)
+
 ;; Completion that uses many different methods to find options.
 (global-set-key (kbd "C-,") 'completion-at-point)
 
