@@ -87,6 +87,8 @@
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
 
+(require 'fringe-current-line)
+
 (when (window-system)
 (require 'fringe-helper)
   (require 'git-gutter-fringe+))
@@ -102,5 +104,7 @@
 
 (require 'iy-go-to-char)
 (require 'isearch-symbol-at-point)
+
+(require 'xlicense)
 
 (provide 'common-init)
