@@ -105,6 +105,4 @@
 (require 'iy-go-to-char)
 (require 'isearch-symbol-at-point)
 
-(require 'xlicense)
-
 (provide 'common-init)
