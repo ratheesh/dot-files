@@ -90,7 +90,7 @@
 (defvar packages-list '(
     whitespace fill-column-indicator paredit dropdown-list popup telepathy
     highlight-parentheses c-eldoc emamux figlet auto-complete autopair
-    auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode
+    auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode lice
     smart-mode-line ido-vertical-mode org-gnome magit key-chord smartparens
     expand-region smart-operator smart-newline duplicate-thing multiple-cursors
     smex smooth-scrolling undo-tree yasnippet ecb smart-forward scratch-ext

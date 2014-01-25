@@ -105,4 +105,7 @@
 (require 'iy-go-to-char)
 (require 'isearch-symbol-at-point)
 
+;;; license management
+(require 'lice)
+
 (provide 'common-init)
