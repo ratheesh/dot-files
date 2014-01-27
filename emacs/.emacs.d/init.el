@@ -96,7 +96,7 @@
     smex smooth-scrolling undo-tree yasnippet ecb smart-forward scratch-ext
     org-bullets git-gutter+ xclip sudo-ext iy-go-to-char isearch-symbol-at-point
     idomenu ido-at-point emacs-setup boxquote git-commit-training-wheels-mode
-    git-commit flx-ido jump-char smart-tab unicode-fonts)
+    git-commit flx-ido jump-char smart-tab unicode-fonts sr-speedbar)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()

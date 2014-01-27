@@ -10,6 +10,7 @@
 (require 'auto-complete-config)
 (require 'ecb)
 (require 'magit)
+(require 'sr-speedbar)
 
 (setq
  c-default-style "linux"

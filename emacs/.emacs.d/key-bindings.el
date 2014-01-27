@@ -60,6 +60,9 @@
 ;; recentf
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
+;;; sr-speedbar toggle
+(global-set-key (kbd "C-c C-s") 'sr-speedbar-toggle)
+
 ;; Magit
 (global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")
