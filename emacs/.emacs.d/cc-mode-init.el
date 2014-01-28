@@ -11,6 +11,7 @@
 (require 'ecb)
 (require 'magit)
 (require 'sr-speedbar)
+(require 'ggtags)
 
 (setq
  c-default-style "linux"
@@ -76,6 +77,11 @@
           #'(lambda ()
             (setq autopair-dont-activate t)
             (autopair-mode -1)))
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
 
 ;;From Linux source
 (defun c-lineup-arglist-tabs-only (ignored)

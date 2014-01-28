@@ -112,9 +112,14 @@
 ;; (global-set-key "\C-c6" 'ecb-goto-window-compilation)
 
 ;; cscope keybindings
-(global-set-key (kbd "<f6>") 'cscope-find-this-text-string)
-(global-set-key (kbd "<f7>") 'cscope-find-global-definition-no-prompting)
-(global-set-key (kbd "<f8>") 'cscope-pop-mark)
+;; (global-set-key (kbd "<f6>") 'cscope-find-this-text-string)
+;; (global-set-key (kbd "<f7>") 'cscope-find-global-definition-no-prompting)
+;; (global-set-key (kbd "<f8>") 'cscope-pop-mark)
+
+;; ggtags keybindings
+(global-set-key (kbd "<f6>") 'ggtags-grep)
+(global-set-key (kbd "<f7>") 'ggtags-find-tag-dwim)
+(global-set-key (kbd "<f8>") 'ggtags-navigation-mode-abort)
 
 ;; org mode key-bindings
 (define-key global-map [(control meta ?r)] 'remember)
