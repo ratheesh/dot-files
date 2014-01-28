@@ -83,7 +83,7 @@
     (menu-bar-mode -1)))
 (add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
 
-(require 'git-commit)
+;;(require 'git-commit)
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
 
