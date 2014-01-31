@@ -114,14 +114,8 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-;; (defun check-and-install (list)
-;;   (let (v)
-;;     (dolist (p list v)
-;;       (if (not (package-installed-p p))
-;;           (package-install p))))
-;;   (message "Package check and installation done."))
-
-;; (check-and-install package-list)
+;;; setup el-get related packages
+(require 'el-get-init)
 
 (require 'sane-defaults)
 (require 'common-init)
