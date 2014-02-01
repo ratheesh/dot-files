@@ -87,7 +87,8 @@
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
 
-(require 'fringe-current-line)
+(when (require 'fringe-current-line nil t)
+  (global-fringe-current-line-mode 1))	;enable to all buffers by default
 
 (when (window-system)
   (require 'linum+)
