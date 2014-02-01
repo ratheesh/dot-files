@@ -114,12 +114,6 @@
     (dotimes (i 10)
       (when (= p (point)) ad-do-it))))
 
-;; Ratheesh - my changes -- need to recheck for duplication or relevance
-(when window-system
-  (require 'linum+)
-  (global-linum-mode t)
-  )
-
 (setq fringe-mode '(1 . 0))
 (delete-selection-mode 1)   ;; delete the sel with a keyp
 (setq confirm-kill-emacs 'y-or-n-p)
