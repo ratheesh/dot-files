@@ -131,6 +131,7 @@
 (require 'isearch-symbol-at-point)
 
 ;;; license management
+(require 'xlicense nil t)
 (require 'lice)
 
 (provide 'common-init)
