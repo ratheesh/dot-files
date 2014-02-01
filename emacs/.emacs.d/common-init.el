@@ -128,6 +128,11 @@
 ;(setq-default indicate-buffer-boundaries 'left)
 ;(setq-default indicate-empty-lines +1)
 
+;;; hungry-delete
+(when (require 'hungry-delete nil 'noerror)
+  (add-hook 'prog-mode
+	    (lambda () (global-hungry-delete-mode))))
+
 (require 'iy-go-to-char)
 (require 'isearch-symbol-at-point)
 
