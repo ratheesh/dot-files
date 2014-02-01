@@ -83,6 +83,14 @@
   (interactive)
   (kill-line 0))
 
+;;; git-grep
+;;; Quelle: https://www.ogre.com/node/447
+(defun git-grep (search)
+  "git-grep the entire current repo"
+  (interactive
+   (list (completing-read "Search for: " nil nil nil (current-word))))
+  (grep-find (concat "git --no-pager grep -P -n " search " `git rev-parse --show-toplevel`")))
+
 ;;; My handwritten eLisp functions :-)
 (defun insert-line-above ()
   "Insert empty line above current one"
