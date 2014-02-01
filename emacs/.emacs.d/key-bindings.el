@@ -74,6 +74,7 @@
 (global-set-key (kbd "C-x p") 'git-gutter+-previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter+-next-hunk)
 (global-set-key (kbd "C-x v r") 'git-gutter+-revert-hunk)
+(global-set-key (kbd "C-x v t") 'git-gutter+-show-hunk)
 
 ;; iy-go-to-char
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
