@@ -83,9 +83,9 @@
     (menu-bar-mode -1)))
 (add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
 
-;;(require 'git-commit)
-(add-hook 'git-commit-mode-hook 'turn-on-flyspell)
-(add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
+(when (require 'git-commit-mode)
+  (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
+  (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0))))
 
 (when (require 'fringe-current-line nil t)
   (global-fringe-current-line-mode 1))	;enable to all buffers by default
