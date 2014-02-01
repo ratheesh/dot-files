@@ -32,6 +32,9 @@
 ;; Quickly jump in document with ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+;;; goto-last-change
+(global-set-key (kbd "C-x C-/") 'goto-last-change)
+
 ;; Transpose stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
 (global-set-key (kbd "M-t l") 'transpose-lines)
