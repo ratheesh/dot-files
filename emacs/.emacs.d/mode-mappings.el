@@ -106,5 +106,7 @@
 ; git commit mode for stgit commit buffer
 (add-to-list 'auto-mode-alist '("\\.stgit-edit.txt$"  . git-commit-mode))
 (add-to-list 'auto-mode-alist '("\\.stgit-new.txt$"  . git-commit-mode))
+(add-to-list 'auto-mode-alist '("\\.stgit-squash.txt$"  . git-commit-mode))
+(add-to-list 'auto-mode-alist '("\\.stgitmsg.txt$"  . git-commit-mode))
 
 (provide 'mode-mappings)
