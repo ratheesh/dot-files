@@ -120,6 +120,7 @@
 
 (require 'sane-defaults)
 (require 'common-init)
+(require 'git-mode-init)
 (require 'mode-mappings)
 (require 'cc-mode-init)
 (require 'org-init)

@@ -73,57 +73,14 @@
 ;;; smart tab
 ;(require 'smart-tab)
 
-;git mode configuration
-(require 'git-commit-training-wheels-mode)
-(add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)
-
 ;; cleanup after git commit is over
 (add-hook 'server-switch-hook
   (lambda ()
     (menu-bar-mode -1)))
 (add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
 
-(when (require 'git-commit-mode)
-  (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
-  (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0))))
-
-(when (require 'fringe-current-line nil t)
+(when (require 'fringe-current-line nil 'noerror)
   (global-fringe-current-line-mode 1))	;enable to all buffers by default
-
-(when (window-system)
-  (require 'linum+)
-  (global-linum-mode t)
-  (require 'git-gutter+)
-  (require 'fringe-helper)
-  (require 'git-gutter-fringe+)
-  (global-git-gutter+-mode t)
-  ;; (setq-default left-fringe-width  20)
-  ;; (setq-default right-fringe-width 20)
-  (setq git-gutter-fr+-side 'right-fringe)
-  (set-face-foreground 'git-gutter-fr+-modified "yellow")
-  (set-face-foreground 'git-gutter-fr+-added    "green")
-  (set-face-foreground 'git-gutter-fr+-deleted  "red"))
-
-(add-hook 'before-make-frame-hook
-          #'(lambda ()
-	      (require 'linum+)
-	      (global-linum-mode t)
-	      (require 'git-gutter+)
-	      (require 'fringe-helper)
-	      (require 'git-gutter-fringe+)
-	      (global-git-gutter+-mode t)
-	      ;; (setq-default left-fringe-width  20)
-	      ;; (setq-default right-fringe-width 20)
-	      (setq git-gutter-fr+-side 'right-fringe)
-	      (set-face-foreground 'git-gutter-fr+-modified "yellow")
-	      (set-face-foreground 'git-gutter-fr+-added    "green")
-	      (set-face-foreground 'git-gutter-fr+-deleted  "red")))
-
-;; (require 'git-gutter+)
-;; ;; If you enable global minor mode
-;; (global-git-gutter+-mode t)
-;; (setq git-gutter+-separator-sign "|")
-;; (set-face-foreground 'git-gutter+-separator "yellow")
 
 ;(setq-default indicate-buffer-boundaries 'left)
 ;(setq-default indicate-empty-lines +1)
