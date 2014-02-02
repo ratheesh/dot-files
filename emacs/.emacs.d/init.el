@@ -1,7 +1,7 @@
 ;;-*-Emacs-Lisp-*-
-;; .init.el
+;; init.el
 ;; Ratheesh S
-;; Jan 2014
+;; Feb 2014
 ;; Some stuff is taken from http://www.dgp.toronto.edu/~ghali/emacs.html
 ;; Based on magnar's https://github.com/magnars/.emacs.d
 ;; Special thanks to santosh shivraj
