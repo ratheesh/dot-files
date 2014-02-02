@@ -145,6 +145,11 @@
  mouse-highlight 1
 )
 
+;;; open bookmarks buffer on startup
+(when (require 'bookmark nil 'noerror)
+  (bookmark-bmenu-list)
+  (switch-to-buffer "*Bookmark List*"))
+
 ;; Show me your parens!
 (setq show-paren-delay 0
       show-paren-style 'parenthesis)
