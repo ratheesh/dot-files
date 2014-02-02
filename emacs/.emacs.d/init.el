@@ -92,7 +92,7 @@
     whitespace fill-column-indicator paredit dropdown-list popup telepathy
     highlight-parentheses c-eldoc emamux figlet auto-complete autopair
     auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode lice
-    smart-mode-line ido-vertical-mode magit key-chord smartparens
+    smart-mode-line ido-vertical-mode magit key-chord smartparens diminish
     expand-region smart-operator smart-newline duplicate-thing multiple-cursors
     smex smooth-scrolling undo-tree yasnippet ecb smart-forward scratch-ext
     org-bullets git-gutter+ git-gutter-fringe+ xclip sudo-ext iy-go-to-char
