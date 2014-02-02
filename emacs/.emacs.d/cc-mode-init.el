@@ -1,17 +1,17 @@
 ;; -*- Mode: Lisp -*-
 
 ;; Required packages
-(require 'cc-mode)
-(require 'autopair)
-(require 'fill-column-indicator)
-(require 'rainbow-delimiters)
-(require 'xcscope)
-(require 'whitespace)
-(require 'auto-complete-config)
-(require 'ecb)
-(require 'magit)
-(require 'sr-speedbar)
-(require 'ggtags)
+(require 'cc-mode nil 'noerror)
+(require 'autopair nil 'noerror)
+(require 'fill-column-indicator nil 'noerror)
+(require 'rainbow-delimiters nil 'noerror)
+(require 'xcscope nil 'noerror)
+(require 'whitespace nil 'noerror)
+(require 'auto-complete-config nil 'noerror)
+(require 'ecb nil 'noerror)
+(require 'magit nil 'noerror)
+(require 'sr-speedbar nil 'noerror)
+(require 'ggtags nil 'noerror)
 
 (setq
  c-default-style "linux"

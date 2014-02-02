@@ -83,16 +83,16 @@
 (setq org-src-fontify-natively t)
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
-(setq undo-tree-mode-lighter "")
-(require 'undo-tree)
-(global-undo-tree-mode t)
+(when (require 'undo-tree nil 'noerror)
+  (setq undo-tree-mode-lighter "")
+  (global-undo-tree-mode t))
 
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
 
 ;; Add parts of each file's directory to the buffer name if not unique
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+(when (require 'uniquify nil 'noerror)
+  (setq uniquify-buffer-name-style 'forward))
 
 ;; A saner ediff
 (setq ediff-diff-options "-w")
@@ -164,12 +164,12 @@
 
 (iswitchb-mode t)
 
-(require 'scratch-ext)
-(require 'expand-region)
-(require 'multiple-cursors)
-(require 'jump-char)
-(require 'smart-forward)
-;(require 'change-inner)
-;(require 'multifiles)
+(require 'scratch-ext nil 'noerror)
+(require 'expand-region nil 'noerror)
+(require 'multiple-cursors nil 'noerror)
+(require 'jump-char nil 'noerror)
+(require 'smart-forward nil 'noerror)
+;(require 'change-inner nil 'noerror)
+;(require 'multifiles nil 'noerror)
 
 (provide 'sane-defaults)

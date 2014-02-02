@@ -2,39 +2,39 @@
 
 ;;; Enable paredit (only for eLisp mode)
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(when (require 'paredit nil 'noerror)
+  (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+  (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+  (add-hook 'scheme-mode-hook           #'enable-paredit-mode))
 
 ;;ido mode
-(require 'ido)
-(ido-mode t)
-(ido-mode 'both) ;; for buffers and files
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-case-fold nil
-      ido-auto-merge-work-directories-length -1
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point nil
-      ido-max-prospects 50
-      resize-mini-windows 'grow-only
-      max-mini-window-height 0.5
-      completion-ignored-extensions
-          '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod" ".cmd")
-      )
+(when (require 'ido nil 'noerror)
+  (ido-mode t)
+  (ido-mode 'both) ;; for buffers and files
+  (setq ido-enable-prefix nil
+	ido-enable-flex-matching t
+	ido-case-fold nil
+	ido-auto-merge-work-directories-length -1
+	ido-create-new-buffer 'always
+	ido-use-filename-at-point nil
+	ido-max-prospects 50
+	resize-mini-windows 'grow-only
+	max-mini-window-height 0.5
+	completion-ignored-extensions
+	'(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod" ".cmd")))
 
 ;; Try out flx-ido for better flex matching between words
-(require 'flx-ido)
-(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-use-faces nil)
+(when (require 'flx-ido nil 'noerror)
+  (flx-ido-mode 1)
+  ;; disable ido faces to see flx highlights.
+  (setq ido-use-faces nil))
 
 ;; flx-ido looks better with ido-vertical-mode
-;; (require 'ido-vertical-mode)
-;; (ido-vertical-mode)
+;; (when (require 'ido-vertical-mode nil 'noerror)
+;;   (ido-vertical-mode))
 
 (defun sd/ido-define-keys () ;; C-n/p is more intuitive in vertical layout
   (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
@@ -46,29 +46,31 @@
 (set-default 'imenu-auto-rescan t)
 
 ;; Ido at point (C-,)
-(require 'ido-at-point)
-(ido-at-point-mode)
+(when (require 'ido-at-point nil 'noerror)
+  (ido-at-point-mode))
 
 ;;; configure yasnippet
-(require 'setup-yasnippet)
+(require 'setup-yasnippet nil 'noerror)
 
 ;;; Make all the themes safe by default
 (setq custom-safe-themes t)
 
 ;;smex
-(require 'smex)
-(smex-initialize)
+(when (require 'smex nil 'noerror)
+  (smex-initialize))
 
 ;;; Enable footnote mode for text files
-(add-hook 'text-mode-hook 'footnote-mode)
+(when (require 'footnote nil 'noerror)
+  (add-hook 'text-mode-hook 'footnote-mode))
+
 ;;; call footnote-init when entering footnote mode for realligning
 ;;; across sessions
-(require 'footnote-init)
-(add-hook 'footnote-mode-hook 'footnote-init)
+(when (require 'footnote-init nil 'noerror)
+  (add-hook 'footnote-mode-hook 'footnote-init))
 
 ;; smart mode line
-(require 'smart-mode-line)
-(sml/setup)
+(when (require 'smart-mode-line nil 'noerror)
+  (sml/setup))
 
 ;;; smart tab
 ;(require 'smart-tab)
@@ -90,11 +92,11 @@
   (add-hook 'prog-mode
 	    (lambda () (global-hungry-delete-mode))))
 
-(require 'iy-go-to-char)
-(require 'isearch-symbol-at-point)
+(require 'iy-go-to-char nil 'noerror)
+(require 'isearch-symbol-at-point nil 'noerror)
 
 ;;; license management
-(require 'xlicense nil t)
-(require 'lice)
+(require 'xlicense nil 'noerror)
+(require 'lice nil 'noerror)
 
 (provide 'common-init)
