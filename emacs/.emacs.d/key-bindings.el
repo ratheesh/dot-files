@@ -124,6 +124,7 @@
 (global-set-key (kbd "<f6>") 'ggtags-grep)
 (global-set-key (kbd "<f7>") 'ggtags-find-tag-dwim)
 (global-set-key (kbd "<f8>") 'ggtags-navigation-mode-abort)
+(global-set-key (kbd "<f9>") 'ack)
 
 ;; org mode key-bindings
 (define-key global-map [(control meta ?r)] 'remember)
