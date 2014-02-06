@@ -131,6 +131,23 @@
   (lambda ()
     (which-function-mode t)))
 
+;;; highlight format specifiers in *printf functions in c-mode
+(defvar font-lock-format-specifier-face 'font-lock-format-specifier-face
+  "Face name to use for format specifiers.")
+
+(defface font-lock-format-specifier-face
+  '((t (:foreground "#ff00ff")))
+  "Font Lock mode face used to highlight format specifiers."
+  :group 'font-lock-faces)
+
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (font-lock-add-keywords nil
+				    '(("[^%]\\(%\\([[:digit:]]+\\$\\)?[-+' #0*]*\\([[:digit:]]*\\|\\*\\|\\*[[:digit:]]+\\$\\)\\(\\.\\([[:digit:]]*\\|\\*\\|\\*[[:digit:]]+\\$\\)\\)?\\([hlLjzt]\\|ll\\|hh\\)?\\([aAbdiuoxXDOUfFeEgGcCsSpn]\\|\\[\\^?.[^]]*\\]\\)\\)"
+				       1 font-lock-format-specifier-face t)
+				      ("\\(%%\\)"
+				       1 font-lock-format-specifier-face t)) )))
+
 ;;key chord config
 (require 'key-chord)
 (key-chord-mode 1)
