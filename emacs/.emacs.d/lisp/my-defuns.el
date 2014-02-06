@@ -91,6 +91,23 @@
    (list (completing-read "Search for: " nil nil nil (current-word))))
   (grep-find (concat "git --no-pager grep -P -n " search " `git rev-parse --show-toplevel`")))
 
+
+;; DOS to UNIX, remove the meta M's
+;;; Quelle: https://github.com/necaris/emacs-config/blob/master/my-functions.el
+(defun dos2unix ()
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match ""))))
+
+;; UNIX to DOS, put in the meta M's
+;;; Quelle: https://github.com/necaris/emacs-config/blob/master/my-functions.el
+(defun unix2dos ()
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward "\n" nil t) (replace-match "\r\n"))))
+
 ;;; My handwritten eLisp functions :-)
 (defun insert-line-above ()
   "Insert empty line above current one"
