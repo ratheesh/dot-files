@@ -103,6 +103,9 @@
 (add-to-list 'auto-mode-alist '("\\.c\\'"   . c-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'"  . c-mode))
 
+(add-to-list 'auto-mode-alist '("\\.dts\\'"   . dts-mode))
+(add-to-list 'auto-mode-alist '("\\.dtsi\\'"  . dts-mode))
+
 ; git commit mode for stgit commit buffer
 (add-to-list 'auto-mode-alist '("\\.stgit-edit.txt$"  . git-commit-mode))
 (add-to-list 'auto-mode-alist '("\\.stgit-new.txt$"  . git-commit-mode))
