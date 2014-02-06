@@ -3,8 +3,6 @@
 ;; Required packages
 (require 'cc-mode nil 'noerror)
 (require 'autopair nil 'noerror)
-(require 'fill-column-indicator nil 'noerror)
-(require 'rainbow-delimiters nil 'noerror)
 (require 'xcscope nil 'noerror)
 (require 'whitespace nil 'noerror)
 (require 'auto-complete-config nil 'noerror)
@@ -18,7 +16,7 @@
  autopair-autowrap t
  cscope-do-not-update-database t
  whitespace-style '(face lines-tail trailing empty space-before-tab)
-)
+ )
 
 (setq-default
  c-basic-offset 8
@@ -27,17 +25,20 @@
  indent-tabs-mode t
  fci-rule-column 80
 ;show-trailing-whitespace t
-)
+ )
 
-(global-rainbow-delimiters-mode)
+(when (require 'rainbow-delimiters nil 'noerror)
+  (global-rainbow-delimiters-mode))
 
 ;;fci-column-indicator mode
-(setq
- fci-handle-truncate-lines nil
- fci-rule-width 1
- fci-rule-color "#404040"
-)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(when (require 'fill-column-indicator nil 'noerror)
+  (setq
+   fci-handle-truncate-lines nil
+   fci-rule-width 1
+   fci-rule-color "#404040"
+   )
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1))))
+
 ;(global-fci-mode 1)
 (defun auto-fci-mode (&optional unused)
 (if (> (window-width) fci-rule-column)
@@ -149,20 +150,18 @@
 				       1 font-lock-format-specifier-face t)) )))
 
 ;;key chord config
-(require 'key-chord)
-(key-chord-mode 1)
-(key-chord-define c-mode-map ";;" "\C-e") ;end of the line
+(when (require 'key-chord)
+  (key-chord-mode 1)
+  (key-chord-define c-mode-map ";;" "\C-e")) ;end of the line
 
 ;; smart operator - really smart!
-;(require 'smart-operator)
-;(defun my-c-mode-common-hook()
-;  (smart-insert-operator-hook)
-
-;  (local-unset-key (kbd "."))
-;  (local-unset-key (kbd ":"))
-;  (local-unset-key (kbd "%"))
-;  (local-set-key (kbd "*") 'c-electric-star))
-
+;; (require 'smart-operator nil 'noerror)
+;; (defun my-c-mode-common-hook()
+;;  (smart-insert-operator-hook)
+;;  (local-unset-key (kbd "."))
+;;  (local-unset-key (kbd ":"))
+;;  (local-unset-key (kbd "%"))
+;;  (local-set-key (kbd "*") 'c-electric-star))
 ;(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;; ECB env settings
