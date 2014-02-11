@@ -117,11 +117,14 @@
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 
 ;; ;; Auto complete configuration
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-;(setq ac-source-yasnippet nil)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+(when (require 'auto-complete-config nil 'noerror)
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+  (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
+  (ac-config-default)
+  (setq ac-auto-show-menu nil)
+  ;; (setq ac-source-yasnippet nil)
+  (ac-set-trigger-key "TAB")
+  (ac-set-trigger-key "<tab>"))
 
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
