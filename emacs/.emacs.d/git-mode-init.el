@@ -43,4 +43,7 @@
 ;; (setq git-gutter+-separator-sign "|")
 ;; (set-face-foreground 'git-gutter+-separator "yellow")
 
+;;; git messenger - pop last commit message on the current line
+(require 'git-messenger nil 'noerror)
+
 (provide 'git-mode-init)
