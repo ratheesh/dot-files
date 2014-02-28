@@ -46,4 +46,7 @@
 ;;; git messenger - pop last commit message on the current line
 (require 'git-messenger nil 'noerror)
 
+;;; stgit-mode - stgit wrapper for eMacs
+(require 'stgit nil 'noerror)
+
 (provide 'git-mode-init)
