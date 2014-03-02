@@ -98,7 +98,7 @@
     org-bullets git-gutter+ git-gutter-fringe+ xclip sudo-ext iy-go-to-char
     isearch-symbol-at-point idomenu ido-at-point emacs-setup boxquote
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
-    sr-speedbar ggtags fringe-current-line git-messenger stgit)
+    sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()

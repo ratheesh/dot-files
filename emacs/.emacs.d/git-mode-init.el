@@ -26,6 +26,8 @@
           #'(lambda ()
 	      (require 'linum+)
 	      (global-linum-mode t)
+	      (require 'hlinum)
+	      (hlinum-activate)
 	      (require 'git-gutter+)
 	      (require 'fringe-helper)
 	      (require 'git-gutter-fringe+)
