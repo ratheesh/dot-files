@@ -106,4 +106,7 @@
 (require 'xlicense nil 'noerror)
 (require 'lice nil 'noerror)
 
+;;; simplenote - note taking app for smartphones
+(require 'simplenote nil 'noerror)
+
 (provide 'common-init)
