@@ -45,6 +45,17 @@
 ;; (setq git-gutter+-separator-sign "|")
 ;; (set-face-foreground 'git-gutter+-separator "yellow")
 
+;; Customizing colors used in diff mode
+(defun custom-diff-colors ()
+  "update the colors for diff faces"
+  (set-face-attribute
+   'diff-added nil :foreground "green" :background 'unspecified)
+  (set-face-attribute
+   'diff-removed nil :foreground "red" :background 'unspecified)
+  (set-face-attribute
+   'diff-changed nil :foreground "purple" :background 'unspecified))
+(eval-after-load "diff-mode" '(custom-diff-colors))
+
 ;;; git messenger - pop last commit message on the current line
 (require 'git-messenger nil 'noerror)
 
