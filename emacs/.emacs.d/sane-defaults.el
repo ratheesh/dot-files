@@ -164,6 +164,9 @@
 
 (iswitchb-mode t)
 
+(require 'tramp nil 'noerror)
+(setq tramp-default-method "ssh")
+
 (require 'scratch-ext nil 'noerror)
 (require 'expand-region nil 'noerror)
 (require 'multiple-cursors nil 'noerror)
