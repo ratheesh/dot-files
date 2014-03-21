@@ -155,6 +155,7 @@
 ;;key chord config
 (when (require 'key-chord)
   (key-chord-mode 1)
+  (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
   (key-chord-define c-mode-map ";;" "\C-e")) ;end of the line
 
 ;; smart operator - really smart!
