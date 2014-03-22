@@ -4,7 +4,7 @@
 (global-set-key (kbd "C-S-k") 'kill-line-backward)
 
 (global-unset-key (kbd "M-k"))
-(global-set-key (kbd "M-k") 'kill-buffer)
+(global-set-key (kbd "M-k") 'kill-this-buffer)
 
 ;;; easy short cuts for window management
 (global-set-key (kbd "M-1") 'delete-other-windows)
