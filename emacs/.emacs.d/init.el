@@ -98,7 +98,8 @@
     org-bullets git-gutter+ git-gutter-fringe+ xclip sudo-ext iy-go-to-char
     isearch-symbol-at-point idomenu ido-at-point emacs-setup boxquote
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
-    sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote)
+    sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
+    use-package)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
@@ -117,6 +118,12 @@
 
 ;;; setup el-get related packages
 (require 'el-get-init)
+
+;;; make sure that use-package is initialized first before other
+;;; package to make sure that package are properly initialized
+(when (require 'use-package nil 'noerror)
+  (setq use-package-idle-interval 2)
+  (setq use-package-verbose t))
 
 (require 'sane-defaults)
 (require 'common-init)
