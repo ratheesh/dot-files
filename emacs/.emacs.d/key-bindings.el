@@ -18,17 +18,6 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-;; Expand region (increases selected region by semantic units)
-(global-set-key (kbd "M-=") 'er/expand-region)
-(global-set-key (kbd "M--") 'er/contract-region)
-
-;; Experimental multiple-cursors
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
-
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
-
 ;; Quickly jump in document with ace-jump-mode
 ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
@@ -83,9 +72,6 @@
 
 ;; isearch-symbol-at-point
 (global-set-key (kbd "M-s s") 'isearch-symbol-at-point)
-
-;; redo
-(global-set-key (kbd "C-?") 'undo-tree-redo)
 
 ;; Jump to a definition in the current file. (This is awesome)
 (global-set-key (kbd "C-x C-i") 'ido-imenu)

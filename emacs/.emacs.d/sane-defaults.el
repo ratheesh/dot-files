@@ -1,3 +1,6 @@
+;;; This file contains defaults that are sane enough for basic Emacs
+;;; functionality
+
 ;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
 
@@ -68,7 +71,7 @@
 (global-subword-mode 1)
 
 ;; Keep cursor away from edges when scrolling up/down
-;(require 'smooth-scrolling)
+;(use-package smooth-scrolling)
 
 ;; Allow recursive minibuffers
 (setq enable-recursive-minibuffers t)
@@ -83,16 +86,22 @@
 (setq org-src-fontify-natively t)
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
-(when (require 'undo-tree nil 'noerror)
-  (setq undo-tree-mode-lighter "")
-  (global-undo-tree-mode t))
+(use-package undo-tree
+  :bind
+  (("C-?" . undo-tree-redo))
+  :init
+  (progn
+    (setq undo-tree-mode-lighter "")
+    (global-undo-tree-mode t)))
 
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
 
 ;; Add parts of each file's directory to the buffer name if not unique
-(when (require 'uniquify nil 'noerror)
-  (setq uniquify-buffer-name-style 'forward))
+(use-package uniquify
+  :init
+  (progn
+    (setq uniquify-buffer-name-style 'forward)))
 
 ;; A saner ediff
 (setq ediff-diff-options "-w")
@@ -146,9 +155,11 @@
 )
 
 ;;; open bookmarks buffer on startup
-(when (require 'bookmark nil 'noerror)
-  (bookmark-bmenu-list)
-  (switch-to-buffer "*Bookmark List*"))
+(use-package bookmark
+  :init
+  (progn 
+    (bookmark-bmenu-list)
+    (switch-to-buffer "*Bookmark List*")))
 
 ;; Show me your parens!
 (setq show-paren-delay 0
@@ -164,15 +175,28 @@
 
 (iswitchb-mode t)
 
-(require 'tramp nil 'noerror)
-(setq tramp-default-method "ssh")
+(use-package tramp
+  :init
+  (progn 
+    (setq tramp-default-method "ssh")))
 
-(require 'scratch-ext nil 'noerror)
-(require 'expand-region nil 'noerror)
-(require 'multiple-cursors nil 'noerror)
-(require 'jump-char nil 'noerror)
-(require 'smart-forward nil 'noerror)
-;(require 'change-inner nil 'noerror)
-;(require 'multifiles nil 'noerror)
+(use-package scratch-ext)
+
+(use-package expand-region
+  :bind
+  (("M-=" . er/expand-region)
+   ("M--" . er/contract-region)))
+
+(use-package multiple-cursors
+  :bind
+  (("C-S-c C-S-c" . mc/edit-lines)
+   ("C-S-c C-e" . mc/edit-ends-of-lines)
+   ("C-S-c C-a" . mc/edit-beginnings-of-lines)
+   ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+
+(use-package jump-char)
+(use-package smart-forward)
+;(use-package change-inner)
+;(use-package multifiles)
 
 (provide 'sane-defaults)
