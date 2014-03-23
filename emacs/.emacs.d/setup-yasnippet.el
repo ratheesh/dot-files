@@ -1,14 +1,16 @@
 ;;; configure yasnippet
-(require 'dropdown-list)
-(require 'popup)
-(require 'yasnippet)
+(use-package dropdown-list)
+(use-package popup)
 
-(setq yas-melpa-path (expand-file-name "snippets" (file-name-directory (locate-library "yasnippet"))))
-(setq yas-snippet-dirs '())
-(add-to-list 'yas-snippet-dirs (expand-file-name "my-snippets" user-emacs-directory))
-(add-to-list 'yas-snippet-dirs yas-melpa-path)
-;(yas--initialize)
-(yas-global-mode 1)
+(use-package yasnippet
+  :config
+  (progn 
+    (setq yas-melpa-path (expand-file-name "snippets" (file-name-directory (locate-library "yasnippet"))))
+    (setq yas-snippet-dirs '())
+    (add-to-list 'yas-snippet-dirs (expand-file-name "my-snippets" user-emacs-directory))
+    (add-to-list 'yas-snippet-dirs yas-melpa-path)
+    ;;(yas--initialize)
+    (yas-global-mode 1)))
 ;(yas/reload-all)
 
 (setq yas-prompt-functions '(yas-ido-prompt
