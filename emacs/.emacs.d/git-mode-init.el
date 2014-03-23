@@ -1,19 +1,24 @@
 ;;; initialize git mode
 
-(when (require 'git-commit-mode nil 'noerror)
-  (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
-  (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0))))
+(use-package git-commit-mode
+  :init
+  (progn
+    (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
+    (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
+    ))
 
 ;git mode configuration
-(when (require 'git-commit-training-wheels-mode nil 'noerror)
-  (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode))
+(use-package git-commit-training-wheels-mode
+  :init
+  (progn
+    (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)))
 
 (when (window-system)
-  (require 'linum+)
+  (use-package linum+)
   (global-linum-mode t)
-  (require 'git-gutter+)
-  (require 'fringe-helper)
-  (require 'git-gutter-fringe+)
+  (use-package git-gutter+)
+  (use-package fringe-helper)
+  (use-package git-gutter-fringe+)
   (global-git-gutter+-mode t)
   ;; (setq-default left-fringe-width  20)
   ;; (setq-default right-fringe-width 20)
@@ -24,13 +29,13 @@
 
 (add-hook 'before-make-frame-hook
           #'(lambda ()
-	      (require 'linum+)
+	      (use-package linum+)
 	      (global-linum-mode t)
-	      (require 'hlinum)
+	      (use-package hlinum)
 	      (hlinum-activate)
-	      (require 'git-gutter+)
-	      (require 'fringe-helper)
-	      (require 'git-gutter-fringe+)
+	      (use-package git-gutter+)
+	      (use-package fringe-helper)
+	      (use-package git-gutter-fringe+)
 	      (global-git-gutter+-mode t)
 	      ;; (setq-default left-fringe-width  20)
 	      ;; (setq-default right-fringe-width 20)
@@ -57,9 +62,17 @@
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
 ;;; git messenger - pop last commit message on the current line
-(require 'git-messenger nil 'noerror)
+(use-package git-messenger
+  :bind
+  (("C-x v p" . git-messenger:popup-message)))
 
 ;;; stgit-mode - stgit wrapper for eMacs
-(require 'stgit nil 'noerror)
+(use-package stgit
+  :init
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.stgit-edit.txt$"  . git-commit-mode))
+    (add-to-list 'auto-mode-alist '("\\.stgit-new.txt$"  . git-commit-mode))
+    (add-to-list 'auto-mode-alist '("\\.stgit-squash.txt$"  . git-commit-mode))
+    (add-to-list 'auto-mode-alist '("\\.stgitmsg.txt$"  . git-commit-mode))))
 
 (provide 'git-mode-init)

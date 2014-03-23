@@ -76,9 +76,6 @@
 (global-set-key (kbd "C-x v r") 'git-gutter+-revert-hunk)
 (global-set-key (kbd "C-x v t") 'git-gutter+-show-hunk)
 
-;;; git messenger
-(global-set-key (kbd "C-x v p") 'git-messenger:popup-message)
-
 ;; iy-go-to-char
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
