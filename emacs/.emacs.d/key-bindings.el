@@ -13,11 +13,6 @@
 ;; Completion that uses many different methods to find options.
 (global-set-key (kbd "C-,") 'completion-at-point)
 
-;; Smart M-x
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
 ;; Quickly jump in document with ace-jump-mode
 ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
