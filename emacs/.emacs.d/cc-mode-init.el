@@ -1,15 +1,11 @@
-;; -*- Mode: Lisp -*-
+;; cc-mode configuration
 
 ;; Required packages
-(require 'cc-mode nil 'noerror)
-(require 'autopair nil 'noerror)
-(require 'xcscope nil 'noerror)
-(require 'whitespace nil 'noerror)
-(require 'auto-complete-config nil 'noerror)
-(require 'ecb nil 'noerror)
-(require 'magit nil 'noerror)
-(require 'sr-speedbar nil 'noerror)
-(require 'ggtags nil 'noerror)
+(use-package cc-mode)
+(use-package autopair)
+(use-package xcscope)
+(use-package whitespace)
+(use-package auto-complete-config)
 
 (setq
  c-default-style "linux"
@@ -23,21 +19,14 @@
  c-default-style "linux"
  tab-width 8
  indent-tabs-mode t
- fci-rule-column 80
 ;show-trailing-whitespace t
  )
 
-(when (require 'rainbow-delimiters nil 'noerror)
-  (global-rainbow-delimiters-mode))
-
-;;fci-column-indicator mode
-(when (require 'fill-column-indicator nil 'noerror)
-  (setq
-   fci-handle-truncate-lines nil
-   fci-rule-width 1
-   fci-rule-color "#404040"
-   )
-  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1))))
+;;; make parenthesis colorful!
+(use-package rainbow-delimiters
+  :init
+  (progn
+    (global-rainbow-delimiters-mode)))
 
 ;(global-fci-mode 1)
 (defun auto-fci-mode (&optional unused)
@@ -46,10 +35,21 @@
       (fci-mode 0))
 )
 
+;;fci-column-indicator mode
+(use-package fill-column-indicator
+  :config
+  (progn 
+    (setq
+     fci-handle-truncate-lines nil
+     fci-rule-width 1
+     fci-rule-color "#404040")
+    (setq-default  fci-rule-column 80)
+    (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+    (add-hook 'after-change-major-mode-hook 'auto-fci-mode)
+    (add-hook 'window-configuration-change-hook 'auto-fci-mode)))
+
 (electric-indent-mode 1)
 
-(add-hook 'after-change-major-mode-hook 'auto-fci-mode)
-(add-hook 'window-configuration-change-hook 'auto-fci-mode)
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'c-mode-common-hook
             (lambda ()
@@ -117,14 +117,17 @@
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 
 ;; ;; Auto complete configuration
-(when (require 'auto-complete-config nil 'noerror)
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-  (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
-  (ac-config-default)
-  (setq ac-auto-show-menu nil)
-  ;; (setq ac-source-yasnippet nil)
-  (ac-set-trigger-key "TAB")
-  (ac-set-trigger-key "<tab>"))
+(use-package auto-complete-config
+  :init
+  (progn 
+    (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+    (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
+    (ac-config-default)
+    (setq ac-auto-show-menu nil)
+    ;; (setq ac-source-yasnippet nil)
+    
+    (ac-set-trigger-key "TAB")
+    (ac-set-trigger-key "<tab>")))
 
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
@@ -153,26 +156,73 @@
 				       1 font-lock-format-specifier-face t)) )))
 
 ;;key chord config
-(when (require 'key-chord)
-  (key-chord-mode 1)
-  (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
-  (key-chord-define c-mode-map ";;" "\C-e")) ;end of the line
+(use-package key-chord
+  :init
+  (progn 
+    (key-chord-mode 1)
+    (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
+    (key-chord-define c-mode-map ";;" "\C-e")) ;end of the line
+  )
 
 ;; smart operator - really smart!
-;; (require 'smart-operator nil 'noerror)
-;; (defun my-c-mode-common-hook()
-;;  (smart-insert-operator-hook)
-;;  (local-unset-key (kbd "."))
-;;  (local-unset-key (kbd ":"))
-;;  (local-unset-key (kbd "%"))
-;;  (local-set-key (kbd "*") 'c-electric-star))
-;(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+;; (use-package smart-operator
+;;   :init
+;;   (progn 
+;;     (defun my-c-mode-common-hook()
+;;       (smart-insert-operator-hook)
+;;       (local-unset-key (kbd "."))
+;;       (local-unset-key (kbd ":"))
+;;       (local-unset-key (kbd "%"))
+;;       (local-set-key (kbd "*") 'c-electric-star))
+;;     (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)))
+
+;;; gtags configuration
+(use-package ggtags
+  :bind
+  (
+    ("<f6>" . ggtags-grep)
+    ("<f7>" . ggtags-find-tag-dwim)
+    ("<f8>" . ggtags-navigation-mode-abort)))
+
+(use-package magit
+  :bind
+  (("C-x g" . magit-status)))
 
 ;; ECB env settings
-(setq
- ecb-layout-name "rathy-dh-layout"
- ecb-show-sources-in-directories-buffer 'always
- ecb-compile-window-height nil
-)
+(use-package ecb
+  :bind
+  (("\C-c(" . ecb-activate)
+   ("\C-c)" . ecb-deactivate)
+
+   ;; show/hide ecb window
+   ;; ("C-;" . ecb-show-ecb-windows)
+   ;; ("C-'" . ecb-hide-ecb-windows)
+
+   ;; quick navigation between ecb windows
+   
+   ("\C-c1" . ecb-goto-window-edit1)
+   ("\C-c2" . ecb-goto-window-directories)
+   ("\C-c3" . ecb-goto-window-history)
+   ;; ("\C-c4" . ecb-goto-window-sources)
+   ;; ("\C-c5" .  ecb-goto-window-methods)
+   ;; ("\C-c6" .  ecb-goto-window-compilation)
+
+   ;; cscope keybindings
+   ;; ("<f6>" . cscope-find-this-text-string)
+   ;; ("<f7>" . cscope-find-global-definition-no-prompting)
+   ;; ("<f8>" . cscope-pop-mark))
+   )
+  :config
+  (progn 
+    (setq
+     ecb-layout-name "rathy-dh-layout"
+     ecb-show-sources-in-directories-buffer 'always
+     ecb-compile-window-height nil
+     )
+    ))
+
+(use-package sr-speedbar
+  :bind
+  (("C-c C-s" . sr-speedbar-toggle)))
 
 (provide 'cc-mode-init)

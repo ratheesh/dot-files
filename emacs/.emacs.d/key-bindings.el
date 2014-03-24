@@ -47,11 +47,7 @@
 ;; recentf
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
-;;; sr-speedbar toggle
-(global-set-key (kbd "C-c C-s") 'sr-speedbar-toggle)
-
 ;; Magit
-(global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")
 
 ;; git-gutter+
@@ -79,32 +75,6 @@
 (global-set-key (kbd "M-s e") 'sudo-edit)
 
 ;; C mode key bindings
-;; ecb
-;; activate and deactivate ecb
-(global-set-key "\C-c(" 'ecb-activate)
-(global-set-key "\C-c)" 'ecb-deactivate)
-
-;; show/hide ecb window
-;; (global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
-;; (global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
-
-;; quick navigation between ecb windows
-(global-set-key "\C-c1" 'ecb-goto-window-edit1)
-(global-set-key "\C-c2" 'ecb-goto-window-directories)
-(global-set-key "\C-c3" 'ecb-goto-window-history)
-;; (global-set-key "\C-c4" 'ecb-goto-window-sources)
-;; (global-set-key "\C-c5" 'ecb-goto-window-methods)
-;; (global-set-key "\C-c6" 'ecb-goto-window-compilation)
-
-;; cscope keybindings
-;; (global-set-key (kbd "<f6>") 'cscope-find-this-text-string)
-;; (global-set-key (kbd "<f7>") 'cscope-find-global-definition-no-prompting)
-;; (global-set-key (kbd "<f8>") 'cscope-pop-mark)
-
-;; ggtags keybindings
-(global-set-key (kbd "<f6>") 'ggtags-grep)
-(global-set-key (kbd "<f7>") 'ggtags-find-tag-dwim)
-(global-set-key (kbd "<f8>") 'ggtags-navigation-mode-abort)
 (global-set-key (kbd "<f9>") 'ack)
 
 ;; org mode key-bindings
@@ -120,7 +90,6 @@
 
 ;; misc
 (global-set-key (kbd "<f5>") 'revert-buffer)
-(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; from snippets.el
 (global-set-key (kbd "M-i") 'ido-goto-symbol)
