@@ -100,6 +100,7 @@
 (add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
 
 (use-package fringe-current-line
+  :disabled t
   :init
   (progn 
     (global-fringe-current-line-mode 1))) ;enable to all buffers by default
