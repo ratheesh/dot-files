@@ -117,6 +117,8 @@
 
 ;;; ack-and-half - alternative for grep
 (use-package ack-and-a-half
+  :bind
+  (("<f9>" . ack))
   :init
   (progn 
     (defalias 'ack 'ack-and-a-half)

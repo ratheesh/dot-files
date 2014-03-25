@@ -66,9 +66,6 @@
 ;; Edit file with sudo
 (global-set-key (kbd "M-s e") 'sudo-edit)
 
-;; C mode key bindings
-(global-set-key (kbd "<f9>") 'ack)
-
 ;; org mode key-bindings
 (define-key global-map [(control meta ?r)] 'remember)
 (global-set-key (kbd "C-c r") 'remember)
