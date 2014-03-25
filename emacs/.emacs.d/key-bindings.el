@@ -56,14 +56,6 @@
 (global-set-key (kbd "C-x v r") 'git-gutter+-revert-hunk)
 (global-set-key (kbd "C-x v t") 'git-gutter+-show-hunk)
 
-;; iy-go-to-char
-(global-set-key (kbd "C-c f") 'iy-go-to-char)
-(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
-(global-set-key (kbd "C-c ,") 'iy-go-to-or-up-to-continue)
-
-;; isearch-symbol-at-point
-(global-set-key (kbd "M-s s") 'isearch-symbol-at-point)
-
 ;; Jump to a definition in the current file. (This is awesome)
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 

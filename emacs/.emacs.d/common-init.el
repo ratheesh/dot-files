@@ -124,7 +124,12 @@
     (defalias 'ack-find-file 'ack-and-a-half-find-file)
     (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)))
 
-(use-package iy-go-to-char)
+(use-package iy-go-to-char
+  :bind
+  (("C-c f" . iy-go-to-char)
+   ("C-c F" . iy-go-to-char-backward)
+   ("C-c ," . iy-go-to-or-up-to-continue)))
+
 (use-package isearch-symbol-at-point
   :bind
   (("M-s s" . isearch-symbol-at-point)))
