@@ -116,24 +116,24 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-;;; setup el-get related packages
-(require 'el-get-init)
-
 ;;; make sure that use-package is initialized first before other
 ;;; package to make sure that package are properly initialized
 (when (require 'use-package nil 'noerror)
   (setq use-package-idle-interval 2)
   (setq use-package-verbose t))
 
-(require 'sane-defaults)
-(require 'common-init)
-(require 'git-mode-init)
-(require 'mode-mappings)
-(require 'cc-mode-init)
-(require 'org-init)
-(require 'my-defuns)
-(require 'key-bindings)
-(require 'appearance)
+;;; setup el-get related packages
+(use-package el-get-init)
+
+(use-package sane-defaults)
+(use-package common-init)
+(use-package git-mode-init)
+(use-package mode-mappings)
+(use-package cc-mode-init)
+(use-package org-init)
+(use-package my-defuns)
+(use-package key-bindings)
+(use-package appearance)
 
 ;;; Load user initialization code
 (load user-file 'noerror)
