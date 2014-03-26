@@ -7,6 +7,10 @@
 ;; Special thanks to santosh shivraj
 
 ; Meine Emacs Einstellungen
+
+;;; save the current time
+(defconst emacs-start-time (current-time))
+
 ;; This file does not work with XEmacs.
 (when (featurep 'xemacs)
   (error "This .emacs file does not work with XEmacs."))
@@ -140,5 +144,9 @@
 
 ;; Load custom.el now to avoid any unwanted setting overwrites
 (load custom-file 'noerror)
+
+;;; print time taken for emacs to startup!
+(let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
+  (message "Starting eMACS took %.3f seconds!!!" elapsed))
 
 ;; End of the File
