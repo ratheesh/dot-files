@@ -2,11 +2,10 @@
 (provide 'package)
 
 ;; Required elisp packages
-(require 'org-install)
-(require 'org-bullets)
-(require 'org-habit)
-(require 'remember)
-;(require 'remember-autoloads)
+(use-package org-bullets :ensure t)
+(use-package org-habit)
+(use-package remember)
+;(use-package remember-autoloads)
 
 ;; default file encoding settings
 (prefer-coding-system       'utf-8)
@@ -16,23 +15,32 @@
 (setq default-buffer-file-coding-system 'utf-8)
 
 ;; Enable org mode for the files with .org extension
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(use-package org-install
+  :init
+  (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+  :config
+  ;; common org mode variable settings
+  (setq
+   org-startup-indented t
+   org-indent-mode t
+   org-log-done t
+   org-agenda-show-log t
+   org-log-repeat 'time
+   org-agenda-include-diary t
+   org-agenda-include-all-todo t
+   org-completion-use-ido t
+   org-clock-persist 'history
+   org-agenda-include-diary t
+   org-todo-keywords
+   '((type "TODO(t)" "STARTED(s)" "DELAYED(q@/!)" "|" "CANCELLED(c@/!)" "DEFERRED(e@/!)" "DONE(d@/!)")))
 
-;; common org mode variable settings
-(setq
- org-startup-indented t
- org-indent-mode t
- org-log-done t
- org-agenda-show-log t
- org-log-repeat 'time
- org-agenda-include-diary t
- org-agenda-include-all-todo t
- org-completion-use-ido t
- org-clock-persist 'history
- org-agenda-include-diary t
- org-todo-keywords
- '((type "TODO(t)" "STARTED(s)" "DELAYED(q@/!)" "|" "CANCELLED(c@/!)" "DEFERRED(e@/!)" "DONE(d@/!)"))
-)
+  ;; Org mode hooks
+  ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (add-hook 'remember-mode-hook 'org-remember-apply-template)
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+  (add-hook 'message-mode-hook 'turn-on-orgtbl)
+  (add-hook 'org-mode-hook 'turn-on-font-lock)
+  )
 
 ;; Org mode keyword face customization
 ;; consider putting these in the theme file TODO!
@@ -45,13 +53,6 @@
        ("DONE" . (:foreground "green" :weight bold))
 ))
 (org-clock-persistence-insinuate)
-
-;; Org mode hooks
-;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(add-hook 'remember-mode-hook 'org-remember-apply-template)
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-(add-hook 'message-mode-hook 'turn-on-orgtbl)
-(add-hook 'org-mode-hook 'turn-on-font-lock)
 
 ;;; fix for yasnippet and autoconfig
 ;;; from http://iany.me/2012/03/fix-tab-binding-for-yasnippet-and-auto-complete/
