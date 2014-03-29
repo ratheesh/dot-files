@@ -141,7 +141,7 @@
 (use-package lice)
 
 ;;; simplenote - note taking app for smartphones
-(use-package simplenote)
+(use-package simplenote :defer t)
 
 ;;; configure yasnippet - this is called from setup-yasnippet.el
 (use-package setup-yasnippet)

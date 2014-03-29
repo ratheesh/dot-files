@@ -195,7 +195,7 @@
    ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 (use-package jump-char)
-(use-package smart-forward)
+(use-package smart-forward :defer t)
 ;(use-package change-inner)
 ;(use-package multifiles)
 
