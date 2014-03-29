@@ -127,7 +127,7 @@
   (setq use-package-verbose t))
 
 ;;; setup el-get related packages
-(use-package el-get-init)
+(use-package el-get-init :defer t)
 
 (use-package sane-defaults)
 (use-package common-init)
