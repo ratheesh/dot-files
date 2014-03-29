@@ -106,4 +106,8 @@
 (add-to-list 'auto-mode-alist '("\\.dts\\'"   . dts-mode))
 (add-to-list 'auto-mode-alist '("\\.dtsi\\'"  . dts-mode))
 
+;;; shell script mode
+(add-to-list 'auto-mode-alist '("\\.*rc$" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.*sh$" . shell-script-mode))
+
 (provide 'mode-mappings)
