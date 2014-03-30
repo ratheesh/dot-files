@@ -24,7 +24,7 @@
 
 ;;; make parenthesis colorful!
 (use-package rainbow-delimiters
-  :init
+  :config
   (progn
     (global-rainbow-delimiters-mode)))
 
@@ -118,7 +118,7 @@
 
 ;; ;; Auto complete configuration
 (use-package auto-complete-config
-  :init
+  :config
   (progn 
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
     (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
@@ -157,7 +157,7 @@
 
 ;;key chord config
 (use-package key-chord
-  :init
+  :config
   (progn 
     (key-chord-mode 1)
     (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
@@ -166,7 +166,7 @@
 
 ;; smart operator - really smart!
 ;; (use-package smart-operator
-;;   :init
+;;   :config
 ;;   (progn 
 ;;     (defun my-c-mode-common-hook()
 ;;       (smart-insert-operator-hook)
