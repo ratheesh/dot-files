@@ -3,7 +3,7 @@
 ;; Required packages
 (use-package cc-mode)
 (use-package autopair)
-(use-package xcscope)
+(use-package xcscope :disabled t)
 (use-package whitespace)
 (use-package auto-complete-config)
 
