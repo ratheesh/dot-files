@@ -3,8 +3,8 @@
 
 ;; Required elisp packages
 (use-package org-bullets :ensure t)
-(use-package org-habit)
-(use-package remember)
+(use-package org-habit :defer t)
+(use-package remember :defer t)
 ;(use-package remember-autoloads)
 
 ;; default file encoding settings
