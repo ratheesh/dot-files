@@ -147,6 +147,6 @@
 
 ;;; print time taken for emacs to startup!
 (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
-  (message "Starting eMACS took %.3f seconds!!!" elapsed))
+  (message "Loading init.el took %.3f seconds!!!" elapsed))
 
 ;; End of the File
