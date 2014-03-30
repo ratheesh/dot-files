@@ -103,7 +103,7 @@
     isearch-symbol-at-point idomenu ido-at-point emacs-setup boxquote
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
     sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
-    use-package)
+    use-package hungry-delete)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
