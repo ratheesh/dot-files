@@ -23,5 +23,18 @@
   added = yellow
   changed = green
   untracked = cyan
+[sendemail]
+	from = Ratheesh S <ratheeshreddy@gmail.com>
+	chainreplyto = false
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpuser = ratheeshreddy@gmail.com
+
 [oh-my-zsh]
 	hide-status = 1
+[log]
+	decorate = short
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
