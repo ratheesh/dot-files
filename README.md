@@ -4,7 +4,7 @@ This is the readme for the my-linux-config GIT repository. This is to keep
 a copy of common and essential Linux Tools I use for my Linux developement at 
 the work place and at home.
 
-Current Linux Tools configuration:
+Current ones are:
 
 	+------+----------+-------------------------+
 	|Sl No |Tool      |Installation target      |
@@ -21,9 +21,10 @@ Current Linux Tools configuration:
 	+------+----------+-------------------------+
 	|  6   |powerline |$HOME/.config/powerline/*|
 	+------+----------+-------------------------+
-        |  7   |git       |$HOME/.gitconfig         |
-        +------+----------+-------------------------+
-
+	|  7   |git       |$HOME/.gitconfig         |
+	+------+----------+-------------------------+
+	|  8   |X         |$HOME/.Xdefaults         |
+	+------+----------+-------------------------+
 
 -- End of File --
 
