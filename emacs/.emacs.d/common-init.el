@@ -80,6 +80,7 @@
 ;;; call footnote-init when entering footnote mode for realligning
 ;;; across sessions
 (use-package footnote-init
+  :disabled t
   :init
   (progn 
     (add-hook 'footnote-mode-hook 'footnote-init)))
