@@ -176,6 +176,9 @@
 ;;       (local-set-key (kbd "*") 'c-electric-star))
 ;;     (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)))
 
+;;; kconfig mode configuration
+(use-package kconfig-mode)
+
 ;;; gtags configuration
 (use-package ggtags
   :bind
