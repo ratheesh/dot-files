@@ -58,6 +58,10 @@
 	      (set-face-foreground 'git-gutter-fr+-added    "green")
 	      (set-face-foreground 'git-gutter-fr+-deleted  "red")))
 
+;;; configure gitconfig and gitignore modes
+(use-package gitconfig-mode)
+(use-package gitignore-mode)
+
 ;; (require 'git-gutter+)
 ;; ;; If you enable global minor mode
 ;; (global-git-gutter+-mode t)
