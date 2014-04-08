@@ -52,6 +52,9 @@
 
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (setq fci-rule-column 80)))
+(add-hook 'c-mode-common-hook
             (lambda ()
             (font-lock-add-keywords nil
             '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))

@@ -94,12 +94,6 @@
 ;;; smart tab
 ;(use-package 'smart-tab)
 
-;; cleanup after git commit is over
-(add-hook 'server-switch-hook
-  (lambda ()
-    (menu-bar-mode -1)))
-(add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
-
 (use-package fringe-current-line
   :disabled t
   :init

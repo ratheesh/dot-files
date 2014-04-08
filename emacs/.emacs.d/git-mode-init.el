@@ -5,7 +5,21 @@
   (progn
     (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
     (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
+    (add-hook 'git-commit-mode-hook
+	      (lambda ()
+		(setq fci-rule-column 72)
+		(setq fill-column 72)
+		(turn-on-auto-fill)
+		(font-lock-set-up-width-warning 72)))
     ))
+
+;; cleanup after git commit is done
+(add-hook 'server-switch-hook
+	  (lambda ()
+	    (menu-bar-mode -1)))
+(add-hook 'server-done-hook (lambda nil
+			      (kill-buffer nil)
+			      (setq fci-rule-column 80)))
 
 ;git mode configuration
 (use-package git-commit-training-wheels-mode
@@ -68,11 +82,11 @@
 
 ;;; stgit-mode - stgit wrapper for eMacs
 (use-package stgit
-  :init
-  (progn
-    (add-to-list 'auto-mode-alist '("\\.stgit-edit.txt$"  . git-commit-mode))
-    (add-to-list 'auto-mode-alist '("\\.stgit-new.txt$"  . git-commit-mode))
-    (add-to-list 'auto-mode-alist '("\\.stgit-squash.txt$"  . git-commit-mode))
-    (add-to-list 'auto-mode-alist '("\\.stgitmsg.txt$"  . git-commit-mode))))
+  :config
+  (progn ;; I donot if we can put under :mode category
+    (add-to-list 'auto-mode-alist ' ("\\.stgit-edit.txt$"  . git-commit-mode))
+    (add-to-list 'auto-mode-alist ' ("\\.stgit-new.txt$"  . git-commit-mode))
+    (add-to-list 'auto-mode-alist ' ("\\.stgit-squash.txt$"  . git-commit-mode))
+    (add-to-list 'auto-mode-alist ' ("\\.stgitmsg.txt$"  . git-commit-mode))))
 
 (provide 'git-mode-init)
