@@ -131,6 +131,14 @@
   :bind
   (("M-s s" . isearch-symbol-at-point)))
 
+;;; managing of register in a better way
+(use-package iregister
+  :bind
+  (("M-n" . iregister-jump-to-next-marker)
+   ("M-p" . iregister-jump-to-previous-marker)
+   ("M-u" . iregister-point-or-text-to-register)
+   ("M-l" . iregister-text)))
+
 ;;; license management
 (use-package xlicense)
 (use-package lice)
