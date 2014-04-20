@@ -31,6 +31,9 @@
       completion-ignored-extensions
       '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod" ".cmd"))
 
+;;; enable narrow-to-region functionality which disabled by default
+(put 'narrow-to-region 'disabled nil)
+
 ;; Try out flx-ido for better flex matching between words
 (use-package flx-ido
   :init
