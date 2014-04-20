@@ -175,6 +175,11 @@
 
 (iswitchb-mode t)
 
+;;Turn on documentation in elisp mode
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda ()
+	     (turn-on-eldoc-mode)))
+
 (use-package tramp
   :init
   (progn 
