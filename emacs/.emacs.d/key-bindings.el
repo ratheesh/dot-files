@@ -51,10 +51,10 @@
 (autoload 'magit-status "magit")
 
 ;; git-gutter+
-(global-set-key (kbd "C-x p") 'git-gutter+-previous-hunk)
-(global-set-key (kbd "C-x n") 'git-gutter+-next-hunk)
-(global-set-key (kbd "C-x v r") 'git-gutter+-revert-hunk)
-(global-set-key (kbd "C-x v t") 'git-gutter+-show-hunk)
+(global-set-key (kbd "C-c p") 'git-gutter+-previous-hunk)
+(global-set-key (kbd "C-c n") 'git-gutter+-next-hunk)
+(global-set-key (kbd "C-c v r") 'git-gutter+-revert-hunk)
+(global-set-key (kbd "C-c v t") 'git-gutter+-show-hunk)
 
 ;; Jump to a definition in the current file. (This is awesome)
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
