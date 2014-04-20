@@ -19,6 +19,18 @@
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
 
+(use-package rainbow-mode
+  :config
+  (progn
+    (dolist (hook '(css-mode-hook
+		    html-mode-hook
+		    js-mode-hook
+		    emacs-lisp-mode-hook
+		    org-mode-hook
+		    text-mode-hook
+		    ))
+      (add-hook hook 'rainbow-mode))))
+
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
@@ -42,9 +54,5 @@
   (eval-after-load "abbrev" '(diminish 'abbrev-mode))
   (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode))
   (eval-after-load "auto-complete" '(diminish 'auto-complete-mode)))
-
-;;; Rainbow delimiters appearance
-
-;;; cursor appearence
 
 (provide 'appearance)
