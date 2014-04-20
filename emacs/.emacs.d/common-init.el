@@ -88,8 +88,10 @@
 ;; smart mode line
 (use-package smart-mode-line
   :init
-  (progn 
-    (sml/setup)))
+  (progn
+    (setq sml/vc-mode-show-backend t)
+    (sml/setup)
+    (sml/apply-theme 'respectful)))
 
 ;;; smart tab
 ;(use-package 'smart-tab)
