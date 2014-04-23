@@ -1,10 +1,7 @@
-README:
+##README:
 
-This is the readme for the my-linux-config GIT repository. This is to keep
-a copy of common and essential Linux Tools I use for my Linux developement at 
-the work place and at home.
+This repository is a copy of common and essential Linux tools I use for my Linux developement at work place and home.
 
-Current ones are:
 
 	+------+----------+-------------------------+
 	|Sl No |Tool      |Installation target      |
