@@ -104,7 +104,7 @@
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
     sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
     use-package hungry-delete gitconfig-mode gitignore-mode iregister css-eldoc
-    flymake-css)
+    flymake-css multi-web-mode)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
