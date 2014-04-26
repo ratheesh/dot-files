@@ -47,9 +47,6 @@
 ;; Remove text in active region if inserting text
 (delete-selection-mode 1)
 
-;; Don't highlight matches with jump-char - it's distracting
-(setq jump-char-lazy-highlight-face nil)
-
 ;; Always display line and column numbers
 (setq line-number-mode t)
 (setq column-number-mode t)
@@ -199,7 +196,10 @@
    ("C-S-c C-a" . mc/edit-beginnings-of-lines)
    ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-(use-package jump-char)
+(use-package jump-char :disabled t)
+;; Don't highlight matches with jump-char - it's distracting
+;; (setq jump-char-lazy-highlight-face nil)
+
 (use-package smart-forward :defer t)
 ;(use-package change-inner)
 ;(use-package multifiles)
