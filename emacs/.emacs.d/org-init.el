@@ -60,7 +60,7 @@
   (let ((command (key-binding [tab]))) ; remember command
     (local-unset-key [tab]) ; unset from (kbd "<tab>")
     (local-set-key (kbd "TAB") command))) ; bind to (kbd "TAB")
-(add-hook 'org-mode-hook 'yas-ac-tab-noconflict)
+;; (add-hook 'org-mode-hook 'yas-ac-tab-noconflict)
 
 ;;;;;;;;;; Fix arrow key issue when running emacs inside tmux env
 (if (getenv "TMUX")
