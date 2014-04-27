@@ -82,7 +82,7 @@
 ;;; git messenger - pop last commit message on the current line
 (use-package git-messenger
   :bind
-  (("C-x v p" . git-messenger:popup-message)))
+  (("C-c v p" . git-messenger:popup-message)))
 
 ;;; stgit-mode - stgit wrapper for eMacs
 (use-package stgit
