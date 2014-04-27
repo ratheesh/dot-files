@@ -196,7 +196,7 @@
    ("C-S-c C-a" . mc/edit-beginnings-of-lines)
    ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-(use-package jump-char :disabled t)
+(use-package jump-char)
 ;; Don't highlight matches with jump-char - it's distracting
 ;; (setq jump-char-lazy-highlight-face nil)
 
