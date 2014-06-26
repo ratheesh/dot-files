@@ -7,7 +7,7 @@
 (global-set-key (kbd "M-k") 'kill-this-buffer)
 
 ;;; easy short cuts for window management
-(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-9") 'delete-other-windows)
 (global-set-key (kbd "M-0") 'delete-window)
 
 ;; Completion that uses many different methods to find options.
