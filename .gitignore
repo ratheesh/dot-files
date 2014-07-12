@@ -1,0 +1,7 @@
+*session.*
+*backups*
+*.places*
+org-clock-save.el
+*.dat
+*bookmarks*
+*auto-save-list*
