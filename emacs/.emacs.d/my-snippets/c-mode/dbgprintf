@@ -2,4 +2,4 @@
 # name: dbgprintf
 # key: dbgprintf
 # --
-printf("%s:%s:%d:${1:message}\n", __FILE__, __func__, __LINE__${2:, args});$0
+printf("%s:%s:%d:${1:message}${2:\n}", __FILE__, __func__, __LINE__${3:, args});$0
