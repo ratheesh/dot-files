@@ -104,7 +104,7 @@
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
     sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
     use-package hungry-delete gitconfig-mode gitignore-mode iregister css-eldoc
-    flymake-css multi-web-mode)
+    flymake-css multi-web-mode jedi elpy)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
@@ -135,10 +135,12 @@
 (use-package git-mode-init)
 (use-package mode-mappings)
 (use-package cc-mode-init)
+(use-package python-mode-init)
 (use-package html-mode-init)
 (use-package org-init)
 (use-package my-defuns)
 (use-package key-bindings)
+(use-package setup-yasnippet)
 (use-package appearance)
 
 ;;; Load user initialization code

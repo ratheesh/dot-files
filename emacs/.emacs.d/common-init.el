@@ -152,6 +152,6 @@
 (use-package simplenote :defer t)
 
 ;;; configure yasnippet - this is called from setup-yasnippet.el
-(use-package setup-yasnippet)
+;; (use-package setup-yasnippet)
 
 (provide 'common-init)
