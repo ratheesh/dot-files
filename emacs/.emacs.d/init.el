@@ -30,8 +30,8 @@
         ))
 
 (cond (on_gnu_linux
-       (set-default-font "Inconsolata-16")
-       (setq default-frame-alist '((font . "Inconsolata-16")))
+       (set-default-font "Droid Sans Mono-14")
+       (setq default-frame-alist '((font . "Droid Sans Mono-14")))
        ;; (set-default-font "12x24")
        ))
 
