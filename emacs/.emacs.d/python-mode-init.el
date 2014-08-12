@@ -30,7 +30,6 @@
   :init
   (progn
     (elpy-enable)
-    (elpy-clean-modeline)
     (setq elpy-rpc-backend "rope")
     (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
     (define-key global-map (kbd "C-c o") 'iedit-mode)))
