@@ -39,5 +39,11 @@
 (set-face-background 'highlight-indentation-face "#2f4f4f")
 (set-face-background 'highlight-indentation-current-column-face "#2f4f4f")
 
+;;; configure flymake-python-pyflakes
+(use-package flymake-python-pyflakes
+  :init
+  (progn
+    (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)))
+
 (provide 'python-mode-init)
 ;;; End of File
