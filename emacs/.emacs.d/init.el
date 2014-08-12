@@ -135,12 +135,12 @@
 (use-package git-mode-init)
 (use-package mode-mappings)
 (use-package cc-mode-init)
+(use-package setup-yasnippet)
 (use-package python-mode-init)
 (use-package html-mode-init)
 (use-package org-init)
 (use-package my-defuns)
 (use-package key-bindings)
-(use-package setup-yasnippet)
 (use-package appearance)
 
 ;;; Load user initialization code
