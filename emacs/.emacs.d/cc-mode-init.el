@@ -23,10 +23,7 @@
  )
 
 ;;; make parenthesis colorful!
-(use-package rainbow-delimiters
-  :config
-  (progn
-    (global-rainbow-delimiters-mode)))
+(use-package rainbow-delimiters)
 
 ;(global-fci-mode 1)
 (defun auto-fci-mode (&optional unused)
@@ -53,7 +50,8 @@
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'c-mode-common-hook
 	  (lambda ()
-	    (setq fci-rule-column 80)))
+	    (setq fci-rule-column 80)
+	    (rainbow-delimiters-mode)))
 (add-hook 'c-mode-common-hook
             (lambda ()
             (font-lock-add-keywords nil
