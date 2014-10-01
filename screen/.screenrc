@@ -30,9 +30,11 @@ screen 1
 
 # display settings
 sorendition '+b kG'
-hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} | %h | %H %{..Y} | %d-%M-%Y | %C:%s%A "
+hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G}| %d-%M-%Y | %C:%s%A "
 
-# keybindings
+# keybindings 
+bindkey -k F1 prev      # F11 = prev
+bindkey -k F2 next      # F12 = next
 #None for now
 
 # make scroll work
