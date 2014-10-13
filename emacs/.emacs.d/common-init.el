@@ -144,6 +144,15 @@
    ("M-u" . iregister-point-or-text-to-register)
    ("M-l" . iregister-text)))
 
+;;; fasd
+(use-package fasd
+  :bind
+  (("C-h C-/" . fasd-find-file))
+  :init
+  (progn
+    (global-fasd-mode 1)
+    (setq fasd-enable-initial-prompt 'nil)))
+
 ;;; license management
 (use-package xlicense)
 (use-package lice)

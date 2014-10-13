@@ -30,8 +30,10 @@
         ))
 
 (cond (on_gnu_linux
-       (set-default-font "Droid Sans Mono-14")
-       (setq default-frame-alist '((font . "Droid Sans Mono-14")))
+       (set-default-font "ubuntu Mono-16")
+       (setq default-frame-alist '((font . "Ubuntu Mono-16")))
+       ;; (set-default-font "Droid Sans Mono-14")
+       ;; (setq default-frame-alist '((font . "Droid Sans Mono-14")))
        ;; (set-default-font "12x24")
        ))
 
@@ -104,7 +106,7 @@
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
     sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
     use-package hungry-delete gitconfig-mode gitignore-mode iregister css-eldoc
-    flymake-css multi-web-mode jedi elpy)
+    flymake-css multi-web-mode jedi elpy fasd color-theme-sanityinc-tomorrow)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
