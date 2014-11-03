@@ -15,6 +15,9 @@
 (when (featurep 'xemacs)
   (error "This .emacs file does not work with XEmacs."))
 
+;;; Disable Cursor blinking
+(blink-cursor-mode (- (*) (*) (*)))
+
 ;; get the system type
 (defvar system-type-as-string (prin1-to-string system-type))
 
