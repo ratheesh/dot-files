@@ -111,4 +111,8 @@
 (add-to-list 'auto-mode-alist '("\\.*rc$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.*sh$" . shell-script-mode))
 
+;;; Kconfig mode
 (provide 'mode-mappings)
+(add-to-list 'auto-mode-alist '("Kconfig" . Kconfig-mode))
+
+;;; End of File
