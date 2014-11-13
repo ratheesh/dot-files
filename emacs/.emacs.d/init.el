@@ -89,6 +89,7 @@
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")
+			 ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
 			 ;; ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
