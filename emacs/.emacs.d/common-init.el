@@ -163,4 +163,24 @@
 ;;; configure yasnippet - this is called from setup-yasnippet.el
 ;; (use-package setup-yasnippet)
 
+;;; swoop
+(use-package helm-swoop
+  :bind
+  (("<f4>" . helm-swoop)
+   ("M-I" . helm-swoop-back-to-last-point)
+   ("C-c M-i" . helm-multi-swoop)
+   ("C-x M-i" . helm-multi-swoop-all))
+
+  :init
+  (progn
+    (setq helm-swoop-split-with-multiple-windows nil)
+    (setq helm-swoop-split-direction 'split-window-horizontally)
+    (setq helm-swoop-speed-or-color nil)
+    (setq helm-swoop-move-to-line-cycle t)
+    (setq helm-swoop-use-line-number-face t)))
+
+;; (define-key isearch-mode-map (kbd "C-o") 'swoop-from-isearch)
+;; (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+;; (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
+
 (provide 'common-init)

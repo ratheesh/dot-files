@@ -110,7 +110,8 @@
     git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
     sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
     use-package hungry-delete gitconfig-mode gitignore-mode iregister css-eldoc
-    flymake-css multi-web-mode jedi elpy fasd color-theme-sanityinc-tomorrow)
+    flymake-css multi-web-mode jedi elpy fasd color-theme-sanityinc-tomorrow
+    helm-swoop)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
