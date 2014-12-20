@@ -170,7 +170,7 @@
 ;(setq show-trailing-whitespace)
 (setq whitespace-style '(face trailing))
 
-(iswitchb-mode t)
+;; (iswitchb-mode t)
 
 ;;Turn on documentation in elisp mode
 (add-hook 'emacs-lisp-mode-hook
