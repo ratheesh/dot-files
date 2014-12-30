@@ -33,8 +33,8 @@
         ))
 
 (cond (on_gnu_linux
-       (set-default-font "ubuntu Mono-16")
-       (setq default-frame-alist '((font . "Ubuntu Mono-16")))
+       (set-default-font "Monaco-13")
+       (setq default-frame-alist '((font . "Monaco-13")))
        ;; (set-default-font "Droid Sans Mono-14")
        ;; (setq default-frame-alist '((font . "Droid Sans Mono-14")))
        ;; (set-default-font "12x24")
@@ -111,7 +111,7 @@
     sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
     use-package hungry-delete gitconfig-mode gitignore-mode iregister css-eldoc
     flymake-css multi-web-mode jedi elpy fasd color-theme-sanityinc-tomorrow
-    helm-swoop)
+    helm-swoop highlight-tail flx-isearch)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()

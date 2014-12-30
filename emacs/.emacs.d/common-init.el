@@ -163,6 +163,12 @@
 ;;; configure yasnippet - this is called from setup-yasnippet.el
 ;; (use-package setup-yasnippet)
 
+;; flx-isearch
+(use-package flx-isearch
+  :bind
+  (("C-M-s" . flx-isearch-forward)
+   ("C-M-r"  . flx-isearch-backward)))
+
 ;;; swoop
 (use-package helm-swoop
   :bind
