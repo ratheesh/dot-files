@@ -89,12 +89,12 @@
     (add-hook 'footnote-mode-hook 'footnote-init)))
 
 ;; smart mode line
-(use-package smart-mode-line
+(use-package smart-mode-line-powerline-theme
   :init
   (progn
     (setq sml/vc-mode-show-backend t)
     (sml/setup)
-    (sml/apply-theme 'respectful)))
+    (sml/apply-theme 'dark)))
 
 ;;; smart tab
 ;(use-package 'smart-tab)
