@@ -3,5 +3,9 @@
 *.places*
 org-clock-save.el
 *.dat
+**/ido*
 *bookmarks*
 *auto-save-list*
+**/.emacs.d/elpa
+**/.emacs.d/recentf
+**/.emacs.d/smex-items
