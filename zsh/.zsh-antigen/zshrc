@@ -1,0 +1,131 @@
+ZSHA_BASE=$HOME/.zsh-antigen/
+source $ZSHA_BASE/antigen/antigen.zsh
+
+#antigen-use oh-my-zsh
+antigen-use prezto
+
+if [ "$OSTYPE"="darwin11.0" ]; then
+  antigen-bundle osx
+fi
+
+antigen-bundle sorin-ionescu/prezto modules/environment
+antigen-bundle sorin-ionescu/prezto modules/git
+antigen-bundle sorin-ionescu/prezto modules/terminal
+antigen-bundle sorin-ionescu/prezto modules/spectrum
+antigen-bundle sorin-ionescu/prezto modules/utility
+antigen-bundle sorin-ionescu/prezto modules/completion
+antigen-bundle sorin-ionescu/prezto modules/dpkg
+antigen-bundle sorin-ionescu/prezto modules/command-not-found
+
+antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen-bundle zsh-users/zsh-history-substring-search
+antigen-bundle Tarrasch/zsh-bd
+antigen-bundle jocelynmallon/zshmarks
+antigen-bundle knu/zsh-manydots-magic
+
+antigen-apply
+
+# custom settings
+
+ZDOTDIR=$HOME
+
+path=(
+    $HOME/bin
+    $HOME/.local/bin
+    $HOME/.autojump/bin
+    # /usr/local/share/perl5/auto/share/dist/Cope # colorize terminal programs
+    /usr/local/share/perl/5.18.2/auto/share/dist/Cope # ubuntu systems
+    /usr/local/{bin,sbin}
+    /{bin,sbin}
+    /usr/{bin,sbin}
+    $path
+)
+
+# Some basic settings
+unsetopt beep
+setopt shwordsplit
+setopt append_history
+setopt hist_ignore_dups
+setopt shwordsplit	     # make sure that $arm works fine
+unsetopt correct_all	     # do not correct all automatically
+setopt nobgnice              # run bg jobs at full speed
+setopt complete_in_word      # allow tab completion in the middle of a word
+unsetopt flowcontrol	     # ctr-s/q has not effect now (Thanx!!!)
+
+zstyle ":completion:*:commands" rehash 1
+
+autoload -U compinit && compinit
+autoload -U colors && colors
+
+HISTSIZE=5000 # session history size
+SAVEHIST=1000 # saved history
+HISTFILE=$HOME/.zshistory # history file
+
+# history substring search
+bindkey -M emacs "^p" history-substring-search-up
+bindkey -M emacs "^n" history-substring-search-down
+bindkey -M emacs '^r' history-incremental-search-backward
+
+# aliases
+alias ls='ls --color=auto'
+alias mkdir='nocorrect mkdir'
+alias e="emacsclient -nc"
+alias ec="emacsclient -t"
+alias en="emacsclient -n"
+alias eckill="emacsclient -e '(kill-emacs)'"
+alias tmux='tmux -2'
+alias ack="ack-grep --pager=\"less -R\""
+
+# generic env setting
+export TZ='Asia/Kolkata'; export TZ
+export LC_ALL='en_US.UTF-8'
+export TERM=xterm-256color
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"
+export GIT_EDITOR="emacsclient -t"
+
+# make git enabled prompt thems faster
+function __git_files {
+  _wanted files expl 'local files' _files
+}
+
+# set the prompt
+function _update_ps1()
+{
+ export PROMPT="$(~/powerline-zsh.py $?)"
+}
+
+precmd()
+{
+ _update_ps1
+}
+
+# zsh-manydots-magic
+autoload -Uz manydots-magic
+manydots-magic
+
+# fasd initialization
+eval "$(fasd --init auto)"
+alias v='f -e vim'      # quick opening files with vim
+alias m='f -e mplayer'  # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
+alias enn='f -e emacsclient -n'
+
+# init autojump
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+export AUTOJUMP_IGNORE_CASE=1 # ignore case in autojump completion
+export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim make'
+
+# developement setup
+export arm='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
+export xilinx='ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi-'
+
+path=(
+    /opt/Xilinx/SDK/2014.3.1/gnu/arm/lin/bin
+    /opt/Xilinx/SDK/2014.3.1/bin
+    /opt/mgls/linux/bin
+    $path
+)
+
+# End of File
