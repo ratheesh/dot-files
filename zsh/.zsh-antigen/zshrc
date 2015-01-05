@@ -8,20 +8,25 @@ if [ "$OSTYPE"="darwin11.0" ]; then
   antigen-bundle osx
 fi
 
-antigen-bundle sorin-ionescu/prezto modules/environment
-antigen-bundle sorin-ionescu/prezto modules/git
-antigen-bundle sorin-ionescu/prezto modules/terminal
-antigen-bundle sorin-ionescu/prezto modules/spectrum
-antigen-bundle sorin-ionescu/prezto modules/utility
-antigen-bundle sorin-ionescu/prezto modules/completion
-antigen-bundle sorin-ionescu/prezto modules/dpkg
-antigen-bundle sorin-ionescu/prezto modules/command-not-found
+antigen bundles <<EOB
+    sorin-ionescu/prezto modules/environment
+    sorin-ionescu/prezto modules/git
+    sorin-ionescu/prezto modules/terminal
+    sorin-ionescu/prezto modules/spectrum
+    sorin-ionescu/prezto modules/utility
+    sorin-ionescu/prezto modules/dpkg
+    sorin-ionescu/prezto modules/command-not-found
+    sorin-ionescu/prezto modules/completion
 
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-history-substring-search
-antigen-bundle Tarrasch/zsh-bd
-antigen-bundle jocelynmallon/zshmarks
-antigen-bundle knu/zsh-manydots-magic
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-history-substring-search
+    Tarrasch/zsh-bd
+    jocelynmallon/zshmarks
+    knu/zsh-manydots-magic
+    extract
+    zsh-users/zsh-completions
+EOB
+# zsh-users/zaw
 
 antigen-apply
 
