@@ -18,6 +18,8 @@ antigen bundles <<EOB
     sorin-ionescu/prezto modules/command-not-found
     sorin-ionescu/prezto modules/completion
 
+    robbyrussell/oh-my-zsh plugins/colored-man
+
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-history-substring-search
     Tarrasch/zsh-bd
