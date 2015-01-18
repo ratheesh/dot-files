@@ -8,12 +8,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
 
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-
-
+Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,5 +41,9 @@ set encoding=utf-8
 set laststatus=2
 set t_Co=256
 
-"set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
+"configure individual Plugins
+"vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='light'
 
+"End of File
