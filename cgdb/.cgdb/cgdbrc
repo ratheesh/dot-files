@@ -1,0 +1,4 @@
+set arrowstyle=highlight
+set autosourcereload
+set ignorecase
+highlight Logo cterm=bold,underline ctermfg=Red ctermbg=Black
