@@ -1,4 +1,4 @@
-set arrowstyle=highlight
+set arrowstyle=short
 set autosourcereload
 set ignorecase
 highlight Logo cterm=bold,underline ctermfg=Red ctermbg=Black
