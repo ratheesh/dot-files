@@ -9,3 +9,4 @@ org-clock-save.el
 **/.emacs.d/elpa
 **/.emacs.d/recentf
 **/.emacs.d/smex-items
+**/vim-*
