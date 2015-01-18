@@ -127,7 +127,8 @@ alias ack="ack-grep --pager=\"less -R\""
 # generic env setting
 export TZ='Asia/Kolkata'; export TZ
 export LC_ALL='en_US.UTF-8'
-export TERM=xterm-256color
+# export TERM=xterm-256color
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export GIT_EDITOR="emacsclient -t"
