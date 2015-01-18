@@ -63,15 +63,56 @@ zstyle ":completion:*:commands" rehash 1
 
 autoload -U compinit && compinit
 autoload -U colors && colors
+zmodload -i zsh/complist
 
 HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
 HISTFILE=$HOME/.zshistory # history file
+setopt append_history           # append
+setopt hist_ignore_all_dups     # no duplicate
+unsetopt hist_ignore_space      # ignore space prefixed commands
+setopt hist_reduce_blanks       # trim blanks
+setopt hist_verify              # show before executing history commands
+setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
+setopt share_history            # share hist between sessions
+setopt bang_hist                # !keyword
+setopt MULTIOS
+unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
+unsetopt hup                    # no hup signal at shell exit
+unsetopt bg_nice                # no lower prio for background jobs
+setopt auto_remove_slash        # self explicit
+
+# zsh completion configuration
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
+zstyle ':completion:*' menu select=2                        # menu if nb items > 2
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format $'\e[00;34m%d'
+zstyle ':completion:*:messages' format $'\e[00;31m%d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:manuals' separate-sections true
+
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*' force-list always
+
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:[[:ascii:]]||[[:ascii:]]=** r:|=* m:{a-z\-}={A-Z\_}'
 
 # history substring search
 bindkey -M emacs "^p" history-substring-search-up
 bindkey -M emacs "^n" history-substring-search-down
 bindkey -M emacs '^r' history-incremental-search-backward
+
+# pick item but stay in menu
+bindkey -M menuselect "+" accept-and-menu-complete
 
 # aliases
 alias ls='ls --color=auto'
