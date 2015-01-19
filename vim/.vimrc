@@ -11,6 +11,16 @@ Plugin 'gmarik/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'justinmk/vim-sneak'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'sjl/gundo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
