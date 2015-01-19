@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
+" Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
@@ -29,6 +29,7 @@ filetype plugin indent on
 set number
 set tabstop=8
 set showmatch
+set showcmd 
 set colorcolumn=81
 set ruler
 set wildignore=*.swp,*.bak
@@ -50,6 +51,11 @@ syntax on
 set encoding=utf-8
 set laststatus=2
 set t_Co=256
+let mapleader = ","
+
+" general config
+nmap <leader>bn :bnext<cr>
+nmap <leader>bp :bprev<cr>
 
 "configure individual Plugins
 "vim-airline
@@ -57,5 +63,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 
 "End of File
