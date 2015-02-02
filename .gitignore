@@ -10,3 +10,5 @@ org-clock-save.el
 **/.emacs.d/recentf
 **/.emacs.d/smex-items
 **/vim-*
+**/.vim*
+*user-init.el
