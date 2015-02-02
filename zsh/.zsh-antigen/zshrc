@@ -125,6 +125,7 @@ alias tmux='tmux -2'
 alias ack="ack-grep --pager=\"less -R\""
 
 # generic env setting
+export TERMINFO=/lib/terminfo	# required for gdb-tui
 export TZ='Asia/Kolkata'; export TZ
 export LC_ALL='en_US.UTF-8'
 # export TERM=xterm-256color
@@ -167,12 +168,18 @@ export AUTOJUMP_IGNORE_CASE=1 # ignore case in autojump completion
 export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim make'
 
 # developement setup
+alias cgdb-xilinx='cgdb -d arm-xilinx-linux-gnueabi-gdb -- -quiet'
 export arm='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
 export xilinx='ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi-'
+
+# freescale settings
+alias cgdb_fscl='cgdb -d arm-linux-gnueabi-gdb -- -quiet'
+export fscl='ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-'
 
 path=(
     /opt/Xilinx/SDK/2014.3.1/gnu/arm/lin/bin
     /opt/Xilinx/SDK/2014.3.1/bin
+    /opt/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux/bin
     /opt/mgls/linux/bin
     $path
 )
