@@ -133,8 +133,9 @@ export LC_ALL='en_US.UTF-8'
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export GIT_EDITOR="emacsclient -t"
+export MINICOM="-m -c on"	# start minicom in color
 
-# make git enabled prompt thems faster
+# make git enabled prompt themes faster
 function __git_files {
   _wanted files expl 'local files' _files
 }
