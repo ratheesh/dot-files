@@ -21,6 +21,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
+Plugin 'edkolev/promptline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,6 +60,7 @@ nmap <leader>bp :bprev<cr>
 
 "configure individual Plugins
 "vim-airline
+let base16colorspace=256  " Access colors present in 256 colorspace
 let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
 let g:airline#extensions#tabline#enabled = 1
