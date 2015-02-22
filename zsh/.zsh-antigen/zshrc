@@ -174,13 +174,14 @@ export arm='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
 export xilinx='ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi-'
 
 # freescale settings
-alias cgdb_fscl='cgdb -d arm-linux-gnueabi-gdb -- -quiet'
-export fscl='ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-'
+alias cgdb_fscl='cgdb -d arm-linux-gnueabihf-gdb -- -quiet'
+export fscl='ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-'
 
 path=(
     /opt/Xilinx/SDK/2014.3.1/gnu/arm/lin/bin
     /opt/Xilinx/SDK/2014.3.1/bin
-    /opt/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux/bin
+    /opt/arm-2014.05/bin
+    /opt/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux/bin
     /opt/mgls/linux/bin
     $path
 )
