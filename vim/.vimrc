@@ -10,8 +10,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " plugin on GitHub repo
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 " Plugin 'bling/vim-bufferline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
@@ -68,5 +69,15 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+
+"lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
 
 "End of File
