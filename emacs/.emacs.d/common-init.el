@@ -189,4 +189,7 @@
 ;; (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
 ;; (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 
+;yaml mode
+(use-package yaml-mode)
+
 (provide 'common-init)
