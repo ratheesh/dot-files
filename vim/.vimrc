@@ -1,32 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" plugin on GitHub repo
-"Plugin 'bling/vim-airline'
-" Plugin 'bling/vim-bufferline'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'edsono/vim-matchit'
-Plugin 'justinmk/vim-sneak'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'sjl/gundo.vim'
-Plugin 'edkolev/promptline.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
 filetype plugin indent on
 set number
 set tabstop=8
