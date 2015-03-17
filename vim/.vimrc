@@ -1,6 +1,43 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using git URL
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Plugin options
+Plug 'nsf/gocode', { 'tag': 'go.weekly.2012-03-13', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neosnippet.vim'
+Plug 'edsono/vim-matchit'
+Plug 'justinmk/vim-sneak'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'sjl/gundo.vim'
+Plug 'edkolev/promptline.vim'
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+
+call plug#end()
+
 filetype plugin indent on
 set number
 set tabstop=8
