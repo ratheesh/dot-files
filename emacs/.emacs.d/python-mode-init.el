@@ -35,8 +35,11 @@
     (define-key global-map (kbd "C-c o") 'iedit-mode)))
 
 ;;; customize color for highlight-indentation face
-(set-face-background 'highlight-indentation-face "#2f4f4f")
-(set-face-background 'highlight-indentation-current-column-face "#2f4f4f")
+(use-package highlight-indentation
+  :init
+  (progn
+    (set-face-background 'highlight-indentation-face "#2f4f4f")
+    (set-face-background 'highlight-indentation-current-column-face "#2f4f4f")))
 
 ;;; configure flymake-python-pyflakes
 (use-package flymake-python-pyflakes

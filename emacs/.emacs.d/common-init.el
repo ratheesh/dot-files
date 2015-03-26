@@ -154,7 +154,7 @@
     (setq fasd-enable-initial-prompt 'nil)))
 
 ;;; license management
-(use-package xlicense)
+;;(use-package xlicense)
 (use-package lice)
 
 ;;; simplenote - note taking app for smartphones
