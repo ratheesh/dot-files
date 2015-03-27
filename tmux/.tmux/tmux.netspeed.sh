@@ -1,11 +1,24 @@
 #!/bin/bash
 
-iface=$1
-RXB=$(</sys/class/net/"$iface"/statistics/rx_bytes)
-TXB=$(</sys/class/net/"$iface"/statistics/tx_bytes)
+RXB=0
+TXB=0
+for rxbytes in /sys/class/net/*/statistics/rx_bytes ; do
+  let RXB+=$(<$rxbytes)
+done
+for txbytes in /sys/class/net/*/statistics/tx_bytes ; do
+  let TXB+=$(<$txbytes)
+done
+
 sleep 1
-RXBN=$(</sys/class/net/"$iface"/statistics/rx_bytes)
-TXBN=$(</sys/class/net/"$iface"/statistics/tx_bytes)
+
+RXBN=0
+TXBN=0
+for rxbytes in /sys/class/net/*/statistics/rx_bytes ; do
+  let RXBN+=$(<$rxbytes)
+done
+for txbytes in /sys/class/net/*/statistics/tx_bytes ; do
+  let TXBN+=$(<$txbytes)
+done
 RXDIF=$(echo $((RXBN - RXB)) )
 TXDIF=$(echo $((TXBN - TXB)) )
 
