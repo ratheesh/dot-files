@@ -84,12 +84,16 @@
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (use-package undo-tree
+  :defer t
+  :ensure t
+  :diminish undo-tree-mode
   :bind
   (("C-?" . undo-tree-redo))
   :init
   (progn
-    (setq undo-tree-mode-lighter "")
-    (global-undo-tree-mode t)))
+    (global-undo-tree-mode t)
+    (setq undo-tree-visualizer-timestamps t)
+    (setq undo-tree-visualizer-diff t)))
 
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
