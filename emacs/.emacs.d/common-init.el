@@ -192,4 +192,8 @@
 ;yaml mode
 (use-package yaml-mode)
 
+(use-package auto-package-update
+  :ensure t
+  :defer t )
+
 (provide 'common-init)
