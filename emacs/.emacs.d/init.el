@@ -149,6 +149,7 @@
 (use-package my-defuns)
 (use-package key-bindings)
 (use-package appearance)
+(use-package helm-mode-config)
 
 ;;; Load user initialization code
 (load user-file 'noerror)

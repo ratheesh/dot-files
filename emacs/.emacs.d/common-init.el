@@ -192,8 +192,22 @@
 ;yaml mode
 (use-package yaml-mode)
 
+;;; auto update of packages
 (use-package auto-package-update
   :ensure t
   :defer t )
+
+;;; projectilie configuration
+(use-package projectile
+  :ensure t
+  :bind
+  (("C-c g" . projectile-use-git-grep))
+  :init
+  (progn
+    (projectile-global-mode)
+    (setq projectile-indexing-method 'git)
+    (setq projectile-enable-caching t)
+    (setq projectile-completion-system 'default)
+    ))
 
 (provide 'common-init)
