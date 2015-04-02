@@ -214,4 +214,12 @@
     (setq projectile-completion-system 'default)
     ))
 
+(use-package with-editor
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'shell-mode-hook  'with-editor-export-editor)
+    (add-hook 'eshell-mode-hook 'with-editor-export-editor)))
+
 (provide 'common-init)
