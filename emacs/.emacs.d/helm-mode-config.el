@@ -26,7 +26,6 @@
          ("M-y" . helm-show-kill-ring)))
 
 (use-package helm-descbinds
-  :defer t
   :bind (("C-h b" . helm-descbinds)
          ("C-h w" . helm-descbinds)))
 

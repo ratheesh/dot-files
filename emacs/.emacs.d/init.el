@@ -166,7 +166,7 @@
      sml/vc-mode-show-backend t
      sml/theme 'dark
      sml/shorten-modes t
-     sml/name-width 24
+     sml/name-width 32
      sml/shorten-directory t)
     (sml/setup)))
 

@@ -38,9 +38,17 @@
 (use-package flx-ido
   :init
   (progn 
+    (ido-mode 1)
+    (ido-everywhere 1)
     (flx-ido-mode 1)
-    ;; disable ido faces to see flx highlights.
-    (setq ido-use-faces nil)))
+    (setq ido-enable-flex-matching t)))
+
+;; Ignore extensions in completion
+(setq completion-ignored-extensions
+      '(".o" ".lo" ".mh" ".elc" "~"
+	".bin" ".lbin" ".fasl" ".dvi" ".toc"   ".aux" ".lof" ".blg" ".bbl"
+	".glo" ".idx" ".lot"))
+(setq ido-ignore-extensions t)
 
 ;; flx-ido looks better with ido-vertical-mode
 ;; (when (require 'ido-vertical-mode nil 'noerror)
@@ -197,13 +205,12 @@
 (use-package yaml-mode)
 
 ;;; auto update of packages
-(use-package auto-package-update
-  :ensure t
-  :defer t )
+(use-package auto-package-update :ensure t)
 
 ;;; projectilie configuration
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :bind
   (("C-c g" . projectile-use-git-grep))
   :init
@@ -211,12 +218,11 @@
     (projectile-global-mode)
     (setq projectile-indexing-method 'git)
     (setq projectile-enable-caching t)
-    (setq projectile-completion-system 'default)
+    (setq projectile-completion-system 'ido)
     ))
 
 (use-package with-editor
   :ensure t
-  :defer t
   :init
   (progn
     (add-hook 'shell-mode-hook  'with-editor-export-editor)

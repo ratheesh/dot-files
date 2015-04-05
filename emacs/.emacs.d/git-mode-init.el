@@ -93,4 +93,13 @@
     (add-to-list 'auto-mode-alist ' ("\\.stgit-squash.txt$"  . git-commit-mode))
     (add-to-list 'auto-mode-alist ' ("\\.stgitmsg.txt$"  . git-commit-mode))))
 
+(use-package magit
+  :ensure t
+  :bind
+  (("C-x g". magit-status))
+  :init
+  (progn
+    (use-package magit-stgit :ensure t)))
+(add-hook 'magit-mode-hook 'magit-load-config-extensions)
+
 (provide 'git-mode-init)

@@ -3,7 +3,7 @@
 
 (custom-theme-set-faces
  'mytheme-dark
- '(default ((t (:width normal :weight normal :foreground "lightgray" :background "#000000"))))
+ '(default ((t (:width normal :weight normal :foreground "#ffffff" :background "#0B0B0B"))))
  '(underline ((t (:underline t))))
  '(italic ((t (:italic t))))
  '(bold-italic ((t (:bold t :italic t))))
@@ -22,7 +22,7 @@
  '(highlight-changes-delete ((t (:foreground nil :background "chocolate4" :underline nil))))
  '(font-lock-builtin-face ((t (:foreground "LightSteelBlue"))))
  '(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
- '(font-lock-comment-face ((t (:foreground "peachpuff3" :background "#282828" :italic t))))
+ '(font-lock-comment-face ((t (:foreground "#8c8c8c" :slant oblique))))
  '(font-lock-constant-face ((t (:foreground "indianred"))))
  '(font-lock-doc-string-face ((t (:foreground "SeaGreen2" :bold t))))
  '(font-lock-doc-face ((t (:inherit (font-lock-comment-face)))))

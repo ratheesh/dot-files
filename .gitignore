@@ -12,3 +12,4 @@ org-clock-save.el
 **/vim-*
 **/.vim*
 *user-init.el
+/emacs/.emacs.d/projectile.cache
