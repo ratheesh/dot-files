@@ -228,4 +228,12 @@
     (add-hook 'shell-mode-hook  'with-editor-export-editor)
     (add-hook 'eshell-mode-hook 'with-editor-export-editor)))
 
+(use-package ws-butler
+  :ensure t
+  :commands ws-butler-mode
+  :init (progn
+          (add-hook 'c-mode-common-hook 'ws-butler-mode)
+          (add-hook 'python-mode-hook 'ws-butler-mode)
+          (add-hook 'cython-mode-hook 'ws-butler-mode)))
+
 (provide 'common-init)
