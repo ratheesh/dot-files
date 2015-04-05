@@ -102,4 +102,6 @@
     (use-package magit-stgit :ensure t)))
 (add-hook 'magit-mode-hook 'magit-load-config-extensions)
 
+(use-package git-timemachine :ensure t)
+
 (provide 'git-mode-init)
