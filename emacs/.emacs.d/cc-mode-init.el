@@ -229,4 +229,18 @@
   :bind
   (("C-c C-s" . sr-speedbar-toggle)))
 
+(use-package company
+  :ensure t
+  :commands global-company-mode
+  :init (progn
+          (global-company-mode)
+          (setq company-global-modes '(not python-mode cython-mode sage-mode))
+          )
+  :config (progn
+            (setq company-tooltip-limit 20) ; bigger popup window
+            (setq company-idle-delay .3)    ; decrease delay before autocompletion popup shows
+            (setq company-echo-delay 0)     ; remove annoying blinking
+            (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+            ))
+
 (provide 'cc-mode-init)
