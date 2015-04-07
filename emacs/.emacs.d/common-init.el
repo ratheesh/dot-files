@@ -1,5 +1,13 @@
 ;; common initialization
 
+;;; paradox package management
+(use-package paradox
+  :ensure t
+  :pin melpa-stable
+  :init
+  (progn
+    (paradox-enable)))
+
 ;;; Enable paredit (only for eLisp mode)
 ;; (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (use-package paredit
