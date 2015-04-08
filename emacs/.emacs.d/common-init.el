@@ -3,10 +3,7 @@
 ;;; paradox package management
 (use-package paradox
   :ensure t
-  :pin melpa-stable
-  :init
-  (progn
-    (paradox-enable)))
+  :pin melpa-stable)
 
 ;;; Enable paredit (only for eLisp mode)
 ;; (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -220,13 +217,16 @@
   :ensure t
   :diminish projectile-mode
   :bind
-  (("C-c g" . projectile-use-git-grep))
+  (("C-c g" . projectile-use-git-grep)
+   ("s-f" . projectile-find-file)
+   ("s-g" . vc-git-grep))
   :init
   (progn
     (projectile-global-mode)
-    (setq projectile-indexing-method 'git)
     (setq projectile-enable-caching t)
     (setq projectile-completion-system 'ido)
+    (setq projectile-use-native-indexing t
+      projectile-use-git-grep t)
     ))
 
 (use-package with-editor
