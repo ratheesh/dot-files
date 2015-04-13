@@ -218,8 +218,7 @@
   :diminish projectile-mode
   :bind
   (("C-c g" . projectile-use-git-grep)
-   ("s-f" . projectile-find-file)
-   ("s-g" . vc-git-grep))
+   ("s-f" . projectile-find-file))
   :init
   (progn
     (projectile-global-mode)
