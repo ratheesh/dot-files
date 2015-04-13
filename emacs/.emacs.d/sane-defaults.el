@@ -7,6 +7,15 @@
 (setq auto-save-default nil) ; stop creating those #auto-save# files
 (setq backup-by-copying t);preserve file creation timestamp
 
+(setq echo-keystrokes 0.5
+      gc-cons-threshold 50000000
+      line-number-display-limit-width 10000
+      initial-scratch-message ""
+      initial-major-mode 'emacs-lisp-mode
+      initial-buffer-choice 'list-bookmarks
+      server-use-tcp t
+      save-interprogram-paste-before-kill t)
+
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
