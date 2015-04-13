@@ -83,7 +83,7 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-              (ggtags-mode 1))))
+              (helm-gtags-mode 1))))
 
 ;;From Linux source
 (defun c-lineup-arglist-tabs-only (ignored)
@@ -181,14 +181,24 @@
 (use-package kconfig-mode)
 
 ;;; gtags configuration
-(use-package ggtags
+(use-package ggtags :ensure t :disabled t)
+
+;;; helm-gtags
+(use-package helm-gtags
+  :ensure t
   :bind
-  (
-    ("<f6>" . ggtags-grep)
-    ("<f7>" . ggtags-find-tag-dwim)
-    ("<f8>" . ggtags-navigation-mode-abort)))
+  (("<f7>" . helm-gtags-dwim)
+   ("<f8>" . helm-gtags-pop-stack))
+  :init
+  (progn
+    (setq
+     helm-gtags-ignore-case t
+     helm-gtags-auto-update t
+     helm-gtags-use-input-at-cursor t
+     helm-gtags-pulse-at-cursor t)))
 
 (use-package magit
+  :ensure t
   :bind
   (("C-x g" . magit-status)))
 
