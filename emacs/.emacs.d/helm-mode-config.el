@@ -6,12 +6,14 @@
   :init
   (progn
     (use-package helm-config)
+    (use-package helm-git-grep :ensure t)
     (use-package helm-projectile
       :ensure t
       :bind
       (
        ("C-c h" . helm-projectile)
-       ("C-x C-r" . helm-recentf)))
+       ("C-x C-r" . helm-recentf)
+       ("s-g" . helm-git-grep-at-point)))
     (setq helm-candidate-number-limit 100)
     ;; From https://gist.github.com/antifuchs/9238468
     (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
@@ -23,6 +25,7 @@
     (helm-mode 1))
   :bind (
          ("C-h a" . helm-apropos)
+	 ("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring)))
 
 (use-package helm-descbinds
@@ -73,6 +76,7 @@
                                       helm-source-recentf
                                       helm-source-bookmarks
                                       helm-source-buffer-not-found))
+
 
 (provide 'helm-mode-config)
 ;;; End of File
