@@ -112,17 +112,17 @@
 (defun insert-line-above ()
   "Insert empty line above current one"
   (interactive)
-  (progn
-    (beginning-of-line)
-    (open-line 1)
-    (indent-for-tab-command)))
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 (defun insert-line-below ()
   "Insert empty line below the current one"
   (interactive)
   (progn
-    (end-of-line)
-    (newline)
-    (indent-for-tab-command)))
+    (move-end-of-line nil)
+    (newline-and-indent)))
 
 (provide 'my-defuns)
