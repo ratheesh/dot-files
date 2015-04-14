@@ -157,10 +157,7 @@
   (("M-s s" . isearch-symbol-at-point)))
 
 ;;; managing of register in a better way
-(use-package iregister
-  :bind
-  (("M-n" . iregister-jump-to-next-marker)
-   ("M-p" . iregister-jump-to-previous-marker)))
+(use-package iregister :ensure t)
 
 ;;; fasd
 (use-package fasd
@@ -252,7 +249,9 @@
   :bind (
 	 ("<f2>" . back-button-push-mark-local-and-global)
 	 ("M-u" . back-button-global-backward)
-	 ("M-l" . back-button-global-forward))
+	 ("M-l" . back-button-global-forward)
+	 ("M-p" . back-button-local-backward)
+	 ("M-n" . back-button-local-forward))
   :init
   (progn
     (use-package smartrep
