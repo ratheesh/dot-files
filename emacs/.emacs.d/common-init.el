@@ -241,9 +241,11 @@
           (add-hook 'python-mode-hook 'ws-butler-mode)
           (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
+;;; navigate through emacs-mark ring
 (use-package back-button
   :pin melpa-stable
   :ensure t
+  :diminish back-button-mode
   :bind (
 	 ("<f2>" . back-button-push-mark-local-and-global)
 	 ("M-u" . back-button-global-backward)
@@ -258,5 +260,13 @@
       :disabled t
       :ensure t)
     (back-button-mode 1)))
+
+;;; highlight operation of library visually
+(use-package volatile-highlights
+  :ensure t
+  :diminish volatile-highlights-mode
+  :config
+  (progn
+    (volatile-highlights-mode)))
 
 (provide 'common-init)

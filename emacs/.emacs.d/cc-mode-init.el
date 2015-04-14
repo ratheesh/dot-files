@@ -180,12 +180,16 @@
 ;;; kconfig mode configuration
 (use-package kconfig-mode)
 
+;;; dts file editing
+(use-package dts-mode :ensure t)
+
 ;;; gtags configuration
 (use-package ggtags :ensure t :disabled t)
 
 ;;; helm-gtags
 (use-package helm-gtags
   :ensure t
+  :diminish helm-gtags-mode
   :bind
   (("<f7>" . helm-gtags-dwim)
    ("<f8>" . helm-gtags-pop-stack))
