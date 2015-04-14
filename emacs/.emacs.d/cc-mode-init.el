@@ -8,29 +8,18 @@
 (use-package auto-complete-config)
 
 (setq
- c-default-style "linux"
- autopair-autowrap t
- cscope-do-not-update-database t
- whitespace-style '(face lines-tail trailing empty space-before-tab)
- )
-
-(setq-default
- c-basic-offset 8
- c-default-style "linux"
- tab-width 8
- indent-tabs-mode t
-;show-trailing-whitespace t
- )
+  c-basic-offset 8
+  tab-width 8
+  indent-tabs-mode t)
 
 ;;; make parenthesis colorful!
 (use-package rainbow-delimiters)
 
-;(global-fci-mode 1)
 (defun auto-fci-mode (&optional unused)
-(if (> (window-width) fci-rule-column)
+  (if (> (window-width) fci-rule-column)
       (fci-mode 1)
-      (fci-mode 0))
-)
+    (fci-mode 0))
+  )
 
 ;;fci-column-indicator mode
 (use-package fill-column-indicator
@@ -45,40 +34,24 @@
     (add-hook 'after-change-major-mode-hook 'auto-fci-mode)
     (add-hook 'window-configuration-change-hook 'auto-fci-mode)))
 
-(electric-indent-mode 1)
+;; (electric-indent-mode 1)
 
-(add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'c-mode-common-hook
 	  (lambda ()
-	    (setq fci-rule-column 80)
-	    (rainbow-delimiters-mode)))
-(add-hook 'c-mode-common-hook
-            (lambda ()
-            (font-lock-add-keywords nil
-            '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
-
-(add-hook 'c-mode-hook
-  (lambda ()
-    (font-lock-add-keywords nil
-      '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
-
-(add-hook 'makefile-mode-hook
-  (lambda()
-    (setq show-trailing-whitespace t)))
+	    (setq
+	     fci-rule-column 80
+	     show-trailing-whitespace)
+	    (rainbow-delimiters-mode)
+	    (fci-mode)
+	    (font-lock-add-keywords nil
+				    '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
+	    (font-lock-add-keywords nil
+				    '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))
+	    (flyspell-prog-mode)
+	    (which-function-mode t)))
 
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
-(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
-;(add-hook 'c-mode-common-hook 'smart-tab-mode)
-(add-hook 'c-mode-hook
-   '(lambda ()
-      (whitespace-toggle-options t)
-))
-
-(add-hook 'c-mode-common-hook
-          #'(lambda ()
-            (setq autopair-dont-activate t)
-            (autopair-mode -1)))
 
 (add-hook 'c-mode-common-hook
           (lambda ()
@@ -117,7 +90,7 @@
 
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 
-;; ;; Auto complete configuration
+;; complete configuration
 (use-package auto-complete-config
   :config
   (progn 
@@ -125,36 +98,8 @@
     (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
     (ac-config-default)
     (setq ac-auto-show-menu nil)
-    ;; (setq ac-source-yasnippet nil)
-    
     (ac-set-trigger-key "TAB")
     (ac-set-trigger-key "<tab>")))
-
-(defun set-newline-and-indent ()
-  (local-set-key (kbd "RET") 'newline-and-indent))
-
-(add-hook 'c-mode-hook 'set-newline-and-indent)
-
-(add-hook 'c-mode-common-hook
-  (lambda ()
-    (which-function-mode t)))
-
-;;; highlight format specifiers in *printf functions in c-mode
-(defvar font-lock-format-specifier-face 'font-lock-format-specifier-face
-  "Face name to use for format specifiers.")
-
-(defface font-lock-format-specifier-face
-  '((t (:foreground "#ff00ff")))
-  "Font Lock mode face used to highlight format specifiers."
-  :group 'font-lock-faces)
-
-(add-hook 'c-mode-common-hook
-	  (lambda ()
-	    (font-lock-add-keywords nil
-				    '(("[^%]\\(%\\([[:digit:]]+\\$\\)?[-+' #0*]*\\([[:digit:]]*\\|\\*\\|\\*[[:digit:]]+\\$\\)\\(\\.\\([[:digit:]]*\\|\\*\\|\\*[[:digit:]]+\\$\\)\\)?\\([hlLjzt]\\|ll\\|hh\\)?\\([aAbdiuoxXDOUfFeEgGcCsSpn]\\|\\[\\^?.[^]]*\\]\\)\\)"
-				       1 font-lock-format-specifier-face t)
-				      ("\\(%%\\)"
-				       1 font-lock-format-specifier-face t)) )))
 
 ;;key chord config
 (use-package key-chord
@@ -164,18 +109,6 @@
     (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
     (key-chord-define c-mode-map ";;" "\C-e")) ;end of the line
   )
-
-;; smart operator - really smart!
-;; (use-package smart-operator
-;;   :config
-;;   (progn 
-;;     (defun my-c-mode-common-hook()
-;;       (smart-insert-operator-hook)
-;;       (local-unset-key (kbd "."))
-;;       (local-unset-key (kbd ":"))
-;;       (local-unset-key (kbd "%"))
-;;       (local-set-key (kbd "*") 'c-electric-star))
-;;     (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)))
 
 ;;; kconfig mode configuration
 (use-package kconfig-mode)
@@ -188,58 +121,44 @@
 
 ;;; helm-gtags
 (use-package helm-gtags
+  :pin melpa-stable
   :ensure t
   :diminish helm-gtags-mode
   :bind
   (("<f7>" . helm-gtags-dwim)
    ("<f8>" . helm-gtags-pop-stack))
-  :init
+  :config
   (progn
     (setq
      helm-gtags-ignore-case t
      helm-gtags-auto-update t
-     helm-gtags-use-input-at-cursor t
-     helm-gtags-pulse-at-cursor t)))
+     helm-gtags-pulse-at-cursor t
+     helm-gtags-highlight-candidate t)))
 
 (use-package magit
+  :defer t
   :ensure t
   :bind
   (("C-x g" . magit-status)))
 
 ;; ECB env settings
 (use-package ecb
+  :defer t
   :bind
   (("\C-c(" . ecb-activate)
    ("\C-c)" . ecb-deactivate)
-
-   ;; show/hide ecb window
-   ;; ("C-;" . ecb-show-ecb-windows)
-   ;; ("C-'" . ecb-hide-ecb-windows)
-
-   ;; quick navigation between ecb windows
-   
    ("\C-c1" . ecb-goto-window-edit1)
    ("\C-c2" . ecb-goto-window-directories)
-   ("\C-c3" . ecb-goto-window-history)
-   ;; ("\C-c4" . ecb-goto-window-sources)
-   ;; ("\C-c5" .  ecb-goto-window-methods)
-   ;; ("\C-c6" .  ecb-goto-window-compilation)
-
-   ;; cscope keybindings
-   ;; ("<f6>" . cscope-find-this-text-string)
-   ;; ("<f7>" . cscope-find-global-definition-no-prompting)
-   ;; ("<f8>" . cscope-pop-mark))
-   )
+   ("\C-c3" . ecb-goto-window-history))
   :config
   (progn 
     (setq
      ecb-layout-name "rathy-dh-layout"
      ecb-show-sources-in-directories-buffer 'always
-     ecb-compile-window-height nil
-     )
-    ))
+     ecb-compile-window-height nil)))
 
 (use-package sr-speedbar
+  :defer t
   :bind
   (("C-c C-s" . sr-speedbar-toggle)))
 
@@ -248,13 +167,11 @@
   :commands global-company-mode
   :init (progn
           (global-company-mode)
-          (setq company-global-modes '(not python-mode cython-mode sage-mode))
-          )
+          (setq company-global-modes '(not python-mode cython-mode sage-mode)))
   :config (progn
-            (setq company-tooltip-limit 20) ; bigger popup window
-            (setq company-idle-delay .3)    ; decrease delay before autocompletion popup shows
-            (setq company-echo-delay 0)     ; remove annoying blinking
-            (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
-            ))
+            (setq company-tooltip-limit 20
+		  company-idle-delay .3
+		  company-echo-delay 0
+		  company-begin-commands '(self-insert-command))))
 
 (provide 'cc-mode-init)
