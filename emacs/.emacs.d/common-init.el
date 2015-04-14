@@ -73,6 +73,7 @@
 
 ;; Ido at point (C-,)
 (use-package ido-at-point
+  :defer t
   :init
   (progn 
     (ido-at-point-mode)))
@@ -92,6 +93,7 @@
 
 ;;; Enable footnote mode for text files
 (use-package footnote
+  :defer t
   :init
   (progn 
     (add-hook 'text-mode-hook 'footnote-mode)))
@@ -104,32 +106,15 @@
   (progn 
     (add-hook 'footnote-mode-hook 'footnote-init)))
 
-;; smart mode line
-;; (use-package smart-mode-line
-;;   :init
-;;   (progn
-;;     (setq
-;;      sml/vc-mode-show-backend t
-;;      sml/theme 'powerline
-;;      sml/shorten-modes t
-;;      sml/shorten-directory t
-;;      sml/name-width 32)
-;;     (sml/setup)))
-
-;;; smart tab
-;(use-package 'smart-tab)
-
 (use-package fringe-current-line
   :disabled t
   :init
   (progn 
     (global-fringe-current-line-mode 1))) ;enable to all buffers by default
 
-;(setq-default indicate-buffer-boundaries 'left)
-;(setq-default indicate-empty-lines +1)
-
 ;;; hungry-delete
 (use-package hungry-delete
+  :defer t
   :init
   (progn 
     (add-hook 'prog-mode
@@ -137,6 +122,7 @@
 
 ;;; ack-and-half - alternative for grep
 (use-package ack-and-a-half
+  :disabled t
   :bind
   (("<f9>" . ack))
   :init
@@ -147,17 +133,20 @@
     (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)))
 
 (use-package iy-go-to-char
+  :defer t
   :bind
   (("C-c f" . iy-go-to-char)
    ("C-c F" . iy-go-to-char-backward)
    ("C-c ," . iy-go-to-or-up-to-continue)))
 
 (use-package isearch-symbol-at-point
+  :defer t
   :bind
   (("M-s s" . isearch-symbol-at-point)))
 
 ;;; managing of register in a better way
-(use-package iregister :ensure t)
+(use-package iregister
+  :disabled t)
 
 ;;; fasd
 (use-package fasd
@@ -169,14 +158,10 @@
     (setq fasd-enable-initial-prompt 'nil)))
 
 ;;; license management
-;;(use-package xlicense)
 (use-package lice)
 
 ;;; simplenote - note taking app for smartphones
 (use-package simplenote :defer t)
-
-;;; configure yasnippet - this is called from setup-yasnippet.el
-;; (use-package setup-yasnippet)
 
 ;; flx-isearch
 (use-package flx-isearch
@@ -186,12 +171,9 @@
 
 ;;; swoop
 (use-package helm-swoop
+  :defer t
   :bind
-  (("<f4>" . helm-swoop)
-   ("M-I" . helm-swoop-back-to-last-point)
-   ("C-c M-i" . helm-multi-swoop)
-   ("C-x M-i" . helm-multi-swoop-all))
-
+  (("<f4>" . helm-swoop))
   :init
   (progn
     (setq helm-swoop-split-with-multiple-windows nil)
@@ -200,12 +182,8 @@
     (setq helm-swoop-move-to-line-cycle t)
     (setq helm-swoop-use-line-number-face t)))
 
-;; (define-key isearch-mode-map (kbd "C-o") 'swoop-from-isearch)
-;; (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-;; (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
-
 ;yaml mode
-(use-package yaml-mode)
+(use-package yaml-mode :defer t)
 
 ;;; auto update of packages
 (use-package auto-package-update :ensure t)
@@ -220,13 +198,13 @@
   :init
   (progn
     (projectile-global-mode)
-    (setq projectile-enable-caching t)
-    (setq projectile-completion-system 'ido)
-    (setq projectile-use-native-indexing t
-      projectile-use-git-grep t)
-    ))
+    (setq projectile-enable-caching t
+	  projectile-completion-system 'ido
+	  projectile-use-native-indexing t
+	  projectile-use-git-grep t)))
 
 (use-package with-editor
+  :defer t
   :ensure t
   :init
   (progn
@@ -235,6 +213,7 @@
 
 (use-package ws-butler
   :ensure t
+  :diminish ws-butler-mode
   :commands ws-butler-mode
   :init (progn
           (add-hook 'c-mode-common-hook 'ws-butler-mode)
@@ -242,9 +221,16 @@
           (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
 ;;; navigate through emacs-mark ring
+(use-package show-marks
+  :ensure t
+  :bind (
+	 ("M-n" . forward-mark)
+	 ("M-p" . backward-mark)
+	 ("M-l" . show-marks)))
+
 (use-package back-button
   :pin melpa-stable
-  :ensure t
+  :disabled t
   :diminish back-button-mode
   :bind (
 	 ("<f2>" . back-button-push-mark-local-and-global)
@@ -259,8 +245,9 @@
       :ensure t )
     (use-package visible-mark
       :pin melpa-stable
-      :disabled t
-      :ensure t)
+      :disabled t))
+  :config
+  (progn
     (back-button-mode 1)))
 
 ;;; highlight operation of library visually
