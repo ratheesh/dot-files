@@ -157,9 +157,7 @@
 (use-package iregister
   :bind
   (("M-n" . iregister-jump-to-next-marker)
-   ("M-p" . iregister-jump-to-previous-marker)
-   ("M-u" . iregister-point-or-text-to-register)
-   ("M-l" . iregister-text)))
+   ("M-p" . iregister-jump-to-previous-marker)))
 
 ;;; fasd
 (use-package fasd
@@ -242,5 +240,23 @@
           (add-hook 'c-mode-common-hook 'ws-butler-mode)
           (add-hook 'python-mode-hook 'ws-butler-mode)
           (add-hook 'cython-mode-hook 'ws-butler-mode)))
+
+(use-package back-button
+  :pin melpa-stable
+  :ensure t
+  :bind (
+	 ("<f2>" . back-button-push-mark-local-and-global)
+	 ("M-u" . back-button-global-backward)
+	 ("M-l" . back-button-global-forward))
+  :init
+  (progn
+    (use-package smartrep
+      :pin melpa-stable
+      :ensure t )
+    (use-package visible-mark
+      :pin melpa-stable
+      :disabled t
+      :ensure t)
+    (back-button-mode 1)))
 
 (provide 'common-init)

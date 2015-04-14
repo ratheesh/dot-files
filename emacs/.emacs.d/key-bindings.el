@@ -75,7 +75,6 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 
-
 ;; misc
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
