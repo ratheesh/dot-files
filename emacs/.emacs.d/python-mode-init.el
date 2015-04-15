@@ -11,11 +11,11 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
-;; (add-hook 'python-mode-hook 'jedi:ac-setup)
-
 (use-package pymacs
-  :init
-  (pymacs-load "ropemacs" "rope-"))
+  ;; :ensure t
+  :config
+  (progn
+    (pymacs-load "ropemacs" "rope-")))
 
 (ac-ropemacs-initialize)
 (add-hook 'python-mode-hook
@@ -26,24 +26,28 @@
 
 ;;; elpy configuration
 (use-package elpy
-  ;; :disabled t
+  :ensure t
   :init
   (progn
-    (elpy-enable)
-    (setq elpy-rpc-backend "rope")
     (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
-    (define-key global-map (kbd "C-c o") 'iedit-mode)))
+    (define-key global-map (kbd "C-c o") 'iedit-mode))
+  :config
+  (progn
+    (elpy-enable)
+    (setq elpy-rpc-backend "rope")))
 
 ;;; customize color for highlight-indentation face
 (use-package highlight-indentation
-  :init
+  :ensure t
+  :config
   (progn
     (set-face-background 'highlight-indentation-face "#2f4f4f")
     (set-face-background 'highlight-indentation-current-column-face "#2f4f4f")))
 
 ;;; configure flymake-python-pyflakes
 (use-package flymake-python-pyflakes
-  :init
+  :ensure t
+  :config
   (progn
     (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)))
 
