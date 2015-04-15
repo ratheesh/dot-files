@@ -146,7 +146,11 @@
 
 ;;; managing of register in a better way
 (use-package iregister
-  :disabled t)
+  :ensure t
+  :bind(
+	("<f3>" . iregister-point-to-register)
+	("M-p" . iregister-jump-to-next-marker))
+  )
 
 ;;; fasd
 (use-package fasd
@@ -225,7 +229,6 @@
   :ensure t
   :bind (
 	 ("M-n" . forward-mark)
-	 ("M-p" . backward-mark)
 	 ("M-l" . show-marks)))
 
 (use-package back-button
