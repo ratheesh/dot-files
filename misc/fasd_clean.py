@@ -1,4 +1,4 @@
-#/usr/bin/env python
+# /usr/bin/env python
 # Copyright (C) 2015  Ratheesh S<ratheeshreddy@gmail.com>
 
 # This program is free software; you can redistribute it and/or
@@ -19,37 +19,42 @@
 import os
 
 db_file = "/home/ratheesh/.fasd"
-purged_items = 0
 
-try:
-    f = open(db_file, "r+")
-except IOError:
-    print 'ERROR: No File found: %s' % db_file
-    exit(1)
 
-d = f.readlines()
-f.close()
+def fasd_clean():
+    purged_items = 0
 
-try:
-    f = open(db_file, "w+")
-except IOError:
-    print 'ERROR: No File found: %s' % db_file
-    exit(1)
+    try:
+        f = open(db_file, "r+")
+    except IOError:
+        print 'ERROR: No File found: %s' % db_file
+        exit(1)
 
-print "Cleaning fasd database ..."
-for i in d:
-    path, sep, misc = i.partition('|')
-    if os.path.exists(path):
-        f.write(i)
+    d = f.readlines()
+    f.close()
+
+    try:
+        f = open(db_file, "w+")
+    except IOError:
+        print 'ERROR: No File found: %s' % db_file
+        exit(1)
+
+    print "Cleaning fasd database ..."
+    for i in d:
+        path, sep, misc = i.partition('|')
+        if os.path.exists(path):
+            f.write(i)
+        else:
+            print 'Removing %s' % path
+            purged_items += 1       # increment purged items
+            f.close()
+
+    if purged_items == 0:
+        print "fasd database is clean!"
     else:
-        print 'Removing %s' % path
-        purged_items += 1       # increment purged items
-f.close()
+        print "---------------------------------------"
+        print "No. of Purged Items: %d" % purged_items
 
-if purged_items == 0:
-    print "fasd database is clean!"
-else:
-    print "---------------------------------------"
-    print "No. of Purged Items: %d" % purged_items
-
+if __name__ == '__main__':
+    fasd_clean()
 # End of File
