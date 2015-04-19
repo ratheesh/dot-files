@@ -158,19 +158,6 @@
 ;; Load custom.el now to avoid any unwanted setting overwrites
 (load custom-file 'noerror)
 
-;;; we are configuring this here since this does not display properly if called
-;;; earlier
-(use-package smart-mode-line
-  :init
-  (progn
-    (setq
-     sml/vc-mode-show-backend t
-     sml/theme 'dark
-     sml/shorten-modes t
-     sml/name-width 32
-     sml/shorten-directory t)
-    (sml/setup)))
-
 ;;; print time taken for emacs to startup!
 (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
   (message "Loading init.el took %.3f seconds!!!" elapsed))

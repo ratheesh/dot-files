@@ -224,6 +224,19 @@
           (add-hook 'python-mode-hook 'ws-butler-mode)
           (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
+;;; smart mode line with powerline
+(use-package smart-mode-line
+  :ensure t
+  :init
+  (progn
+    (setq
+     sml/vc-mode-show-backend t
+     sml/theme 'dark
+     sml/shorten-modes t
+     sml/name-width 32
+     sml/shorten-directory t)
+    (add-hook 'after-init-hook 'sml/setup)))
+
 ;;; navigate through emacs-mark ring
 (use-package show-marks
   :ensure t
