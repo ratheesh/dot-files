@@ -114,9 +114,7 @@
     (setq projectile-enable-caching t
 	  projectile-completion-system 'ido
 	  projectile-use-native-indexing t
-	  projectile-use-git-grep t))
-  :config
-  (progn
+	  projectile-use-git-grep t)
     (projectile-global-mode t)))
 
 (use-package helm-projectile
