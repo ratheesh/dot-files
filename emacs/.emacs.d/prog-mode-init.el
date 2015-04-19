@@ -114,6 +114,23 @@
        ("s-g" . helm-git-grep-at-point)))
     (setq helm-candidate-number-limit 100)
 
+;;; rainbow-delimiters
+(use-package rainbow-identifiers
+  :ensure t
+  :init
+  (progn
+    (setq rainbow-identifiers-choose-face-function
+	  'rainbow-identifiers-cie-l*a*b*-choose-face)
+    (setq rainbow-identifiers-cie-l*a*b*-lightness 45)
+    (setq rainbow-identifiers-cie-l*a*b*-saturation 45)
+    (setq rainbow-identifiers-faces-to-override
+      '(font-lock-type-face
+        font-lock-variable-name-face
+        font-lock-function-name-face)))
+  :config
+  (progn
+    (add-hook 'prog-mode-hook 'rainbow-identifiers-mode)))
+
 ;;; elisp env
 
 ;;; Enable paredit (only for eLisp mode)
