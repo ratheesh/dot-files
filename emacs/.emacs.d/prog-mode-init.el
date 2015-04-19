@@ -45,8 +45,22 @@
   (progn
     (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)))
 
+;;; auto complete package
+(use-package fuzzy :ensure t)
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (setq ac-auto-show-menu t
+	  ac-quick-help-delay 0.5
+	  ac-use-fuzzy t))
+  :config
+  (progn
+    (global-auto-complete-mode +1)))
+
 (use-package company
   :ensure t
+  :disabled t
   :defer t
   :commands global-company-mode
   :init (progn
@@ -103,7 +117,7 @@
 	  projectile-use-git-grep t))
   :config
   (progn
-    (projectile-global-mode)))
+    (projectile-global-mode t)))
 
 (use-package helm-projectile
       :ensure t
@@ -114,7 +128,7 @@
        ("s-g" . helm-git-grep-at-point)))
     (setq helm-candidate-number-limit 100)
 
-;;; rainbow-delimiters
+;;; rainbow-identifiers
 (use-package rainbow-identifiers
   :ensure t
   :init
