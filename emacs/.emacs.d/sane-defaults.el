@@ -147,6 +147,8 @@
  column-number-mode 't
  line-number-mode 't
  display-time 't
+ find-file-visit-truename t
+ require-final-newline t
  default-major-mode 'text-mode
  even-window-heights nil
  ;; A tab is 8 spaces is 8 spaces is 8 spaces
@@ -180,7 +182,7 @@
 ;save the file modification timstamp at the time os saving
 (add-hook 'before-save-hook 'time-stamp)
 
-;(setq show-trailing-whitespace)
+(setq show-trailing-whitespace)
 (setq whitespace-style '(face trailing))
 
 ;; (iswitchb-mode t)
@@ -191,11 +193,12 @@
 	     (turn-on-eldoc-mode)))
 
 (use-package tramp
+  :defer t
   :init
   (progn 
     (setq tramp-default-method "ssh")))
 
-(use-package scratch-ext)
+(use-package scratch-ext :ensure t :defer t)
 
 (use-package expand-region
   :bind
@@ -203,13 +206,15 @@
    ("M--" . er/contract-region)))
 
 (use-package multiple-cursors
+  :ensure t
+  :defer t
   :bind
   (("C-S-c C-S-c" . mc/edit-lines)
    ("C-S-c C-e" . mc/edit-ends-of-lines)
    ("C-S-c C-a" . mc/edit-beginnings-of-lines)
    ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-(use-package jump-char)
+(use-package jump-char :ensure t :defer t)
 ;; Don't highlight matches with jump-char - it's distracting
 ;; (setq jump-char-lazy-highlight-face nil)
 
