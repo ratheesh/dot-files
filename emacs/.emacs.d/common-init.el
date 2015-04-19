@@ -274,4 +274,12 @@
   (progn
     (volatile-highlights-mode)))
 
+(use-package comment-dwim-2
+  :ensure t
+  :bind
+  (("M-;" . comment-dwim-2))
+  :init
+  (progn
+    (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)))
+
 (provide 'common-init)
