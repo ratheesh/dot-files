@@ -1,15 +1,29 @@
 ;;; Python mode setup
 
 (use-package python
-  :init
+  :config
   (progn
-    (setq python-indent-offset 4)))
+    (define-key python-mode-map (kbd "C-c C-z") 'run-python)
+    (define-key python-mode-map (kbd "<backtab>") 'python-back-indent)
+    (defun my/setup-jedi ()
+      (interactive)
+      (use-package jedi
+        :config
+        (progn
+
+          (jedi:setup)
+          (jedi:ac-setup)
+          (setq jedi:setup-keys t)
+          (setq jedi:complete-on-dot t)
+          (define-key python-mode-map (kbd "C-c C-d") 'jedi:show-doc)
+          (setq jedi:tooltip-method nil)
+          (set-face-attribute 'jedi:highlight-function-argument nil
+                              :foreground "green")
+          (define-key python-mode-map (kbd "C-c C-l") 'jedi:get-in-function-call))))
+    (add-hook 'python-mode-hook #'my/setup-jedi)))
 
 ;;; set env for python - python2 for now!
 (setenv "PYTHONPATH" "/usr/bin/python")
-
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
 
 (use-package pymacs
   ;; :ensure t
@@ -17,12 +31,12 @@
   (progn
     (pymacs-load "ropemacs" "rope-")))
 
-(ac-ropemacs-initialize)
-(add-hook 'python-mode-hook
-      (lambda ()
-	(add-to-list 'ac-sources 'ac-source-ropemacs)))
+;;(ac-ropemacs-initialize)
+;;(add-hook 'python-mode-hook
+;;      (lambda ()
+;;	(add-to-list 'ac-sources 'ac-source-ropemacs)))
 
-(add-hook 'python-mode-hook 'auto-complete-mode)
+;;(add-hook 'python-mode-hook 'auto-complete-mode)
 
 ;;; elpy configuration
 (use-package elpy
