@@ -190,7 +190,8 @@
 (use-package nyan-mode
   :ensure t
   :config
-  (nyan-mode))
+  (progn
+    (nyan-mode)))
 
 ;;; navigate through emacs-mark ring
 (use-package show-marks

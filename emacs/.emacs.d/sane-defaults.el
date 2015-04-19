@@ -186,6 +186,11 @@
 (setq whitespace-style '(face trailing))
 
 ;; (iswitchb-mode t)
+(use-package lisp-mode
+  :init
+  (add-hook 'emacs-lisp-mode-hook
+            (lambda ()
+              (setq mode-name " ξ "))))
 
 ;;Turn on documentation in elisp mode
 (add-hook 'emacs-lisp-mode-hook
