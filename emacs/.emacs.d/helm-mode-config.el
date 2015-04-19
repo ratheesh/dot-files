@@ -3,34 +3,33 @@
 (use-package helm
   :ensure helm
   :diminish helm-mode
+  :bind (
+         ("C-h a" . helm-apropos)
+	 ("C-x C-r" . helm-recentf)
+	 ("M-x" . helm-M-x)
+         ("M-y" . helm-show-kill-ring))
   :init
   (progn
     (use-package helm-config)
+    (use-package helm-files)
     (use-package helm-git-grep :ensure t)
-    (use-package helm-projectile
-      :ensure t
-      :bind
-      (
-       ("C-c h" . helm-projectile)
-       ("C-x C-r" . helm-recentf)
-       ("s-g" . helm-git-grep-at-point)))
-    (setq helm-candidate-number-limit 100)
     ;; From https://gist.github.com/antifuchs/9238468
     (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
           helm-input-idle-delay 0.01  ; this actually updates things
-                                        ; reeeelatively quickly.
           helm-quick-update t
           helm-M-x-requires-pattern nil
-          helm-ff-skip-boring-files t)
-    (helm-mode 1))
-  :bind (
-         ("C-h a" . helm-apropos)
-	 ("M-x" . helm-M-x)
-         ("M-y" . helm-show-kill-ring)))
+          helm-ff-skip-boring-files t
+	  helm-candidate-number-limit 100))
+  :config
+  (progn
+    (helm-mode 1)))
 
 (use-package helm-descbinds
+  :ensure t
   :bind (("C-h b" . helm-descbinds)
-         ("C-h w" . helm-descbinds)))
+         ("C-h w" . helm-descbinds))
+  :config
+  (helm-descbinds-mode))
 
 (setq helm-idle-delay 0.1
           helm-exit-idle-delay 0.1
@@ -76,7 +75,6 @@
                                       helm-source-recentf
                                       helm-source-bookmarks
                                       helm-source-buffer-not-found))
-
 
 (provide 'helm-mode-config)
 ;;; End of File

@@ -141,6 +141,7 @@
 (use-package common-init)
 (use-package git-mode-init)
 (use-package mode-mappings)
+(use-package prog-mode-init)
 (use-package cc-mode-init)
 (use-package setup-yasnippet)
 (use-package python-mode-init)

@@ -8,18 +8,6 @@
   (progn
     (paradox-enable)))
 
-;;; Enable paredit (only for eLisp mode)
-;; (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(use-package paredit
-  :init
-  (progn 
-    (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-    (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-    (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-    (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-    (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-    (add-hook 'scheme-mode-hook           #'enable-paredit-mode)))
-
 ;;ido mode
 (use-package ido
   :init
@@ -112,14 +100,6 @@
   (progn 
     (global-fringe-current-line-mode 1))) ;enable to all buffers by default
 
-;;; hungry-delete
-(use-package hungry-delete
-  :defer t
-  :init
-  (progn 
-    (add-hook 'prog-mode
-	      (lambda () (global-hungry-delete-mode)))))
-
 ;;; ack-and-half - alternative for grep
 (use-package ack-and-a-half
   :disabled t
@@ -161,9 +141,6 @@
     (global-fasd-mode 1)
     (setq fasd-enable-initial-prompt 'nil)))
 
-;;; license management
-(use-package lice)
-
 ;;; simplenote - note taking app for smartphones
 (use-package simplenote :defer t)
 
@@ -186,26 +163,8 @@
     (setq helm-swoop-move-to-line-cycle t)
     (setq helm-swoop-use-line-number-face t)))
 
-;yaml mode
-(use-package yaml-mode :defer t)
-
 ;;; auto update of packages
 (use-package auto-package-update :ensure t)
-
-;;; projectilie configuration
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :bind
-  (("C-c g" . projectile-use-git-grep)
-   ("s-f" . projectile-find-file))
-  :init
-  (progn
-    (projectile-global-mode)
-    (setq projectile-enable-caching t
-	  projectile-completion-system 'ido
-	  projectile-use-native-indexing t
-	  projectile-use-git-grep t)))
 
 (use-package with-editor
   :defer t
@@ -214,15 +173,6 @@
   (progn
     (add-hook 'shell-mode-hook  'with-editor-export-editor)
     (add-hook 'eshell-mode-hook 'with-editor-export-editor)))
-
-(use-package ws-butler
-  :ensure t
-  :diminish ws-butler-mode
-  :commands ws-butler-mode
-  :init (progn
-          (add-hook 'c-mode-common-hook 'ws-butler-mode)
-          (add-hook 'python-mode-hook 'ws-butler-mode)
-          (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
 ;;; smart mode line with powerline
 (use-package smart-mode-line
@@ -236,6 +186,11 @@
      sml/name-width 32
      sml/shorten-directory t)
     (add-hook 'after-init-hook 'sml/setup)))
+
+(use-package nyan-mode
+  :ensure t
+  :config
+  (nyan-mode))
 
 ;;; navigate through emacs-mark ring
 (use-package show-marks
@@ -273,13 +228,5 @@
   :config
   (progn
     (volatile-highlights-mode)))
-
-(use-package comment-dwim-2
-  :ensure t
-  :bind
-  (("M-;" . comment-dwim-2))
-  :init
-  (progn
-    (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)))
 
 (provide 'common-init)

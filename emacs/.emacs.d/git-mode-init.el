@@ -104,4 +104,10 @@
 
 (use-package git-timemachine :ensure t)
 
+(use-package magit
+  :defer t
+  :ensure t
+  :bind
+  (("C-x g" . magit-status)))
+
 (provide 'git-mode-init)
