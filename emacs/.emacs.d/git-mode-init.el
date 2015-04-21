@@ -95,6 +95,7 @@
 
 (use-package magit
   :ensure t
+  :diminish magit-auto-revert-mode
   :bind
   (("C-x g". magit-status))
   :init

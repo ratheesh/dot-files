@@ -41,6 +41,7 @@
   (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
   (eval-after-load "eldoc" '(diminish 'eldoc-mode))
   (eval-after-load "paredit" '(diminish 'paredit-mode))
+  (eval-after-load "package" '(diminish 'subword-mode))
   (eval-after-load "tagedit" '(diminish 'tagedit-mode))
   (eval-after-load "elisp-slime-nav" '(diminish 'elisp-slime-nav-mode))
   (eval-after-load "skewer-mode" '(diminish 'skewer-mode))

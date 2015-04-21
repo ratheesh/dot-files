@@ -203,7 +203,7 @@
   (progn 
     (setq tramp-default-method "ssh")))
 
-(use-package scratch-ext :ensure t :defer t)
+(use-package scratch-ext :ensure t)
 
 (use-package expand-region
   :bind

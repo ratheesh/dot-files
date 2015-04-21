@@ -21,7 +21,8 @@
 	    (rainbow-delimiters-mode)
 	    (fci-mode)
 	    (flyspell-prog-mode)
-	    (which-function-mode t)))
+	    (which-function-mode t)
+	    (setq mode-name " ς/ι ")))
 
 (add-hook 'c-mode-common-hook
           (lambda ()

@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (mytheme-dark)))
  ;; '(sml/theme (quote light))
+ '(flymake-python-pyflakes-executable "flake8")
  '(visible-cursor t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

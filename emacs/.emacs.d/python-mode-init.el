@@ -20,7 +20,10 @@
           (set-face-attribute 'jedi:highlight-function-argument nil
                               :foreground "green")
           (define-key python-mode-map (kbd "C-c C-l") 'jedi:get-in-function-call))))
-    (add-hook 'python-mode-hook #'my/setup-jedi)))
+    (add-hook 'python-mode-hook #'my/setup-jedi)
+    (add-hook 'python-mode-hook
+	      (lambda ()
+		(setq mode-name " ργ ")))))
 
 ;;; set env for python - python2 for now!
 (setenv "PYTHONPATH" "/usr/bin/python")
