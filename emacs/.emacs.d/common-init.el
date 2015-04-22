@@ -230,4 +230,14 @@
   (progn
     (volatile-highlights-mode)))
 
+(use-package smart-tab
+  :defer t
+  :diminish ""
+  :init (global-smart-tab-mode 1)
+  :config
+  (progn
+    (add-to-list 'smart-tab-disabled-major-modes 'mu4e-compose-mode)
+    (add-to-list 'smart-tab-disabled-major-modes 'erc-mode)
+    (add-to-list 'smart-tab-disabled-major-modes 'shell-mode)))
+
 (provide 'common-init)
