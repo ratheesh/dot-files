@@ -160,5 +160,6 @@
     (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
     (add-hook 'scheme-mode-hook           #'enable-paredit-mode)))
 
+(use-package iedit :ensure t)
 
 (provide 'prog-mode-init)
