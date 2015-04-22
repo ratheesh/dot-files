@@ -96,13 +96,14 @@
   :defer t
   :ensure t
   :diminish undo-tree-mode
-  :bind
-  (("C-?" . undo-tree-redo))
   :init
   (progn
     (global-undo-tree-mode t)
     (setq undo-tree-visualizer-timestamps t)
-    (setq undo-tree-visualizer-diff t)))
+    (setq undo-tree-visualizer-diff t)
+    (define-key undo-tree-map (kbd "C-x u") 'undo-tree-visualize)
+    (define-key undo-tree-map (kbd "C-?") 'undo-tree-redo)
+    (define-key undo-tree-map (kbd "C-/") 'undo-tree-undo)))
 
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
@@ -137,6 +138,7 @@
 (delete-selection-mode 1)   ;; delete the sel with a keyp
 (setq confirm-kill-emacs 'y-or-n-p)
 (setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq vc-handled-backends '(SVN Git))
 
 (setq-default
  user-mail-address "ratheeshreddy@gmail.com"
