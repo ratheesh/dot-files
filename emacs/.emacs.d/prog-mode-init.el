@@ -52,6 +52,7 @@
   :ensure t
   :init
   (progn
+    (use-package fuzzy :ensure t)
     (setq ac-auto-show-menu t
 	  ac-quick-help-delay 0.5
 	  ac-use-fuzzy t))
