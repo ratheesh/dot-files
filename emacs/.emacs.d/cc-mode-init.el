@@ -30,8 +30,18 @@
 	      (ggtags-mode)
               (helm-gtags-mode 1))))
 
+;;; no indent on ret key
+(add-hook 'c-mode-hook
+          (lambda ()
+            (setq-local electric-indent-chars (remq ?\n electric-indent-chars))))
+
 (use-package autopair
-  :ensure t)
+  :ensure t
+  :diminish autopair-mode
+  :init
+  (progn
+    (add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))))
+
 (use-package whitespace
   :ensure t)
 
