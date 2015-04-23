@@ -65,6 +65,11 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#ff0000"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#ffff00"))))
  '(footnote-spaced-footnotes nil)
- '(git-gutter+-separator ((t (:foreground "yellow" :weight normal)))))
+ '(git-gutter+-separator ((t (:foreground "yellow" :weight normal))))
+
+;;; helm colors
+ '(helm-match ((t (:foreground "AntiqueWhite4" :inverse-video t))))
+ '(helm-selection ((t (:background "gray14" :underline t))))
+ '(helm-selection-line ((t (:background "gray14"  :underline nil)))))
 
 (provide-theme 'mytheme-dark)
