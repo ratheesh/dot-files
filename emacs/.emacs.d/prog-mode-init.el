@@ -137,7 +137,7 @@
 	  '(font-lock-type-face font-lock-variable-name-face))
     (setq rainbow-identifiers-choose-face-function
 	  'rainbow-identifiers-cie-l*a*b*-choose-face)
-    (setq rainbow-identifiers-face-count 64)
+    (setq rainbow-identifiers-face-count 128)
     (setq rainbow-identifiers-cie-l*a*b*-lightness 60)
     (setq rainbow-identifiers-cie-l*a*b*-saturation 60)
     (setq rainbow-identifiers-faces-to-override
