@@ -79,7 +79,7 @@
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
 ;; from snippets.el
-(global-set-key (kbd "M-i") 'ido-goto-symbol)
+;; (global-set-key (kbd "M-i") 'ido-goto-symbol)
 ;(global-set-key "\C-cd" 'duplicate-current-line)
 (global-set-key (kbd "C-c d") 'duplicate-thing)
 

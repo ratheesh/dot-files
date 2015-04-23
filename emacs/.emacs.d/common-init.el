@@ -240,4 +240,9 @@
     (add-to-list 'smart-tab-disabled-major-modes 'erc-mode)
     (add-to-list 'smart-tab-disabled-major-modes 'shell-mode)))
 
+(use-package idomenu
+  :ensure t
+  :bind
+  ("M-i" . idomenu))
+
 (provide 'common-init)
