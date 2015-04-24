@@ -155,6 +155,7 @@
 ;;; Enable paredit (only for eLisp mode)
 (use-package paredit
   :ensure t
+  :diminish paredit-mode
   :init
   (progn 
     (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)

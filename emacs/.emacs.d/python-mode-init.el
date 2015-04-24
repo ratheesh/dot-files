@@ -45,6 +45,7 @@
 ;;; elpy configuration
 (use-package elpy
   :ensure t
+  :diminish elpy-mode
   :init
   (progn
     (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)

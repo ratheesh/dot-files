@@ -110,6 +110,7 @@
 (use-package auto-complete
   :ensure t
   :disabled t
+  :diminish auto-complete-mode
   :config
   (use-package auto-complete-config
     :config

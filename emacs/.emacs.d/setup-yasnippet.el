@@ -3,6 +3,7 @@
 (use-package yasnippet
   :ensure t
   :pin melpa-stable
+  :diminish yas-minor-mode
   :init
   (progn 
     (setq yas-melpa-path (expand-file-name "snippets" (file-name-directory (locate-library "yasnippet"))))
