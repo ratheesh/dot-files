@@ -106,23 +106,6 @@
     (eldoc-mode t)
     (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)))
 
-;; auto complete configuration
-(use-package auto-complete
-  :ensure t
-  :disabled t
-  :diminish auto-complete-mode
-  :config
-  (use-package auto-complete-config
-    :config
-    (progn
-      (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-      (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
-      (ac-config-default)
-      (setq ac-auto-show-menu nil)
-      (ac-set-trigger-key "TAB")
-      (ac-set-trigger-key "<tab>")
-      (global-auto-complete-mode t))))
-
 (use-package ac-helm
   :disabled t
   :pin melpa-stable)

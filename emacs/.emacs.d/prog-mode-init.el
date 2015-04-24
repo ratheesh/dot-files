@@ -52,9 +52,13 @@
 (use-package fuzzy :ensure t)
 (use-package auto-complete
   :ensure t
+  :diminish auto-complete-mode
   :init
   (progn
     (use-package fuzzy :ensure t)
+    (ac-config-default)
+    (ac-set-trigger-key "TAB")
+    (ac-set-trigger-key "<tab>")
     (setq ac-auto-show-menu t
 	  ac-quick-help-delay 0.5
 	  ac-use-fuzzy t))
