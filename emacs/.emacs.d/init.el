@@ -98,44 +98,14 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar packages-list '(
-    whitespace fill-column-indicator paredit dropdown-list popup telepathy
-    highlight-parentheses c-eldoc emamux figlet auto-complete autopair
-    auto-complete-clang rainbow-mode rainbow-delimiters ace-jump-mode lice
-    smart-mode-line-powerline-theme ido-vertical-mode magit key-chord smartparens
-    diminish expand-region smart-operator smart-newline duplicate-thing multiple-cursors
-    smex smooth-scrolling undo-tree yasnippet ecb smart-forward scratch-ext
-    org-bullets git-gutter+ git-gutter-fringe+ xclip sudo-ext iy-go-to-char
-    isearch-symbol-at-point idomenu ido-at-point emacs-setup boxquote
-    git-commit-training-wheels-mode flx-ido jump-char smart-tab unicode-fonts
-    sr-speedbar ggtags fringe-current-line git-messenger stgit hlinum simplenote
-    use-package hungry-delete gitconfig-mode gitignore-mode iregister css-eldoc
-    flymake-css multi-web-mode jedi elpy fasd color-theme-sanityinc-tomorrow
-    helm-swoop highlight-tail flx-isearch yaml-mode)
-  "List of packages needs to be installed at launch")
+;;; install use-package - this is required for all other packages.
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
-(defun has-package-not-installed ()
-  (loop for p in packages-list
-        when (not (package-installed-p p)) do (return t)
-        finally (return nil)))
-(when (has-package-not-installed)
-  ;; Check for new packages (package versions)
-  (message "%s" "Get latest versions of all packages...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; Install the missing packages
-  (dolist (p packages-list)
-    (when (not (package-installed-p p))
-      (package-install p))))
+(setq use-package-verbose t)
+(require 'use-package)
 
-;;; make sure that use-package is initialized first before other
-;;; package to make sure that package are properly initialized
-(when (require 'use-package nil 'noerror)
-  (setq use-package-idle-interval 2)
-  (setq use-package-verbose t))
-
-;;; setup el-get related packages
-(use-package el-get-init :defer t)
+(setq load-prefer-newer t)
 
 (use-package sane-defaults)
 (use-package common-init)

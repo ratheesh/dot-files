@@ -13,7 +13,9 @@
 
 
 ;;; license management
-(use-package lice :defer t)
+(use-package lice
+  :ensure t
+  :defer t )
 
 ;;; make parenthesis colorful!
 (use-package rainbow-delimiters
@@ -152,6 +154,7 @@
 
 ;;; Enable paredit (only for eLisp mode)
 (use-package paredit
+  :ensure t
   :init
   (progn 
     (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)

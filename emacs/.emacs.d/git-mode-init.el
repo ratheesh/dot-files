@@ -23,6 +23,7 @@
 
 ;git mode configuration
 (use-package git-commit-training-wheels-mode
+  :ensure t
   :init
   (progn
     (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)))
@@ -30,9 +31,9 @@
 (when (window-system)
   (use-package linum+)
   (global-linum-mode t)
-  (use-package git-gutter+)
-  (use-package fringe-helper)
-  (use-package git-gutter-fringe+)
+  (use-package git-gutter+ :ensure t)
+  (use-package fringe-helper :ensure t)
+  (use-package git-gutter-fringe+ :ensure t)
   (global-git-gutter+-mode t)
   ;; (setq-default left-fringe-width  20)
   ;; (setq-default right-fringe-width 20)
@@ -45,11 +46,11 @@
           #'(lambda ()
 	      (use-package linum+)
 	      (global-linum-mode t)
-	      (use-package hlinum)
+	      (use-package hlinum :ensure t)
 	      (hlinum-activate)
-	      (use-package git-gutter+)
-	      (use-package fringe-helper)
-	      (use-package git-gutter-fringe+)
+	      (use-package git-gutter+ :ensure t)
+	      (use-package fringe-helper :ensure t)
+	      (use-package git-gutter-fringe+ :ensure t)
 	      (global-git-gutter+-mode t)
 	      ;; (setq-default left-fringe-width  20)
 	      ;; (setq-default right-fringe-width 20)
@@ -59,8 +60,8 @@
 	      (set-face-foreground 'git-gutter-fr+-deleted  "red")))
 
 ;;; configure gitconfig and gitignore modes
-(use-package gitconfig-mode)
-(use-package gitignore-mode)
+(use-package gitconfig-mode :ensure t :defer t)
+(use-package gitignore-mode :ensure t :defer t)
 
 ;; (require 'git-gutter+)
 ;; ;; If you enable global minor mode
@@ -81,11 +82,13 @@
 
 ;;; git messenger - pop last commit message on the current line
 (use-package git-messenger
+  :ensure t
   :bind
   (("C-c v p" . git-messenger:popup-message)))
 
 ;;; stgit-mode - stgit wrapper for eMacs
 (use-package stgit
+  :ensure t
   :config
   (progn ;; I donot if we can put under :mode category
     (add-to-list 'auto-mode-alist ' ("\\.stgit-edit.txt$"  . git-commit-mode))

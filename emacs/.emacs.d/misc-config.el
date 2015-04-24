@@ -11,6 +11,15 @@
   (progn
     (guide-key-mode)))
 
+(use-package highlight-tail
+  :ensure t
+  :disabled t
+  :config
+  (progn
+    (setq highlight-tail-steps 3
+	  highlight-tail-timer 0.1
+	  highlight-tail-const-width 3)
+    (highlight-tail-mode)))
 
 (use-package skype
   :disabled t

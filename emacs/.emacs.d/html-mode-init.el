@@ -5,12 +5,14 @@
   )
 
 (use-package css-eldoc
+  :ensure t
   :config
   (progn
     (turn-on-css-eldoc)))
 
 ;;; multi mode to edit different types of code in html file
 (use-package multi-web-mode
+  :ensure t
   :config
   (progn
     (setq

@@ -98,6 +98,7 @@
                 (c-set-style "linux-tabs-only")))))
 
 (use-package c-eldoc
+  :ensure t
   :disabled t
   :ensure t
   :config
@@ -107,6 +108,7 @@
 
 ;; auto complete configuration
 (use-package auto-complete
+  :ensure t
   :disabled t
   :config
   (use-package auto-complete-config
@@ -139,6 +141,7 @@
 
 ;; ECB env settings - not using for now
 (use-package ecb
+  :ensure t
   :disabled t
   :bind
   (("\C-c(" . ecb-activate)
@@ -154,6 +157,7 @@
      ecb-compile-window-height nil)))
 
 (use-package sr-speedbar
+  :ensure t
   :disabled t
   :bind
   (("C-c C-s" . sr-speedbar-toggle)))

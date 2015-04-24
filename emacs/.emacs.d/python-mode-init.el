@@ -8,6 +8,7 @@
     (defun my/setup-jedi ()
       (interactive)
       (use-package jedi
+	:ensure t
         :config
         (progn
 

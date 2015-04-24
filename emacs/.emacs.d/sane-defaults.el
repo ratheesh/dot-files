@@ -77,7 +77,7 @@
 (global-subword-mode 1)
 
 ;; Keep cursor away from edges when scrolling up/down
-;(use-package smooth-scrolling)
+;(use-package smooth-scrolling :ensure t)
 
 ;; Allow recursive minibuffers
 (setq enable-recursive-minibuffers t)
@@ -208,6 +208,7 @@
 (use-package scratch-ext :ensure t)
 
 (use-package expand-region
+  :ensure t
   :bind
   (("M-=" . er/expand-region)
    ("M--" . er/contract-region)))
@@ -225,7 +226,10 @@
 ;; Don't highlight matches with jump-char - it's distracting
 ;; (setq jump-char-lazy-highlight-face nil)
 
-(use-package smart-forward :defer t)
+(use-package smart-forward
+  :defer t
+  :ensure t)
+
 ;(use-package change-inner)
 ;(use-package multifiles)
 
