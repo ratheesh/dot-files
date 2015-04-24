@@ -1,12 +1,15 @@
 ;;-*-Emacs-Lisp-*-
 ;; init.el
 ;; Ratheesh S
-;; Feb 2014
+;; April 2015
 ;; Some stuff is taken from http://www.dgp.toronto.edu/~ghali/emacs.html
 ;; Based on magnar's https://github.com/magnars/.emacs.d
-;; Special thanks to santosh shivraj
+;; Special thanks to santosh sivaraj
 
 ; Meine Emacs Einstellungen
+
+;;; enable debugging in case there are errors during emacs init
+(setq debug-on-error t)
 
 ;;; save the current time
 (defconst emacs-start-time (current-time))
@@ -33,11 +36,8 @@
         ))
 
 (cond (on_gnu_linux
-       (set-default-font "Monaco-13")
-       (setq default-frame-alist '((font . "Monaco-13")))
-       ;; (set-default-font "Droid Sans Mono-14")
-       ;; (setq default-frame-alist '((font . "Droid Sans Mono-14")))
-       ;; (set-default-font "12x24")
+       (set-default-font "MonacoB-13:weight=normal:slant=Oblique")
+       (setq default-frame-alist '((font . "MonacoB-13:weight=normal:slant=Oblique")))
        ))
 
 (cond (on_windows_nt
@@ -163,4 +163,6 @@
 (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
   (message "Loading init.el took %.3f seconds!!!" elapsed))
 
+;;; disable debugging
+(setq debug-on-error nil)
 ;; End of the File
