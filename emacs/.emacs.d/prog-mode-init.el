@@ -111,7 +111,7 @@
      helm-gtags-highlight-candidate t)
     ))
 
-;;; projectilie configuration
+;;; projectile configuration
 (use-package projectile
   :ensure t
   :diminish projectile-mode
@@ -121,7 +121,7 @@
   :init
   (progn
     (setq projectile-enable-caching t
-	  projectile-completion-system 'ido
+	  projectile-completion-system 'helm
 	  projectile-use-native-indexing t
 	  projectile-use-git-grep t)
     (projectile-global-mode t)))
@@ -132,8 +132,12 @@
       (
        ("C-c h" . helm-projectile)
        ("s-r" . helm-projectile-recentf)
-       ("s-g" . helm-git-grep-at-point)))
-    (setq helm-candidate-number-limit 100)
+       ("s-g" . helm-git-grep-at-point))
+      :init
+      (progn
+	(setq
+	 helm-candidate-number-limit 100
+	 helm-projectile-fuzzy-match t)))
 
 ;;; rainbow-identifiers
 (use-package rainbow-identifiers
