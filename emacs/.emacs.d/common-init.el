@@ -4,6 +4,9 @@
 (use-package paradox
   :ensure t
   :pin melpa-stable
+  :init
+  (progn
+    (setq paradox-execute-asynchronously t))
   :config
   (progn
     (paradox-enable)))
