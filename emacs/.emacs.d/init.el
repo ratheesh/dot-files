@@ -109,6 +109,7 @@
 
 (use-package sane-defaults)
 (use-package common-init)
+(use-package helm-mode-config)
 (use-package git-mode-init)
 (use-package mode-mappings)
 (use-package prog-mode-init)
@@ -121,7 +122,6 @@
 (use-package key-bindings)
 (use-package appearance)
 (use-package misc-config)
-(use-package helm-mode-config)
 
 ;;; Load user initialization code
 (load user-file 'noerror)
