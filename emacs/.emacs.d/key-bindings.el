@@ -45,7 +45,7 @@
 (global-set-key (kbd "C-c C-k") 'eval-buffer)
 
 ;; recentf
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+;; (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; Magit
 (autoload 'magit-status "magit")
