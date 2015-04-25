@@ -4,7 +4,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (mytheme-dark)))
- ;; '(sml/theme (quote light))
  '(flymake-python-pyflakes-executable "flake8")
  '(visible-cursor t))
 (custom-set-faces
@@ -13,10 +12,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(git-gutter+-separator ((t (:foreground "yellow" :weight normal))))
- '(sml/projectile ((t (:inherit sml/git :slant italic))))
- '(sml/filename ((t (:inherit sml/global :weight normal))))
+ '(sml/filename ((t (:inherit sml/global :foreground "#eab700" :slant italic :weight normal))))
  '(sml/line-number ((t (:inherit sml/modes :weight normal))))
- ;; '(sml/col-number ((t nil)))
- ;; '(sml/folder ((t (:inherit sml/global :weight normal))))
- ;; '(sml/global ((t (:foreground "black" :inverse-video nil))))
- )
+ '(sml/projectile ((t (:inherit sml/git)))))
