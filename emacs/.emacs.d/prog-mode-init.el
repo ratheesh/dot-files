@@ -83,6 +83,7 @@
 ;;; gtags configuration
 (use-package ggtags
   :ensure t
+  :disabled t
   :config
   (progn
     (setq ggtags-completing-read-function 'nil)

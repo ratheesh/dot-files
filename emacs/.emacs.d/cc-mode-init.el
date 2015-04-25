@@ -27,7 +27,6 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-	      (ggtags-mode)
               (helm-gtags-mode 1))))
 
 ;;; no indent on ret key
