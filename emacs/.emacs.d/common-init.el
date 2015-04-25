@@ -206,6 +206,9 @@
 
 (use-package nyan-mode
   :ensure t
+  :init
+  (progn
+    (setq nyan-bar-length 32))
   :config
   (progn
     (nyan-mode)))
