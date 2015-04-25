@@ -13,6 +13,7 @@
     (use-package helm-config)
     (use-package helm-files)
     (use-package helm-git-grep :ensure t)
+    (use-package helm-ag :ensure t)
     ;; From https://gist.github.com/antifuchs/9238468
     (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
           helm-input-idle-delay 0.01  ; this actually updates things
@@ -66,6 +67,7 @@
           helm-semantic-fuzzy-match t
           helm-imenu-fuzzy-match t
           helm-completion-in-region-fuzzy-match t
+	  helm-projectile-fuzzy-match t
 	  helm-M-x-fuzzy-match        t
 	  helm-buffers-fuzzy-matching t
 	  helm-recentf-fuzzy-match    t
