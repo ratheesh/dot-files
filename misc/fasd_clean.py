@@ -29,6 +29,8 @@ def fasd_clean():
     except IOError:
         print 'ERROR: No File found: %s' % db_file
         exit(1)
+    except ValueError:
+        print 'ERROR: IO Error. Try again'
 
     d = f.readlines()
     f.close()
@@ -38,6 +40,8 @@ def fasd_clean():
     except IOError:
         print 'ERROR: No File found: %s' % db_file
         exit(1)
+    except ValueError:
+        print 'ERROR: IO Error. Try again'
 
     print "Cleaning fasd database ..."
     for i in d:
