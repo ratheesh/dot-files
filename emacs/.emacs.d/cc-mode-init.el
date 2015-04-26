@@ -116,8 +116,9 @@
   (progn
     (key-chord-mode 1)
     (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
-    (key-chord-define c-mode-map ";;" "\C-e")) ;end of the line
-  )
+    (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
+    (key-chord-define-global "bb" 'ido-switch-buffer) ;switch buffer
+    ))
 
 ;;; dts file editing
 (use-package dts-mode :ensure t :defer t)
