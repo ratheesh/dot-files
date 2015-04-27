@@ -57,7 +57,7 @@
 (global-set-key (kbd "C-c v t") 'git-gutter+-show-hunk)
 
 ;; Jump to a definition in the current file. (This is awesome)
-(global-set-key (kbd "C-x C-i") 'ido-imenu)
+;; (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; toggle two most recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])

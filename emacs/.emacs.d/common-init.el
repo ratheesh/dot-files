@@ -266,6 +266,7 @@
 
 (use-package idomenu
   :ensure t
+  :disabled t
   :bind
   (("M-i" . idomenu)))
 

@@ -7,7 +7,8 @@
          ("C-h a" . helm-apropos)
 	 ("C-x C-r" . helm-recentf)
 	 ("M-x" . helm-M-x)
-         ("M-y" . helm-show-kill-ring))
+         ("M-y" . helm-show-kill-ring)
+	 ("M-i" . helm-semantic-or-imenu))
   :init
   (progn
     (use-package helm-config)
