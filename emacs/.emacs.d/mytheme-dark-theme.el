@@ -69,7 +69,7 @@
  '(git-gutter+-separator ((t (:foreground "yellow" :weight normal))))
 
 ;;; helm colors
- '(helm-match ((t (:foreground "DodgerBlue" :inverse-video t))))
+ '(helm-match ((t (:foreground "OrangeRed" :weight bold))))
  '(helm-selection ((t (:background "gray20" :underline t))))
  '(helm-selection-line ((t (:background "gray20"  :underline nil)))))
 
