@@ -124,7 +124,8 @@
 	  projectile-completion-system 'helm
 	  projectile-use-native-indexing t
 	  projectile-use-git-grep t)
-    (projectile-global-mode t)))
+    (projectile-global-mode t)
+    (helm-projectile-on)))
 
 (use-package helm-projectile
       :ensure t
