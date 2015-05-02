@@ -11,6 +11,19 @@
   (progn
     (guide-key-mode)))
 
+;;; perspective mode
+(use-package perspective
+  :ensure t
+  :disabled t
+  :config
+  (progn
+    (persp-mode)
+    (use-package persp-projectile
+      :ensure t
+      :init
+      (progn
+	(define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)))))
+
 (use-package highlight-tail
   :ensure t
   :disabled t
