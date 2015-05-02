@@ -103,7 +103,9 @@
   (("C-x g". magit-status))
   :init
   (progn
-    (use-package magit-stgit :ensure t)))
+    (use-package magit-stgit :ensure t)
+    (setq magit-auto-revert-mode nil)
+    (setq magit-last-seen-setup-instructions "1.4.0")))
 (add-hook 'magit-mode-hook 'magit-load-config-extensions)
 
 (use-package git-timemachine :ensure t)
