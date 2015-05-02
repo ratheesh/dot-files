@@ -116,8 +116,7 @@
   :ensure t
   :diminish projectile-mode
   :bind
-  (("C-c g" . projectile-use-git-grep)
-   ("s-f" . projectile-find-file))
+  (("C-c g" . projectile-use-git-grep))
   :init
   (progn
     (setq projectile-enable-caching t
@@ -125,20 +124,22 @@
 	  projectile-use-native-indexing t
 	  projectile-use-git-grep t)
     (projectile-global-mode t)
-    (helm-projectile-on)))
-
-(use-package helm-projectile
+    (use-package helm-projectile
       :ensure t
       :bind
       (
        ("C-c h" . helm-projectile)
        ("s-r" . helm-projectile-recentf)
-       ("s-g" . helm-git-grep-at-point))
+       ("s-g" . helm-git-grep-at-point)
+       ("s-f" . helm-projectile-find-file-dwim))
       :init
       (progn
 	(setq
 	 helm-candidate-number-limit 100
-	 helm-projectile-fuzzy-match t)))
+	 helm-projectile-fuzzy-match t))
+      :config
+      (progn
+	(helm-projectile-on)))))
 
 ;;; rainbow-identifiers
 (use-package rainbow-identifiers
