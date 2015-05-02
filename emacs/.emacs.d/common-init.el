@@ -81,6 +81,7 @@
 ;;smex
 (use-package smex
   :ensure t
+  :disabled t
   :bind
   (("M-x" . smex)
    ("M-X" . smex-major-mode-commands)

@@ -1,7 +1,7 @@
 ;;; Helm mode configuration
 
 (use-package helm
-  :ensure helm
+  :ensure t
   :diminish helm-mode
   :bind (
          ("C-h a" . helm-apropos)
@@ -11,39 +11,21 @@
 	 ("M-i" . helm-semantic-or-imenu))
   :init
   (progn
-    (use-package helm-config)
-    (use-package helm-files)
-    (use-package helm-git-grep :ensure t)
-    (use-package helm-ag :ensure t)
     ;; From https://gist.github.com/antifuchs/9238468
     (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
           helm-input-idle-delay 0.01  ; this actually updates things
           helm-quick-update t
           helm-M-x-requires-pattern nil
           helm-ff-skip-boring-files t
-	  helm-candidate-number-limit 100))
-  :config
-  (progn
-    (helm-mode 1)))
-
-(use-package helm-descbinds
-  :ensure t
-  :bind (("C-h b" . helm-descbinds)
-         ("C-h w" . helm-descbinds))
-  :config
-  (helm-descbinds-mode))
-
-(setq helm-idle-delay 0.1
+	  helm-candidate-number-limit 100)
+    (setq helm-idle-delay 0.1
           helm-exit-idle-delay 0.1
           helm-input-idle-delay 0
-          helm-buffers-fuzzy-matching t
           ;; truncate long lines in helm completion
           helm-truncate-lines t
           ;; may be overridden if 'ggrep' is in path (see below)
-          helm-grep-default-command
-          "grep -a -d skip %e -n%cH -e %p %f"
-          helm-grep-default-recurse-command
-          "grep -a -d recurse %e -n%cH -e %p %f"
+          helm-grep-default-command "grep -a -d skip %e -n%cH -e %p %f"
+          helm-grep-default-recurse-command "grep -a -d recurse %e -n%cH -e %p %f"
           ;; do not display invisible candidates
           helm-quick-update t
           ;; be idle for this many seconds, before updating in delayed sources.
@@ -78,6 +60,22 @@
                                       helm-source-recentf
                                       helm-source-bookmarks
                                       helm-source-buffer-not-found))
+    (use-package helm-config)
+    (use-package helm-files)
+    (use-package helm-git-grep :ensure t)
+    (use-package helm-ag :ensure t))
+  :config
+  (progn
+    (helm-mode 1)))
+
+(use-package helm-descbinds
+  :ensure t
+  :bind (("C-h b" . helm-descbinds)
+         ("C-h w" . helm-descbinds))
+  :config
+  (helm-descbinds-mode))
+
+
 
 (provide 'helm-mode-config)
 ;;; End of File

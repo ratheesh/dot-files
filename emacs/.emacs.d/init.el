@@ -108,8 +108,8 @@
 (setq load-prefer-newer t)
 
 (use-package sane-defaults)
-(use-package common-init)
 (use-package helm-mode-config)
+(use-package common-init)
 (use-package git-mode-init)
 (use-package mode-mappings)
 (use-package prog-mode-init)
