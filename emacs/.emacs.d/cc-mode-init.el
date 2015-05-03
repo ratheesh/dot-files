@@ -112,6 +112,10 @@
 ;;key chord config
 (use-package key-chord
   :ensure t
+  :init
+  (progn
+    (setq key-chord-two-keys-delay 0.01)
+    )
   :config
   (progn
     (key-chord-mode 1)
@@ -119,6 +123,7 @@
     (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
     (key-chord-define-global "bb" 'ido-switch-buffer) ;switch buffer
     (key-chord-define-global "jk" 'forward-char) ;forward by a character
+    (key-chord-define-global "kj" 'forward-char) ;forward by a character
     ))
 
 ;;; dts file editing
