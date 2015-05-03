@@ -167,4 +167,11 @@
 (global-set-key [M-left] (quote backward-global-mark))
 (global-set-key [M-right] (quote forward-global-mark))
 
+;;; show file path in mini buffer
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+(global-set-key [f9] 'show-file-name)
+
 (provide 'my-defuns)
