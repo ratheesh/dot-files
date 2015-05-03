@@ -2,6 +2,7 @@
 
 (use-package helm
   :ensure t
+  :defer t
   :diminish helm-mode
   :bind (
          ("C-h a" . helm-apropos)
@@ -62,14 +63,15 @@
                                       helm-source-buffer-not-found))
     (use-package helm-config)
     (use-package helm-files)
-    (use-package helm-git-grep :ensure t)
-    (use-package helm-ag :ensure t))
+    (use-package helm-git-grep :ensure t :defer t)
+    (use-package helm-ag :ensure t :defer t))
   :config
   (progn
     (helm-mode 1)))
 
 (use-package helm-descbinds
   :ensure t
+  :defer t
   :bind (("C-h b" . helm-descbinds)
          ("C-h w" . helm-descbinds))
   :config
