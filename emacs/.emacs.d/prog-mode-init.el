@@ -20,6 +20,7 @@
 ;;; make parenthesis colorful!
 (use-package rainbow-delimiters
   :ensure t
+  :defer t
   :config
   (progn
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -49,9 +50,11 @@
     (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)))
 
 ;;; auto complete package
-(use-package fuzzy :ensure t)
+(use-package fuzzy :ensure t :defer t)
+
 (use-package auto-complete
   :ensure t
+  :defer t
   :diminish auto-complete-mode
   :init
   (progn
@@ -151,8 +154,8 @@
     (setq rainbow-identifiers-choose-face-function
 	  'rainbow-identifiers-cie-l*a*b*-choose-face)
     (setq rainbow-identifiers-face-count 128)
-    (setq rainbow-identifiers-cie-l*a*b*-lightness 60)
-    (setq rainbow-identifiers-cie-l*a*b*-saturation 60)
+    (setq rainbow-identifiers-cie-l*a*b*-lightness 45)
+    (setq rainbow-identifiers-cie-l*a*b*-saturation 45)
     (setq rainbow-identifiers-faces-to-override
       '(font-lock-type-face
         font-lock-variable-name-face
@@ -166,6 +169,7 @@
 ;;; Enable paredit (only for eLisp mode)
 (use-package paredit
   :ensure t
+  :defer t
   :diminish paredit-mode
   :init
   (progn 
@@ -176,6 +180,6 @@
     (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
     (add-hook 'scheme-mode-hook           #'enable-paredit-mode)))
 
-(use-package iedit :ensure t)
+(use-package iedit :ensure t :defer t)
 
 (provide 'prog-mode-init)
