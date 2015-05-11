@@ -20,7 +20,6 @@
 ;;; make parenthesis colorful!
 (use-package rainbow-delimiters
   :ensure t
-  :defer t
   :config
   (progn
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)

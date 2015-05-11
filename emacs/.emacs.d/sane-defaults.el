@@ -220,7 +220,7 @@
     (setq desktop-globals-to-save
       (append '((comint-input-ring . 50)
                 (compile-history . 30)
-                desktop-missing-file-warning
+                (desktop-missing-file-warning)
                 (dired-regexp-history . 20)
                 (extended-command-history . 50)
                 (face-name-history . 20)
@@ -243,8 +243,8 @@
                 register-alist
                 (search-ring . 20)
                 (shell-command-history . 50)
-                tags-file-name
-                tags-table-list))))
+                (tags-file-name)
+                (tags-table-list)))))
   :config
   (progn
     (desktop-save-mode t)))

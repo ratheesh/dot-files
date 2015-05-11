@@ -112,7 +112,6 @@
 (defun insert-line-above ()
   "Insert empty line above current one"
   (interactive)
-  (interactive)
   (move-beginning-of-line nil)
   (newline-and-indent)
   (forward-line -1)
