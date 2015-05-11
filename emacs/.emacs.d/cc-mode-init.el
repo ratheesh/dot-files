@@ -41,8 +41,13 @@
   (progn
     (add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))))
 
-(use-package whitespace
-  :ensure t)
+;;; better whitespace cleanup mode
+(use-package whitespace-cleanup-mode
+  :diminish whitespace-cleanup-mode
+  :ensure t
+  :defer t
+  :config
+  (global-whitespace-cleanup-mode))
 
 ;;fci-column-indicator mode
 (defun auto-fci-mode (&optional unused)
