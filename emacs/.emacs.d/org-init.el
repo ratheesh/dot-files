@@ -14,32 +14,48 @@
 (set-keyboard-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
 
+(defun yas/org-very-safe-expand ()
+  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+
 ;; Enable org mode for the files with .org extension
-(use-package org-install
+(use-package org
+  :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-  :config
-  ;; common org mode variable settings
-  (setq
-   org-startup-indented t
-   org-indent-mode t
-   org-log-done t
-   org-agenda-show-log t
-   org-log-repeat 'time
-   org-agenda-include-diary t
-   org-agenda-include-all-todo t
-   org-completion-use-ido t
-   org-clock-persist 'history
-   org-agenda-include-diary t
-   org-todo-keywords
-   '((type "TODO(t)" "STARTED(s)" "DELAYED(q@/!)" "|" "CANCELLED(c@/!)" "DEFERRED(e@/!)" "DONE(d@/!)")))
+  :init
+  (progn
+
+    ;; common org mode variable settings
+    (setq
+     org-startup-indented t
+     org-indent-mode t
+     org-log-done t
+     org-agenda-show-log t
+     org-log-repeat 'time
+     org-agenda-include-diary t
+     org-agenda-include-all-todo t
+     org-completion-use-ido t
+     org-hide-leading-stars t
+     org-clock-persist 'history
+     org-agenda-include-diary t
+     org-todo-keywords
+     '((type "TODO(t)" "STARTED(s)" "DELAYED(q@/!)" "WAITING(w@/!)" "|" "CANCELLED(c@/!)" "DEFERRED(e@/!)" "DONE(d@/!)"))))
 
   ;; Org mode hooks
-  ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (add-hook 'remember-mode-hook 'org-remember-apply-template)
   (add-hook 'org-mode-hook 'turn-on-auto-fill)
   (add-hook 'message-mode-hook 'turn-on-orgtbl)
-  (add-hook 'org-mode-hook 'turn-on-font-lock)
+  (add-hook 'org-mode-hook
+  	    (lambda ()
+  	      (org-set-local 'yas/trigger-key [tab])
+  	      (define-key yas/keymap [tab] 'yas/next-field-or-maybe-expand)))
+  (add-hook 'org-mode-hook
+  	    (lambda ()
+  	      (make-variable-buffer-local 'yas/trigger-key)
+  	      (setq yas/trigger-key [tab])
+  	      (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+  	      (define-key yas/keymap [tab] 'yas/next-field)))
   )
 
 ;; Org mode keyword face customization
@@ -48,6 +64,7 @@
      '(("TODO" . "color-184")
        ("STARTED" . "color-161")
        ("DELAYED" . "color-94")
+       ("WAITING" . "DarkOrange1")
        ("CANCELED" . (:foreground "color-144" :weight bold))
        ("DEFERRED" . (:foreground "color-154" :weight bold))
        ("DONE" . (:foreground "green" :weight bold))
