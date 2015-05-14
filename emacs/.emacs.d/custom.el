@@ -5,6 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (mytheme-dark)))
  '(flymake-python-pyflakes-executable "flake8")
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/tasks_at_work.org" "~/Dropbox/org/janus.org" "~/Dropbox/org/routines.org")))
  '(visible-cursor t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

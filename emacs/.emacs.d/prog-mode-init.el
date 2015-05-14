@@ -1,6 +1,9 @@
 ;;; This module configure common programming environment
 
 ;;; common env
+(defun set-newline-and-indent ()
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'prog-mode-hook 'set-newline-and-indent)
 
 ;;; hungry-delete
 (use-package hungry-delete
@@ -53,12 +56,21 @@
 
 (use-package auto-complete
   :ensure t
+  :disabled t
   :defer t
   :diminish auto-complete-mode
   :init
   (progn
+    (use-package auto-complete-config
+      :init
+      (progn
+        (ac-config-default)))
+    (use-package ac-helm
+      :ensure t
+      :init
+      (progn
+	(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)))
     (use-package fuzzy :ensure t)
-    (ac-config-default)
     (ac-set-trigger-key "TAB")
     (ac-set-trigger-key "<tab>")
     (setq ac-auto-show-menu t
@@ -70,11 +82,10 @@
 
 (use-package company
   :ensure t
-  :disabled t
   :defer t
   :commands global-company-mode
   :init (progn
-          (global-company-mode)
+	  (global-company-mode)
           (setq company-global-modes '(not python-mode cython-mode sage-mode)))
   :config (progn
             (setq company-tooltip-limit 20
@@ -122,15 +133,14 @@
   :init
   (progn
     (setq projectile-enable-caching t
-	  projectile-completion-system 'helm
+	  projectile-completion-system 'grizzl
 	  projectile-use-native-indexing t
 	  projectile-use-git-grep t)
     (projectile-global-mode t)
     (use-package helm-projectile
       :ensure t
       :bind
-      (
-       ("C-c h" . helm-projectile)
+      (("C-c h" . helm-projectile)
        ("s-r" . helm-projectile-recentf)
        ("s-g" . helm-git-grep-at-point)
        ("s-f" . helm-projectile-find-file-dwim))
@@ -146,6 +156,7 @@
 ;;; rainbow-identifiers
 (use-package rainbow-identifiers
   :ensure t
+  :disabled t
   :init
   (progn
     (setq rainbow-identifiers-faces-to-override

@@ -1,5 +1,8 @@
 ;; global key bindings
 
+;;; no background on C-z
+(global-set-key (kbd "C-z") nil)
+
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 (global-set-key (kbd "C-S-k") 'kill-line-backward)
 

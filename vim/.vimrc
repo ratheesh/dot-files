@@ -33,6 +33,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'edkolev/promptline.vim'
+Plug 'Lokaltog/vim-easymotion'
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
