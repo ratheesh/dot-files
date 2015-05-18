@@ -85,8 +85,10 @@
   :defer t
   :commands global-company-mode
   :init (progn
+	  (use-package company-c-headers :ensure t)
 	  (global-company-mode)
-          (setq company-global-modes '(not python-mode cython-mode sage-mode)))
+          (setq company-global-modes '(not python-mode cython-mode sage-mode))
+	  (add-to-list 'company-backends 'company-c-headers))
   :config (progn
             (setq company-tooltip-limit 20
 		  company-idle-delay .1
@@ -190,6 +192,6 @@
     (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
     (add-hook 'scheme-mode-hook           #'enable-paredit-mode)))
 
-(use-package iedit :ensure t :defer t)
+(use-package iedit :ensure t)
 
 (provide 'prog-mode-init)
