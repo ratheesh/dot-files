@@ -277,4 +277,10 @@
 
 (use-package boxquote :ensure t)
 
+(use-package swiper-helm
+  :ensure t
+  :bind
+  (("C-s" . swiper-helm)
+   ("C-r" . swiper-helm)))
+
 (provide 'common-init)
