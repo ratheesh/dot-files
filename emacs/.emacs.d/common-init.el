@@ -283,4 +283,10 @@
   (("C-s" . swiper-helm)
    ("C-r" . swiper-helm)))
 
+;;; visually zap to the char
+(use-package zop-to-char
+  :ensure t
+  :bind (
+	 ("M-z" . zop-up-to-char)))
+
 (provide 'common-init)
