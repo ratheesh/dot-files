@@ -171,7 +171,7 @@
 ;;; open bookmarks buffer on startup
 (use-package bookmark
   :init
-  (progn 
+  (progn
     (bookmark-bmenu-list)
     (switch-to-buffer "*Bookmark List*")))
 
@@ -202,7 +202,7 @@
 (use-package tramp
   :defer t
   :init
-  (progn 
+  (progn
     (setq tramp-default-method "ssh")))
 
 ;;; save configuration across emacs sessions

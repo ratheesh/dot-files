@@ -14,10 +14,10 @@
 ;;ido mode
 (use-package ido
   :init
-  (progn 
+  (progn
     (ido-mode t)
     (ido-mode 'both))) ;; for buffers and files
-  
+
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-case-fold nil
@@ -37,7 +37,7 @@
 (use-package flx-ido
   :ensure t
   :init
-  (progn 
+  (progn
     (ido-mode 1)
     (ido-everywhere 1)
     (flx-ido-mode 1)
@@ -72,7 +72,7 @@
   :ensure t
   :defer t
   :init
-  (progn 
+  (progn
     (ido-at-point-mode)))
 
 ;;; Make all the themes safe by default
@@ -87,14 +87,14 @@
    ("M-X" . smex-major-mode-commands)
    ("C-c C-c M-x" . execute-extended-command))
   :init
-  (progn 
+  (progn
     (smex-initialize)))
 
 ;;; Enable footnote mode for text files
 (use-package footnote
   :defer t
   :init
-  (progn 
+  (progn
     (add-hook 'text-mode-hook 'footnote-mode)))
 
 ;;; call footnote-init when entering footnote mode for realligning
@@ -102,14 +102,14 @@
 (use-package footnote-init
   :disabled t
   :init
-  (progn 
+  (progn
     (add-hook 'footnote-mode-hook 'footnote-init)))
 
 (use-package fringe-current-line
   :ensure t
   :disabled t
   :init
-  (progn 
+  (progn
     (global-fringe-current-line-mode 1))) ;enable to all buffers by default
 
 ;;; ack-and-half - alternative for grep
@@ -118,7 +118,7 @@
   :bind
   (("<f9>" . ack))
   :init
-  (progn 
+  (progn
     (defalias 'ack 'ack-and-a-half)
     (defalias 'ack-same 'ack-and-a-half-same)
     (defalias 'ack-find-file 'ack-and-a-half-find-file)

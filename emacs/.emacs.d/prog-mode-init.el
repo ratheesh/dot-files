@@ -10,7 +10,7 @@
   :ensure t
   :defer t
   :init
-  (progn 
+  (progn
     (add-hook 'prog-mode
 	      (lambda () (global-hungry-delete-mode)))))
 
@@ -28,7 +28,7 @@
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
     (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)))
 
-;yaml mode
+					;yaml mode
 (use-package yaml-mode :ensure t :defer t)
 
 (use-package ws-butler
@@ -38,9 +38,9 @@
   :commands ws-butler-mode
   :config
   (progn
-          (add-hook 'c-mode-common-hook 'ws-butler-mode)
-          (add-hook 'python-mode-hook 'ws-butler-mode)
-          (add-hook 'cython-mode-hook 'ws-butler-mode)))
+    (add-hook 'c-mode-common-hook 'ws-butler-mode)
+    (add-hook 'python-mode-hook 'ws-butler-mode)
+    (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
 (use-package comment-dwim-2
   :ensure t
@@ -158,7 +158,6 @@
 ;;; rainbow-identifiers
 (use-package rainbow-identifiers
   :ensure t
-  :disabled t
   :init
   (progn
     (setq rainbow-identifiers-faces-to-override
@@ -184,7 +183,7 @@
   :defer t
   :diminish paredit-mode
   :init
-  (progn 
+  (progn
     (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
     (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
     (add-hook 'ielm-mode-hook             #'enable-paredit-mode)

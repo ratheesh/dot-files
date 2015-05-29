@@ -70,5 +70,10 @@
   (progn
     (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)))
 
+(use-package py-autopep8
+  :ensure t
+  :init (progn
+	  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)))
+
 (provide 'python-mode-init)
 ;;; End of File
