@@ -162,6 +162,8 @@
 ;; flx-isearch
 (use-package flx-isearch
   :ensure t
+  :demand t
+  :defer t
   :bind
   (("C-M-s" . flx-isearch-forward)
    ("C-M-r"  . flx-isearch-backward)))
@@ -169,6 +171,7 @@
 ;;; swoop
 (use-package helm-swoop
   :ensure t
+  :demand t
   :defer t
   :bind
   (("<f4>" . helm-swoop))
@@ -193,7 +196,12 @@
 
 ;;; ace-jump mode - keybinding as a part of keychord package config
 (use-package ace-jump-mode
-  :ensure t)
+  :ensure t
+  :config
+  (setq ace-jump-mode-submode-list
+        '(ace-jump-char-mode
+          ace-jump-word-mode
+          ace-jump-line-mode)))
 
 ;;; smart mode line with powerline
 (use-package smart-mode-line
@@ -226,6 +234,7 @@
 
 (use-package back-button
   :pin melpa-stable
+  :commands back-button-mode
   :disabled t
   :diminish back-button-mode
   :bind (
@@ -249,6 +258,7 @@
 ;;; highlight operation of library visually
 (use-package volatile-highlights
   :ensure t
+  :commands volatile-highlights-mode
   :diminish volatile-highlights-mode
   :config
   (progn

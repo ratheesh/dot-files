@@ -3,6 +3,7 @@
 ;; Required packages
 (use-package cc-mode
   :ensure t
+  :commands c-mode
   :config
   (progn
     (setq
@@ -27,6 +28,7 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+	      (abbrev-mode 1)
               (helm-gtags-mode 1))))
 
 ;;; no indent on ret key
@@ -36,6 +38,7 @@
 
 (use-package autopair
   :ensure t
+  :commands autopair-mode
   :diminish autopair-mode
   :init
   (progn
@@ -45,6 +48,7 @@
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
   :ensure t
+  :commands whitespace-cleanup-mode
   :config
   (global-whitespace-cleanup-mode))
 
@@ -147,6 +151,7 @@
 ;;key chord config
 (use-package key-chord
   :ensure t
+  :commands key-chord-mode
   :init
   (progn
     (setq key-chord-two-keys-delay 0.01)
@@ -162,7 +167,10 @@
     ))
 
 ;;; dts file editing
-(use-package dts-mode :ensure t :defer t)
+(use-package dts-mode
+  :ensure t
+  :commands dts-mode
+  :defer t)
 
 ;; ECB env settings - not using for now
 (use-package ecb

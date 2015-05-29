@@ -94,6 +94,7 @@
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (use-package undo-tree
   :defer t
+  :commands undo-tree-mode
   :ensure t
   :diminish undo-tree-mode
   :init
