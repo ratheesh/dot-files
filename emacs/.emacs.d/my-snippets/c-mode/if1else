@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: if1else
+# key: if1else
+# --
+if (${1:condition})
+   ${2:statement;}
+else
+  $0
