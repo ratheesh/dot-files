@@ -92,6 +92,15 @@
 			 ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
 			 ;; ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
+
+;; Check if we're on Emacs 24.4 or newer, if so, use the pinned package feature
+(when (boundp 'package-pinned-packages)
+  (setq package-pinned-packages
+                '((smex               . "melpa-stable")
+                  (helm               . "melpa-stable")
+                  (yasnippet          . "melpa-stable")
+                  ;; "unstable" package
+                  (icicles            . "melpa"))))
 (package-initialize)
 
 ; fetch the list of packages available
