@@ -216,15 +216,6 @@
      sml/shorten-directory t)
     (add-hook 'after-init-hook 'sml/setup)))
 
-(use-package nyan-mode
-  :ensure t
-  :init
-  (progn
-    (setq nyan-bar-length 32))
-  :config
-  (progn
-    (nyan-mode)))
-
 ;;; navigate through emacs-mark ring
 (use-package show-marks
   :ensure t

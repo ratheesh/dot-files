@@ -43,7 +43,7 @@
 ;;; elpy configuration
 (use-package elpy
   :ensure t
-  :commands elpy-mode
+  :commands python-mode
   :diminish elpy-mode
   :init
   (progn

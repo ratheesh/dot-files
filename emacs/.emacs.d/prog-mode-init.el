@@ -9,6 +9,7 @@
 (use-package hungry-delete
   :ensure t
   :defer t
+  :commands prog-mode
   :init
   (progn
     (add-hook 'prog-mode
@@ -18,24 +19,26 @@
 ;;; license management
 (use-package lice
   :ensure t
+  :commands prog-mode
   :defer t )
 
 ;;; make parenthesis colorful!
 (use-package rainbow-delimiters
   :ensure t
+  :commands prog-mode
   :config
   (progn
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
     (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)))
 
-					;yaml mode
-(use-package yaml-mode :ensure t :defer t)
+;yaml mode
+(use-package yaml-mode :ensure t :defer t :commands yaml-mode)
 
 (use-package ws-butler
   :ensure t
   :defer t
   :diminish ws-butler-mode
-  :commands ws-butler-mode
+  :commands prog-mode
   :config
   (progn
     (add-hook 'c-mode-common-hook 'ws-butler-mode)
@@ -52,7 +55,7 @@
     (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)))
 
 ;;; auto complete package
-(use-package fuzzy :ensure t :defer t)
+;; (use-package fuzzy :ensure t :defer t)
 
 (use-package auto-complete
   :ensure t
@@ -83,7 +86,6 @@
 (use-package company
   :ensure t
   :defer t
-  :commands global-company-mode
   :init (progn
 	  (use-package company-c-headers :ensure t)
 	  (global-company-mode)
@@ -181,6 +183,7 @@
 (use-package paredit
   :ensure t
   :defer t
+  :commands lisp-mode
   :diminish paredit-mode
   :init
   (progn
@@ -191,6 +194,6 @@
     (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
     (add-hook 'scheme-mode-hook           #'enable-paredit-mode)))
 
-(use-package iedit :ensure t)
+(use-package iedit :ensure t :commands prog-mode)
 
 (provide 'prog-mode-init)

@@ -2,7 +2,7 @@
 
 ;; Required packages
 (use-package cc-mode
-  :ensure t
+  :ensure key-chord
   :commands c-mode
   :config
   (progn
@@ -29,6 +29,7 @@
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
 	      (abbrev-mode 1)
+	      (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
               (helm-gtags-mode 1))))
 
 ;;; no indent on ret key
@@ -38,7 +39,7 @@
 
 (use-package autopair
   :ensure t
-  :commands autopair-mode
+  :commands c-mode
   :diminish autopair-mode
   :init
   (progn
@@ -48,7 +49,7 @@
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
   :ensure t
-  :commands whitespace-cleanup-mode
+  :commands prog-mode
   :config
   (global-whitespace-cleanup-mode))
 
@@ -136,9 +137,9 @@
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (use-package c-eldoc
-  :ensure t
   :disabled t
   :ensure t
+  :commands c-mode
   :config
   (progn
     (eldoc-mode t)
@@ -151,7 +152,6 @@
 ;;key chord config
 (use-package key-chord
   :ensure t
-  :commands key-chord-mode
   :init
   (progn
     (setq key-chord-two-keys-delay 0.01)
@@ -160,7 +160,7 @@
   (progn
     (key-chord-mode 1)
     (key-chord-define-global "jj" 'ace-jump-word-mode) ;ace jump mode
-    (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
+    ;; (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
     (key-chord-define-global "bb" 'ido-switch-buffer) ;switch buffer
     (key-chord-define-global "jk" 'forward-char) ;forward by a character
     (key-chord-define-global "kj" 'forward-char) ;forward by a character
