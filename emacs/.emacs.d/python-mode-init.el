@@ -28,22 +28,13 @@
 
 (use-package pymacs
   ;; :ensure t
-  :commands python-mode
   :config
   (progn
     (pymacs-load "ropemacs" "rope-")))
 
-;;(ac-ropemacs-initialize)
-;;(add-hook 'python-mode-hook
-;;      (lambda ()
-;;	(add-to-list 'ac-sources 'ac-source-ropemacs)))
-
-;;(add-hook 'python-mode-hook 'auto-complete-mode)
-
 ;;; elpy configuration
 (use-package elpy
   :ensure t
-  :commands python-mode
   :diminish elpy-mode
   :init
   (progn
@@ -57,23 +48,21 @@
 ;;; customize color for highlight-indentation face
 (use-package highlight-indentation
   :ensure t
-  :commands python-mode
   :config
   (progn
     (set-face-background 'highlight-indentation-face "#2f4f4f")
-    (set-face-background 'highlight-indentation-current-column-face "#2f4f4f")))
+    (set-face-background 'highlight-indentation-current-column-face "#2f4f4f")
+    (add-hook 'python-mode-hook 'highlight-indentation-mode )))
 
 ;;; configure flymake-python-pyflakes
 (use-package flymake-python-pyflakes
   :ensure t
-  :commands python-mode
   :config
   (progn
     (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)))
 
 (use-package py-autopep8
   :ensure t
-  :commands python-mode
   :init (progn
 	  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)))
 
