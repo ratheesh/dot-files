@@ -124,6 +124,7 @@
      helm-gtags-auto-update t
      helm-gtags-pulse-at-cursor t
      helm-gtags-use-input-at-cursor t
+     helm-gtags-fuzzy-match t
      helm-gtags-display-style 'detail
      helm-gtags-highlight-candidate t)
     ))
