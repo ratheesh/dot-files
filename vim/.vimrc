@@ -35,7 +35,7 @@ Plug 'sjl/gundo.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'Lokaltog/vim-easymotion'
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
 
@@ -80,7 +80,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+"let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 
 "lightline
 let g:lightline = {
