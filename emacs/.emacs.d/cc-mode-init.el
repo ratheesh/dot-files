@@ -27,7 +27,7 @@
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
 	      (abbrev-mode 1)
 	      (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
               (helm-gtags-mode 1))))
