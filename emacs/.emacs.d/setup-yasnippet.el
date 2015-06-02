@@ -13,6 +13,7 @@
     (setq  yas-wrap-around-region t))
   :config
   (progn
+    (setq yas-triggers-in-field t)
     (yas-global-mode 1)))
 
 ;;; dropdown prompt is annoying! So disable that.
@@ -39,6 +40,30 @@
 (define-key yas-keymap (kbd "C-e") 'yas/goto-end-of-active-field)
 (define-key yas-keymap (kbd "C-a") 'yas/goto-start-of-active-field)
 
+;;; company and yasnippet
+;; (defun check-expansion ()
+;;     (save-excursion
+;;       (if (looking-at "\\_>") t
+;;         (backward-char 1)
+;;         (if (looking-at "\\.") t
+;;           (backward-char 1)
+;;           (if (looking-at "->") t nil)))))
+
+;; (defun do-yas-expand ()
+;;   (let ((yas/fallback-behavior 'return-nil))
+;;     (yas-expand)))
+
+;; (defun tab-indent-or-complete ()
+;;   (interactive)
+;;   (if (minibufferp)
+;;       (minibuffer-complete)
+;;     (if (or (not yas/minor-mode)
+;; 	    (null (do-yas-expand)))
+;; 	(if (check-expansion)
+;; 	    (company-complete-common)
+;; 	  (indent-for-tab-command)))))
+
+;; (global-set-key [tab] 'tab-indent-or-complete)
+
 (provide 'setup-yasnippet)
 ;;; End of File
-
