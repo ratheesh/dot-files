@@ -57,6 +57,13 @@
 ;;; auto complete package
 ;; (use-package fuzzy :ensure t :defer t)
 
+;;; semantic package
+(use-package semantic
+  :config
+  (progn
+    (semantic-mode 1)))
+
+;;; auto complete package
 (use-package auto-complete
   :ensure t
   :disabled t
@@ -83,6 +90,7 @@
   (progn
     (global-auto-complete-mode +1)))
 
+;;; Company - Complete anything package
 (use-package company
   :ensure t
   :defer t
@@ -95,7 +103,10 @@
             (setq company-tooltip-limit 20
 		  company-idle-delay .1
 		  company-echo-delay 0
-		  company-begin-commands '(self-insert-command))))
+		  company-begin-commands '(self-insert-command))
+	    (add-to-list 'company-backends 'company-gtags)
+	    (add-to-list 'company-backends 'company-yasnippet)
+	    (add-to-list 'company-backends 'company-semantic)))
 
 ;;; gtags configuration
 (use-package ggtags
@@ -196,5 +207,21 @@
     (add-hook 'scheme-mode-hook           #'enable-paredit-mode)))
 
 (use-package iedit :ensure t :commands prog-mode)
+
+(use-package company-irony
+  :ensure company
+  :init
+  (use-package irony
+    :ensure t
+    :config
+    (progn
+      (add-hook 'c++-mode-hook 'irony-mode)
+      (add-hook 'c-mode-hook 'irony-mode)
+      (add-hook 'asm-mode-hook 'irony-mode)))
+  :config
+  (progn
+    (add-to-list 'company-backends 'company-irony)
+    (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)))
+
 
 (provide 'prog-mode-init)
