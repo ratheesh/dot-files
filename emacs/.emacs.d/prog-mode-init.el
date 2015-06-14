@@ -149,7 +149,7 @@
   :init
   (progn
     (setq projectile-enable-caching t
-	  projectile-completion-system 'grizzl
+	  projectile-completion-system 'helm
 	  projectile-use-native-indexing t
 	  projectile-use-git-grep t)
     (projectile-global-mode t)
