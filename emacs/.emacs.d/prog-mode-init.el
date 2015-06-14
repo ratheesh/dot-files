@@ -59,6 +59,7 @@
 
 ;;; semantic package
 (use-package semantic
+  :disabled t
   :config
   (progn
     (semantic-mode 1)))
@@ -106,7 +107,8 @@
 		  company-begin-commands '(self-insert-command))
 	    (add-to-list 'company-backends 'company-gtags)
 	    (add-to-list 'company-backends 'company-yasnippet)
-	    (add-to-list 'company-backends 'company-semantic)))
+	    ;; (add-to-list 'company-backends 'company-semantic)
+	    ))
 
 ;;; gtags configuration
 (use-package ggtags
