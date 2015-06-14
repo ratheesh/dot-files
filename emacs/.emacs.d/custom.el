@@ -8,6 +8,9 @@
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/tasks_at_work.org" "~/Dropbox/org/janus.org" "~/Dropbox/org/routines.org")))
+ '(powerline-default-separator (quote arrow))
+ '(powerline-height nil)
+ '(powerline-text-scale-factor nil)
  '(visible-cursor t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

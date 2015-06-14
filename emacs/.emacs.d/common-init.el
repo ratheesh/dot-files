@@ -214,6 +214,12 @@
      sml/shorten-modes t
      sml/name-width 32
      sml/shorten-directory t)
+    :config
+    (progn
+      (use-package powerline
+	:init
+	(progn
+	  (powerline-center-theme))))
     (add-hook 'after-init-hook 'sml/setup)))
 
 ;;; navigate through emacs-mark ring
