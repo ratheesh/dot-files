@@ -215,6 +215,7 @@
   :init
   (use-package irony
     :ensure t
+    :diminish irony-mode
     :config
     (progn
       (add-hook 'c++-mode-hook 'irony-mode)

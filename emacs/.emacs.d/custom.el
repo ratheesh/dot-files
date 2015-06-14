@@ -8,7 +8,7 @@
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/tasks_at_work.org" "~/Dropbox/org/janus.org" "~/Dropbox/org/routines.org")))
- '(powerline-default-separator (quote arrow))
+ '(powerline-default-separator (quote slant))
  '(powerline-height nil)
  '(powerline-text-scale-factor nil)
  '(sml/show-remote t)
@@ -20,7 +20,7 @@
  ;; If there is more than one, they won't work right.
  '(git-gutter+-separator ((t (:foreground "yellow" :weight normal))))
  '(powerline-active1 ((t (:inherit mode-line :background "grey22" :foreground "gold"))))
- '(powerline-active2 ((t (:inherit mode-line :background "grey40" :foreground "deep sky blue"))))
+ '(powerline-active2 ((t (:inherit mode-line :background "grey40" :foreground "gold1"))))
  '(sml/filename ((t (:inherit sml/global :foreground "#eab700" :slant italic :weight normal))))
  '(sml/line-number ((t (:inherit sml/modes :weight normal))))
  '(sml/projectile ((t (:inherit sml/git)))))
