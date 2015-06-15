@@ -146,8 +146,7 @@
     (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)))
 
 (use-package ac-helm
-  :disabled t
-  :pin melpa-stable)
+  :disabled t)
 
 ;;key chord config
 (use-package key-chord

@@ -3,7 +3,6 @@
 ;;; paradox package management
 (use-package paradox
   :ensure t
-  :pin melpa-stable
   :init
   (progn
     (setq paradox-execute-asynchronously t))
@@ -230,7 +229,6 @@
 	 ("M-l" . show-marks)))
 
 (use-package back-button
-  :pin melpa-stable
   :commands back-button-mode
   :disabled t
   :diminish back-button-mode
@@ -243,10 +241,8 @@
   :init
   (progn
     (use-package smartrep
-      :pin melpa-stable
       :ensure t )
     (use-package visible-mark
-      :pin melpa-stable
       :disabled t))
   :config
   (progn
