@@ -216,6 +216,7 @@
     :config
     (progn
       (use-package powerline
+        :ensure t
 	:init
 	(progn
 	  (powerline-center-theme))))

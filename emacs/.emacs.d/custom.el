@@ -9,8 +9,7 @@
    (quote
     ("~/Dropbox/org/tasks_at_work.org" "~/Dropbox/org/janus.org" "~/Dropbox/org/routines.org")))
  '(powerline-default-separator (quote slant))
- '(powerline-height nil)
- '(powerline-text-scale-factor nil)
+ '(sml/mode-width 30)
  '(sml/show-remote t)
  '(visible-cursor t))
 (custom-set-faces
@@ -19,8 +18,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(git-gutter+-separator ((t (:foreground "yellow" :weight normal))))
+ '(mode-line ((t (:background "black" :foreground "gray60" :inverse-video nil :height 0.99))))
  '(powerline-active1 ((t (:inherit mode-line :background "grey22" :foreground "gold"))))
  '(powerline-active2 ((t (:inherit mode-line :background "grey40" :foreground "gold1"))))
  '(sml/filename ((t (:inherit sml/global :foreground "#eab700" :slant italic :weight normal))))
  '(sml/line-number ((t (:inherit sml/modes :weight normal))))
- '(sml/projectile ((t (:inherit sml/git)))))
+ '(sml/projectile ((t (:inherit sml/git :foreground "orange red")))))
