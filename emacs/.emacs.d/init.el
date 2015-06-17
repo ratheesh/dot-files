@@ -118,6 +118,7 @@
 (setq load-prefer-newer t)
 
 (use-package sane-defaults)
+(use-package my-defuns)
 (use-package helm-mode-config)
 (use-package common-init)
 (use-package git-mode-init)
@@ -128,7 +129,6 @@
 (use-package python-mode-init)
 (use-package html-mode-init)
 (use-package org-init)
-(use-package my-defuns)
 (use-package key-bindings)
 (use-package appearance)
 (use-package misc-config)

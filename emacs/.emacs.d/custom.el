@@ -8,10 +8,13 @@
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/tasks_at_work.org" "~/Dropbox/org/janus.org" "~/Dropbox/org/routines.org")))
- '(powerline-default-separator (quote slant))
+ '(powerline-default-separator (quote arrow-fade))
+ '(powerline-height nil)
+ '(powerline-text-scale-factor nil)
  '(sml/mode-width 30)
  '(sml/show-remote t)
- '(visible-cursor t))
+ '(visible-cursor t)
+ '(which-func-modes t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -23,4 +26,5 @@
  '(powerline-active2 ((t (:inherit mode-line :background "grey40" :foreground "gold1"))))
  '(sml/filename ((t (:inherit sml/global :foreground "#eab700" :slant italic :weight normal))))
  '(sml/line-number ((t (:inherit sml/modes :weight normal))))
- '(sml/projectile ((t (:inherit sml/git :foreground "orange red")))))
+ '(sml/projectile ((t (:inherit sml/git :foreground "orange red"))))
+ '(which-func ((t (:foreground "OrangeRed1")))))

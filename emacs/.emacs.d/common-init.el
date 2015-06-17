@@ -219,7 +219,7 @@
         :ensure t
 	:init
 	(progn
-	  (powerline-center-theme))))
+	  (powerline-my-theme))))
     (add-hook 'after-init-hook 'sml/setup)))
 
 ;;; navigate through emacs-mark ring

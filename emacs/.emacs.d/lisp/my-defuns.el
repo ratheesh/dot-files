@@ -173,4 +173,63 @@
   (message (buffer-file-name)))
 (global-set-key [f9] 'show-file-name)
 
+;;; My powerline theme
+;;; Derived from powerline-center-theme
+;;; Actung: Make sure to call this defun after loading powerline package
+(defun powerline-my-theme ()
+  "Setup a mode-line with major and minor modes centered."
+  (interactive)
+  (setq-default mode-line-format
+		'("%e"
+		  (:eval
+		   (let* ((active (powerline-selected-window-active))
+			  (mode-line (if active 'mode-line 'mode-line-inactive))
+			  (face1 (if active 'powerline-active1 'powerline-inactive1))
+			  (face2 (if active 'powerline-active2 'powerline-inactive2))
+			  (separator-left (intern (format "powerline-%s-%s"
+							  (powerline-current-separator)
+							  (car powerline-default-separator-dir))))
+			  (separator-right (intern (format "powerline-%s-%s"
+							   (powerline-current-separator)
+							   (cdr powerline-default-separator-dir))))
+			  (lhs (list (powerline-raw " %* " nil 'c)
+				     (funcall separator-left mode-line face2)
+				     (powerline-raw " %l " face2 'c)
+				     (funcall separator-left face2 face1)
+				     (powerline-raw " %c " face1 'c)
+				     (funcall separator-left face1 mode-line)
+				     (powerline-buffer-id nil 'l)
+				     (powerline-raw " ")
+				     (funcall separator-left mode-line face1)
+				     (powerline-narrow face1 'c)
+				     (powerline-vc face1)))
+			  (rhs (list (powerline-raw global-mode-string face1 'c)
+				     (when (and (boundp 'which-func-mode) which-func-mode)
+				       (powerline-raw which-func-format face1 'c))
+				     (powerline-raw " " face1 'c)
+				     (funcall separator-right face1 face2)
+				     (powerline-raw " " face2 'c)
+				     (powerline-buffer-size face2 'c)
+				     (powerline-raw " " face2 'c)
+				     (funcall separator-right face2 mode-line)
+				     (powerline-raw " %p " nil 'c)
+				     ;; (funcall separator-right mode-line face2)
+				     (powerline-hud face2 face1)
+				     ))
+			  (center (list (powerline-raw " " face1)
+					(funcall separator-left face1 face2)
+					(when (boundp 'erc-modified-channels-object)
+					  (powerline-raw erc-modified-channels-object face2 'c))
+					(powerline-major-mode face2 'c)
+					(powerline-process face2)
+					(powerline-raw ":" face2)
+					(powerline-minor-modes face2 'c)
+					(powerline-raw " " face2)
+					(funcall separator-right face2 face1))))
+		     (concat (powerline-render lhs)
+			     (powerline-fill-center face1 (/ (powerline-width center) 2.0))
+			     (powerline-render center)
+			     (powerline-fill face1 (powerline-width rhs))
+			     (powerline-render rhs)))))))
+
 (provide 'my-defuns)
