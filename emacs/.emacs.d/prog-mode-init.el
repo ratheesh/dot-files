@@ -220,7 +220,9 @@
     (progn
       (add-hook 'c++-mode-hook 'irony-mode)
       (add-hook 'c-mode-hook 'irony-mode)
-      (add-hook 'asm-mode-hook 'irony-mode)))
+      (add-hook 'cc-mode-hook 'irony-mode)
+      ;; (add-hook 'asm-mode-hook 'irony-mode)
+      ))
   :config
   (progn
     (add-to-list 'company-backends 'company-irony)
