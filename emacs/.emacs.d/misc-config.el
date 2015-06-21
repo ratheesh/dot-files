@@ -1,4 +1,4 @@
-;;; This file has configuration which are not strictly for developement purpose
+;;; This file has settings which are not strictly for development purpose
 
 ;;; keybinding help after a delay
 (use-package guide-key

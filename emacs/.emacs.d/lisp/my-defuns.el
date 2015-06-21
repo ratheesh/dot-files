@@ -175,7 +175,7 @@
 
 ;;; My powerline theme
 ;;; Derived from powerline-center-theme
-;;; Actung: Make sure to call this defun after loading powerline package
+;;; Achtung: Make sure to call this defun after loading powerline package
 (defun powerline-my-theme ()
   "Setup a mode-line with major and minor modes centered."
   (interactive)
