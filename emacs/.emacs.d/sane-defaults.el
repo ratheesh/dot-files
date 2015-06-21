@@ -208,6 +208,7 @@
 
 ;;; save configuration across emacs sessions
 (use-package desktop
+  :disabled t
   :init
   (progn
     (setq desktop-dirname         "~/.emacs.d/"
