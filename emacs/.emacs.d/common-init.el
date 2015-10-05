@@ -293,4 +293,10 @@
   :bind (
 	 ("M-z" . zop-up-to-char)))
 
+(use-package mic-paren
+  :ensure t
+  :config
+  (progn
+    (paren-activate)))
+
 (provide 'common-init)

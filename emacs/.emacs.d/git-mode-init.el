@@ -97,6 +97,7 @@
     (add-to-list 'auto-mode-alist ' ("\\.stgitmsg.txt$"  . git-commit-mode))))
 
 (use-package magit
+  :disabled t
   :ensure t
   :diminish magit-auto-revert-mode
   :bind

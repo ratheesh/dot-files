@@ -14,7 +14,7 @@
 ;;; perspective mode
 (use-package perspective
   :ensure t
-  ;; :disabled t
+  :disabled t
   :config
   (progn
     (persp-mode)
