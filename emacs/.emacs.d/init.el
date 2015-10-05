@@ -37,7 +37,7 @@
 
 (cond (on_gnu_linux
        (set-default-font "MonacoB-13:weight=normal:slant=Oblique")
-       (setq default-frame-alist '((font . "MonacoB-13:weight=normal:slant=Oblique")))
+       (setq default-frame-alist '((font . "MonacoB-13:weight=thin:slant=Oblique")))
        ))
 
 (cond (on_windows_nt

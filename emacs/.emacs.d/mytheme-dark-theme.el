@@ -3,7 +3,7 @@
 
 (custom-theme-set-faces
  'mytheme-dark
- '(default ((t (:width normal :weight normal :foreground "#ffffff" :background "#0B0B0B"))))
+ '(default ((t (:width normal :weight light :foreground "#ffffff" :background "#0B0B0B"))))
  '(underline ((t (:underline t))))
  '(italic ((t (:italic t))))
  '(bold-italic ((t (:bold t :italic t))))
