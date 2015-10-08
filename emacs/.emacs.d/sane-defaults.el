@@ -23,7 +23,7 @@
 (setq global-auto-revert-non-file-buffers t)
 
 ;;; Enable hightlight current line
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 ;; Show keystrokes in progress
 (setq echo-keystrokes 0.1)

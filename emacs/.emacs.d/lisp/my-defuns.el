@@ -186,13 +186,16 @@
 			  (mode-line (if active 'mode-line 'mode-line-inactive))
 			  (face1 (if active 'powerline-active1 'powerline-inactive1))
 			  (face2 (if active 'powerline-active2 'powerline-inactive2))
+			  (nyanface (if active 'nyanmode-active 'nyanmode-active))
 			  (separator-left (intern (format "powerline-%s-%s"
 							  (powerline-current-separator)
 							  (car powerline-default-separator-dir))))
 			  (separator-right (intern (format "powerline-%s-%s"
 							   (powerline-current-separator)
 							   (cdr powerline-default-separator-dir))))
-			  (lhs (list (powerline-raw " %* " nil 'c)
+			  (lhs (list (powerline-raw "%Z" nil 'c)
+				     (powerline-raw mode-line-modified nil 'c)
+				     (powerline-raw mode-line-mule-info nil 'c)
 				     (funcall separator-left mode-line face2)
 				     (powerline-raw " %l " face2 'c)
 				     (funcall separator-left face2 face1)
@@ -225,11 +228,46 @@
 					(powerline-raw ":" face2)
 					(powerline-minor-modes face2 'c)
 					(powerline-raw " " face2)
-					(funcall separator-right face2 face1))))
+					(funcall separator-right face2 face1)
+					(powerline-raw " " face1)
+					;; (when (bound-and-true-p nyan-mode)
+					;;   (powerline-raw (list (nyan-create)) nyanface 'l))
+					)))
 		     (concat (powerline-render lhs)
 			     (powerline-fill-center face1 (/ (powerline-width center) 2.0))
 			     (powerline-render center)
 			     (powerline-fill face1 (powerline-width rhs))
 			     (powerline-render rhs)))))))
+
+(defun my-spaceline-theme (&rest additional-segments)
+  "My spaceline-install"
+  (spaceline-install
+
+   '((buffer-modified) 
+     ((buffer-size) :face highlight-face)
+     anzu
+     (buffer-id remote-host)
+     major-mode
+     ((flycheck-error flycheck-warning flycheck-info)
+      :when active)
+     (((minor-modes :separator spaceline-minor-modes-separator)
+       process)
+      :when active)
+     (erc-track :when active)
+     (version-control :when active)
+     (org-pomodoro :when active)
+     (org-clock :when active)
+     nyan-cat)
+
+   `((battery :when active)
+     selection-info
+     ((buffer-encoding-abbrev
+       point-position
+       line-column)
+      :separator " | ")
+     (global :when active)
+     ,@additional-segments
+     buffer-position
+     hud)))
 
 (provide 'my-defuns)

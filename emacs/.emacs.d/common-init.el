@@ -222,6 +222,20 @@
 	  (powerline-my-theme))))
     (add-hook 'after-init-hook 'sml/setup)))
 
+(use-package anzu
+  :ensure t
+  :bind
+  (("M-%" . anzu-query-replace))
+  :config
+  (progn
+    (global-anzu-mode +1)))
+
+(use-package spaceline-config
+  :disabled t
+  :config
+  (my-spaceline-theme)
+  (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state))
+
 ;;; navigate through emacs-mark ring
 (use-package show-marks
   :ensure t
