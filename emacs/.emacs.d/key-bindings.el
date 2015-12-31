@@ -3,6 +3,11 @@
 ;;; no background on C-z
 (global-set-key (kbd "C-z") nil)
 
+;;; text scale shortcuts
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 (global-set-key (kbd "C-S-k") 'kill-line-backward)
 

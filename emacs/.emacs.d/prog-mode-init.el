@@ -128,7 +128,8 @@
   :defer t
   :diminish helm-gtags-mode
   :bind
-  (("<f7>" . helm-gtags-dwim)
+  (("<f6>" . helm-gtags-find-rtag)
+   ("<f7>" . helm-gtags-dwim)
    ("<f8>" . helm-gtags-pop-stack))
   :init
   (progn
