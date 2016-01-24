@@ -138,6 +138,13 @@
 ;; Load custom.el now to avoid any unwanted setting overwrites
 (load custom-file 'noerror)
 
+;;; Start Emacs Server
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
+
 ;;; print time taken for emacs to startup!
 (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
   (message "Loading init.el took %.3f seconds!!!" elapsed))

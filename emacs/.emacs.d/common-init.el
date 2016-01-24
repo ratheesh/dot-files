@@ -142,7 +142,7 @@
   :ensure t
   :bind(
 	("<f3>" . iregister-point-to-register)
-	("M-p" . iregister-jump-to-next-marker))
+	("M-/" . iregister-jump-to-next-marker))
   )
 
 ;;; fasd
@@ -166,21 +166,6 @@
   :bind
   (("C-M-s" . flx-isearch-forward)
    ("C-M-r"  . flx-isearch-backward)))
-
-;;; swoop
-(use-package helm-swoop
-  :ensure t
-  :demand t
-  :defer t
-  :bind
-  (("<f4>" . helm-swoop))
-  :init
-  (progn
-    (setq helm-swoop-split-with-multiple-windows nil)
-    (setq helm-swoop-split-direction 'split-window-horizontally)
-    (setq helm-swoop-speed-or-color nil)
-    (setq helm-swoop-move-to-line-cycle t)
-    (setq helm-swoop-use-line-number-face t)))
 
 ;;; auto update of packages
 (use-package auto-package-update :ensure t)
@@ -238,14 +223,14 @@
 
 ;;; navigate through emacs-mark ring
 (use-package show-marks
-  :ensure t
+  :disabled t
   :bind (
 	 ("M-n" . forward-mark)
 	 ("M-l" . show-marks)))
 
 (use-package back-button
   :commands back-button-mode
-  :disabled t
+  :ensure t
   :diminish back-button-mode
   :bind (
 	 ("<f2>" . back-button-push-mark-local-and-global)
@@ -294,12 +279,6 @@
   :bind (("C-c d" . duplicate-thing)))
 
 (use-package boxquote :ensure t)
-
-(use-package swiper-helm
-  :ensure t
-  :bind
-  (("C-s" . swiper-helm)
-   ("C-r" . swiper-helm)))
 
 ;;; visually zap to the char
 (use-package zop-to-char
