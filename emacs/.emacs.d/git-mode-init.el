@@ -1,6 +1,8 @@
 ;;; initialize git mode
 
 (use-package git-commit-mode
+  ;; :commands git-commit-mode
+  :mode "\\COMMIT_EDITMSG\\'"
   :init
   (progn
     (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
@@ -10,13 +12,12 @@
 		(setq fci-rule-column 72)
 		(setq fill-column 72)
 		(turn-on-auto-fill)
-		(font-lock-set-up-width-warning 72)))
-    ))
+		(font-lock-set-up-width-warning 72)))))
 
 ;; cleanup after git commit is done
-(add-hook 'server-switch-hook
-	  (lambda ()
-	    (menu-bar-mode -1)))
+;; (add-hook 'server-switch-hook
+;; 	  (lambda ()
+;; 	    (menu-bar-mode -1)))
 (add-hook 'server-done-hook (lambda nil
 			      (kill-buffer nil)
 			      (setq fci-rule-column 80)))
@@ -28,36 +29,37 @@
   (progn
     (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)))
 
-(when (window-system)
-  (use-package linum+)
-  (global-linum-mode t)
-  (use-package git-gutter+ :ensure t)
-  (use-package fringe-helper :ensure t)
-  (use-package git-gutter-fringe+ :ensure t)
-  (global-git-gutter+-mode t)
-  ;; (setq-default left-fringe-width  20)
-  ;; (setq-default right-fringe-width 20)
-  ;; (setq git-gutter-fr+-side 'right-fringe)
-  (set-face-foreground 'git-gutter-fr+-modified "yellow")
-  (set-face-foreground 'git-gutter-fr+-added    "green")
-  (set-face-foreground 'git-gutter-fr+-deleted  "red"))
+;; (when (window-system)
+;;   (use-package linum+)
+;;   (global-linum-mode t)
+;;   (use-package git-gutter+ :ensure t)
+;;   (use-package fringe-helper :ensure t)
+;;   (use-package git-gutter-fringe+ :ensure t)
+;;   (global-git-gutter+-mode t)
+;;   ;; (setq-default left-fringe-width  20)
+;;   ;; (setq-default right-fringe-width 20)
+;;   ;; (setq git-gutter-fr+-side 'right-fringe)
+;;   (set-face-foreground 'git-gutter-fr+-modified "yellow")
+;;   (set-face-foreground 'git-gutter-fr+-added    "green")
+;;   (set-face-foreground 'git-gutter-fr+-deleted  "red"))
 
-(add-hook 'before-make-frame-hook
-          #'(lambda ()
-	      (use-package linum+)
-	      (global-linum-mode t)
-	      (use-package hlinum :ensure t)
-	      (hlinum-activate)
-	      (use-package git-gutter+ :ensure t)
-	      (use-package fringe-helper :ensure t)
-	      (use-package git-gutter-fringe+ :ensure t)
-	      (global-git-gutter+-mode t)
-	      ;; (setq-default left-fringe-width  20)
-	      ;; (setq-default right-fringe-width 20)
-	      ;; (setq git-gutter-fr+-side 'right-fringe)
-	      (set-face-foreground 'git-gutter-fr+-modified "yellow")
-	      (set-face-foreground 'git-gutter-fr+-added    "green")
-	      (set-face-foreground 'git-gutter-fr+-deleted  "red")))
+;;; Actung! The following code breaks git-commit-mode
+;; (add-hook 'before-make-frame-hook
+;;          #'(lambda ()
+;; 	      (use-package linum+)
+;; 	      (global-linum-mode t)
+;; 	      (use-package hlinum :ensure t)
+;; 	      (hlinum-activate)
+;; 	      (use-package git-gutter+ :ensure t)
+;; 	      (use-package fringe-helper :ensure t)
+;; 	      (use-package git-gutter-fringe+ :ensure t)
+;; 	      (global-git-gutter+-mode t)
+;; 	      ;; (setq-default left-fringe-width  20)
+;; 	      ;; (setq-default right-fringe-width 20)
+;; 	      ;;(setq git-gutter-fr+-side 'right-fringe)
+;; 	      (set-face-foreground 'git-gutter-fr+-modified "yellow")
+;; 	      (set-face-foreground 'git-gutter-fr+-added    "green")
+;; 	      (set-face-foreground 'git-gutter-fr+-deleted  "red")))
 
 ;;; configure gitconfig and gitignore modes
 (use-package gitconfig-mode :ensure t :defer t)
@@ -69,7 +71,7 @@
 ;; (setq git-gutter+-separator-sign "|")
 ;; (set-face-foreground 'git-gutter+-separator "yellow")
 
-;; Customizing colors used in diff mode
+;;Customizing colors used in diff mode
 (defun custom-diff-colors ()
   "update the colors for diff faces"
   (set-face-attribute
@@ -80,21 +82,22 @@
    'diff-changed nil :foreground "purple" :background 'unspecified))
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
-;;; git messenger - pop last commit message on the current line
-(use-package git-messenger
-  :ensure t
-  :bind
-  (("C-c v p" . git-messenger:popup-message)))
+;; ;;; git messenger - pop last commit message on the current line
+;; (use-package git-messenger
+;;   :disabled t
+;;   :bind
+;;   (("C-c v p" . git-messenger:popup-message)))
 
 ;;; stgit-mode - stgit wrapper for eMacs
 (use-package stgit
   :ensure t
   :config
-  (progn ;; I donot if we can put under :mode category
+  (progn ;; I donot work if we can put under :mode category
     (add-to-list 'auto-mode-alist ' ("\\.stgit-edit.txt$"  . git-commit-mode))
     (add-to-list 'auto-mode-alist ' ("\\.stgit-new.txt$"  . git-commit-mode))
     (add-to-list 'auto-mode-alist ' ("\\.stgit-squash.txt$"  . git-commit-mode))
-    (add-to-list 'auto-mode-alist ' ("\\.stgitmsg.txt$"  . git-commit-mode))))
+    (add-to-list 'auto-mode-alist ' ("\\.stgitmsg.txt$"  . git-commit-mode))
+    ))
 
 (use-package magit
   :disabled t
@@ -110,11 +113,5 @@
 (add-hook 'magit-mode-hook 'magit-load-config-extensions)
 
 (use-package git-timemachine :ensure t)
-
-(use-package magit
-  :defer t
-  :ensure t
-  :bind
-  (("C-x g" . magit-status)))
 
 (provide 'git-mode-init)
