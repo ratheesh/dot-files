@@ -3,19 +3,33 @@
 
 ;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+(setq save-interprogram-paste-before-kill t)
 
 (setq auto-save-default nil) ; stop creating those #auto-save# files
 (setq backup-by-copying t);preserve file creation timestamp
 
-(setq echo-keystrokes 0.5
-      gc-cons-threshold 50000000
+(setq gc-cons-threshold 50000000
       line-number-display-limit-width 10000
       initial-scratch-message ""
       initial-major-mode 'emacs-lisp-mode
       initial-buffer-choice 'list-bookmarks
       server-use-tcp t
-      save-interprogram-paste-before-kill t)
+      read-file-name-completion-ignore-case t
+      line-move-visual t
+      system-uses-terminfo nil
+      show-trailing-whitespace t
+      require-final-newline t
+      imenu-auto-rescan t
+      load-prefer-newer t
+      save-interprogram-paste-before-kill t
+      scroll-margin 4
+      scroll-conservatively 10000
+      scroll-preserve-screen-position)
 
+(setq-default
+ find-file-visit-truename t
+ indicate-empty-lines t)
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
@@ -138,6 +152,15 @@
     (dotimes (i 10)
       (when (= p (point)) ad-do-it))))
 
+(setq scroll-margin 4)
+;; (use-package smooth-scrolling
+;;   :ensure t
+;;   :config
+;;   (progn
+;;     (setq scroll-conservatively 10000
+;; 	  scroll-preserve-screen-position t)
+;;     (setq smooth-scroll-margin 4)))
+
 (setq fringe-mode '(1 . 0))
 (delete-selection-mode 1)   ;; delete the sel with a keyp
 (setq confirm-kill-emacs 'y-or-n-p)
@@ -172,6 +195,11 @@
  mouse-highlight 1
 )
 
+(use-package linum+)
+(global-linum-mode t)
+(use-package hlinum :ensure t)
+(hlinum-activate)
+
 ;;; open bookmarks buffer on startup
 (use-package bookmark
   :init
@@ -183,7 +211,6 @@
 (setq show-paren-delay 0
       show-paren-style 'parenthesis)
 (show-paren-mode 1)
-(setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
 
 ;save the file modification timstamp at the time os saving
 (add-hook 'before-save-hook 'time-stamp)
@@ -204,7 +231,7 @@
 	     (turn-on-eldoc-mode)))
 
 (use-package tramp
-  :defer t
+  :ensure t
   :init
   (progn
     (setq tramp-default-method "ssh")))

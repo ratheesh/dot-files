@@ -9,6 +9,7 @@
 	 ("C-x C-r" . helm-recentf)
 	 ("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring)
+	 ("M-o" . helm-global-mark-ring)
 	 ("M-i" . helm-semantic-or-imenu))
   :init
   (progn
@@ -77,7 +78,27 @@
   :config
   (helm-descbinds-mode))
 
+;;; swoop
+(use-package helm-swoop
+  :ensure t
+  :demand t
+  :defer t
+  :bind
+  (("<f4>" . helm-swoop))
+  :init
+  (progn
+    (setq helm-swoop-split-with-multiple-windows nil)
+    (setq helm-swoop-split-direction 'split-window-horizontally)
+    (setq helm-swoop-speed-or-color nil)
+    (setq helm-swoop-move-to-line-cycle t)
+    (setq helm-swoop-use-line-number-face t)))
 
+;;; search buffer using helm
+(use-package swiper-helm
+  :ensure t
+  :bind
+  (("C-s" . swiper-helm)
+   ("C-r" . swiper-helm)))
 
 (provide 'helm-mode-config)
 ;;; End of File

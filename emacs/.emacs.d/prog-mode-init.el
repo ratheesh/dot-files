@@ -1,5 +1,8 @@
 ;;; This module configure common programming environment
 
+;;; show trailing white spaces by default
+(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
+
 ;;; common env
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
@@ -14,7 +17,6 @@
   (progn
     (add-hook 'prog-mode
 	      (lambda () (global-hungry-delete-mode)))))
-
 
 ;;; license management
 (use-package lice
@@ -34,6 +36,22 @@
 ;yaml mode
 (use-package yaml-mode :ensure t :defer t :commands yaml-mode)
 
+;; clean indentation due to blank lines - very important
+(use-package clean-aindent-mode
+  :ensure t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'clean-aindent-mode)))
+
+(use-package dtrt-indent
+  :ensure t
+  :init
+  (progn
+    (dtrt-indent-mode 1)
+    ;; (setq dtrt-indent-verbosity 0)
+    ))
+
+;;; Handle whitespaces only on edited lines
 (use-package ws-butler
   :ensure t
   :defer t
@@ -62,7 +80,11 @@
   :disabled t
   :config
   (progn
-    (semantic-mode 1)))
+    (global-semanticdb-minor-mode 1)
+    (global-semantic-idle-scheduler-mode 1)
+    (semantic-mode 1)
+    (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+    (use-package stickyfunc-enhance :ensure t)))
 
 ;;; auto complete package
 (use-package auto-complete
@@ -228,6 +250,9 @@
   (progn
     (add-to-list 'company-backends 'company-irony)
     (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)))
+
+;;; Common keybindings for progmode
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 
 
 (provide 'prog-mode-init)
