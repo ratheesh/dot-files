@@ -1,10 +1,11 @@
 ;;; initialize git mode
 
-(use-package git-commit-mode
-  ;; :commands git-commit-mode
+(use-package git-commit
+  :ensure t
   :mode "\\COMMIT_EDITMSG\\'"
   :init
   (progn
+    (global-git-commit-mode t)
     (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
     (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
     (add-hook 'git-commit-mode-hook
@@ -23,11 +24,12 @@
 			      (setq fci-rule-column 80)))
 
 ;git mode configuration
-(use-package git-commit-training-wheels-mode
-  :ensure t
-  :init
-  (progn
-    (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)))
+;;(use-package git-commit-training-wheels-mode
+;;  :disabled t
+;; :ensure t
+;;  :init
+;;  (progn
+;;    (add-hook 'git-commit-mode-hook 'git-commit-training-wheels-mode)))
 
 ;; (when (window-system)
 ;;   (use-package linum+)
@@ -99,19 +101,23 @@
     (add-to-list 'auto-mode-alist ' ("\\.stgitmsg.txt$"  . git-commit-mode))
     ))
 
-(use-package magit
-  :disabled t
-  :ensure t
-  :diminish magit-auto-revert-mode
-  :bind
-  (("C-x g". magit-status))
-  :init
-  (progn
-    (use-package magit-stgit :ensure t)
-    (setq magit-auto-revert-mode nil)
-    (setq magit-last-seen-setup-instructions "1.4.0")))
-(add-hook 'magit-mode-hook 'magit-load-config-extensions)
+;; (use-package magit
+;; :disabled t
+;; :ensure t
+;; :diminish magit-auto-revert-mode
+;; :bind
+;; (("C-x g". magit-status))
+;; :init
+;; (progn
+;;   (use-package magit-stgit :ensure t)
+;;   (setq magit-auto-revert-mode nil)
+;;   (setq magit-last-seen-setup-instructions "1.4.0")))
+;; (add-hook 'magit-mode-hook 'magit-load-config-extensions)
+;; (add-hook 'magit-mode-hook 'magit-stgit-mode)
 
 (use-package git-timemachine :ensure t)
+
+;;; load magit initialization
+(use-package magit-init)
 
 (provide 'git-mode-init)
