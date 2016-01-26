@@ -2,18 +2,18 @@
 
 (use-package git-commit
   :ensure t
-  :mode "\\COMMIT_EDITMSG\\'"
-  :init
+  :config
   (progn
     (global-git-commit-mode t)
-    (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
-    (add-hook 'git-commit-mode-hook (lambda () (toggle-save-place 0)))
-    (add-hook 'git-commit-mode-hook
+    (add-hook 'git-setup-mode-hook 'turn-on-flyspell)
+    (add-hook 'git-commit-setup-hook (lambda () (toggle-save-place 0)))
+    (add-hook 'git-commit-setup-hook
 	      (lambda ()
 		(setq fci-rule-column 72)
 		(setq fill-column 72)
 		(turn-on-auto-fill)
-		(font-lock-set-up-width-warning 72)))))
+		;; (font-lock-set-up-width-warning 72)
+		))))
 
 ;; cleanup after git commit is done
 ;; (add-hook 'server-switch-hook
@@ -85,10 +85,10 @@
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
 ;; ;;; git messenger - pop last commit message on the current line
-;; (use-package git-messenger
-;;   :disabled t
-;;   :bind
-;;   (("C-c v p" . git-messenger:popup-message)))
+(use-package git-messenger
+  :disabled t
+  :bind
+  (("C-c v p" . git-messenger:popup-message)))
 
 ;;; stgit-mode - stgit wrapper for eMacs
 (use-package stgit

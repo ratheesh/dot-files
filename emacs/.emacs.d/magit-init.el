@@ -8,14 +8,21 @@
   :commands magit-get-top-dir
   :bind  (("C-x g". magit-status))
   :pin melpa-stable
-  :init
+  :config
   (progn
     ;; magit extensions
     (use-package magit-stgit
       :ensure t
       :pin melpa-stable
-      :init
+      :config
       (add-hook 'magit-mode-hook 'magit-stgit-mode))
+
+    ;; This is needed for completion
+    (use-package ido-ubiquitous
+      :ensure t
+      :config
+      (progn
+	(ido-ubiquitous-mode 1)))
 
     ;; we no longer need vc-git
     (delete 'Git vc-handled-backends)
@@ -43,7 +50,7 @@
       (when (looking-at "\n")
         (open-line 1)))
 
-    (add-hook 'git-commit-mode-hook 'magit-commit-mode-init))
+    (add-hook 'git-commit-setup-hook 'magit-commit-mode-init))
   :config
   (progn
     ;; restore previously hidden windows
