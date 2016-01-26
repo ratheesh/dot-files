@@ -27,6 +27,8 @@
       scroll-conservatively 10000
       scroll-preserve-screen-position)
 
+(setq minibuffer-prompt-properties (quote (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
+
 (setq-default
  find-file-visit-truename t
  indicate-empty-lines t)
