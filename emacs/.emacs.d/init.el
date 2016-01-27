@@ -99,6 +99,7 @@
                 '((smex               . "melpa-stable")
                   (helm               . "melpa-stable")
                   (yasnippet          . "melpa-stable")
+		  (magit              . "melpa-stable")
                   ;; "unstable" package
                   (icicles            . "melpa"))))
 (package-initialize)
