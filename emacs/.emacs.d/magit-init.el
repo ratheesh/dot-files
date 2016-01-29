@@ -24,6 +24,26 @@
       (progn
 	(ido-ubiquitous-mode 1)))
 
+    (use-package magit-rockstar
+      :ensure t
+      :config
+      (progn
+	(magit-define-popup-action 'magit-rebase-popup
+				   ?R "Rockstar" 'magit-rockstar)
+	(magit-define-popup-action 'magit-commit-popup
+				   ?n "Reshelve" 'magit-reshelve)
+	(magit-define-popup-action 'magit-fetch-popup
+				   ?P "Pull request" 'magit-branch-pull-request)
+	(setq magit-unstage-use-anti-stage t)
+	(magit-define-popup-action 'magit-revert-popup
+				   ?e "Revert & edit HEAD" 'magit-uncommit-extend)))
+
+    (use-package magit-gitflow
+      :ensure t
+      :config
+      (progn
+	(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)))
+
     ;; we no longer need vc-git
     (delete 'Git vc-handled-backends)
     ;; make magit status go full-screen but remember previous window
