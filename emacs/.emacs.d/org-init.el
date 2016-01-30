@@ -2,7 +2,7 @@
 (provide 'package)
 
 ;; Required elisp packages
-(use-package org-bullets :ensure t)
+(use-package org-bullets :ensure t :defer t)
 (use-package org-habit :defer t)
 (use-package remember :defer t)
 ;(use-package remember-autoloads)
@@ -22,7 +22,7 @@
   :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-  :init
+  :config
   (progn
 
     ;; common org mode variable settings

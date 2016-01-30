@@ -3,7 +3,7 @@
 ;;; paradox package management
 (use-package paradox
   :ensure t
-  :init
+  :config
   (progn
     (setq paradox-execute-asynchronously t))
   :config
@@ -12,7 +12,7 @@
 
 ;;ido mode
 (use-package ido
-  :init
+  :config
   (progn
     (ido-mode t)
     (ido-mode 'both))) ;; for buffers and files
@@ -35,7 +35,7 @@
 ;; Try out flx-ido for better flex matching between words
 (use-package flx-ido
   :ensure t
-  :init
+  :config
   (progn
     (ido-mode 1)
     (ido-everywhere 1)
@@ -70,7 +70,7 @@
 (use-package ido-at-point
   :ensure t
   :defer t
-  :init
+  :config
   (progn
     (ido-at-point-mode)))
 
@@ -92,7 +92,7 @@
 ;;; Enable footnote mode for text files
 (use-package footnote
   :defer t
-  :init
+  :config
   (progn
     (add-hook 'text-mode-hook 'footnote-mode)))
 
@@ -150,7 +150,7 @@
   :ensure t
   :bind
   (("C-h C-/" . fasd-find-file))
-  :init
+  :config
   (progn
     (global-fasd-mode 1)
     (setq fasd-enable-initial-prompt 'nil)))
@@ -173,7 +173,7 @@
 (use-package with-editor
   :defer t
   :ensure t
-  :init
+  :config
   (progn
     (add-hook 'shell-mode-hook  'with-editor-export-editor)
     (add-hook 'eshell-mode-hook 'with-editor-export-editor)))
@@ -190,7 +190,7 @@
 ;;; smart mode line with powerline
 (use-package smart-mode-line
   :ensure t
-  :init
+  :config
   (progn
     (setq
      sml/vc-mode-show-backend t
@@ -238,7 +238,7 @@
 	 ("M-l" . back-button-global-forward)
 	 ("M-p" . back-button-local-backward)
 	 ("M-n" . back-button-local-forward))
-  :init
+  :config
   (progn
     (use-package smartrep
       :ensure t )

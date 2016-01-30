@@ -62,10 +62,10 @@
                                       helm-source-recentf
                                       helm-source-bookmarks
                                       helm-source-buffer-not-found))
-    (use-package helm-config)
-    (use-package helm-files)
-    (use-package helm-git-grep :ensure t :defer t)
-    (use-package helm-ag :ensure t :defer t))
+    (use-package helm-config :demand t)
+    (use-package helm-files :demand t)
+    (use-package helm-git-grep :ensure t :demand t :defer t)
+    (use-package helm-ag :ensure t :demand t :defer t))
   :config
   (progn
     (helm-mode 1)))
@@ -85,7 +85,7 @@
   :defer t
   :bind
   (("<f4>" . helm-swoop))
-  :init
+  :config
   (progn
     (setq helm-swoop-split-with-multiple-windows nil)
     (setq helm-swoop-split-direction 'split-window-horizontally)
@@ -96,6 +96,7 @@
 ;;; search buffer using helm
 (use-package swiper-helm
   :ensure t
+  :demand t
   :bind
   (("C-s" . swiper-helm)
    ("C-r" . swiper-helm)))
