@@ -130,7 +130,7 @@
 
 ;; Add parts of each file's directory to the buffer name if not unique
 (use-package uniquify
-  :init
+  :config
   (progn
     (setq uniquify-buffer-name-style 'forward)))
 
@@ -204,7 +204,8 @@
 
 ;;; open bookmarks buffer on startup
 (use-package bookmark
-  :init
+  :defer t
+  :config
   (progn
     (bookmark-bmenu-list)
     (switch-to-buffer "*Bookmark List*")))
@@ -222,7 +223,8 @@
 
 ;; (iswitchb-mode t)
 (use-package lisp-mode
-  :init
+  :defer t
+  :config
   (add-hook 'emacs-lisp-mode-hook
             (lambda ()
               (setq mode-name " ξ "))))
@@ -234,14 +236,16 @@
 
 (use-package tramp
   :ensure t
-  :init
+  :defer t
+  :config
   (progn
     (setq tramp-default-method "ssh")))
 
 ;;; save configuration across emacs sessions
 (use-package desktop
   :disabled t
-  :init
+  :defer t
+  :config
   (progn
     (setq desktop-dirname         "~/.emacs.d/"
       desktop-base-file-name      "emacs.desktop"
@@ -284,7 +288,9 @@
     (desktop-save-mode t)))
 
 ;;; make sure that scratch buffer is always available
-(use-package scratch-ext :ensure t)
+(use-package scratch-ext
+  :ensure t
+  :defer t)
 
 (use-package expand-region
   :ensure t
