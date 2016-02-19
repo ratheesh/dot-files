@@ -4,6 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (mytheme-dark)))
+ '(elfeed-feeds
+   (quote
+    ("http://feeds.macrumors.com/MacRumors-Front" "www.shakthimaan.com/news.xml"
+     ("http://www.shakthimaan.com/news.xml" people)
+     ("http://feeds.macrumors.com/MacRumors-Front" Apple))))
  '(flymake-python-pyflakes-executable "flake8")
  '(nyan-animate-nyancat t)
  '(nyan-animation-frame-interval 0.1)
