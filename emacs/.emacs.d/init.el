@@ -100,6 +100,7 @@
                   (helm               . "melpa-stable")
                   (yasnippet          . "melpa-stable")
 		  (magit              . "melpa-stable")
+		  (org                . "org")
                   ;; "unstable" package
                   (icicles            . "melpa"))))
 (package-initialize)

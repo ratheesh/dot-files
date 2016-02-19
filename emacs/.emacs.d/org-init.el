@@ -2,7 +2,16 @@
 (provide 'package)
 
 ;; Required elisp packages
-(use-package org-bullets :ensure t :defer t)
+(use-package org-bullets
+  :ensure t
+  :config
+  (progn
+    (setq org-bullets-face-name (quote org-bullet-face))
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+    (setq org-bullets-bullet-list '( "✡" "⎈" "✽" "✲" "✱" "✻" "✼" "✽" "✾" "✿" "❀" "❁" "❂" "❃" "❄" "❅" "❆" "❇"))
+    (setq org-ellipsis "⚡⚡⚡");; ⤵ ≫
+    (setq org-bullets-face-name (quote org-bullet-face))))
+
 (use-package org-habit :defer t)
 (use-package remember :defer t)
 ;(use-package remember-autoloads)
@@ -20,11 +29,11 @@
 ;; Enable org mode for the files with .org extension
 (use-package org
   :ensure t
+  :pin melpa-stable
   :init
   (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
   :config
   (progn
-
     ;; common org mode variable settings
     (setq
      org-startup-indented t
@@ -126,6 +135,52 @@
  org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org" ;new notes file
 ; org-mobile-use-encryption t ;use encryption
 )
+
+;;; Org-page setup
+(use-package org-page
+  :ensure t
+  :pin melpa-stable
+  :demand t
+  :init
+  (progn
+    (setq op/repository-directory "/home/ratheesh/ppcport/git/ratheesh.github.io/")
+    (setq
+     op/site-domain "http://ratheesh.github.io/"
+     op/site-main-title "Ratheesh's Tech Ramblings!"
+     op/site-sub-title "==============> ನನ್ನ ತಾಂತ್ರಿಕ ಮೆಲುಕುಗಳು!"
+     op/personal-github-link "https://github.com/ratheesh"
+     op/personal-disqus-shortname "Ratheesh"
+     op/personal-google-analytics-id "UA-73982336-1")
+
+    (setq op/category-config-alist
+	  '(("blog" ;; this is the default configuration
+	     :show-meta t
+	     :show-comment t
+	     :uri-generator op/generate-uri
+	     :uri-template "/blog/%y/%m/%d/%t/"
+	     :sort-by :date     ;; how to sort the posts
+	     :category-index t) ;; generate category index or not
+	    ("wiki"
+	     :show-meta t
+	     :show-comment nil
+	     :uri-generator op/generate-uri
+	     :uri-template "/wiki/%t/"
+	     :sort-by :mod-date
+	     :category-index t)
+	    ("index"
+	     :show-meta nil
+	     :show-comment nil
+	     :uri-generator op/generate-uri
+	     :uri-template "/"
+	     :sort-by :date
+	     :category-index nil)
+	    ("about"
+	     :show-meta nil
+	     :show-comment nil
+	     :uri-generator op/generate-uri
+	     :uri-template "/about/"
+	     :sort-by :date
+	     :category-index nil)))))
 
 (provide 'org-init)
 ;; End of the File
