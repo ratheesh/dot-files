@@ -5,9 +5,11 @@
 ;; https://github.com/magit/magit
 
 (use-package magit
+  :ensure t
+  :pin melpa-stable
+  :demand t
   :commands magit-get-top-dir
   :bind  (("C-x g". magit-status))
-  :pin melpa-stable
   :config
   (progn
     ;; magit extensions
@@ -69,6 +71,23 @@
     (defun magit-commit-mode-init ()
       (when (looking-at "\n")
         (open-line 1)))
+
+
+    ;; load-magit-log-when-committing-mode
+    (define-minor-mode load-magit-log-when-committing-mode
+      "dummy")
+
+    ;; the hook
+    (defun show-magit-log-hook ()
+      (cd "..")
+      (magit-log)
+      (switch-to-buffer-other-window "COMMIT_EDITMSG"))
+
+    ;; add the hook
+    (add-hook 'load-magit-log-when-committing-mode-hook 'show-magit-log-hook)
+
+    ;; load the mode for commit message
+    (add-to-list 'auto-mode-alist '("\\COMMIT_EDITMSG\\'" . load-magit-log-when-committing-mode))
 
     (add-hook 'git-commit-setup-hook 'magit-commit-mode-init))
   :config
