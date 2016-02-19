@@ -40,4 +40,12 @@
   (progn
     (setq skype--my-user-handle "ratheesh.reddy")))
 
+(use-package elfeed
+  :ensure t
+  :config
+  (progn
+    (global-set-key (kbd "C-x w") 'elfeed)
+    (setq elfeed-feeds
+          '(("http://www.shakthimaan.com/news.xml" people)))))
+
 (provide 'misc-config)
