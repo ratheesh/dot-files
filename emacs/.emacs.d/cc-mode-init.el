@@ -30,7 +30,7 @@
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
 	      (abbrev-mode 1)
 	      (key-chord-define c-mode-map ";;" "\C-e") ;end of the line
-              (helm-gtags-mode 1))))
+              )))
 
 ;;; no indent on ret key
 ;; (add-hook 'c-mode-hook

@@ -136,17 +136,29 @@
 (use-package ggtags
   :ensure t
   :disabled t
+  :diminish ggtags-mode
+  :bind
+  (("<f6>" . ggtags-find-reference)
+   ("<f7>" . ggtags-find-definition)
+   ("<f8>" . pop-tag-mark))
   :config
   (progn
+    (setq ggtags-update-on-save t)
+    (setq ggtags-global-ignore-case t)
     (setq ggtags-completing-read-function 'nil)
     (setq-local eldoc-documentation-function #'ggtags-eldoc-function)
     (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
+    (add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
     (eldoc-mode t)))
 
 ;;; helm-gtags
 (use-package helm-gtags
   :pin melpa-stable
   :ensure t
+  ;; :disabled t
   :defer t
   :diminish helm-gtags-mode
   :bind
@@ -162,8 +174,12 @@
      helm-gtags-use-input-at-cursor t
      helm-gtags-fuzzy-match t
      helm-gtags-display-style 'detail
-     helm-gtags-highlight-candidate t)
-    ))
+     helm-gtags-highlight-candidate t
+     helm-gtags-fuzzy-match t)
+    )
+  :config
+  (progn
+    (helm-gtags-mode 1)))
 
 ;;; projectile configuration
 (use-package projectile
