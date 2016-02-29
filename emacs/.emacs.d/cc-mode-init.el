@@ -169,27 +169,20 @@
   :commands dts-mode
   :defer t)
 
-;; ECB env settings - not using for now
-(use-package ecb
+(use-package semantic
   :ensure t
-  :disabled t
-  :bind
-  (("\C-c(" . ecb-activate)
-   ("\C-c)" . ecb-deactivate)
-   ("\C-c1" . ecb-goto-window-edit1)
-   ("\C-c2" . ecb-goto-window-directories)
-   ("\C-c3" . ecb-goto-window-history))
+  :defer t
+  :init
+  (progn
+    (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+    (use-package stickyfunc-enhance :ensure t))
   :config
   (progn
-    (setq
-     ecb-layout-name "rathy-dh-layout"
-     ecb-show-sources-in-directories-buffer 'always
-     ecb-compile-window-height nil)))
-
-(use-package sr-speedbar
-  :ensure t
-  :disabled t
-  :bind
-  (("C-c C-s" . sr-speedbar-toggle)))
-
+    (semantic-mode t)
+    ;; (semantic-c-obey-conditional-section-parsing-flag nil)
+    ;; (helm-semantic-fuzzy-match t)
+    (global-semantic-decoration-mode t)
+    (global-semantic-highlight-edits-mode t)
+    (global-semantic-highlight-func-mode t)
+    ))
 (provide 'cc-mode-init)

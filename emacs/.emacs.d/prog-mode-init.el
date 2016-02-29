@@ -134,6 +134,7 @@
 
 ;;; gtags configuration
 (use-package ggtags
+  :pin melpa-stable
   :ensure t
   :disabled t
   :diminish ggtags-mode
@@ -183,6 +184,7 @@
 
 ;;; projectile configuration
 (use-package projectile
+  :pin melpa-stable
   :ensure t
   :diminish projectile-mode
   :bind
@@ -195,6 +197,7 @@
 	  projectile-use-git-grep t)
     (projectile-global-mode t)
     (use-package helm-projectile
+      :pin melpa-stable
       :ensure t
       :bind
       (("C-c h" . helm-projectile)
@@ -212,6 +215,7 @@
 
 ;;; rainbow-identifiers
 (use-package rainbow-identifiers
+  :pin melpa-stable
   :ensure t
   :init
   (progn
@@ -234,6 +238,7 @@
 
 ;;; Enable paredit (only for eLisp mode)
 (use-package paredit
+  :pin melpa-stable
   :ensure t
   :defer t
   :commands lisp-mode
@@ -250,6 +255,7 @@
 (use-package iedit :ensure t)
 
 (use-package company-irony
+  :pin melpa-stable
   :ensure company
   :init
   (use-package irony

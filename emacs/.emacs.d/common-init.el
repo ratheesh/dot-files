@@ -2,6 +2,7 @@
 
 ;;; paradox package management
 (use-package paradox
+  :pin melpa-stable
   :ensure t
   :config
   (progn
@@ -35,6 +36,7 @@
 ;; Try out flx-ido for better flex matching between words
 (use-package flx-ido
   :ensure t
+  :defer t
   :config
   (progn
     (ido-mode 1)
@@ -52,7 +54,7 @@
 ;; flx-ido looks better with ido-vertical-mode
 (use-package ido-vertical-mode
   :ensure t
-  :disabled t
+  ;; :disabled t
   :config
   (progn
     (ido-vertical-mode)))
@@ -79,6 +81,7 @@
 
 ;;smex
 (use-package smex
+  :pin melpa-stable
   :ensure t
   :disabled t
   :bind
@@ -110,18 +113,6 @@
   :init
   (progn
     (global-fringe-current-line-mode 1))) ;enable to all buffers by default
-
-;;; ack-and-half - alternative for grep
-(use-package ack-and-a-half
-  :disabled t
-  :bind
-  (("<f9>" . ack))
-  :init
-  (progn
-    (defalias 'ack 'ack-and-a-half)
-    (defalias 'ack-same 'ack-and-a-half-same)
-    (defalias 'ack-find-file 'ack-and-a-half-find-file)
-    (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)))
 
 (use-package iy-go-to-char
   :ensure t
@@ -168,7 +159,7 @@
    ("C-M-r"  . flx-isearch-backward)))
 
 ;;; auto update of packages
-(use-package auto-package-update :ensure t)
+(use-package auto-package-update :ensure t :defer t)
 
 (use-package with-editor
   :defer t
@@ -180,7 +171,9 @@
 
 ;;; ace-jump mode - keybinding as a part of keychord package config
 (use-package ace-jump-mode
+  :pin melpa-stable
   :ensure t
+  :defer t
   :config
   (setq ace-jump-mode-submode-list
         '(ace-jump-char-mode
@@ -189,6 +182,7 @@
 
 ;;; smart mode line with powerline
 (use-package smart-mode-line
+  :pin melpa-stable
   :ensure t
   :config
   (progn
@@ -201,6 +195,7 @@
     :config
     (progn
       (use-package powerline
+        :pin melpa-stable
         :ensure t
 	:init
 	(progn
@@ -209,24 +204,12 @@
 
 (use-package anzu
   :ensure t
+  :defer t
   :bind
   (("M-%" . anzu-query-replace))
   :config
   (progn
     (global-anzu-mode +1)))
-
-(use-package spaceline-config
-  :disabled t
-  :config
-  (my-spaceline-theme)
-  (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state))
-
-;;; navigate through emacs-mark ring
-(use-package show-marks
-  :disabled t
-  :bind (
-	 ("M-n" . forward-mark)
-	 ("M-l" . show-marks)))
 
 (use-package back-button
   :commands back-button-mode
@@ -250,7 +233,9 @@
 
 ;;; highlight operation of library visually
 (use-package volatile-highlights
+  :pin melpa-stable
   :ensure t
+  :defer t
   :commands volatile-highlights-mode
   :diminish volatile-highlights-mode
   :config
@@ -268,28 +253,11 @@
     (add-to-list 'smart-tab-disabled-major-modes 'erc-mode)
     (add-to-list 'smart-tab-disabled-major-modes 'shell-mode)))
 
-(use-package idomenu
-  :ensure t
-  :disabled t
-  :bind
-  (("M-i" . idomenu)))
-
 (use-package duplicate-thing
   :ensure t
+  :defer t
   :bind (("C-c d" . duplicate-thing)))
 
 (use-package boxquote :ensure t)
-
-;;; visually zap to the char
-(use-package zop-to-char
-  :ensure t
-  :bind (
-	 ("M-z" . zop-up-to-char)))
-
-(use-package mic-paren
-  :ensure t
-  :config
-  (progn
-    (paren-activate)))
 
 (provide 'common-init)
