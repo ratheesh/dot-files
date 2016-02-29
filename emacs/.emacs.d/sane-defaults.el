@@ -115,6 +115,7 @@
   :defer t
   :commands undo-tree-mode
   :ensure t
+  :defer t
   :diminish undo-tree-mode
   :init
   (progn
@@ -130,6 +131,7 @@
 
 ;; Add parts of each file's directory to the buffer name if not unique
 (use-package uniquify
+  :defer t
   :config
   (progn
     (setq uniquify-buffer-name-style 'forward)))
@@ -155,13 +157,6 @@
       (when (= p (point)) ad-do-it))))
 
 (setq scroll-margin 4)
-;; (use-package smooth-scrolling
-;;   :ensure t
-;;   :config
-;;   (progn
-;;     (setq scroll-conservatively 10000
-;; 	  scroll-preserve-screen-position t)
-;;     (setq smooth-scroll-margin 4)))
 
 (setq fringe-mode '(1 . 0))
 (delete-selection-mode 1)   ;; delete the sel with a keyp
@@ -199,7 +194,7 @@
 
 (use-package linum+)
 (global-linum-mode t)
-(use-package hlinum :ensure t)
+(use-package hlinum :ensure t :defer t)
 (hlinum-activate)
 
 ;;; open bookmarks buffer on startup
@@ -241,52 +236,6 @@
   (progn
     (setq tramp-default-method "ssh")))
 
-;;; save configuration across emacs sessions
-(use-package desktop
-  :disabled t
-  :defer t
-  :config
-  (progn
-    (setq desktop-dirname         "~/.emacs.d/"
-      desktop-base-file-name      "emacs.desktop"
-      desktop-base-lock-name      "lock"
-      desktop-path                (list desktop-dirname)
-      desktop-save                t
-      desktop-files-not-to-save   "^$" ;reload tramp paths
-      desktop-load-locked-desktop nil
-      desktop-restore-frames nil)
-    (setq desktop-globals-to-save
-      (append '((comint-input-ring . 50)
-                (compile-history . 30)
-                (desktop-missing-file-warning)
-                (dired-regexp-history . 20)
-                (extended-command-history . 50)
-                (face-name-history . 20)
-                (file-name-history . 100)
-                (grep-find-history . 30)
-                (grep-history . 30)
-                (ido-buffer-history . 100)
-                (ido-last-directory-list . 100)
-                (ido-work-directory-list . 100)
-                (ido-work-file-list . 100)
-                (magit-read-rev-history . 50)
-                (minibuffer-history . 50)
-                (org-clock-history . 50)
-                (org-refile-history . 50)
-                (org-tags-history . 50)
-                (query-replace-history . 60)
-                (read-expression-history . 60)
-                (regexp-history . 60)
-                (regexp-search-ring . 20)
-                register-alist
-                (search-ring . 20)
-                (shell-command-history . 50)
-                (tags-file-name)
-                (tags-table-list)))))
-  :config
-  (progn
-    (desktop-save-mode t)))
-
 ;;; make sure that scratch buffer is always available
 (use-package scratch-ext
   :ensure t
@@ -294,6 +243,7 @@
 
 (use-package expand-region
   :ensure t
+  :defer t
   :bind
   (("M-=" . er/expand-region)
    ("M--" . er/contract-region)))
@@ -307,15 +257,8 @@
    ("C-S-c C-a" . mc/edit-beginnings-of-lines)
    ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
-(use-package jump-char :ensure t :defer t)
-;; Don't highlight matches with jump-char - it's distracting
-;; (setq jump-char-lazy-highlight-face nil)
-
 (use-package smart-forward
   :defer t
   :ensure t)
-
-;(use-package change-inner)
-;(use-package multifiles)
 
 (provide 'sane-defaults)

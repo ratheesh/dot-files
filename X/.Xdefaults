@@ -1,1 +1,2 @@
 emacs.cursorColor: white
+XTerm*termName: xterm-256color

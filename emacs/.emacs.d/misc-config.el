@@ -24,22 +24,6 @@
       (progn
 	(define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)))))
 
-(use-package highlight-tail
-  :ensure t
-  :disabled t
-  :config
-  (progn
-    (setq highlight-tail-steps 3
-	  highlight-tail-timer 0.1
-	  highlight-tail-const-width 3)
-    (highlight-tail-mode)))
-
-(use-package skype
-  :disabled t
-  :init
-  (progn
-    (setq skype--my-user-handle "ratheesh.reddy")))
-
 (use-package elfeed
   :ensure t
   :config
