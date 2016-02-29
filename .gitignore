@@ -13,3 +13,11 @@ org-clock-save.el
 **/.vim*
 *user-init.el
 /emacs/.emacs.d/projectile.cache
+*.patch
+/emacs/.emacs.d/.org-id-locations
+/ac_setup.diff
+/emacs/.emacs.d/.python-environments/default/bin/activate
+/emacs/.emacs.d/.python-environments/default/bin/activate.csh
+*.python-env*
+*.desktop
+*.diff
