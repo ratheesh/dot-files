@@ -13,6 +13,7 @@
 
 (defconst my-c-mode-setup-packages
   '(
+    c-mode
     dts-mode
     ;; autopair
     fill-column-indicator
@@ -20,11 +21,19 @@
   "The list of Lisp packages required by the my-c-mode-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun my-c-mode-setup/post-init-c-mode ()
+  (add-to-list 'auto-mode-alist '("Kconfig" . Kconfig-mode))
+  )
+
 (defun my-c-mode-setup/init-dts-mode ()
   (use-package dts-mode
     :ensure t
     :commands dts-mode
-    :defer t))
+    :defer t
+    :init
+    (progn
+      (add-to-list 'auto-mode-alist '("\\.dts\\'"   . dts-mode))
+      (add-to-list 'auto-mode-alist '("\\.dtsi\\'"  . dts-mode)))))
 
 (defun my-c-mode-setup/init-autopair ()
   (use-package autopair
