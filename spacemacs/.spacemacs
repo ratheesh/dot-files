@@ -22,9 +22,7 @@ values."
      emacs-lisp
      (git :variables
           git-magit-status-fullscreen t
-          git-enable-github-support t
-          git-gutter-use-fringe t)
-     ;; version-control
+          )
      markdown
      org
      (shell :variables
@@ -32,7 +30,9 @@ values."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     version-control
+     (version-control :variables
+                      version-control-diff-tool 'diff-hl
+                      version-control-global-margin t)
      themes-megapack
      (colors :variables
              colors-enable-rainbow-identifiers t)
@@ -57,8 +57,7 @@ values."
      my-progmode-setup
      my-c-mode-setup
      my-gitmode-setup
-     my-orgmode-setup
-     )
+     my-orgmode-setup)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -153,12 +152,10 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (global-subword-mode 1) ;; camelCaseWords
-  (global-hl-line-mode 0)
+  (global-hl-line-mode 1)
   (global-linum-mode 1)
   (setq linum-format 'dynamic)
   (fancy-battery-mode)
-
-  (setq powerline-default-separator 'zigzag)
 
   ;; set the font here
   (set-face-attribute 'default nil :family "MonacoB")
@@ -180,15 +177,9 @@ layers configuration. You are free to put any user code."
   ;; enable clean-aindent-mode for programming mode
   (add-hook 'prog-mode-hook 'clean-aindent-mode)
   (global-aggressive-indent-mode 1)
+  (setq powerline-default-separator 'zigzag)
 
-;;; enable fill column indicator
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
-
-  ;; helm-configuration
-  (setq projectile-enable-caching t
-        projectile-completion-system 'helm
-        projectile-use-native-indexing t
-        projectile-use-git-grep t)
+  (server-start)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -198,11 +189,11 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(global-semantic-decoration-mode t)
+ ;; '(diff-hl-side (quote left))
  '(global-semantic-highlight-edits-mode t)
- ;; '(global-semantic-highlight-func-mode t)
- ;; '(global-semantic-idle-local-symbol-highlight-mode t nil (semantic/idle))
- '(global-semantic-show-parser-state-mode t))
+ '(global-semantic-show-parser-state-mode t)
+ '(paradox-github-token t)
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -210,4 +201,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(diff-hl-change ((t (:background "wheat4" :foreground "wheat4"))))
+ '(diff-hl-delete ((t (:background "red" :foreground "red"))))
+ '(diff-hl-insert ((t (:background "green" :foreground "green")))))

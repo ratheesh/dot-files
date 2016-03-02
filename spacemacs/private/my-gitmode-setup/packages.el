@@ -13,11 +13,15 @@
 
 (defconst my-gitmode-setup-packages
   '(
+    magit
     stgit
     magit-stgit
     )
   "The list of Lisp packages required by the my-gitmode-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun my-gitmode-setup/post-init-magit ()
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 (defun my-gitmode-setup/init-stgit ()
   (use-package stgit
