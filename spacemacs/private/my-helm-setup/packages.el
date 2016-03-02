@@ -33,11 +33,19 @@
   '(
     helm-gtags
     helm-swoop
+    projectile
     helm-projectile
     swiper-helm
     )
   "The list of Lisp packages required by the my-helm-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun my-helm-setup/post-init-projectile ()
+  (setq projectile-enable-caching t
+        projectile-completion-system 'helm
+        projectile-use-native-indexing t
+        projectile-use-git-grep t)
+  )
 
 (defun my-helm-setup/post-init-helm-gtags ()
   (global-set-key (kbd "<f6>") 'helm-gtags-find-rtag)
