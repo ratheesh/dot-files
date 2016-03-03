@@ -13,7 +13,7 @@
 
 (defconst my-common-setup-packages
   '(
-    (linum+ :location local)
+    ;; (linum+ :location local)
     iregister
     duplicate-thing
     ace-jump-mode
