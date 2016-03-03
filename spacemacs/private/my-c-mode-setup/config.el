@@ -63,32 +63,41 @@
                 (c-set-style "linux-tabs-only")))))
 
 ;;; make #if 0 code to look like comment
-;; (defun my-c-mode-font-lock-if0 (limit)
-;;   (save-restriction
-;;     (widen)
-;;     (save-excursion
-;;       (goto-char (point-min))
-;;       (let ((depth 0) str start start-depth)
-;;         (while (re-search-forward "^\\s-*#\\s-*\\(if\\|else\\|endif\\)" limit 'move)
-;;           (setq str (match-string 1))
-;;           (if (string= str "if")
-;;               (progn
-;;                 (setq depth (1+ depth))
-;;                 (when (and (null start) (looking-at "\\s-+0"))
-;;                   (setq start (match-end 0)
-;;                         start-depth depth)))
-;;             (when (and start (= depth start-depth))
-;;               (c-put-font-lock-face start (match-beginning 0) 'font-lock-comment-face)
-;;               (setq start nil))
-;;             (when (string= str "endif")
-;;               (setq depth (1- depth)))))
-;;         (when (and start (> depth 0))
-;;           (c-put-font-lock-face start (point) 'font-lock-comment-face)))))
-;;   nil)
+(defun my-c-mode-font-lock-if0 (limit)
+  (save-restriction
+    (widen)
+    (save-excursion
+      (goto-char (point-min))
+      (let ((depth 0) str start start-depth)
+        (while (re-search-forward "^\\s-*#\\s-*\\(if\\|else\\|endif\\)" limit 'move)
+          (setq str (match-string 1))
+          (if (string= str "if")
+              (progn
+                (setq depth (1+ depth))
+                (when (and (null start) (looking-at "\\s-+0"))
+                  (setq start (match-end 0)
+                        start-depth depth)))
+            (when (and start (= depth start-depth))
+              (c-put-font-lock-face start (match-beginning 0) 'font-lock-comment-face)
+              (setq start nil))
+            (when (string= str "endif")
+              (setq depth (1- depth)))))
+        (when (and start (> depth 0))
+          (c-put-font-lock-face start (point) 'font-lock-comment-face)))))
+  nil)
 
-;; (defun my-c-mode-common-hook ()
-;;   (font-lock-add-keywords
-;;    nil
-;;    '((my-c-mode-font-lock-if0 (0 font-lock-comment-face prepend))) 'add-to-end))
+(defun my-c-mode-common-hook ()
+  (font-lock-add-keywords
+   nil
+   '((my-c-mode-font-lock-if0 (0 font-lock-comment-face prepend))) 'add-to-end))
 
-;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+(defun my-c-mode-local-keybindings ()
+  "Local key bindings for c-mode"
+  (local-set-key (kbd "C-)") 'sp-forward-slurp-sexp)
+  (local-set-key (kbd "C-(") 'sp-backward-barf-sexp)
+  (local-set-key (kbd "C-}") 'sp-forward-barf-sexp)
+  (local-set-key (kbd "C-{") 'sp-backward-slurp-sexp)
+  )
+(add-hook 'c-mode-common-hook 'my-c-mode-local-keybindings)
