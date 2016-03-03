@@ -13,6 +13,7 @@
 
 (defconst my-common-setup-packages
   '(
+    (linum+ :location local)
     iregister
     duplicate-thing
     ace-jump-mode
@@ -23,6 +24,11 @@
     )
   "The list of Lisp packages required by the my-common-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun my-common-setup/init-linum+ ()
+  (use-package linum+
+    :load-path "~/.emacs.d/private/local/"
+    ))
 
 (defun my-common-setup/init-iregister ()
   (use-package iregister

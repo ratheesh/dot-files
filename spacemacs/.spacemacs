@@ -151,17 +151,18 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (global-subword-mode 1) ;; camelCaseWords
+  (global-subword-mode 1)
   (global-hl-line-mode 1)
-  (global-linum-mode 1)
+  ;; (global-linum-mode 1)
   (setq linum-format 'dynamic)
   (fancy-battery-mode)
+  (delete-selection-mode 1)             ;replace selected text on yank!
 
   ;; set the font here
   (set-face-attribute 'default nil :family "MonacoB")
   (set-face-attribute 'default nil :height 130)
 
-  ;; Semantic to ignore c-preprocessor
+  ;; Semantic to ignore c-pre-processor
   (setq semantic-c-obey-conditional-section-parsing-flag 'nil)
   (setq semanticdb-default-save-directory "/home/ratheesh/.emacs.d/.cache/semanticdb/")
 
@@ -177,9 +178,7 @@ layers configuration. You are free to put any user code."
   ;; enable clean-aindent-mode for programming mode
   (add-hook 'prog-mode-hook 'clean-aindent-mode)
   (global-aggressive-indent-mode 1)
-  (setq powerline-default-separator 'zigzag)
-
-  (server-start)
+  (setq powerline-default-separator 'box)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -193,7 +192,7 @@ layers configuration. You are free to put any user code."
  '(global-semantic-highlight-edits-mode t)
  '(global-semantic-show-parser-state-mode t)
  '(paradox-github-token t)
-)
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
