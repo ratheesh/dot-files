@@ -153,10 +153,15 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (global-subword-mode 1)
   (global-hl-line-mode 1)
-  ;; (global-linum-mode 1)
-  (setq linum-format 'dynamic)
+  (global-linum-mode 1)
+  (setq linum-format 'smart)
   (fancy-battery-mode)
   (delete-selection-mode 1)             ;replace selected text on yank!
+  (smooth-scrolling-mode 1)
+  ;; (setq jit-lock-defer-time 0.05)
+  (setq scroll-step 1)
+  (setq scroll-conservatively 10000)
+  (setq auto-window-vscroll nil)
 
   ;; set the font here
   (set-face-attribute 'default nil :family "MonacoB")
