@@ -20,6 +20,7 @@
     key-chord
     super-save
     fasd
+    imenu
     ;; back-button
     )
   "The list of Lisp packages required by the my-common-setup layer.
@@ -95,4 +96,10 @@
 (defun my-common-setup/post-init-fasd ()
   (setq fasd-enable-initial-prompt 'nil)
   )
+
+(defun my-common-setup/post-init-imenu ()
+  (progn
+    (setq
+     imenu-auto-rescan t)
+    ))
 ;;; packages.el ends here
