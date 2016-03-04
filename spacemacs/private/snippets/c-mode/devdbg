@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: devdbg
+# key: devdbg
+# --
+dev_${1:debug}("${2:message}\n"${3:, a0, a1});$0

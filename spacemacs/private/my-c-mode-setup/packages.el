@@ -49,7 +49,7 @@
     (setq
      ;; fci-handle-truncate-lines nil
      fci-rule-width 1
-     fci-rule-color "#ff00ff")
+     fci-rule-color "#696969")
     (setq-default  fci-rule-column 80)
     (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
     (add-hook 'after-change-major-mode-hook 'auto-fci-mode)

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: enum
+# key: enum
+# --
+enum ${1:name} {
+     ${2:first element} = ${3:0},
+     $0
+};
+
