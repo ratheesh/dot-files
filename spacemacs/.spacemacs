@@ -17,7 +17,9 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (auto-completion   :variables
-                        auto-completion-enable-snippets-in-popup t)
+                        auto-completion-enable-snippets-in-popup t
+                        auto-completion-enable-sort-by-usage t
+                        auto-completion-private-snippets-directory "~/.emacs.d/private/snippets/")
      better-defaults
      emacs-lisp
      (git :variables
@@ -152,7 +154,7 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (global-subword-mode 1)
-  (global-hl-line-mode 1)
+  (global-hl-line-mode 0)
   (global-linum-mode 1)
   (setq linum-format 'smart)
   (fancy-battery-mode)
