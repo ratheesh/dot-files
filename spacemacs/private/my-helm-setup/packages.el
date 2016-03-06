@@ -55,7 +55,9 @@
 
 (defun my-helm-setup/post-init-helm-swoop ()
 ;;; helm-swoop
-  (global-set-key (kbd "<f4>") 'helm-swoop)
+  (progn
+    (global-set-key (kbd "<f4>") 'helm-swoop)
+    (setq helm-swoop-use-fuzzy-match t))
   )
 
 (defun my-helm-setup/init-swiper-helm ()
