@@ -158,7 +158,6 @@ layers configuration. You are free to put any user code."
   (fancy-battery-mode)
   (delete-selection-mode 1)             ;replace selected text on yank!
   (smooth-scrolling-mode 1)
-  ;; (setq jit-lock-defer-time 0.05)
   (setq scroll-step 1)
   (setq scroll-conservatively 10000)
   (setq auto-window-vscroll nil)
@@ -182,7 +181,9 @@ layers configuration. You are free to put any user code."
   ;; C - mode hooks - need to move this elsewhere -- ???
   ;; enable clean-aindent-mode for programming mode
   (add-hook 'prog-mode-hook 'clean-aindent-mode)
-  (global-aggressive-indent-mode 1)
+  ;; (global-aggressive-indent-mode 1)
+  (spacemacs/toggle-aggressive-indent-globally-on)
+
   (setq powerline-default-separator 'box)
   )
 
