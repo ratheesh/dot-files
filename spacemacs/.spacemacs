@@ -33,7 +33,7 @@ values."
      spell-checking
      syntax-checking
      (version-control :variables
-                      version-control-diff-tool 'diff-hl
+                      version-control-diff-tool 'git-gutter
                       version-control-global-margin t)
      themes-megapack
      (colors :variables
@@ -46,11 +46,13 @@ values."
             c-c++-enable-clang-support t
             )
      semantic
-     (syntax-checking :variables syntax-checking-enable-tooltips nil)
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips nil)
      fasd
      smex
      gtags
-     ibuffer
+     (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
      spell-checking
 
      ;;private layers
@@ -129,7 +131,7 @@ values."
    dotspacemacs-inactive-transparency 90
    dotspacemacs-mode-line-unicode-symbols t
    dotspacemacs-smooth-scrolling t
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
