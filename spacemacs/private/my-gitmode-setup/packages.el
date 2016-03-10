@@ -16,6 +16,7 @@
     magit
     stgit
     magit-stgit
+    git-gutter-fringe
     )
   "The list of Lisp packages required by the my-gitmode-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
@@ -40,5 +41,43 @@
     :config
     (progn
       (add-hook 'magit-mode-hook 'magit-stgit-mode))))
+
+(defun my-gitmode-setup/post-init-git-gutter-fringe ()
+  (progn
+    (setq-default right-fringe-width  15)
+    (set-face-foreground 'git-gutter-fr:modified "wheat4")
+    (set-face-foreground 'git-gutter-fr:added    "green")
+    (set-face-foreground 'git-gutter-fr:deleted  "red")
+    (add-hook 'after-make-frame-functions 'git-gutter:hide-gutter t)
+    (fringe-helper-define 'git-gutter-fr:added nil
+      "...XX..."
+      "...XX..."
+      "...XX..."
+      "XXXXXXXX"
+      "XXXXXXXX"
+      "...XX..."
+      "...XX..."
+      "...XX..."
+      )
+    (fringe-helper-define 'git-gutter-fr:deleted nil
+      "........"
+      "........"
+      "........"
+      "XXXXXXXX"
+      "XXXXXXXX"
+      "........"
+      "........"
+      "........"
+      )
+    (fringe-helper-define 'git-gutter-fr:modified nil
+      "........"
+      "..XXXX.."
+      "..XXXX.."
+      "..XXXX.."
+      "..XXXX.."
+      "..XXXX.."
+      "..XXXX.."
+      "........"
+      )))
 
 ;;; packages.el ends here
