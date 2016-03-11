@@ -14,6 +14,7 @@
 (defconst my-common-setup-packages
   '(
     (linum+ :location local)
+    (myemacs-darktheme-theme :location local)
     iregister
     duplicate-thing
     ace-jump-mode
@@ -28,6 +29,11 @@
 
 (defun my-common-setup/init-linum+ ()
   (use-package linum+
+    :load-path "~/.emacs.d/private/local/"
+    ))
+
+(defun my-common-setup/init-myemacs-darktheme-theme ()
+  (use-package myemacs-darktheme-theme
     :load-path "~/.emacs.d/private/local/"
     ))
 

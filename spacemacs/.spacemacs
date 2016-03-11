@@ -92,7 +92,8 @@ values."
    dotspacemacs-startup-lists '(recents projects)
    dotspacemacs-startup-recent-list-size 15
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(sanityinc-tomorrow-bright
+   dotspacemacs-themes '(myemacs-darktheme
+                         sanityinc-tomorrow-bright
                          solarized-dark
                          spacemacs-dark
                          spacemacs-light
