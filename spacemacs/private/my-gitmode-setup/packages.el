@@ -44,8 +44,8 @@
 
 (defun my-gitmode-setup/post-init-git-gutter-fringe ()
   (progn
-    (setq-default right-fringe-width  15)
-    (set-face-foreground 'git-gutter-fr:modified "wheat4")
+    (setq-default right-fringe-width  12)
+    (set-face-foreground 'git-gutter-fr:modified "yellow")
     (set-face-foreground 'git-gutter-fr:added    "green")
     (set-face-foreground 'git-gutter-fr:deleted  "red")
     (add-hook 'after-make-frame-functions 'git-gutter:hide-gutter t)
@@ -65,19 +65,24 @@
       "........"
       "XXXXXXXX"
       "XXXXXXXX"
+      "XXXXXXXX"
+      "XXXXXXXX"
       "........"
       "........"
       "........"
+
+
       )
     (fringe-helper-define 'git-gutter-fr:modified nil
       "........"
-      "..XXXX.."
-      "..XXXX.."
-      "..XXXX.."
-      "..XXXX.."
-      "..XXXX.."
-      "..XXXX.."
+      ".XXXXXX."
+      ".XXXXXX."
+      ".XXXXXX."
+      ".XXXXXX."
+      ".XXXXXX."
+      ".XXXXXX."
       "........"
-      )))
+      )
+    ))
 
 ;;; packages.el ends here
