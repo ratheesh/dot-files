@@ -188,8 +188,12 @@ layers configuration. You are free to put any user code."
   (add-hook 'prog-mode-hook 'clean-aindent-mode)
   ;; (global-aggressive-indent-mode 1)
   (spacemacs/toggle-aggressive-indent-globally-on)
+  (spacemacs/toggle-version-control-margin-globally-on)
 
-  (setq powerline-default-separator 'box)
+  (spacemacs|do-after-display-system-init
+   (setq powerline-default-separator 'zigzag)
+   (version-control/init-git-gutter-fringe)
+   (my-gitmode-setup/post-init-git-gutter-fringe))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -199,10 +203,41 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
+ '(custom-safe-themes
+   (quote
+    ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
+ '(fci-rule-color "#424242")
  '(git-gutter:modified-sign "-")
  '(global-semantic-highlight-edits-mode t)
  '(global-semantic-show-parser-state-mode t)
- '(paradox-github-token t))
+ '(paradox-github-token t)
+ '(powerline-default-separator (quote zigzag))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#d54e53")
+     (40 . "#e78c45")
+     (60 . "#e7c547")
+     (80 . "#b9ca4a")
+     (100 . "#70c0b1")
+     (120 . "#7aa6da")
+     (140 . "#c397d8")
+     (160 . "#d54e53")
+     (180 . "#e78c45")
+     (200 . "#e7c547")
+     (220 . "#b9ca4a")
+     (240 . "#70c0b1")
+     (260 . "#7aa6da")
+     (280 . "#c397d8")
+     (300 . "#d54e53")
+     (320 . "#e78c45")
+     (340 . "#e7c547")
+     (360 . "#b9ca4a"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -210,7 +245,4 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(diff-hl-change ((t (:background "wheat4" :foreground "wheat4"))))
- '(diff-hl-delete ((t (:background "red" :foreground "red"))))
- '(diff-hl-insert ((t (:background "green" :foreground "green")))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
