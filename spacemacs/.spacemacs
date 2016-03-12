@@ -214,6 +214,8 @@ layers configuration. You are free to put any user code."
  '(git-gutter:modified-sign "-")
  '(global-semantic-highlight-edits-mode t)
  '(global-semantic-show-parser-state-mode t)
+ '(magit-stgit-new-arguments (quote ("--sign")))
+ '(magit-stgit-refresh-arguments (quote ("--index")))
  '(paradox-github-token t)
  '(powerline-default-separator (quote zigzag))
  '(vc-annotate-background nil)
