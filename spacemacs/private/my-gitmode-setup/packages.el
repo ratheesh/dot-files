@@ -43,46 +43,45 @@
       (add-hook 'magit-mode-hook 'magit-stgit-mode))))
 
 (defun my-gitmode-setup/post-init-git-gutter-fringe ()
-  (progn
-    (setq-default right-fringe-width  12)
-    (set-face-foreground 'git-gutter-fr:modified "yellow")
-    (set-face-foreground 'git-gutter-fr:added    "green")
-    (set-face-foreground 'git-gutter-fr:deleted  "red")
-    (add-hook 'after-make-frame-functions 'git-gutter:hide-gutter t)
-    (fringe-helper-define 'git-gutter-fr:added nil
-      "...XX..."
-      "...XX..."
-      "...XX..."
-      "XXXXXXXX"
-      "XXXXXXXX"
-      "...XX..."
-      "...XX..."
-      "...XX..."
-      )
-    (fringe-helper-define 'git-gutter-fr:deleted nil
-      "........"
-      "........"
-      "........"
-      "XXXXXXXX"
-      "XXXXXXXX"
-      "XXXXXXXX"
-      "XXXXXXXX"
-      "........"
-      "........"
-      "........"
-
-
-      )
-    (fringe-helper-define 'git-gutter-fr:modified nil
-      "........"
-      ".XXXXXX."
-      ".XXXXXX."
-      ".XXXXXX."
-      ".XXXXXX."
-      ".XXXXXX."
-      ".XXXXXX."
-      "........"
-      )
-    ))
+  (with-eval-after-load 'git-gutter-fringe
+    (progn
+      (setq-default right-fringe-width  12)
+      (set-face-foreground 'git-gutter-fr:modified "yellow")
+      (set-face-foreground 'git-gutter-fr:added    "green")
+      (set-face-foreground 'git-gutter-fr:deleted  "red")
+      ;; (add-hook 'after-make-frame-functions 'git-gutter:hide-gutter t)
+      (fringe-helper-define 'git-gutter-fr:added nil
+        "...XX..."
+        "...XX..."
+        "...XX..."
+        "XXXXXXXX"
+        "XXXXXXXX"
+        "...XX..."
+        "...XX..."
+        "...XX..."
+        )
+      (fringe-helper-define 'git-gutter-fr:deleted nil
+        "........"
+        "........"
+        "........"
+        "XXXXXXXX"
+        "XXXXXXXX"
+        "XXXXXXXX"
+        "XXXXXXXX"
+        "........"
+        "........"
+        "........"
+        )
+      (fringe-helper-define 'git-gutter-fr:modified nil
+        "........"
+        ".XXXXXX."
+        ".XXXXXX."
+        ".XXXXXX."
+        ".XXXXXX."
+        ".XXXXXX."
+        ".XXXXXX."
+        "........"
+        )
+      )))
 
 ;;; packages.el ends here
