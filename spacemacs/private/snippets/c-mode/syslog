@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: syslog
+# key: syslog
+# --
+syslog(LOG_${1:INFO}, "${2:format string}"${3:, a0, a1});
