@@ -47,7 +47,7 @@ values."
             )
      semantic
      (syntax-checking :variables
-                      syntax-checking-enable-tooltips nil)
+                      syntax-checking-enable-tooltips t)
      fasd
      smex
      gtags
@@ -183,7 +183,6 @@ layers configuration. You are free to put any user code."
 
   (global-git-commit-mode t)
 
-  ;; C - mode hooks - need to move this elsewhere -- ???
   ;; enable clean-aindent-mode for programming mode
   (add-hook 'prog-mode-hook 'clean-aindent-mode)
   ;; (global-aggressive-indent-mode 1)
@@ -193,7 +192,8 @@ layers configuration. You are free to put any user code."
   (spacemacs|do-after-display-system-init
    (setq powerline-default-separator 'zigzag)
    (version-control/init-git-gutter-fringe)
-   (my-gitmode-setup/post-init-git-gutter-fringe))
+   (my-gitmode-setup/post-init-git-gutter-fringe)
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
