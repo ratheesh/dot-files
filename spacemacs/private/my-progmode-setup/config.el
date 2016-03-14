@@ -8,8 +8,3 @@
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'prog-mode-hook 'set-newline-and-indent)
 
-;; enable clean-aindent-mode for programming mode
-;; (add-hook 'prog-mode-hook 'clean-aindent-mode)
-
-;;; enable fill column indicator
-;; (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
