@@ -67,6 +67,7 @@
   (use-package back-button
     :commands back-button-mode
     :ensure t
+    :defer t
     :bind (
            ("<f2>" . back-button-push-mark-local-and-global)
            ("M-u" . back-button-global-backward)
@@ -85,7 +86,8 @@
 
 (defun my-common-setup/init-ace-jump-mode ()
   (use-package ace-jump-mode
-    :ensure t)
+    :ensure t
+    :defer t)
   )
 
 
@@ -106,6 +108,6 @@
 (defun my-common-setup/post-init-imenu ()
   (progn
     (setq
-     imenu-auto-rescan t)
-    ))
+     imenu-auto-rescan t)))
+
 ;;; packages.el ends here
