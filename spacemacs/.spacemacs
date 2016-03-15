@@ -157,7 +157,7 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (global-subword-mode 1)
-  (global-hl-line-mode 0)
+  (global-hl-line-mode 1)
   (global-linum-mode 1)
   (setq linum-format 'smart)
   (fancy-battery-mode)
@@ -247,4 +247,5 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(hl-line ((t (:background "gray3")))))
