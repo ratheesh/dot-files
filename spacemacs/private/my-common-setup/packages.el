@@ -22,6 +22,7 @@
     super-save
     fasd
     imenu
+    flyspell-popup
     ;; back-button
     )
   "The list of Lisp packages required by the my-common-setup layer.
@@ -109,5 +110,15 @@
   (progn
     (setq
      imenu-auto-rescan t)))
+
+(defun my-common-setup/init-flyspell-popup ()
+  (use-package flyspell-popup
+    :ensure t
+    :defer t
+    :config
+    (progn
+      (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct))
+    )
+  )
 
 ;;; packages.el ends here
