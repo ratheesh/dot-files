@@ -19,11 +19,16 @@ values."
      (auto-completion   :variables
                         auto-completion-enable-snippets-in-popup t
                         auto-completion-enable-sort-by-usage t
+                        auto-completion-complete-with-key-sequence nil
+                        auto-completion-complete-with-key-sequence-delay 0.1
+                        auto-completion-enable-help-tooltip t
                         auto-completion-private-snippets-directory "~/.emacs.d/private/snippets/")
      better-defaults
      emacs-lisp
      (git :variables
           git-magit-status-fullscreen t
+          git-enable-github-support t
+          git-gutter-use-fringe t
           )
      markdown
      org
@@ -54,6 +59,7 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      spell-checking
+     pandoc
 
      ;;private layers
      my-common-setup
@@ -217,7 +223,6 @@ layers configuration. You are free to put any user code."
  '(magit-stgit-new-arguments (quote ("--sign")))
  '(magit-stgit-refresh-arguments (quote ("--index")))
  '(paradox-github-token t)
- '(powerline-default-separator (quote zigzag))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
