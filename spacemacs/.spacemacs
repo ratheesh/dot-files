@@ -16,6 +16,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     spacemacs-helm
      (auto-completion   :variables
                         auto-completion-enable-snippets-in-popup t
                         auto-completion-enable-sort-by-usage t
@@ -31,7 +32,8 @@ values."
           git-gutter-use-fringe t
           )
      markdown
-     org
+     (org :variables
+          org-enable-github-support t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -45,7 +47,8 @@ values."
              colors-enable-rainbow-identifiers t)
      (python :variables
              python-test-runner 'pytest
-                                        ; python-enable-yapf-format-on-save t
+             python-enable-yapf-format-on-save t
+             python-auto-set-local-pyenv-version 'on-visit
              )
      (c-c++ :variables
             c-c++-enable-clang-support t
@@ -94,8 +97,8 @@ values."
    dotspacemacs-check-for-update t
    dotspacemacs-editing-style 'emacs
    dotspacemacs-verbose-loading nil
-   dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-lists '(bookmarks recents projects)
    dotspacemacs-startup-recent-list-size 15
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(myemacs-darktheme
@@ -108,7 +111,12 @@ values."
                          leuven
                          monokai
                          zenburn)
-   dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-colorize-cursor-according-to-state nil
+   dotspacemacs-default-font '("MonacoB"
+                               :size 13
+                               :weight normal
+                               :width normal
+                               :powerline-scale 0.9)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
@@ -121,7 +129,7 @@ values."
    dotspacemacs-auto-resume-layouts nil
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 5
-   dotspacemacs-use-ido nil
+   ;; dotspacemacs-use-ido nil
    dotspacemacs-helm-resize nil
    dotspacemacs-helm-no-header nil
    dotspacemacs-helm-position 'bottom
