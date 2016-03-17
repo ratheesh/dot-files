@@ -165,7 +165,6 @@ layers configuration. You are free to put any user code."
   (global-subword-mode 1)
   (global-hl-line-mode 1)
   (global-linum-mode 1)
-  (setq linum-format 'smart)
   (fancy-battery-mode)
   (delete-selection-mode 1)             ;replace selected text on yank!
   (smooth-scrolling-mode 1)

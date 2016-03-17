@@ -31,6 +31,8 @@
 (defun my-common-setup/init-linum+ ()
   (use-package linum+
     :load-path "~/.emacs.d/private/local/"
+    :config
+    (setq linum-format 'smart)
     ))
 
 (defun my-common-setup/init-myemacs-darktheme-theme ()
