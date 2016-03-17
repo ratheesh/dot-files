@@ -22,7 +22,16 @@
    See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun my-gitmode-setup/post-init-magit ()
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
+  (progn
+    (with-eval-after-load 'projectile
+      (progn
+        (setq magit-repository-directories (mapcar #'directory-file-name
+                                                   (cl-remove-if-not (lambda (project)
+                                                                       (file-directory-p (concat project "/.git/")))
+                                                                     (projectile-relevant-known-projects)))
+
+              magit-repository-directories-depth ))))
+  )
 
 (defun my-gitmode-setup/init-stgit ()
   (use-package stgit
