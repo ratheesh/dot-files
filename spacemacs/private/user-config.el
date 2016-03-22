@@ -31,19 +31,30 @@
 (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name)))
 
 (global-git-commit-mode t)
-
-;; enable clean-aindent-mode for programming mode
 (add-hook 'prog-mode-hook 'clean-aindent-mode)
-;; (global-aggressive-indent-mode 1)
 (spacemacs/toggle-aggressive-indent-globally-on)
 (spacemacs/toggle-version-control-margin-globally-on)
-;; (spacemacs/toggle-highlight-indentation-on)
 (spacemacs/toggle-hungry-delete-on)
 (spacemacs/toggle-yasnippet-on)
+
+;;; ido-find-file is much better than helm counterpart
+(global-unset-key (kbd "C-x C-f"))
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
 ;;; mode mappings
 (add-to-list 'auto-mode-alist '("\\.*rc$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.*sh$" . shell-script-mode))
+;; Configuration files
+(add-to-list 'auto-mode-alist '("\\.offlineimaprc$" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.tmux\\.conf$" . conf-mode))
+
+;; Snippets
+(add-to-list 'auto-mode-alist '("yasnippet/snippets" . snippet-mode))
+(add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
+
+(add-to-list 'auto-mode-alist '("\\.dts\\'"   . dts-mode))
+(add-to-list 'auto-mode-alist '("\\.dtsi\\'"  . dts-mode))
+(add-to-list 'auto-mode-alist '("Kconfig" . Kconfig-mode))
 
 ;;; after display init code
 (spacemacs|do-after-display-system-init
