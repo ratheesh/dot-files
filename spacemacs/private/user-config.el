@@ -13,6 +13,7 @@
 
 ;; set the font here
 (set-face-attribute 'default nil :family "MonacoB")
+;; (set-face-attribute 'default nil :family "DejaVu Sans Mono for Powerline")
 (set-face-attribute 'default nil :height 130)
 
 ;; Semantic to ignore c-pre-processor

@@ -61,9 +61,9 @@
     :config
     (progn
       (key-chord-mode 1)
-      (key-chord-define-global "jj" 'ace-jump-char-mode) ;ace jump mode
-      (key-chord-define-global "qq" 'ido-switch-buffer) ;switch buffer
+      (key-chord-define-global "QQ" 'ido-switch-buffer) ;switch buffer
       (key-chord-define-global "jk" 'forward-char) ;forward by a character
+      (key-chord-define-global "jj" 'ace-jump-char-mode) ;ace jump mode
       )))
 
 (defun my-common-setup/init-back-button ()
