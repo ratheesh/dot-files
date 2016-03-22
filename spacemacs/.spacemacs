@@ -126,7 +126,7 @@ values."
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-default-layout-name "Default"
    dotspacemacs-display-default-layout nil
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 5
    ;; dotspacemacs-use-ido nil
@@ -164,6 +164,10 @@ in `dotspacemacs/user-config'."
    vc-follow-symlinks t
    )
   (setq-default git-enable-magit-svn-plugin t)
+
+  ;; Avoid spacemacs hang due to helm + tramp mode
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   )
 
 (defun dotspacemacs/user-config ()
@@ -191,7 +195,7 @@ layers configuration. You are free to put any user code."
  '(git-gutter:modified-sign "-")
  '(global-semantic-highlight-edits-mode t)
  '(global-semantic-show-parser-state-mode t)
- '(magit-stgit-new-arguments (quote ("--sign")))
+ '(magit-stgit-new-arguments nil)
  '(magit-stgit-refresh-arguments (quote ("--index")))
  '(paradox-github-token t)
  '(vc-annotate-background nil)
@@ -224,4 +228,4 @@ layers configuration. You are free to put any user code."
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(hl-line ((t (:background "gray3")))))
+ '(hl-line ((t (:background "gray6")))))

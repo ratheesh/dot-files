@@ -1,6 +1,10 @@
 ;;; This holds all private configurations to avoid pollution in .spacemacs file
 
-;; (message "Loading Spacemacs customizations...")
+(message "Loading user-config customizations...")
+
+;;; keychord sequence for insert mode -> normal mode
+(setq-default evil-escape-key-sequence ",.")
+
 (global-subword-mode 1)
 (global-hl-line-mode 1)
 (global-linum-mode 1)
@@ -33,7 +37,15 @@
 ;; (global-aggressive-indent-mode 1)
 (spacemacs/toggle-aggressive-indent-globally-on)
 (spacemacs/toggle-version-control-margin-globally-on)
+;; (spacemacs/toggle-highlight-indentation-on)
+(spacemacs/toggle-hungry-delete-on)
+(spacemacs/toggle-yasnippet-on)
 
+;;; mode mappings
+(add-to-list 'auto-mode-alist '("\\.*rc$" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.*sh$" . shell-script-mode))
+
+;;; after display init code
 (spacemacs|do-after-display-system-init
  (setq powerline-default-separator 'zigzag)
  (version-control/init-git-gutter-fringe)
