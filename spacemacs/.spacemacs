@@ -59,8 +59,8 @@ values."
      fasd
      smex
      gtags
-     (ibuffer :variables
-              ibuffer-group-buffers-by 'projects)
+     ;; (ibuffer :variables
+     ;;          ibuffer-group-buffers-by 'projects)
      spell-checking
      pandoc
 
@@ -77,7 +77,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-magit)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -95,7 +95,8 @@ values."
    dotspacemacs-elpa-https t
    dotspacemacs-elpa-timeout 5
    dotspacemacs-check-for-update t
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style '(hybrid :variables
+                                       hybrid-mode-default-state 'normal)
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'random
    dotspacemacs-startup-lists '(bookmarks recents projects)
@@ -134,11 +135,12 @@ values."
    dotspacemacs-helm-no-header nil
    dotspacemacs-helm-position 'bottom
    dotspacemacs-enable-paste-micro-state nil
-   dotspacemacs-which-key-delay 0.4
+   dotspacemacs-which-key-delay 0.1
    dotspacemacs-which-key-position 'bottom
    dotspacemacs-loading-progress-bar t
    dotspacemacs-helm-micro-state t
    ;; (Emacs 24.4+ only)
+   dotspacemacs-enable-lazy-installation 'all
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
