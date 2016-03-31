@@ -98,7 +98,7 @@ values."
    dotspacemacs-editing-style '(hybrid :variables
                                        hybrid-mode-default-state 'normal)
    dotspacemacs-verbose-loading nil
-   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
    dotspacemacs-startup-recent-list-size 15
    dotspacemacs-scratch-mode 'text-mode
