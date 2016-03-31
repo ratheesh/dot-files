@@ -68,7 +68,7 @@
      ("C-r" . swiper-helm))))
 
 (defun my-helm-setup/post-init-helm-projectile ()
-  (global-set-key (kbd "s-g") 'helm-projectile-grep)
+  (global-set-key (kbd "s-g") 'helm-projectile-ag)
   )
 
 ;;; packages.el ends here
