@@ -41,6 +41,9 @@
 (global-unset-key (kbd "C-x C-f"))
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 
+;;; evil mode settings
+(setq evil-move-cursor-back nil)
+
 ;;; mode mappings
 (add-to-list 'auto-mode-alist '("\\.*rc$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.*sh$" . shell-script-mode))
@@ -58,7 +61,7 @@
 
 ;;; after display init code
 (spacemacs|do-after-display-system-init
- (setq powerline-default-separator 'box)
+ (setq powerline-default-separator 'alternate)
  (version-control/init-git-gutter-fringe)
  (my-gitmode-setup/post-init-git-gutter-fringe)
  )
