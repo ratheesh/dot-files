@@ -135,7 +135,7 @@ values."
    dotspacemacs-helm-no-header nil
    dotspacemacs-helm-position 'bottom
    dotspacemacs-enable-paste-micro-state nil
-   dotspacemacs-which-key-delay 0.1
+   dotspacemacs-which-key-delay 0.4
    dotspacemacs-which-key-position 'bottom
    dotspacemacs-loading-progress-bar t
    dotspacemacs-helm-micro-state t
@@ -150,7 +150,7 @@ values."
    dotspacemacs-smooth-scrolling t
    dotspacemacs-line-numbers nil
    dotspacemacs-smartparens-strict-mode nil
-   dotspacemacs-highlight-delimiters 'all
+   dotspacemacs-highlight-delimiters 'current
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
