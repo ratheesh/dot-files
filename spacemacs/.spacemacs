@@ -44,7 +44,7 @@ values."
                       version-control-global-margin t)
      themes-megapack
      (colors :variables
-             colors-enable-rainbow-identifiers t)
+             colors-enable-rainbow-identifiers nil)
      (python :variables
              python-test-runner 'pytest
              python-enable-yapf-format-on-save t
