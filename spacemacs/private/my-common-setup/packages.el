@@ -23,6 +23,7 @@
     fasd
     imenu
     flyspell-popup
+    spaceline
     ;; back-button
     )
   "The list of Lisp packages required by the my-common-setup layer.
@@ -121,6 +122,41 @@
     (progn
       (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct))
     )
+  )
+
+(defun my-common-setup/post-init-spaceline ()
+  (spaceline-install
+
+   '(((persp-name workspace-number window-number)
+      :fallback evil-state
+      :separator "|"
+      :face highlight-face)
+     anzu
+     auto-compile
+     (buffer-modified buffer-size)
+     (projectile-root :when active)
+     (buffer-id remote-host)
+     major-mode
+     ((flycheck-error flycheck-warning flycheck-info)
+      :when active)
+     (((minor-modes :separator spaceline-minor-modes-separator)
+       process)
+      :when active)
+     (erc-track :when active)
+     (version-control :when active)
+     (org-pomodoro :when active)
+     (org-clock :when active)
+     nyan-cat)
+
+   '((battery :when active)
+     selection-info
+     ((buffer-encoding-abbrev
+       point-position
+       line-column)
+      :separator " | ")
+     (global :when active)
+     buffer-position
+     hud))
   )
 
 ;;; packages.el ends here
