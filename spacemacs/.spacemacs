@@ -22,7 +22,7 @@ values."
                         auto-completion-enable-sort-by-usage t
                         auto-completion-complete-with-key-sequence nil
                         auto-completion-complete-with-key-sequence-delay 0.1
-                        auto-completion-enable-help-tooltip t
+                        auto-completion-enable-help-tooltip nil
                         auto-completion-private-snippets-directory "~/.emacs.d/private/snippets/")
      better-defaults
      emacs-lisp
@@ -59,8 +59,8 @@ values."
      fasd
      smex
      gtags
-     ;; (ibuffer :variables
-     ;;          ibuffer-group-buffers-by 'projects)
+     (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
      spell-checking
      pandoc
 
@@ -77,7 +77,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(evil-magit)
+   dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -114,10 +114,11 @@ values."
                          zenburn)
    dotspacemacs-colorize-cursor-according-to-state nil
    dotspacemacs-default-font '("MonacoB"
-                               :size 13
-                               :weight normal
-                               :width normal
-                               :powerline-scale 0.9)
+                               :size 16
+                               :weight light
+                               :width condensed
+                               :slant oblique
+                               :powerline-scale 1.0)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
@@ -127,10 +128,10 @@ values."
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-default-layout-name "Default"
    dotspacemacs-display-default-layout nil
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 5
-   ;; dotspacemacs-use-ido nil
+   dotspacemacs-use-ido t
    dotspacemacs-helm-resize nil
    dotspacemacs-helm-no-header nil
    dotspacemacs-helm-position 'bottom
@@ -143,17 +144,17 @@ values."
    dotspacemacs-enable-lazy-installation 'all
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    dotspacemacs-active-transparency 90
    dotspacemacs-inactive-transparency 90
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    dotspacemacs-smooth-scrolling t
    dotspacemacs-line-numbers nil
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters 'current
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
-   dotspacemacs-default-package-repository nil
+   dotspacemacs-default-package-repository 'melpa-stable
    dotspacemacs-whitespace-cleanup 'changed
    ))
 
