@@ -49,7 +49,9 @@
     :ensure t
     :config
     (progn
-      (add-hook 'magit-mode-hook 'magit-stgit-mode))))
+      (add-hook 'magit-mode-hook 'magit-stgit-mode)
+      (add-hook 'magit-mode-hook (lambda ()
+                                   (define-key magit-mode-map (kbd "?") 'magit-stgit-popup))))))
 
 (defun my-gitmode-setup/post-init-git-gutter-fringe ()
   (with-eval-after-load 'git-gutter-fringe
