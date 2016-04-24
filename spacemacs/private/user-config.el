@@ -2,23 +2,21 @@
 
 (message "Loading user-config customizations...")
 
-;;; keychord sequence for insert mode -> normal mode
-(setq-default evil-escape-key-sequence ",.")
+;;; keychord sequence for insert mode -> normal mode in vim/hybrid mode
+(setq-default evil-escape-key-sequence "jk")
 
+(global-company-mode 1)
 (global-subword-mode 1)
 (global-hl-line-mode 1)
 (global-linum-mode 1)
+(global-auto-revert-mode 1)             ;Global auto revert mode
 (fancy-battery-mode)
 (delete-selection-mode 1)             ;replace selected text on yank!
 (smooth-scrolling-mode 1)
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
-
-;; set the font here
-(set-face-attribute 'default nil :family "MonacoB")
-;; (set-face-attribute 'default nil :family "DejaVu Sans Mono for Powerline")
-(set-face-attribute 'default nil :height 130)
+(global-git-commit-mode t)
 
 ;; Semantic to ignore c-pre-processor
 (setq semantic-c-obey-conditional-section-parsing-flag 'nil)
@@ -31,15 +29,14 @@
 (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name)))
 
 (global-git-commit-mode t)
-(add-hook 'prog-mode-hook 'clean-aindent-mode)
+(add-hook 'c-common-mode-hook (lambda ()
+                                (progn
+                                  (clean-aident-mode t)
+                                  (setq clean-aindent-is-simple-indent t))))
 (spacemacs/toggle-aggressive-indent-globally-on)
 (spacemacs/toggle-version-control-margin-globally-on)
 (spacemacs/toggle-hungry-delete-on)
 (spacemacs/toggle-yasnippet-on)
-
-;;; ido-find-file is much better than helm counterpart
-(global-unset-key (kbd "C-x C-f"))
-(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
 ;;; evil mode settings
 (setq evil-move-cursor-back nil)
@@ -55,8 +52,8 @@
 (add-to-list 'auto-mode-alist '("yasnippet/snippets" . snippet-mode))
 (add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
 
-(add-to-list 'auto-mode-alist '("\\.dts\\'"   . dts-mode))
-(add-to-list 'auto-mode-alist '("\\.dtsi\\'"  . dts-mode))
+(add-to-list 'auto-mode-alist '("\\.dts$"   . dts-mode))
+(add-to-list 'auto-mode-alist '("\\.dtsi$"  . dts-mode))
 (add-to-list 'auto-mode-alist '("Kconfig" . Kconfig-mode))
 
 ;;; after display init code
