@@ -35,7 +35,7 @@
     helm-swoop
     projectile
     helm-projectile
-    swiper-helm
+    ;; swiper-helm
     )
   "The list of Lisp packages required by the my-helm-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
@@ -57,7 +57,8 @@
 ;;; helm-swoop
   (progn
     (global-set-key (kbd "<f4>") 'helm-swoop)
-    (setq helm-swoop-use-fuzzy-match t))
+    ;; (setq helm-swoop-use-fuzzy-match t)
+    )
   )
 
 (defun my-helm-setup/init-swiper-helm ()
