@@ -11,19 +11,21 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     spacemacs-helm
+     helm
      (auto-completion   :variables
                         auto-completion-enable-snippets-in-popup t
                         auto-completion-enable-sort-by-usage t
-                        auto-completion-complete-with-key-sequence nil
+                        ;; auto-completion-complete-with-key-sequence ''
                         auto-completion-complete-with-key-sequence-delay 0.1
                         auto-completion-enable-help-tooltip nil
-                        auto-completion-private-snippets-directory "~/.emacs.d/private/snippets/")
+                        auto-completion-private-snippets-directory "/home/ratheesh/.emacs.d/private/snippets/"
+                        )
      better-defaults
      emacs-lisp
      (git :variables
@@ -44,12 +46,13 @@ values."
                       version-control-global-margin t)
      themes-megapack
      (colors :variables
-             colors-enable-rainbow-identifiers nil)
+             colors-enable-rainbow-identifiers t)
      (python :variables
              python-test-runner 'pytest
              python-enable-yapf-format-on-save t
              python-auto-set-local-pyenv-version 'on-visit
              )
+     ruby
      (c-c++ :variables
             c-c++-enable-clang-support t
             )
@@ -58,11 +61,15 @@ values."
                       syntax-checking-enable-tooltips t)
      fasd
      smex
-     gtags
+     ;;gtags
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      spell-checking
+     imenu-list
+     games
      pandoc
+     markdown
+     latex
 
      ;;private layers
      my-common-setup
@@ -114,11 +121,11 @@ values."
                          zenburn)
    dotspacemacs-colorize-cursor-according-to-state nil
    dotspacemacs-default-font '("MonacoB"
-                               :size 16
-                               :weight light
-                               :width condensed
+                               :size 17
+                               :weight normal
+                               :width normal
                                :slant oblique
-                               :powerline-scale 1.0)
+                               :powerline-scale 1.1)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
@@ -141,7 +148,7 @@ values."
    dotspacemacs-loading-progress-bar t
    dotspacemacs-helm-micro-state t
    ;; (Emacs 24.4+ only)
-   dotspacemacs-enable-lazy-installation 'all
+   dotspacemacs-enable-lazy-installation t
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup t
@@ -177,6 +184,7 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (message "Loading user config file")
   (load-file "~/.emacs.d/private/user-config.el")
   )
 
@@ -187,6 +195,7 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ahs-idle-interval 1.0)
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
@@ -194,6 +203,7 @@ layers configuration. You are free to put any user code."
  '(custom-safe-themes
    (quote
     ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
+ '(evil-want-Y-yank-to-eol t)
  '(fci-rule-color "#424242")
  '(git-gutter:modified-sign "-")
  '(global-semantic-highlight-edits-mode t)
@@ -229,6 +239,7 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
+ '(ahs-plugin-whole-buffer-face ((t (:background "gray14"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
  '(hl-line ((t (:background "gray6")))))
