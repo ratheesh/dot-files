@@ -38,7 +38,13 @@
      org-todo-keywords
      '((type "TODO(t)" "STARTED(s)" "DELAYED(q@/!)" "WAITING(w@/!)" "|" "CANCELLED(c@/!)" "DEFERRED(e@/!)" "DONE(d@/!)")))
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
-    (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))))
+    (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+    ;; Org
+    (add-hook 'org-mode-hook
+              (lambda ()
+                (setq fill-column 79)
+                (auto-fill-mode t)))
+    ))
 
 (defun my-orgmode-setup/init-org-habit ()
   (use-package org-habit :defer t))

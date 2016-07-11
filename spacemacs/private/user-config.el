@@ -5,17 +5,18 @@
 ;;; keychord sequence for insert mode -> normal mode in vim/hybrid mode
 (setq-default evil-escape-key-sequence "jk")
 
-(global-company-mode 1)
+(global-company-mode 0)
 (global-subword-mode 1)
 (global-hl-line-mode 1)
 (global-linum-mode 1)
 (global-auto-revert-mode 1)             ;Global auto revert mode
 (fancy-battery-mode)
 (delete-selection-mode 1)             ;replace selected text on yank!
-(smooth-scrolling-mode 1)
+;; (smooth-scrolling-mode 1)
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
+(setq show-trailing-whitespace t)
 (global-git-commit-mode t)
 
 ;; Semantic to ignore c-pre-processor
@@ -35,8 +36,13 @@
                                   (setq clean-aindent-is-simple-indent t))))
 (spacemacs/toggle-aggressive-indent-globally-on)
 (spacemacs/toggle-version-control-margin-globally-on)
+;; (spacemacs/toggle-automatic-symbol-highlight-on)
 (spacemacs/toggle-hungry-delete-on)
 (spacemacs/toggle-yasnippet-on)
+
+;;; ido-find-file is much better than helm counterpart
+(global-unset-key (kbd "C-x C-f"))
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
 ;;; evil mode settings
 (setq evil-move-cursor-back nil)
@@ -58,7 +64,7 @@
 
 ;;; after display init code
 (spacemacs|do-after-display-system-init
- (setq powerline-default-separator 'alternate)
+ (setq powerline-default-separator 'arrow)
  (version-control/init-git-gutter-fringe)
  (my-gitmode-setup/post-init-git-gutter-fringe)
  )

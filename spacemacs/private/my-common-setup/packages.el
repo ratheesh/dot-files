@@ -62,9 +62,9 @@
     :config
     (progn
       (key-chord-mode 1)
-      (key-chord-define-global "QQ" 'ido-switch-buffer) ;switch buffer
+      (key-chord-define-global "QQ" 'helm-mini) ;switch buffer
       (key-chord-define-global ",," 'forward-char) ;forward by a character
-      (key-chord-define-global "qq" 'ace-jump-char-mode) ;ace jump mode
+      ;; (key-chord-define-global "jj" 'ace-jump-char-mode) ;ace jump mode
       )))
 
 (defun my-common-setup/init-back-button ()
@@ -114,15 +114,9 @@
     (setq
      imenu-auto-rescan t)))
 
-(defun my-common-setup/init-flyspell-popup ()
-  (use-package flyspell-popup
-    :ensure t
-    :defer t
-    :config
-    (progn
-      (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct))
-    )
-  )
+(defun my-common-setup/post-init-flyspell-popup ()
+  (progn
+    (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)))
 
 (defun my-common-setup/post-init-spaceline ()
   (spaceline-install
