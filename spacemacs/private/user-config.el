@@ -64,7 +64,8 @@
 
 ;;; after display init code
 (spacemacs|do-after-display-system-init
- (setq powerline-default-separator 'arrow)
+ (setq powerline-default-separator 'alternate)
+ (spaceline-compile)
  (version-control/init-git-gutter-fringe)
  (my-gitmode-setup/post-init-git-gutter-fringe)
  )
