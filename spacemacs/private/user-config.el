@@ -36,7 +36,9 @@
                                   (setq clean-aindent-is-simple-indent t))))
 (spacemacs/toggle-aggressive-indent-globally-on)
 (spacemacs/toggle-version-control-margin-globally-on)
-;; (spacemacs/toggle-automatic-symbol-highlight-on)
+(spacemacs/toggle-automatic-symbol-highlight-on)
+(spacemacs/toggle-highlight-indentation-on)
+(spacemacs/toggle-whitespace-cleanup-on)
 (spacemacs/toggle-hungry-delete-on)
 (spacemacs/toggle-yasnippet-on)
 
