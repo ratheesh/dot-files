@@ -239,6 +239,8 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
+ '(ahs-definition-face ((t (:background "CadetBlue" :foreground "black" :underline t))))
+ '(ahs-face ((t (:background "gray15" :foreground "white"))))
  '(ahs-plugin-whole-buffer-face ((t (:background "gray14"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
