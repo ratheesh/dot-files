@@ -34,13 +34,6 @@
                                 (progn
                                   (clean-aident-mode t)
                                   (setq clean-aindent-is-simple-indent t))))
-(spacemacs/toggle-aggressive-indent-globally-on)
-(spacemacs/toggle-version-control-margin-globally-on)
-(spacemacs/toggle-automatic-symbol-highlight-on)
-(spacemacs/toggle-highlight-indentation-on)
-(spacemacs/toggle-whitespace-cleanup-on)
-(spacemacs/toggle-hungry-delete-on)
-(spacemacs/toggle-yasnippet-on)
 
 ;;; ido-find-file is much better than helm counterpart
 (global-unset-key (kbd "C-x C-f"))
@@ -66,10 +59,27 @@
 
 ;;; after display init code
 (spacemacs|do-after-display-system-init
- (setq powerline-default-separator 'alternate)
+ (setq powerline-default-separator 'zigzag)
  (spaceline-compile)
  (version-control/init-git-gutter-fringe)
  (my-gitmode-setup/post-init-git-gutter-fringe)
- )
+)
+
+
+;; Some settings that spacemacs does not turn on by default
+(spacemacs/toggle-aggressive-indent-globally-on)
+(spacemacs/toggle-version-control-margin-globally-on)
+(spacemacs/toggle-automatic-symbol-highlight-on)
+(spacemacs/toggle-highlight-indentation-on)
+(spacemacs/toggle-whitespace-cleanup-on)
+(spacemacs/toggle-hungry-delete-on)
+(spacemacs/toggle-yasnippet-on)
+
+(with-eval-after-load 'rainbow-identifiers
+  (spacemacs/toggle-rainbow-identifiers-mode-on))
+
+(with-eval-after-load 'helm-semantic
+  (push '(c-mode . semantic-format-tag-concise-prototype-c-mode) helm-semantic-display-style)
+  (push '(c++-mode . semantic-format-tag-concise-prototype-c-mode) helm-semantic-display-style))
 
 ;;; End of File

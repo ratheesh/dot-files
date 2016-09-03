@@ -21,24 +21,27 @@ values."
      (auto-completion   :variables
                         auto-completion-enable-snippets-in-popup t
                         auto-completion-enable-sort-by-usage t
+                        auto-completion-return-key-behavior 'complete
+                        auto-completion-tab-key-behavior 'cycle
                         ;; auto-completion-complete-with-key-sequence ''
                         auto-completion-complete-with-key-sequence-delay 0.1
                         auto-completion-enable-help-tooltip nil
                         auto-completion-private-snippets-directory "/home/ratheesh/.emacs.d/private/snippets/"
                         )
-     better-defaults
+     ;; better-defaults
      emacs-lisp
      (git :variables
           git-magit-status-fullscreen t
           git-enable-github-support t
           git-gutter-use-fringe t
           )
-     markdown
+     ;; markdown
      (org :variables
           org-enable-github-support t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     shell-scripts
      spell-checking
      syntax-checking
      (version-control :variables
@@ -52,7 +55,7 @@ values."
              python-enable-yapf-format-on-save t
              python-auto-set-local-pyenv-version 'on-visit
              )
-     ruby
+     ;; ruby
      (c-c++ :variables
             c-c++-enable-clang-support t
             )
@@ -61,15 +64,14 @@ values."
                       syntax-checking-enable-tooltips t)
      fasd
      smex
-     ;;gtags
+     gtags
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      spell-checking
      imenu-list
      games
-     pandoc
-     markdown
-     latex
+     ;; pandoc
+     ;; latex
 
      ;;private layers
      my-common-setup
@@ -82,7 +84,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(visual-regexp
+                                      mark-multiple
+                                      ibuffer-tramp
+                                      dtrt-indent)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -99,15 +104,15 @@ values."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
    dotspacemacs-elpa-timeout 5
    dotspacemacs-check-for-update t
    dotspacemacs-editing-style '(hybrid :variables
                                        hybrid-mode-default-state 'normal)
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
-   dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-startup-recent-list-size 15
+   dotspacemacs-startup-lists '(bookmarks recents)
+   dotspacemacs-startup-recent-list-size 10
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(myemacs-darktheme
                          sanityinc-tomorrow-bright
@@ -125,7 +130,7 @@ values."
                                :weight normal
                                :width normal
                                :slant oblique
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
@@ -208,6 +213,7 @@ layers configuration. You are free to put any user code."
  '(git-gutter:modified-sign "-")
  '(global-semantic-highlight-edits-mode t)
  '(global-semantic-show-parser-state-mode t)
+ '(helm-semantic-fuzzy-match t)
  '(magit-stgit-new-arguments nil)
  '(magit-stgit-refresh-arguments (quote ("--index")))
  '(paradox-github-token t)
@@ -240,8 +246,8 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
  '(ahs-definition-face ((t (:background "CadetBlue" :foreground "black" :underline t))))
- '(ahs-face ((t (:background "gray15" :foreground "white"))))
+ '(ahs-face ((t (:background "gray10"))))
  '(ahs-plugin-whole-buffer-face ((t (:background "gray14"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(hl-line ((t (:background "gray6")))))
+ '(hl-line ((t (:background "gray4")))))
