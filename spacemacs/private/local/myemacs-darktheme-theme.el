@@ -1,7 +1,7 @@
 (deftheme myemacs-darktheme
   "Created 2016-03-11.")
 
-(custom-theme-set-variables
+ (custom-theme-set-variables
  'myemacs-darktheme
  '(fci-rule-color "#424242")
  '(ansi-color-names-vector ["#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"])
@@ -78,7 +78,8 @@
  '(secondary-selection ((((class color) (min-colors 89)) (:background "#2a2a2a"))))
  '(header-line ((((class color) (min-colors 89)) (:inherit mode-line :foreground "#c397d8" :background nil))))
  '(trailing-whitespace ((((class color) (min-colors 89)) (:background "#e78c45" :foreground "#e7c547"))))
- '(show-paren-match ((((class color) (min-colors 89)) (:background "#c397d8" :foreground "#000000"))))
+ ;; '(show-paren-match ((((class color) (min-colors 89)) (:background "#c397d8" :foreground "#000000"))))
+ '(show-paren-match ((((class color) (min-colors 89)) (:underline t :weight bold))))
  '(show-paren-mismatch ((((class color) (min-colors 89)) (:background "#d54e53" :foreground "#000000"))))
  '(sp-show-pair-match-face ((((class color) (min-colors 89)) (:foreground nil :background nil :inherit show-paren-match))))
  '(sp-show-pair-mismatch-face ((((class color) (min-colors 89)) (:foreground nil :background nil :inherit show-paren-mismatch))))
@@ -90,9 +91,9 @@
  '(diff-hunk-header ((((class color) (min-colors 89)) (:foreground "#c397d8"))))
  '(diff-refine-added ((((class color) (min-colors 89)) (:inherit diff-added :inverse-video t))))
  '(diff-refine-removed ((((class color) (min-colors 89)) (:inherit diff-removed :inverse-video t))))
- '(diff-hl-insert ((((class color) (min-colors 89)) (:foreground "#b9ca4a" :background "#b9ca4a"))))
- '(diff-hl-change ((((class color) (min-colors 89)) (:foreground "#7aa6da" :background "#7aa6da"))))
- '(diff-hl-delete ((((class color) (min-colors 89)) (:foreground "#e78c45" :background "#e78c45"))))
+ '(diff-hl-insert ((((class color) (min-colors 89)) (:foreground "#00ff00" :background "#00ff00"))))
+ '(diff-hl-change ((((class color) (min-colors 89)) (:foreground "#969896" :background "#969896"))))
+ '(diff-hl-delete ((((class color) (min-colors 89)) (:foreground "#ff0000" :background "#ff0000"))))
  '(eldoc-highlight-function-argument ((((class color) (min-colors 89)) (:foreground "#b9ca4a" :weight bold))))
  '(undo-tree-visualizer-default-face ((((class color) (min-colors 89)) (:foreground "#eaeaea"))))
  '(undo-tree-visualizer-current-face ((((class color) (min-colors 89)) (:foreground "#b9ca4a" :weight bold))))
