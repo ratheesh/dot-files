@@ -14,6 +14,7 @@
 (delete-selection-mode 1)             ;replace selected text on yank!
 ;; (smooth-scrolling-mode 1)
 (setq scroll-step 1)
+(setq scroll-margin 3)
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
 (setq show-trailing-whitespace t)
@@ -61,13 +62,14 @@
 (spacemacs|do-after-display-system-init
  (setq powerline-default-separator 'zigzag)
  (spaceline-compile)
- (version-control/init-git-gutter-fringe)
- (my-gitmode-setup/post-init-git-gutter-fringe)
+ ;; (version-control/init-git-gutter-fringe)
+ ;; (my-gitmode-setup/post-init-git-gutter-fringe)
 )
 
 
 ;; Some settings that spacemacs does not turn on by default
-(spacemacs/toggle-aggressive-indent-globally-on)
+;; (spacemacs/toggle-fill-column-indicator-on)
+;; (spacemacs/toggle-aggressive-indent-globally-on)
 (spacemacs/toggle-version-control-margin-globally-on)
 (spacemacs/toggle-automatic-symbol-highlight-on)
 (spacemacs/toggle-highlight-indentation-on)
