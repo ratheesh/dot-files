@@ -22,8 +22,9 @@
     super-save
     fasd
     imenu
-    flyspell-popup
+    helm-flyspell
     spaceline
+    rainbow-mode
     ;; back-button
     )
   "The list of Lisp packages required by the my-common-setup layer.
@@ -114,9 +115,9 @@
     (setq
      imenu-auto-rescan t)))
 
-(defun my-common-setup/post-init-flyspell-popup ()
+(defun my-common-setup/init-helm-flyspell ()
   (progn
-    (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)))
+    (define-key flyspell-mode-map (kbd "C-;") 'helm-flyspell-correct)))
 
 (defun my-common-setup/post-init-spaceline ()
   (spaceline-install
@@ -142,7 +143,9 @@
      (org-clock :when active)
      nyan-cat)
 
-   '((battery :when active)
+   '(
+     which-function
+     (battery :when active)
      selection-info
      ((buffer-encoding-abbrev
        point-position
@@ -151,6 +154,10 @@
      (global :when active)
      buffer-position
      hud))
+  )
+
+(defun my-common-setup/post-init-rainbow-mode ()
+  (add-hook 'emacs-lisp-mode 'rainbow-mode)
   )
 
 ;;; packages.el ends here
