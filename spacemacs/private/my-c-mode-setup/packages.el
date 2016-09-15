@@ -16,7 +16,7 @@
     c-mode
     dts-mode
     ;; autopair
-    fill-column-indicator
+    ;; fill-column-indicator
     )
   "The list of Lisp packages required by the my-c-mode-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
