@@ -168,8 +168,10 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '(bookmarks
+                                (recents . 10)
+                                (projects . 5)
+                                (agenda . 3))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -187,9 +189,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("MonacoB"
-                               :size 17
-                               :weight normal
+   dotspacemacs-default-font '("Droid Sans Mono for Powerline"
+                               :size 18
+                               :weight semi-bold
                                :width normal
                                :powerline-scale 1.0)
    ;; The leader key
