@@ -189,7 +189,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Droid Sans Mono for Powerline"
+   dotspacemacs-default-font '("MonacoB"
                                :size 18
                                :weight semi-bold
                                :width normal
