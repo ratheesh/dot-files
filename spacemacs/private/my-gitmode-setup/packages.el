@@ -13,7 +13,7 @@
 
 (defconst my-gitmode-setup-packages
   '(
-    magit
+    ;; magit
     stgit
     magit-stgit
     git-gutter-fringe
@@ -21,6 +21,7 @@
   "The list of Lisp packages required by the my-gitmode-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
 
+;;; following does not work in emacs-25.1
 (defun my-gitmode-setup/post-init-magit ()
   (progn
     (with-eval-after-load 'projectile
@@ -37,7 +38,7 @@
   (use-package stgit
     :ensure t
     :config
-    (progn ;; It does not work if we can put under :mode category
+    (progn ;; It does not work if we put under :mode category
       (add-to-list 'auto-mode-alist ' ("\\.stgit-edit.txt$"  . git-commit-mode))
       (add-to-list 'auto-mode-alist ' ("\\.stgit-new.txt$"  . git-commit-mode))
       (add-to-list 'auto-mode-alist ' ("\\.stgit-squash.txt$"  . git-commit-mode))
