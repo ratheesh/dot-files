@@ -5,12 +5,12 @@
 ;;; keychord sequence for insert mode -> normal mode in vim/hybrid mode
 (setq-default evil-escape-key-sequence "jk")
 
-(global-company-mode 0)
+(global-company-mode 1)
 (global-subword-mode 1)
 (global-hl-line-mode 1)
 (global-linum-mode 1)
 (global-auto-revert-mode 1)             ;Global auto revert mode
-(fancy-battery-mode)
+;; (fancy-battery-mode)
 (delete-selection-mode 1)             ;replace selected text on yank!
 ;; (smooth-scrolling-mode 1)
 (setq scroll-step 1)
