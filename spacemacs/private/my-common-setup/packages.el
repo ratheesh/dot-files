@@ -145,7 +145,7 @@
 
    '(
      which-function
-     (battery :when active)
+     ;; (battery :when active)
      selection-info
      ((buffer-encoding-abbrev
        point-position

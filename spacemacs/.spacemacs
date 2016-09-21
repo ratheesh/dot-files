@@ -92,6 +92,7 @@ values."
      games
 
      ;;private layers
+     my-auto-complete-setup
      my-common-setup
      my-helm-setup
      my-progmode-setup
@@ -161,7 +162,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner nil
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -370,10 +371,14 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
- '(magit-stgit-refresh-arguments (quote ("--index"))))
+ '(magit-stgit-refresh-arguments (quote ("--index")))
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
+ '(ahs-definition-face ((t (:background "CadetBlue" :foreground "black" :underline t))))
+ '(ahs-face ((t (:background "LightYellow4"))))
  '(ahs-plugin-whole-buffer-face ((t (:background "bisque4" :foreground "Black")))))
