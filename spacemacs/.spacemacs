@@ -380,5 +380,5 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
 
  '(ahs-definition-face ((t (:background "CadetBlue" :foreground "black" :underline t))))
- '(ahs-face ((t (:background "LightYellow4"))))
+ '(ahs-face ((t (:background "gray20"))))
  '(ahs-plugin-whole-buffer-face ((t (:background "bisque4" :foreground "Black")))))
