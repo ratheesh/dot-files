@@ -22,4 +22,4 @@ done
 RXDIF=$(echo $((RXBN - RXB)) )
 TXDIF=$(echo $((TXBN - TXB)) )
 
-echo -e "↓$((RXDIF/1024))K↑$((TXDIF/1024))K"
+echo -e "D:$((RXDIF/1024))K U:$((TXDIF/1024))K"
