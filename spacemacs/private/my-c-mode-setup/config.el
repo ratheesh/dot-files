@@ -42,25 +42,30 @@
     (* (max steps 1)
        c-basic-offset)))
 
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            ;; Add kernel style
-            (c-add-style
-             "linux-tabs-only"
-             '("linux" (c-offsets-alist
-                        (arglist-cont-nonempty
-                         c-lineup-gcc-asm-reg
-                         c-lineup-arglist-tabs-only))))))
+;; (add-hook 'c-mode-common-hook
+;;           (lambda ()
+;;             ;; Add kernel style
+;;             (c-add-style
+;;              "linux-tabs-only"
+;;              '("linux" (c-offsets-alist
+;;                         (arglist-cont-nonempty
+;;                          c-lineup-gcc-asm-reg
+;;                          c-lineup-arglist-tabs-only))))))
 
-(add-hook 'c-mode-hook
-          (lambda ()
-            (let ((filename (buffer-file-name)))
-              ;; Enable kernel mode for the appropriate files
-              (when (and filename
-                         (string-match (expand-file-name "/")
-                                       filename))
-                (setq indent-tabs-mode t)
-                (c-set-style "linux-tabs-only")))))
+;; (add-hook 'c-mode-hook
+;;           (lambda ()
+;;             (let ((filename (buffer-file-name)))
+;;               ;; Enable kernel mode for the appropriate files
+;;               (when (and filename
+;;                          (string-match (expand-file-name "/")
+;;                                        filename))
+;;                 (setq indent-tabs-mode t)
+;;                 (c-set-style "linux-tabs-only")))))
+
+(add-hook 'c-common-mode-hook (lambda ()
+				(progn
+				  (clean-aident-mode t)
+				  (setq clean-aindent-is-simple-indent t))))
 
 ;;; make #if 0 code to look like comment
 (defun my-c-mode-font-lock-if0 (limit)

@@ -31,10 +31,6 @@
 (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name)))
 
 (global-git-commit-mode t)
-(add-hook 'c-common-mode-hook (lambda ()
-                                (progn
-                                  (clean-aident-mode t)
-                                  (setq clean-aindent-is-simple-indent t))))
 
 ;;; ido-find-file is much better than helm counterpart
 (global-unset-key (kbd "C-x C-f"))
