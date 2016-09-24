@@ -76,13 +76,13 @@ values."
              python-enable-yapf-format-on-save t
              python-auto-set-local-pyenv-version 'on-visit
              )
-     ;; ruby
+     ruby
      (c-c++ :variables
             c-c++-enable-clang-support t
             )
      semantic
      (syntax-checking :variables
-                      syntax-checking-enable-tooltips nil)
+		      syntax-checking-enable-tooltips t)
      fasd
      smex
      gtags
@@ -322,7 +322,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
