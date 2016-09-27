@@ -8,13 +8,9 @@
      c-basic-offset 8
      c-default-style "linux"
      tab-width 8
-     indent-tabs-mode t)
-    (setq
-     show-trailing-whitespace)
-    (flyspell-prog-mode)
-    ;; (which-func-mode t)
-    )
-)
+     indent-tabs-mode t
+     ;; show-trailing-whitespace
+     )))
 (add-hook 'c-mode-common-hook
           (lambda ()
             (my-c-mode-init)))
@@ -27,40 +23,40 @@
               )))
 
 ;;fci-column-indicator mode -change based on the window width
-(defun auto-fci-mode (&optional unused)
-  (if (> (window-width) fci-rule-column)
-      (fci-mode 1)
-    (fci-mode 0)))
+;; (defun auto-fci-mode (&optional unused)
+;;   (if (> (window-width) fci-rule-column)
+;;       (fci-mode 1)
+;;     (fci-mode 0)))
 
 ;;From Linux source
-(defun c-lineup-arglist-tabs-only (ignored)
-  "Line up argument lists by tabs, not spaces"
-  (let* ((anchor (c-langelem-pos c-syntactic-element))
-   (column (c-langelem-2nd-pos c-syntactic-element))
-   (offset (- (1+ column) anchor))
-   (steps (floor offset c-basic-offset)))
-    (* (max steps 1)
-       c-basic-offset)))
+;; (defun c-lineup-arglist-tabs-only (ignored)
+;;   "Line up argument lists by tabs, not spaces"
+;;   (let* ((anchor (c-langelem-pos c-syntactic-element))
+;;    (column (c-langelem-2nd-pos c-syntactic-element))
+;;    (offset (- (1+ column) anchor))
+;;    (steps (floor offset c-basic-offset)))
+;;     (* (max steps 1)
+;;        c-basic-offset)))
 
 ;; (add-hook 'c-mode-common-hook
-;;           (lambda ()
-;;             ;; Add kernel style
-;;             (c-add-style
-;;              "linux-tabs-only"
-;;              '("linux" (c-offsets-alist
-;;                         (arglist-cont-nonempty
-;;                          c-lineup-gcc-asm-reg
-;;                          c-lineup-arglist-tabs-only))))))
+;;     (lambda ()
+;;       ;; Add kernel style
+;;       (c-add-style
+;;        "linux-tabs-only"
+;;        '("linux" (c-offsets-alist
+;;       (arglist-cont-nonempty
+;;        c-lineup-gcc-asm-reg
+;;        c-lineup-arglist-tabs-only))))))
 
 ;; (add-hook 'c-mode-hook
-;;           (lambda ()
-;;             (let ((filename (buffer-file-name)))
-;;               ;; Enable kernel mode for the appropriate files
-;;               (when (and filename
-;;                          (string-match (expand-file-name "/")
-;;                                        filename))
-;;                 (setq indent-tabs-mode t)
-;;                 (c-set-style "linux-tabs-only")))))
+;;     (lambda ()
+;;       (let ((filename (buffer-file-name)))
+;;         ;; Enable kernel mode for the appropriate files
+;;         (when (and filename
+;;        (string-match (expand-file-name "/")
+;;                filename))
+;;     (setq indent-tabs-mode t)
+;;     (c-set-style "linux-tabs-only")))))
 
 (add-hook 'c-common-mode-hook (lambda ()
 				(progn
