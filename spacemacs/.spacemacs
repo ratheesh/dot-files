@@ -93,6 +93,7 @@ values."
 
      ;;private layers
      my-auto-complete-setup
+     ;; my-irony-mode-setup
      my-common-setup
      my-helm-setup
      my-progmode-setup
