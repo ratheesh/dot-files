@@ -73,6 +73,11 @@
 (spacemacs/toggle-hungry-delete-on)
 (spacemacs/toggle-yasnippet-on)
 
+;;; Enable Fill Column Indicator for programming mode
+(add-hook 'prog-mode-hook 'turn-on-fci-mode)
+(add-hook 'text-mode-hook 'turn-on-fci-mode)
+(add-hook 'org-mode-hook 'turn-off-fci-mode 'append)
+
 (with-eval-after-load 'rainbow-identifiers
   (spacemacs/toggle-rainbow-identifiers-mode-on))
 
