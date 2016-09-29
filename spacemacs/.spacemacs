@@ -146,7 +146,7 @@ values."
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
-   dotspacemacs-elpa-subdirectory nil
+   dotspacemacs-elpa-subdirectory 'emacs-version
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
    ;; `hybrid state' with `emacs' key bindings. The value can also be a list
@@ -372,7 +372,8 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
- '(magit-stgit-refresh-arguments (quote ("--index"))))
+ '(magit-stgit-refresh-arguments (quote ("--index")))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -380,4 +381,5 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:background "CadetBlue" :foreground "black" :underline t))))
  '(ahs-face ((t (:background "gray20"))))
- '(ahs-plugin-whole-buffer-face ((t (:background "bisque4" :foreground "Black")))))
+ '(ahs-plugin-whole-buffer-face ((t (:background "bisque4" :foreground "Black"))))
+ '(hl-line ((t (:background "gray6")))))
