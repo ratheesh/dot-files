@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+set hidden
 filetype off                   " required!
 
 
@@ -79,7 +80,7 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " colorscheme solarized
