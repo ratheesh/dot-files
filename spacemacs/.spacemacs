@@ -372,6 +372,7 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
+ '(fci-rule-color "#696969" t)
  '(magit-stgit-refresh-arguments (quote ("--index")))
  )
 (custom-set-faces
@@ -381,5 +382,5 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:background "CadetBlue" :foreground "black" :underline t))))
  '(ahs-face ((t (:background "gray20"))))
- '(ahs-plugin-whole-buffer-face ((t (:background "bisque4" :foreground "Black"))))
- '(hl-line ((t (:background "gray6")))))
+ '(ahs-plugin-whole-buffer-face ((t (:background "gray20"))))
+ '(hl-line ((t (:background "gray10")))))
