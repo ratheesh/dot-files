@@ -13,7 +13,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Plugin options
-Plug 'nsf/gocode', { 'tag': 'go.weekly.2012-03-13', 'rtp': 'vim' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -25,13 +24,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'edsono/vim-matchit'
 Plug 'justinmk/vim-sneak'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'vim-scripts/ShowMarks'
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -70,11 +72,13 @@ let mapleader = ","
 " general config
 nmap <leader>bn :bnext<cr>
 nmap <leader>bp :bprev<cr>
+map <F9> :bprev<cr>
+map <F10> :bnext<cr>
 
 "configure individual Plugins
 "vim-airline
 " let base16colorspace=256  " Access colors present in 256 colorspace
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
@@ -82,6 +86,18 @@ endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" let g:gitgutter_realtime = 0
+" let g:gitgutter_eager = 0
+
+let g:indentLine_faster=1
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
 
 " colorscheme solarized
 "End of File
