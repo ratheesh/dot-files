@@ -28,7 +28,7 @@ if command_exists "acpi"; then
     fi
 
     if [ "$charging_status" = "Full" ];then
-        echo -n '#[bg=colour234,fg=colour12] #[default]'
+        echo -n ' #[bg=colour234,fg=colour12]#[default]'
     elif [ "$charging_status" = "Charging" ];then
         echo -n ' #[bg=colour234,fg=colour11]#[default]'
     else
