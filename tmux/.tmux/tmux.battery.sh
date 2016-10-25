@@ -16,11 +16,11 @@ if command_exists "acpi"; then
     if (( $battery_soc > "85" && $battery_soc <= "100" ));then
         echo -n '#[bg=colour234,fg=colour14]#[default]'
     elif (( $battery_soc > "65" && $battery_soc <= "85" ));then
-        echo -n '#[bg=colour234,fg=colour142]#[default]'
+        echo -n '#[bg=colour234,fg=colour178]#[default]'
     elif (( $battery_soc > "35" && $battery_soc <= "65" ));then
-        echo -n '#[bg=colour234,fg=colour3]#[default]'
+        echo -n '#[bg=colour234,fg=colour13]#[default]'
     elif (( $battery_soc > "15" && $battery_soc <= "35" ));then
-        echo -n '#[bg=colour234,fg=colour1]#[default]'
+        echo -n '#[bg=colour234,fg=colour9]#[default]'
     elif (( $battery_soc > "0" && $battery_soc <= "15" ));then
         echo -n '#[bg=colour234,fg=colour1]#[default]'
     else
