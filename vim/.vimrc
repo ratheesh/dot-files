@@ -90,6 +90,14 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:gitgutter_realtime = 0
 " let g:gitgutter_eager = 0
 
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+	  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPBuffer'
+
 let g:indentLine_faster=1
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
