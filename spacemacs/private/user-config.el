@@ -19,6 +19,7 @@
 (setq auto-window-vscroll nil)
 (setq show-trailing-whitespace t)
 (global-git-commit-mode t)
+(setq visual-line-mode 1)
 
 ;; Semantic to ignore c-pre-processor
 (setq semantic-c-obey-conditional-section-parsing-flag 'nil)
