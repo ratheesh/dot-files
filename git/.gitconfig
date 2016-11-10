@@ -1,28 +1,45 @@
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	undopush = push -f origin HEAD^:master
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
 [user]
-  name = Ratheesh S
-  email = ratheeshreddy@gmail.com
+	name = Ratheesh S
+	email = ratheeshreddy@gmail.com
+	signingkey = B5A8692EC05DCFEA
 
 [color]
-  ui = auto
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  pager = true
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	pager = true
+
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
+
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+	whitespace = red reverse
+	plain = white dim
+
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = green
+	changed = cyan
+	untracked = red
+
+[merge]
+	# include summaries of merged commits in newly created merge commit messages
+	log = true
+
 [sendemail]
 	from = Ratheesh S <ratheeshreddy@gmail.com>
 	chainreplyto = false
@@ -33,9 +50,21 @@
 
 [oh-my-zsh]
 	hide-status = 1
+
 [log]
 	decorate = short
-[alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
 [magit]
 	extension = stgit
+
+[core]
+	editor = emacsclient -c
+	# treat spaces before tabs, lines that are indented with 8 or more spaces,
+	# and all kinds of trailing whitespace as an error
+	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+
+[apply]
+	# detect whitespace errors when applying a patch
+	whitespace = fix
+[branch]
+	autosetuprebase = always
