@@ -24,8 +24,7 @@ zmodules=(directory environment git history input utility meta custom spectrum \
 #
 
 # Set your desired prompt here
-# zprompt_theme='steeef'
-zprompt_theme='eriner'
+zprompt_theme='ratheesh'
 
 #
 # Completion
@@ -67,7 +66,7 @@ zhighlighters=(main brackets root line pattern)
 #
 
 # Load these ssh identities with the ssh module
-zssh_ids=(id_rsa)
+zssh_ids=(id_rsa id_rsa2 id_github)
 
 
 #
