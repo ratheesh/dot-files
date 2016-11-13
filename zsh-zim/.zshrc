@@ -55,6 +55,8 @@ zstyle ':completion:*' use-ip true
 export GCC_COLOR="auto"
 
 # history substring search
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=234,fg=10'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=234,fg=9'
 bindkey -M emacs "^p" history-substring-search-up
 bindkey -M emacs "^n" history-substring-search-down
 bindkey -M emacs '^r' history-incremental-search-backward
@@ -171,19 +173,13 @@ bindkey -s '\eu' '^Ucd ..; ls^M'
 bindkey "^[s" prepend-sudo
 
 # zsh autosuggestions
-# reset-prompt-and-accept-line() {
-#     zle reset-prompt
-#     zle accept-line
-# }
-# zle -N reset-prompt-and-accept-line
-
 ZSH_HIGHLIGHT_PATTERNS+=('rm -fr ' 'fg=red,bold')
 ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=red,bold')
 
 bindkey '^ ' autosuggest-accept
 # bindkey "^M" accept-line
 ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
-ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(editor-info emacs-forward-word)
+# ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(editor-info emacs-forward-word)
 
 # Remove the prefix prompt when logged as ratheesh
 DEFAULT_USER="ratheesh"
