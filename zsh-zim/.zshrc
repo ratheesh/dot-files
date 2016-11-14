@@ -170,6 +170,14 @@ done
 bindkey -s '\eu' '^Ucd ..; ls^M'
 
 # insert sudo on Meta-s
+function prepend-sudo {
+    if [[ "$BUFFER" != su(do|)\ * ]]; then
+        BUFFER="sudo $BUFFER"
+        (( CURSOR += 5 ))
+    fi
+}
+zle -N prepend-sudo
+
 bindkey "^[s" prepend-sudo
 
 # zsh autosuggestions
