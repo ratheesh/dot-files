@@ -243,7 +243,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/ratheesh/perl5"; export PERL_MM_OPT;
 
 typeset -a ealiases
 # ealiases=(`alias | sed -e 's/=.*//'`)
-ealiases=(  l ll lm lr lx lk lt lc get          \
+ealiases=(  l la ll lm lr lx lk lt lc lu sl get          \
             df du rm                            \
             topc topm http-serve pbcopy         \
             pbpaste e ec en eckill              \
