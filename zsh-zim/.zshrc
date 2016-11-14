@@ -65,8 +65,8 @@ bindkey -M emacs '^r' history-incremental-search-backward
 autoload zcalc
 
 # alias -g es
-alias du='du -sh'
-alias ls='ls --color=auto'
+# alias du='du -sh'
+# alias ls='ls --color=auto'
 alias e="emacsclient -nc"
 alias ec="emacsclient -t"
 alias en="emacsclient -n"
@@ -247,13 +247,10 @@ PERL_LOCAL_LIB_ROOT="/home/ratheesh/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LI
 PERL_MB_OPT="--install_base \"/home/ratheesh/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ratheesh/perl5"; export PERL_MM_OPT;
 
-# source /home/ratheesh/.zprezto/modules/globalias/init.zsh
-
 typeset -a ealiases
 # ealiases=(`alias | sed -e 's/=.*//'`)
-ealiases=(  l la ll lm lr lx lk lt lc lu sl get          \
-            df du rm                            \
-            topc topm http-serve pbcopy         \
+ealiases=(  l la ll lm lr lx lk lt lc lu sl get \
+            df du topc topm http-serve pbcopy   \
             pbpaste e ec en eckill              \
             ack rsyncp v m o enn debi debc      \
             g gb gbc gf gfc gfr gg gp gs )
