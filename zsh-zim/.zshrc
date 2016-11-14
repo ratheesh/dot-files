@@ -110,6 +110,9 @@ export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim make'
 # zsh highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
 
+ZSH_HIGHLIGHT_PATTERNS+=('rm -fr ' 'fg=red,bold')
+ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=red,bold')
+
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=11'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=27'
@@ -123,7 +126,7 @@ ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=202,bold' #*
 ZSH_HIGHLIGHT_STYLES[path]='fg=150'
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=33,bold'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=101,underline'
-ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparate]='fg=160,bold'
+ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=160,bold'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=178'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=174,underline'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=197,italic'
@@ -177,17 +180,14 @@ function prepend-sudo {
     fi
 }
 zle -N prepend-sudo
-
 bindkey "^[s" prepend-sudo
+bindkey -M emacs "$key_info[Control]X$key_info[Control]S" prepend-sudo
 
 # zsh autosuggestions
-ZSH_HIGHLIGHT_PATTERNS+=('rm -fr ' 'fg=red,bold')
-ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=red,bold')
-
 bindkey '^ ' autosuggest-accept
 # bindkey "^M" accept-line
 ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
-# ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(editor-info emacs-forward-word)
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(emacs-forward-word)
 
 # Remove the prefix prompt when logged as ratheesh
 DEFAULT_USER="ratheesh"
