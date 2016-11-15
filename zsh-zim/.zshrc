@@ -8,6 +8,9 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
+autoload -U compinit
+compinit -i
+
 # Some basic settings
 HISTSIZE=10000 # session history size
 SAVEHIST=10000 # saved history
@@ -15,12 +18,13 @@ HISTFILE=$HOME/.zshistory # history file
 ZLE_RPROMPT_INDENT=0
 
 unsetopt beep
-setopt shwordsplit	     # make sure that $arm works fine
-unsetopt correct_all	     # do not correct all automatically
+setopt shwordsplit	         # make sure that $arm works fine
+unsetopt correct_all	       # do not correct all automatically
 setopt nobgnice              # run bg jobs at full speed
 setopt complete_in_word      # allow tab completion in the middle of a word
 setopt always_to_end         # Place cursor at end after completion
-unsetopt flowcontrol	     # ctr-s/q has not effect now (Thanx!!!)
+setopt no_auto_remove_slash  # do not remove slash on directory completion
+unsetopt flowcontrol	       # ctr-s/q has not effect now (Thanx!!!)
 setopt append_history        # append
 setopt hist_ignore_all_dups  # no duplicate
 unsetopt hist_ignore_space   # ignore space prefixed commands
