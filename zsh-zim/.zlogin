@@ -46,25 +46,14 @@
     zcompare ${file}
   done
 
-  # completions
-  zcompare ${zim_mods}/completion/external/zsh-completions.plugin.zsh
-  for file in ${zim_mods}/completion/external/src/^(*.zwc)(.); do
-      zcompare ${file}
-  done
-
   # syntax-highlighting
   for file in ${zim_mods}/syntax-highlighting/external/highlighters/**/*.zsh; do
     zcompare ${file}
   done
   zcompare ${zim_mods}/syntax-highlighting/external/zsh-syntax-highlighting.zsh
 
-  # zsh-history-substring-search
+  # zsh-histery-substring-search
   zcompare ${zim_mods}/history-substring-search/external/zsh-history-substring-search.zsh
-
-  # autosuggestions
-  for file in ${zim_mods}/autosuggestions/external/src/**/*.zsh; do
-      zcompare ${file}
-  done
-  zcompare ${zim_mods}/autosuggestions/external/zsh-autosuggestions.zsh
+  
 
 ) &!
