@@ -159,7 +159,6 @@ ZSH_HIGHLIGHT_STYLES[root]='standout'
 ZSH_HIGHLIGHT_STYLES[default]='fg=246'
 
 # List hidden files and folder during completion by default
-autoload -U compinit && compinit
 _comp_options+=(globdots)
 
 # configure fzf plugin
@@ -167,9 +166,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # export FZF_CTRL_T_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Make completer to work when tab is pressed
-# bindkey "^I" expand-or-complete-with-indicator
 
 # verbose for common commands
 for c in chmod chown; do
@@ -240,10 +236,19 @@ alias cgdb_logicpd='cgdb -d arm-none-linux-gnueabi-gdb -- -quiet'
 export logicpd='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
 
 path=(
+    # standard ones
+    $HOME/bin
+    $HOME/.local/bin
+    $HOME/.autojump/bin
+    /usr/local/{bin,sbin}
+    /{bin,sbin}
+    /usr/{bin,sbin}
+    /usr/local/{bin,sbin}
+    /usr/{bin,sbin}
+
+    # Custom ones
     /opt/Xilinx/SDK/2015.1/gnu/arm/lin/bin
     /opt/Xilinx/SDK/2015.1/bin
-    # /opt/arm-2014.05/bin
-    # /opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.01-20130125_linux/bin
     /opt/gcc-arm-none-eabi-4_7-2013q1/bin
     /opt/mgls/linux/bin
     /usr/lib/llvm-3.6/bin	# for clang
@@ -252,6 +257,7 @@ path=(
     /home/ratheesh/projects/nextnav/regina/ltib_logicpd_243/bin
     $path
 )
+
 # Customize to your needs...
 PATH="/home/ratheesh/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/ratheesh/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
