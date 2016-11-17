@@ -165,8 +165,7 @@ bindkey ' '    _expand-ealias
 bindkey -M isearch " "  magic-space # normal space during searches
 
 # Remove the prefix prompt when logged as ratheesh
-DEFAULT_USER="ratheesh"
-export DEFAULT_USER
+export DEFAULT_USER=`whoami`
 
 # ------------- CUSTOM SETTINGS ----------------
 # enable ccache for faster rebuilds
