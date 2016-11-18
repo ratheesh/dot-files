@@ -28,6 +28,10 @@
   # zcompile .zshrc
   zcompare ${ZDOTDIR:-${HOME}}/.zshrc
 
+  # other rc files as well
+  zcompare ${ZDOTDIR:-${HOME}}/.zlogin
+  zcompare ${ZDOTDIR:-${HOME}}/.zimrc
+
   # zcompile some light module init scripts
   zcompare ${zim_mods}/git/init.zsh
   zcompare ${zim_mods}/utility/init.zsh
