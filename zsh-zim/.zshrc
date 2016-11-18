@@ -8,9 +8,6 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
-# autoload -U compinit
-# compinit -i
-
 # Some basic settings
 HISTSIZE=10000 # session history size
 SAVEHIST=10000 # saved history
@@ -66,11 +63,6 @@ _comp_options+=(globdots)
 # color gcc
 export GCC_COLOR="auto"
 
-# generic env setting
-export TERMINFO=/lib/terminfo	# required for gdb-tui
-export TZ='Asia/Kolkata'; export TZ
-export LC_ALL='en_US.UTF-8'
-export GREP_COLORS='mt=33;40;1'
 
 export TERM="xterm-256color"
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
@@ -82,20 +74,6 @@ export GIT_EDITOR="emacsclient -c"
 export LESS_TERMCAP_md="$ORANGE"
 export MINICOM="-m -c on -w -z"	# start minicom in color
 export PAGER="less"
-
-# fasd initialization
-# eval "$(fasd --init auto)"
-
-# init autojump
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-export AUTOJUMP_IGNORE_CASE=1 # ignore case in autojump completion
-export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim make'
-
-# configure fzf plugin
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-# export FZF_CTRL_T_COMMAND='ag --hidden --ignore .git -g ""'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # history substring search module
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=234,fg=10'
@@ -164,17 +142,6 @@ bindkey ' '    _expand-ealias
 # bindkey '^ '   magic-space          # control-space to bypass completion
 bindkey -M isearch " "  magic-space # normal space during searches
 
-# Remove the prefix prompt when logged as ratheesh
-export DEFAULT_USER=`whoami`
-
-# ------------- CUSTOM SETTINGS ----------------
-# enable ccache for faster rebuilds
-export USE_CCACHE=1
-
-# Python virtualenvwrapper settings
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-
 # xilinx devel setup
 alias cgdb-xilinx='cgdb -d arm-xilinx-linux-gnueabi-gdb -- -quiet'
 export arm='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
@@ -189,9 +156,6 @@ alias cgdb_logicpd='cgdb -d arm-none-linux-gnueabi-gdb -- -quiet'
 export logicpd='ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
 
 path=(
-    $HOME/bin
-    $HOME/.local/bin
-    $HOME/.autojump/bin
     /opt/Xilinx/SDK/2015.1/gnu/arm/lin/bin
     /opt/Xilinx/SDK/2015.1/bin
     /opt/gcc-arm-none-eabi-4_7-2013q1/bin
