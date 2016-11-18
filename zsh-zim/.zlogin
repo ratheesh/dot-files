@@ -54,6 +54,16 @@
 
   # zsh-histery-substring-search
   zcompare ${zim_mods}/history-substring-search/external/zsh-history-substring-search.zsh
-  
+
+  # get fzf init script compiled
+  [ -f ~/.fzf.zsh ] && zcompare ~/.fzf.zsh
 
 ) &!
+
+# Print a random, hopefully interesting, adage.
+if (( $+commands[fortune] )); then
+  if [[ -t 0 || -t 1 ]]; then
+    fortune -a de | cowsay -f tux
+    print
+  fi
+fi
