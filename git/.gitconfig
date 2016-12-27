@@ -11,11 +11,11 @@
 	signingkey = B5A8692EC05DCFEA
 
 [color]
-	ui = auto
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+	ui = true
+	diff = true
+	status = true
+	branch = true
+	interactive = true
 	pager = true
 
 [color "branch"]
@@ -62,6 +62,7 @@
 	# treat spaces before tabs, lines that are indented with 8 or more spaces,
 	# and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	pager = /bin/less -R
 
 [apply]
 	# detect whitespace errors when applying a patch
