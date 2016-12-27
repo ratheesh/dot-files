@@ -22,7 +22,7 @@
     super-save
     fasd
     imenu
-    helm-flyspell
+    ;; helm-flyspell
     spaceline
     rainbow-mode
     ;; back-button
