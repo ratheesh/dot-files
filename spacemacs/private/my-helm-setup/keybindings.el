@@ -1,12 +1,13 @@
 ;; key bindings for my-helm-setup
 
 (with-eval-after-load 'helm
-  (global-set-key (kbd "M-i") 'helm-semantic-or-imenu)
+  ;; (global-set-key (kbd "M-i") 'helm-semantic-or-imenu)
+  (global-set-key (kbd "M-i") 'helm-imenu)
   (global-set-key (kbd "s-r") 'helm-projectile-recentf)
   (global-set-key (kbd "C-c h") 'helm-projectile)
 
   (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-  (global-set-key (kbd "M-o") 'helm-global-mark-ring)
+  (global-set-key (kbd "M-o") 'helm-all-mark-rings)
   (global-set-key (kbd "C-x C-r") 'helm-recentf)
 
   ;;; helm-resume
