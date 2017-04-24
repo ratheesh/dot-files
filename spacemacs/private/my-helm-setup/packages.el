@@ -31,6 +31,7 @@
 
 (defconst my-helm-setup-packages
   '(
+    helm
     helm-gtags
     helm-swoop
     projectile
@@ -39,6 +40,16 @@
     )
   "The list of Lisp packages required by the my-helm-setup layer.
    See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun my-helm-setup/post-init-helm ()
+  (progn
+    (semantic-mode 1)
+    ;; (setq helm-semantic-display-style 'semantic-format-tag-concise-prototype-c-mode)
+    (setq semantic-c-obey-conditional-section-parsing-flag 'nil)
+    (setq helm-semantic-fuzzy-match t
+          helm-imenu-fuzzy-match    t
+          ))
+)
 
 (defun my-helm-setup/post-init-projectile ()
   (setq projectile-enable-caching t

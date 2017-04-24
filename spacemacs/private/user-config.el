@@ -23,7 +23,7 @@
 
 ;; Semantic to ignore c-pre-processor
 (setq semantic-c-obey-conditional-section-parsing-flag 'nil)
-(setq semanticdb-default-save-directory "/home/ratheesh/.emacs.d/.cache/semanticdb/")
+(setq semanticdb-default-save-directory "~/.emacs.d/.cache/semanticdb/")
 
 ;; avoid annoying message about shell configuration
 (setq exec-path-from-shell-arguments '("-l"))
@@ -62,7 +62,6 @@
  ;; (version-control/init-git-gutter-fringe)
  ;; (my-gitmode-setup/post-init-git-gutter-fringe)
 )
-
 
 ;; Some settings that spacemacs does not turn on by default
 ;; (spacemacs/toggle-fill-column-indicator-on)
