@@ -78,9 +78,6 @@
 (add-hook 'text-mode-hook 'turn-on-fci-mode)
 (add-hook 'org-mode-hook 'turn-off-fci-mode 'append)
 
-(with-eval-after-load 'rainbow-identifiers
-  (spacemacs/toggle-rainbow-identifiers-mode-on))
-
 (with-eval-after-load 'helm-semantic
   (push '(c-mode . semantic-format-tag-concise-prototype-c-mode) helm-semantic-display-style)
   (push '(c++-mode . semantic-format-tag-concise-prototype-c-mode) helm-semantic-display-style))

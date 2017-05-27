@@ -22,6 +22,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
+Plug 'terryma/vim-expand-region'
 Plug 'edsono/vim-matchit'
 Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -36,8 +37,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
 
@@ -67,7 +66,8 @@ syntax on
 set encoding=utf-8
 set laststatus=2
 set t_Co=256
-let mapleader = ","
+
+let mapleader = "\<Space>"
 
 " general config
 nmap <leader>bn :bnext<cr>
@@ -98,6 +98,10 @@ endif
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
+
 let g:indentLine_faster=1
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -108,4 +112,9 @@ let g:ctrlp_custom_ignore = {
 	\ }
 
 " colorscheme solarized
+
+"Expand region
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+
 "End of File
