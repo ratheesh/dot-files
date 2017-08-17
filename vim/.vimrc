@@ -23,7 +23,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-expand-region'
-Plug 'edsono/vim-matchit'
+Plug 'adelarsq/vim-matchit'
 Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
@@ -37,6 +37,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -78,7 +80,7 @@ map <F10> :bnext<cr>
 "configure individual Plugins
 "vim-airline
 " let base16colorspace=256  " Access colors present in 256 colorspace
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme='wombat'
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
@@ -99,8 +101,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>u :CtrlPMRU<CR>
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>x :x<CR>
+nnoremap <Leader>q :q<CR>
 nmap <Leader><Leader> V
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:indentLine_faster=1
 
@@ -115,6 +125,4 @@ let g:ctrlp_custom_ignore = {
 
 "Expand region
 map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
-
 "End of File
