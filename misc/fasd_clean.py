@@ -51,7 +51,8 @@ def fasd_clean():
         else:
             print 'Removing %s' % path
             purged_items += 1       # increment purged items
-            f.close()
+
+    f.close()
 
     if purged_items == 0:
         print "fasd database is clean!"
