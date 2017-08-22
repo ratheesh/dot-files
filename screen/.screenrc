@@ -17,10 +17,13 @@ encoding UTF-8
 hardcopydir "$HOME/.screen/hardcopy"
 nonblock on
 setenv LC_CTYPE en_US.UTF-8
-shelltitle '/ |bash'
+shelltitle '/ |sh'
 startup_message off
 term xterm-256color
 vbell off
+bind s split
+
+mousetrack on # mouse tracking allows to switch region focus by clicking
 
 #Die Setzing startet ab Nummber 1
 bind c screen 1
@@ -30,11 +33,15 @@ screen 1
 
 # display settings
 sorendition '+b kG'
-hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G}| %d-%M-%Y | %C:%s%A "
+# hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G}| %d-%M-%Y | %C%A "
+hardstatus alwayslastline "%{d kw}%S%{r}|%{-b kw}%u%-Lw%{=d Y}%50>[%{=b R}%n-%t%{=d Y}]%{-}%+Lw%< %=| %{d g}%c:%s%A | %{d c}%d.%m.%Y %{w}"
+
 
 # keybindings 
 bindkey -k F1 prev      # F11 = prev
 bindkey -k F2 next      # F12 = next
+register r "^a:source $HOME/.screenrc^M"
+bind r process r
 #None for now
 
 # make scroll work
