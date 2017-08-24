@@ -385,7 +385,7 @@ you should place your code here."
  '(ahs-plugin-whole-buffer-face ((t (:background "gray20"))))
  '(fci-rule-color "#696969")
  '(hl-line ((t (:background "gray10"))))
- '(linum ((t (:background "#000000" :foreground "LightPink4" :slant normal))))
+ '(linum ((t (:background "#202020" :foreground "#a0a0a0" :slant normal))))
  '(magit-stgit-refresh-arguments (quote ("--index")))
  '(rainbow-identifiers-cie-l*a*b*-lightness 55)
  '(rainbow-identifiers-cie-l*a*b*-saturation 40))
