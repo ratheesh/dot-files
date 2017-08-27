@@ -364,8 +364,10 @@ you should place your code here."
   (load-file "~/.emacs.d/private/user-config.el")
   )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
+"Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -374,7 +376,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(linum+-dynamic-format "%%%dd")
  '(magit-stgit-refresh-arguments (quote ("--index")))
-)
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -389,9 +391,3 @@ you should place your code here."
  '(magit-stgit-refresh-arguments (quote ("--index")))
  '(rainbow-identifiers-cie-l*a*b*-lightness 55)
  '(rainbow-identifiers-cie-l*a*b*-saturation 40))
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-)
