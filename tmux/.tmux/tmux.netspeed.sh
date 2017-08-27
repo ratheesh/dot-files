@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is only compatible with tmux.
+
 RXB=0
 TXB=0
 for rxbytes in /sys/class/net/*/statistics/rx_bytes ; do
@@ -22,4 +24,5 @@ done
 RXDIF=$(echo $((RXBN - RXB)) )
 TXDIF=$(echo $((TXBN - TXB)) )
 
-echo -e "D:$((RXDIF/1024))K U:$((TXDIF/1024))K"
+echo -e "#[fg=colour34,bold]↓#[fg=colour244,nobold]$((RXDIF/1024))#[fg=colour231,italics]K \
+#[fg=colour197,bold,noitalics]↑#[fg=colour244,nobold]$((TXDIF/1024))#[fg=colour231,italics]K#[default]"
