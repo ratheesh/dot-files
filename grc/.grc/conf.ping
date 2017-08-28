@@ -32,4 +32,4 @@ colours=red,bold red
 =======
 # No. of ICMP bytes
 regexp=^\d+\s
-colours=bold yellow
+colours=yellow
