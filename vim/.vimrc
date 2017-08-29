@@ -44,7 +44,8 @@ set number
 set tabstop=8
 set showmatch
 set showcmd
-" set colorcolumn=81
+set colorcolumn=81
+" set columns=80
 set ruler
 set wildignore=*.swp,*.bak
 set wildmode=longest,list
@@ -65,6 +66,7 @@ syntax on
 set encoding=utf-8
 set laststatus=2
 set t_Co=256
+set fillchars="vert:|,fold:-"
 
 let mapleader = "\<Space>"
 
