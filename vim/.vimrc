@@ -103,6 +103,7 @@ let g:ctrlp_show_hidden = 1
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>u :CtrlPMRU<CR>
+nnoremap <Leader>m :CtrlPMixed<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
