@@ -50,24 +50,24 @@ TERM xterm*
 #NORMAL 00 # no color code at all
 
 #FILE 00 # regular file: use no color at all
-RESET 0 # reset to "normal" color
-DIR 0;94 # directory
-LINK 3;36 # symbolic link. (If you set this to 'target' instead of a
+RESET 	0 # reset to "normal" color
+DIR 	0;94 # directory
+LINK 	3;36 # symbolic link. (If you set this to 'target' instead of a
 # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
-FIFO 3;40;35 # pipe
-SOCK 3;00;35 # socket
-DOOR 00;35 # door
-BLK 3;95 # block device driver
-CHR 3;93 # character device driver
+FIFO 	3;40;35 # pipe
+SOCK 	3;00;35 # socket
+DOOR 	00;35 # door
+BLK 	3;95 # block device driver
+CHR 	3;93 # character device driver
 ORPHAN 5;30;101 # symlink to nonexistent file, or non-stat'able file ...
-MISSING 5;33; # ... and the files they point to
-SETUID 37;41 # file that is setuid (u+s)
-SETGID 30;43 # file that is setgid (g+s)
-CAPABILITY 30;41 # file with capability
+MISSING 	5;33; # ... and the files they point to
+SETUID 		37;41 # file that is setuid (u+s)
+SETGID 		30;43 # file that is setgid (g+s)
+CAPABILITY 	30;41 # file with capability
 STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
-STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
+OTHER_WRITABLE 	34;42 # dir that is other-writable (o+w) and not sticky
+STICKY 		37;44 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 EXEC 03;92
 
@@ -77,115 +77,118 @@ EXEC 03;92
 #.csh 00;92
 
 # archives or compressed (bright red)
-.tar 00;91
-.tgz 00;91
-.arc 00;91
-.arj 00;91
-.taz 00;91
-.lha 00;91
-.lz4 00;91
-.lzh 00;91
-.lzma 00;91
-.tlz 00;91
-.txz 00;91
-.tzo 00;91
-.t7z 00;91
-.zip 00;91
-.z 00;91
-.Z 00;91
-.dz 00;91
-.gz 00;91
-.lrz 00;91
-.lz 00;91
-.lzo 00;91
-.xz 00;91
-.bz2 00;91
-.bz 00;91
-.tbz 00;91
-.tbz2 00;91
-.tz 00;91
-.deb 00;91
-.rpm 00;91
-.jar 00;91
-.war 00;91
-.ear 00;91
-.sar 00;91
-.rar 00;91
-.alz 00;91
-.ace 00;91
-.zoo 00;91
-.cpio 00;91
-.7z 00;91
-.rz 00;91
-.cab 00;91
+.tar 	00;91
+.tgz 	00;91
+.arc 	00;91
+.arj 	00;91
+.taz 	00;91
+.lha 	00;91
+.lz4 	00;91
+.lzh 	00;91
+.lzma 	00;91
+.tlz 	00;91
+.txz 	00;91
+.tzo 	00;91
+.t7z 	00;91
+.zip 	00;91
+.z 	00;91
+.Z 	00;91
+.dz 	00;91
+.gz 	00;91
+.lrz 	00;91
+.lz 	00;91
+.lzo 	00;91
+.xz 	00;91
+.bz2 	00;91
+.bz 	00;91
+.tbz 	00;91
+.tbz2	00;91
+.tz 	00;91
+.deb 	00;91
+.rpm 	00;91
+.jar 	00;91
+.war 	00;91
+.ear 	00;91
+.sar 	00;91
+.rar 	00;91
+.alz 	00;91
+.ace 	00;91
+.zoo 	00;91
+.cpio 	00;91
+.7z 	00;91
+.rz 	00;91
+.cab 	00;91
 
 # image formats
-.jpg 00;35
-.jpeg 00;35
-.gif 00;35
-.bmp 00;35
-.pbm 00;35
-.pgm 00;35
-.ppm 00;35
-.tga 00;35
-.xbm 00;35
-.xpm 00;35
-.tif 00;35
-.tiff 00;35
-.png 00;35
-.svg 00;35
-.svgz 00;35
-.mng 00;35
-.pcx 00;35
-.mov 00;35
-.mpg 00;35
-.mpeg 00;35
-.m2v 00;35
-.mkv 00;35
-.webm 00;35
-.ogm 00;35
-.mp4 00;35
-.m4v 00;35
-.mp4v 00;35
-.vob 00;35
-.qt 00;35
-.nuv 00;35
-.wmv 00;35
-.asf 00;35
-.rm 00;35
-.rmvb 00;35
-.flc 00;35
-.avi 00;35
-.fli 00;35
-.flv 00;35
-.gl 00;35
-.dl 00;35
-.xcf 00;35
-.xwd 00;35
-.yuv 00;35
-.cgm 00;35
-.emf 00;35
+.jpg 	00;35
+.jpeg 	00;35
+.gif 	00;35
+.bmp 	00;35
+.pbm 	00;35
+.pgm 	00;35
+.ppm 	00;35
+.tga 	00;35
+.xbm 	00;35
+.xpm 	00;35
+.tif 	00;35
+.tiff 	00;35
+.png 	00;35
+.svg 	00;35
+.svgz 	00;35
+.mng 	00;35
+.pcx 	00;35
+.mov 	00;35
+.mpg 	00;35
+.mpeg 	00;35
+.m2v 	00;35
+.mkv 	00;35
+.webm	00;35
+.ogm 	00;35
+.mp4 	00;35
+.m4v 	00;35
+.mp4v	00;35
+.vob 	00;35
+.qt 	00;35
+.nuv 	00;35
+.wmv 	00;35
+.asf 	00;35
+.rm 	00;35
+.rmvb 	00;35
+.flc 	00;35
+.avi 	00;35
+.fli 	00;35
+.flv 	00;35
+.gl 	00;35
+.dl 	00;35
+.xcf 	00;35
+.xwd 	00;35
+.yuv 	00;35
+.cgm 	00;35
+.emf 	00;35
 
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.ogv 00;35
-.ogx 00;35
+.ogv 	00;35
+.ogx 	00;35
 
 # audio formats
-.aac 00;36
-.au 00;36
-.flac 00;36
-.m4a 00;36
-.mid 00;36
-.midi 00;36
-.mka 00;36
-.mp3 00;36
-.mpc 00;36
-.ogg 00;36
-.ra 00;36
-.wav 00;36
+.aac 	00;36
+.au 	00;36
+.flac 	00;36
+.m4a 	00;36
+.mid 	00;36
+.midi 	00;36
+.mka 	00;36
+.mp3 	00;36
+.mpc 	00;36
+.ogg 	00;36
+.ra 	00;36
+.wav	00;36
 
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.oga 00;36
-.opus 00;36
-.spx 00;36
-.xspf 00;36
+.oga 	00;36
+.opus 	00;36
+.spx 	00;36
+.xspf 	00;36
+
+# End of File
+#
