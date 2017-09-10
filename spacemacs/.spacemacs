@@ -362,9 +362,14 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (message "Loading user config file")
   (load-file "~/.emacs.d/private/user-config.el")
-  )
+)
 
 "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
@@ -376,7 +381,7 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-want-Y-yank-to-eol nil)
  '(linum+-dynamic-format "%%%dd")
  '(magit-stgit-refresh-arguments (quote ("--index")))
- )
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -391,3 +396,4 @@ This function is called at the very end of Spacemacs initialization."
  '(magit-stgit-refresh-arguments (quote ("--index")))
  '(rainbow-identifiers-cie-l*a*b*-lightness 55)
  '(rainbow-identifiers-cie-l*a*b*-saturation 40))
+)
