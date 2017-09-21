@@ -44,7 +44,8 @@ set number
 set tabstop=8
 set showmatch
 set showcmd
-set colorcolumn=81
+" set colorcolumn=81
+execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set wildignore=*.swp,*.bak
@@ -71,6 +72,10 @@ set fillchars="vert:|,fold:-"
 let mapleader = "\<Space>"
 
 " general config
+
+" Theme setting
+color darktheme
+
 nmap <leader>bn :bnext<cr>
 nmap <leader>bp :bprev<cr>
 map <F9> :bprev<cr>
