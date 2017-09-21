@@ -14,7 +14,7 @@
 (defconst my-gitmode-setup-packages
   '(
     ;; magit
-    stgit
+    ;; stgit
     magit-stgit
     git-gutter-fringe
     )
