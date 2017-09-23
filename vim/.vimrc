@@ -2,6 +2,16 @@ set nocompatible               " be iMproved
 set hidden
 filetype off                   " required!
 
+" augroup myvimrchooks
+" 	au!
+" 	autocmd bufwritepost .vimrc source ~/.vimrc
+" augroup END
+
+" augroup myvimrc
+" 	au!
+" 	au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+" augroup END
+
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -18,6 +28,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-expand-region'
@@ -28,14 +39,16 @@ Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
 " Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'Yggdroot/indentLine'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'tpope/vim-commentary'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -54,6 +67,7 @@ set noswapfile
 set fileformats=unix,dos,mac
 set ignorecase
 set smartcase
+set smarttab
 set hlsearch
 set incsearch
 set history=1000
@@ -62,6 +76,14 @@ set showcmd
 set nowrap
 set backspace=indent,eol,start
 set autoindent
+set autoread
+set autowrite
+if exists('+breakindent')
+	set breakindent showbreak=\ +
+endif
+set foldmethod=marker
+set lazyredraw
+set linebreak
 set copyindent
 syntax on
 set encoding=utf-8
@@ -81,6 +103,9 @@ nmap <leader>bp :bprev<cr>
 map <F9> :bprev<cr>
 map <F10> :bnext<cr>
 
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 "configure individual Plugins
 "vim-airline
 " let base16colorspace=256  " Access colors present in 256 colorspace
@@ -98,7 +123,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-	  let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
+	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 endif
 
 let g:ctrlp_map = '<c-p>'
@@ -107,12 +132,14 @@ let g:ctrlp_show_hidden = 1
 
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>u :CtrlPMRU<CR>
+nnoremap <Leader>r :CtrlPMRU<CR>
 nnoremap <Leader>m :CtrlPMixed<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 nmap <Leader><Leader> V
+
+nnoremap <leader>t :TagbarOpenAutoClose<CR>
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -133,8 +160,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " colorscheme solarized
