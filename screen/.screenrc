@@ -34,8 +34,8 @@ screen 1
 # display settings
 sorendition '+b kG'
 # hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G}| %d-%M-%Y | %C%A "
-hardstatus alwayslastline "%{d kw}%S%{r}|%{-b kw}%u%-Lw%{=d Y}%50>[%{=b R}%n-%t%{=d Y}]%{-}%+Lw%< %=| %{d g}%c:%s%A | %{d c}%d.%m.%Y %{w}"
-
+# hardstatus alwayslastline "%{d kw}%S%{r}|%{-b kw}%u%-Lw%{=d Y}%50>[%{=b R}%n-%t%{=d Y}]%{-}%+Lw%< %=| %{d g}%c:%s%A | %{d c}%d.%m.%Y %{w}"
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
 # keybindings 
 bindkey -k F1 prev      # F11 = prev
@@ -45,12 +45,12 @@ bind r process r
 #None for now
 
 # make scroll work
-termcapinfo rxvt-256color ti@:te@
+# termcapinfo rxvt-256color ti@:te@
 termcapinfo xterm-256color ti@:te@
 
 # make colors work
 termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-termcapinfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# termcapinfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
 #EOF
 
