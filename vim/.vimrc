@@ -2,16 +2,6 @@ set nocompatible               " be iMproved
 set hidden
 filetype off                   " required!
 
-" augroup myvimrchooks
-" 	au!
-" 	autocmd bufwritepost .vimrc source ~/.vimrc
-" augroup END
-
-" augroup myvimrc
-" 	au!
-" 	au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-" augroup END
-
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -39,8 +29,6 @@ Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
@@ -49,6 +37,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
+" Plug 'raimondi/delimitmate'
+" Plug 'oblitum/rainbow'
 
 call plug#end()
 
@@ -61,8 +51,9 @@ set showcmd
 execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
-set wildignore=*.swp,*.bak
+set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmode=longest,list
+set nobackup
 set noswapfile
 set fileformats=unix,dos,mac
 set ignorecase
@@ -78,6 +69,7 @@ set backspace=indent,eol,start
 set autoindent
 set autoread
 set autowrite
+set cursorline
 if exists('+breakindent')
 	set breakindent showbreak=\ +
 endif
@@ -85,7 +77,6 @@ set foldmethod=marker
 set lazyredraw
 set linebreak
 set copyindent
-syntax on
 set encoding=utf-8
 set laststatus=2
 set t_Co=256
@@ -95,13 +86,19 @@ let mapleader = "\<Space>"
 
 " general config
 
+" Remember last buffers loaded and file position
+set viminfo='10,\"100,:20,%,n~/.viminfo'
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 " Theme setting
+syntax on
 color darktheme
 
 nmap <leader>bn :bnext<cr>
 nmap <leader>bp :bprev<cr>
 map <F9> :bprev<cr>
 map <F10> :bnext<cr>
+nmap <Leader>k :bdelete<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -121,6 +118,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:gitgutter_realtime = 0
 " let g:gitgutter_eager = 0
 
+" Rainbow delimiters
+" au FileType c,cpp,objc,objcpp call rainbow#load()
+" let g:rainbow_active = 1
+" let g:rainbow_ctermfgs = [66, 30, 95, 60, 93]
+
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
@@ -129,6 +131,13 @@ endif
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden = 1
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
 
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
@@ -146,13 +155,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:indentLine_faster=1
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-	\ 'file': '\v\.(exe|so|dll)$',
-	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-	\ }
 
 " syntastic
 set statusline+=%#warningmsg#
