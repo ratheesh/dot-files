@@ -20,13 +20,15 @@ endif
 
 let g:colors_name = "darktheme"
 
-hi Cursor 	ctermfg=NONE 	ctermbg=NONE 	cterm=inverse guifg=#282a36 guibg=#f8f8f0 gui=NONE
+syntax match Operator "[-+&|<>=!\/~:*%&^?]"
+
+hi Cursor 	ctermfg=7 	ctermbg=NONE 	cterm=inverse guifg=#282a36 guibg=#f8f8f0 gui=NONE
 hi Visual 	ctermfg=NONE 	ctermbg=234	cterm=NONE guifg=NONE guibg=#44475a gui=NONE
-hi CursorLine 	ctermbg=234 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
+hi CursorLine 	ctermbg=233 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi CursorColumn ctermbg=234 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=233 	cterm=NONE guifg=NONE guibg=#3d3f49 gui=NONE
 hi LineNr 	ctermfg=60 	ctermbg=234 	cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
-hi CursorLineNr ctermfg=228 	ctermbg=234 	cterm=NONE guifg=#f1fa8c guibg=#44475a gui=NONE
+hi CursorLineNr ctermfg=11 	ctermbg=233	cterm=NONE guifg=#f1fa8c guibg=#44475a gui=NONE
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#64666d guibg=#64666d gui=bold
 hi MatchParen 	ctermfg=198 	ctermbg=NONE 	cterm=underline,bold guifg=#ff79c6 guibg=NONE gui=underline
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#f8f8f2 guibg=#64666d gui=bold
@@ -53,13 +55,13 @@ hi DiffText 	ctermfg=7 	ctermbg=24 	cterm=bold guifg=#f8f8f2 guibg=#204a87 gui=b
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE guifg=#f8f8f0 guibg=#ff79c6 gui=NONE
 hi WarningMsg 	ctermfg=9 	ctermbg=212 	cterm=NONE guifg=#f8f8f0 guibg=#ff79c6 gui=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
-hi Function 	ctermfg=98 	ctermbg=NONE 	cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
+hi Function 	ctermfg=9 	ctermbg=NONE 	cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 hi Identifier 	ctermfg=81 	ctermbg=NONE 	cterm=italic guifg=#8be9fd guibg=NONE gui=italic
 hi Keyword 	ctermfg=212 	ctermbg=NONE 	cterm=italic guifg=#ff79c6 guibg=NONE gui=NONE
 hi Label 	ctermfg=137 	ctermbg=NONE 	cterm=NONE guifg=#f1fa8c guibg=NONE gui=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE guifg=#525563 guibg=NONE gui=NONE
 hi Number 	ctermfg=132 	ctermbg=NONE 	cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
-hi Operator 	ctermfg=91 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
+hi Operator 	ctermfg=90 	ctermbg=NONE 	cterm=bold guifg=#ff79c6 guibg=NONE gui=NONE
 hi PreProc 	ctermfg=65 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi Special 	ctermfg=7 	ctermbg=NONE 	cterm=NONE guifg=#f8f8f2 guibg=NONE gui=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE guifg=#525563 guibg=NONE gui=NONE
@@ -69,7 +71,7 @@ hi String 	ctermfg=244 	ctermbg=NONE 	cterm=italic guifg=#f1fa8c guibg=NONE gui=
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold guifg=#6272a4 guibg=NONE gui=inverse,bold
-hi Type 	ctermfg=32 	ctermbg=NONE 	cterm=italic guifg=#8be9fd guibg=NONE gui=NONE
+hi Type 	ctermfg=31 	ctermbg=NONE 	cterm=italic guifg=#8be9fd guibg=NONE gui=NONE
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline guifg=NONE guibg=NONE gui=underline
 hi rubyClass 	ctermfg=212 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi rubyFunction ctermfg=84 	ctermbg=NONE 	cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
