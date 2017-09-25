@@ -70,16 +70,18 @@ set autoindent
 set autoread
 set autowrite
 set cursorline
+" set cursorcolumn
 if exists('+breakindent')
 	set breakindent showbreak=\ +
 endif
 set foldmethod=marker
 set lazyredraw
 set linebreak
-set copyindent
+" set copyindent
 set encoding=utf-8
+set scrolloff=3 " Keep 3 lines below and above the cursor
 set laststatus=2
-set t_Co=256
+set t_Co=256  " Support for 256 colors
 set fillchars="vert:|,fold:-"
 
 let mapleader = "\<Space>"
