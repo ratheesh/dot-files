@@ -13,6 +13,7 @@
 " @author Zeno Rocha <hi@zenorocha.com>
 
 set background=dark
+scriptencoding utf-8
 highlight clear
 
 if exists("syntax_on")
@@ -29,7 +30,7 @@ hi CursorLine 	ctermbg=234 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi CursorColumn ctermbg=233 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=234 	cterm=NONE guifg=NONE guibg=#3d3f49 gui=NONE
 hi LineNr 	ctermfg=60 	ctermbg=233 	cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
-hi CursorLineNr ctermfg=160	ctermbg=7	cterm=bold guifg=#f1fa8c guibg=#44475a gui=NONE
+hi CursorLineNr ctermfg=21	ctermbg=7	cterm=bold guifg=#f1fa8c guibg=#44475a gui=NONE
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#64666d guibg=#64666d gui=bold
 hi MatchParen 	ctermfg=198 	ctermbg=NONE 	cterm=underline,bold guifg=#ff79c6 guibg=NONE gui=underline
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#f8f8f2 guibg=#64666d gui=bold
@@ -49,10 +50,6 @@ hi Comment 	ctermfg=243 	ctermbg=NONE 	cterm=italic guifg=#6272a4 guibg=NONE gui
 hi Conditional 	ctermfg=25 	ctermbg=NONE 	cterm=italic guifg=#ff79c6 guibg=NONE gui=NONE
 hi Constant 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi Define 	ctermfg=212 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
-hi DiffAdd 	ctermfg=7 	ctermbg=64 	cterm=bold guifg=#f8f8f2 guibg=#468410 gui=bold
-hi DiffDelete 	ctermfg=88 	ctermbg=NONE 	cterm=NONE guifg=#8b080b guibg=NONE gui=NONE
-hi DiffChange 	ctermfg=7 	ctermbg=23 	cterm=NONE guifg=#f8f8f2 guibg=#243a5f gui=NONE
-hi DiffText 	ctermfg=7 	ctermbg=24 	cterm=bold guifg=#f8f8f2 guibg=#204a87 gui=bold
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE guifg=#f8f8f0 guibg=#ff79c6 gui=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE guifg=#f8f8f0 guibg=#ff79c6 gui=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
@@ -74,6 +71,15 @@ hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold guifg=#6272a4 guibg=NONE gui=inverse,bold
 hi Type 	ctermfg=68 	ctermbg=NONE 	cterm=italic guifg=#8be9fd guibg=NONE gui=NONE
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline guifg=NONE guibg=NONE gui=underline
+
+" Diff {{{
+hi DiffAdd 	ctermfg=7 	ctermbg=64 	cterm=bold guifg=#f8f8f2 guibg=#468410 gui=bold
+hi DiffDelete 	ctermfg=88 	ctermbg=NONE 	cterm=NONE guifg=#8b080b guibg=NONE gui=NONE
+hi DiffChange 	ctermfg=7 	ctermbg=23 	cterm=NONE guifg=#f8f8f2 guibg=#243a5f gui=NONE
+hi DiffText 	ctermfg=7 	ctermbg=24 	cterm=bold guifg=#f8f8f2 guibg=#204a87 gui=bold
+"}}}
+
+" Ruby {{{
 hi rubyClass 	ctermfg=212 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi rubyFunction ctermfg=84 	ctermbg=NONE 	cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 hi rubyInterpolationDelimiter ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
@@ -97,21 +103,36 @@ hi rubyRailsARAssociationMethod ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9f
 hi rubyRailsARMethod ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=NONE
 hi rubyRailsRenderMethod ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=NONE
 hi rubyRailsMethod ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=NONE
+"}}}
+
+" eRuby {{{
 hi erubyDelimiter ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi erubyComment ctermfg=61 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=NONE gui=NONE
 hi erubyRailsMethod ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=NONE
+"}}}
+
+" HTML {{{
 hi htmlTag ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi htmlEndTag ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi htmlTagName ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi htmlArg ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 hi htmlSpecialChar ctermfg=141 ctermbg=NONE cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
+"}}}
+
+" Java Script {{{
 hi javaScriptFunction ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=italic
 hi javaScriptRailsFunction ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=NONE
 hi javaScriptBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+"}}}
+
+" Yaml {{{
 hi yamlKey ctermfg=212 ctermbg=NONE cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi yamlAnchor ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi yamlAlias ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi yamlDocumentHeader ctermfg=228 ctermbg=NONE cterm=NONE guifg=#f1fa8c guibg=NONE gui=NONE
+"}}}
+
+" CSS {{{
 hi cssURL ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=italic
 hi cssFunctionName ctermfg=117 ctermbg=NONE cterm=NONE guifg=#8be9fd guibg=NONE gui=NONE
 hi cssColor ctermfg=141 ctermbg=NONE cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
@@ -120,9 +141,13 @@ hi cssClassName ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=
 hi cssValueLength ctermfg=141 ctermbg=NONE cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
 hi cssCommonAttr ctermfg=81 ctermbg=NONE cterm=NONE guifg=#6be5fd guibg=NONE gui=NONE
 hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+"}}}
+
+" TabLine {{{
 hi TabLineFill  guifg=#333333 guibg=#282a36 gui=none
 hi TabLine      guifg=#666666 guibg=#282a36 gui=none
 hi TabLineSel   guifg=WHITE guibg=#282a36 gui=none
+"}}}
 
 " Elixir {{{
 hi elixirAtom ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=italic"
@@ -131,7 +156,7 @@ hi elixirAlias ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=i
 hi elixirInterpolationDelimiter ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 hi elixirStringDelimiter ctermfg=228 ctermbg=NONE cterm=NONE guifg=#f1fa8c guibg=NONE gui=NONE
 "}}}
-"
+
 " Vim Script {{{
 hi vimGroupName ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE
 hi vimGroup ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE
@@ -139,6 +164,7 @@ hi vimOption ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE
 hi vimHiCtermFgBg ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE
 hi vimHiGuiFgBg ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE
 " }}}
+
 " Markdown: {{{
 hi markdownH1 ctermfg=141 ctermbg=NONE cterm=bold guifg=#bd93f9 guibg=NONE gui=bold"
 hi markdownH2 ctermfg=141 ctermbg=NONE cterm=bold guifg=#bd93f9 guibg=NONE gui=bold"
