@@ -1,7 +1,27 @@
+" Copyright (C) 2017  Ratheesh <ratheeshreddy@gmail.com>
+" Author: Ratheesh <ratheeshreddy@gmail.com>
+"
+" This program is free software; you can redistribute it and/or
+" modify it under the terms of the GNU General Public License
+" as published by the Free Software Foundation; either version 2
+" of the License, or (at your option) any later version.
+"
+" This program is distributed in the hope that it will be useful,
+" but WITHOUT ANY WARRANTY; without even the implied warranty of
+" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+" GNU General Public License for more details.
+"
+" You should have received a copy of the GNU General Public License
+" along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+" Bootstrap settings {{{
 set nocompatible               " be iMproved
 set hidden
-filetype off                   " required!
+filetype on                   " required!
+"}}}
 
+" Plugins {{{
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -37,11 +57,16 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
+" Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'antoyo/vim-licenses'
 " Plug 'raimondi/delimitmate'
 " Plug 'oblitum/rainbow'
 
 call plug#end()
+"}}}
 
+" Vim vanilla settings {{{
 filetype plugin indent on
 set number
 set tabstop=8
@@ -52,6 +77,7 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmenu
 set wildmode=longest,list
 set nobackup
 set noswapfile
@@ -74,10 +100,14 @@ set cursorline
 if exists('+breakindent')
 	set breakindent showbreak=\ +
 endif
+set hidden   " See http://items.sjbach.com/319/configuring-vim-right
+set wmh=0    " Windows need not have height
 set foldmethod=marker
 set lazyredraw
 set linebreak
 " set copyindent
+set gcr=a:blinkon0              " Disable cursor blink
+set clipboard=unnamed           " Share * register w/ unnamed (system copy/paste support)
 set encoding=utf-8
 set scrolloff=3 " Keep 3 lines below and above the cursor
 set laststatus=2
@@ -85,29 +115,40 @@ set t_Co=256  " Support for 256 colors
 set fillchars="vert:|,fold:-"
 
 let mapleader = "\<Space>"
+"}}}
 
-" general config
-
-" Remember last buffers loaded and file position
-set viminfo='10,\"100,:20,%,n~/.viminfo'
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" Theme setting
-syntax on
-color darktheme
-
-nmap <leader>bn :bnext<cr>
-nmap <leader>bp :bprev<cr>
+" General Config {{{
+" nmap <Leader><Leader> :
+nnoremap ' `
+nnoremap ` '
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>r :CtrlPMRU<CR>
+nnoremap <Leader>m :CtrlPMixed<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>x :x<CR>
+nnoremap <Leader>q :q<CR>
+nmap <Leader><Leader> V
 map <F9> :bprev<cr>
 map <F10> :bnext<cr>
 nmap <Leader>k :bdelete<CR>
 nmap <Leader>\ :nohlsearch<CR>
+" Remember last buffers loaded and file position
+set viminfo='10,\"100,:20,%,n~/.viminfo'
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" }}}
 
-" Tagbar
+" Theme {{{
+syntax on
+color darktheme
+" }}}
+
+" Tagbar {{{
 nmap <F8> :TagbarToggle<CR>
+nnoremap <leader>t :TagbarOpenAutoClose<CR>
+" }}}
 
-"configure individual Plugins
-"vim-airline
+" Vim-airline {{{
 " let base16colorspace=256  " Access colors present in 256 colorspace
 let g:airline_powerline_fonts = 0
 let g:airline_theme='badwolf' " sane ones -> ubaryd sol wombat
@@ -117,21 +158,21 @@ endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+" }}}
 
-" let g:gitgutter_realtime = 0
-" let g:gitgutter_eager = 0
+" Vim-licenses {{{
+let g:licenses_copyright_holders_name = 'Ratheesh <ratheeshreddy@gmail.com>'
+let g:licenses_authors_name = 'Ratheesh <ratheeshreddy@gmail.com>'
+let g:licenses_default_commands = ['gplv2', 'mit']
+" }}}
 
-" Rainbow delimiters
-" au FileType c,cpp,objc,objcpp call rainbow#load()
-" let g:rainbow_active = 1
-" let g:rainbow_ctermfgs = [66, 30, 95, 60, 93]
-
+" CtrlP {{{
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 endif
 
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden = 1
 
@@ -141,37 +182,30 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\v\.(exe|so|dll)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
+ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" }}}
 
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>r :CtrlPMRU<CR>
-nnoremap <Leader>m :CtrlPMixed<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>x :x<CR>
-nnoremap <Leader>q :q<CR>
-nmap <Leader><Leader> V
-
-nnoremap <leader>t :TagbarOpenAutoClose<CR>
-
+" UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:indentLine_faster=1
+"}}}
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Syntastic {{{
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_reuse_loc_lists= 0
+" }}}
 
-" colorscheme solarized
-
-"Expand region
+"Expand region {{{
 " nmap K <Plug>(expand_region_expand)
 " nmap J <Plug>(expand_region_shrink)
 
@@ -188,4 +222,12 @@ call expand_region#custom_text_objects({
     \ 'ic' :0,
     \ 'ac' :0,
     \ })
+" }}}
+
+" YankRing {{{
+nmap <leader>y :YRShow<cr>
+" put the yankring_history file in ~/.backup
+" let g:yankring_history_dir = '~/.backup'
+" }}}
+
 "End of File
