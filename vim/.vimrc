@@ -101,6 +101,7 @@ nmap <leader>bp :bprev<cr>
 map <F9> :bprev<cr>
 map <F10> :bnext<cr>
 nmap <Leader>k :bdelete<CR>
+nmap <Leader>\ :nohlsearch<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -109,7 +110,7 @@ nmap <F8> :TagbarToggle<CR>
 "vim-airline
 " let base16colorspace=256  " Access colors present in 256 colorspace
 let g:airline_powerline_fonts = 0
-let g:airline_theme='wombat'
+let g:airline_theme='badwolf' " sane ones -> ubaryd sol wombat
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
@@ -171,5 +172,20 @@ let g:syntastic_check_on_wq = 0
 " colorscheme solarized
 
 "Expand region
-map K <Plug>(expand_region_expand)
+" nmap K <Plug>(expand_region_expand)
+" nmap J <Plug>(expand_region_shrink)
+
+call expand_region#custom_text_objects({
+    \ 'a]' :1,
+    \ 'ab' :1,
+    \ 'aB' :1,
+    \ 'ii' :0,
+    \ 'ai' :0,
+    \ 'iI' :0,
+    \ 'aI' :0,
+    \ 'if' :0,
+    \ 'af' :0,
+    \ 'ic' :0,
+    \ 'ac' :0,
+    \ })
 "End of File
