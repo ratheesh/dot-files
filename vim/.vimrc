@@ -57,10 +57,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
-" Plug 'raimondi/delimitmate'
 " Plug 'oblitum/rainbow'
 
 call plug#end()
@@ -119,6 +117,7 @@ let mapleader = "\<Space>"
 
 " General Config {{{
 " nmap <Leader><Leader> :
+imap jj <Esc>
 nnoremap ' `
 nnoremap ` '
 nnoremap <Leader>o :CtrlP<CR>
@@ -128,6 +127,7 @@ nnoremap <Leader>m :CtrlPMixed<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
+" nnoremap <Leader>j :
 nmap <Leader><Leader> V
 map <F9> :bprev<cr>
 map <F10> :bnext<cr>
@@ -184,6 +184,12 @@ let g:ctrlp_custom_ignore = {
 	\ }
  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " }}}
+
+
+" Easymotion {{{
+nmap uu <Plug>(easymotion-s)
+"}}}
+
 
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<tab>"
