@@ -35,8 +35,6 @@ hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#64666d guibg=#64666d gui
 hi MatchParen 	ctermfg=198 	ctermbg=NONE 	cterm=underline,bold guifg=#ff79c6 guibg=NONE gui=underline
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#f8f8f2 guibg=#64666d gui=bold
 hi StatusLineNC ctermfg=7 	ctermbg=236 	cterm=NONE guifg=#f8f8f2 guibg=#64666d gui=NONE
-hi Pmenu 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi PmenuSel 	ctermfg=NONE 	ctermbg=236 	cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none guifg=#282a36 guibg=#ffb86c gui=none
 hi Search 	ctermfg=7 	ctermbg=8 	cterm=none guifg=#282a36 guibg=#50fa7b gui=none
 hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
@@ -55,7 +53,7 @@ hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE guifg=#f8f8f0 guibg=#ff79c6 
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
 hi Function 	ctermfg=148 	ctermbg=NONE 	cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 hi Identifier 	ctermfg=81 	ctermbg=NONE 	cterm=italic guifg=#8be9fd guibg=NONE gui=italic
-hi Keyword 	ctermfg=129 	ctermbg=NONE 	cterm=italic guifg=#ff79c6 guibg=NONE gui=NONE
+hi Keyword 	ctermfg=128 	ctermbg=NONE 	cterm=italic guifg=#ff79c6 guibg=NONE gui=NONE
 hi Label 	ctermfg=137 	ctermbg=NONE 	cterm=NONE guifg=#f1fa8c guibg=NONE gui=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE guifg=#525563 guibg=NONE gui=NONE
 hi Number 	ctermfg=137	ctermbg=NONE 	cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
@@ -71,6 +69,13 @@ hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold guifg=#6272a4 guibg=NONE gui=inverse,bold
 hi Type 	ctermfg=68 	ctermbg=NONE 	cterm=italic guifg=#8be9fd guibg=NONE gui=NONE
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline guifg=NONE guibg=NONE gui=underline
+
+" Menu selection {{{
+hi Pmenu 	ctermfg=7 	ctermbg=238 	cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi PmenuSel 	ctermfg=184 	ctermbg=67 	cterm=NONE guifg=NONE guibg=#44475a gui=NONE
+hi PmenuSbar    ctermfg=NONE 	ctermbg=NONE 	cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi PmenuThumb   ctermfg=NONE 	ctermbg=NONE 	cterm=NONE guifg=NONE guibg=NONE gui=NONE
+"}}}
 
 " Diff {{{
 hi DiffAdd 	ctermfg=7 	ctermbg=64 	cterm=bold guifg=#f8f8f2 guibg=#468410 gui=bold
