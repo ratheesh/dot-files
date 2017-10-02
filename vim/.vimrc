@@ -14,11 +14,10 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 " Bootstrap settings {{{
 set nocompatible               " be iMproved
 set hidden
-filetype on                   " required!
+filetype off                  " required!
 "}}}
 
 " Plugins {{{
@@ -53,13 +52,14 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
-" Plug 'oblitum/rainbow'
+Plug 'kshenoy/vim-signature'
+" Plug 'Shougo/neocomplete.vim'
 
 call plug#end()
 "}}}
@@ -185,11 +185,9 @@ let g:ctrlp_custom_ignore = {
  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " }}}
 
-
 " Easymotion {{{
-nmap uu <Plug>(easymotion-s)
+nmap <Leader>j <Plug>(easymotion-s)
 "}}}
-
 
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<tab>"
