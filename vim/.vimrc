@@ -66,7 +66,9 @@ call plug#end()
 
 " Vim vanilla settings {{{
 filetype plugin indent on
-set number
+" set number
+set number relativenumber
+set numberwidth=1
 set tabstop=8
 set showmatch
 set showcmd
@@ -116,6 +118,14 @@ let mapleader = "\<Space>"
 "}}}
 
 " General Config {{{
+" hooks
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+" keybindings
 " nmap <Leader><Leader> :
 imap jj <Esc>
 nnoremap ' `
