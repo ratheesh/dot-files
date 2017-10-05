@@ -50,8 +50,10 @@ Plug 'sjl/gundo.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-buftabline'
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
@@ -111,7 +113,10 @@ set clipboard=unnamed           " Share * register w/ unnamed (system copy/paste
 set encoding=utf-8
 set scrolloff=3 " Keep 3 lines below and above the cursor
 set laststatus=2
+if !has('gui_running')
 set t_Co=256  " Support for 256 colors
+endif
+set noshowmode
 set fillchars="vert:|,fold:-"
 
 let mapleader = "\<Space>"
@@ -166,9 +171,32 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'
 " }}}
+
+" lightline {{{
+let g:lightline = {
+	\ 'colorscheme': 'Dracula',
+      	\ 'active': {
+      	\   'right': [ [ 'lineinfo' ],
+      	\              [ 'percent' ],
+      	\              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
+	\   'left': [ [ 'mode', 'paste' ],
+      	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      	\ 	},
+	\ 'enable': {
+	\ 	'statusline': 1,
+	\ 	'tabline': 1,
+	\ },
+      	\ 'component': {
+      	\   'charvaluehex': '0x%B'
+      	\ },
+	\ 'component_function': {
+      	\   'gitbranch': 'fugitive#head'
+      	\ },
+   	\ }
+"}}}
 
 " Vim-licenses {{{
 let g:licenses_copyright_holders_name = 'Ratheesh <ratheeshreddy@gmail.com>'
