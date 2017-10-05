@@ -30,9 +30,9 @@ hi CursorLine 	ctermbg=234 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi CursorColumn ctermbg=233 			cterm=NONE guifg=NONE guibg=#44475a gui=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=234 	cterm=NONE guifg=NONE guibg=#3d3f49 gui=NONE
 hi LineNr 	ctermfg=60 	ctermbg=233 	cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
-hi CursorLineNr ctermfg=21	ctermbg=7	cterm=bold guifg=#f1fa8c guibg=#44475a gui=NONE
+hi CursorLineNr ctermfg=89	ctermbg=7	cterm=bold guifg=#f1fa8c guibg=#44475a gui=NONE
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#64666d guibg=#64666d gui=bold
-hi MatchParen 	ctermfg=198 	ctermbg=NONE 	cterm=underline,bold guifg=#ff79c6 guibg=NONE gui=underline
+hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold guifg=#ff79c6 guibg=NONE gui=underline
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold guifg=#f8f8f2 guibg=#64666d gui=bold
 hi StatusLineNC ctermfg=7 	ctermbg=236 	cterm=NONE guifg=#f8f8f2 guibg=#64666d gui=NONE
 hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none guifg=#282a36 guibg=#ffb86c gui=none
@@ -62,8 +62,8 @@ hi PreProc 	ctermfg=6 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NON
 hi Special 	ctermfg=7 	ctermbg=NONE 	cterm=NONE guifg=#f8f8f2 guibg=NONE gui=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE guifg=#525563 guibg=NONE gui=NONE
 hi Statement 	ctermfg=95 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
-hi StorageClass ctermfg=27 	ctermbg=NONE 	cterm=NONE guifg=#8be9fd guibg=NONE gui=italic
-hi String 	ctermfg=244 	ctermbg=NONE 	cterm=italic guifg=#f1fa8c guibg=NONE gui=NONE
+hi StorageClass ctermfg=127 	ctermbg=NONE 	cterm=NONE guifg=#8be9fd guibg=NONE gui=italic
+hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic guifg=#f1fa8c guibg=NONE gui=NONE
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE guifg=#ff79c6 guibg=NONE gui=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold guifg=#6272a4 guibg=NONE gui=inverse,bold
@@ -149,9 +149,9 @@ hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 "}}}
 
 " TabLine {{{
-hi TabLineFill  guifg=#333333 guibg=#282a36 gui=none
-hi TabLine      guifg=#666666 guibg=#282a36 gui=none
-hi TabLineSel   guifg=WHITE guibg=#282a36 gui=none
+hi TabLine      ctermfg=244  	ctermbg=236    	cterm=NONE
+hi TabLineFill  ctermfg=246  	ctermbg=8     	cterm=NONE
+hi TabLineSel   ctermfg=231  	ctermbg=60  	cterm=italic
 "}}}
 
 " Elixir {{{
