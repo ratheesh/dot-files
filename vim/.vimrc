@@ -44,6 +44,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'adelarsq/vim-matchit'
 Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 " Plug 'easymotion/vim-easymotion'
@@ -228,6 +229,14 @@ let g:ctrlp_custom_ignore = {
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" }}}
+
+" ctrlp-funky {{{
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_matchtype = 'path'
+let g:ctrlp_funky_syntax_highlight = 1
 " }}}
 
 " Easymotion {{{
