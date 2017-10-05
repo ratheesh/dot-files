@@ -65,6 +65,7 @@ Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'Shougo/neocomplete.vim'
+Plug '~/.vim/local/c_std'
 
 call plug#end()
 "}}}
