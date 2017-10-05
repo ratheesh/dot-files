@@ -46,7 +46,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
@@ -171,6 +171,13 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 endif
+
+" vim-sneak{{{
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+let g:sneak#label = 1
+let g:sneak#s_next = 1
+"}}}
 
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
