@@ -39,7 +39,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-expand-region'
 Plug 'adelarsq/vim-matchit'
 Plug 'justinmk/vim-sneak'
@@ -64,6 +64,9 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'vitalk/vim-shebang'
+" Plug 'ntpeters/vim-airline-colornum'
+" Plug 'sgur/ctrlp-extensions.vim'
 " Plug 'Shougo/neocomplete.vim'
 Plug '~/.vim/local/c_std'
 
@@ -72,6 +75,7 @@ call plug#end()
 
 " Vim vanilla settings {{{
 filetype plugin indent on
+set shortmess+=I
 " set number
 set number relativenumber
 set numberwidth=1
