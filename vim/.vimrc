@@ -86,6 +86,7 @@ set showcmd
 execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
+set nofoldenable    " disable folding
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu
 set wildmode=longest,list
