@@ -42,12 +42,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-expand-region'
 Plug 'adelarsq/vim-matchit'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
+Plug 'd11wtq/ctrlp_bdelete.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
@@ -246,6 +247,10 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 " }}}
+
+" ctrlp_bdelete {{{
+call ctrlp_bdelete#init()
+"}}}
 
 " nerd-commentar {{{
 let g:NERDSpaceDelims = 1
