@@ -52,6 +52,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-repeat'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
@@ -264,6 +265,8 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Easymotion {{{
 nmap <Leader>j <Plug>(easymotion-s)
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1 " US layout
 "}}}
 
 " UltiSnips {{{
