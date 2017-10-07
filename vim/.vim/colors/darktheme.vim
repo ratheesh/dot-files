@@ -52,7 +52,7 @@ hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Function 	ctermfg=65 	ctermbg=NONE 	cterm=NONE
-hi Identifier 	ctermfg=7 	ctermbg=NONE 	cterm=italic
+hi Identifier 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=128 	ctermbg=NONE 	cterm=italic
 hi Label 	ctermfg=137 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
