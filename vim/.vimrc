@@ -58,7 +58,7 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'itchyny/lightline.vim'
-" Plug 'ap/vim-buftabline'
+Plug 'ap/vim-buftabline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
@@ -154,19 +154,19 @@ let mapleader = "\<Space>"
 imap jj <Esc>
 nnoremap ' `
 nnoremap ` '
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>r :CtrlPMRU<CR>
-nnoremap <Leader>m :CtrlPMixed<CR>
+" nnoremap <Leader>o :CtrlP<CR>
+" nnoremap <Leader>b :CtrlPBuffer<CR>
+" nnoremap <Leader>r :CtrlPMRU<CR>
+" nnoremap <Leader>m :CtrlPMixed<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 " nnoremap <Leader>j :
-nmap <Leader><Leader> V
-map <F9> :bprev<cr>
-map <F10> :bnext<cr>
-nmap <Leader>k :bdelete<CR>
-nmap <Leader>\ :nohlsearch<CR>
+" nmap <Leader><Leader> V
+map <F9>  	:bprev<cr>
+map <F10> 	:bnext<cr>
+nmap <Leader>bd :bdelete<CR>
+nmap <Leader>\ 	:nohlsearch<CR>
 " Remember last buffers loaded and file position
 set viminfo='10,\"100,:20,%,n~/.viminfo'
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -190,10 +190,10 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#syntastic#enabled = 0
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'
 " }}}
 
 " lightline {{{
@@ -242,6 +242,11 @@ let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden = 1
 
+nnoremap <Leader>fo :CtrlP<CR>
+nnoremap <Leader>fb :CtrlPBuffer<CR>
+nnoremap <Leader>fr :CtrlPMRU<CR>
+nnoremap <Leader>fm :CtrlPMixed<CR>
+
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -271,6 +276,15 @@ let g_SuperTabDefaultCompletionType="context"
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, {'z': '~/.zshrc'} ]
 " }}}
 
+" vim-gitgutter {{{
+nmap <Leader>hn <Plug>GitGutterNextHunk
+nmap <Leader>hp <Plug>GitGutterPrevHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterRevertHunk
+nmap <Leader>hu <Plug>GitGutterUndoHunk
+nmap <Leader>hP <Plug>GitGutterPreviewHunk
+" }}}
+
 " nerd-commentar {{{
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -282,7 +296,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " Easymotion {{{
-nmap <Leader>j <Plug>(easymotion-s)
+nmap <Leader>jj <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 "}}}
