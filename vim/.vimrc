@@ -39,6 +39,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+" Plug 'mhinz/vim-signify'
 Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-expand-region'
 Plug 'adelarsq/vim-matchit'
@@ -53,10 +54,10 @@ Plug 'edkolev/promptline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-buftabline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
+" Plug 'ap/vim-buftabline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
@@ -67,6 +68,11 @@ Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'vitalk/vim-shebang'
+Plug 'the9ball/ctrlp-gtags'
+Plug 'vim-scripts/taglist.vim'
+Plug 'ervandew/supertab'
+Plug 'vim-scripts/OmniCppComplete'
+Plug 'rking/ag.vim'
 " Plug 'ntpeters/vim-airline-colornum'
 " Plug 'sgur/ctrlp-extensions.vim'
 " Plug 'Shougo/neocomplete.vim'
@@ -129,6 +135,7 @@ set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
 set fillchars="vert:|,fold:-"
+set completeopt+=preview
 
 let mapleader = "\<Space>"
 "}}}
@@ -177,13 +184,15 @@ nnoremap <leader>t :TagbarOpenAutoClose<CR>
 " Vim-airline {{{
 " let base16colorspace=256  " Access colors present in 256 colorspace
 let g:airline_powerline_fonts = 0
-let g:airline_theme='badwolf' " sane ones -> ubaryd sol wombat
+let g:airline_theme='ubaryd' " sane ones -> ubaryd sol wombat
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#syntastic#enabled = 1
 
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 " }}}
 
 " lightline {{{
@@ -204,7 +213,7 @@ let g:lightline = {
       	\   'charvaluehex': '0x%B'
       	\ },
 	\ 'component_function': {
-      	\   'gitbranch': 'fugitive#head'
+	\   'gitbranch': 'fugitive#head'
       	\ },
    	\ }
 "}}}
@@ -251,6 +260,10 @@ let g:ctrlp_funky_syntax_highlight = 1
 
 " ctrlp_bdelete {{{
 call ctrlp_bdelete#init()
+"}}}
+
+" supertab {{{
+let g_SuperTabDefaultCompletionType="context"
 "}}}
 
 " nerd-commentar {{{
