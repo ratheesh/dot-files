@@ -37,6 +37,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
+Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 " Plug 'mhinz/vim-signify'
@@ -265,6 +266,10 @@ call ctrlp_bdelete#init()
 " supertab {{{
 let g_SuperTabDefaultCompletionType="context"
 "}}}
+
+" vim-startify {{{
+let g:startify_bookmarks = [ {'c': '~/.vimrc'}, {'z': '~/.zshrc'} ]
+" }}}
 
 " nerd-commentar {{{
 let g:NERDSpaceDelims = 1
