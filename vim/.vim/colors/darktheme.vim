@@ -149,9 +149,9 @@ hi cssBraces 		ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " TabLine {{{
-hi TabLine      	ctermfg=244  	ctermbg=236    	cterm=NONE
+hi TabLine      	ctermfg=16  	ctermbg=60    	cterm=NONE
 hi TabLineFill  	ctermfg=246  	ctermbg=8     	cterm=NONE
-hi TabLineSel   	ctermfg=231  	ctermbg=60  	cterm=underline,italic
+hi TabLineSel   	ctermfg=21  	ctermbg=7  	cterm=italic
 "}}}
 
 " Elixir {{{
