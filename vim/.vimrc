@@ -225,18 +225,18 @@ let g:licenses_authors_name = 'Ratheesh <ratheeshreddy@gmail.com>'
 let g:licenses_default_commands = ['gplv2', 'mit']
 " }}}
 
-" CtrlP {{{
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
-endif
-
 " vim-sneak{{{
 " map f <Plug>Sneak_f
 " map F <Plug>Sneak_F
 let g:sneak#label = 1
 let g:sneak#s_next = 1
 "}}}
+
+" CtrlP {{{
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
+endif
 
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
