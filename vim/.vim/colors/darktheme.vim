@@ -30,7 +30,7 @@ hi CursorLine 	ctermbg=234 			cterm=NONE
 hi CursorColumn ctermbg=233 			cterm=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=234 	cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=233 	cterm=NONE
-hi CursorLineNr ctermfg=89	ctermbg=7	cterm=bold
+hi CursorLineNr ctermfg=21	ctermbg=180	cterm=bold
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold
