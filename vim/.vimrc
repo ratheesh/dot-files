@@ -68,6 +68,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
 Plug 'the9ball/ctrlp-gtags'
 Plug 'vim-scripts/taglist.vim'
@@ -183,9 +184,8 @@ nnoremap <leader>t :TagbarOpenAutoClose<CR>
 " }}}
 
 " Vim-airline {{{
-" let base16colorspace=256  " Access colors present in 256 colorspace
 let g:airline_powerline_fonts = 0
-let g:airline_theme='ubaryd' " sane ones -> ubaryd sol wombat
+let g:airline_theme='ubaryd' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
