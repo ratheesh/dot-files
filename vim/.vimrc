@@ -166,7 +166,7 @@ map <F10> 	:bnext<cr>
 nmap <Leader>bd :bdelete<CR>
 nmap <Leader>\ 	:nohlsearch<CR>
 " Remember last buffers loaded and file position
-set viminfo='10,\"100,:20,%,n~/.viminfo'
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " }}}
 
