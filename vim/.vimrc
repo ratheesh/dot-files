@@ -156,10 +156,6 @@ let mapleader = "\<Space>"
 imap jj <Esc>
 nnoremap ' `
 nnoremap ` '
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>r :CtrlPMRU<CR>
-nnoremap <Leader>m :CtrlPMixed<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
@@ -239,14 +235,20 @@ if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 endif
 
-let g:ctrlp_map = '<Leader>p'
+" let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden = 1
 
-" nnoremap <Leader>fo :CtrlP<CR>
-" nnoremap <Leader>fb :CtrlPBuffer<CR>
-" nnoremap <Leader>fr :CtrlPMRU<CR>
+nnoremap <Leader>fo :CtrlP<CR>
+nnoremap <Leader>fb :CtrlPBuffer<CR>
+nnoremap <Leader>fr :CtrlPMRU<CR>
+nnoremap <Leader>ft :CtrlPBufTagAll<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
+
+" nnoremap <Leader>o  :CtrlP<CR>
+" nnoremap <Leader>b :CtrlPBuffer<CR>
+" nnoremap <Leader>r  :CtrlPMRU<CR>
+" nnoremap <Leader>m  :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
