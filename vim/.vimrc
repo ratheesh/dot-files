@@ -48,6 +48,16 @@ Plug 'adelarsq/vim-matchit'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'd11wtq/ctrlp_bdelete.vim'
+" Plug 'the9ball/ctrlp-gtags'
+" Plug 'mattn/ctrlp-mark'
+" Plug 'mattn/ctrlp-git'
+" Plug 'imkmf/ctrlp-branches'
+Plug 'thiderman/ctrlp-project'
+Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'thiderman/ctrlp-project'
+Plug 'sgur/ctrlp-extensions.vim'
+Plug 'fisadev/vim-ctrlp-cmdpalette'
+" Plug 'pelodelfuego/vim-swoop'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'easymotion/vim-easymotion'
@@ -70,14 +80,12 @@ Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
-Plug 'the9ball/ctrlp-gtags'
 Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/taglist.vim'
 Plug 'ervandew/supertab'
 Plug 'vim-scripts/OmniCppComplete'
 Plug 'rking/ag.vim'
 " Plug 'ntpeters/vim-airline-colornum'
-" Plug 'sgur/ctrlp-extensions.vim'
 " Plug 'Shougo/neocomplete.vim'
 Plug '~/.vim/local/c_std'
 
@@ -187,10 +195,16 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
 
+" let g:airline#extensions#syntastic#enabled = 0
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+
 " }}}
 
 " lightline {{{
@@ -238,11 +252,13 @@ endif
 " let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra'
 
 nnoremap <Leader>fo :CtrlP<CR>
 nnoremap <Leader>fb :CtrlPBuffer<CR>
 nnoremap <Leader>fr :CtrlPMRU<CR>
-nnoremap <Leader>ft :CtrlPBufTagAll<CR>
+nnoremap <Leader>ft :CtrlPBufTag<CR>
+" nnoremap <Leader>ft :CtrlPBufTagAll<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 " nnoremap <Leader>o  :CtrlP<CR>
@@ -270,6 +286,25 @@ let g:ctrlp_funky_syntax_highlight = 1
 " ctrlp_bdelete {{{
 call ctrlp_bdelete#init()
 "}}}
+
+" vim-ctrlp-tjump {{{
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
+let g:ctrlp_tjump_only_silent = 1
+" }}}
+
+" ctrlp-extensions {{{
+nnoremap <Leader>fy :CtrlPYankring<CR>
+let g:ctrlp_yankring_limit = 100
+let g:ctrlp_yankring_minimum_chars = 2
+" }}}
+
+" vim-swoop {{{
+nmap <Leader>l :call Swoop()<CR>
+vmap <Leader>l :call SwoopSelection()<CR>
+let g:swoopIgnoreCase = 1
+" let g:swoopAutoInsertMode = 0
+" }}}
 
 " supertab {{{
 let g_SuperTabDefaultCompletionType="context"
@@ -322,6 +357,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_reuse_loc_lists= 0
+
+let g:syntastic_python_checkers=['python', 'flake8']
+let g:syntastic_python_flake8_post_args='--ignore=W391'
 " }}}
 
 " rainbow_parenthesis {{{
