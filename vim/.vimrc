@@ -345,6 +345,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " Easymotion {{{
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap <Leader>jj <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
