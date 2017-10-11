@@ -41,7 +41,8 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 " Plug 'mhinz/vim-signify'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'terryma/vim-expand-region'
 Plug 'adelarsq/vim-matchit'
 " Plug 'justinmk/vim-sneak'
@@ -207,6 +208,7 @@ let g:airline#extensions#branch#enabled = 1
 
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 " }}}
 
