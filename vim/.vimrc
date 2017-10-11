@@ -50,6 +50,7 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'd11wtq/ctrlp_bdelete.vim'
 " Plug 'the9ball/ctrlp-gtags'
 " Plug 'mattn/ctrlp-mark'
+Plug 'mattn/ctrlp-register'
 " Plug 'mattn/ctrlp-git'
 " Plug 'imkmf/ctrlp-branches'
 Plug 'thiderman/ctrlp-project'
@@ -57,6 +58,8 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'thiderman/ctrlp-project'
 Plug 'sgur/ctrlp-extensions.vim'
 Plug 'fisadev/vim-ctrlp-cmdpalette'
+Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'DavidEGx/ctrlp-smarttabs'
 " Plug 'pelodelfuego/vim-swoop'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -315,6 +318,14 @@ let g:startify_bookmarks = [ {'c': '~/.vimrc'}, {'z': '~/.zshrc'} ]
 " }}}
 
 " vim-gitgutter {{{
+let g:gitgutter_override_sign_column_highlight = 0
+if exists('&signcolumn')  " Vim 7.4.2201
+	  set signcolumn=yes
+else
+	    let g:gitgutter_sign_column_always = 1
+endif
+autocmd FileType tagbar,nerdtree setlocal signcolumn=no
+
 nmap <Leader>hn <Plug>GitGutterNextHunk
 nmap <Leader>hp <Plug>GitGutterPrevHunk
 nmap <Leader>ha <Plug>GitGutterStageHunk
