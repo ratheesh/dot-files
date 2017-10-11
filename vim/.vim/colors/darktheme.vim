@@ -39,7 +39,7 @@ hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none
 hi Search 	ctermfg=7 	ctermbg=8 	cterm=none
 hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Folded 	ctermfg=61 	ctermbg=235 	cterm=NONE
-hi SignColumn 	ctermfg=246 	ctermbg=235 	cterm=NONE
+hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=NONE
 hi FoldColmun 	ctermfg=246 	ctermbg=235 	cterm=NONE
 hi Normal 	ctermfg=7
 hi Boolean 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
