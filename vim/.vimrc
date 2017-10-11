@@ -61,6 +61,8 @@ Plug 'sgur/ctrlp-extensions.vim'
 Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'DavidEGx/ctrlp-smarttabs'
+" Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'pelodelfuego/vim-swoop'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -163,6 +165,8 @@ let mapleader = "\<Space>"
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
+au BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
+
 " keybindings
 " nmap <Leader><Leader> :
 imap jj <Esc>
@@ -249,10 +253,21 @@ let g:sneak#s_next = 1
 "}}}
 
 " CtrlP {{{
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'undo', 'line',
+	\ 'changes', 'mixed']
+
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 endif
+
+" if executable('fzf')
+	" nnoremap <Leader>ff :FZF<CR>
+" endif
+
+" let g:ctrlp_match_window = 'min:4,max:20,results=100'
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
@@ -322,9 +337,9 @@ let g:startify_bookmarks = [ {'c': '~/.vimrc'}, {'z': '~/.zshrc'} ]
 " vim-gitgutter {{{
 let g:gitgutter_override_sign_column_highlight = 0
 if exists('&signcolumn')  " Vim 7.4.2201
-	  set signcolumn=yes
+	set signcolumn=yes
 else
-	    let g:gitgutter_sign_column_always = 1
+	let g:gitgutter_sign_column_always = 1
 endif
 autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
@@ -360,6 +375,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:indentLine_faster=1
 "}}}
+
+" ale {{{
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed='normal'
+" }}}
 
 " Syntastic {{{
 " set statusline+=%#warningmsg#
