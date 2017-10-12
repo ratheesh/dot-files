@@ -85,7 +85,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'https://github.com/adelarsq/vim-matchit'
+Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
 Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/taglist.vim'
@@ -263,12 +263,13 @@ if executable('ag')
 endif
 
 " let g:ctrlp_by_filename = 0
+" let g:ctrlp_follow_symlinks = 0
 
 " if executable('fzf')
 	" nnoremap <Leader>ff :FZF<CR>
 " endif
 
-" let g:ctrlp_match_window = 'min:4,max:20,results=100'
+let g:ctrlp_match_window = 'min:4,max:20,results=50'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
@@ -330,8 +331,8 @@ let g:swoopIgnoreCase = 1
 " }}}
 
 " vim-ctrlp-ag {{{
-nnoremap <c-f> :CtrlPag<cr>
-vnoremap <c-f> :CtrlPagVisual<cr>
+" nnoremap <c-f> :CtrlPag<cr>
+" vnoremap <c-f> :CtrlPagVisual<cr>
 nnoremap <leader>ca :CtrlPagLocate
 nnoremap <leader>cp :CtrlPagPrevious<cr>
 let g:ctrlp_ag_ignores = '--ignore .git
