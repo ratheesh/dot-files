@@ -394,6 +394,7 @@ let g:indentLine_faster=1
 " ale {{{
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed='normal'
+autocmd BufEnter ControlP let b:ale_enabled = 0
 " }}}
 
 " Syntastic {{{
