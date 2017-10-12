@@ -255,7 +255,7 @@ let g:sneak#s_next = 1
 
 " CtrlP {{{
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'undo', 'line',
-	\ 'changes', 'mixed']
+	\ 'changes', 'mixed', 'cscope']
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
@@ -269,7 +269,7 @@ endif
 	" nnoremap <Leader>ff :FZF<CR>
 " endif
 
-let g:ctrlp_match_window = 'min:4,max:20,results=50'
+let g:ctrlp_match_window = 'min:3,max:10,results:100'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
@@ -303,8 +303,9 @@ let g:ctrlp_custom_ignore = {
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_matchtype = 'path'
+let g:ctrlp_funky_matchtype = 'line'
 let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_funky_nolim = 1
 " }}}
 
 " ctrlp_bdelete {{{
