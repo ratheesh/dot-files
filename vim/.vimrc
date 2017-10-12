@@ -63,6 +63,7 @@ Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'DavidEGx/ctrlp-smarttabs'
 " Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'lokikl/vim-ctrlp-ag'
 " Plug 'pelodelfuego/vim-swoop'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -261,6 +262,8 @@ if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 endif
 
+" let g:ctrlp_by_filename = 0
+
 " if executable('fzf')
 	" nnoremap <Leader>ff :FZF<CR>
 " endif
@@ -324,6 +327,17 @@ nmap <Leader>l :call Swoop()<CR>
 vmap <Leader>l :call SwoopSelection()<CR>
 let g:swoopIgnoreCase = 1
 " let g:swoopAutoInsertMode = 0
+" }}}
+
+" vim-ctrlp-ag {{{
+nnoremap <c-f> :CtrlPag<cr>
+vnoremap <c-f> :CtrlPagVisual<cr>
+nnoremap <leader>ca :CtrlPagLocate
+nnoremap <leader>cp :CtrlPagPrevious<cr>
+let g:ctrlp_ag_ignores = '--ignore .git
+    \ --ignore "deps/*"
+    \ --ignore "_build/*"
+    \ --ignore "node_modules/*"'
 " }}}
 
 " supertab {{{
