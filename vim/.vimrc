@@ -182,6 +182,7 @@ map <F9>  	:bprev<cr>
 map <F10> 	:bnext<cr>
 nmap <Leader>bd :bdelete<CR>
 nmap <Leader>\ 	:nohlsearch<CR>
+nmap <Leader>bh :Startify<CR>
 " Remember last buffers loaded and file position
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
