@@ -261,6 +261,8 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'undo', 'line',
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
+else
+	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 endif
 
 " let g:ctrlp_by_filename = 0
@@ -270,7 +272,7 @@ endif
 	" nnoremap <Leader>ff :FZF<CR>
 " endif
 
-let g:ctrlp_match_window = 'min:3,max:10,results:100'
+let g:ctrlp_match_window = 'min:1,max:10,results:100'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
@@ -278,12 +280,13 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['.ctrlp']
 
 nnoremap <Leader>fo :CtrlP<CR>
 nnoremap <Leader>fb :CtrlPBuffer<CR>
 nnoremap <Leader>fr :CtrlPMRU<CR>
 nnoremap <Leader>ft :CtrlPBufTag<CR>
-" nnoremap <Leader>ft :CtrlPBufTagAll<CR>
+nnoremap <Leader>fT :CtrlPBufTagAll<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 " nnoremap <Leader>o  :CtrlP<CR>
