@@ -23,6 +23,7 @@ endif
 let g:colors_name = "darktheme"
 
 " syntax match Operator "[-+&|<>=!\/~:*%&^?]"
+syn match Braces display '[{}()\[\]]'
 
 hi Cursor 	ctermfg=NONE 	ctermbg=NONE 	cterm=inverse
 hi Visual 	ctermfg=NONE 	ctermbg=237	cterm=NONE
@@ -33,6 +34,8 @@ hi LineNr 	ctermfg=60 	ctermbg=233 	cterm=NONE
 hi CursorLineNr ctermfg=88	ctermbg=179	cterm=bold
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
+hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
+hi Braces 	ctermfg=NONE 	ctermbg=NONE 	cterm=bold,underline
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi StatusLineNC ctermfg=7 	ctermbg=236 	cterm=NONE
 hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none
@@ -51,23 +54,23 @@ hi Define 	ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi Function 	ctermfg=65 	ctermbg=NONE 	cterm=NONE
-hi Identifier 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
-hi Keyword 	ctermfg=128 	ctermbg=NONE 	cterm=italic
+hi Function 	ctermfg=68 	ctermbg=NONE 	cterm=NONE
+hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
+hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Label 	ctermfg=137 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
-hi Number 	ctermfg=137	ctermbg=NONE 	cterm=NONE
+hi Number 	ctermfg=9	ctermbg=NONE 	cterm=NONE
 hi Operator 	ctermfg=59 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=6 	ctermbg=NONE 	cterm=NONE
 hi Special 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
 hi Statement 	ctermfg=95 	ctermbg=NONE 	cterm=NONE
-hi StorageClass ctermfg=127 	ctermbg=NONE 	cterm=NONE
+hi StorageClass ctermfg=65 	ctermbg=NONE 	cterm=NONE
 hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold
-hi Type 	ctermfg=68 	ctermbg=NONE 	cterm=italic
+hi Type 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline
 
 " Menu selection {{{
@@ -151,7 +154,7 @@ hi cssBraces 		ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 " TabLine {{{
 hi TabLine      	ctermfg=248  	ctermbg=8    	cterm=NONE
 hi TabLineFill  	ctermfg=246  	ctermbg=8     	cterm=NONE
-hi TabLineSel   	ctermfg=88  	ctermbg=181  	cterm=italic
+hi TabLineSel   	ctermfg=16  	ctermbg=181  	cterm=bold,italic
 "}}}
 
 " Elixir {{{
