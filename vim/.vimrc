@@ -300,7 +300,6 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\v\.(exe|so|dll)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
- let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " }}}
 
 " ctrlp-funky {{{
@@ -325,6 +324,8 @@ let g:ctrlp_tjump_only_silent = 1
 " ctrlp-extensions {{{
 nnoremap <Leader>fy :CtrlPYankring<CR>
 let g:ctrlp_yankring_limit = 100
+let g:ctrlp_yankring_highlight = 1
+let g:ctrlp_yankring_use_textchanged = 1
 let g:ctrlp_yankring_minimum_chars = 2
 " }}}
 
@@ -376,7 +377,7 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDAltDelims_java = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCustomDelimiters = { 'c': { 'left': '/*','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " }}}
@@ -400,6 +401,7 @@ let g:indentLine_faster=1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed='normal'
 autocmd BufEnter ControlP let b:ale_enabled = 0
+autocmd BufEnter ControlP set nonumber
 " }}}
 
 " Syntastic {{{
@@ -419,22 +421,22 @@ let g:syntastic_python_flake8_post_args='--ignore=W391'
 
 " rainbow_parenthesis {{{
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
+    \ [178,     'RoyalBlue3' 	],
+    \ [162,    	'SeaGreen3' 	],
+    \ [12,    	'DarkOrchid3' 	],
+    \ [64,   	'firebrick3' 	],
+    \ [93,    	'RoyalBlue3' 	],
+    \ [208,     'SeaGreen3' 	],
+    \ [126, 	'DarkOrchid3' 	],
+    \ [94,      'firebrick3' 	],
+    \ [9,       'RoyalBlue3' 	],
+    \ [2,       'SeaGreen3' 	],
+    \ [3, 	'DarkOrchid3' 	],
+    \ [5,    	'firebrick3' 	],
+    \ [6,   	'RoyalBlue3' 	],
+    \ [127, 	'SeaGreen3' 	],
+    \ [132,     'DarkOrchid3' 	],
+    \ [12,      'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
