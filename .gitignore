@@ -4,6 +4,8 @@
 org-clock-save.el
 *.dat
 **/ido*
+tags
+TAGS
 *bookmarks*
 *auto-save-list*
 **/.emacs.d/elpa
