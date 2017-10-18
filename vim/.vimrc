@@ -154,6 +154,9 @@ endif
 set noshowmode
 set fillchars="vert:|,fold:-"
 set completeopt+=preview
+set cscopetag
+
+" let python_highlight_all=1
 
 let mapleader = "\<Space>"
 "}}}
@@ -177,12 +180,13 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 " nnoremap <Leader>j :
-" nmap <Leader><Leader> V
+nmap <Leader><Leader> V
 map <F9>  	:bprev<cr>
 map <F10> 	:bnext<cr>
 nmap <Leader>bd :bdelete<CR>
 nmap <Leader>\ 	:nohlsearch<CR>
 nmap <Leader>bh :Startify<CR>
+nmap <Leader>bb :b#<CR>
 " Remember last buffers loaded and file position
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -470,5 +474,10 @@ nmap <leader>y :YRShow<cr>
 " put the yankring_history file in ~/.backup
 " let g:yankring_history_dir = '~/.backup'
 " }}}
+
+
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "End of File
