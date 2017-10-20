@@ -42,57 +42,83 @@ hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none
 hi Search 	ctermfg=7 	ctermbg=8 	cterm=none
 hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Folded 	ctermfg=61 	ctermbg=235 	cterm=NONE
-hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=NONE
+hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=bold
 hi FoldColmun 	ctermfg=246 	ctermbg=235 	cterm=NONE
 hi Normal 	ctermfg=7
 hi Boolean 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Character 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
-hi Comment 	ctermfg=243 	ctermbg=NONE 	cterm=italic
+hi Comment 	ctermfg=240 	ctermbg=NONE 	cterm=italic
 hi Conditional 	ctermfg=25 	ctermbg=NONE 	cterm=italic
 hi Constant 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi Define 	ctermfg=212 	ctermbg=NONE 	cterm=NONE
+hi Define 	ctermfg=127 	ctermbg=NONE 	cterm=NONE
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Function 	ctermfg=68 	ctermbg=NONE 	cterm=NONE
 hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
-hi Label 	ctermfg=137 	ctermbg=NONE 	cterm=NONE
+hi Label 	ctermfg=98 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
-hi Number 	ctermfg=9	ctermbg=NONE 	cterm=NONE
-hi Operator 	ctermfg=59 	ctermbg=NONE 	cterm=bold
-hi PreProc 	ctermfg=6 	ctermbg=NONE 	cterm=NONE
-hi Special 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi Number 	ctermfg=107	ctermbg=NONE 	cterm=NONE
+hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=bold
+hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
+hi Special 	ctermfg=28 	ctermbg=NONE 	cterm=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
-hi Statement 	ctermfg=95 	ctermbg=NONE 	cterm=NONE
+hi Statement 	ctermfg=55  	ctermbg=NONE 	cterm=NONE
 hi StorageClass ctermfg=65 	ctermbg=NONE 	cterm=NONE
 hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold
+hi level15      ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Type 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline
 
+" spelling {{{
+hi SpellBad  	ctermbg=NONE	cterm=underline
+hi SpellCap  	ctermbg=NONE 	cterm=underline
+hi SpellLocal 	ctermbg=NONE	cterm=underline
+hi SpellRare 	ctermbg=NONE	cterm=underline
+" }}}
+
+" C/C++ {{{
+hi cCommentDelim 	ctermfg=243 	ctermbg=NONE 	cterm=bold
+hi cRepeat 		ctermfg=58 	ctermbg=NONE 	cterm=NONE
+" }}}
+
+" git-gutter {{{
+hi GitGutterAdd 	ctermfg=26 	ctermbg=234 	cterm=bold
+hi GitGutterChange 	ctermfg=65 	ctermbg=234 	cterm=bold
+hi GitGutterDelete 	ctermfg=196 	ctermbg=234 	cterm=bold
+hi GitGutterChangeDelete ctermfg=94 	ctermbg=234 	cterm=bold
+" }}}
+
+" CtrlP {{{
+hi CtrlPMatch 		ctermfg=6 	ctermbg=NONE 	cterm=NONE
+hi CtrlPPrtText   	ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi CtrlPLinePre     	ctermfg=197 	ctermbg=NONE 	cterm=bold
+" }}}
+
 " Menu selection {{{
-hi Pmenu 	ctermfg=7 	ctermbg=238 	cterm=NONE
-hi PmenuSel 	ctermfg=184 	ctermbg=67 	cterm=NONE
-hi PmenuSbar    ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi PmenuThumb   ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi Pmenu 		ctermfg=7 	ctermbg=238 	cterm=NONE
+hi PmenuSel 		ctermfg=184 	ctermbg=67 	cterm=NONE
+hi PmenuSbar    	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi PmenuThumb   	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " Diff {{{
-hi DiffAdd 	ctermfg=7 	ctermbg=64 	cterm=bold
-hi DiffDelete 	ctermfg=88 	ctermbg=NONE 	cterm=NONE
-hi DiffChange 	ctermfg=7 	ctermbg=23 	cterm=NONE
-hi DiffText 	ctermfg=7 	ctermbg=24 	cterm=bold
+hi DiffAdd 		ctermfg=7 	ctermbg=64 	cterm=bold
+hi DiffDelete 		ctermfg=88 	ctermbg=NONE 	cterm=NONE
+hi DiffChange 		ctermfg=7 	ctermbg=23 	cterm=NONE
+hi DiffText 		ctermfg=7 	ctermbg=24 	cterm=bold
 "}}}
 
 " Ruby {{{
-hi rubyClass 	ctermfg=212 	ctermbg=NONE 	cterm=NONE
-hi rubyFunction ctermfg=84 	ctermbg=NONE 	cterm=NONE
+hi rubyClass 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
+hi rubyFunction 	ctermfg=84 	ctermbg=NONE 	cterm=NONE
 hi rubyInterpolationDelimiter ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi rubySymbol 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi rubyConstant ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi rubySymbol 		ctermfg=141 	ctermbg=NONE 	cterm=NONE
+hi rubyConstant 	ctermfg=81 	ctermbg=NONE 	cterm=NONE
 hi rubyStringDelimiter 	ctermfg=228 	ctermbg=NONE 	cterm=NONE
 hi rubyBlockParameter 	ctermfg=215 	ctermbg=NONE 	cterm=NONE
 hi rubyInstanceVariable ctermfg=203 	ctermbg=NONE 	cterm=NONE
@@ -168,7 +194,7 @@ hi elixirStringDelimiter ctermfg=228 	ctermbg=NONE 	cterm=NONE
 " Vim Script {{{
 hi vimGroupName 	ctermfg=81 	ctermbg=NONE 	cterm=NONE
 hi vimGroup 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
-hi vimOption 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi vimOption 		ctermfg=68 	ctermbg=NONE 	cterm=NONE
 hi vimHiCtermFgBg 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi vimHiGuiFgBg 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 " }}}
