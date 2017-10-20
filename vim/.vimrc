@@ -87,6 +87,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
 Plug 'tpope/vim-endwise'
@@ -112,6 +113,7 @@ set number relativenumber
 set numberwidth=1
 set tabstop=8
 set showmatch
+set matchtime=1
 set showcmd
 " set colorcolumn=81
 execute "set colorcolumn=" . join(range(81,335), ',')
@@ -160,6 +162,26 @@ set noshowmode
 set fillchars="vert:|,fold:-"
 set completeopt+=preview
 set cscopetag
+" $ for change command instead of deleting word then insert
+set cpoptions+=$
+
+" Spell checking
+setglobal spell spelllang=en_us
+" By default spelling is off...
+" set nospell
+" ...but enable it for the English text files I use a lot.
+au BufRead,BufNewFile,BufWrite *.txt,*.tex,*.latex set spell
+
+" Skip the splash screen
+set shortmess+=I
+set novb
+set ttyfast
+set formatoptions+=1
+set lbr
+
+" Double slash -> Case insensitive search
+" map // /\c
+" map ?? ?\c
 
 " let python_highlight_all=1
 
@@ -373,6 +395,8 @@ else
 endif
 autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
+let g:gitgutter_sign_modified = '='
+
 nmap <Leader>hn <Plug>GitGutterNextHunk
 nmap <Leader>hp <Plug>GitGutterPrevHunk
 nmap <Leader>ha <Plug>GitGutterStageHunk
@@ -408,7 +432,7 @@ let g:indentLine_faster=1
 
 " ale {{{
 let g:ale_sign_column_always = 1
-let g:ale_lint_on_text_changed='normal'
+let g:ale_lint_on_text_changed='never'
 autocmd BufEnter ControlP let b:ale_enabled = 0
 autocmd BufEnter ControlP set nonumber
 " }}}
@@ -429,23 +453,24 @@ let g:syntastic_python_flake8_post_args='--ignore=W391'
 " }}}
 
 " rainbow_parenthesis {{{
+" ((((((((((((((((()))))))))))))))))
 let g:rbpt_colorpairs = [
     \ [178,     'RoyalBlue3' 	],
     \ [162,    	'SeaGreen3' 	],
     \ [12,    	'DarkOrchid3' 	],
-    \ [64,   	'firebrick3' 	],
+    \ [132,   	'firebrick3' 	],
     \ [93,    	'RoyalBlue3' 	],
     \ [208,     'SeaGreen3' 	],
     \ [126, 	'DarkOrchid3' 	],
     \ [94,      'firebrick3' 	],
-    \ [9,       'RoyalBlue3' 	],
-    \ [2,       'SeaGreen3' 	],
-    \ [3, 	'DarkOrchid3' 	],
-    \ [5,    	'firebrick3' 	],
-    \ [6,   	'RoyalBlue3' 	],
+    \ [198,       'RoyalBlue3' 	],
+    \ [34,       'SeaGreen3' 	],
+    \ [142, 	'DarkOrchid3' 	],
+    \ [90,    	'firebrick3' 	],
+    \ [94,   	'RoyalBlue3' 	],
     \ [127, 	'SeaGreen3' 	],
-    \ [132,     'DarkOrchid3' 	],
-    \ [12,      'firebrick3' 	],
+    \ [179,     'DarkOrchid3' 	],
+    \ [28,      'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
