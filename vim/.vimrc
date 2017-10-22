@@ -463,14 +463,14 @@ let g:rbpt_colorpairs = [
     \ [208,     'SeaGreen3' 	],
     \ [126, 	'DarkOrchid3' 	],
     \ [94,      'firebrick3' 	],
-    \ [198,       'RoyalBlue3' 	],
+    \ [198,     'RoyalBlue3' 	],
     \ [34,       'SeaGreen3' 	],
     \ [142, 	'DarkOrchid3' 	],
     \ [90,    	'firebrick3' 	],
-    \ [94,   	'RoyalBlue3' 	],
+    \ [28,   	'RoyalBlue3' 	],
     \ [127, 	'SeaGreen3' 	],
-    \ [179,     'DarkOrchid3' 	],
-    \ [28,      'firebrick3' 	],
+    \ [142,     'DarkOrchid3' 	],
+    \ [25,      'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
