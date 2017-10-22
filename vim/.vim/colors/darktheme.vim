@@ -46,7 +46,7 @@ hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=bold
 hi FoldColmun 	ctermfg=246 	ctermbg=235 	cterm=NONE
 hi Normal 	ctermfg=7
 hi Boolean 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi Character 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
+hi Character 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
 hi Comment 	ctermfg=240 	ctermbg=NONE 	cterm=italic
 hi Conditional 	ctermfg=25 	ctermbg=NONE 	cterm=italic
 hi Constant 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
@@ -54,23 +54,25 @@ hi Define 	ctermfg=127 	ctermbg=NONE 	cterm=NONE
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi Function 	ctermfg=68 	ctermbg=NONE 	cterm=NONE
+hi Function 	ctermfg=67 	ctermbg=NONE 	cterm=NONE
 hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
-hi Label 	ctermfg=98 	ctermbg=NONE 	cterm=NONE
+hi Label 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
-hi Number 	ctermfg=107	ctermbg=NONE 	cterm=NONE
-hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=bold
+hi Number 	ctermfg=60	ctermbg=NONE 	cterm=NONE
+hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=NONE
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
 hi Special 	ctermfg=28 	ctermbg=NONE 	cterm=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
-hi Statement 	ctermfg=55  	ctermbg=NONE 	cterm=NONE
+hi Statement 	ctermfg=93  	ctermbg=NONE 	cterm=NONE
 hi StorageClass ctermfg=65 	ctermbg=NONE 	cterm=NONE
 hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold
-hi level15      ctermfg=60 	ctermbg=NONE 	cterm=italic
+hi level14      ctermfg=125 	ctermbg=NONE 	cterm=NONE
+hi level15      ctermfg=142 	ctermbg=NONE 	cterm=NONE
+hi level16      ctermfg=25 	ctermbg=NONE 	cterm=NONE
 hi Type 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline
 
@@ -83,7 +85,13 @@ hi SpellRare 	ctermbg=NONE	cterm=underline
 
 " C/C++ {{{
 hi cCommentDelim 	ctermfg=243 	ctermbg=NONE 	cterm=bold
-hi cRepeat 		ctermfg=58 	ctermbg=NONE 	cterm=NONE
+hi cRepeat 		ctermfg=95 	ctermbg=NONE 	cterm=NONE
+hi cPPIncludeFile	ctermfg=65 	ctermbg=NONE 	cterm=NONE
+hi cInclude		ctermfg=65 	ctermbg=NONE 	cterm=NONE
+" }}}
+
+" dts-mode {{{
+hi dtsCellProperty	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 " }}}
 
 " git-gutter {{{
