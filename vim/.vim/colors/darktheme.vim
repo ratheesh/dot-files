@@ -47,7 +47,7 @@ hi FoldColmun 	ctermfg=246 	ctermbg=235 	cterm=NONE
 hi Normal 	ctermfg=7
 hi Boolean 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Character 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
-hi Comment 	ctermfg=240 	ctermbg=NONE 	cterm=italic
+hi Comment 	ctermfg=242 	ctermbg=NONE 	cterm=italic
 hi Conditional 	ctermfg=25 	ctermbg=NONE 	cterm=italic
 hi Constant 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi Define 	ctermfg=127 	ctermbg=NONE 	cterm=NONE
@@ -60,7 +60,7 @@ hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Label 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi Number 	ctermfg=60	ctermbg=NONE 	cterm=NONE
-hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
 hi Special 	ctermfg=28 	ctermbg=NONE 	cterm=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
@@ -70,9 +70,12 @@ hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold
+hi level11      ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi level12      ctermfg=5 	ctermbg=NONE 	cterm=NONE
+hi level13      ctermfg=129 	ctermbg=NONE 	cterm=NONE
 hi level14      ctermfg=125 	ctermbg=NONE 	cterm=NONE
-hi level15      ctermfg=142 	ctermbg=NONE 	cterm=NONE
-hi level16      ctermfg=25 	ctermbg=NONE 	cterm=NONE
+hi level15      ctermfg=25 	ctermbg=NONE 	cterm=NONE
+hi level16      ctermfg=142 	ctermbg=NONE 	cterm=NONE
 hi Type 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline
 
@@ -88,6 +91,13 @@ hi cCommentDelim 	ctermfg=243 	ctermbg=NONE 	cterm=bold
 hi cRepeat 		ctermfg=95 	ctermbg=NONE 	cterm=NONE
 hi cPPIncludeFile	ctermfg=65 	ctermbg=NONE 	cterm=NONE
 hi cInclude		ctermfg=65 	ctermbg=NONE 	cterm=NONE
+hi cCommentError	ctermfg=240 	ctermbg=NONE 	cterm=italic
+hi cGNUConstant		ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi cCharacter		ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
+hi cMathOperator	ctermfg=94	ctermbg=NONE 	cterm=bold
+hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=bold
+hi cPointerOperator 	ctermfg=142 	ctermbg=NONE 	cterm=bold
 " }}}
 
 " dts-mode {{{
@@ -141,7 +151,7 @@ hi rubyOperator 	ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi rubyException 	ctermfg=212	ctermbg=NONE 	cterm=NONE
 hi rubyPseudoVariable 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi rubyRailsUserClass 	ctermfg=81 	ctermbg=NONE 	cterm=NONE
-hi rubyRailsARAssociationMethod 	ctermfg=117 	ctermbg=NONE 	cterm=NONE
+hi rubyRailsARAssociationMethod	ctermfg=117 	ctermbg=NONE 	cterm=NONE
 hi rubyRailsARMethod 	ctermfg=117 	ctermbg=NONE 	cterm=NONE
 hi rubyRailsRenderMethod ctermfg=117 	ctermbg=NONE 	cterm=NONE
 hi rubyRailsMethod 	ctermfg=117 	ctermbg=NONE 	cterm=NONE
@@ -192,11 +202,11 @@ hi TabLineSel   	ctermfg=16  	ctermbg=181  	cterm=bold,italic
 "}}}
 
 " Elixir {{{
-hi elixirAtom 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
-hi elixirModuleDeclaration ctermfg=81 	ctermbg=NONE 	cterm=NONE
-hi elixirAlias 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi elixirAtom 			ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi elixirModuleDeclaration 	ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi elixirAlias 			ctermfg=81 	ctermbg=NONE 	cterm=NONE
 hi elixirInterpolationDelimiter ctermfg=84	ctermbg=NONE 	cterm=NONE
-hi elixirStringDelimiter ctermfg=228 	ctermbg=NONE 	cterm=NONE
+hi elixirStringDelimiter 	ctermfg=228 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " Vim Script {{{
@@ -205,6 +215,9 @@ hi vimGroup 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
 hi vimOption 		ctermfg=68 	ctermbg=NONE 	cterm=NONE
 hi vimHiCtermFgBg 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi vimHiGuiFgBg 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi vimLet 		ctermfg=12 	ctermbg=NONE 	cterm=NONE
+" hi vimHighlight		ctermfg=12 	ctermbg=NONE 	cterm=NONE
+hi vimAutoCmd		ctermfg=12 	ctermbg=NONE 	cterm=NONE
 " }}}
 
 " Markdown: {{{
