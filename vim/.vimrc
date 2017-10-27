@@ -66,11 +66,16 @@ Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'lokikl/vim-ctrlp-ag'
 " Plug 'ivan-cukic/vim-ctrlp-cscope'
 " Plug 'pelodelfuego/vim-swoop'
+Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yggdroot/leaderf'
+Plug 'gcavallanti/vim-noscrollbar'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'Yggdroot/indentLine'
+Plug 'thaerkh/vim-indentguides'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
@@ -383,7 +388,9 @@ let g_SuperTabDefaultCompletionType="context"
 "}}}
 
 " vim-startify {{{
-let g:startify_bookmarks = [ {'c': '~/.vimrc'}, {'z': '~/.zshrc'} ]
+let g:startify_bookmarks = [ 	{'c': '~/.vimrc'},
+			\	{'z': '~/.zshrc'},
+			\	{'t': '~/.tmux.conf'}]
 " }}}
 
 " vim-gitgutter {{{
@@ -467,8 +474,8 @@ let g:rbpt_colorpairs = [
     \ [34,       'SeaGreen3' 	],
     \ [142, 	'DarkOrchid3' 	],
     \ [90,    	'firebrick3' 	],
-    \ [28,   	'RoyalBlue3' 	],
-    \ [127, 	'SeaGreen3' 	],
+    \ [127,   	'RoyalBlue3' 	],
+    \ [28, 	'SeaGreen3' 	],
     \ [142,     'DarkOrchid3' 	],
     \ [25,      'firebrick3' 	],
     \ ]
@@ -505,9 +512,17 @@ nmap <leader>y :YRShow<cr>
 " let g:yankring_history_dir = '~/.backup'
 " }}}
 
+" vim-indent-guide {{{
+let g:indentguides_ignorelist = ['text', 'vim']
+let g:indentguides_spacechar = '┆'
+let g:indentguides_tabchar = '¦'
+let g:indentguides_firstlevel = 0
+" }}}
 
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" set listchars=tab:\|\
+" set list
 "End of File
