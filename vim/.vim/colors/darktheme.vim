@@ -72,7 +72,7 @@ hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold
 hi level11      ctermfg=60 	ctermbg=NONE 	cterm=NONE
 hi level12      ctermfg=5 	ctermbg=NONE 	cterm=NONE
-hi level13      ctermfg=129 	ctermbg=NONE 	cterm=NONE
+hi level13      ctermfg=25 	ctermbg=NONE 	cterm=NONE
 hi level14      ctermfg=125 	ctermbg=NONE 	cterm=NONE
 hi level15      ctermfg=25 	ctermbg=NONE 	cterm=NONE
 hi level16      ctermfg=142 	ctermbg=NONE 	cterm=NONE
@@ -97,7 +97,7 @@ hi cCharacter		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi cMathOperator	ctermfg=94	ctermbg=NONE 	cterm=bold
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=bold
-hi cPointerOperator 	ctermfg=142 	ctermbg=NONE 	cterm=bold
+hi cPointerOperator 	ctermfg=127 	ctermbg=NONE 	cterm=bold
 " }}}
 
 " dts-mode {{{
