@@ -82,7 +82,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
-" Plug 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
 " Plug 'rhysd/clever-f.vim'
 Plug 'WolfgangMehner/c-support'
 Plug 'SirVer/ultisnips'
@@ -519,6 +519,12 @@ let g:indentguides_ignorelist = ['text', 'vim']
 let g:indentguides_spacechar = '┆'
 let g:indentguides_tabchar = '¦'
 let g:indentguides_firstlevel = 0
+" }}}
+
+" quick-scope {{{
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_first_occurrence_highlight_color = 155
+let g:qs_second_occurrence_highlight_color = 81
 " }}}
 
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
