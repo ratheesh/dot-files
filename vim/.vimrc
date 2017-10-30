@@ -56,19 +56,19 @@ Plug 'mattn/ctrlp-register'
 " Plug 'imkmf/ctrlp-branches'
 Plug 'thiderman/ctrlp-project'
 Plug 'ivalkeen/vim-ctrlp-tjump'
-Plug 'thiderman/ctrlp-project'
-Plug 'sgur/ctrlp-extensions.vim'
-Plug 'fisadev/vim-ctrlp-cmdpalette'
+" Plug 'thiderman/ctrlp-project'
+" Plug 'sgur/ctrlp-extensions.vim'
+" Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'DavidEGx/ctrlp-smarttabs'
+" Plug 'DavidEGx/ctrlp-smarttabs'
 " Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'lokikl/vim-ctrlp-ag'
-" Plug 'ivan-cukic/vim-ctrlp-cscope'
+" Plug 'lokikl/vim-ctrlp-ag'
+Plug 'ivan-cukic/vim-ctrlp-cscope'
 " Plug 'pelodelfuego/vim-swoop'
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 " Plug 'yggdroot/leaderf'
-Plug 'gcavallanti/vim-noscrollbar'
+" Plug 'gcavallanti/vim-noscrollbar'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'easymotion/vim-easymotion'
@@ -82,6 +82,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
+" Plug 'unblevable/quick-scope'
+" Plug 'rhysd/clever-f.vim'
 Plug 'WolfgangMehner/c-support'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -92,7 +94,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'tpope/vim-characterize'
+" Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
 Plug 'tpope/vim-endwise'
@@ -474,9 +476,9 @@ let g:rbpt_colorpairs = [
     \ [34,       'SeaGreen3' 	],
     \ [142, 	'DarkOrchid3' 	],
     \ [90,    	'firebrick3' 	],
-    \ [127,   	'RoyalBlue3' 	],
-    \ [28, 	'SeaGreen3' 	],
-    \ [142,     'DarkOrchid3' 	],
+    \ [28,   	'RoyalBlue3' 	],
+    \ [5, 	'SeaGreen3' 	],
+    \ [58,     'DarkOrchid3' 	],
     \ [25,      'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
