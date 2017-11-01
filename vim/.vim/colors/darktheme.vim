@@ -112,7 +112,7 @@ hi GitGutterChangeDelete ctermfg=94 	ctermbg=234 	cterm=bold
 " }}}
 
 " CtrlP {{{
-hi CtrlPMatch 		ctermfg=6 	ctermbg=NONE 	cterm=NONE
+hi CtrlPMatch 		ctermfg=25 	ctermbg=NONE 	cterm=NONE
 hi CtrlPPrtText   	ctermfg=60 	ctermbg=NONE 	cterm=NONE
 hi CtrlPLinePre     	ctermfg=197 	ctermbg=NONE 	cterm=bold
 " }}}

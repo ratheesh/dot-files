@@ -92,7 +92,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'antoyo/vim-licenses'
-Plug 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
@@ -197,6 +198,7 @@ let mapleader = "\<Space>"
 
 " General Config {{{
 " hooks
+" Relative linenumbers disabled in insertmode
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -300,6 +302,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
 else
+	set grepprg=ag\ --nogroup\ --nocolor
 	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 endif
 
@@ -312,7 +315,9 @@ endif
 
 let g:ctrlp_match_window = 'min:1,max:10,results:100'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" let g:ctrlp_match_current_file = 0
 
 " let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPBuffer'
@@ -525,6 +530,25 @@ let g:indentguides_firstlevel = 0
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_first_occurrence_highlight_color = 155
 let g:qs_second_occurrence_highlight_color = 81
+" }}}
+
+" vim-bookmarks {{{
+highlight BookmarkSign ctermbg=234 ctermfg=160
+" highlight BookmarkLine ctermbg=194 ctermfg=NONE
+let g:bookmark_sign = '♥'
+" let g:bookmark_highlight_lines = 1
+let g:bookmark_no_default_key_mappings = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_auto_close = 1
+nmap <leader>mm  :BookmarkToggle<CR>
+nmap <leader>mi  :BookmarkAnnotate<CR>
+nmap <leader>mn  :BookmarkNext<CR>
+nmap <leader>mp  :BookmarkPrev<CR>
+nmap <leader>ma  :BookmarkShowAll<CR>
+nmap <leader>mc  :BookmarkClear<CR>
+nmap <leader>mx  :BookmarkClearAll<CR>
+nmap <leader>mkk :BookmarkMoveUp<CR>
+nmap <leader>mjj :BookmarkMoveDown<CR>
 " }}}
 
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
