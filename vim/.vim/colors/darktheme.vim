@@ -31,7 +31,7 @@ hi CursorLine 	ctermbg=234 			cterm=NONE
 hi CursorColumn ctermbg=233 			cterm=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=234 	cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=233 	cterm=NONE
-hi CursorLineNr ctermfg=7	ctermbg=54	cterm=bold
+hi CursorLineNr ctermfg=231	ctermbg=28	cterm=NONE
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
 hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
