@@ -31,7 +31,7 @@ hi CursorLine 	ctermbg=234 			cterm=NONE
 hi CursorColumn ctermbg=233 			cterm=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=234 	cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=233 	cterm=NONE
-hi CursorLineNr ctermfg=88	ctermbg=179	cterm=bold
+hi CursorLineNr ctermfg=7	ctermbg=54	cterm=bold
 hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
 hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
@@ -57,15 +57,15 @@ hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Function 	ctermfg=67 	ctermbg=NONE 	cterm=NONE
 hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
-hi Label 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
+hi Label 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi Number 	ctermfg=60	ctermbg=NONE 	cterm=NONE
 hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
 hi Special 	ctermfg=28 	ctermbg=NONE 	cterm=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
-hi Statement 	ctermfg=93  	ctermbg=NONE 	cterm=NONE
-hi StorageClass ctermfg=65 	ctermbg=NONE 	cterm=NONE
+hi Statement 	ctermfg=66  	ctermbg=NONE 	cterm=NONE
+hi StorageClass ctermfg=54 	ctermbg=NONE 	cterm=NONE
 hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
@@ -75,7 +75,7 @@ hi level12      ctermfg=5 	ctermbg=NONE 	cterm=NONE
 hi level13      ctermfg=25 	ctermbg=NONE 	cterm=NONE
 hi level14      ctermfg=125 	ctermbg=NONE 	cterm=NONE
 hi level15      ctermfg=25 	ctermbg=NONE 	cterm=NONE
-hi level16      ctermfg=142 	ctermbg=NONE 	cterm=NONE
+hi level16      ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi Type 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline
 
@@ -89,15 +89,15 @@ hi SpellRare 	ctermbg=NONE	cterm=underline
 " C/C++ {{{
 hi cCommentDelim 	ctermfg=243 	ctermbg=NONE 	cterm=bold
 hi cRepeat 		ctermfg=95 	ctermbg=NONE 	cterm=NONE
-hi cPPIncludeFile	ctermfg=65 	ctermbg=NONE 	cterm=NONE
+hi cPPIncludeFile	ctermfg=60 	ctermbg=NONE 	cterm=NONE
 hi cInclude		ctermfg=65 	ctermbg=NONE 	cterm=NONE
 hi cCommentError	ctermfg=240 	ctermbg=NONE 	cterm=italic
 hi cGNUConstant		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cCharacter		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
-hi cMathOperator	ctermfg=94	ctermbg=NONE 	cterm=bold
+hi cMathOperator	ctermfg=25	ctermbg=NONE 	cterm=bold
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=bold
-hi cPointerOperator 	ctermfg=127 	ctermbg=NONE 	cterm=bold
+hi cPointerOperator 	ctermfg=64 	ctermbg=NONE 	cterm=bold
 " }}}
 
 " dts-mode {{{
@@ -112,9 +112,9 @@ hi GitGutterChangeDelete ctermfg=94 	ctermbg=234 	cterm=bold
 " }}}
 
 " CtrlP {{{
-hi CtrlPMatch 		ctermfg=25 	ctermbg=NONE 	cterm=NONE
+hi CtrlPMatch 		ctermfg=6 	ctermbg=NONE 	cterm=NONE
 hi CtrlPPrtText   	ctermfg=60 	ctermbg=NONE 	cterm=NONE
-hi CtrlPLinePre     	ctermfg=197 	ctermbg=NONE 	cterm=bold
+hi CtrlPLinePre     	ctermfg=172 	ctermbg=NONE 	cterm=bold
 " }}}
 
 " Menu selection {{{
