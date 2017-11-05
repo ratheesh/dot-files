@@ -71,6 +71,7 @@ Plug 'ivan-cukic/vim-ctrlp-cscope'
 " Plug 'gcavallanti/vim-noscrollbar'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
+Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -85,15 +86,19 @@ Plug 'ap/vim-buftabline'
 Plug 'unblevable/quick-scope'
 " Plug 'rhysd/clever-f.vim'
 Plug 'WolfgangMehner/c-support'
+Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/YankRing.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'antoyo/vim-licenses'
-" Plug 'kshenoy/vim-signature'
-Plug 'MattesGroeger/vim-bookmarks'
+Plug 'kshenoy/vim-signature'
+" Plug 'MattesGroeger/vim-bookmarks'
+Plug 'mattn/ctrlp-mark'
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
@@ -186,6 +191,7 @@ set novb
 set ttyfast
 set formatoptions+=1
 set lbr
+" set iskeyword-=_
 
 " Double slash -> Case insensitive search
 " map // /\c
@@ -332,11 +338,6 @@ nnoremap <Leader>ft :CtrlPBufTag<CR>
 nnoremap <Leader>fT :CtrlPBufTagAll<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
-" nnoremap <Leader>o  :CtrlP<CR>
-" nnoremap <Leader>b :CtrlPBuffer<CR>
-" nnoremap <Leader>r  :CtrlPMRU<CR>
-" nnoremap <Leader>m  :CtrlPMixed<CR>
-
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -419,6 +420,11 @@ nmap <Leader>hu <Plug>GitGutterUndoHunk
 nmap <Leader>hP <Plug>GitGutterPreviewHunk
 " }}}
 
+" vim-signature {{{
+let g:SignatureMarkTextHLDynamic = 1
+let g:SignatureMarkTextHL = "SignColumn"
+" }}}
+
 " nerd-commentar {{{
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -478,20 +484,20 @@ let g:rbpt_colorpairs = [
     \ [126, 	'DarkOrchid3' 	],
     \ [94,      'firebrick3' 	],
     \ [198,     'RoyalBlue3' 	],
-    \ [34,       'SeaGreen3' 	],
+    \ [166,      'SeaGreen3' 	],
     \ [142, 	'DarkOrchid3' 	],
-    \ [90,    	'firebrick3' 	],
-    \ [28,   	'RoyalBlue3' 	],
-    \ [5, 	'SeaGreen3' 	],
-    \ [58,     'DarkOrchid3' 	],
-    \ [25,      'firebrick3' 	],
+    \ [172,    	'firebrick3' 	],
+    \ [162,   	'RoyalBlue3' 	],
+    \ [89, 	'SeaGreen3' 	],
+    \ [96,      'DarkOrchid3' 	],
+    \ [172,      'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au VimEnter 	* RainbowParenthesesToggle
+au Syntax   	* RainbowParenthesesLoadRound
+au Syntax 	* RainbowParenthesesLoadSquare
+au Syntax 	* RainbowParenthesesLoadBraces
 " }}}
 
 "Expand region {{{
@@ -528,14 +534,14 @@ let g:indentguides_firstlevel = 0
 
 " quick-scope {{{
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_first_occurrence_highlight_color = 155
-let g:qs_second_occurrence_highlight_color = 81
+let g:qs_first_occurrence_highlight_color = 162
+let g:qs_second_occurrence_highlight_color = 130
 " }}}
 
 " vim-bookmarks {{{
-highlight BookmarkSign ctermbg=234 ctermfg=160
+highlight BookmarkSign ctermbg=234 ctermfg=27
 " highlight BookmarkLine ctermbg=194 ctermfg=NONE
-let g:bookmark_sign = '♥'
+" let g:bookmark_sign = '♥'
 " let g:bookmark_highlight_lines = 1
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_auto_save = 1
@@ -549,6 +555,16 @@ nmap <leader>mc  :BookmarkClear<CR>
 nmap <leader>mx  :BookmarkClearAll<CR>
 nmap <leader>mkk :BookmarkMoveUp<CR>
 nmap <leader>mjj :BookmarkMoveDown<CR>
+" }}}
+
+" incsearch-fuzzy {{{
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+" }}}
+
+" vim-easyalign {{{
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 " }}}
 
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
