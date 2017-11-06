@@ -62,7 +62,7 @@ hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi Number 	ctermfg=60	ctermbg=NONE 	cterm=NONE
 hi Operator 	ctermfg=60 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
-hi Special 	ctermfg=28 	ctermbg=NONE 	cterm=NONE
+hi Special 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
 hi Statement 	ctermfg=66  	ctermbg=NONE 	cterm=NONE
 hi StorageClass ctermfg=54 	ctermbg=NONE 	cterm=NONE
