@@ -97,9 +97,10 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'antoyo/vim-licenses'
-" Plug 'kshenoy/vim-signature'
-Plug 'MattesGroeger/vim-bookmarks'
+Plug 'kshenoy/vim-signature'
+" Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mattn/ctrlp-mark'
+Plug 'shinnya/ctrlp-jumplist'
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
@@ -303,7 +304,7 @@ let g:sneak#s_next = 1
 
 " CtrlP {{{
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'undo', 'line',
-	\ 'changes', 'mixed', 'cscope']
+	\ 'changes', 'mixed', 'cscope', 'jumplist', 'marks']
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
@@ -337,6 +338,7 @@ nnoremap <Leader>fb :CtrlPBuffer<CR>
 nnoremap <Leader>fr :CtrlPMRU<CR>
 nnoremap <Leader>ft :CtrlPBufTag<CR>
 nnoremap <Leader>fT :CtrlPBufTagAll<CR>
+nnoremap <Leader>fj :CtrlPJumpList<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
