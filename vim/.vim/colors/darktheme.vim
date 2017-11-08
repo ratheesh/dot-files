@@ -40,7 +40,7 @@ hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi StatusLineNC ctermfg=7 	ctermbg=236 	cterm=NONE
 hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none
 hi Search 	ctermfg=7 	ctermbg=8 	cterm=none
-hi ExtSearch 	ctermfg=9 	ctermbg=NONE 	cterm=italic,underline
+hi ExtSearch 	ctermfg=9 	ctermbg=NONE 	cterm=underline
 hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Folded 	ctermfg=61 	ctermbg=235 	cterm=NONE
 hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=bold
@@ -197,9 +197,9 @@ hi cssBraces 		ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " TabLine {{{
-hi TabLine      	ctermfg=248  	ctermbg=8    	cterm=NONE
-hi TabLineFill  	ctermfg=246  	ctermbg=8     	cterm=NONE
-hi TabLineSel   	ctermfg=16  	ctermbg=181  	cterm=bold,italic
+hi TabLine      	ctermfg=248  	ctermbg=235    	cterm=NONE
+hi TabLineFill  	ctermfg=246  	ctermbg=235    	cterm=NONE
+hi TabLineSel   	ctermfg=15  	ctermbg=24  	cterm=italic
 "}}}
 
 " Elixir {{{
