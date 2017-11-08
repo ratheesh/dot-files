@@ -220,9 +220,12 @@ au BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.
 imap jj <Esc>
 nnoremap ' `
 nnoremap ` '
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>x :x<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <Leader>so 	:source $MYVIMRC<CR>
+nnoremap <Leader>w 	:w<CR>
+nnoremap <Leader>x 	:x<CR>
+nnoremap <Leader>q 	:q<CR>
+nnoremap <Leader>nq 	:q!<CR>
+
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
 map <F9>  	:bprev<cr>
@@ -253,16 +256,16 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled  = 1
+let g:airline#extensions#branch#enabled     = 1
 
 " let g:airline#extensions#syntastic#enabled = 0
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tagbar#enabled     = 1
+let g:airline#extensions#ale#enabled        = 1
 
 " }}}
 
@@ -291,14 +294,14 @@ let g:lightline = {
 
 " Vim-licenses {{{
 let g:licenses_copyright_holders_name = 'Ratheesh <ratheeshreddy@gmail.com>'
-let g:licenses_authors_name = 'Ratheesh <ratheeshreddy@gmail.com>'
-let g:licenses_default_commands = ['gplv2', 'mit']
+let g:licenses_authors_name           = 'Ratheesh <ratheeshreddy@gmail.com>'
+let g:licenses_default_commands       = ['gplv2', 'mit']
 " }}}
 
 " vim-sneak{{{
 " map f <Plug>Sneak_f
 " map F <Plug>Sneak_F
-let g:sneak#label = 1
+let g:sneak#label  = 1
 let g:sneak#s_next = 1
 "}}}
 
@@ -328,10 +331,10 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " let g:ctrlp_match_current_file = 0
 
 " let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_cmd               = 'CtrlPBuffer'
+let g:ctrlp_show_hidden       = 1
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_root_markers = ['.ctrlp']
+let g:ctrlp_root_markers      = ['.ctrlp']
 
 nnoremap <Leader>fo :CtrlP<CR>
 nnoremap <Leader>fb :CtrlPBuffer<CR>
@@ -353,9 +356,9 @@ let g:ctrlp_custom_ignore = {
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_matchtype = 'line'
+let g:ctrlp_funky_matchtype        = 'line'
 let g:ctrlp_funky_syntax_highlight = 1
-let g:ctrlp_funky_nolim = 1
+let g:ctrlp_funky_nolim            = 1
 " }}}
 
 " ctrlp_bdelete {{{
@@ -370,10 +373,10 @@ let g:ctrlp_tjump_only_silent = 1
 
 " ctrlp-extensions {{{
 nnoremap <Leader>fy :CtrlPYankring<CR>
-let g:ctrlp_yankring_limit = 100
-let g:ctrlp_yankring_highlight = 1
+let g:ctrlp_yankring_limit           = 100
+let g:ctrlp_yankring_highlight       = 1
 let g:ctrlp_yankring_use_textchanged = 1
-let g:ctrlp_yankring_minimum_chars = 2
+let g:ctrlp_yankring_minimum_chars   = 2
 " }}}
 
 " vim-swoop {{{
@@ -425,37 +428,37 @@ nmap <Leader>hP <Plug>GitGutterPreviewHunk
 
 " vim-signature {{{
 let g:SignatureMarkTextHLDynamic = 1
-let g:SignatureMarkTextHL = "SignColumn"
+let g:SignatureMarkTextHL        = "SignColumn"
 " }}}
 
 " nerd-commentar {{{
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDAltDelims_java = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/*','right': '*/' } }
-let g:NERDCommentEmptyLines = 1
+let g:NERDSpaceDelims            = 1
+let g:NERDCompactSexyComs        = 1
+let g:NERDDefaultAlign           = 'left'
+let g:NERDAltDelims_java         = 1
+let g:NERDCustomDelimiters       = { 'c': { 'left': '/*','right': '*/' } }
+let g:NERDCommentEmptyLines      = 1
 let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " Easymotion {{{
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_do_mapping 	  = 0 " Disable default mappings
 nmap <Leader>jj <Plug>(easymotion-s)
-let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase        = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 "}}}
 
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-b>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
-let g:indentLine_faster=1
+let g:indentLine_faster            = 1
 "}}}
 
 " ale {{{
-let g:ale_sign_column_always = 1
-let g:ale_lint_on_text_changed='never'
+let g:ale_sign_column_always   = 1
+let g:ale_lint_on_text_changed = 'never'
 autocmd BufEnter ControlP let b:ale_enabled = 0
 autocmd BufEnter ControlP set nonumber
 " }}}
@@ -466,13 +469,13 @@ autocmd BufEnter ControlP set nonumber
 " set statusline+=%*
 
 " let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_reuse_loc_lists= 0
+let g:syntastic_auto_loc_list           = 0
+let g:syntastic_check_on_open           = 1
+let g:syntastic_check_on_wq             = 0
+let g:syntastic_reuse_loc_lists         = 0
 
-let g:syntastic_python_checkers=['python', 'flake8']
-let g:syntastic_python_flake8_post_args='--ignore=W391'
+let g:syntastic_python_checkers         = ['python', 'flake8']
+let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " }}}
 
 " rainbow_parenthesis {{{
@@ -530,14 +533,14 @@ nmap <leader>y :YRShow<cr>
 
 " vim-indent-guide {{{
 let g:indentguides_ignorelist = ['text', 'vim']
-let g:indentguides_spacechar = '┆'
-let g:indentguides_tabchar = '¦'
+let g:indentguides_spacechar  = '┆'
+let g:indentguides_tabchar    = '¦'
 let g:indentguides_firstlevel = 0
 " }}}
 
 " quick-scope {{{
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_first_occurrence_highlight_color = 162
+let g:qs_highlight_on_keys                 = ['f', 'F', 't', 'T']
+let g:qs_first_occurrence_highlight_color  = 162
 let g:qs_second_occurrence_highlight_color = 130
 " }}}
 
@@ -547,8 +550,8 @@ highlight BookmarkSign ctermbg=234 ctermfg=27
 " let g:bookmark_sign = '♥'
 " let g:bookmark_highlight_lines = 1
 let g:bookmark_no_default_key_mappings = 1
-let g:bookmark_auto_save = 1
-let g:bookmark_auto_close = 1
+let g:bookmark_auto_save               = 1
+let g:bookmark_auto_close              = 1
 nmap <leader>mm  :BookmarkToggle<CR>
 nmap <leader>mi  :BookmarkAnnotate<CR>
 nmap <leader>mn  :BookmarkNext<CR>
