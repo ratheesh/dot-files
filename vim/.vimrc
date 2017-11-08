@@ -247,8 +247,8 @@ nnoremap <leader>t :TagbarOpenAutoClose<CR>
 " }}}
 
 " Vim-airline {{{
-let g:airline_powerline_fonts = 0
-let g:airline_theme='ubaryd' " sane ones -> ubaryd sol wombat bubblegum
+let g:airline_powerline_fonts = 1
+let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
