@@ -216,6 +216,12 @@ let mapleader = "\<Space>"
 au BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
 
 " keybindings
+" disable arrow key navigation to break bad habit
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+
 " nmap <Leader><Leader> :
 imap jj <Esc>
 nnoremap ' `
