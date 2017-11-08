@@ -40,13 +40,13 @@ hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi StatusLineNC ctermfg=7 	ctermbg=236 	cterm=NONE
 hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=none
 hi Search 	ctermfg=7 	ctermbg=8 	cterm=none
-hi ExtSearch 	ctermfg=9 	ctermbg=236 	cterm=italic,underline
+hi ExtSearch 	ctermfg=9 	ctermbg=NONE 	cterm=italic,underline
 hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Folded 	ctermfg=61 	ctermbg=235 	cterm=NONE
 hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=bold
 hi FoldColmun 	ctermfg=246 	ctermbg=235 	cterm=NONE
 hi Normal 	ctermfg=7
-hi Boolean 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
+hi Boolean 	ctermfg=129 	ctermbg=NONE 	cterm=NONE
 hi Character 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
 hi Comment 	ctermfg=242 	ctermbg=NONE 	cterm=italic
 hi Conditional 	ctermfg=25 	ctermbg=NONE 	cterm=italic
