@@ -25,7 +25,7 @@ let s:cterm02 = "60"
 let s:cterm03 = "215"
 let s:cterm04 = "141"
 let s:cterm05 = "162"
-let s:cterm06 = "136"
+let s:cterm06 = "130"
 let s:cterm07 = "24"
 let s:cterm08 = "22"
 let s:cterm09 = "62"
@@ -50,7 +50,7 @@ let s:I2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
 let s:I3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
 
 " Visual mode
-let s:V1 = [ s:guiBlack , s:gui06 , s:ctermBlack , s:cterm06 ]
+let s:V1 = [ s:guiBlack , s:gui06 , s:ctermWhite , s:cterm06 ]
 let s:V2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
 let s:V3 = [ s:guiWhite , s:gui01 , s:ctermWhite, s:cterm01 ]
 
