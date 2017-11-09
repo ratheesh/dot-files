@@ -1,0 +1,21 @@
+# Common settings
+ForwardAgent yes
+AddKeysToAgent yes
+FingerprintHash sha256
+TCPKeepAlive yes
+# ForwardX11 yes
+HashKnownHosts no
+Compression yes
+SendEnv LANG LC_ALL=en_US.UTF-8
+# CompressionLevel=9
+ConnectTimeout 30
+
+Host *
+  ServerAliveInterval 30
+
+# Host settings
+# Host odroid
+	# Hostname xxx.xxx.xxx.xxx
+	# Port 22
+	# User xxxxxx
+
