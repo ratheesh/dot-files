@@ -33,7 +33,7 @@ let s:cterm10 = "89"
 
 let s:guiWhite = "#f8f8f2"
 let s:guiBlack = "#282a36"
-let s:ctermWhite = "15"
+let s:ctermWhite = "254"
 let s:ctermBlack = "16"
 
 let s:ctermChangedColor = "9"
@@ -66,7 +66,6 @@ let g:airline#themes#darkmode#palette = {}
 let g:airline#themes#darkmode#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 let g:airline#themes#darkmode#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 let g:airline#themes#darkmode#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
-let g:airline#themes#darkmode#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 let g:airline#themes#darkmode#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 
 " Inactive mode
@@ -95,15 +94,15 @@ let g:airline#themes#darkmode#palette.insert_modified = airline#themes#generate_
 let g:airline#themes#darkmode#palette.replace_modified = airline#themes#generate_color_map(s:R1, s:R2, s:changed)
 let g:airline#themes#darkmode#palette.visual_modified = airline#themes#generate_color_map(s:V1, s:V2, s:changed)
 
-" change colors during different modes
+" Change colors during different modes
 " Adjust colors in darktheme.vim
 :augroup modeToggle
 :  autocmd!
-:  autocmd Insertleave   * hi CursorLineNr ctermfg=253	ctermbg=22	cterm=NONE
-:  autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=25	cterm=NONE
+:  autocmd Insertleave   * hi CursorLineNr ctermfg=253	ctermbg=22  cterm=NONE
+:  autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=25  cterm=NONE
 
-:  autocmd Insertleave   * hi TabLineSel   	ctermfg=253  	ctermbg=24  	cterm=italic
-:  autocmd InsertEnter   * hi TabLineSel   	ctermfg=253 	ctermbg=22  	cterm=italic
+:  autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25  cterm=italic
+:  autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22  cterm=italic
 :augroup END
 
 " CtrlP
@@ -116,3 +115,6 @@ let s:CP2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
 let s:CP3 = [ s:guiWhite , s:gui08 , s:ctermWhite , s:cterm10 ]
 
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
+
+" End of File
+

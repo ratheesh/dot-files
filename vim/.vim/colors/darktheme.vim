@@ -45,7 +45,7 @@ hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Folded 	ctermfg=61 	ctermbg=235 	cterm=NONE
 hi SignColumn 	ctermfg=246 	ctermbg=234 	cterm=bold
 hi FoldColmun 	ctermfg=246 	ctermbg=235 	cterm=NONE
-hi Normal 	ctermfg=7
+hi Normal 	ctermfg=7       ctermbg=0       cterm=NONE
 hi Boolean 	ctermfg=129 	ctermbg=NONE 	cterm=NONE
 hi Character 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
 hi Comment 	ctermfg=242 	ctermbg=NONE 	cterm=italic
