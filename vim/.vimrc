@@ -260,33 +260,66 @@ nnoremap <leader>t :TagbarOpenAutoClose<CR>
 " }}}
 
 " Vim-airline {{{
+let g:airline_highlighting_cache = 0
+
+" Appearance
 let g:airline_powerline_fonts = 1
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 
-let g:airline#extensions#whitespace#enabled  = 0
-let g:airline_detect_spelllang               = 0
-let g:airline_detect_modified                = 1
-let g:airline_detect_paste                   = 1
-let g:airline#extensions#syntastic#enabled   = 1
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#extensions#branch#enabled      = 1
+" let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#whitespace#enabled    = 0
+let g:airline_detect_spelllang                 = 0
+let g:airline_detect_modified                  = 1
+let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
+let g:airline_detect_paste                     = 1
+let g:airline#extensions#virtualenv#enabled    = 1
+let g:airline#extensions#tagbar#enabled        = 1
+let g:airline#extensions#virtualenv#enabled    = 1
+let g:airline#extensions#wordcount#enabled     = 1
+let g:airline#extensions#tagbar#enabled              = 1
+let g:airline#extensions#wordcount#formatter         = 'default'
 
-" let g:airline#extensions#syntastic#enabled = 0
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#show_splits = 1
-" let g:airline#extensions#tabline#show_tab_nr = 1
-" let g:airline#extensions#tabline#show_tab_type = 1
-"
-" let g:airline#extensions#tabline#fnamemod = ':t'
+" vcs
+let g:airline#extensions#hunks#non_zero_only         = 1
+let g:airline#extensions#branch#enabled              = 1
+let g:airline#extensions#branch#displayed_head_limit = 10
 
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tagbar#enabled     = 1
-let g:airline#extensions#ale#enabled        = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#wordcount#enabled = 1
+" Error checking
+" let g:airline#extensions#syntastic#enabled   = 1
+let g:airline#extensions#ale#enabled      = 1
+let airline#extensions#ale#warning_symbol = 'ω:'
+let airline#extensions#ale#error_symbol   = 'ξ:'
+
+" Tabline settings
+let g:airline#extensions#tabline#enabled         = 1
+let g:airline#extensions#tabline#fnamemod        = ':t'
+let g:airline#extensions#tabline#show_splits     = 1
+let g:airline#extensions#tabline#show_tab_nr     = 1
+let g:airline#extensions#tabline#show_tab_type   = 1
+let g:airline#extensions#tabline#exclude_preview = 1
+let airline#extensions#tabline#disable_refresh   = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>= <Plug>AirlineSelectNextTab
+" let g:airline#extensions#tabline#left_sep      = ''
+" let g:airline#extensions#tabline#left_alt_sep  = '|'
+" let g:airline#extensions#tabline#right_sep     = ''
+" let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline#extensions#default#section_truncate_width = {
+			\ 'c': 30,
+			\ }
 
 let g:airline_mode_map = {
       \ '__' : '-',
@@ -295,8 +328,8 @@ let g:airline_mode_map = {
       \ 'R'  : 'R',
       \ 'c'  : 'C',
       \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
+      \ 'V'  : 'V-Line',
+      \ '' : 'V-Block',
       \ 's'  : 'S',
       \ 'S'  : 'S',
       \ '' : 'S',
