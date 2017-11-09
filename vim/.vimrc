@@ -261,17 +261,41 @@ let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubb
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
+
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline_detect_spelllang              = 0
+let g:airline_detect_modified               = 1
+let g:airline_detect_paste                  = 1
 let g:airline#extensions#syntastic#enabled  = 1
 let g:airline#extensions#branch#enabled     = 1
 
 " let g:airline#extensions#syntastic#enabled = 0
 " let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#show_splits = 1
+" let g:airline#extensions#tabline#show_tab_nr = 1
+" let g:airline#extensions#tabline#show_tab_type = 1
+"
 " let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled     = 1
 let g:airline#extensions#ale#enabled        = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
+
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 
 " }}}
 
