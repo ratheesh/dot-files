@@ -69,6 +69,7 @@ Plug 'ivan-cukic/vim-ctrlp-cscope'
 " Plug 'yuttie/comfortable-motion.vim'
 " Plug 'yggdroot/leaderf'
 " Plug 'gcavallanti/vim-noscrollbar'
+Plug 'wikitopian/hardmode' " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'simnalamburt/vim-mundo'
@@ -87,7 +88,7 @@ Plug 'ap/vim-buftabline'
 " Plug 'rhysd/clever-f.vim'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'WolfgangMehner/c-support'
-Plug 'junegunn/vim-easy-align'
+Plug 'vim-scripts/AutoAlign'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
@@ -110,11 +111,14 @@ Plug 'vim-scripts/taglist.vim'
 Plug 'ervandew/supertab'
 Plug 'vim-scripts/OmniCppComplete'
 Plug 'rking/ag.vim'
+Plug 'sjl/vitality.vim'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'python-mode/python-mode'
+Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 " Plug 'Vimjas/vim-python-pep8-indent'
 " Plug 'ntpeters/vim-airline-colornum'
 " Plug 'Shougo/neocomplete.vim'
+Plug 'christoomey/vim-tmux-navigator'
 Plug '~/.vim/local/c_std'
 
 call plug#end()
@@ -262,12 +266,13 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_detect_spelllang              = 0
-let g:airline_detect_modified               = 1
-let g:airline_detect_paste                  = 1
-let g:airline#extensions#syntastic#enabled  = 1
-let g:airline#extensions#branch#enabled     = 1
+let g:airline#extensions#whitespace#enabled  = 0
+let g:airline_detect_spelllang               = 0
+let g:airline_detect_modified                = 1
+let g:airline_detect_paste                   = 1
+let g:airline#extensions#syntastic#enabled   = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#branch#enabled      = 1
 
 " let g:airline#extensions#syntastic#enabled = 0
 " let g:airline#extensions#tabline#enabled = 1
