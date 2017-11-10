@@ -299,7 +299,7 @@ let g:airline#extensions#branch#displayed_head_limit = 10
 " let g:airline#extensions#syntastic#enabled   = 1
 let g:airline#extensions#ale#enabled      = 1
 let airline#extensions#ale#warning_symbol = 'ω:'
-let airline#extensions#ale#error_symbol   = 'ξ:'
+let airline#extensions#ale#error_symbol   = 'Σ:'
 
 " Tabline settings
 let g:airline#extensions#tabline#enabled         = 1
