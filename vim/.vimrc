@@ -224,6 +224,7 @@ let mapleader = "\<Space>"
 :augroup END
 
 au BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
+au BufNewFile,BufRead .stgit* set filetype=gitcommit
 
 " keybindings
 " disable arrow key navigation to break bad habit
