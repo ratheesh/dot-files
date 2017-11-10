@@ -5,6 +5,9 @@
 	branches = branch -a
 	remotes = remote -v
 
+[commit]
+	verbose = true
+
 [user]
 	name = Ratheesh S
 	email = ratheeshreddy@gmail.com
