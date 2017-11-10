@@ -1,36 +1,36 @@
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 	undopush = push -f origin HEAD^:master
-	tags = tag -l
+	tags     = tag -l
 	branches = branch -a
-	remotes = remote -v
-	cv = commit -v
+	remotes  = remote -v
+	cv       = commit -v
 
 [user]
-	name = Ratheesh S
-	email = ratheeshreddy@gmail.com
+	name       = Ratheesh S
+	email      = ratheeshreddy@gmail.com
 	signingkey = B5A8692EC05DCFEA
 
 [color]
-	ui = true
-	diff = true
-	status = true
-	branch = true
+	ui          = true
+	diff        = true
+	status      = true
+	branch      = true
 	interactive = true
-	pager = true
+	pager       = true
 
 [color "branch"]
 	current = yellow reverse
-	local = yellow
-	remote = green
+	local   = yellow
+	remote  = green
 
 [color "diff"]
-	meta = yellow
-	frag = magenta
-	old = red
-	new = green
+	meta       = yellow
+	frag       = magenta
+	old        = red
+	new        = green
 	whitespace = red reverse
-	plain = white dim
+	plain      = white dim
 
 [color "status"]
 	added = green
@@ -42,40 +42,40 @@
 	log = true
 
 [sendemail]
-	from = Ratheesh S <ratheeshreddy@gmail.com>
-	chainreplyto = false
+	from           = Ratheesh S <ratheeshreddy@gmail.com>
+	chainreplyto   = false
 	smtpencryption = tls
-	smtpserver = smtp.gmail.com
+	smtpserver     = smtp.gmail.com
 	smtpserverport = 587
-	smtpuser = ratheeshreddy@gmail.com
+	smtpuser       = ratheeshreddy@gmail.com
 
 [oh-my-zsh]
 	hide-status = 1
 
 [log]
-	decorate = short
+	decorate    = short
 
 [magit]
-	extension = stgit
+	extension   = stgit
 
 [core]
 	# editor = emacsclient -c
 	# treat spaces before tabs, lines that are indented with 8 or more spaces,
 	# and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-	pager = /bin/less -R
+	pager      = /bin/less -R
 
 [apply]
 	# detect whitespace errors when applying a patch
-	whitespace = fix
+	whitespace      = fix
 
 [branch]
 	autosetuprebase = always
 
 [credential]
-	helper = cache --timeout=3600
+	helper          = cache --timeout=3600
 
 [commit]
-	verbose = true
+	verbose         = true
 
 # End of File
