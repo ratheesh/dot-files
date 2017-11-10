@@ -124,7 +124,7 @@ Plug '~/.vim/local/c_std'
 call plug#end()
 "}}}
 
-" Vim vanilla settings {{{
+" ViM generic settings {{{
 filetype plugin indent on
 set shortmess+=I
 " set number
@@ -328,8 +328,8 @@ let g:airline_mode_map = {
       \ 'R'  : 'R',
       \ 'c'  : 'C',
       \ 'v'  : 'V',
-      \ 'V'  : 'V-Line',
-      \ '' : 'V-Block',
+      \ 'V'  : 'V-LINE',
+      \ '' : 'V-BLOCK',
       \ 's'  : 'S',
       \ 'S'  : 'S',
       \ '' : 'S',
