@@ -205,6 +205,10 @@ set lbr
 
 " let python_highlight_all=1
 
+" Remember last buffers loaded and file position
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 let mapleader = "\<Space>"
 "}}}
 
@@ -226,6 +230,7 @@ noremap <Down>  <NOP>
 noremap <Left>  <NOP>
 noremap <Right> <NOP>
 
+" set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
 imap jj <Esc>
 nnoremap ' `
@@ -244,9 +249,11 @@ nmap <Leader>bd :bdelete<CR>
 nmap <Leader>\ 	:nohlsearch<CR>
 nmap <Leader>bh :Startify<CR>
 nmap <Leader>bb :b#<CR>
-" Remember last buffers loaded and file position
-set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Toggle keybindings
+set pastetoggle=<Leader>tp
+nnoremap <Leader>tg :GitGutterToggle<CR>
+nnoremap <Leader>ta :ALEToggle<CR>
 " }}}
 
 " Theme {{{
@@ -256,7 +263,7 @@ color darktheme
 
 " Tagbar {{{
 nmap <F8> :TagbarToggle<CR>
-nnoremap <leader>t :TagbarOpenAutoClose<CR>
+nnoremap <leader>tt :TagbarOpenAutoClose<CR>
 " }}}
 
 " Vim-airline {{{
