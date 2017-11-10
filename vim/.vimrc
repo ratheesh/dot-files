@@ -69,7 +69,8 @@ Plug 'ivan-cukic/vim-ctrlp-cscope'
 " Plug 'yuttie/comfortable-motion.vim'
 " Plug 'yggdroot/leaderf'
 " Plug 'gcavallanti/vim-noscrollbar'
-Plug 'wikitopian/hardmode' " Make life under ViM little difficult!
+" Plug 'wikitopian/hardmode' " Make life under ViM little difficult!
+Plug 'takac/vim-hardtime'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'simnalamburt/vim-mundo'
@@ -648,10 +649,18 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}}
 
+" hardtime {{{
+let g:hardtime_timeout = 2000
+let g:hardtime_showmsg = 1
+let g:hardtime_ignore_buffer_patterns = ["NERD.*", "Tagbar.*"]
+let g:hardtime_maxcount = 2
+" }}}
+
+" Misc macros {{{
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
+" }}}
 " set listchars=tab:\|\
 " set list
 "End of File
