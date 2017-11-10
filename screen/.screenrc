@@ -25,7 +25,7 @@ bind s split
 
 mousetrack on # mouse tracking allows to switch region focus by clicking
 
-#Die Setzing startet ab Nummber 1
+#Die Setzing startet ab Nummer 1
 bind c screen 1
 bind ^c screen 1
 bind 0 select 10
@@ -37,7 +37,7 @@ sorendition '+b kG'
 # hardstatus alwayslastline "%{d kw}%S%{r}|%{-b kw}%u%-Lw%{=d Y}%50>[%{=b R}%n-%t%{=d Y}]%{-}%+Lw%< %=| %{d g}%c:%s%A | %{d c}%d.%m.%Y %{w}"
 hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
-# keybindings 
+# keybindings
 bindkey -k F1 prev      # F11 = prev
 bindkey -k F2 next      # F12 = next
 register r "^a:source $HOME/.screenrc^M"
