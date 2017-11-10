@@ -4,9 +4,7 @@
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-
-[commit]
-	verbose = true
+	cv = commit -v
 
 [user]
 	name = Ratheesh S
@@ -61,7 +59,7 @@
 	extension = stgit
 
 [core]
-	editor = emacsclient -c
+	# editor = emacsclient -c
 	# treat spaces before tabs, lines that are indented with 8 or more spaces,
 	# and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
@@ -70,7 +68,14 @@
 [apply]
 	# detect whitespace errors when applying a patch
 	whitespace = fix
+
 [branch]
 	autosetuprebase = always
+
 [credential]
 	helper = cache --timeout=3600
+
+[commit]
+	verbose = true
+
+# End of File
