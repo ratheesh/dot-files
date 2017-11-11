@@ -125,11 +125,28 @@ hi PmenuSbar    	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi PmenuThumb   	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 "}}}
 
+" GitCommit {{{
+hi gitcommitComment		ctermfg=240 	ctermbg=NONE 	cterm=NONE
+hi gitcommitSummary		ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi gitcommitBranch		ctermfg=25 	ctermbg=NONE 	cterm=italic
+hi gitcommitBlank		ctermfg=9 	ctermbg=235 	cterm=italic
+hi gitcommitHeader		ctermfg=246 	ctermbg=NONE 	cterm=NONE
+hi gitcommitDiff		ctermfg=245 	ctermbg=NONE 	cterm=NONE
+hi gitcommitSelectedFile	ctermfg=66 	ctermbg=NONE 	cterm=NONE
+hi gitcommitSelectedType	ctermfg=25 	ctermbg=NONE 	cterm=italic
+hi gitcommitDiscardedFile	ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi gitcommitDiscardedType	ctermfg=95 	ctermbg=NONE 	cterm=italic
+" }}}
+
 " Diff {{{
-hi DiffAdd 		ctermfg=7 	ctermbg=64 	cterm=bold
-hi DiffDelete 		ctermfg=88 	ctermbg=NONE 	cterm=NONE
-hi DiffChange 		ctermfg=7 	ctermbg=23 	cterm=NONE
-hi DiffText 		ctermfg=7 	ctermbg=24 	cterm=bold
+hi diffAdded 		ctermfg=28 	ctermbg=NONE 	cterm=NONE
+hi diffRemoved 		ctermfg=1 	ctermbg=NONE 	cterm=NONE
+hi diffChanged 		ctermfg=65 	ctermbg=NONE 	cterm=NONE
+hi diffText 		ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi diffFile 		ctermfg=95 	ctermbg=NONE 	cterm=italic
+hi diffLine 		ctermfg=142 	ctermbg=NONE 	cterm=italic
+hi diffIndexLine	ctermfg=127 	ctermbg=NONE 	cterm=italic
+hi diffSubname		ctermfg=67 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " Ruby {{{
