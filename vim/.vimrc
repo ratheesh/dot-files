@@ -52,7 +52,7 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'd11wtq/ctrlp_bdelete.vim'
 " Plug 'the9ball/ctrlp-gtags'
 " Plug 'mattn/ctrlp-mark'
-" Plug 'mattn/ctrlp-register'
+Plug 'mattn/ctrlp-register'
 " Plug 'mattn/ctrlp-git'
 " Plug 'imkmf/ctrlp-branches'
 " Plug 'thiderman/ctrlp-project'
@@ -98,7 +98,7 @@ Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'antoyo/vim-licenses'
@@ -384,8 +384,8 @@ let g:sneak#s_next = 1
 "}}}
 
 " CtrlP {{{
-let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'undo', 'line',
-	\ 'changes', 'mixed', 'cscope', 'jumplist', 'marks']
+let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
+	\ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
@@ -420,6 +420,7 @@ nnoremap <Leader>fr :CtrlPMRU<CR>
 nnoremap <Leader>ft :CtrlPBufTag<CR>
 nnoremap <Leader>fT :CtrlPBufTagAll<CR>
 nnoremap <Leader>fj :CtrlPJumpList<CR>
+nnoremap <Leader>fp :CtrlPRegister<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
