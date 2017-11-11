@@ -97,12 +97,12 @@ let g:airline#themes#darkmode#palette.visual_modified = airline#themes#generate_
 " Change colors during different modes
 " Adjust colors in darktheme.vim
 :augroup modeToggle
-:  autocmd!
-:  autocmd Insertleave   * hi CursorLineNr ctermfg=253	ctermbg=22  cterm=NONE
-:  autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=25  cterm=NONE
+:autocmd!
+:autocmd Insertleave   * hi CursorLineNr ctermfg=251	ctermbg=89  cterm=NONE
+:autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=22  cterm=NONE
 
-:  autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25  cterm=italic
-:  autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22  cterm=italic
+" :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
+" :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
 :augroup END
 
 " CtrlP
