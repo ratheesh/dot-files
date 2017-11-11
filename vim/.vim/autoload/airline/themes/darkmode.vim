@@ -28,7 +28,7 @@ let s:cterm05 = "162"
 let s:cterm06 = "130"
 let s:cterm07 = "24"
 let s:cterm08 = "22"
-let s:cterm09 = "243"
+let s:cterm09 = "102"
 let s:cterm10 = "89"
 
 let s:guiWhite = "#f8f8f2"
