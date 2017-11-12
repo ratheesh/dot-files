@@ -195,6 +195,9 @@ setglobal spell spelllang=en_us
 " ...but enable it for the English text files I use a lot.
 au BufRead,BufNewFile,BufWrite *.txt,*.tex,*.latex set spell
 
+" Set scroll margin to 0 in git commit buffers to avoid cursor in non-zero pos
+au BufRead,BufNewFile,BufWrite *.stgit*,COMMIT_EDITMSG set scrolloff=0
+
 " Skip the splash screen
 set shortmess+=I
 set novb
