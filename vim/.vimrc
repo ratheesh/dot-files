@@ -304,14 +304,16 @@ let airline#extensions#ale#warning_symbol = 'ω:'
 let airline#extensions#ale#error_symbol   = 'Σ:'
 
 " Tabline settings
-let g:airline#extensions#tabline#enabled         = 1
-let g:airline#extensions#tabline#fnamemod        = ':t'
-let g:airline#extensions#tabline#show_splits     = 1
-let g:airline#extensions#tabline#show_tab_nr     = 1
-let g:airline#extensions#tabline#show_tab_type   = 1
-let g:airline#extensions#tabline#exclude_preview = 1
-let airline#extensions#tabline#disable_refresh   = 0
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#enabled          = 1
+let g:airline#extensions#tabline#fnamemod         = ':t'
+let g:airline#extensions#tabline#show_splits      = 1
+let g:airline#extensions#tabline#show_tab_nr      = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#tab_min_count    = 2
+let g:airline#extensions#tabline#show_tab_type    = 1
+let g:airline#extensions#tabline#exclude_preview  = 1
+let airline#extensions#tabline#disable_refresh    = 0
+let g:airline#extensions#tabline#buffer_idx_mode  = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -327,6 +329,9 @@ nmap <leader>= <Plug>AirlineSelectNextTab
 " let g:airline#extensions#tabline#left_alt_sep  = '|'
 " let g:airline#extensions#tabline#right_sep     = ''
 " let g:airline#extensions#tabline#right_alt_sep = '|'
+
+autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
+
 let g:airline#extensions#default#section_truncate_width = {
 			\ 'c': 30,
 			\ }
