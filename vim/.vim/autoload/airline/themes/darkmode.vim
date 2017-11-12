@@ -12,32 +12,31 @@
 " @author Zeno Rocha <hi@zenorocha.com>
 
 " Color palette
-let s:gui01 = "#44475a"
-let s:gui02 = "#5f6a8e"
-let s:gui03 = "#ffb86c"
-let s:gui04 = "#bd93f9"
-let s:gui05 = "#ff5555"
-let s:gui06 = "#f1fa8c"
-let s:gui07 = "#50fa7b"
-let s:gui08 = "#bd93f9"
-let s:cterm01 = "235"
-let s:cterm02 = "60"
-let s:cterm03 = "215"
-let s:cterm04 = "141"
-let s:cterm05 = "162"
-let s:cterm06 = "130"
-let s:cterm07 = "24"
-let s:cterm08 = "22"
-let s:cterm09 = "102"
-let s:cterm10 = "89"
+let s:gui01             = "#44475a"
+let s:gui02             = "#5f6a8e"
+let s:gui03             = "#ffb86c"
+let s:gui04             = "#bd93f9"
+let s:gui05             = "#ff5555"
+let s:gui06             = "#f1fa8c"
+let s:gui07             = "#50fa7b"
+let s:gui08             = "#bd93f9"
+let s:guiWhite          = "#f8f8f2"
+let s:guiChangedColor   = "#5f5f5f"
+let s:guiBlack          = "#282a36"
 
-let s:guiWhite = "#f8f8f2"
-let s:guiBlack = "#282a36"
-let s:ctermWhite = "254"
-let s:ctermBlack = "16"
-
+let s:cterm01           = "235"
+let s:cterm02           = "60"
+let s:cterm03           = "215"
+let s:cterm04           = "141"
+let s:cterm05           = "162"
+let s:cterm06           = "130"
+let s:cterm07           = "24"
+let s:cterm08           = "22"
+let s:cterm09           = "102"
+let s:cterm10           = "89"
+let s:ctermWhite        = "254"
+let s:ctermBlack        = "16"
 let s:ctermChangedColor = "9"
-let s:guiChangedColor = "#5f5f5f"
 
 " Normal mode
 let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
@@ -99,7 +98,7 @@ let g:airline#themes#darkmode#palette.visual_modified = airline#themes#generate_
 :augroup modeToggle
 :autocmd!
 :autocmd Insertleave   * hi CursorLineNr ctermfg=251	ctermbg=89  cterm=NONE
-:autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=22  cterm=NONE
+:autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=25  cterm=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
