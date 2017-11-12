@@ -37,6 +37,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
+" Plug 'wincent/terminus'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -75,8 +76,9 @@ Plug 'ivan-cukic/vim-ctrlp-cscope'
 Plug 'takac/vim-hardtime'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
-Plug 'simnalamburt/vim-mundo'
+" Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
+" Plug 'vheon/vim-cursormode'
 " Plug 'edkolev/promptline.vim'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'Yggdroot/indentLine'
@@ -212,7 +214,7 @@ set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 let mapleader = "\<Space>"
-"}}}
+" }}}
 
 " General Config {{{
 " hooks
@@ -438,7 +440,7 @@ let g:ctrlp_custom_ignore = {
 
 " ctrlp-funky {{{
 nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
+" Narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype        = 'line'
 let g:ctrlp_funky_syntax_highlight = 1
@@ -574,13 +576,13 @@ let g:rbpt_colorpairs = [
     \ [126, 	'DarkOrchid3' 	],
     \ [94,      'firebrick3' 	],
     \ [198,     'RoyalBlue3' 	],
-    \ [166,      'SeaGreen3' 	],
+    \ [166,     'SeaGreen3' 	],
     \ [142, 	'DarkOrchid3' 	],
     \ [172,    	'firebrick3' 	],
     \ [162,   	'RoyalBlue3' 	],
     \ [28, 	'SeaGreen3' 	],
     \ [96,      'DarkOrchid3' 	],
-    \ [172,      'firebrick3' 	],
+    \ [172,     'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
