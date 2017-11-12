@@ -23,7 +23,7 @@ endif
 let g:colors_name = "darktheme"
 
 " syntax match Operator "[-+&|<>=!\/~:*%&^?]"
-syn match Braces display '[{}()\[\]]'
+" syn match Braces display '[{}()\[\]]'
 
 hi Normal 	ctermfg=7       ctermbg=233     cterm=NONE
 hi ColorColumn	ctermfg=NONE 	ctermbg=234 	cterm=NONE
@@ -60,7 +60,7 @@ hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Label 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
-hi Number 	ctermfg=60	ctermbg=NONE 	cterm=NONE
+hi Number 	ctermfg=180	ctermbg=NONE 	cterm=NONE
 hi Operator 	ctermfg=62 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
 hi Special 	ctermfg=65 	ctermbg=NONE 	cterm=NONE
@@ -88,6 +88,7 @@ hi SpellRare 	ctermbg=NONE	cterm=underline
 " }}}
 
 " C/C++ {{{
+hi c89Function 		ctermfg=67 	ctermbg=NONE 	cterm=NONE
 hi cCommentDelim 	ctermfg=243 	ctermbg=NONE 	cterm=bold
 hi cRepeat 		ctermfg=95 	ctermbg=NONE 	cterm=NONE
 hi cPPIncludeFile	ctermfg=60 	ctermbg=NONE 	cterm=NONE
@@ -101,8 +102,9 @@ hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
 hi cPointerOperator 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
 hi cStorageClass 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
 hi cStructure 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
-hi cType 		ctermfg=143 	ctermbg=NONE 	cterm=italic
-hi cBlock 		ctermfg=172 	ctermbg=NONE 	cterm=italic
+hi cType 		ctermfg=25 	ctermbg=NONE 	cterm=italic
+hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
+" hi cBlock 		ctermfg=172 	ctermbg=NONE 	cterm=italic
 " }}}
 
 " dts-mode {{{
