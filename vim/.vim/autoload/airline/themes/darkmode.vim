@@ -111,7 +111,7 @@ endif
 
 let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
 let s:CP2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
-let s:CP3 = [ s:guiWhite , s:gui08 , s:ctermWhite , s:cterm10 ]
+let s:CP3 = [ s:guiWhite , s:gui08 , s:ctermWhite , s:cterm10, 'italic' ]
 
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
