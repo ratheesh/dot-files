@@ -97,6 +97,7 @@ Plug 'WolfgangMehner/c-support'
 " Plug 'vim-scripts/AutoAlign'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'vim-scripts/DoxyGen-Syntax'
 " Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -205,6 +206,9 @@ set ttyfast
 set formatoptions+=1
 set lbr
 " set iskeyword-=_
+
+" Enable doxygen for C related files
+au BufRead,BufNewFile,BufWrite *.c,*.cpp,*.h set syntax=cpp.doxygen
 
 " Double slash -> Case insensitive search
 " map // /\c
