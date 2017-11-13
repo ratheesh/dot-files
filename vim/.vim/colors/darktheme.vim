@@ -40,8 +40,8 @@ hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
 hi Braces 	ctermfg=NONE 	ctermbg=NONE 	cterm=bold,underline
 hi StatusLine 	ctermfg=7 	ctermbg=236 	cterm=bold
 hi StatusLineNC ctermfg=7 	ctermbg=236 	cterm=NONE
-hi IncSearch 	ctermfg=7 	ctermbg=8 	cterm=NONE
-hi Search 	ctermfg=7 	ctermbg=8 	cterm=NONE
+hi IncSearch 	ctermfg=NONE 	ctermbg=238 	cterm=NONE
+hi Search 	ctermfg=7 	ctermbg=238 	cterm=NONE
 hi ExtSearch 	ctermfg=9 	ctermbg=NONE 	cterm=italic,underline
 hi Directory 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
 hi Folded 	ctermfg=61 	ctermbg=235 	cterm=NONE
@@ -100,15 +100,31 @@ hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi cMathOperator	ctermfg=25	ctermbg=NONE 	cterm=NONE
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
 hi cPointerOperator 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
-hi cStorageClass 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
+hi cStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cStructure 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi cType 		ctermfg=25 	ctermbg=NONE 	cterm=italic
 hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
+hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
+hi cFloat 		ctermfg=180 	ctermbg=NONE 	cterm=italic
+hi cOctalZero 		ctermfg=180 	ctermbg=NONE 	cterm=italic
 " hi cBlock 		ctermfg=172 	ctermbg=NONE 	cterm=italic
+" }}}
+
+" doxygen {{{
+hi doxygenParam		ctermfg=181 	ctermbg=NONE 	cterm=NONE
+hi doxygenParamName	ctermfg=6 	ctermbg=NONE 	cterm=italic
+
 " }}}
 
 " dts-mode {{{
 hi dtsCellProperty	ctermfg=66 	ctermbg=NONE 	cterm=NONE
+" }}}
+
+" gitconfig {{{
+hi gitconfigVariable	ctermfg=62 	ctermbg=NONE 	cterm=NONE
+hi gitconfigAssignment	ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi gitconfigBoolean	ctermfg=60 	ctermbg=NONE 	cterm=italic
+
 " }}}
 
 " git-gutter {{{
@@ -133,9 +149,10 @@ hi PmenuThumb   	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 
 " GitCommit {{{
 hi gitcommitComment		ctermfg=240 	ctermbg=NONE 	cterm=NONE
+hi gitcommitOverflow		ctermfg=162 	ctermbg=237 	cterm=italic
 hi gitcommitSummary		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi gitcommitBranch		ctermfg=25 	ctermbg=NONE 	cterm=italic
-hi gitcommitBlank		ctermfg=9 	ctermbg=235 	cterm=italic
+hi gitcommitBlank		ctermfg=9 	ctermbg=237 	cterm=italic
 hi gitcommitHeader		ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi gitcommitDiff		ctermfg=245 	ctermbg=NONE 	cterm=NONE
 hi gitcommitSelectedFile	ctermfg=66 	ctermbg=NONE 	cterm=NONE
@@ -156,29 +173,29 @@ hi diffSubname		ctermfg=67 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " Ruby {{{
-hi rubyClass 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
-hi rubyFunction 	ctermfg=84 	ctermbg=NONE 	cterm=NONE
-hi rubyInterpolationDelimiter ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi rubySymbol 		ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi rubyConstant 	ctermfg=81 	ctermbg=NONE 	cterm=NONE
-hi rubyStringDelimiter 	ctermfg=228 	ctermbg=NONE 	cterm=NONE
-hi rubyBlockParameter 	ctermfg=215 	ctermbg=NONE 	cterm=NONE
-hi rubyInstanceVariable ctermfg=203 	ctermbg=NONE 	cterm=NONE
-hi rubyInclude 		ctermfg=212 	ctermbg=NONE	cterm=NONE
-hi rubyGlobalVariable 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi rubyRegexp 		ctermfg=228 	ctermbg=NONE 	cterm=NONE
-hi rubyRegexpDelimiter 	ctermfg=228 	ctermbg=NONE 	cterm=NONE
-hi rubyEscape 		ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi rubyControl 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
-hi rubyClassVariable 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi rubyOperator 	ctermfg=212 	ctermbg=NONE 	cterm=NONE
-hi rubyException 	ctermfg=212	ctermbg=NONE 	cterm=NONE
-hi rubyPseudoVariable 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi rubyRailsUserClass 	ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi rubyClass 			ctermfg=212 	ctermbg=NONE 	cterm=NONE
+hi rubyFunction 		ctermfg=84 	ctermbg=NONE 	cterm=NONE
+hi rubyInterpolationDelimiter 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi rubySymbol 			ctermfg=141 	ctermbg=NONE 	cterm=NONE
+hi rubyConstant 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
+hi rubyStringDelimiter 		ctermfg=228 	ctermbg=NONE 	cterm=NONE
+hi rubyBlockParameter 		ctermfg=215 	ctermbg=NONE 	cterm=NONE
+hi rubyInstanceVariable 	ctermfg=203 	ctermbg=NONE 	cterm=NONE
+hi rubyInclude 			ctermfg=212 	ctermbg=NONE	cterm=NONE
+hi rubyGlobalVariable 		ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi rubyRegexp 			ctermfg=228 	ctermbg=NONE 	cterm=NONE
+hi rubyRegexpDelimiter 		ctermfg=228 	ctermbg=NONE 	cterm=NONE
+hi rubyEscape 			ctermfg=141 	ctermbg=NONE 	cterm=NONE
+hi rubyControl 			ctermfg=212 	ctermbg=NONE 	cterm=NONE
+hi rubyClassVariable 		ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi rubyOperator 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
+hi rubyException 		ctermfg=212	ctermbg=NONE 	cterm=NONE
+hi rubyPseudoVariable 		ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
+hi rubyRailsUserClass 		ctermfg=81 	ctermbg=NONE 	cterm=NONE
 hi rubyRailsARAssociationMethod	ctermfg=117 	ctermbg=NONE 	cterm=NONE
-hi rubyRailsARMethod 	ctermfg=117 	ctermbg=NONE 	cterm=NONE
-hi rubyRailsRenderMethod ctermfg=117 	ctermbg=NONE 	cterm=NONE
-hi rubyRailsMethod 	ctermfg=117 	ctermbg=NONE 	cterm=NONE
+hi rubyRailsARMethod 		ctermfg=117 	ctermbg=NONE 	cterm=NONE
+hi rubyRailsRenderMethod 	ctermfg=117 	ctermbg=NONE 	cterm=NONE
+hi rubyRailsMethod 		ctermfg=117 	ctermbg=NONE 	cterm=NONE
 "}}}
 
 " eRuby {{{
@@ -241,7 +258,7 @@ hi vimHiCtermFgBg 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi vimHiGuiFgBg 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi vimHilight 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi vimHiCterm 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
-hi vimLet 		ctermfg=12 	ctermbg=NONE 	cterm=NONE
+hi vimLet 		ctermfg=24 	ctermbg=NONE 	cterm=NONE
 " hi vimHighlight		ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi vimAutoCmd		ctermfg=12 	ctermbg=NONE 	cterm=NONE
 " }}}
