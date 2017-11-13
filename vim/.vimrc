@@ -67,7 +67,8 @@ Plug 'mattn/ctrlp-register'
 " Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'lokikl/vim-ctrlp-ag'
-Plug 'ivan-cukic/vim-ctrlp-cscope'
+" Plug 'ivan-cukic/vim-ctrlp-cscope'
+Plug 'brookhong/cscope.vim'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'yuttie/comfortable-motion.vim'
 " Plug 'yggdroot/leaderf'
@@ -118,6 +119,7 @@ Plug 'ervandew/supertab'
 Plug 'vim-scripts/OmniCppComplete'
 " Plug 'rking/ag.vim'
 Plug 'sjl/vitality.vim'
+Plug 'gelguy/Cmd2.vim'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'python-mode/python-mode'
 " Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
@@ -301,8 +303,8 @@ let g:airline#extensions#virtualenv#enabled    = 1
 let g:airline#extensions#tagbar#enabled        = 1
 let g:airline#extensions#virtualenv#enabled    = 1
 let g:airline#extensions#wordcount#enabled     = 1
-let g:airline#extensions#tagbar#enabled              = 1
-let g:airline#extensions#wordcount#formatter         = 'default'
+let g:airline#extensions#tagbar#enabled        = 1
+let g:airline#extensions#wordcount#formatter   = 'default'
 
 " vcs
 let g:airline#extensions#hunks#non_zero_only         = 1
@@ -446,13 +448,14 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\v\.(exe|so|dll|stgit*)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
+let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 " }}}
 
 " ctrlp-funky {{{
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " Narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_matchtype        = 'line'
+let g:ctrlp_funky_matchtype        = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_funky_nolim            = 1
 " }}}
