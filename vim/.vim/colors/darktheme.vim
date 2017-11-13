@@ -146,7 +146,7 @@ hi gitcommitDiscardedType	ctermfg=95 	ctermbg=NONE 	cterm=italic
 
 " Diff {{{
 hi diffAdded 		ctermfg=28 	ctermbg=NONE 	cterm=NONE
-hi diffRemoved 		ctermfg=1 	ctermbg=NONE 	cterm=NONE
+hi diffRemoved 		ctermfg=161 	ctermbg=NONE 	cterm=NONE
 hi diffChanged 		ctermfg=65 	ctermbg=NONE 	cterm=NONE
 hi diffText 		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi diffFile 		ctermfg=95 	ctermbg=NONE 	cterm=italic
