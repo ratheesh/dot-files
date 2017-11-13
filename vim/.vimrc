@@ -267,7 +267,7 @@ nmap <Leader>bb :b#<CR>
 
 " Toggle keybindings
 set pastetoggle=<Leader>tp
-nnoremap <Leader>tg :GitGutterToggle<CR>
+nnoremap <Leader>tg :GitGutterSignsToggle<CR>
 nnoremap <Leader>ta :ALEToggle<CR>
 " }}}
 
