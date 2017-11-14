@@ -259,7 +259,7 @@ noremap <Right> <NOP>
 " nmap <Leader><Leader> :
 " imap jj <Esc>
 " imap <Esc> l
-imap jj l
+inoremap jj l
 nnoremap ' `
 nnoremap ` '
 nnoremap <Leader>so 	:source $MYVIMRC<CR>
