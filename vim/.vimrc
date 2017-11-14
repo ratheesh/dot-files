@@ -532,7 +532,8 @@ if exists('&signcolumn')  " Vim 7.4.2201
 else
 	let g:gitgutter_sign_column_always = 1
 endif
-autocmd FileType tagbar,nerdtree setlocal signcolumn=no
+
+" autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
 let g:gitgutter_sign_modified = '='
 
