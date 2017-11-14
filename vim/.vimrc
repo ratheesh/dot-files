@@ -98,6 +98,7 @@ Plug 'vim-scripts/AutoAlign'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
@@ -551,6 +552,15 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 let g:indentLine_faster            = 1
 "}}}
 
+" Doxygen-toolkit {{{
+let g:DoxygenToolkit_briefTag_pre = "@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre = "@Param "
+let g:DoxygenToolkit_returnTag    = "@Returns   "
+let g:DoxygenToolkit_blockHeader  = "--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter  = "----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName   = "Ratheesh"
+let g:DoxygenToolkit_licenseTag   = "GPLv2"
+" }}}
 " ale {{{
 let g:ale_sign_column_always   = 1
 let g:ale_lint_on_text_changed = 'never'
