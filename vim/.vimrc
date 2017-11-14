@@ -266,8 +266,8 @@ nnoremap <Leader>nq 	:q!<CR>
 
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
-map <F9>  	:bprev<cr>
-map <F10> 	:bnext<cr>
+map <F9>  	:bprev<CR>
+map <F10> 	:bnext<CR>
 nmap <Leader>bd :bdelete<CR>
 nmap <Leader>\ 	:nohlsearch<CR>
 nmap <Leader>bh :Startify<CR>
@@ -459,9 +459,9 @@ let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|og
 " }}}
 
 " ctrlp-funky {{{
-nnoremap <Leader>fu :CtrlPFunky<Cr>
+nnoremap <Leader>fu :CtrlPFunky<CR>
 " Narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<CR>
 let g:ctrlp_funky_matchtype        = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_funky_nolim            = 1
@@ -472,8 +472,8 @@ call ctrlp_bdelete#init()
 "}}}
 
 " vim-ctrlp-tjump {{{
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
+nnoremap <c-]> :CtrlPtjump<CR>
+vnoremap <c-]> :CtrlPtjumpVisual<CR>
 let g:ctrlp_tjump_only_silent = 1
 " }}}
 
@@ -493,10 +493,10 @@ let g:swoopIgnoreCase = 1
 " }}}
 
 " vim-ctrlp-ag {{{
-" nnoremap <c-f> :CtrlPag<cr>
-" vnoremap <c-f> :CtrlPagVisual<cr>
+" nnoremap <c-f> :CtrlPag<CR>
+" vnoremap <c-f> :CtrlPagVisual<CR>
 nnoremap <leader>ca :CtrlPagLocate
-nnoremap <leader>cp :CtrlPagPrevious<cr>
+nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "deps/*"
     \ --ignore "_build/*"
@@ -641,7 +641,7 @@ call expand_region#custom_text_objects({
 " }}}
 
 " YankRing {{{
-nmap <leader>y :YRShow<cr>
+nmap <leader>y :YRShow<CR>
 " put the yankring_history file in ~/.backup
 " let g:yankring_history_dir = '~/.backup'
 " }}}
