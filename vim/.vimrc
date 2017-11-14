@@ -290,6 +290,10 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <leader>tt :TagbarOpenAutoClose<CR>
 " }}}
 
+" doxygen {{{
+let g:load_doxygen_syntax = 1
+" }}}
+
 " Vim-airline {{{
 let g:airline_highlighting_cache = 0
 
