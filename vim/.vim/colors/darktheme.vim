@@ -34,7 +34,7 @@ hi CursorLine 	ctermbg=234 			cterm=NONE
 hi CursorColumn ctermbg=234 			cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=234 	cterm=NONE
 hi CursorLineNr ctermfg=251	ctermbg=89	cterm=NONE
-hi VertSplit 	ctermfg=7 	ctermbg=236 	cterm=bold
+hi VertSplit 	ctermfg=60 	ctermbg=233 	cterm=bold
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
 hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
 hi Braces 	ctermfg=NONE 	ctermbg=NONE 	cterm=bold,underline
@@ -55,7 +55,7 @@ hi Define 	ctermfg=127 	ctermbg=NONE 	cterm=NONE
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
-hi Function 	ctermfg=67 	ctermbg=NONE 	cterm=NONE
+hi Function 	ctermfg=61 	ctermbg=NONE 	cterm=NONE
 hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Label 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
@@ -111,8 +111,12 @@ hi cOctalZero 		ctermfg=180 	ctermbg=NONE 	cterm=italic
 " }}}
 
 " doxygen {{{
+hi doxygenBrief	        ctermfg=132 	ctermbg=NONE 	cterm=NONE
+hi doxygenBOther	ctermfg=181 	ctermbg=NONE 	cterm=NONE
+" hi doxygenStartSpecial	ctermfg=65	ctermbg=NONE 	cterm=NONE
 hi doxygenParam		ctermfg=181 	ctermbg=NONE 	cterm=NONE
-hi doxygenParamName	ctermfg=6 	ctermbg=NONE 	cterm=italic
+hi doxygenParamName	ctermfg=65 	ctermbg=NONE 	cterm=italic
+hi doxygenSpecialMultilineDesc	ctermfg=6 	ctermbg=NONE 	cterm=italic
 
 " }}}
 
@@ -129,7 +133,7 @@ hi gitconfigBoolean	ctermfg=60 	ctermbg=NONE 	cterm=italic
 
 " git-gutter {{{
 hi GitGutterAdd 	ctermfg=26 	ctermbg=233 	cterm=bold
-hi GitGutterChange 	ctermfg=65 	ctermbg=233 	cterm=bold
+hi GitGutterChange 	ctermfg=180 	ctermbg=233 	cterm=bold
 hi GitGutterDelete 	ctermfg=196 	ctermbg=233 	cterm=bold
 hi GitGutterChangeDelete ctermfg=94 	ctermbg=233 	cterm=bold
 " }}}
@@ -171,6 +175,19 @@ hi diffLine 		ctermfg=142 	ctermbg=NONE 	cterm=italic
 hi diffIndexLine	ctermfg=127 	ctermbg=NONE 	cterm=italic
 hi diffSubname		ctermfg=67 	ctermbg=NONE 	cterm=NONE
 "}}}
+
+" Startify {{{
+hi StartifyNumber	ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi StartifySelect	ctermfg=NONE 	ctermbg=235 	cterm=NONE
+hi StartifyBracket	ctermfg=25 	ctermbg=NONE 	cterm=NONE
+hi StartifySpecial	ctermfg=132 	ctermbg=NONE 	cterm=NONE
+hi StartifyPath		ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi StartifyFile		ctermfg=60 	ctermbg=NONE 	cterm=italic
+hi StartifySlash	ctermfg=126 	ctermbg=NONE 	cterm=bold
+hi StartifyHeader	ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi StartifySection	ctermfg=142 	ctermbg=NONE 	cterm=bold
+hi StartifyFooter	ctermfg=6 	ctermbg=NONE 	cterm=NONE
+" }}}
 
 " Ruby {{{
 hi rubyClass 			ctermfg=212 	ctermbg=NONE 	cterm=NONE
