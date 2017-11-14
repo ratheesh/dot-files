@@ -1,4 +1,4 @@
-" Darkmode vim-airlien theme
+" Darkmode vim-airline theme
 "
 " Based on Dracula vim-airline theme
 "
@@ -41,7 +41,7 @@ let s:ctermChangedColor = "9"
 " Normal mode
 let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
 let s:N2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
-let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
+let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
 " Insert mode
 let s:I1 = [ s:guiBlack , s:gui07 , s:ctermWhite , s:cterm08 ]
