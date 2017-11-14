@@ -265,8 +265,9 @@ nnoremap ` '
 nnoremap <Leader>so 	:source $MYVIMRC<CR>
 nnoremap <Leader>w 	:w<CR>
 nnoremap <Leader>x 	:x<CR>
-nnoremap <Leader>q 	:q<CR>
-nnoremap <Leader>nq 	:q!<CR>
+" nnoremap <Leader>q 	:q<CR>
+nnoremap <Leader>qn 	:q!<CR>
+nnoremap <Leader>qp 	:pclose<CR>
 
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
