@@ -71,12 +71,12 @@ hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
 hi Tag 		ctermfg=212 	ctermbg=NONE 	cterm=NONE
 hi Title 	ctermfg=7 	ctermbg=NONE 	cterm=bold
 hi Todo 	ctermfg=61 	ctermbg=NONE 	cterm=inverse,bold
-" hi level11      ctermfg=60 	ctermbg=NONE 	cterm=NONE
-" hi level12      ctermfg=5 	ctermbg=NONE 	cterm=NONE
-" hi level13      ctermfg=25 	ctermbg=NONE 	cterm=NONE
-" hi level14      ctermfg=125 	ctermbg=NONE 	cterm=NONE
-" hi level15      ctermfg=25 	ctermbg=NONE 	cterm=NONE
-" hi level16      ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi level11      ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi level12      ctermfg=5 	ctermbg=NONE 	cterm=NONE
+hi level13      ctermfg=25 	ctermbg=NONE 	cterm=NONE
+hi level14      ctermfg=125 	ctermbg=NONE 	cterm=NONE
+hi level15      ctermfg=25 	ctermbg=NONE 	cterm=NONE
+hi level16      ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi Type 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Underlined 	ctermfg=NONE 	ctermbg=NONE 	cterm=underline
 
@@ -101,9 +101,9 @@ hi cMathOperator	ctermfg=25	ctermbg=NONE 	cterm=NONE
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
 hi cPointerOperator 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
 hi cStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
+hi cGNUStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cStructure 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi cType 		ctermfg=25 	ctermbg=NONE 	cterm=italic
-hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
 hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
 hi cFloat 		ctermfg=180 	ctermbg=NONE 	cterm=italic
 hi cOctalZero 		ctermfg=180 	ctermbg=NONE 	cterm=italic
@@ -261,6 +261,7 @@ hi vimHiCterm 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi vimLet 		ctermfg=24 	ctermbg=NONE 	cterm=NONE
 " hi vimHighlight		ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi vimAutoCmd		ctermfg=12 	ctermbg=NONE 	cterm=NONE
+hi vimMapModKey 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
 " }}}
 
 " Markdown: {{{
