@@ -508,9 +508,12 @@ let g_SuperTabDefaultCompletionType="context"
 "}}}
 
 " vim-startify {{{
-let g:startify_bookmarks = [ 	{'c': '~/.vimrc'},
-			\	{'z': '~/.zshrc'},
-			\	{'t': '~/.tmux.conf'}]
+let g:startify_bookmarks = [ 	{'c': '~/.vimrc'     },
+			\	{'g': '~/.gitconfig' },
+			\	{'s': '~/.screenrc'  },
+			\	{'t': '~/.tmux.conf' },
+			\	{'z': '~/.zshrc'     },
+			\ ]
 " }}}
 
 " vim-gitgutter {{{
