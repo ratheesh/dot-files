@@ -262,6 +262,7 @@ hi vimLet 		ctermfg=24 	ctermbg=NONE 	cterm=NONE
 " hi vimHighlight		ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi vimAutoCmd		ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi vimMapModKey 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
+hi vimNotation 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
 " }}}
 
 " Markdown: {{{
