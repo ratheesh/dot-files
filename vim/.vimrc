@@ -268,6 +268,7 @@ nmap <Leader>bb :b#<CR>
 set pastetoggle=<Leader>tp
 nnoremap <Leader>tg :GitGutterSignsToggle<CR>
 nnoremap <Leader>ta :ALEToggle<CR>
+nnoremap <Leader>ts :SignatureToggleSigns<CR>
 " }}}
 
 " Theme {{{
