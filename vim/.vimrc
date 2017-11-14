@@ -241,8 +241,12 @@ let mapleader = "\<Space>"
 autocmd BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
 autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc,zimrc,.zlogin,zlogin,.zlogout,zlogout set filetype=sh
 autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
-autocmd BufNewFile,BufRead .h set filetype=c
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
+autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
+
+" Treat c-header as C source file type
+let g:c_syntax_for_h = 1
+autocmd BufNewFile,BufRead .h set filetype=ch
 
 " keybindings
 " disable arrow key navigation to break bad habit
