@@ -577,10 +577,10 @@ let g:indentLine_faster            = 1
 let g:DoxygenToolkit_briefTag_pre = "@Synopsis  "
 let g:DoxygenToolkit_paramTag_pre = "@Param "
 let g:DoxygenToolkit_returnTag    = "@Returns   "
-let g:DoxygenToolkit_blockHeader  = "--------------------------------------------------------------------------"
-let g:DoxygenToolkit_blockFooter  = "----------------------------------------------------------------------------"
+" let g:DoxygenToolkit_blockHeader  = "--------------------------------------------------------------------------"
+" let g:DoxygenToolkit_blockFooter  = "--------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName   = "Ratheesh"
-let g:DoxygenToolkit_licenseTag   = "GPLv2"
+" let g:DoxygenToolkit_licenseTag   = "GPLv2"
 " }}}
 " ale {{{
 let g:ale_sign_column_always   = 1
