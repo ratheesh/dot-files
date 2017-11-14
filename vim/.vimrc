@@ -246,7 +246,9 @@ noremap <Right> <NOP>
 
 " set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
-imap jj <Esc>
+" imap jj <Esc>
+" imap <Esc> l
+imap jj l
 nnoremap ' `
 nnoremap ` '
 nnoremap <Leader>so 	:source $MYVIMRC<CR>
