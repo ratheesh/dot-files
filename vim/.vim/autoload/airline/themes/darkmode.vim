@@ -62,29 +62,29 @@ let s:R3 = [ s:guiWhite , s:gui01 , s:cterm09, s:cterm01 ]
 let s:changed = [ s:guiWhite , s:guiChangedColor , s:ctermChangedColor , s:cterm01 ]
 
 let g:airline#themes#darkmode#palette = {}
-let g:airline#themes#darkmode#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
-let g:airline#themes#darkmode#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
-let g:airline#themes#darkmode#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
+let g:airline#themes#darkmode#palette.normal  = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+let g:airline#themes#darkmode#palette.insert  = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+let g:airline#themes#darkmode#palette.visual  = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 let g:airline#themes#darkmode#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 
 " Inactive mode
 let s:IN1 = [ s:gui04 , s:guiWhite , s:cterm04 , s:ctermWhite ]
 let s:IN2 = [ s:gui04 , s:gui01 , s:cterm04  , s:cterm01 ]
-let s:IA = [ s:IN1[1] , s:IN2[1] , s:IN1[3] , s:IN2[3] , '' ]
+let s:IA  = [ s:IN1[1] , s:IN2[1] , s:IN1[3] , s:IN2[3] , '' ]
 let g:airline#themes#darkmode#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
 
 " Warning info
 let s:WARNING = [ s:guiBlack, s:gui03, s:ctermBlack, s:cterm03 ]
 let s:ERROR = [ s:guiWhite, s:gui05, s:ctermWhite, s:cterm05 ]
 
-let g:airline#themes#darkmode#palette.normal.airline_warning = s:WARNING
-let g:airline#themes#darkmode#palette.insert.airline_warning = s:WARNING
-let g:airline#themes#darkmode#palette.visual.airline_warning = s:WARNING
+let g:airline#themes#darkmode#palette.normal.airline_warning  = s:WARNING
+let g:airline#themes#darkmode#palette.insert.airline_warning  = s:WARNING
+let g:airline#themes#darkmode#palette.visual.airline_warning  = s:WARNING
 let g:airline#themes#darkmode#palette.replace.airline_warning = s:WARNING
 
-let g:airline#themes#darkmode#palette.normal.airline_error = s:ERROR
-let g:airline#themes#darkmode#palette.insert.airline_error = s:ERROR
-let g:airline#themes#darkmode#palette.visual.airline_error = s:ERROR
+let g:airline#themes#darkmode#palette.normal.airline_error  = s:ERROR
+let g:airline#themes#darkmode#palette.insert.airline_error  = s:ERROR
+let g:airline#themes#darkmode#palette.visual.airline_error  = s:ERROR
 let g:airline#themes#darkmode#palette.replace.airline_error = s:ERROR
 
 " File modified and not saved
