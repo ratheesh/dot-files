@@ -281,18 +281,19 @@ nnoremap ` '
 nnoremap <Leader>so 	:source $MYVIMRC<CR>
 nnoremap <Leader>w 	:w<CR>
 nnoremap <Leader>x 	:x<CR>
-" nnoremap <Leader>q 	:q<CR>
+nnoremap <Leader>q 	:q<CR>
 nnoremap <Leader>qn 	:q!<CR>
 nnoremap <Leader>qp 	:pclose<CR>
 
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
-map <F9>  	:bprev<CR>
-map <F10> 	:bnext<CR>
-nmap <Leader>bd :bdelete<CR>
-nmap <Leader>\ 	:nohlsearch<CR>
-nmap <Leader>bh :Startify<CR>
-nmap <Leader>bb :b#<CR>
+map <F9>  	          :bprev<CR>
+map <F10> 	          :bnext<CR>
+nmap <Leader>bd           :bdelete<CR>
+nmap <Leader><Backspace>  :nohlsearch<CR>
+nmap <Leader>bh           :Startify<CR>
+nmap <Leader><Tab>        :b#<CR>
+nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " Toggle keybindings
 set pastetoggle=<Leader>tp
