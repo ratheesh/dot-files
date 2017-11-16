@@ -137,6 +137,12 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" Haskell plugins
+Plug 'itchyny/vim-haskell-indent'
+Plug 'sdiehl/haskell-vim-proto'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+
 call plug#end()
 "}}}
 
