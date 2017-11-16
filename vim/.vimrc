@@ -240,6 +240,13 @@ set lbr
 
 " let python_highlight_all=1
 
+" nvim/vim
+if has('nvim')
+    set inccommand=split
+    set viminfo+=n.vim-nviminfo
+else
+    set viminfo+=n.vim-viminfo
+endif
 " Remember last buffers loaded and file position
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
