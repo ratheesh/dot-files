@@ -100,6 +100,7 @@ Plug 'honza/vim-snippets'
 " Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
 " Plug 'haya14busa/incsearch.vim'
@@ -731,6 +732,14 @@ let g:hardtime_maxcount = 2
 
 " deoplete {{{
 let g:deoplete#enable_at_startup = 1
+" }}}
+
+" NERDTree {{{
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+" nnoremap <Leader>\ :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+nnoremap <Leader>] :wincmd w<CR>
 " }}}
 
 " Misc macros {{{
