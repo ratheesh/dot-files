@@ -34,7 +34,7 @@ hi CursorLine 	ctermbg=234 			cterm=NONE
 hi CursorColumn ctermbg=234 			cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=234 	cterm=NONE
 hi CursorLineNr ctermfg=251	ctermbg=89	cterm=NONE
-hi VertSplit 	ctermfg=60 	ctermbg=233 	cterm=bold
+hi VertSplit 	ctermfg=203 	ctermbg=237 	cterm=bold
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
 hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
 hi Braces 	ctermfg=NONE 	ctermbg=NONE 	cterm=bold,underline
@@ -92,14 +92,15 @@ hi c89Function 		ctermfg=67 	ctermbg=NONE 	cterm=NONE
 hi cCommentDelim 	ctermfg=243 	ctermbg=NONE 	cterm=bold
 hi cRepeat 		ctermfg=95 	ctermbg=NONE 	cterm=NONE
 hi cPPIncludeFile	ctermfg=60 	ctermbg=NONE 	cterm=NONE
+hi cPPOperator	        ctermfg=62 	ctermbg=NONE 	cterm=NONE
 hi cInclude		ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cCommentError	ctermfg=240 	ctermbg=NONE 	cterm=italic
 hi cGNUConstant		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cCharacter		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
-hi cMathOperator	ctermfg=25	ctermbg=NONE 	cterm=NONE
+hi cMathOperator	ctermfg=132	ctermbg=NONE 	cterm=NONE
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
-hi cPointerOperator 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
+hi cPointerOperator 	ctermfg=162 	ctermbg=NONE 	cterm=bold
 hi cStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cGNUStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cStructure 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
@@ -107,6 +108,7 @@ hi cType 		ctermfg=25 	ctermbg=NONE 	cterm=italic
 hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
 hi cFloat 		ctermfg=180 	ctermbg=NONE 	cterm=italic
 hi cOctalZero 		ctermfg=180 	ctermbg=NONE 	cterm=italic
+hi c89Macro 		ctermfg=66 	ctermbg=NONE 	cterm=italic
 " hi cBlock 		ctermfg=172 	ctermbg=NONE 	cterm=italic
 " }}}
 
@@ -145,8 +147,8 @@ hi CtrlPLinePre     	ctermfg=172 	ctermbg=NONE 	cterm=bold
 " }}}
 
 " Menu selection {{{
-hi Pmenu 		ctermfg=7 	ctermbg=238 	cterm=NONE
-hi PmenuSel 		ctermfg=184 	ctermbg=67 	cterm=NONE
+hi Pmenu 		ctermfg=7 	ctermbg=237 	cterm=NONE
+hi PmenuSel 		ctermfg=253 	ctermbg=24 	cterm=NONE
 hi PmenuSbar    	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi PmenuThumb   	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 "}}}
@@ -155,7 +157,7 @@ hi PmenuThumb   	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
 hi gitcommitComment		ctermfg=240 	ctermbg=NONE 	cterm=NONE
 hi gitcommitOverflow		ctermfg=162 	ctermbg=237 	cterm=italic
 hi gitcommitSummary		ctermfg=7 	ctermbg=NONE 	cterm=NONE
-hi gitcommitBranch		ctermfg=25 	ctermbg=NONE 	cterm=italic
+hi gitcommitBranch		ctermfg=180	ctermbg=NONE 	cterm=NONE
 hi gitcommitBlank		ctermfg=9 	ctermbg=237 	cterm=italic
 hi gitcommitHeader		ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi gitcommitDiff		ctermfg=245 	ctermbg=NONE 	cterm=NONE
