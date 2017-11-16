@@ -164,7 +164,9 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set nofoldenable    " disable folding
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.svg
+set wildignore+=*/vendor/*,*/node_modules/*,*/svg/*,*/fonts/*,*/images/*,.vim-*
+set wildignore+=.DS_Store,.cache,__pycache__
 set wildmenu
 set wildmode=longest,list
 set nobackup
@@ -208,7 +210,7 @@ if !has('gui_running')
 set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
-set fillchars="vert:|,fold:-"
+set fillchars="vert:\│,fold:-"
 set completeopt+=preview
 set cscopetag
 " $ for change command instead of deleting word then insert
