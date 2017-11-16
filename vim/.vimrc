@@ -119,7 +119,8 @@ Plug 'ervandew/supertab'
 Plug 'vim-scripts/OmniCppComplete'
 Plug 'rking/ag.vim'
 Plug 'sjl/vitality.vim'
-Plug 'gelguy/Cmd2.vim'
+" Plug 'gelguy/Cmd2.vim'
+Plug 'jalvesaq/vimcmdline'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'python-mode/python-mode'
 " Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
@@ -439,9 +440,11 @@ let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
+	let g:ctrlp_use_caching = 0
 else
 	set grepprg=ag\ --nogroup\ --nocolor
 	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+	let g:ctrlp_clear_cache_on_exit = 0
 endif
 
 " let g:ctrlp_by_filename = 0
@@ -462,6 +465,10 @@ let g:ctrlp_cmd               = 'CtrlPBuffer'
 let g:ctrlp_show_hidden       = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_root_markers      = ['.ctrlp']
+let g:ctrlp_mruf_exclude      = '\v\.git/(COMMIT_EDITMSG|index)'
+let g:ctrlp_max_files         = 200000
+let g:ctrlp_mruf_relative     = 1
+
 
 nnoremap <Leader>fo :CtrlP<CR>
 nnoremap <Leader>fb :CtrlPBuffer<CR>
@@ -470,9 +477,9 @@ nnoremap <Leader>ft :CtrlPBufTag<CR>
 nnoremap <Leader>fT :CtrlPBufTagAll<CR>
 nnoremap <Leader>fj :CtrlPJumpList<CR>
 nnoremap <Leader>fp :CtrlPRegister<CR>
+nnoremap <leader>fc :CtrlPCommandPalette<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
 	\ 'file': '\v\.(exe|so|dll|stgit*)$',
