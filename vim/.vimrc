@@ -129,6 +129,14 @@ Plug 'gelguy/Cmd2.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug '~/.vim/local/c_std'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 call plug#end()
 "}}}
 
@@ -706,6 +714,10 @@ let g:hardtime_timeout = 2000
 let g:hardtime_showmsg = 1
 let g:hardtime_ignore_buffer_patterns = ["NERD.*", "Tagbar.*"]
 let g:hardtime_maxcount = 2
+" }}}
+
+" deoplete {{{
+let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Misc macros {{{
