@@ -136,6 +136,7 @@ if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
+  Plug 'zchee/deoplete-clang'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
@@ -380,8 +381,8 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>l <Plug>AirlineSelectPrevTab
-nmap <leader>h <Plug>AirlineSelectNextTab
+nmap <leader>h <Plug>AirlineSelectPrevTab
+nmap <leader>l <Plug>AirlineSelectNextTab
 " let g:airline#extensions#tabline#left_sep      = ''
 " let g:airline#extensions#tabline#left_alt_sep  = '|'
 " let g:airline#extensions#tabline#right_sep     = ''
@@ -528,9 +529,9 @@ let g:ctrlp_yankring_minimum_chars   = 2
 " }}}
 
 " vim-swoop {{{
-nmap <Leader>l :call Swoop()<CR>
-vmap <Leader>l :call SwoopSelection()<CR>
-let g:swoopIgnoreCase = 1
+" nmap <Leader>l :call Swoop()<CR>
+" vmap <Leader>l :call SwoopSelection()<CR>
+" let g:swoopIgnoreCase = 1
 " let g:swoopAutoInsertMode = 0
 " }}}
 
