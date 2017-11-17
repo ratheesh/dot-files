@@ -15,7 +15,8 @@
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 " Bootstrap settings {{{
-set nocompatible               " be iMproved
+" set nocompatible               " be iMproved
+if &compatible | set nocompatible | endif
 set hidden
 filetype off                  " required!
 "}}}
@@ -158,8 +159,12 @@ filetype plugin indent on
 set shortmess+=I
 " set number
 set number relativenumber
+set esckeys
+set nostartofline
 set numberwidth=1
 set tabstop=8
+set bs=2
+set ww=<,>,h,l
 set showmatch
 set matchtime=1
 set showcmd
@@ -245,12 +250,12 @@ set lbr
 " let python_highlight_all=1
 
 " nvim/vim
-if has('nvim')
-    set inccommand=split
-    set viminfo+=n.vim-nviminfo
-else
-    set viminfo+=n.vim-viminfo
-endif
+" if has('nvim')
+    " set inccommand=split
+    " set viminfo+=n.vim-nviminfo
+" else
+    " set viminfo+=n.vim-viminfo
+" endif
 " Remember last buffers loaded and file position
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
