@@ -618,6 +618,7 @@ let g:DoxygenToolkit_returnTag    = "@Returns   "
 let g:DoxygenToolkit_authorName   = "Ratheesh"
 " let g:DoxygenToolkit_licenseTag   = "GPLv2"
 " }}}
+
 " ale {{{
 let g:ale_sign_column_always   = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -658,7 +659,7 @@ let g:rbpt_colorpairs = [
     \ [162,   	'RoyalBlue3' 	],
     \ [28, 	'SeaGreen3' 	],
     \ [96,      'DarkOrchid3' 	],
-    \ [172,     'firebrick3' 	],
+    \ [34,     'firebrick3' 	],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
