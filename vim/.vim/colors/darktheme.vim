@@ -51,7 +51,7 @@ hi Character 	ctermfg=64 	ctermbg=NONE 	cterm=NONE
 hi Comment 	ctermfg=242 	ctermbg=NONE 	cterm=italic
 hi Conditional 	ctermfg=25 	ctermbg=NONE 	cterm=italic
 hi Constant 	ctermfg=NONE 	ctermbg=NONE 	cterm=NONE
-hi Define 	ctermfg=127 	ctermbg=NONE 	cterm=NONE
+hi Define 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi ErrorMsg 	ctermfg=7 	ctermbg=212 	cterm=NONE
 hi WarningMsg 	ctermfg=162 	ctermbg=212 	cterm=NONE
 hi Float 	ctermfg=141 	ctermbg=NONE 	cterm=NONE
