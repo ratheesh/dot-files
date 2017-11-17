@@ -131,6 +131,7 @@ Plug 'jalvesaq/vimcmdline'
 " Plug 'Shougo/neocomplete.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug '~/.vim/local/c_std'
+Plug 'nsf/gocode'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -139,6 +140,8 @@ else
   Plug 'zchee/deoplete-clang'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'zchee/deoplete-jedi'
+  Plug 'zchee/deoplete-go' , { 'do': 'make'}
 endif
 
 " Haskell plugins
