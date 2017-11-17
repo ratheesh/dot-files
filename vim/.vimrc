@@ -380,8 +380,8 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>= <Plug>AirlineSelectNextTab
+nmap <leader>l <Plug>AirlineSelectPrevTab
+nmap <leader>h <Plug>AirlineSelectNextTab
 " let g:airline#extensions#tabline#left_sep      = ''
 " let g:airline#extensions#tabline#left_alt_sep  = '|'
 " let g:airline#extensions#tabline#right_sep     = ''
@@ -570,12 +570,12 @@ endif
 
 let g:gitgutter_sign_modified = '='
 
-nmap <Leader>hn <Plug>GitGutterNextHunk
-nmap <Leader>hp <Plug>GitGutterPrevHunk
-nmap <Leader>ha <Plug>GitGutterStageHunk
-nmap <Leader>hr <Plug>GitGutterRevertHunk
-nmap <Leader>hu <Plug>GitGutterUndoHunk
-nmap <Leader>hP <Plug>GitGutterPreviewHunk
+nmap <Leader>gn <Plug>GitGutterNextHunk
+nmap <Leader>gp <Plug>GitGutterPrevHunk
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gr <Plug>GitGutterRevertHunk
+nmap <Leader>gu <Plug>GitGutterUndoHunk
+nmap <Leader>gP <Plug>GitGutterPreviewHunk
 " }}}
 
 " vim-signature {{{
