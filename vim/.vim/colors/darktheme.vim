@@ -25,12 +25,12 @@ let g:colors_name = "darktheme"
 " syntax match Operator "[-+&|<>=!\/~:*%&^?]"
 " syn match Braces display '[{}()\[\]]'
 
-hi Normal 	ctermfg=7       ctermbg=234     cterm=NONE
-hi ColorColumn	ctermfg=NONE 	ctermbg=233 	cterm=NONE
+hi Normal 	ctermfg=7       ctermbg=233     cterm=NONE
+hi ColorColumn	ctermfg=NONE 	ctermbg=232 	cterm=NONE
 hi SignColumn 	ctermfg=246 	ctermbg=233 	cterm=bold
 hi Cursor 	ctermfg=NONE 	ctermbg=NONE 	cterm=inverse,bold
 hi Visual 	ctermfg=NONE 	ctermbg=237	cterm=NONE
-hi CursorLine 	ctermbg=234 			cterm=NONE
+hi CursorLine 	ctermbg=235 			cterm=NONE
 hi CursorColumn ctermbg=234 			cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=235 	cterm=NONE
 hi CursorLineNr ctermfg=251	ctermbg=89	cterm=NONE
