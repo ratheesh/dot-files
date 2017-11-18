@@ -96,13 +96,20 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'rhysd/clever-f.vim'
 Plug 'ratheesh/vim-extended-ft'
 " Plug 'WolfgangMehner/c-support'
+" Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/AutoAlign'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+if  has('nvim')
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
+else
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+endif
 " Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
 " Plug 'haya14busa/incsearch.vim'
@@ -141,8 +148,8 @@ else
   Plug 'zchee/deoplete-clang'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
-  " Plug 'zchee/deoplete-jedi'
-  " Plug 'zchee/deoplete-go' , { 'do': 'make'}
+  Plug 'zchee/deoplete-jedi'
+  Plug 'zchee/deoplete-go' , { 'do': 'make'}
 endif
 
 " Haskell plugins
@@ -166,7 +173,7 @@ set nostartofline
 set numberwidth=1
 set tabstop=8
 set bs=2
-set ww=<,>,h,l
+" set ww=<,>,h,l
 set showmatch
 set matchtime=1
 set showcmd
@@ -216,6 +223,8 @@ set gcr=a:blinkon0              " Disable cursor blink
 set clipboard=unnamed           " Share * register w/ unnamed (system copy/paste support)
 set encoding=utf-8
 set scrolloff=3 " Keep 3 lines below and above the cursor
+set sidescrolloff=15
+set sidescroll=5
 set laststatus=2
 if !has('gui_running')
 set t_Co=256  " Support for 256 colors
@@ -226,6 +235,11 @@ set completeopt+=preview
 set cscopetag
 " $ for change command instead of deleting word then insert
 set cpoptions+=$
+
+if has('nvim')
+    " set termguicolors
+    au VimLeave * set guicursor=a:block-blinkon0
+endif
 
 " Spell checking
 setglobal spell spelllang=en_us
@@ -299,8 +313,9 @@ noremap <Right> <NOP>
 inoremap jj l
 nnoremap ' `
 nnoremap ` '
-nnoremap <Leader>so 	:source $MYVIMRC<CR>
-nnoremap <Leader>w 	:w<CR>
+" nnoremap <Leader>so 	:source $MYVIMRC<CR>
+nnoremap <Leader>so 	:source ~/.config/nvim/init.vim<CR>
+noremap <Leader>w 	:w<CR>
 nnoremap <Leader>x 	:x<CR>
 nnoremap <Leader>q 	:q<CR>
 nnoremap <Leader>qn 	:q!<CR>
@@ -709,7 +724,7 @@ nmap <leader>y :YRShow<CR>
 let g:indentguides_ignorelist = ['text', 'vim']
 let g:indentguides_spacechar  = '┆'
 let g:indentguides_tabchar    = '¦'
-let g:indentguides_firstlevel = 0
+let g:indentguides_firstlevel = 1
 " }}}
 
 " quick-scope {{{
