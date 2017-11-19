@@ -169,12 +169,14 @@ filetype plugin indent on
 set shortmess+=I
 " set number
 set number relativenumber
-set esckeys
+if !has('nvim')
+  set esckeys
+endif
 set nostartofline
 set numberwidth=1
 set tabstop=8
 set bs=2
-set ww=<,>,h,l
+" set ww=<,>,h,l
 set showmatch
 set matchtime=1
 set showcmd
@@ -194,6 +196,8 @@ set fileformats=unix,dos,mac
 set ignorecase
 set smartcase
 set smarttab
+set gdefault
+set magic
 set hlsearch
 set incsearch
 set history=1000
@@ -209,6 +213,7 @@ set cursorline
 if exists('+breakindent')
   set breakindent showbreak=\ +
 endif
+set linebreak
 if has('linebreak')
   set breakindent
   let &showbreak = '↳ '
@@ -218,18 +223,25 @@ set hidden   " See http://items.sjbach.com/319/configuring-vim-right
 set wmh=0    " Windows need not have height
 set foldmethod=marker
 set lazyredraw
-set linebreak
 " set copyindent
 set gcr=a:blinkon0              " Disable cursor blink
 set clipboard=unnamed           " Share * register w/ unnamed (system copy/paste support)
 set encoding=utf-8
-set scrolloff=3 " Keep 3 lines below and above the cursor
+if !&scrolloff
+  set scrolloff=3       " Show next 3 lines while scrolling.
+endif
+if !&sidescrolloff
+  set sidescrolloff=5   " Show next 5 columns while side-scrolling.
+endif
 set laststatus=2
 if !has('gui_running')
 set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
-set fillchars="vert:\│,fold:-"
+" set fillchars="vert:\│,fold:-"
+set fillchars+=vert:\│
+set listchars+=eol:⏎
+set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
 " $ for change command instead of deleting word then insert
@@ -250,12 +262,17 @@ set shortmess+=I
 set novb
 set ttyfast
 set formatoptions+=1
+set formatoptions+=c  " Autowrap comments using textwidth
+set formatoptions+=j  " Delete comment character when joining commented lines
+set formatoptions+=l  " do not wrap lines that have been longer when starting insert mode already
+set formatoptions+=n  " Recognize numbered lists
+set formatoptions+=o  " Insert comment leader after hitting o or O in normal mode
+set formatoptions+=q  " Allow formatting of comments with "gq".
+set formatoptions+=r  " Insert comment leader after hitting <Enter>
+set formatoptions+=t  " Auto-wrap text using textwidth"
+set nostartofline
 set lbr
 " set iskeyword-=_
-
-" Double slash -> Case insensitive search
-" map // /\c
-" map ?? ?\c
 
 " let python_highlight_all=1
 
