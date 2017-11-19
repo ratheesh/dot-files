@@ -328,7 +328,11 @@ noremap <Right> <NOP>
 inoremap jj l
 nnoremap ' `
 nnoremap ` '
+if  has('nvim')
+nnoremap <Leader>so 	:source ~/.config/nvim/init.vim<CR>
+else
 nnoremap <Leader>so 	:source $MYVIMRC<CR>
+endif
 nnoremap <Leader>w 	:w<CR>
 nnoremap <Leader>x 	:x<CR>
 nnoremap <Leader>q 	:q<CR>
