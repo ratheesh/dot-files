@@ -339,6 +339,12 @@ nnoremap <Leader>q 	:q<CR>
 nnoremap <Leader>qn 	:q!<CR>
 nnoremap <Leader>qp 	:pclose<CR>
 
+" Move across vim split Windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
 map <F9>  	          :bprev<CR>
