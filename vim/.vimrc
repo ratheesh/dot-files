@@ -349,6 +349,10 @@ nmap <Leader>bh           :Startify<CR>
 nmap <Leader><Tab>        :b#<CR>
 nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
+" visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
 " Toggle keybindings
 set pastetoggle=<Leader>tp
 nnoremap <Leader>tg :GitGutterSignsToggle<CR>
