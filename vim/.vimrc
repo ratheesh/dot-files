@@ -255,7 +255,7 @@ setglobal spell spelllang=en_us
 au BufRead,BufNewFile,BufWrite *.txt,*.tex,*.latex set spell
 
 " Set scroll margin to 0 in git commit buffers to avoid cursor in non-zero pos
-au BufRead,BufNewFile,BufWrite *.stgit*,COMMIT_EDITMSG set scrolloff=0
+" au BufRead,BufNewFile,BufWrite *.stgit*,COMMIT_EDITMSG set scrolloff=0
 
 " Skip the splash screen
 set shortmess+=I
@@ -308,6 +308,7 @@ autocmd BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profi
 autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc,zimrc,.zlogin,zlogin,.zlogout,zlogout set filetype=sh
 autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
+autocmd FileType gitcommit setlocal scrolloff=0
 autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
 
 " Treat c-header as C source file type
