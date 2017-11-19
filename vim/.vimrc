@@ -370,7 +370,13 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <leader>tt :TagbarOpenAutoClose<CR>
 " }}}
 
-" doxygen {{{
+" C/C++ {{{
+let g:ch_syntax_for_h = 1
+let g:c_conditional_is_operator = 1
+let c_no_if0 = 1
+" }}}
+
+" Doxygen {{{
 let g:load_doxygen_syntax = 1
 " }}}
 
