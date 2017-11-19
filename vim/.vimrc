@@ -791,7 +791,31 @@ let g:hardtime_maxcount = 2
 " }}}
 
 " deoplete {{{
-let g:deoplete#enable_at_startup = 1
+" set completeopt+=noinsert
+let g:deoplete#enable_at_startup          = 1
+if !has('nvim')
+let g:deoplete#enable_yarp                = 1
+endif
+" let g:deoplete#enable_refresh_always         = 1
+let g:deoplete#auto_complete_delay        = 150
+let g:deoplete#auto_refresh_delay         = 100
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_ignore_case         = 1
+let g:deoplete#enable_smart_case          = 1
+let g:deoplete#enable_camel_case          = 1
+let g:deoplete#auto_complete_delay        = 150
+let g:deoplete#file#enable_buffer_path    = 1
+" let g:deoplete#auto_completion_start_length  = 0
+let g:deoplete#max_list                   = 50
+" let deoplete#tag#cache_limit_size         = 10000000
+let g:deoplete#complete_method            = "omnifunc"
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+
+let g:deoplete#sources     = {}
+let g:deoplete#sources_   = [ 'buffer', 'tag', 'member', 'file', 'around']
 " }}}
 
 " NERDTree {{{
