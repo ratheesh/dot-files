@@ -284,7 +284,11 @@ set lbr
     " set viminfo+=n.vim-viminfo
 " endif
 " Remember last buffers loaded and file position
-set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
+if has('nvim')
+  set viminfo=%,<800,'10,/50,:100,h,f0,n$HOME/.config/nvim/viminfo
+else
+  set viminfo=%,<800,'10,/50,:100,h,f0,n$HOME/.viminfo
+endif
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 let mapleader = "\<Space>"
