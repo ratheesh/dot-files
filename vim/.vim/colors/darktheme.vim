@@ -101,7 +101,7 @@ hi cCharacter		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi cMathOperator	ctermfg=132	ctermbg=NONE 	cterm=NONE
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
-hi cPointerOperator 	ctermfg=162 	ctermbg=NONE 	cterm=bold
+hi cPointerOperator 	ctermfg=129 	ctermbg=NONE 	cterm=bold
 hi cStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cGNUStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cStructure 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
