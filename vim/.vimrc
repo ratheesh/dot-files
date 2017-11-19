@@ -147,7 +147,8 @@ if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
-  Plug 'zchee/deoplete-clang'
+  " Plug 'zchee/deoplete-clang'
+  Plug 'tweekmonster/deoplete-clang2'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'zchee/deoplete-jedi'
