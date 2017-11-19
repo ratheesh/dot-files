@@ -34,7 +34,7 @@ hi CursorLine 	ctermbg=235 			cterm=NONE
 hi CursorColumn ctermbg=234 			cterm=NONE
 hi LineNr 	ctermfg=60 	ctermbg=235 	cterm=NONE
 hi CursorLineNr ctermfg=251	ctermbg=89	cterm=NONE
-hi VertSplit 	ctermfg=203 	ctermbg=235 	cterm=bold
+hi VertSplit 	ctermfg=60 	ctermbg=NONE 	cterm=NONE
 hi MatchParen 	ctermfg=126 	ctermbg=NONE 	cterm=underline,bold
 hi ParenError 	ctermfg=196 	ctermbg=NONE 	cterm=underline,bold
 hi Braces 	ctermfg=NONE 	ctermbg=NONE 	cterm=bold,underline
@@ -64,7 +64,8 @@ hi Number 	ctermfg=180	ctermbg=NONE 	cterm=NONE
 hi Operator 	ctermfg=62 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
 hi Special 	ctermfg=65 	ctermbg=NONE 	cterm=NONE
-hi SpecialKey 	ctermfg=7 	ctermbg=235 	cterm=NONE
+" hi SpecialKey 	ctermfg=238 	ctermbg=NONE 	cterm=NONE
+" hi Conceal 	ctermfg=238 	ctermbg=NONE 	cterm=NONE
 hi Statement 	ctermfg=66  	ctermbg=NONE 	cterm=NONE
 hi StorageClass ctermfg=54 	ctermbg=NONE 	cterm=NONE
 hi String 	ctermfg=60 	ctermbg=NONE 	cterm=italic
