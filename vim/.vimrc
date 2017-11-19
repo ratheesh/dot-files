@@ -83,7 +83,9 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'edkolev/promptline.vim'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'Yggdroot/indentLine'
+if !has('nvim')
 Plug 'thaerkh/vim-indentguides'
+endif
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
