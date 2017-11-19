@@ -240,7 +240,7 @@ endif
 set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│
-set listchars+=eol:⏎
+set listchars+=eol:↲
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
@@ -269,7 +269,7 @@ set formatoptions+=n  " Recognize numbered lists
 set formatoptions+=o  " Insert comment leader after hitting o or O in normal mode
 set formatoptions+=q  " Allow formatting of comments with "gq".
 set formatoptions+=r  " Insert comment leader after hitting <Enter>
-set formatoptions+=t  " Auto-wrap text using textwidth"
+" set formatoptions+=t  " Auto-wrap text using textwidth"
 set nostartofline
 set lbr
 " set iskeyword-=_
@@ -555,7 +555,7 @@ nnoremap <leader>fc :CtrlPCommandPalette<cr>
 
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-	\ 'file': '\v\.(exe|so|dll|stgit*)$',
+	\ 'file': '\v\.(exe|so|o|dll|stgit*)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
 let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
