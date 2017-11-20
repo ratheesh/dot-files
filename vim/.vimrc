@@ -128,7 +128,7 @@ Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
 " Plug 'tpope/vim-endwise'
 " Plug 'vim-scripts/taglist.vim'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'vim-scripts/OmniCppComplete'
 Plug 'rking/ag.vim'
 Plug 'sjl/vitality.vim'
@@ -815,28 +815,29 @@ endif
 " }}}
 
 " deoplete {{{
-" set completeopt+=noinsert
+set completeopt+=noinsert
 let g:deoplete#enable_at_startup          = 1
 if !has('nvim')
 let g:deoplete#enable_yarp                = 1
 endif
-" let g:deoplete#enable_refresh_always         = 1
+let g:deoplete#enable_refresh_always      = 1
 let g:deoplete#auto_complete_delay        = 150
 let g:deoplete#auto_refresh_delay         = 100
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#enable_ignore_case         = 1
 let g:deoplete#enable_smart_case          = 1
 let g:deoplete#enable_camel_case          = 1
-let g:deoplete#auto_complete_delay        = 150
 let g:deoplete#file#enable_buffer_path    = 1
-" let g:deoplete#auto_completion_start_length  = 0
 let g:deoplete#max_list                   = 50
-" let deoplete#tag#cache_limit_size         = 10000000
-let g:deoplete#complete_method            = "omnifunc"
+" let deoplete#tag#cache_limit_size       = 10000000
+let g:deoplete#complete_method          = "omnifunc"
+set completeopt=longest,menuone
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+
+" let g:deoplete#disable_auto_complete = 1
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
 		\ <SID>check_back_space() ? "\<TAB>" :
@@ -845,6 +846,11 @@ inoremap <silent><expr> <TAB>
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~ '\s'
 		endfunction"}}}
+
+" Use Tab to forward cycle
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 let g:deoplete#sources     = {}
 let g:deoplete#sources_   = [ 'buffer', 'tag', 'member', 'file', 'around']
