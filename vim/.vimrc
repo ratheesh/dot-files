@@ -100,8 +100,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ratheesh/vim-extended-ft'
 " Plug 'WolfgangMehner/c-support'
 Plug 'vim-scripts/AutoAlign'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 if  has('nvim')
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
