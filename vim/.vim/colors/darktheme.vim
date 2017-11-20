@@ -59,7 +59,7 @@ hi Function 	ctermfg=61 	ctermbg=NONE 	cterm=NONE
 hi Identifier 	ctermfg=246 	ctermbg=NONE 	cterm=NONE
 hi Keyword 	ctermfg=126 	ctermbg=NONE 	cterm=italic
 hi Label 	ctermfg=132 	ctermbg=NONE 	cterm=NONE
-hi NonText 	ctermfg=7 	ctermbg=NONE 	cterm=NONE
+hi NonText 	ctermfg=244 	ctermbg=NONE 	cterm=NONE
 hi Number 	ctermfg=180	ctermbg=NONE 	cterm=NONE
 hi Operator 	ctermfg=62 	ctermbg=NONE 	cterm=bold
 hi PreProc 	ctermfg=31 	ctermbg=NONE 	cterm=NONE
@@ -101,15 +101,15 @@ hi cCharacter		ctermfg=7 	ctermbg=NONE 	cterm=NONE
 hi cBinaryOperator	ctermfg=12 	ctermbg=NONE 	cterm=NONE
 hi cMathOperator	ctermfg=132	ctermbg=NONE 	cterm=NONE
 hi cLogicalOperator 	ctermfg=93 	ctermbg=NONE 	cterm=NONE
-hi cPointerOperator 	ctermfg=129 	ctermbg=NONE 	cterm=bold
+hi cPointerOperator 	ctermfg=60 	ctermbg=NONE 	cterm=bold
 hi cStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cGNUStorageClass 	ctermfg=66 	ctermbg=NONE 	cterm=NONE
 hi cStructure 		ctermfg=132 	ctermbg=NONE 	cterm=NONE
 hi cType 		ctermfg=25 	ctermbg=NONE 	cterm=italic
-hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=italic
-hi cFloat 		ctermfg=180 	ctermbg=NONE 	cterm=italic
-hi cOctalZero 		ctermfg=180 	ctermbg=NONE 	cterm=italic
-hi c89Macro 		ctermfg=66 	ctermbg=NONE 	cterm=italic
+hi cConstant 		ctermfg=96 	ctermbg=NONE 	cterm=NONE
+hi cFloat 		ctermfg=180 	ctermbg=NONE 	cterm=NONE
+hi cOctalZero 		ctermfg=180 	ctermbg=NONE 	cterm=NONE
+hi c89Macro 		ctermfg=66 	ctermbg=NONE 	cterm=NONE
 " hi cBlock 		ctermfg=172 	ctermbg=NONE 	cterm=italic
 " }}}
 
