@@ -69,6 +69,7 @@ Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'ivan-cukic/vim-ctrlp-cscope'
 Plug 'dbeecham/ctrlp-commandpalette.vim'
 Plug 'brookhong/cscope.vim'
+Plug 'Vaelatern/vim-script-refactor'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'yuttie/comfortable-motion.vim'
 " Plug 'yggdroot/leaderf'
@@ -148,11 +149,13 @@ if has('nvim')
 else
   Plug 'Shougo/deoplete.nvim'
   " Plug 'zchee/deoplete-clang'
-  Plug 'tweekmonster/deoplete-clang2'
+  " Plug 'tweekmonster/deoplete-clang2'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'zchee/deoplete-jedi'
   Plug 'zchee/deoplete-go' , { 'do': 'make'}
+  Plug 'eagletmt/neco-ghc'
+  Plug 'zchee/deoplete-zsh'
 endif
 
 " Haskell plugins
@@ -240,6 +243,7 @@ endif
 set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│
+set list
 set listchars+=eol:↲
 set fillchars+=diff:⣿
 set completeopt+=preview
@@ -330,15 +334,15 @@ inoremap jj l
 nnoremap ' `
 nnoremap ` '
 if  has('nvim')
-nnoremap <Leader>so 	:source ~/.config/nvim/init.vim<CR>
+nnoremap <Leader>so     :source ~/.config/nvim/init.vim<CR>
 else
-nnoremap <Leader>so 	:source $MYVIMRC<CR>
+nnoremap <Leader>so     :source $MYVIMRC<CR>
 endif
-nnoremap <Leader>w 	:w<CR>
-nnoremap <Leader>x 	:x<CR>
-nnoremap <Leader>q 	:q<CR>
-nnoremap <Leader>qn 	:q!<CR>
-nnoremap <Leader>qp 	:pclose<CR>
+nnoremap <Leader>w      :w<CR>
+nnoremap <Leader>x      :x<CR>
+nnoremap <Leader>q      :q<CR>
+nnoremap <Leader>qn     :q!<CR>
+nnoremap <Leader>qp     :pclose<CR>
 
 " Move across vim split Windows
 map <C-j> <C-W>j
@@ -348,8 +352,8 @@ map <C-l> <C-W>l
 
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
-map <F9>  	          :bprev<CR>
-map <F10> 	          :bnext<CR>
+map <F9>                  :bprev<CR>
+map <F10>                 :bnext<CR>
 nmap <Leader>bd           :bdelete<CR>
 nmap <Leader><Backspace>  :nohlsearch<CR>
 nmap <Leader>bh           :Startify<CR>
@@ -394,7 +398,7 @@ let g:airline_highlighting_cache = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+        let g:airline_symbols = {}
 endif
 
 " let g:airline#extensions#bufferline#enabled = 1
@@ -451,8 +455,8 @@ nmap <leader>l <Plug>AirlineSelectNextTab
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 let g:airline#extensions#default#section_truncate_width = {
-			\ 'c': 30,
-			\ }
+                        \ 'c': 30,
+                        \ }
 
 let g:airline_mode_map = {
       \ '__' : '-',
@@ -472,25 +476,25 @@ let g:airline_mode_map = {
 
 " lightline {{{
 let g:lightline = {
-	\ 'colorscheme': 'Dracula',
-      	\ 'active': {
-      	\   'right': [ [ 'lineinfo' ],
-      	\              [ 'percent' ],
-      	\              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
-	\   'left': [ [ 'mode', 'paste' ],
-      	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      	\ 	},
-	\ 'enable': {
-	\ 	'statusline': 1,
-	\ 	'tabline': 1,
-	\ },
-      	\ 'component': {
-      	\   'charvaluehex': '0x%B'
-      	\ },
-	\ 'component_function': {
-	\   'gitbranch': 'fugitive#head'
-      	\ },
-   	\ }
+        \ 'colorscheme': 'Dracula',
+        \ 'active': {
+        \   'right': [ [ 'lineinfo' ],
+        \              [ 'percent' ],
+        \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+        \       },
+        \ 'enable': {
+        \       'statusline': 1,
+        \       'tabline': 1,
+        \ },
+        \ 'component': {
+        \   'charvaluehex': '0x%B'
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head'
+        \ },
+        \ }
 "}}}
 
 " Vim-licenses {{{
@@ -508,23 +512,23 @@ let g:sneak#s_next = 1
 
 " CtrlP {{{
 let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
-	\ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
+        \ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-	let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
-	let g:ctrlp_use_caching = 0
+        let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
+        let g:ctrlp_use_caching = 0
 else
-	set grepprg=ag\ --nogroup\ --nocolor
-	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-	let g:ctrlp_clear_cache_on_exit = 0
+        set grepprg=ag\ --nogroup\ --nocolor
+        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+        let g:ctrlp_clear_cache_on_exit = 0
 endif
 
 " let g:ctrlp_by_filename = 0
 " let g:ctrlp_follow_symlinks = 0
 
 " if executable('fzf')
-	" nnoremap <Leader>ff :FZF<CR>
+        " nnoremap <Leader>ff :FZF<CR>
 " endif
 
 let g:ctrlp_match_window = 'min:1,max:10,results:100'
@@ -554,10 +558,10 @@ nnoremap <leader>fc :CtrlPCommandPalette<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-	\ 'file': '\v\.(exe|so|o|dll|stgit*)$',
-	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-	\ }
+        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+        \ 'file': '\v\.(exe|so|o|dll|stgit*)$',
+        \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+        \ }
 let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 " }}}
 
@@ -611,20 +615,20 @@ let g_SuperTabDefaultCompletionType="context"
 "}}}
 
 " vim-startify {{{
-let g:startify_bookmarks = [ 	{'c': '~/.vimrc'     },
-			\	{'g': '~/.gitconfig' },
-			\	{'s': '~/.screenrc'  },
-			\	{'t': '~/.tmux.conf' },
-			\	{'z': '~/.zshrc'     },
-			\ ]
+let g:startify_bookmarks = [    {'c': '~/.vimrc'     },
+                        \       {'g': '~/.gitconfig' },
+                        \       {'s': '~/.screenrc'  },
+                        \       {'t': '~/.tmux.conf' },
+                        \       {'z': '~/.zshrc'     },
+                        \ ]
 " }}}
 
 " vim-gitgutter {{{
 let g:gitgutter_override_sign_column_highlight = 0
 if exists('&signcolumn')  " Vim 7.4.2201
-	set signcolumn=yes
+        set signcolumn=yes
 else
-	let g:gitgutter_sign_column_always = 1
+        let g:gitgutter_sign_column_always = 1
 endif
 
 " autocmd FileType tagbar,nerdtree setlocal signcolumn=no
@@ -655,7 +659,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " Easymotion {{{
-let g:EasyMotion_do_mapping 	  = 0 " Disable default mappings
+let g:EasyMotion_do_mapping       = 0 " Disable default mappings
 nmap <Leader>jj <Plug>(easymotion-s)
 let g:EasyMotion_smartcase        = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
@@ -704,29 +708,29 @@ let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " rainbow_parenthesis {{{
 " ((((((((((((((((()))))))))))))))))
 let g:rbpt_colorpairs = [
-    \ [178,     'RoyalBlue3' 	],
-    \ [162,    	'SeaGreen3' 	],
-    \ [12,    	'DarkOrchid3' 	],
-    \ [132,   	'firebrick3' 	],
-    \ [93,    	'RoyalBlue3' 	],
-    \ [208,     'SeaGreen3' 	],
-    \ [126, 	'DarkOrchid3' 	],
-    \ [94,      'firebrick3' 	],
-    \ [198,     'RoyalBlue3' 	],
-    \ [166,     'SeaGreen3' 	],
-    \ [142, 	'DarkOrchid3' 	],
-    \ [172,    	'firebrick3' 	],
-    \ [162,   	'RoyalBlue3' 	],
-    \ [28, 	'SeaGreen3' 	],
-    \ [96,      'DarkOrchid3' 	],
-    \ [34,     'firebrick3' 	],
+    \ [178,     'RoyalBlue3'    ],
+    \ [162,     'SeaGreen3'     ],
+    \ [12,      'DarkOrchid3'   ],
+    \ [132,     'firebrick3'    ],
+    \ [93,      'RoyalBlue3'    ],
+    \ [208,     'SeaGreen3'     ],
+    \ [126,     'DarkOrchid3'   ],
+    \ [94,      'firebrick3'    ],
+    \ [198,     'RoyalBlue3'    ],
+    \ [166,     'SeaGreen3'     ],
+    \ [142,     'DarkOrchid3'   ],
+    \ [172,     'firebrick3'    ],
+    \ [162,     'RoyalBlue3'    ],
+    \ [28,      'SeaGreen3'     ],
+    \ [96,      'DarkOrchid3'   ],
+    \ [34,     'firebrick3'     ],
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-au VimEnter 	* RainbowParenthesesToggle
-au Syntax   	* RainbowParenthesesLoadRound
-au Syntax 	* RainbowParenthesesLoadSquare
-au Syntax 	* RainbowParenthesesLoadBraces
+au VimEnter     * RainbowParenthesesToggle
+au Syntax       * RainbowParenthesesLoadRound
+au Syntax       * RainbowParenthesesLoadSquare
+au Syntax       * RainbowParenthesesLoadBraces
 " }}}
 
 "Expand region {{{
