@@ -90,6 +90,7 @@ endif
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
+Plug 'jiangmiao/auto-pairs'
 " Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
