@@ -314,6 +314,7 @@ autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
 autocmd FileType gitcommit setlocal scrolloff=0
 autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
+autocmd FileType python setlocal expandtab " Expand tabs in python mode
 
 " Treat c-header as C source file type
 let g:c_syntax_for_h = 1
