@@ -25,13 +25,13 @@ let s:guiChangedColor   = "#5f5f5f"
 let s:guiBlack          = "#282a36"
 
 let s:cterm01           = "236"
-let s:cterm02           = "60"
+let s:cterm02           = "239"
 let s:cterm03           = "215"
 let s:cterm04           = "141"
 let s:cterm05           = "162"
 let s:cterm06           = "130"
-let s:cterm07           = "24"
-let s:cterm08           = "22"
+let s:cterm07           = "66"
+let s:cterm08           = "28"
 let s:cterm09           = "103"
 let s:cterm10           = "89"
 let s:ctermWhite        = "254"
@@ -39,7 +39,7 @@ let s:ctermBlack        = "16"
 let s:ctermChangedColor = "9"
 
 " Normal mode
-let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
+let s:N1 = [ s:guiBlack , s:gui08 , s:ctermBlack , s:cterm07 ]
 let s:N2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
 let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
