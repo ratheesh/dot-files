@@ -149,7 +149,7 @@ hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=bold
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE
-hi PmenuSel             ctermfg=253     ctermbg=24      cterm=NONE
+hi PmenuSel             ctermfg=0       ctermbg=65      cterm=bold
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE
 "}}}
