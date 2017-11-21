@@ -828,7 +828,7 @@ let g:deoplete#enable_smart_case          = 1
 let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path    = 1
 let g:deoplete#max_list                   = 50
-" let deoplete#tag#cache_limit_size       = 10000000
+let deoplete#tag#cache_limit_size       = 10000000
 let g:deoplete#complete_method          = "omnifunc"
 set completeopt=longest,menuone
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -837,7 +837,7 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 
 " let g:deoplete#disable_auto_complete = 1
-inoremap <silent><expr> <TAB>
+inoremap <expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
 		\ <SID>check_back_space() ? "\<TAB>" :
 		\ deoplete#mappings#manual_complete()
@@ -852,7 +852,12 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 let g:deoplete#sources     = {}
-let g:deoplete#sources_   = [ 'buffer', 'tag', 'member', 'file', 'around']
+" let g:deoplete#sources_   = [ 'buffer', 'tag', 'member', 'file', 'around']
+let g:deoplete#sources_   = [] " includes all sources
+
+" Use partial fuzzy matches like YouCompleteMe
+call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " }}}
 
 " NERDTree {{{
