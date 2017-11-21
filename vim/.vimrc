@@ -666,7 +666,7 @@ let g:EasyMotion_use_smartsign_us = 1 " US layout
 "}}}
 
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsExpandTrigger       = "<c-\>"
 let g:UltiSnipsJumpForwardTrigger  = "<c-b>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
