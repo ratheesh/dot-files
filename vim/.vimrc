@@ -243,7 +243,7 @@ set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│
 set list
-set listchars+=eol:↲
+" set listchars+=eol:↲
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
