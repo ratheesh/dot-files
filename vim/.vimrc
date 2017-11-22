@@ -822,7 +822,7 @@ endif
 let g:deoplete#enable_refresh_always      = 1
 let g:deoplete#auto_complete_delay        = 150
 let g:deoplete#auto_refresh_delay         = 100
-let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#enable_ignore_case         = 1
 let g:deoplete#enable_smart_case          = 1
 let g:deoplete#enable_camel_case          = 1
