@@ -24,7 +24,7 @@ let s:guiWhite          = "#f8f8f2"
 let s:guiChangedColor   = "#5f5f5f"
 let s:guiBlack          = "#282a36"
 
-let s:cterm01           = "236"
+let s:cterm01           = "235"
 let s:cterm02           = "239"
 let s:cterm03           = "215"
 let s:cterm04           = "141"
