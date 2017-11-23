@@ -242,7 +242,7 @@ endif
 set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│
-set list
+" set list
 " set listchars+=eol:↲
 set fillchars+=diff:⣿
 set completeopt+=preview
@@ -343,6 +343,7 @@ nnoremap <Leader>x      :x<CR>
 nnoremap <Leader>q      :q<CR>
 nnoremap <Leader>qn     :q!<CR>
 nnoremap <Leader>qp     :pclose<CR>
+nnoremap <Leader>ql     :lcl<CR>
 
 " Move across vim split Windows
 map <C-j> <C-W>j
@@ -535,7 +536,7 @@ let g:ctrlp_match_window = 'min:1,max:10,results:100'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-" let g:ctrlp_match_current_file = 0
+let g:ctrlp_match_current_file = 0
 
 " let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd               = 'CtrlPBuffer'
@@ -779,15 +780,15 @@ highlight BookmarkSign ctermbg=234 ctermfg=27
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_auto_save               = 1
 let g:bookmark_auto_close              = 1
-nmap <leader>mm  :BookmarkToggle<CR>
-nmap <leader>mi  :BookmarkAnnotate<CR>
-nmap <leader>mn  :BookmarkNext<CR>
-nmap <leader>mp  :BookmarkPrev<CR>
-nmap <leader>ma  :BookmarkShowAll<CR>
-nmap <leader>mc  :BookmarkClear<CR>
-nmap <leader>mx  :BookmarkClearAll<CR>
-nmap <leader>mkk :BookmarkMoveUp<CR>
-nmap <leader>mjj :BookmarkMoveDown<CR>
+" nmap <leader>mm  :BookmarkToggle<CR>
+" nmap <leader>mi  :BookmarkAnnotate<CR>
+" nmap <leader>mn  :BookmarkNext<CR>
+" nmap <leader>mp  :BookmarkPrev<CR>
+" nmap <leader>ma  :BookmarkShowAll<CR>
+" nmap <leader>mc  :BookmarkClear<CR>
+" nmap <leader>mx  :BookmarkClearAll<CR>
+" nmap <leader>mkk :BookmarkMoveUp<CR>
+" nmap <leader>mjj :BookmarkMoveDown<CR>
 " }}}
 
 " incsearch-fuzzy {{{
@@ -866,6 +867,13 @@ map <C-n> :NERDTreeToggle<CR>
 " nnoremap <Leader>\ :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 nnoremap <Leader>] :wincmd w<CR>
+" }}}
+
+
+" cscope {{{
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>fl :call ToggleLocationList()<CR>
+let g:cscope_silent = 1
 " }}}
 
 " Misc macros {{{
