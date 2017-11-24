@@ -429,7 +429,9 @@ let airline#extensions#ale#error_symbol   = 'Σ:'
 " Tabline settings
 let g:airline#extensions#tabline#enabled          = 1
 let g:airline#extensions#tabline#fnamemod         = ':t'
+let g:airline#extensions#tabline#formatter        = 'unique_tail'
 let g:airline#extensions#tabline#show_splits      = 1
+let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#show_tab_nr      = 1
 let g:airline#extensions#tabline#buffer_min_count = 1
 let g:airline#extensions#tabline#tab_min_count    = 1
