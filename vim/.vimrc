@@ -403,19 +403,23 @@ if !exists('g:airline_symbols')
 endif
 
 " let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#whitespace#enabled    = 0
-let g:airline_detect_spelllang                 = 0
-let g:airline_detect_modified                  = 1
-let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
-let g:airline_detect_paste                     = 1
-let g:airline#extensions#virtualenv#enabled    = 1
-let g:airline#extensions#tagbar#enabled        = 1
-let g:airline#extensions#virtualenv#enabled    = 1
-let g:airline#extensions#wordcount#enabled     = 1
-let g:airline#extensions#tagbar#enabled        = 1
-let g:airline#extensions#wordcount#formatter   = 'default'
+let g:airline#extensions#whitespace#enabled         = 0
+let g:airline#extensions#capslock#enabled           = 1
+let g:airline_detect_spelllang                      = 0
+let g:airline_detect_modified                       = 1
+" let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
+let g:airline_detect_paste                          = 1
+let g:airline#extensions#virtualenv#enabled         = 1
+ let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#tagbar#enabled             = 1
+let g:airline#extensions#virtualenv#enabled         = 1
+let g:airline#extensions#wordcount#enabled          = 1
+let g:airline#extensions#tagbar#enabled             = 1
+let g:airline#extensions#tagbar#flags               = 'f'
+let g:airline#extensions#wordcount#formatter        = 'default'
 
 " vcs
+let g:airline#extensions#vimagit#enabled             = 1
 let g:airline#extensions#hunks#non_zero_only         = 1
 let g:airline#extensions#branch#enabled              = 1
 let g:airline#extensions#branch#displayed_head_limit = 10
@@ -441,7 +445,7 @@ autocmd User AirlineAfterInit call AirlineInit()
 " let g:airline#extensions#syntastic#enabled   = 1
 let g:airline#extensions#ale#enabled      = 1
 let airline#extensions#ale#warning_symbol = 'ω:'
-let airline#extensions#ale#error_symbol   = 'Σ:'
+let airline#extensions#ale#error_symbol   = 'Ԑ:'
 
 " Tabline settings
 let g:airline#extensions#tabline#enabled          = 1
