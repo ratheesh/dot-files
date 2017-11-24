@@ -355,13 +355,14 @@ map <C-l> <C-W>l
 nmap <Leader><Leader> V
 map <F9>                  :bprev<CR>
 map <F10>                 :bnext<CR>
+map <F5>                  :echo expand('%:p')<CR>
 nmap <Leader>bd           :bdelete<CR>
 nmap <Leader><Backspace>  :nohlsearch<CR>
 nmap <Leader>bh           :Startify<CR>
 nmap <Leader><Tab>        :b#<CR>
 nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
-" visual shifting (does not exit Visual mode)
+" visual indentation (does not exit Visual mode after indentation)
 vnoremap < <gv
 vnoremap > >gv
 
