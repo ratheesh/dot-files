@@ -312,8 +312,11 @@ autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc
 autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
 autocmd FileType gitcommit setlocal scrolloff=0
+autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
 autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
 autocmd FileType python setlocal expandtab " Expand tabs in python mode
+autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
+autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
 
 " Treat c-header as C source file type
 let g:c_syntax_for_h = 1
