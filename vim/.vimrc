@@ -133,6 +133,7 @@ Plug 'rking/ag.vim'
 Plug 'sjl/vitality.vim'
 " Plug 'gelguy/Cmd2.vim'
 Plug 'jalvesaq/vimcmdline'
+Plug 'rhysd/vim-grammarous'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'python-mode/python-mode'
 " Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
