@@ -453,6 +453,20 @@ nmap <leader>l <Plug>AirlineSelectNextTab
 " let g:airline#extensions#tabline#right_sep     = ''
 " let g:airline#extensions#tabline#right_alt_sep = '|'
 
+let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
+let g:airline#extensions#tabline#buffer_idx_format = {
+	\ '0': '⁰ ',
+	\ '1': '೧ ',
+	\ '2': '೨ ',
+	\ '3': '೩ ',
+	\ '4': '೪ ',
+	\ '5': '೫ ',
+	\ '6': '೬ ',
+	\ '7': '೭ ',
+	\ '8': '೮ ',
+	\ '9': '೯ '
+	\ }
+
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 let g:airline#extensions#default#section_truncate_width = {
