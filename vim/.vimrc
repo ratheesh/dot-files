@@ -420,6 +420,23 @@ let g:airline#extensions#hunks#non_zero_only         = 1
 let g:airline#extensions#branch#enabled              = 1
 let g:airline#extensions#branch#displayed_head_limit = 10
 
+let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.crypt = '🔒'
+
+function! AirlineInit()
+    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','spell','iminsert'])
+    let g:airline_section_b = airline#section#create_left(['¢%02B','hunks','readonly'])
+    let g:airline_section_c = airline#section#create(['%f%m'])
+    let g:airline_section_x = airline#section#create(['filetype'])
+    let g:airline_section_y = airline#section#create_right(['branch','ffenc'])
+    call airline#parts#define_accent('branch', 'italic')
+endfunction
+
+autocmd User AirlineAfterInit call AirlineInit()
+" autocmd VimEnter * call AirlineInit()
+
 " Error checking
 " let g:airline#extensions#syntastic#enabled   = 1
 let g:airline#extensions#ale#enabled      = 1
