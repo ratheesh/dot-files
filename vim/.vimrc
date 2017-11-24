@@ -393,7 +393,7 @@ let g:load_doxygen_syntax = 1
 " }}}
 
 " Vim-airline {{{
-let g:airline_highlighting_cache = 0
+" let g:airline_highlighting_cache = 0
 
 " Appearance
 let g:airline_powerline_fonts = 1
