@@ -836,6 +836,8 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-y> deoplete#cancel_popup()
+inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 
 " let g:deoplete#disable_auto_complete = 1
 inoremap <expr> <TAB>
