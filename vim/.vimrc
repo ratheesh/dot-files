@@ -319,6 +319,9 @@ autocmd FileType python setlocal expandtab " Expand tabs in python mode
 autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
 
+" Little welcome message!
+autocmd VimEnter * echo "Willkommen zum meinem ViM Welt! (^-^)"
+
 " Treat c-header as C source file type
 let g:c_syntax_for_h = 1
 autocmd BufNewFile,BufRead .h set filetype=ch
