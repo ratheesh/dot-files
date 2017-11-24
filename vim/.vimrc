@@ -437,11 +437,12 @@ let g:airline_symbols.paste = 'ρ'
 " let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.crypt = '🔒'
 
+" Customize Airline Layout
 function! AirlineInit()
     let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','spell','iminsert'])
     let g:airline_section_b = airline#section#create_left(['¢%02B','hunks','readonly'])
     let g:airline_section_c = airline#section#create(['%f%m'])
-    let g:airline_section_x = airline#section#create(['filetype'])
+    let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['branch','ffenc'])
     call airline#parts#define_accent('branch', 'italic')
 endfunction
