@@ -149,7 +149,7 @@ if has('nvim')
 else
   Plug 'Shougo/deoplete.nvim'
   " Plug 'zchee/deoplete-clang'
-  " Plug 'tweekmonster/deoplete-clang2'
+  Plug 'tweekmonster/deoplete-clang2'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'zchee/deoplete-jedi'
@@ -170,7 +170,6 @@ call plug#end()
 " ViM generic settings {{{
 filetype plugin indent on
 set shortmess+=I
-" set number
 set number relativenumber
 if !has('nvim')
   set esckeys
@@ -188,14 +187,25 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set nofoldenable    " disable folding
-set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.svg
-set wildignore+=*/vendor/*,*/node_modules/*,*/svg/*,*/fonts/*,*/images/*,.vim-*
-set wildignore+=.DS_Store,.cache,__pycache__
+if has('wildmenu')
+	set nowildmenu
+	set wildmode=list:longest,full
+	set wildoptions=tagfile
+	set wildignorecase
+	set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+	set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+	set wildignore+=application/vendor/**,**/vendor/ckeditor/**,media/vendor/**
+	set wildignore+=__pycache__,*.egg-info
+endif
 set wildmenu
-set wildmode=longest,list
 set nobackup
 set noswapfile
 set fileformats=unix,dos,mac
+set magic
+" What to save for views:
+set viewoptions-=options
+set viewoptions+=slash,unix
 set ignorecase
 set smartcase
 set smarttab
@@ -228,7 +238,9 @@ set foldmethod=marker
 set lazyredraw
 " set copyindent
 set gcr=a:blinkon0              " Disable cursor blink
-set clipboard=unnamed           " Share * register w/ unnamed (system copy/paste support)
+if has('clipboard')
+	set clipboard& clipboard+=unnamedplus
+endif
 set encoding=utf-8
 if !&scrolloff
   set scrolloff=3       " Show next 3 lines while scrolling.
@@ -289,11 +301,23 @@ set lbr
 " endif
 " Remember last buffers loaded and file position
 if has('nvim')
-  set viminfo=%,<800,'10,/50,:100,h,f0,n$HOME/.config/nvim/viminfo
+        "  ShaDa/viminfo:
+	"   ' - Maximum number of previously edited files marks
+	"   < - Maximum number of lines saved for each register
+	"   @ - Maximum number of items in the input-line history to be
+	"   s - Maximum size of an item contents in KiB
+	"   h - Disable the effect of 'hlsearch' when loading the shada
+  set viminfo=%,<800,'300,/50,:100,s10,h,f0,n$HOME/.config/nvim/viminfo
 else
-  set viminfo=%,<800,'10,/50,:100,h,f0,n$HOME/.viminfo
+  set viminfo=%,<800,'300,/50,:100,h,f0,n$HOME/.viminfo
 endif
+
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd BufWritePost
+    \ * if &l:filetype ==# '' || exists('b:ftdetect')
+    \ |   unlet! b:ftdetect
+    \ |   filetype detect
+    \ | endif
 
 let mapleader = "\<Space>"
 " }}}
@@ -360,8 +384,8 @@ map <C-l> <C-W>l
 
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
-map <F9>                  :bprev<CR>
-map <F10>                 :bnext<CR>
+" map <F9>                  :bprev<CR>
+" map <F10>                 :bnext<CR>
 map <F5>                  :echo expand('%:p')<CR>
 nmap <Leader>bd           :bdelete<CR>
 nmap <Leader><Backspace>  :nohlsearch<CR>
@@ -386,14 +410,14 @@ color darktheme
 " }}}
 
 " Tagbar {{{
-nmap <F8> :TagbarToggle<CR>
-nnoremap <leader>tt :TagbarOpenAutoClose<CR>
+nmap <F8>            :TagbarToggle<CR>
+nnoremap <leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
 " C/C++ {{{
-let g:ch_syntax_for_h = 1
+let g:ch_syntax_for_h           = 1
 let g:c_conditional_is_operator = 1
-let c_no_if0 = 1
+let c_no_if0                    = 1
 " }}}
 
 " Doxygen {{{
@@ -495,23 +519,23 @@ nmap <leader>l <Plug>AirlineSelectNextTab
 
 let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
 let g:airline#extensions#tabline#buffer_idx_format = {
-	\ '0': '⁰ ',
-	\ '1': '೧ ',
-	\ '2': '೨ ',
-	\ '3': '೩ ',
-	\ '4': '೪ ',
-	\ '5': '೫ ',
-	\ '6': '೬ ',
-	\ '7': '೭ ',
-	\ '8': '೮ ',
-	\ '9': '೯ '
-	\ }
+        \ '0': '⁰ ',
+        \ '1': '೧ ',
+        \ '2': '೨ ',
+        \ '3': '೩ ',
+        \ '4': '೪ ',
+        \ '5': '೫ ',
+        \ '6': '೬ ',
+        \ '7': '೭ ',
+        \ '8': '೮ ',
+        \ '9': '೯ '
+        \ }
 
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 " let g:airline#extensions#default#section_truncate_width = {
-			" \ 'c': 30,
-			" \ }
+                        " \ 'c': 30,
+                        " \ }
 
 let g:airline_mode_map = {
       \ '__' : '-',
