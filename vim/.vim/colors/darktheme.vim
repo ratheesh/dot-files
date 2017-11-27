@@ -184,9 +184,9 @@ hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE
 hi StartifySelect       ctermfg=NONE    ctermbg=235     cterm=NONE
 hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE
 hi StartifySpecial      ctermfg=132     ctermbg=NONE    cterm=NONE
-hi StartifyPath         ctermfg=7       ctermbg=NONE    cterm=NONE
+hi StartifyPath         ctermfg=96      ctermbg=NONE    cterm=NONE
 hi StartifyFile         ctermfg=60      ctermbg=NONE    cterm=italic
-hi StartifySlash        ctermfg=126     ctermbg=NONE    cterm=bold
+hi StartifySlash        ctermfg=103     ctermbg=NONE    cterm=bold
 hi StartifyHeader       ctermfg=60      ctermbg=NONE    cterm=NONE
 hi StartifySection      ctermfg=142     ctermbg=NONE    cterm=bold
 hi StartifyFooter       ctermfg=6       ctermbg=NONE    cterm=NONE
