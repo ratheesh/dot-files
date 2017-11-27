@@ -418,13 +418,15 @@ let g:airline_detect_modified                       = 1
 " let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
 let g:airline_detect_paste                          = 1
 let g:airline#extensions#virtualenv#enabled         = 1
- let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#ctrlp#show_adjacent_modes  = 1
 let g:airline#extensions#tagbar#enabled             = 1
 let g:airline#extensions#virtualenv#enabled         = 1
 let g:airline#extensions#wordcount#enabled          = 1
 let g:airline#extensions#tagbar#enabled             = 1
-let g:airline#extensions#tagbar#flags               = 'f'
-let g:airline#extensions#wordcount#formatter        = 'default'
+" let g:airline#extensions#tagbar#flags               = 'f'
+" let g:airline#extensions#wordcount#formatter        = 'default'
+" let g:airline#extensions#wordcount#format           = '%dWords'
+" let g:airline#extensions#wordcount#filetypes        = ''
 
 " vcs
 let g:airline#extensions#vimagit#enabled             = 1
@@ -439,12 +441,16 @@ let g:airline_symbols.crypt = '🔒'
 
 " Customize Airline Layout
 function! AirlineInit()
-    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','spell','iminsert'])
-    let g:airline_section_b = airline#section#create_left(['¢%02B','hunks','readonly'])
+    call airline#parts#define_accent('mode', 'italic')
+    call airline#parts#define_accent('linenr', 'none')
+    call airline#parts#define_accent('branch', 'italic')
+    call airline#parts#define_raw('linenr', '%l')
+    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','iminsert'])
+    let g:airline_section_b = airline#section#create_left(['¢[%02B]','hunks','readonly'])
     let g:airline_section_c = airline#section#create(['%f%m'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['branch','ffenc'])
-    call airline#parts#define_accent('branch', 'italic')
+    let g:airline_section_z = airline#section#create(['%p%%│','linenr',':%c'])
 endfunction
 
 autocmd User AirlineAfterInit call AirlineInit()
@@ -458,6 +464,8 @@ let airline#extensions#ale#error_symbol   = 'Ԑ:'
 
 " Tabline settings
 let g:airline#extensions#tabline#enabled          = 1
+let g:airline#extensions#tabline#buffers_label    = 'Buffers'
+let g:airline#extensions#tabline#tabs_level       = 'Tabs'
 let g:airline#extensions#tabline#fnamemod         = ':t'
 let g:airline#extensions#tabline#formatter        = 'unique_tail'
 let g:airline#extensions#tabline#show_splits      = 1
@@ -501,22 +509,22 @@ let g:airline#extensions#tabline#buffer_idx_format = {
 
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
-let g:airline#extensions#default#section_truncate_width = {
-                        \ 'c': 30,
-                        \ }
+" let g:airline#extensions#default#section_truncate_width = {
+			" \ 'c': 30,
+			" \ }
 
 let g:airline_mode_map = {
       \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V-LINE',
-      \ '' : 'V-BLOCK',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
+      \ 'n'  : 'Normal',
+      \ 'i'  : 'Insert',
+      \ 'R'  : 'Replace',
+      \ 'c'  : 'Cmd',
+      \ 'v'  : 'Visual',
+      \ 'V'  : 'V-Line',
+      \ '' : 'V-Block',
+      \ 's'  : 'Subst',
+      \ 'S'  : 'Subst',
+      \ '' : 'Xoff',
       \ }
 
 " }}}
