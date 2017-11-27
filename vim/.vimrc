@@ -434,6 +434,7 @@ if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
 
+set mouse=nicr
 " let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled         = 0
 " let g:airline_skip_empty_sections                   = 1
