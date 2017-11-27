@@ -362,6 +362,7 @@ noremap <Right> <NOP>
 " imap jj <Esc>
 " imap <Esc> l
 inoremap jj l
+vnoremap jj l
 nnoremap ' `
 nnoremap ` '
 if  has('nvim')
