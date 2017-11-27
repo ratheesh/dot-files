@@ -474,7 +474,7 @@ function! AirlineInit()
     let g:airline_section_c = airline#section#create(['%f%m'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['branch','ffenc'])
-    let g:airline_section_z = airline#section#create(['%p%%│','linenr',':%c'])
+    let g:airline_section_z = airline#section#create(['%p%%│','linenr',':%v'])
 endfunction
 
 autocmd User AirlineAfterInit call AirlineInit()
