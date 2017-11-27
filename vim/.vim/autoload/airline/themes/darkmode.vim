@@ -94,11 +94,11 @@ let g:airline#themes#darkmode#palette.replace_modified = airline#themes#generate
 let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate_color_map(s:V1, s:V2, s:changed)
 
 let g:airline#themes#darkmode#palette.tabline = {
-        \ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'  ],
-        \ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 24  , 'none'  ],
-        \ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'  ],
-        \ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' , 253 , 22  , 'none'  ],
-        \ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'  ],
+	\ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'    ],
+	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 24  , 'none'    ],
+	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'    ],
+	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' , 253 , 22  , 'none'    ],
+	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'    ],
         \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 89  , 'none'  ],
         \ }
 
