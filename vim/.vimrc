@@ -436,10 +436,11 @@ endif
 
 " let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled         = 0
+" let g:airline_skip_empty_sections                   = 1
 let g:airline#extensions#capslock#enabled           = 1
 let g:airline_detect_spelllang                      = 0
 let g:airline_detect_modified                       = 1
-" let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
+let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
 let g:airline_detect_paste                          = 1
 let g:airline#extensions#virtualenv#enabled         = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes  = 1
@@ -466,15 +467,15 @@ let g:airline_symbols.crypt = '🔒'
 " Customize Airline Layout
 function! AirlineInit()
     call airline#parts#define_accent('mode', 'italic')
-    call airline#parts#define_accent('linenr', 'none')
     call airline#parts#define_accent('branch', 'italic')
     call airline#parts#define_raw('linenr', '%l')
-    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','iminsert'])
-    let g:airline_section_b = airline#section#create_left(['¢[%02B]','hunks','readonly'])
+    call airline#parts#define_accent('linenr', 'bold')
+    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','iminsert', '%l:%v[ςϦ:%02B]'])
+    let g:airline_section_b = airline#section#create(['readonly'])
     let g:airline_section_c = airline#section#create(['%f%m'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
-    let g:airline_section_y = airline#section#create_right(['branch','ffenc'])
-    let g:airline_section_z = airline#section#create(['%p%%│','linenr',':%v'])
+    let g:airline_section_y = airline#section#create_right(['ffenc'])
+    let g:airline_section_z = airline#section#create_right(['branch','hunks','%p%%'])
 endfunction
 
 autocmd User AirlineAfterInit call AirlineInit()
