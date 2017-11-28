@@ -473,6 +473,7 @@ function! AirlineInit()
     call airline#parts#define_accent('branch', 'italic')
     call airline#parts#define_raw('linenr', '%l')
     call airline#parts#define_accent('linenr', 'bold')
+    " call airline#parts#define_accent('readonly', 'bold')
     let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','keymap','capslock','iminsert', '%l:%v«ch:%02B»'])
     let g:airline_section_b = airline#section#create(['hunks'])
     let g:airline_section_c = airline#section#create(['readonly',' %f%m'])
@@ -495,7 +496,7 @@ let g:airline#extensions#tabline#enabled          = 1
 let g:airline#extensions#tabline#buffers_label    = 'Buffers'
 let g:airline#extensions#tabline#tabs_level       = 'Tabs'
 let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline#extensions#tabline#formatter        = 'unique_tail'
+let g:airline#extensions#tabline#formatter        = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_splits      = 1
 let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#show_tab_nr      = 1
@@ -521,7 +522,7 @@ nmap <leader>l <Plug>AirlineSelectNextTab
 " let g:airline#extensions#tabline#right_sep     = ''
 " let g:airline#extensions#tabline#right_alt_sep = '|'
 
-let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
+" let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
 let g:airline#extensions#tabline#buffer_idx_format = {
         \ '0': '⁰ ',
         \ '1': '೧ ',
@@ -551,8 +552,8 @@ let g:airline_mode_map = {
       \ 'V'  : 'V-Line',
       \ '' : 'V-Block',
       \ 's'  : 'Subst',
-      \ 'S'  : 'Subst',
-      \ '' : 'Xoff',
+      \ 'S'  : 'Subst-Ln',
+      \ '' : 'Subst-Blk',
       \ }
 
 " }}}
