@@ -296,7 +296,7 @@ au BufRead,BufNewFile,BufWrite *.txt,*.tex,*.latex set spell
 " set shortmess+=I
 set novb
 if !has('nvim')
-	set ttyfast
+        set ttyfast
 endif
 set formatoptions+=1
 set formatoptions+=c  " Autowrap comments using textwidth
@@ -758,7 +758,7 @@ let g_SuperTabDefaultCompletionType="context"
 
 " vim-startify {{{
 let g:startify_bookmarks = [
-			\       {'c': '~/.vimrc'     },
+                        \       {'c': '~/.vimrc'     },
                         \       {'g': '~/.gitconfig' },
                         \       {'s': '~/.screenrc'  },
                         \       {'t': '~/.tmux.conf' },
@@ -1040,6 +1040,9 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " }}}
 " set listchars=tab:\|\
 " set list
+
+" Use guicolors in terminal (we seem to need to place this here)
+" set termguicolors
 
 " Autoload vimrc on save
 autocmd BufWritePost .vimrc source %
