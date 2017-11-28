@@ -25,37 +25,39 @@ let s:guiChangedColor   = "#5f5f5f"
 let s:guiBlack          = "#282a36"
 
 let s:cterm01           = "235"
-let s:cterm02           = "239"
+let s:cterm02           = "238"
 let s:cterm03           = "215"
 let s:cterm04           = "141"
 let s:cterm05           = "162"
 let s:cterm06           = "130"
 let s:cterm07           = "66"
-let s:cterm08           = "28"
+let s:cterm08           = "22"
 let s:cterm09           = "103"
-let s:cterm10           = "89"
-let s:ctermWhite        = "254"
+let s:cterm10           = "132"
+let s:cterm11           = "180"
+let s:cterm12           = "60"
+let s:ctermWhite        = "252"
 let s:ctermBlack        = "16"
 let s:ctermChangedColor = "9"
 
 " Normal mode
 let s:N1 = [ s:guiBlack , s:gui08 , s:ctermBlack , s:cterm07 ]
-let s:N2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
+let s:N2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
 " Insert mode
 let s:I1 = [ s:guiBlack , s:gui07 , s:ctermWhite , s:cterm08 ]
-let s:I2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
+let s:I2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:I3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
 
 " Visual mode
 let s:V1 = [ s:guiBlack , s:gui06 , s:ctermWhite , s:cterm06 ]
-let s:V2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
+let s:V2 = [ s:guiWhite , s:gui02 , s:cterm11, s:cterm02 ]
 let s:V3 = [ s:guiWhite , s:gui01 , s:cterm09, s:cterm01 ]
 
 " Replace mode
 let s:R1 = [ s:guiBlack , s:gui05 , s:ctermWhite, s:cterm05 ]
-let s:R2 = [ s:guiWhite , s:gui02 , s:ctermWhite, s:cterm02 ]
+let s:R2 = [ s:guiWhite , s:gui02 , s:cterm11, s:cterm02 ]
 let s:R3 = [ s:guiWhite , s:gui01 , s:cterm09, s:cterm01 ]
 
 " File changed
@@ -94,12 +96,12 @@ let g:airline#themes#darkmode#palette.replace_modified = airline#themes#generate
 let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate_color_map(s:V1, s:V2, s:changed)
 
 let g:airline#themes#darkmode#palette.tabline = {
-	\ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'    ],
-	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 24  , 'none'    ],
-	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'    ],
-	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' , 253 , 22  , 'none'    ],
-	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'    ],
-        \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 89  , 'none'  ],
+	\ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'  ],
+	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 24  , 'none'  ],
+	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'  ],
+	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' , 253 , 22  , 'none'  ],
+	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'  ],
+        \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 125 , 'none'  ],
         \ }
 
 " Change colors during different modes
@@ -119,8 +121,8 @@ if !get(g:, 'loaded_ctrlp', 0)
 endif
 
 let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
-let s:CP2 = [ s:guiWhite , s:gui02 , s:ctermWhite , s:cterm02 ]
-let s:CP3 = [ s:guiWhite , s:gui08 , s:ctermWhite , s:cterm10, 'italic' ]
+let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
+let s:CP3 = [ s:guiWhite , s:gui08 , s:ctermBlack , s:cterm10, 'italic' ]
 
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
