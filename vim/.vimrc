@@ -715,6 +715,7 @@ else
         let g:gitgutter_sign_column_always = 1
 endif
 
+let g:gitgutter_eager = 1 " Update when switching/writing buffers
 " autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
 let g:gitgutter_sign_modified = '='
