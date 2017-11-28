@@ -170,7 +170,6 @@ call plug#end()
 
 " ViM generic settings {{{
 filetype plugin indent on
-set shortmess+=I
 set number relativenumber
 if !has('nvim')
   set esckeys
@@ -199,6 +198,16 @@ if has('wildmenu')
 	set wildignore+=application/vendor/**,**/vendor/ckeditor/**,media/vendor/**
 	set wildignore+=__pycache__,*.egg-info
 endif
+" Abbreviations of messages and avoid 'hit enter' prompt
+set shortmess+=aoOtTIc
+" Ask for confirmation (instead of aborting an action)
+set confirm
+" Shorten default to time to update swap files and gutter plugins
+set updatetime=500
+" Time in milliseconds waited for a mapping to complete
+set timeoutlen=550
+" Time in milliseconds waited for a key code to complete
+set ttimeoutlen=0
 set wildmenu
 set nobackup
 set noswapfile
@@ -207,6 +216,8 @@ set magic
 " What to save for views:
 set viewoptions-=options
 set viewoptions+=slash,unix
+set viewoptions=cursor,folds,unix,slash,curdir
+set viewdir=$CACHE/tmp/view
 set ignorecase
 set smartcase
 set smarttab
@@ -215,7 +226,14 @@ set magic
 set hlsearch
 set incsearch
 set history=1000
-set undolevels=1000
+" Persistent undo (i.e vim remembers undo actions even if file is closed and
+" reopened)
+set undofile
+set undolevels=1000   " Maximum number of changes that can be undone
+set undoreload=10000  " Maximum number lines to save for undo on a buffer reload
+set undodir=$CACHE/tmp/undo//
+" Show filename and path in window title (even in terminal)
+set title
 set showcmd
 set nowrap
 set backspace=indent,eol,start
@@ -275,9 +293,11 @@ au BufRead,BufNewFile,BufWrite *.txt,*.tex,*.latex set spell
 " au BufRead,BufNewFile,BufWrite *.stgit*,COMMIT_EDITMSG set scrolloff=0
 
 " Skip the splash screen
-set shortmess+=I
+" set shortmess+=I
 set novb
-set ttyfast
+if !has('nvim')
+	set ttyfast
+endif
 set formatoptions+=1
 set formatoptions+=c  " Autowrap comments using textwidth
 set formatoptions+=j  " Delete comment character when joining commented lines
@@ -289,6 +309,12 @@ set formatoptions+=r  " Insert comment leader after hitting <Enter>
 " set formatoptions+=t  " Auto-wrap text using textwidth"
 set nostartofline
 set lbr
+
+" Show the effect of substitute incrementally
+if has('nvim')
+    set inccommand=nosplit
+endif
+
 " set iskeyword-=_
 
 " let python_highlight_all=1
@@ -339,6 +365,7 @@ autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
 autocmd FileType gitcommit setlocal scrolloff=0
 autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
+autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0]) " set cursor position to starting on gitcommit buffers
 autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
 autocmd FileType python setlocal expandtab " Expand tabs in python mode
 autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
@@ -384,6 +411,19 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Increase/decrease size and width (left, down, up and right) using ctrl-alt
+nnoremap <C-A-h> <C-w>2<
+nnoremap <C-A-j> <C-w>2+
+nnoremap <C-A-k> <C-w>2-
+nnoremap <C-A-l> <C-w>2>
+
+" Horizontal and vertical splits
+nnoremap <silent> <Leader>sp :split<CR>
+nnoremap <silent> <Leader>vs :vsplit<CR>
+
+" Make current window the only one on screen
+nnoremap <A-o> <C-w>ozv
+
 " nnoremap <Leader>j :
 nmap <Leader><Leader> V
 " map <F9>                  :bprev<CR>
@@ -404,6 +444,16 @@ set pastetoggle=<Leader>tp
 nnoremap <Leader>tg :GitGutterSignsToggle<CR>
 nnoremap <Leader>ta :ALEToggle<CR>
 nnoremap <Leader>ts :SignatureToggleSigns<CR>
+
+" folding
+" Close all folds and open and focus on fold containing current line
+nnoremap <Leader>z zMzvzz
+" Make zm and zr work as zM and zR respectively
+nnoremap zm zM
+nnoremap zr zR
+
+" Use <tab> to move between bracket pairs (related to matchit plugin)
+map <tab> %
 " }}}
 
 " Theme {{{
@@ -460,7 +510,7 @@ let g:airline#extensions#tagbar#enabled             = 1
 let g:airline#extensions#vimagit#enabled             = 1
 let g:airline#extensions#hunks#non_zero_only         = 1
 let g:airline#extensions#branch#enabled              = 1
-let g:airline#extensions#branch#displayed_head_limit = 10
+let g:airline#extensions#branch#displayed_head_limit = 20
 
 let g:airline_symbols.paste = 'ρ'
 " let g:airline_symbols.branch = '⎇'
@@ -700,7 +750,8 @@ let g_SuperTabDefaultCompletionType="context"
 "}}}
 
 " vim-startify {{{
-let g:startify_bookmarks = [    {'c': '~/.vimrc'     },
+let g:startify_bookmarks = [
+			\       {'c': '~/.vimrc'     },
                         \       {'g': '~/.gitconfig' },
                         \       {'s': '~/.screenrc'  },
                         \       {'t': '~/.tmux.conf' },
@@ -887,8 +938,8 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 
 " hardtime {{{
-let g:hardtime_timeout = 2000
-let g:hardtime_showmsg = 1
+let g:hardtime_timeout                = 2000
+let g:hardtime_showmsg                = 1
 let g:hardtime_ignore_buffer_patterns = ["NERD.*", "Tagbar.*"]
 let g:hardtime_maxcount               = 2
 " }}}
