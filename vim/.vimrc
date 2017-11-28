@@ -915,12 +915,17 @@ let g:deoplete#max_list                   = 25
 let deoplete#tag#cache_limit_size       = 10000000
 let g:deoplete#complete_method          = "omnifunc"
 set completeopt=longest,menuone
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 " inoremap <expr><C-y> deoplete#cancel_popup()
+
 inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+" Close popup and delete Airlinebackward character
+inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
+" Undo completion i.e remove whole completed word (default plugin mapping)
+inoremap <expr> <C-g> deoplete#undo_completion()
 
 " let g:deoplete#disable_auto_complete = 1
 inoremap <expr> <TAB>
