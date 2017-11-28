@@ -371,6 +371,13 @@ autocmd FileType python setlocal expandtab " Expand tabs in python mode
 autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
 
+" Save when buffer command takes one to another file and when losing focus
+set autowrite
+augroup focus_lost
+    au!
+    au FocusLost * silent! wall
+augroup END
+
 " Little welcome message!
 autocmd VimEnter * echo "Willkommen zum meinem ViM Welt! (^-^)"
 
