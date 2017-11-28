@@ -143,6 +143,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'christoomey/vim-tmux-navigator'
 Plug '~/.vim/local/c_std'
 Plug 'nsf/gocode'
+Plug 'lilydjwg/colorizer'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
