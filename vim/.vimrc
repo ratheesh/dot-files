@@ -482,7 +482,7 @@ function! AirlineInit()
     let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','%p%%'])
 endfunction
 
-autocmd User AirlineAfterInit call AirlineInit()
+autocmd User AirlineAfterInit,AirlineAfterTheme call AirlineInit()
 " autocmd VimEnter * call AirlineInit()
 
 " Error checking
