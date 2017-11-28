@@ -968,4 +968,7 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " }}}
 " set listchars=tab:\|\
 " set list
+
+" Autoload vimrc on save
+autocmd BufWritePost .vimrc source %
 "End of File
