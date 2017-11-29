@@ -1045,5 +1045,5 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " set termguicolors
 
 " Autoload vimrc on save
-autocmd BufWritePost .vimrc source %
+" autocmd BufWritePost .vimrc source %
 "End of File
