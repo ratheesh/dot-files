@@ -493,7 +493,11 @@ if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
 
-set mouse=nicr
+if has('nvim')
+  set mouse=nicr
+else
+  set mouse=a
+endif
 " let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled         = 0
 " let g:airline_skip_empty_sections                   = 1
@@ -508,9 +512,9 @@ let g:airline#extensions#tagbar#enabled             = 1
 let g:airline#extensions#virtualenv#enabled         = 1
 let g:airline#extensions#wordcount#enabled          = 1
 let g:airline#extensions#tagbar#enabled             = 1
-" let g:airline#extensions#tagbar#flags               = 'f'
-" let g:airline#extensions#wordcount#formatter        = 'default'
-" let g:airline#extensions#wordcount#format           = '%dWords'
+let g:airline#extensions#tagbar#flags               = 'f'
+let g:airline#extensions#wordcount#formatter        = 'default'
+let g:airline#extensions#wordcount#format           = '%dWords'
 " let g:airline#extensions#wordcount#filetypes        = ''
 
 " vcs
