@@ -51,7 +51,7 @@ let s:I2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:I3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
 
 " Visual mode
-let s:V1 = [ s:guiBlack , s:gui06 , s:ctermWhite , s:cterm06 ]
+let s:V1 = [ s:guiBlack , s:gui06 , s:ctermBlack , s:cterm06 ]
 let s:V2 = [ s:guiWhite , s:gui02 , s:cterm11, s:cterm02 ]
 let s:V3 = [ s:guiWhite , s:gui01 , s:cterm09, s:cterm01 ]
 
