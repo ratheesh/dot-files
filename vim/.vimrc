@@ -150,7 +150,7 @@ if has('nvim')
 else
   Plug 'Shougo/deoplete.nvim'
   " Plug 'zchee/deoplete-clang'
-  Plug 'tweekmonster/deoplete-clang2'
+  " Plug 'tweekmonster/deoplete-clang2'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'zchee/deoplete-jedi'
@@ -975,16 +975,16 @@ if !has('nvim')
 let g:deoplete#enable_yarp                = 1
 endif
 let g:deoplete#enable_refresh_always      = 1
-let g:deoplete#auto_complete_delay        = 150
-let g:deoplete#auto_refresh_delay         = 100
+let g:deoplete#auto_complete_delay        = 50
+let g:deoplete#auto_refresh_delay         = 50
 let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#enable_ignore_case         = 1
 let g:deoplete#enable_smart_case          = 1
 let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path    = 1
 let g:deoplete#max_list                   = 25
-let deoplete#tag#cache_limit_size       = 10000000
-let g:deoplete#complete_method          = "omnifunc"
+let deoplete#tag#cache_limit_size         = 10000000
+let g:deoplete#complete_method            = "omnifunc"
 set completeopt=longest,menuone
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
