@@ -396,7 +396,8 @@ noremap <Right> <NOP>
 " set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
 " imap jj <Esc>
-" imap <Esc> l
+imap <Esc> l
+vmap <Esc> l
 inoremap jj l
 vnoremap jj l
 nnoremap ' `
@@ -407,6 +408,7 @@ else
 nnoremap <Leader>so     :source $MYVIMRC<CR>
 endif
 nnoremap <Leader>w      :w<CR>
+" nnoremap <Leader>ws     :w !sudo tee %
 nnoremap <Leader>x      :x<CR>
 nnoremap <Leader>q      :q<CR>
 nnoremap <Leader>qn     :q!<CR>
@@ -685,6 +687,8 @@ else
         let g:ctrlp_clear_cache_on_exit = 0
 endif
 
+let g:ctrlp_lazy_update =  500
+
 " let g:ctrlp_by_filename = 0
 " let g:ctrlp_follow_symlinks = 0
 
@@ -698,14 +702,14 @@ let g:ctrlp_match_window = 'min:1,max:10,results:100'
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_match_current_file = 0
 
-" let g:ctrlp_map = '<Leader>p'
+" let g:ctrlp_map             = '<Leader>p'
 let g:ctrlp_cmd               = 'CtrlPBuffer'
 let g:ctrlp_show_hidden       = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_root_markers      = ['.ctrlp']
 let g:ctrlp_mruf_exclude      = '\v\.git/(COMMIT_EDITMSG|index)'
 let g:ctrlp_max_files         = 200000
-" let g:ctrlp_mruf_relative     = 1
+" let g:ctrlp_mruf_relative   = 1
 set autochdir
 
 nnoremap <Leader>fo :CtrlP<CR>
@@ -771,7 +775,7 @@ let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "node_modules/*"'
 " }}}
 
-" supertab {{{
+" supertab  {{{
 let g_SuperTabDefaultCompletionType="context"
 "}}}
 
