@@ -94,7 +94,6 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'renyard/vim-git-flow-format'
 " Plug 'itchyny/lightline.vim'
 " Plug 'ap/vim-buftabline'
 " Plug 'unblevable/quick-scope'
@@ -620,20 +619,6 @@ let g:airline_mode_map = {
       \ 'S'  : 'Subst-Ln',
       \ '' : 'Subst-Blk',
       \ }
-
-" }}}
-
-" airline-git-flow-format {{{
-let g:airline#extensions#branch#format = 'Git_flow_branch_format'
-let g:git_flow_prefixes = {
-    \ 'master': '',
-    \ 'develop': '',
-    \ 'feature': 'F:',
-    \ 'release': 'R:',
-    \ 'hotfix': 'H:',
-    \ 'support': 'S:',
-    \ 'versiontag': 'V:'
-    \ }
 
 " }}}
 
