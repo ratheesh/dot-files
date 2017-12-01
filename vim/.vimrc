@@ -1051,9 +1051,24 @@ nnoremap <Leader>] :wincmd w<CR>
 
 
 " cscope {{{
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>fl :call ToggleLocationList()<CR>
-let g:cscope_silent = 1
+" nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+" nnoremap <leader>fl :call ToggleLocationList()<CR>
+" let g:cscope_silent = 1
+
+if has("cscope")
+        set csprg=/usr/bin/cscope
+        set csto=0
+        set cst
+        set nocsverb
+        " add any database in current directory
+        if filereadable("cscope.out")
+            cs add cscope.out
+        " else add database pointed to by environment
+        elseif $CSCOPE_DB != ""
+            cs add $CSCOPE_DB
+        endif
+        set csverb
+endif
 " }}}
 
 " Misc macros {{{
