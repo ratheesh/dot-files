@@ -20,7 +20,7 @@
 	pager       = true
 
 [color "branch"]
-	current    = 26 italic
+	current    = 25 italic
 	local      = 180
 	remote     = 65
 
@@ -28,12 +28,12 @@
 	meta       = 65
 	frag       = 180
 	old        = 162
-	new        = 26
+	new        = 25
 	whitespace = 197 reverse
 	plain      = 7
 
 [color "status"]
-	added     = 26
+	added     = 25
 	changed   = 180
 	untracked = 244
 
