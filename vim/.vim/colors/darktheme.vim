@@ -168,7 +168,8 @@ hi gitcommitDiscardedFile       ctermfg=60      ctermbg=NONE    cterm=NONE
 hi gitcommitDiscardedType       ctermfg=95      ctermbg=NONE    cterm=italic
 hi gitcommitPatchLabel          ctermfg=132     ctermbg=NONE    cterm=italic
 hi gitcommitEmailAddr           ctermfg=65      ctermbg=NONE    cterm=italic
-hi gitcommitAuthor              ctermfg=9       ctermbg=NONE    cterm=italic
+hi gitcommitSignedAuthor        ctermfg=25      ctermbg=NONE    cterm=NONE
+hi gitcommitAuthor              ctermfg=24      ctermbg=NONE    cterm=NONE
 " }}}
 
 " Diff {{{
