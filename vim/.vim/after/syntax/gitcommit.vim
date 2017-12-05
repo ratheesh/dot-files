@@ -17,9 +17,9 @@
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-syn match gitcommitPatchLabel     display   '\v(Signed-off|Tested|Reviewed|Reported)-by:'
-syn match gitcommitCC             display   '\vCc:'
-syn match gitcommitEmailAddr      display   '<.\{-}>'
-" syn match gitcommitAuthor         display   ':\s?\w+<'
+syn match gitcommitPatchLabel     display   '\v^\zs(Signed-off|Tested|Reviewed|Reported)-by\ze:'
+syn match gitcommitCC             display   '\v^\zsCc\ze:'
+syn match gitcommitEmailAddr      display   '<\zs.\{-}\ze>'
+syn match gitcommitSignedAuthor   display   ':\zs.\{-}\ze<'
 
 hi def link gitcommitCC gitcommitPatchLabel
