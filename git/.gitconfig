@@ -20,22 +20,22 @@
 	pager       = true
 
 [color "branch"]
-	current = yellow reverse
-	local   = yellow
-	remote  = green
+	current    = 25 italic
+	local      = 180
+	remote     = 65
 
 [color "diff"]
-	meta       = yellow
-	frag       = magenta
-	old        = red
-	new        = green
-	whitespace = red reverse
-	plain      = white dim
+	meta       = 65
+	frag       = 180
+	old        = 162
+	new        = 25
+	whitespace = 197 reverse
+	plain      = 7
 
 [color "status"]
-	added = green
-	changed = cyan
-	untracked = red
+	added     = 25
+	changed   = 180
+	untracked = 244
 
 [merge]
 	# include summaries of merged commits in newly created merge commit messages
