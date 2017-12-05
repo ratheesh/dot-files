@@ -62,9 +62,9 @@
 	decorate    = auto
 
 [format]
-	pretty      = format:"%C(65)Commit%C(162): %C(103)%H%C(auto)%d%n%C(65)\
-Author%C(162):%C(26 italic) %aN %C(66)<%aE>%n%C(65)\
-Date  %C(162):%C(132) %ad%n%n%C(246)%w(0,4,4)%s%n%n%b"
+	pretty      = format:"%C(60)Commit%C(162): %C(137)%H%C(auto)%d%n%C(60)\
+Author%C(162):%C(26 italic) %aN %C(reset)%C(162 bold)«%C(reset)%C(66 italic)%aE%C(reset)%C(162 bold)»%n%C(60)\
+Date  %C(162):%C(132) %ad%C(8) ⌠%C(reset)%C(24)%ar%C(8)⌡%n%n%C(244)%w(0,4,4)%s%n%n%C(7)%b"
 
 [magit]
 	extension   = stgit
