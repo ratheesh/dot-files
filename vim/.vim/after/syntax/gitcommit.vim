@@ -20,6 +20,6 @@
 syn match gitcommitPatchLabel     display   '\v^\zs(Signed-off|Tested|Reviewed|Reported)-by\ze:'
 syn match gitcommitCC             display   '\v^\zsCc\ze:'
 syn match gitcommitEmailAddr      display   '<\zs.\{-}\ze>'
-syn match gitcommitSignedAuthor   display   ':\zs.\{-}\ze<'
+syn match gitcommitSignedAuthor   display   ':\zs.\{-}\ze[<$]'
 
 hi def link gitcommitCC gitcommitPatchLabel
