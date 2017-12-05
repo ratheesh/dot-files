@@ -37,6 +37,12 @@
 	changed   = 180
 	untracked = 244
 
+[color "decorate"]
+	head         = 27
+	branch       = 129 italic
+	remoteBranch = 162
+	tag          = 180
+
 [merge]
 	# include summaries of merged commits in newly created merge commit messages
 	log = true
@@ -53,7 +59,12 @@
 	hide-status = 1
 
 [log]
-	decorate    = short
+	decorate    = auto
+
+[format]
+	pretty      = format:"%C(65)Commit: %C(60)%H%C(auto)%d%n%C(65)\
+Author:%C(26 italic) %aN %C(66)<%aE>%n%C(65)\
+Date  :%C(132) %ad%n%n%C(reset)%w(72,4,4)%s%n%n%b"
 
 [magit]
 	extension   = stgit
