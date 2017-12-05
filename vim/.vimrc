@@ -692,7 +692,7 @@ let g:ctrlp_cmd               = 'CtrlPBuffer'
 let g:ctrlp_show_hidden       = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_root_markers      = ['.ctrlp']
-let g:ctrlp_mruf_exclude      = '\v\.git/(COMMIT_EDITMSG|index)'
+let g:ctrlp_mruf_exclude      = '\v\.git/(COMMIT_EDITMSG|MERGE_MSG|index)'
 let g:ctrlp_max_files         = 200000
 " let g:ctrlp_mruf_relative   = 1
 set autochdir
