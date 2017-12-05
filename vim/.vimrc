@@ -672,7 +672,7 @@ else
         let g:ctrlp_clear_cache_on_exit = 0
 endif
 
-let g:ctrlp_lazy_update =  500
+let g:ctrlp_lazy_update =  300
 
 " let g:ctrlp_by_filename = 0
 " let g:ctrlp_follow_symlinks = 0
