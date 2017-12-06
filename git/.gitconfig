@@ -20,7 +20,7 @@
 	pager       = true
 
 [color "branch"]
-	current    = 25 italic
+	current    = 27 italic
 	local      = 180
 	remote     = 65
 
@@ -33,7 +33,7 @@
 	plain      = 7
 
 [color "status"]
-	added     = 25
+	added     = 27
 	changed   = 180
 	untracked = 244
 
