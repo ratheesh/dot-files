@@ -445,8 +445,10 @@ nmap <Leader><Tab>        :b#<CR>
 nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
-vnoremap < <gv
-vnoremap > >gv
+" make shift+tab and tab indent
+vmap <Tab>   >gv
+vmap <S-Tab> <gv
+imap <S-Tab> <C-o><<
 
 " Toggle keybindings
 set pastetoggle=<Leader>tp
