@@ -40,6 +40,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Plug 'wincent/terminus'
 Plug 'mhinz/vim-startify'
+Plug 'hecal3/vim-leader-guide'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 " Plug 'mhinz/vim-signify'
@@ -1066,9 +1067,34 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " set listchars=tab:\|\
 " set list
 
+" Leader Guide {{{
+" Define prefix dictionary
+let g:lmap =  {}
+let g:lmap.b = { 'name' : 'Buffers Menu' }
+let g:lmap.c = { 'name' : 'NERD Commentar' }
+let g:lmap.f = { 'name' : 'Files Menu' }
+let g:lmap.g = { 'name' : 'Git Gutter' }
+let g:lmap.j = { 'name' : 'Easy Motion' }
+let g:lmap.t = { 'name' : 'Toggle Functions' }
+
+" <leader>e [errors] ---------------------------------------------
+let g:lmap.e = {
+            \	'name' : 'Error',
+            \	'o'    : ['lopen',   'Open location window'],
+            \	'c'    : ['lclose',  'Close location window'],
+            \	','    : ['ll',      'Go to current error/warning'],
+            \	'en'   : ['lnext',   'Next error/warning'],
+            \	'ep'   : ['lprev',   'Previous error/warning'],
+            \	}
+
+call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+" }}}
+
 " Use guicolors in terminal (we seem to need to place this here)
 " set termguicolors
-
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
+
 "End of File
