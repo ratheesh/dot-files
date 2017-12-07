@@ -196,6 +196,12 @@ hi StartifySection      ctermfg=142     ctermbg=NONE    cterm=bold
 hi StartifyFooter       ctermfg=6       ctermbg=NONE    cterm=NONE
 " }}}
 
+" LeaderGuide {{{
+hi LeaderGuideDesc      ctermfg=60      ctermbg=NONE    cterm=NONE
+hi LeaderGuideKeys      ctermfg=137     ctermbg=NONE    cterm=NONE
+hi LeaderGuideBrackets  ctermfg=26      ctermbg=NONE    cterm=NONE
+" }}}
+
 " Ruby {{{
 hi rubyClass                    ctermfg=212     ctermbg=NONE    cterm=NONE
 hi rubyFunction                 ctermfg=84      ctermbg=NONE    cterm=NONE
