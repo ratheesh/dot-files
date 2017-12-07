@@ -113,7 +113,7 @@ endif
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'ntpeters/vim-better-whitespace'
+" Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -417,32 +417,28 @@ nnoremap ' `
 nnoremap ` '
 if  has('nvim')
 nnoremap <Leader>ev     :source ~/.config/nvim/init.vim<CR>
-let g:lmap.e.v = [':source ~/.config/nvim/init.vim<CR>', 'Eval NViM config']
+let g:lmap.e.v = ['source ~/.config/nvim/init.vim', 'Eval NViM config']
 else
 nnoremap <Leader>ev     :source $MYVIMRC<CR>
-let g:lmap.e.v = [':source $MYVIMRC<CR>', 'Eval NViM config']
+let g:lmap.e.v = ['source $MYVIMRC', 'Eval NViM config']
 endif
 nnoremap <Leader>fs      :w<CR>
-let g:lmap.f.s = [':w<CR>', 'Save Buffer']
+let g:lmap.f.s = ['w', 'Save Buffer']
 " nnoremap <Leader>ws     :w !sudo tee %
 nnoremap <Leader>qs      :x<CR>
-let g:lmap.q.s = [':x<CR>', 'Save Buffers and Exit']
+let g:lmap.q.s = ['x', 'Save Buffers and Exit']
 nnoremap <Leader>qq      :q<CR>
-let g:lmap.q.q = [':q<CR>', 'Exit ViM']
+let g:lmap.q.q = ['q', 'Exit ViM']
 nnoremap <Leader>qQ     :q!<CR>
-let g:lmap.q.Q = [':q!<CR>', 'Exit ViM without saving']
+let g:lmap.q.Q = ['q!', 'Exit ViM without saving']
 " nnoremap <Leader>qp     :pclose<CR>
 " nnoremap <Leader>ql     :lcl<CR>
 
 " Move across vim split Windows
 nnoremap <Leader>wj <C-W>j
-let g:lmap.w.j = ['<C-W>j', 'Move Focus Down']
 nnoremap <Leader>wk <C-W>k
-let g:lmap.w.k = ['<C-W>k', 'Move Focus Up']
 nnoremap <Leader>wh <C-W>h
-let g:lmap.w.h = ['<C-W>h', 'Move Focus Left']
 nnoremap <Leader>wl <C-W>l
-let g:lmap.w.l = ['<C-W>l', 'Move Focus Right']
 
 " Increase/decrease size and width (left, down, up and right) using ctrl-alt
 nnoremap <C-A-h> <C-w>2<
@@ -466,7 +462,7 @@ nnoremap <Leader>bd               :bdelete<CR>
 let g:lmap.b.d = ['bdelete', 'Delete Current Buffer']
 nmap <silent><Leader><Backspace>  :nohlsearch<CR>
 nmap <silent><Leader>bh           :Startify<CR>
-let g:lmap.b.h = [':Startify<CR>', 'Startify Buffer']
+let g:lmap.b.h = ['Startify', 'Startify Buffer']
 nmap <silent><Leader><Tab>        :b#<CR>
 nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
@@ -479,11 +475,11 @@ imap <S-Tab> <C-o><<
 " Toggle keybindings
 set pastetoggle=<F3>
 nnoremap <Leader>tg :GitGutterSignsToggle<CR>
-let g:lmap.t.g = [':GitGutterSignsToggle<CR>', 'Toggle GitGutter signs']
+let g:lmap.t.g = ['GitGutterSignsToggle', 'Toggle GitGutter signs']
 nnoremap <Leader>ta :ALEToggle<CR>
-let g:lmap.t.a = [':ALEToggle<CR>', 'Toggle ALE']
+let g:lmap.t.a = ['ALEToggle', 'Toggle ALE']
 nnoremap <Leader>ts :SignatureToggleSigns<CR>
-let g:lmap.t.s = [':SignatureToggleSigns<CR>', 'Toggle Marks Signs']
+let g:lmap.t.s = ['SignatureToggleSigns', 'Toggle Marks Signs']
 
 " folding
 " Close all folds and open and focus on fold containing current line
@@ -504,7 +500,7 @@ color darktheme
 " Tagbar {{{
 nmap <F8>            :TagbarToggle<CR>
 nnoremap <leader>tt  :TagbarOpenAutoClose<CR>
-let g:lmap.t.t = [':TagbarOpenAutoClose<CR>', 'Toggle Tagbar']
+let g:lmap.t.t = ['TagbarOpenAutoClose', 'Toggle Tagbar']
 " }}}
 
 " C/C++ {{{
@@ -602,28 +598,28 @@ let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-let g:lmap.1 = ['<Plug>AirlineSelectTab1', 'Select Tab1']
-nmap <leader>2 <Plug>AirlineSelectTab2
-let g:lmap.2 = ['<Plug>AirlineSelectTab2', 'Select Tab2']
+nnoremap <leader>1 <Plug>AirlineSelectTab1
+let g:lmap.1 = ['call feedkeys("\<Plug>AirlineSelectTab1")', 'Select Tab1']
+nnoremap <leader>2 <Plug>AirlineSelectTab2
+let g:lmap.2 = ['call feedkeys("\<Plug>AirlineSelectTab2")', 'Select Tab2']
 nmap <leader>3 <Plug>AirlineSelectTab3
-let g:lmap.3 = ['<Plug>AirlineSelectTab3', 'Select Tab3']
+let g:lmap.3 = ['call feedkeys("\<Plug>AirlineSelectTab3")', 'Select Tab3']
 nmap <leader>4 <Plug>AirlineSelectTab4
-let g:lmap.4 = ['<Plug>AirlineSelectTab4', 'Select Tab4']
+let g:lmap.4 = ['call feedkeys("\<Plug>AirlineSelectTab4")', 'Select Tab4']
 nmap <leader>5 <Plug>AirlineSelectTab5
-let g:lmap.5 = ['<Plug>AirlineSelectTab5', 'Select Tab5']
+let g:lmap.5 = ['call feedkeys("\<Plug>AirlineSelectTab5")', 'Select Tab5']
 nmap <leader>6 <Plug>AirlineSelectTab6
-let g:lmap.6 = ['<Plug>AirlineSelectTab6', 'Select Tab6']
+let g:lmap.6 = ['call feedkeys("\<Plug>AirlineSelectTab6")', 'Select Tab6']
 nmap <leader>7 <Plug>AirlineSelectTab7
-let g:lmap.7 = ['<Plug>AirlineSelectTab7', 'Select Tab7']
+let g:lmap.7 = ['call feedkeys("\<Plug>AirlineSelectTab7")', 'Select Tab7']
 nmap <leader>8 <Plug>AirlineSelectTab8
-let g:lmap.8 = ['<Plug>AirlineSelectTab8', 'Select Tab8']
+let g:lmap.8 = ['call feedkeys("\<Plug>AirlineSelectTab8")', 'Select Tab8']
 nmap <leader>9 <Plug>AirlineSelectTab9
-let g:lmap.9 = ['<Plug>AirlineSelectTab9', 'Select Tab9']
+let g:lmap.9 = ['call feedkeys("\<Plug>AirlineSelectTab9")', 'Select Tab9']
 nmap <leader>h <Plug>AirlineSelectPrevTab
-let g:lmap.h = ['<Plug>AirlineSelectPrevTab', 'Select Prev Tab']
+let g:lmap.h = ['call feedkeys("\<Plug>AirlineSelectPrevTab")', 'Select Prev Tab']
 nmap <leader>l <Plug>AirlineSelectNextTab
-let g:lmap.l = ['<Plug>AirlineSelectNextTab', 'Select Next Tab']
+let g:lmap.l = ['call feedkeys("\<Plug>AirlineSelectNextTab")', 'Select Next Tab']
 " let g:airline#extensions#tabline#left_sep      = ''
 " let g:airline#extensions#tabline#left_alt_sep  = '|'
 " let g:airline#extensions#tabline#right_sep     = ''
@@ -741,17 +737,17 @@ let g:ctrlp_max_files         = 200000
 set autochdir
 
 nnoremap <Leader>fo :CtrlP<CR>
-let g:lmap.f.o = [':CtrlP<CR>', 'Open Files']
+let g:lmap.f.o = ['CtrlP', 'Open Files']
 nnoremap <Leader>fb :CtrlPBuffer<CR>
-let g:lmap.f.b = [':CtrlPBuffer<CR>', 'Current Buffers']
+let g:lmap.f.b = ['CtrlPBuffer', 'Current Buffers']
 nnoremap <Leader>fr :CtrlPMRU<CR>
-let g:lmap.f.r = [':CtrlPMRU<CR>', 'MRU List']
+let g:lmap.f.r = ['CtrlPMRU', 'MRU List']
 nnoremap <Leader>ft :CtrlPBufTag<CR>
-let g:lmap.f.t = [':CtrlPBufTag<CR>', 'List Buffer Tags']
+let g:lmap.f.t = ['CtrlPBufTag', 'List Buffer Tags']
 nnoremap <Leader>fT :CtrlPBufTagAll<CR>
-let g:lmap.f.T = [':CtrlPBufTagAll<CR>', 'List Tags in Open Buffers']
+let g:lmap.f.T = ['CtrlPBufTagAll', 'List Tags in Open Buffers']
 nnoremap <Leader>fj :CtrlPJumpList<CR>
-let g:lmap.f.j = [':CtrlPJumpList<CR>', 'Jump List']
+let g:lmap.f.j = ['CtrlPJumpList', 'Jump List']
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
@@ -764,7 +760,7 @@ let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|og
 
 " ctrlp-funky {{{
 nnoremap <Leader>fu :CtrlPFunky<CR>
-let g:lmap.f.u = [':CtrlPFunky<CR>', 'Funky Buffer']
+let g:lmap.f.u = ['CtrlPFunky', 'Funky Buffer']
 " Narrow the list down with a word under cursor
 " nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<CR>
 let g:ctrlp_funky_matchtype        = 'path'
@@ -836,17 +832,17 @@ let g:gitgutter_eager = 1 " Update when switching/writing buffers
 let g:gitgutter_sign_modified = '='
 
 nmap <Leader>gn <Plug>GitGutterNextHunk
-let g:lmap.g.n = ['<Plug>GitGutterNextHunk', 'Next hunk']
+let g:lmap.g.n = ['call feedkeys("\<Plug>GitGutterNextHunk")', 'Next hunk']
 nmap <Leader>gp <Plug>GitGutterPrevHunk
-let g:lmap.g.p = ['<Plug>GitGutterPrevHunk', 'Prev hunk']
+let g:lmap.g.p = ['call feedkeys("\<Plug>GitGutterPrevHunk")', 'Prev hunk']
 nmap <Leader>ga <Plug>GitGutterStageHunk
-let g:lmap.g.a = ['<Plug>GitGutterStageHunk', 'Stage hunk']
+let g:lmap.g.a = ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage hunk']
 nmap <Leader>gr <Plug>GitGutterRevertHunk
-let g:lmap.g.r = ['<Plug>GitGutterRevertHunk', 'Revert hunk']
+let g:lmap.g.r = ['call feedkeys("\<Plug>GitGutterRevertHunk")', 'Revert hunk']
 nmap <Leader>gu <Plug>GitGutterUndoHunk
-let g:lmap.g.u = ['<Plug>GitGutterUndoHunk', 'Undo hunk']
+let g:lmap.g.u = ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo hunk']
 nmap <Leader>gP <Plug>GitGutterPreviewHunk
-let g:lmap.g.P = ['<Plug>GitGutterPreviewHunk', 'Preview hunk']
+let g:lmap.g.P = ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview hunk']
 " }}}
 
 " vim-signature {{{
@@ -866,7 +862,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Easymotion {{{
 let g:EasyMotion_do_mapping       = 0 " Disable default mappings
-nmap <Leader>jj <Plug>(easymotion-s)
+" nmap <Leader>jj <Plug>(easymotion-s)
 let g:EasyMotion_smartcase        = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 "}}}
@@ -1137,14 +1133,6 @@ function! s:my_displayfunc()
 endfunction
 let g:leaderGuide_displayfunc = [function("s:my_displayfunc")]
 autocmd WinEnter leaderguide echo "in leaderguide buffer"
-" Define prefix dictionary
-" let g:lmap =  {}
-" let g:lmap.b = { 'name' : '+Buffers Menu' }
-" let g:lmap.c = { 'name' : '+NERD Commentar' }
-" let g:lmap.f = { 'name' : '+Files Menu' }
-" let g:lmap.g = { 'name' : '+Git Gutter' }
-" let g:lmap.j = { 'name' : '+Easy Motion' }
-" let g:lmap.t = { 'name' : '+Toggle Functions' }
 
 " <leader>e [errors] ---------------------------------------------
 " let g:lmap.e = {
@@ -1156,6 +1144,13 @@ autocmd WinEnter leaderguide echo "in leaderguide buffer"
             " \	'ep'   : ['lprev',   'Previous error/warning'],
             " \	}
 
+" <leader>j [jump/join/split] -----------------------------------
+let g:lmap.j = {
+            \'name': '+jump/join/split',
+            \'j': ['call feedkeys("\<Plug>(easymotion-overwin-f)")', 'goto char'],
+            \'k': ['call feedkeys("\<Plug>(easymotion-overwin-f2)")', 'goto char-2'],
+            \'l': ['call feedkeys("\<Plug>(easymotion-overwin-line)")', 'goto line'],
+            \}
 call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
