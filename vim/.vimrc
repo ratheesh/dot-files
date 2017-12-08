@@ -579,10 +579,12 @@ nmap <silent><leader>8 <Plug>AirlineSelectTab8
 nmap <silent><leader>9 <Plug>AirlineSelectTab9
 nmap <silent><leader>h <Plug>AirlineSelectPrevTab
 nmap <silent><leader>l <Plug>AirlineSelectNextTab
-" let g:airline#extensions#tabline#left_sep      = ''
-" let g:airline#extensions#tabline#left_alt_sep  = '|'
-" let g:airline#extensions#tabline#right_sep     = ''
-" let g:airline#extensions#tabline#right_alt_sep = '|'
+if !exists('g:airline_powerline_fonts')
+        let g:airline#extensions#tabline#left_sep      = ''
+        let g:airline#extensions#tabline#left_alt_sep  = '|'
+        let g:airline#extensions#tabline#right_sep     = ''
+        let g:airline#extensions#tabline#right_alt_sep = '|'
+endif
 
 " let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
 let g:airline#extensions#tabline#buffer_idx_format = {
