@@ -30,7 +30,7 @@ let s:cterm03           = "215"
 let s:cterm04           = "141"
 let s:cterm05           = "162"
 let s:cterm06           = "130"
-let s:cterm07           = "66"
+let s:cterm07           = "24"
 let s:cterm08           = "22"
 let s:cterm09           = "103"
 let s:cterm10           = "132"
@@ -41,7 +41,7 @@ let s:ctermBlack        = "16"
 let s:ctermChangedColor = "9"
 
 " Normal mode
-let s:N1 = [ s:guiBlack , s:gui08 , s:ctermBlack , s:cterm07 ]
+let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
 let s:N2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
@@ -108,8 +108,8 @@ let g:airline#themes#darkmode#palette.tabline = {
 " Adjust colors in darktheme.vim
 :augroup modeToggle
 :autocmd!
-:autocmd Insertleave   * hi CursorLineNr ctermfg=251	ctermbg=89  cterm=NONE
-:autocmd InsertEnter   * hi CursorLineNr ctermfg=253	ctermbg=25  cterm=NONE
+:autocmd Insertleave   * hi CursorLineNr ctermfg=254	ctermbg=25  cterm=NONE
+:autocmd InsertEnter   * hi CursorLineNr ctermfg=254	ctermbg=22  cterm=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
