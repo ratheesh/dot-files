@@ -397,17 +397,17 @@ vnoremap jj l
 nnoremap ' `
 nnoremap ` '
 if  has('nvim')
-nnoremap <Leader>so     :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
 else
-nnoremap <Leader>so     :source $MYVIMRC<CR>
+nnoremap <silent><Leader>so     :source $MYVIMRC<CR>
 endif
-nnoremap <Leader>w      :w<CR>
-" nnoremap <Leader>ws     :w !sudo tee %
-nnoremap <Leader>x      :x<CR>
-nnoremap <Leader>q      :q<CR>
-nnoremap <Leader>qn     :q!<CR>
-nnoremap <Leader>qp     :pclose<CR>
-nnoremap <Leader>ql     :lcl<CR>
+nnoremap <silent><Leader>w      :w<CR>
+" nnoremap <silent><Leader>ws     :w !sudo tee %
+nnoremap <silent><Leader>x      :x<CR>
+nnoremap <silent><Leader>q      :q<CR>
+nnoremap <silent><Leader>qn     :q!<CR>
+nnoremap <silent><Leader>qp     :pclose<CR>
+nnoremap <silent><Leader>ql     :lcl<CR>
 
 " Move across vim split Windows
 map <C-j> <C-W>j
@@ -422,14 +422,14 @@ nnoremap <C-A-k> <C-w>2-
 nnoremap <C-A-l> <C-w>2>
 
 " Horizontal and vertical splits
-nnoremap <silent> <Leader>sp :split<CR>
-nnoremap <silent> <Leader>vs :vsplit<CR>
+nnoremap <silent><Leader>sp :split<CR>
+nnoremap <silent><Leader>vs :vsplit<CR>
 
 " Make current window the only one on screen
 nnoremap <A-o> <C-w>ozv
 
 " nnoremap <Leader>j :
-nmap <Leader><Leader> V
+nmap <silent><Leader><Leader> V
 " map <F9>                  :bprev<CR>
 " map <F10>                 :bnext<CR>
 map <F5>                  :echo expand('%:p')<CR>
@@ -468,7 +468,7 @@ color darktheme
 " }}}
 
 " Tagbar {{{
-nmap <F8>            :TagbarToggle<CR>
+nmap <silent><F8>            :TagbarToggle<CR>
 nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
@@ -568,17 +568,17 @@ let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>h <Plug>AirlineSelectPrevTab
-nmap <leader>l <Plug>AirlineSelectNextTab
+nmap <silent><leader>1 <Plug>AirlineSelectTab1
+nmap <silent><leader>2 <Plug>AirlineSelectTab2
+nmap <silent><leader>3 <Plug>AirlineSelectTab3
+nmap <silent><leader>4 <Plug>AirlineSelectTab4
+nmap <silent><leader>5 <Plug>AirlineSelectTab5
+nmap <silent><leader>6 <Plug>AirlineSelectTab6
+nmap <silent><leader>7 <Plug>AirlineSelectTab7
+nmap <silent><leader>8 <Plug>AirlineSelectTab8
+nmap <silent><leader>9 <Plug>AirlineSelectTab9
+nmap <silent><leader>h <Plug>AirlineSelectPrevTab
+nmap <silent><leader>l <Plug>AirlineSelectNextTab
 " let g:airline#extensions#tabline#left_sep      = ''
 " let g:airline#extensions#tabline#left_alt_sep  = '|'
 " let g:airline#extensions#tabline#right_sep     = ''
@@ -695,14 +695,14 @@ let g:ctrlp_max_files         = 200000
 " let g:ctrlp_mruf_relative   = 1
 set autochdir
 
-nnoremap <Leader>fo :CtrlP<CR>
-nnoremap <Leader>fb :CtrlPBuffer<CR>
-nnoremap <Leader>fr :CtrlPMRU<CR>
-nnoremap <Leader>ft :CtrlPBufTag<CR>
-nnoremap <Leader>fT :CtrlPBufTagAll<CR>
-nnoremap <Leader>fj :CtrlPJumpList<CR>
-nnoremap <Leader>fp :CtrlPRegister<CR>
-nnoremap <leader>fc :CtrlPCommandPalette<cr>
+nnoremap <silent><Leader>fo :CtrlP<CR>
+nnoremap <silent><Leader>fb :CtrlPBuffer<CR>
+nnoremap <silent><Leader>fr :CtrlPMRU<CR>
+nnoremap <silent><Leader>ft :CtrlPBufTag<CR>
+nnoremap <silent><Leader>fT :CtrlPBufTagAll<CR>
+nnoremap <silent><Leader>fj :CtrlPJumpList<CR>
+nnoremap <silent><Leader>fp :CtrlPRegister<CR>
+nnoremap <silent><leader>fc :CtrlPCommandPalette<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
@@ -714,9 +714,9 @@ let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|og
 " }}}
 
 " ctrlp-funky {{{
-nnoremap <Leader>fu :CtrlPFunky<CR>
+nnoremap <silent><Leader>fu :CtrlPFunky<CR>
 " Narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<CR>
+nnoremap <silent><Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<CR>
 let g:ctrlp_funky_matchtype        = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_funky_nolim            = 1
@@ -727,13 +727,13 @@ call ctrlp_bdelete#init()
 "}}}
 
 " vim-ctrlp-tjump {{{
-nnoremap <c-]> :CtrlPtjump<CR>
-vnoremap <c-]> :CtrlPtjumpVisual<CR>
+nnoremap <silent><c-]> :CtrlPtjump<CR>
+vnoremap <silent><c-]> :CtrlPtjumpVisual<CR>
 let g:ctrlp_tjump_only_silent = 1
 " }}}
 
 " ctrlp-extensions {{{
-nnoremap <Leader>fy :CtrlPYankring<CR>
+nnoremap <silent><Leader>fy :CtrlPYankring<CR>
 let g:ctrlp_yankring_limit           = 100
 let g:ctrlp_yankring_highlight       = 1
 let g:ctrlp_yankring_use_textchanged = 1
@@ -750,8 +750,8 @@ let g:ctrlp_yankring_minimum_chars   = 2
 " vim-ctrlp-ag {{{
 " nnoremap <c-f> :CtrlPag<CR>
 " vnoremap <c-f> :CtrlPagVisual<CR>
-nnoremap <leader>ca :CtrlPagLocate
-nnoremap <leader>cp :CtrlPagPrevious<CR>
+nnoremap <silent><leader>ca :CtrlPagLocate
+nnoremap <silent><leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "deps/*"
     \ --ignore "_build/*"
@@ -785,12 +785,12 @@ let g:gitgutter_eager = 1 " Update when switching/writing buffers
 
 let g:gitgutter_sign_modified = '='
 
-nmap <Leader>gn <Plug>GitGutterNextHunk
-nmap <Leader>gp <Plug>GitGutterPrevHunk
-nmap <Leader>ga <Plug>GitGutterStageHunk
-nmap <Leader>gr <Plug>GitGutterRevertHunk
-nmap <Leader>gu <Plug>GitGutterUndoHunk
-nmap <Leader>gP <Plug>GitGutterPreviewHunk
+nmap <silent><Leader>gn <Plug>GitGutterNextHunk
+nmap <silent><Leader>gp <Plug>GitGutterPrevHunk
+nmap <silent><Leader>ga <Plug>GitGutterStageHunk
+nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
+nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
+nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
 " }}}
 
 " vim-signature {{{
@@ -810,7 +810,9 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Easymotion {{{
 let g:EasyMotion_do_mapping       = 0 " Disable default mappings
-nmap <Leader>jj <Plug>(easymotion-s)
+nmap <silent><Leader>jj <Plug>(easymotion-overwin-f)
+nmap <silent><Leader>jk <Plug>(easymotion-overwin-f2)
+nmap <silent><Leader>jl <Plug>(easymotion-overwin-line)
 let g:EasyMotion_smartcase        = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 "}}}
@@ -903,7 +905,7 @@ call expand_region#custom_text_objects({
 " }}}
 
 " YankRing {{{
-nmap <leader>y :YRShow<CR>
+nmap <silent><leader>y :YRShow<CR>
 " put the yankring_history file in ~/.backup
 " let g:yankring_history_dir = '~/.backup'
 " }}}
@@ -941,13 +943,13 @@ let g:bookmark_auto_close              = 1
 " }}}
 
 " incsearch-fuzzy {{{
-map z/ <Plug>(incsearch-fuzzy-/)
-map z? <Plug>(incsearch-fuzzy-?)
+map z/ <silent><Plug>(incsearch-fuzzy-/)
+map z? <silent><Plug>(incsearch-fuzzy-?)
 " }}}
 
 " vim-easyalign {{{
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+xmap ga <silent><Plug>(EasyAlign)
+nmap ga <silent><Plug>(EasyAlign)
 " }}}
 
 " hardtime {{{
@@ -960,13 +962,13 @@ let g:hardtime_maxcount               = 2
 " neosnippet {{{
 if  has('nvim')
 let g:neosnippet#enable_completed_snippet = 1
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k>     <silent><Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <silent><Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <silent><Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+imap <C-k>     <silent><Plug>(neosnippet_expand_or_jump)
 endif
 " }}}
 
@@ -1028,8 +1030,8 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 " nnoremap <Leader>\ :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-nnoremap <Leader>] :wincmd w<CR>
+nnoremap <silent><Leader>v :NERDTreeFind<CR>
+nnoremap <silent><Leader>] :wincmd w<CR>
 " }}}
 
 
