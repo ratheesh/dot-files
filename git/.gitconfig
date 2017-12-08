@@ -25,12 +25,12 @@
 	remote     = 65
 
 [color "diff"]
-	meta       = 65
+	meta       = 60
 	frag       = 180
-	old        = 162
-	new        = 25
+	old        = 161
+	new        = 28
 	whitespace = 197 reverse
-	plain      = 7
+	plain      = 248
 
 [color "status"]
 	added     = 27
