@@ -356,9 +356,8 @@ let mapleader = "\<Space>"
 let g:lmap =  {}
 let g:lmap.b = { 'name' : '+Buffers Menu' }
 let g:lmap.c = { 'name' : '+NERD Commentar' }
-let g:lmap.e = { 'name' : '+Eval' }
+let g:lmap.e = { 'name' : '+Error' }
 let g:lmap.f = { 'name' : '+Files Menu' }
-let g:lmap.g = { 'name' : '+Git Gutter' }
 let g:lmap.j = { 'name' : '+Easy Motion' }
 let g:lmap.t = { 'name' : '+Toggle Functions' }
 let g:lmap.q = { 'name' : '+Quit ViM' }
@@ -416,11 +415,11 @@ vnoremap jj l
 nnoremap ' `
 nnoremap ` '
 if  has('nvim')
-nnoremap <Leader>ev     :source ~/.config/nvim/init.vim<CR>
-let g:lmap.e.v = ['source ~/.config/nvim/init.vim', 'Eval NViM config']
+nnoremap <Leader>r    :source ~/.config/nvim/init.vim<CR>
+let g:lmap.r = ['source ~/.config/nvim/init.vim', 'Reload NViM config']
 else
-nnoremap <Leader>ev     :source $MYVIMRC<CR>
-let g:lmap.e.v = ['source $MYVIMRC', 'Eval NViM config']
+nnoremap <Leader>r     :source $MYVIMRC<CR>
+let g:lmap.r = ['source $MYVIMRC', 'Reload NViM config']
 endif
 nnoremap <Leader>fs      :w<CR>
 let g:lmap.f.s = ['w', 'Save Buffer']
@@ -431,8 +430,10 @@ nnoremap <Leader>qq      :q<CR>
 let g:lmap.q.q = ['q', 'Exit ViM']
 nnoremap <Leader>qQ     :q!<CR>
 let g:lmap.q.Q = ['q!', 'Exit ViM without saving']
-" nnoremap <Leader>qp     :pclose<CR>
-" nnoremap <Leader>ql     :lcl<CR>
+nnoremap <Leader>qp     :pclose<CR>
+let g:lmap.q.p = ['pclose', 'Close Preview Window']
+nnoremap <Leader>ql     :lcl<CR>
+let g:lmap.q.l = ['lcl', 'Close Location Window']
 
 " Move across vim split Windows
 nnoremap <Leader>wj <C-W>j
@@ -464,7 +465,7 @@ nmap <silent><Leader><Backspace>  :nohlsearch<CR>
 nmap <silent><Leader>bh           :Startify<CR>
 let g:lmap.b.h = ['Startify', 'Startify Buffer']
 nmap <silent><Leader><Tab>        :b#<CR>
-nnoremap <Leader>[        :let @+ = expand("%")<CR>
+" nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
 " make shift+tab and tab indent
@@ -474,8 +475,6 @@ imap <S-Tab> <C-o><<
 
 " Toggle keybindings
 set pastetoggle=<F3>
-nnoremap <Leader>tg :GitGutterSignsToggle<CR>
-let g:lmap.t.g = ['GitGutterSignsToggle', 'Toggle GitGutter signs']
 nnoremap <Leader>ta :ALEToggle<CR>
 let g:lmap.t.a = ['ALEToggle', 'Toggle ALE']
 nnoremap <Leader>ts :SignatureToggleSigns<CR>
@@ -699,7 +698,7 @@ let g:sneak#s_next = 1
 
 " CtrlP {{{
 let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
-        \ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
+        \ 'changes', 'mixed', 'cscope', 'marks', 'register' ]
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
@@ -746,8 +745,8 @@ nnoremap <Leader>ft :CtrlPBufTag<CR>
 let g:lmap.f.t = ['CtrlPBufTag', 'List Buffer Tags']
 nnoremap <Leader>fT :CtrlPBufTagAll<CR>
 let g:lmap.f.T = ['CtrlPBufTagAll', 'List Tags in Open Buffers']
-nnoremap <Leader>fj :CtrlPJumpList<CR>
-let g:lmap.f.j = ['CtrlPJumpList', 'Jump List']
+" nnoremap <Leader>fj :CtrlPJumpList<CR>
+" let g:lmap.f.j = ['CtrlPJumpList', 'Jump List']
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
@@ -778,14 +777,6 @@ vnoremap <c-]> :CtrlPtjumpVisual<CR>
 let g:ctrlp_tjump_only_silent = 1
 " }}}
 
-" ctrlp-extensions {{{
-nnoremap <Leader>fy :CtrlPYankring<CR>
-let g:ctrlp_yankring_limit           = 100
-let g:ctrlp_yankring_highlight       = 1
-let g:ctrlp_yankring_use_textchanged = 1
-let g:ctrlp_yankring_minimum_chars   = 2
-" }}}
-
 " vim-swoop {{{
 " nmap <Leader>l :call Swoop()<CR>
 " vmap <Leader>l :call SwoopSelection()<CR>
@@ -796,8 +787,8 @@ let g:ctrlp_yankring_minimum_chars   = 2
 " vim-ctrlp-ag {{{
 " nnoremap <c-f> :CtrlPag<CR>
 " vnoremap <c-f> :CtrlPagVisual<CR>
-nnoremap <leader>ca :CtrlPagLocate
-nnoremap <leader>cp :CtrlPagPrevious<CR>
+" nnoremap <leader>ca :CtrlPagLocate
+" nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "deps/*"
     \ --ignore "_build/*"
@@ -831,18 +822,16 @@ let g:gitgutter_eager = 1 " Update when switching/writing buffers
 
 let g:gitgutter_sign_modified = '='
 
-nmap <Leader>gn <Plug>GitGutterNextHunk
-let g:lmap.g.n = ['call feedkeys("\<Plug>GitGutterNextHunk")', 'Next hunk']
-nmap <Leader>gp <Plug>GitGutterPrevHunk
-let g:lmap.g.p = ['call feedkeys("\<Plug>GitGutterPrevHunk")', 'Prev hunk']
-nmap <Leader>ga <Plug>GitGutterStageHunk
-let g:lmap.g.a = ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage hunk']
-nmap <Leader>gr <Plug>GitGutterRevertHunk
-let g:lmap.g.r = ['call feedkeys("\<Plug>GitGutterRevertHunk")', 'Revert hunk']
-nmap <Leader>gu <Plug>GitGutterUndoHunk
-let g:lmap.g.u = ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo hunk']
-nmap <Leader>gP <Plug>GitGutterPreviewHunk
-let g:lmap.g.P = ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview hunk']
+let g:lmap.g = {
+            \'name': '+Git Gutter',
+            \'n': ['call feedkeys("\<Plug>GitGutterNextHunk")', 'Next hunk'],
+            \'p': ['call feedkeys("\<Plug>GitGutterPrevHunk")', 'Prev hunk'],
+            \'a': ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage hunk'],
+            \'r': ['call feedkeys("\<Plug>GitGutterRevertHunk")', 'Revert hunk'],
+            \'u': ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo hunk'],
+            \'P': ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview hunk'],
+            \'t': ['GitGutterSignsToggle', 'Toggle signs'],
+            \}
 " }}}
 
 " vim-signature {{{
@@ -1135,22 +1124,22 @@ let g:leaderGuide_displayfunc = [function("s:my_displayfunc")]
 autocmd WinEnter leaderguide echo "in leaderguide buffer"
 
 " <leader>e [errors] ---------------------------------------------
-" let g:lmap.e = {
-            " \	'name' : '+Error',
-            " \	'o'    : ['lopen',   'Open location window'],
-            " \	'c'    : ['lclose',  'Close location window'],
-            " \	','    : ['ll',      'Go to current error/warning'],
-            " \	'en'   : ['lnext',   'Next error/warning'],
-            " \	'ep'   : ['lprev',   'Previous error/warning'],
-            " \	}
+let g:lmap.e = {
+            \	'name' : '+Error',
+            \	'o'    : ['lopen',   'Open location window'],
+            \	'c'    : ['lclose',  'Close location window'],
+            \	','    : ['ll',      'Go to current error/warning'],
+            \	'en'   : ['lnext',   'Next error/warning'],
+            \	'ep'   : ['lprev',   'Previous error/warning'],
+            \	}
 
 " <leader>j [jump/join/split] -----------------------------------
 let g:lmap.j = {
-            \'name': '+jump/join/split',
-            \'j': ['call feedkeys("\<Plug>(easymotion-overwin-f)")', 'goto char'],
-            \'k': ['call feedkeys("\<Plug>(easymotion-overwin-f2)")', 'goto char-2'],
-            \'l': ['call feedkeys("\<Plug>(easymotion-overwin-line)")', 'goto line'],
-            \}
+            \   'name': '+jump/join/split',
+            \   'j': ['call feedkeys("\<Plug>(easymotion-overwin-f)")', 'goto char'],
+            \   'k': ['call feedkeys("\<Plug>(easymotion-overwin-f2)")', 'goto char-2'],
+            \   'l': ['call feedkeys("\<Plug>(easymotion-overwin-line)")', 'goto line'],
+            \  }
 call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
