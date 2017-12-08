@@ -29,8 +29,8 @@ let s:cterm02           = "238"
 let s:cterm03           = "215"
 let s:cterm04           = "141"
 let s:cterm05           = "162"
-let s:cterm06           = "130"
-let s:cterm07           = "24"
+let s:cterm06           = "132"
+let s:cterm07           = "66"
 let s:cterm08           = "22"
 let s:cterm09           = "103"
 let s:cterm10           = "132"
@@ -41,7 +41,7 @@ let s:ctermBlack        = "16"
 let s:ctermChangedColor = "9"
 
 " Normal mode
-let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
+let s:N1 = [ s:guiBlack , s:gui08 , s:ctermBlack , s:cterm07 ]
 let s:N2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
@@ -97,9 +97,9 @@ let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate
 
 let g:airline#themes#darkmode#palette.tabline = {
 	\ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'  ],
-	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 24  , 'none'  ],
+	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 59  , 'none'  ],
 	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'  ],
-	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' , 253 , 22  , 'none'  ],
+	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' ,  16 , 132 , 'none'  ],
 	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'  ],
         \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 125 , 'none'  ],
         \ }
