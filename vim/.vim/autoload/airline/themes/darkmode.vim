@@ -108,7 +108,7 @@ let g:airline#themes#darkmode#palette.tabline = {
 " Adjust colors in darktheme.vim
 :augroup modeToggle
 :autocmd!
-:autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=136 cterm=NONE
+:autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=180 cterm=NONE
 autocmd InsertEnter   * hi CursorLineNr ctermfg=254	ctermbg=22  cterm=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic

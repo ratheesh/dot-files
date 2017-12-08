@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE
 hi CursorLine   ctermbg=234                     cterm=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE
-hi CursorLineNr ctermfg=0       ctermbg=136     cterm=NONE
+hi CursorLineNr ctermfg=0       ctermbg=180     cterm=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold
 hi ParenError   ctermfg=196     ctermbg=NONE    cterm=underline,bold
