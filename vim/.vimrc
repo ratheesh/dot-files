@@ -598,9 +598,9 @@ let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
-nnoremap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>1 <Plug>AirlineSelectTab1
 let g:lmap.1 = ['call feedkeys("\<Plug>AirlineSelectTab1")', 'Select Tab1']
-nnoremap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>2 <Plug>AirlineSelectTab2
 let g:lmap.2 = ['call feedkeys("\<Plug>AirlineSelectTab2")', 'Select Tab2']
 nmap <leader>3 <Plug>AirlineSelectTab3
 let g:lmap.3 = ['call feedkeys("\<Plug>AirlineSelectTab3")', 'Select Tab3']
