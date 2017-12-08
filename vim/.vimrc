@@ -40,6 +40,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Plug 'wincent/terminus'
 Plug 'mhinz/vim-startify'
+Plug 'sheerun/vim-polyglot'
 Plug 'hecal3/vim-leader-guide'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
