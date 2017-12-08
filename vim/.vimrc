@@ -101,13 +101,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ratheesh/vim-extended-ft'
 " Plug 'WolfgangMehner/c-support'
 Plug 'vim-scripts/AutoAlign'
-if  has('nvim')
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
-else
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-endif
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 " Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -438,11 +433,11 @@ nmap <Leader><Leader> V
 " map <F9>                  :bprev<CR>
 " map <F10>                 :bnext<CR>
 map <F5>                  :echo expand('%:p')<CR>
-nmap <Leader>bd           :bdelete<CR>
-nmap <Leader><Backspace>  :nohlsearch<CR>
-nmap <Leader>bh           :Startify<CR>
-nmap <Leader><Tab>        :b#<CR>
-nnoremap <Leader>[        :let @+ = expand("%")<CR>
+nmap <silent><Leader>bd           :bdelete<CR>
+nmap <silent><Leader><Backspace>  :nohlsearch<CR>
+nmap <silent><Leader>bh           :Startify<CR>
+nmap <silent><Leader><Tab>        :b#<CR>
+" nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
 " make shift+tab and tab indent
@@ -452,13 +447,13 @@ imap <S-Tab> <C-o><<
 
 " Toggle keybindings
 set pastetoggle=<Leader>tp
-nnoremap <Leader>tg :GitGutterSignsToggle<CR>
-nnoremap <Leader>ta :ALEToggle<CR>
-nnoremap <Leader>ts :SignatureToggleSigns<CR>
+nnoremap <silent><Leader>tg :GitGutterSignsToggle<CR>
+nnoremap <silent><Leader>ta :ALEToggle<CR>
+nnoremap <silent><Leader>ts :SignatureToggleSigns<CR>
 
 " folding
 " Close all folds and open and focus on fold containing current line
-nnoremap <Leader>z zMzvzz
+nnoremap <silent><Leader>z zMzvzz
 " Make zm and zr work as zM and zR respectively
 nnoremap zm zM
 nnoremap zr zR
@@ -474,13 +469,14 @@ color darktheme
 
 " Tagbar {{{
 nmap <F8>            :TagbarToggle<CR>
-nnoremap <leader>tt  :TagbarOpenAutoClose<CR>
+nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
 " C/C++ {{{
 let g:ch_syntax_for_h           = 1
 let g:c_conditional_is_operator = 1
-let c_no_if0                    = 1
+let c_no_if0                    = 0
+let g:c_no_if0                  = 0
 " }}}
 
 " Doxygen {{{
