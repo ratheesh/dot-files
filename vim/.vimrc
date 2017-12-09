@@ -994,13 +994,13 @@ let g:deoplete#complete_method            = "omnifunc"
 set completeopt=longest,menuone
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><C-y> deoplete#cancel_popup()
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> deoplete#close_popup()
 
-inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+" inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 " Close popup and delete Airlinebackward character
-inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
+" inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
 inoremap <expr> <C-g> deoplete#undo_completion()
 
@@ -1020,7 +1020,6 @@ inoremap <expr> <TAB>
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 let g:deoplete#sources     = {}
-" let g:deoplete#sources_   = [ 'buffer', 'tag', 'member', 'file', 'around']
 let g:deoplete#sources_   = [] " includes all sources
 
 " Use partial fuzzy matches like YouCompleteMe
