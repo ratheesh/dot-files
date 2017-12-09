@@ -136,7 +136,7 @@ Plug 'rhysd/vim-grammarous'
 " Plug 'ntpeters/vim-airline-colornum'
 " Plug 'Shougo/neocomplete.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug '~/.vim/local/c_std'
+" Plug '~/.vim/local/c_std'
 Plug 'nsf/gocode'
 Plug 'lilydjwg/colorizer'
 
