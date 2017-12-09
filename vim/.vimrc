@@ -992,9 +992,10 @@ let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path    = 1
 let g:deoplete#max_list                   = 25
 let deoplete#tag#cache_limit_size         = 10000000
-let g:deoplete#complete_method            = "omnifunc"
+let g:deoplete#complete_method            = "completefunc"
 set completeopt=longest,menuone
-" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
@@ -1007,7 +1008,7 @@ inoremap <expr><C-y> deoplete#close_popup()
 inoremap <expr> <C-g> deoplete#undo_completion()
 
 " let g:deoplete#disable_auto_complete = 1
-inoremap <expr> <TAB>
+inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
 		\ <SID>check_back_space() ? "\<TAB>" :
 		\ deoplete#mappings#manual_complete()
