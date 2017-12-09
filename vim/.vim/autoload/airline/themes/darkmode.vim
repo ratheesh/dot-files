@@ -30,23 +30,23 @@ let s:cterm03           = "215"
 let s:cterm04           = "141"
 let s:cterm05           = "162"
 let s:cterm06           = "132"
-let s:cterm07           = "66"
-let s:cterm08           = "22"
+let s:cterm07           = "24"
+let s:cterm08           = "65"
 let s:cterm09           = "103"
 let s:cterm10           = "132"
 let s:cterm11           = "180"
 let s:cterm12           = "60"
 let s:ctermWhite        = "252"
 let s:ctermBlack        = "16"
-let s:ctermChangedColor = "9"
+let s:ctermChangedColor = "60"
 
 " Normal mode
-let s:N1 = [ s:guiBlack , s:gui08 , s:ctermBlack , s:cterm07 ]
+let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
 let s:N2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:N3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
 " Insert mode
-let s:I1 = [ s:guiBlack , s:gui07 , s:ctermWhite , s:cterm08 ]
+let s:I1 = [ s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08 ]
 let s:I2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:I3 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
 
@@ -97,7 +97,7 @@ let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate
 
 let g:airline#themes#darkmode#palette.tabline = {
 	\ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'  ],
-	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 253 , 59  , 'none'  ],
+	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 0   , 65  , 'none'  ],
 	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'  ],
 	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' ,  16 , 132 , 'none'  ],
 	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'  ],
@@ -109,7 +109,7 @@ let g:airline#themes#darkmode#palette.tabline = {
 :augroup modeToggle
 :autocmd!
 :autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=180 cterm=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=254	ctermbg=22  cterm=NONE
+autocmd InsertEnter   *  hi CursorLineNr ctermfg=0	ctermbg=65  cterm=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic

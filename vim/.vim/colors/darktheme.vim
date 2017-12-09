@@ -92,7 +92,7 @@ hi SpellRare    ctermbg=NONE    cterm=underline
 hi c89Function          ctermfg=67      ctermbg=NONE    cterm=NONE
 hi cCommentDelim        ctermfg=243     ctermbg=NONE    cterm=bold
 hi cRepeat              ctermfg=95      ctermbg=NONE    cterm=NONE
-hi cPPIncludeFile       ctermfg=60      ctermbg=NONE    cterm=NONE
+hi cPPIncludeFile       ctermfg=60      ctermbg=NONE    cterm=italic
 hi cPPOperator          ctermfg=62      ctermbg=NONE    cterm=NONE
 hi cInclude             ctermfg=66      ctermbg=NONE    cterm=NONE
 hi cCommentError        ctermfg=240     ctermbg=NONE    cterm=italic
