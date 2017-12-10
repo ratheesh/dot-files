@@ -256,12 +256,8 @@ if has('clipboard')
 	set clipboard& clipboard+=unnamedplus
 endif
 set encoding=utf-8
-if !&scrolloff
-  set scrolloff=3       " Show next 3 lines while scrolling.
-endif
-if !&sidescrolloff
-  set sidescrolloff=5   " Show next 5 columns while side-scrolling.
-endif
+set scrolloff=3       " Show next 3 lines while scrolling.
+set sidescrolloff=5   " Show next 5 columns while side-scrolling.
 set laststatus=2
 if !has('gui_running')
 set t_Co=256  " Support for 256 colors
