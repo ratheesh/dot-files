@@ -97,9 +97,9 @@ let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate
 
 let g:airline#themes#darkmode#palette.tabline = {
 	\ 'airline_tab'     : ['#c8c8c8' , '#2e2e2e' , 253 , 60  , 'none'  ],
-	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 0   , 65  , 'none'  ],
+	\ 'airline_tabsel'  : ['#2e2e2e' , '#a4c639' , 0   , 66  , 'none'  ],
 	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'  ],
-	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' ,  16 , 132 , 'none'  ],
+	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' ,  15 , 89  , 'none'  ],
 	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'  ],
         \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 125 , 'none'  ],
         \ }
@@ -108,8 +108,8 @@ let g:airline#themes#darkmode#palette.tabline = {
 " Adjust colors in darktheme.vim
 :augroup modeToggle
 :autocmd!
-:autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE
-autocmd InsertEnter   *  hi CursorLineNr ctermfg=0	ctermbg=65  cterm=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=65  cterm=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
@@ -127,4 +127,3 @@ let s:CP3 = [ s:guiWhite , s:gui08 , s:ctermBlack , s:cterm10, 'italic' ]
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
 " End of File
-
