@@ -1038,7 +1038,7 @@ nnoremap <silent><Leader>] :wincmd w<CR>
 " cscope {{{
 " nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 " nnoremap <leader>fl :call ToggleLocationList()<CR>
-" let g:cscope_silent = 1
+let g:cscope_silent = 1
 
 if has("cscope")
         set csprg=/usr/bin/cscope
