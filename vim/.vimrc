@@ -77,8 +77,9 @@ Plug 'Vaelatern/vim-script-refactor'
 " Plug 'wikitopian/hardmode' " Make life under ViM little difficult!
 Plug 'takac/vim-hardtime'
 Plug 'majutsushi/tagbar'
-Plug 'sjl/gundo.vim'
-" Plug 'simnalamburt/vim-mundo'
+" Plug 'sjl/gundo.vim'
+" Plug 'mbbill/undotree'
+Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 " Plug 'vheon/vim-cursormode'
 " Plug 'edkolev/promptline.vim'
@@ -221,12 +222,14 @@ set magic
 set hlsearch
 set incsearch
 set history=1000
+if has("persistent_undo")
 " Persistent undo (i.e vim remembers undo actions even if file is closed and
 " reopened)
-set undofile
-set undolevels=1000   " Maximum number of changes that can be undone
-set undoreload=10000  " Maximum number lines to save for undo on a buffer reload
-set undodir=$CACHE/tmp/undo//
+    set undofile
+    set undolevels=1000   " Maximum number of changes that can be undone
+    set undoreload=10000  " Maximum number lines to save for undo on a buffer reload
+    set undodir=$HOME/.vim/.undotree/
+endif
 " Show filename and path in window title (even in terminal)
 set title
 set showcmd
@@ -1057,16 +1060,23 @@ endif
 " }}}
 
 " Misc macros {{{
+" Print syntax highlight group for the work under cursor
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " }}}
-" set listchars=tab:\|\
-" set list
 
 " Use guicolors in terminal (we seem to need to place this here)
 " set termguicolors
 
+" mundo {{{
+let g:mundo_width = 60
+let g:mundo_preview_height = 15
+let g:mundo_right = 1
+let g:mundo_preview_bottom = 1
+nnoremap <silent><Leader>u :MundoToggle<CR>
+" }}}
+
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
-"End of File
+" End of File
