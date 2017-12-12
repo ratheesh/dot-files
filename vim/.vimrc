@@ -81,6 +81,7 @@ Plug 'majutsushi/tagbar'
 " Plug 'mbbill/undotree'
 Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
+Plug 'mtth/scratch.vim'
 " Plug 'vheon/vim-cursormode'
 " Plug 'edkolev/promptline.vim'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -1075,6 +1076,11 @@ let g:mundo_preview_height = 15
 let g:mundo_right = 1
 let g:mundo_preview_bottom = 1
 nnoremap <silent><Leader>u :MundoToggle<CR>
+" }}}
+
+" scratch {{{
+" Enable data persistence across sessions
+let g:scratch_persistence_file=1
 " }}}
 
 " Autoload vimrc on save
