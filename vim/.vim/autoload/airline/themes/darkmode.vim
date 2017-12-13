@@ -109,7 +109,7 @@ let g:airline#themes#darkmode#palette.tabline = {
 :augroup modeToggle
 :autocmd!
 autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=65  cterm=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
