@@ -118,7 +118,8 @@ Plug 'kshenoy/vim-signature'
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'mattn/ctrlp-mark'
 " Plug 'shinnya/ctrlp-jumplist'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
@@ -883,13 +884,39 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-au VimEnter     * RainbowParenthesesToggle
-au Syntax       * RainbowParenthesesLoadRound
-au Syntax       * RainbowParenthesesLoadSquare
-au Syntax       * RainbowParenthesesLoadBraces
+" au VimEnter     * RainbowParenthesesToggle
+" au Syntax       * RainbowParenthesesLoadRound
+" au Syntax       * RainbowParenthesesLoadSquare
+" au Syntax       * RainbowParenthesesLoadBraces
 " }}}
 
-"Expand region {{{
+"rainbow {{{
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+	\	'ctermfgs': [132, 65, 68, 95],
+	\	'operators': '_,_',
+	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+	\	'separately': {
+	\		'*': {},
+	\		'tex': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+	\		},
+	\		'lisp': {
+	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+	\		},
+	\		'vim': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+	\		},
+	\		'html': {
+	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+	\		},
+	\		'css': 0,
+	\	}
+	\}
+"}}}
+
+"Expana region {{{
 " nmap K <Plug>(expand_region_expand)
 " nmap J <Plug>(expand_region_shrink)
 
