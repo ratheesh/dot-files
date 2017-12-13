@@ -768,6 +768,18 @@ let g_SuperTabDefaultCompletionType="context"
 "}}}
 
 " vim-startify {{{
+let g:startify_custom_header = get(g:, 'startify_custom_header', [
+  \'',
+  \'',
+  \'			 _    __ _  __  ___ __',
+  \'			| |  / /(_)/  |/  // /',
+  \'			| | / // // /|_/ // /',
+  \'			| |/ // // /  / //_/',
+  \'			|___//_//_/  /_/(_)',
+  \'',
+  \'',
+  \ ])
+  " }}}
 let g:startify_bookmarks = [
                         \       {'c': '~/.vimrc'     },
                         \       {'g': '~/.gitconfig' },
