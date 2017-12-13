@@ -77,9 +77,9 @@ Plug 'Vaelatern/vim-script-refactor'
 " Plug 'wikitopian/hardmode' " Make life under ViM little difficult!
 Plug 'takac/vim-hardtime'
 Plug 'majutsushi/tagbar'
-" Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 " Plug 'mbbill/undotree'
-Plug 'simnalamburt/vim-mundo'
+" Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 Plug 'mtth/scratch.vim'
 " Plug 'vheon/vim-cursormode'
@@ -1070,12 +1070,11 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " Use guicolors in terminal (we seem to need to place this here)
 " set termguicolors
 
-" mundo {{{
-let g:mundo_width = 60
-let g:mundo_preview_height = 15
-let g:mundo_right = 1
-let g:mundo_preview_bottom = 1
-nnoremap <silent><Leader>u :MundoToggle<CR>
+" gundo {{{
+let g:gundo_prefer_python3=1
+let g:gundo_preview_bottom=1
+let g:gundo_right=1
+nnoremap <silent><Leader>u :GundoToggle<CR>
 " }}}
 
 " scratch {{{
