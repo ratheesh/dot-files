@@ -101,6 +101,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'unblevable/quick-scope'
 " Plug 'rhysd/clever-f.vim'
 Plug 'ratheesh/vim-extended-ft'
+Plug 'machakann/vim-highlightedyank'
 " Plug 'WolfgangMehner/c-support'
 Plug 'vim-scripts/AutoAlign'
 Plug 'Shougo/neosnippet'
@@ -1121,6 +1122,12 @@ nnoremap <silent><Leader>u :GundoToggle<CR>
 let g:scratch_persistence_file=1
 " }}}
 
+" vim-highlightedyank {{{
+map y <Plug>(highlightedyank)
+map Y <Plug>(highlightedyank)
+let g:highlightedyank_highlight_duration = 200
+hi HighlightedyankRegion ctermfg=NONE ctermbg=238 cterm=NONE
+" }}}
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
 " End of File
