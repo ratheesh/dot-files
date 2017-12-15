@@ -1130,4 +1130,5 @@ hi HighlightedyankRegion ctermfg=NONE ctermbg=238 cterm=NONE
 " }}}
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
+set noshowmode
 " End of File
