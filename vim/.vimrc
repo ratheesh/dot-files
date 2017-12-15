@@ -377,6 +377,7 @@ augroup END
 
 " Little welcome message!
 autocmd VimEnter * echo "Willkommen zum meinem ViM Welt! (^-^)"
+autocmd VimEnter * set noshowmode
 
 " Treat c-header as C source file type
 let g:c_syntax_for_h = 1
@@ -1130,5 +1131,4 @@ hi HighlightedyankRegion ctermfg=NONE ctermbg=238 cterm=NONE
 " }}}
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
-set noshowmode
 " End of File
