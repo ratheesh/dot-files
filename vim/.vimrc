@@ -1044,7 +1044,8 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> deoplete#close_popup()
 
-" inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
+inoremap <expr><Space> pumvisible() ? deoplete#close_popup() : "\<Space>"
 " Close popup and delete Airlinebackward character
 " inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
@@ -1063,7 +1064,7 @@ inoremap <silent><expr> <TAB>
 " Use Tab to forward cycle
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 let g:deoplete#sources     = {}
 let g:deoplete#sources_   = [] " includes all sources
