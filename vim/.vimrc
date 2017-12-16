@@ -995,8 +995,8 @@ map z? <silent><Plug>(incsearch-fuzzy-?)
 " }}}
 
 " vim-easyalign {{{
-xmap ga <silent><Plug>(EasyAlign)
-nmap ga <silent><Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 " }}}
 
 " hardtime {{{
