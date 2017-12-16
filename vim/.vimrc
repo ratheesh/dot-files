@@ -231,8 +231,8 @@ if has("persistent_undo")
 " Persistent undo (i.e vim remembers undo actions even if file is closed and
 " reopened)
     set undofile
-    set undolevels=1000   " Maximum number of changes that can be undone
-    set undoreload=10000  " Maximum number lines to save for undo on a buffer reload
+    set undolevels=100   " Maximum number of changes that can be undone
+    set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
     set undodir=$HOME/.vim/.undotree/
 endif
 " Show filename and path in window title (even in terminal)
