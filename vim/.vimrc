@@ -1123,13 +1123,14 @@ nnoremap <silent><Leader>u :GundoToggle<CR>
 " scratch {{{
 " Enable data persistence across sessions
 let g:scratch_persistence_file=1
+let g:scratch_filetype = 'text'
 " }}}
 
 " vim-highlightedyank {{{
 map y <Plug>(highlightedyank)
-map Y <Plug>(highlightedyank)
+" map Y <Plug>(highlightedyank)
 let g:highlightedyank_highlight_duration = 200
-hi HighlightedyankRegion ctermfg=NONE ctermbg=238 cterm=NONE
+hi HighlightedyankRegion ctermfg=180 ctermbg=236 cterm=NONE
 " }}}
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
