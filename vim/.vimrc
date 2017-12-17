@@ -126,14 +126,14 @@ Plug 'luochen1990/rainbow'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 " Plug 'vim-scripts/taglist.vim'
 " Plug 'ervandew/supertab'
 Plug 'vim-scripts/OmniCppComplete'
 Plug 'rking/ag.vim'
 Plug 'sjl/vitality.vim'
 " Plug 'gelguy/Cmd2.vim'
-" Plug 'jalvesaq/vimcmdline'
+Plug 'jalvesaq/vimcmdline'
 Plug 'rhysd/vim-grammarous'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'python-mode/python-mode'
@@ -1045,7 +1045,7 @@ inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> deoplete#close_popup()
 
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
-inoremap <expr><Space> pumvisible() ? deoplete#close_popup() : "\<Space>"
+inoremap <expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
 " Close popup and delete Airlinebackward character
 " inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
