@@ -615,16 +615,16 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 let g:airline_mode_map = {
       \ '__' : '-',
-      \ 'n'  : 'Normal',
-      \ 'i'  : 'Insert',
-      \ 'R'  : 'Replace',
-      \ 'c'  : 'Cmd',
-      \ 'v'  : 'Visual',
-      \ 'V'  : 'V-Line',
-      \ '' : 'V-Block',
+      \ 'n'  : 'Ɲѳrmαl',
+      \ 'i'  : '¶ƞsεrt',
+      \ 'R'  : 'Rεplαcε',
+      \ 'c'  : '₵md',
+      \ 'v'  : 'Ѵisuαl',
+      \ 'V'  : 'Ѵ-Liƞε',
+      \ '' : 'Ѵ-ẞlѳck',
       \ 's'  : 'Subst',
-      \ 'S'  : 'Subst-Ln',
-      \ '' : 'Subst-Blk',
+      \ 'S'  : 'Subst-Liƞε',
+      \ '' : 'Subst-ẞlk',
       \ }
 
 " }}}
