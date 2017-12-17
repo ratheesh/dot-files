@@ -101,8 +101,8 @@ let g:airline#themes#darkmode#palette.tabline = {
 	\ 'airline_tabfill' : ['#c8c8c8' , '#2e2e2e' , 188 , 235 , 'none'  ],
 	\ 'airline_tabmod'  : ['#2e2e2e' , '#a4c639' ,  15 , 89  , 'none'  ],
 	\ 'airline_tabhid'  : ['#2e2e2e' , '#a4c639' , 103 , 235 , 'none'  ],
-        \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 125 , 'none'  ],
-        \ }
+  \ 'airline_tabtype' : ['#c8c8c8' , '#2e2e2e' , 253 , 125 , 'none'  ],
+  \ }
 
 " Change colors during different modes
 " Adjust colors in darktheme.vim
