@@ -528,7 +528,7 @@ let g:airline#extensions#hunks#non_zero_only         = 1
 let g:airline#extensions#branch#enabled              = 1
 let g:airline#extensions#branch#displayed_head_limit = 20
 
-let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'ραstε'
 " let g:airline_symbols.branch = '⎇'
 " let g:airline_symbols.spell = 'Ꞩ'
 " let g:airline_symbols.crypt = '🔒'
