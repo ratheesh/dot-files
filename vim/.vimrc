@@ -44,6 +44,7 @@ Plug 'tpope/vim-sensible'
 Plug 'rstacruz/vim-opinion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
 " Plug 'mhinz/vim-signify'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
