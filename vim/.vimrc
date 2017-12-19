@@ -911,7 +911,7 @@ let g:rbpt_loadcmd_toggle = 0
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-	\	'ctermfgs': [132, 65, 68, 95],
+	\	'ctermfgs': [132, 64, 54, 68, 94],
 	\	'operators': '_,_',
 	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 	\	'separately': {
