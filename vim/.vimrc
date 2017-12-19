@@ -933,7 +933,8 @@ let g:rainbow_conf = {
 	\}
 "}}}
 
-"Expana region {{{
+"Expand region {{{
+
 " nmap K <Plug>(expand_region_expand)
 " nmap J <Plug>(expand_region_shrink)
 
@@ -1113,16 +1114,6 @@ if has("cscope")
 endif
 " }}}
 
-" Misc macros {{{
-" Print syntax highlight group for the work under cursor
-map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-" }}}
-
-" Use guicolors in terminal (we seem to need to place this here)
-" set termguicolors
-
 " gundo {{{
 let g:gundo_prefer_python3=1
 let g:gundo_preview_bottom=1
@@ -1142,6 +1133,18 @@ map y <Plug>(highlightedyank)
 let g:highlightedyank_highlight_duration = 200
 hi HighlightedyankRegion ctermfg=180 ctermbg=236 cterm=NONE
 " }}}
+
+" Misc macros {{{
+" Print syntax highlight group for the work under cursor
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" }}}
+
+" Use guicolors in terminal (we seem to need to place this here)
+" set termguicolors
+
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
+
 " End of File
