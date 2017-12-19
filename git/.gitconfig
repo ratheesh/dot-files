@@ -1,10 +1,11 @@
 [alias]
-	lg       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	undopush = push -f origin HEAD^:master
-	tags     = tag -l
-	branches = branch -a
-	remotes  = remote -v
-	cv       = commit -v
+	lg          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	undopush    = push -f origin HEAD^:master
+	tags        = tag -l
+	branches    = branch -a
+	remotes     = remote -v
+	cv          = commit -v
+  checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
 
 [user]
 	name       = Ratheesh S
