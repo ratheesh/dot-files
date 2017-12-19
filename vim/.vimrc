@@ -400,7 +400,7 @@ noremap <Right> <NOP>
 imap <Esc> l
 vmap <Esc> l
 inoremap jj l
-vnoremap jj l
+" vnoremap jj l
 nnoremap ' `
 nnoremap ` '
 if  has('nvim')
