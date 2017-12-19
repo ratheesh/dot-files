@@ -45,6 +45,7 @@ Plug 'rstacruz/vim-opinion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'matze/vim-move'
 " Plug 'mhinz/vim-signify'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
@@ -1073,6 +1074,14 @@ let g:deoplete#sources_   = [] " includes all sources
 " Use partial fuzzy matches like YouCompleteMe
 call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
+" }}}
+
+" vim-move {{{
+let g:move_map_keys = 0
+vmap j <Plug>MoveBlockDown
+vmap k <Plug>MoveBlockUp
+nmap j <Plug>MoveLineDown
+nmap k <Plug>MoveLineUp
 " }}}
 
 " NERDTree {{{
