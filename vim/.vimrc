@@ -619,16 +619,15 @@ let g:airline_mode_map = {
       \ '__' : '-',
       \ 'n'  : 'Ɲѳrmαl',
       \ 'i'  : '¶ƞsεrt',
-      \ 'R'  : 'Rεplαcε',
+      \ 'R'  : 'Rερlαcε',
       \ 'c'  : '₵md',
-      \ 'v'  : 'Ѵisuαl',
-      \ 'V'  : 'Ѵ-Liƞε',
-      \ '' : 'Ѵ-ẞlѳck',
+      \ 'v'  : 'Ʋisuαl',
+      \ 'V'  : 'Ʋ-Liƞε',
+      \ '' : 'Ʋ-ẞlѳck',
       \ 's'  : 'Subst',
       \ 'S'  : 'Subst-Liƞε',
       \ '' : 'Subst-ẞlk',
       \ }
-
 " }}}
 
 " lightline {{{
