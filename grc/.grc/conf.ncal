@@ -1,0 +1,23 @@
+# Weekend days
+regexp=(Su|Sa).*
+colours=italic red
+=======
+# Weekdays
+regexp=(Mo|Tu|We|Th|Fr)
+colours=green
+=======
+# Year
+regexp=\d{4}
+colours=magenta
+=======
+# Month
+regexp=[a-zA-Z]{3,}\s
+colours=italic cyan
+=======
+# Current date
+regexp=_.\d_?.?\d?
+colours=blue on_yellow
+=======
+# ISO week number
+regexp=^\s+\d.*
+colours=yellow
