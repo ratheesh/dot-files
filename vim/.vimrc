@@ -443,13 +443,14 @@ nnoremap <A-o> <C-w>ozv
 
 " nnoremap <Leader>j :
 nmap <silent><Leader><Leader> V
+nmap <silent><Leader><BS> <c-v>
 " map <F9>                  :bprev<CR>
 " map <F10>                 :bnext<CR>
-map <F5>                  :echo expand('%:p')<CR>
-nmap <silent><Leader>bd           :bdelete<CR>
-nmap <silent><Leader><Backspace>  :nohlsearch<CR>
-nmap <silent><Leader>bh           :Startify<CR>
-nmap <silent><Leader><Tab>        :b#<CR>
+map <F5>                    :echo expand('%:p')<CR>
+nmap <silent><Leader>bd     :bdelete<CR>
+nmap <silent><BS>           :nohlsearch<CR>
+nmap <silent><Leader>bh     :Startify<CR>
+nmap <silent><Leader><Tab>  :b#<CR>
 " nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
