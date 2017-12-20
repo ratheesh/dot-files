@@ -396,6 +396,10 @@ noremap <Down>  <NOP>
 noremap <Left>  <NOP>
 noremap <Right> <NOP>
 
+vnoremap <Up>    <NOP>
+vnoremap <Down>  <NOP>
+vnoremap <Left>  <NOP>
+vnoremap <Right> <NOP>
 " set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
 " imap jj <Esc>
