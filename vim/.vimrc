@@ -1099,10 +1099,10 @@ vmap h <Plug>SchleppLeft
 vmap l <Plug>SchleppRight
 
 " Duplication selection region
-vmap <unique> Dk <Plug>SchleppDupUp
-vmap <unique> Dj <Plug>SchleppDupDown
-vmap <unique> Dh <Plug>SchleppDupLeft
-vmap <unique> Dl <Plug>SchleppDupRight
+vnoremap Dk <Plug>SchleppDupUp
+vnoremap Dj <Plug>SchleppDupDown
+vnoremap Dh <Plug>SchleppDupLeft
+vnoremap Dl <Plug>SchleppDupRight
 
 "Other settings
 let g:Schlepp#allowSquishingLines  = 1
