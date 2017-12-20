@@ -45,7 +45,9 @@ Plug 'rstacruz/vim-opinion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'matze/vim-move'
+" Plug 'matze/vim-move'
+" Plug 'atweiden/vim-dragvisuals'
+Plug 'zirrostig/vim-schlepp'
 " Plug 'mhinz/vim-signify'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
@@ -1077,11 +1079,31 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " }}}
 
 " vim-move {{{
-let g:move_map_keys = 0
-vmap j <Plug>MoveBlockDown
-vmap k <Plug>MoveBlockUp
-nmap j <Plug>MoveLineDown
-nmap k <Plug>MoveLineUp
+" let g:move_map_keys = 0
+" vmap j <Plug>MoveBlockDown
+" vmap k <Plug>MoveBlockUp
+" nmap j <Plug>MoveLineDown
+" nmap k <Plug>MoveLineUp
+" }}}
+
+" vim-schlepp {{{
+" Move block/lines as you wish
+vmap k <Plug>SchleppUp
+vmap j <Plug>SchleppDown
+vmap h <Plug>SchleppLeft
+vmap l <Plug>SchleppRight
+
+" Duplication selection region
+vmap <unique> Dk <Plug>SchleppDupUp
+vmap <unique> Dj <Plug>SchleppDupDown
+vmap <unique> Dh <Plug>SchleppDupLeft
+vmap <unique> Dl <Plug>SchleppDupRight
+
+"Other settings
+let g:Schlepp#allowSquishingLines  = 1
+let g:Schlepp#allowSquishingBlocks = 1
+let g:Schlepp#trimWS               = 0
+let g:Schlepp#reindent             = 1
 " }}}
 
 " NERDTree {{{
