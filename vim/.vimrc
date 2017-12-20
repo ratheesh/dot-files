@@ -45,7 +45,7 @@ Plug 'rstacruz/vim-opinion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-" Plug 'matze/vim-move'
+Plug 'matze/vim-move'
 " Plug 'atweiden/vim-dragvisuals'
 Plug 'zirrostig/vim-schlepp'
 " Plug 'mhinz/vim-signify'
@@ -1083,11 +1083,11 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " }}}
 
 " vim-move {{{
-" let g:move_map_keys = 0
+let g:move_map_keys = 0
 " vmap j <Plug>MoveBlockDown
 " vmap k <Plug>MoveBlockUp
-" nmap j <Plug>MoveLineDown
-" nmap k <Plug>MoveLineUp
+nmap j <Plug>MoveLineDown
+nmap k <Plug>MoveLineUp
 " }}}
 
 " vim-schlepp {{{
