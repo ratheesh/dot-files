@@ -125,8 +125,8 @@ Plug 'kshenoy/vim-signature'
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'mattn/ctrlp-mark'
 " Plug 'shinnya/ctrlp-jumplist'
-" Plug 'kien/rainbow_parentheses.vim'
-Plug 'luochen1990/rainbow'
+Plug 'kien/rainbow_parentheses.vim'
+" Plug 'luochen1990/rainbow'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
@@ -235,7 +235,7 @@ if has("persistent_undo")
 " Persistent undo (i.e vim remembers undo actions even if file is closed and
 " reopened)
     set undofile
-    set undolevels=100   " Maximum number of changes that can be undone
+    set undolevels=200   " Maximum number of changes that can be undone
     set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
     set undodir=$HOME/.vim/.undotree/
 endif
@@ -396,10 +396,11 @@ noremap <Down>  <NOP>
 noremap <Left>  <NOP>
 noremap <Right> <NOP>
 
-vnoremap <Up>    <NOP>
-vnoremap <Down>  <NOP>
-vnoremap <Left>  <NOP>
-vnoremap <Right> <NOP>
+" vnoremap <Up>    <NOP>
+" vnoremap <Down>  <NOP>
+" vnoremap <Left>  <NOP>
+" vnoremap <Right> <NOP>
+
 " set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
 " imap jj <Esc>
@@ -596,25 +597,25 @@ nmap <silent><leader>9 <Plug>AirlineSelectTab9
 nmap <silent><leader>h <Plug>AirlineSelectPrevTab
 nmap <silent><leader>l <Plug>AirlineSelectNextTab
 if !exists('g:airline_powerline_fonts')
-        let g:airline#extensions#tabline#left_sep      = ''
-        let g:airline#extensions#tabline#left_alt_sep  = '|'
-        let g:airline#extensions#tabline#right_sep     = ''
-        let g:airline#extensions#tabline#right_alt_sep = '|'
+    let g:airline#extensions#tabline#left_sep      = ''
+    let g:airline#extensions#tabline#left_alt_sep  = '|'
+    let g:airline#extensions#tabline#right_sep     = ''
+    let g:airline#extensions#tabline#right_alt_sep = '|'
 endif
 
 " let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
-let g:airline#extensions#tabline#buffer_idx_format = {
-        \ '0': '⁰ ',
-        \ '1': '೧ ',
-        \ '2': '೨ ',
-        \ '3': '೩ ',
-        \ '4': '೪ ',
-        \ '5': '೫ ',
-        \ '6': '೬ ',
-        \ '7': '೭ ',
-        \ '8': '೮ ',
-        \ '9': '೯ '
-        \ }
+" let g:airline#extensions#tabline#buffer_idx_format = {
+        " \ '0': '⁰ ',
+        " \ '1': '೧ ',
+        " \ '2': '೨ ',
+        " \ '3': '೩ ',
+        " \ '4': '೪ ',
+        " \ '5': '೫ ',
+        " \ '6': '೬ ',
+        " \ '7': '೭ ',
+        " \ '8': '೮ ',
+        " \ '9': '೯ '
+        " \ }
 
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
@@ -889,8 +890,8 @@ let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " rainbow_parenthesis {{{
 " ((((((((((((((((()))))))))))))))))
 let g:rbpt_colorpairs = [
-    \ [178,     'RoyalBlue3'    ],
     \ [162,     'SeaGreen3'     ],
+    \ [178,     'RoyalBlue3'    ],
     \ [12,      'DarkOrchid3'   ],
     \ [132,     'firebrick3'    ],
     \ [93,      'RoyalBlue3'    ],
@@ -908,10 +909,10 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-" au VimEnter     * RainbowParenthesesToggle
-" au Syntax       * RainbowParenthesesLoadRound
-" au Syntax       * RainbowParenthesesLoadSquare
-" au Syntax       * RainbowParenthesesLoadBraces
+au VimEnter     * RainbowParenthesesToggle
+au Syntax       * RainbowParenthesesLoadRound
+au Syntax       * RainbowParenthesesLoadSquare
+au Syntax       * RainbowParenthesesLoadBraces
 " }}}
 
 "rainbow {{{
@@ -999,8 +1000,8 @@ let g:bookmark_auto_close              = 1
 " }}}
 
 " incsearch-fuzzy {{{
-map z/ <silent><Plug>(incsearch-fuzzy-/)
-map z? <silent><Plug>(incsearch-fuzzy-?)
+map <silent>z/ <Plug>(incsearch-fuzzy-/)
+map <silent>z? <Plug>(incsearch-fuzzy-?)
 " }}}
 
 " vim-easyalign {{{
@@ -1009,23 +1010,25 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 
 " hardtime {{{
+let g:hardtime_default_on             = 0
 let g:hardtime_timeout                = 2000
 let g:hardtime_showmsg                = 1
 let g:hardtime_ignore_buffer_patterns = ["NERD.*", "Tagbar.*"]
 let g:hardtime_maxcount               = 2
+nnoremap <silent><leader>th           :HardTimeToggle<CR>
 " }}}
 
 " neosnippet {{{
-if  has('nvim')
+" if  has('nvim')
 let g:neosnippet#enable_completed_snippet = 1
-imap <C-k>     <silent><Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <silent><Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <silent><Plug>(neosnippet_expand_target)
+imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <silent><C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <silent><Plug>(neosnippet_expand_or_jump)
-endif
+imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+" endif
 " }}}
 
 " deoplete {{{
@@ -1169,7 +1172,9 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " }}}
 
 " Use guicolors in terminal (we seem to need to place this here)
-set termguicolors
+if has("termguicolors")
+  set termguicolors
+endif
 
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
