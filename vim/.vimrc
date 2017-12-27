@@ -1110,7 +1110,7 @@ vnoremap Dl <Plug>SchleppDupRight
 "Other settings
 let g:Schlepp#allowSquishingLines  = 1
 let g:Schlepp#allowSquishingBlocks = 1
-let g:Schlepp#trimWS               = 0
+let g:Schlepp#trimWS               = 1
 let g:Schlepp#reindent             = 1
 " }}}
 
@@ -1121,7 +1121,6 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <silent><Leader>v :NERDTreeFind<CR>
 nnoremap <silent><Leader>] :wincmd w<CR>
 " }}}
-
 
 " cscope {{{
 " nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
