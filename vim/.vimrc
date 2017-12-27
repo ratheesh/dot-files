@@ -456,9 +456,9 @@ nmap <silent><Leader><Tab>  :b#<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
 " make shift+tab and tab indent
-vmap ] >gv
-vmap [ <gv
-imap <S-Tab> <C-o><<
+vnoremap > >gv
+vnoremap < <gv
+" imap <S-Tab> <C-o><<
 
 " Toggle keybindings
 set pastetoggle=<Leader>tp
