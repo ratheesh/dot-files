@@ -82,14 +82,12 @@ hi Type         ctermfg=126     ctermbg=NONE    cterm=italic            guifg=#6
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE	    guibg=NONE      gui=underline
 
 " spelling {{{
-hi SpellBad             ctermfg=7       ctermbg=NONE    cterm=underline guifg=#cccccc   guibg=NONE   gui=underline
-hi SpellCap             ctermfg=7       ctermbg=NONE    cterm=underline guifg=#cccccc   guibg=NONE   gui=underline
-hi SpellLocal           ctermfg=7       ctermbg=NONE    cterm=underline guifg=#cccccc   guibg=NONE   gui=underline
-hi SpellRare            ctermfg=7       ctermbg=NONE    cterm=underline guifg=#cccccc 	guibg=NONE   gui=underline
+hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
+hi SpellCap             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
 " }}}
 
 " C/C++ {{{
-hi cCommentDelim        ctermfg=243     ctermbg=NONE    cterm=bold      guifg=#6272a4 	guibg=NONE      gui=italic
+hi cCommentStart        ctermfg=243     ctermbg=NONE    cterm=bold      guifg=#6272a4 	guibg=NONE      gui=italic
 hi c89Function          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#6494ed 	guibg=NONE      gui=NONE
 hi cConditional         ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#3ead8c 	guibg=NONE      gui=italic
 hi cRepeat              ctermfg=95      ctermbg=NONE    cterm=italic    guifg=#3cad8c	  guibg=NONE      gui=italic
@@ -121,13 +119,14 @@ hi cCppOutIf            ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#b
 " }}}
 
 " doxygen {{{
-hi doxygenBrief                 ctermfg=132     ctermbg=NONE    cterm=NONE
-hi doxygenBOther                ctermfg=181     ctermbg=NONE    cterm=NONE
-" hi doxygenStartSpecial        ctermfg=65      ctermbg=NONE    cterm=NONE
-hi doxygenParam                 ctermfg=181     ctermbg=NONE    cterm=NONE
-hi doxygenParamName             ctermfg=65      ctermbg=NONE    cterm=italic
-hi doxygenSpecialMultilineDesc  ctermfg=6       ctermbg=NONE    cterm=italic
-
+hi doxygenBrief                 ctermfg=132     ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
+hi doxygenBody                  ctermfg=132     ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
+hi doxygenBOther                ctermfg=181     ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
+" hi doxygenStartSpecial        ctermfg=65      ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
+hi doxygenParam                 ctermfg=181     ctermbg=NONE    cterm=italic    guifg=#aa5500 	guibg=NONE      gui=italic
+hi doxygenParamName             ctermfg=65      ctermbg=NONE    cterm=italic    guifg=#3e8c75 	guibg=NONE      gui=italic
+hi doxygenSpecialMultilineDesc  ctermfg=6       ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
+hi doxygenComment               ctermfg=6       ctermbg=NONE    cterm=italic    guifg=#6272a4 	guibg=NONE      gui=italic
 " }}}
 
 " dts-mode {{{
@@ -166,9 +165,9 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=NONE     guibg=#404040 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#f7cab8 gui=NONE
-hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#bc8f8f gui=NONE
+hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#606060 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#204a87 gui=NONE
 "}}}
 
 " GitCommit {{{
