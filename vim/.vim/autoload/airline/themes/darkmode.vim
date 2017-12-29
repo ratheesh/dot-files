@@ -13,15 +13,15 @@
 
 " Color palette
 
-let s:gui01             = "#303030"
-let s:gui02             = "#505050"
+let s:gui01             = "#282828"
+let s:gui02             = "#444444"
 let s:gui03             = "#ffb86c"
 let s:gui04             = "#bd93f9"
-let s:gui05             = "#c71585"
-let s:gui06             = "#f08080"
+let s:gui05             = "#d45980"
+let s:gui06             = "#ab802b"
 let s:gui07             = "#208860"
 let s:gui09             = "#aa9e76"
-let s:gui08             = "#999989"
+let s:gui08             = "#3a5e87"
 let s:gui10             = "#f4a460"
 let s:guiWhite          = "#cccccc"
 let s:guiBlack          = "#000000"
@@ -45,12 +45,12 @@ let s:ctermBlack        = "16"
 let s:ctermChangedColor = "60"
 
 " Normal mode
-let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07 ]
+let s:N1 = [ s:guiWhite , s:gui08 , s:ctermWhite , s:cterm07 ]
 let s:N2 = [ s:gui10    , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:N3 = [ s:guiCFG , s:gui01 , s:cterm09 , s:cterm01 , 'italic']
 
 " Insert mode
-let s:I1 = [ s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08 ]
+let s:I1 = [ s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08 ]
 let s:I2 = [ s:gui10    , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:I3 = [ s:guiCFG , s:gui01 , s:cterm09 , s:cterm01 ]
 
@@ -60,7 +60,7 @@ let s:V2 = [ s:gui10    , s:gui02 , s:cterm11, s:cterm02 ]
 let s:V3 = [ s:guiCFG , s:gui01 , s:cterm09, s:cterm01 ]
 
 " Replace mode
-let s:R1 = [ s:guiWhite , s:gui05 , s:ctermWhite, s:cterm05 ]
+let s:R1 = [ s:guiBlack , s:gui05 , s:ctermWhite, s:cterm05 ]
 let s:R2 = [ s:gui10    , s:gui02 , s:cterm11, s:cterm02 ]
 let s:R3 = [ s:guiCFG , s:gui01 , s:cterm09, s:cterm01 ]
 
