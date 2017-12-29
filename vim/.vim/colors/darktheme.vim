@@ -25,7 +25,7 @@ let g:colors_name = "darktheme"
 " syn match Braces display '[{}()\[\]]'
 " syntax match Operator "[-+&|<>=!\/~:*%&^?]"
 
-hi Normal       ctermfg=7       ctermbg=233     cterm=NONE							guifg=#cccccc 	guibg=#181818 	gui=NONE
+hi Normal       ctermfg=7       ctermbg=233     cterm=NONE							guifg=#cccccc 	guibg=#1a1a1a 	gui=NONE
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE							guifg=NONE 	    guibg=#303030 	gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold							guifg=#909194 	guibg=#1a1c1e 	gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold			guifg=NONE 	    guibg=NONE      gui=inverse,bold
@@ -165,9 +165,9 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=NONE     guibg=#404040 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#a42171 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#42587f gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#606060 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#698bb8 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#ae6171 gui=NONE
 "}}}
 
 " GitCommit {{{
