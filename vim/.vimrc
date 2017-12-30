@@ -370,6 +370,7 @@ autocmd FileType gitcommit setlocal scrolloff=0
 autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0]) " set cursor position to starting on gitcommit buffers
 autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
+autocmd FileType vim setlocal colorcolumn=0
 autocmd FileType python setlocal expandtab " Expand tabs in python mode
 autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
