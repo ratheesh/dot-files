@@ -491,6 +491,12 @@ nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " C/C++ {{{
 let g:ch_syntax_for_h           = 1
 let g:c_conditional_is_operator = 1
+let g:c_ansi_typedefs           = 1
+let g:c_ansi_constants          = 1
+let g:c_curly_error             = 1
+let g:c_gnu                     = 1
+let g:c_comment_strings         = 1
+let g:c_space_errors            = 1
 " let c_no_if0                    = 1
 " let g:c_no_if0                  = 1
 " }}}
