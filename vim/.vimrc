@@ -113,7 +113,7 @@ Plug 'vim-scripts/AutoAlign'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 " Plug 'tpope/vim-commentary'
-Plug 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
@@ -861,16 +861,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 let g:indentLine_faster            = 1
 "}}}
-
-" Doxygen-toolkit {{{
-let g:DoxygenToolkit_briefTag_pre = "@Synopsis  "
-let g:DoxygenToolkit_paramTag_pre = "@Param "
-let g:DoxygenToolkit_returnTag    = "@Returns   "
-" let g:DoxygenToolkit_blockHeader  = "--------------------------------------------------------------------------"
-" let g:DoxygenToolkit_blockFooter  = "--------------------------------------------------------------------------"
-let g:DoxygenToolkit_authorName   = "Ratheesh"
-" let g:DoxygenToolkit_licenseTag   = "GPLv2"
-" }}}
 
 " ale {{{
 let g:ale_sign_column_always   = 1
