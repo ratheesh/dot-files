@@ -12,7 +12,8 @@ TAGS
 **/.emacs.d/recentf
 **/.emacs.d/smex-items
 **/vim-*
-**/.vim*
+**/.vim/plugged
+**/.vim/.undotree
 *user-init.el
 /emacs/.emacs.d/projectile.cache
 *.patch
