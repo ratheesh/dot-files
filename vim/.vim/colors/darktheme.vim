@@ -87,7 +87,7 @@ hi SpellCap             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg
 " }}}
 
 " C/C++ {{{
-hi cCommentStart        ctermfg=243     ctermbg=NONE    cterm=bold      guifg=#6272a4 	guibg=NONE      gui=italic
+hi cCommentStart        ctermfg=243     ctermbg=NONE    cterm=bold      guifg=#808080 	guibg=NONE      gui=italic
 hi c89Function          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#6494ed 	guibg=NONE      gui=NONE
 hi cConditional         ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#1d8d77 	guibg=NONE      gui=italic
 hi cRepeat              ctermfg=95      ctermbg=NONE    cterm=italic    guifg=#1d8d77	  guibg=NONE      gui=italic
@@ -99,8 +99,8 @@ hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#f
 hi cCommentError        ctermfg=240     ctermbg=NONE    cterm=italic    guifg=#cc0000 	guibg=NONE      gui=NONE
 hi cGNUConstant         ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f 	guibg=NONE      gui=NONE
 hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f 	guibg=NONE      gui=NONE
-hi cBinaryOperator      ctermfg=12      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
-hi cMathOperator        ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
+" hi cBinaryOperator      ctermfg=12      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
+" hi cMathOperator        ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
 hi cLogicalOperator     ctermfg=93      ctermbg=NONE    cterm=NONE      guifg=#aa5500 	guibg=NONE      gui=NONE
 hi cPointerOperator     ctermfg=60      ctermbg=NONE    cterm=bold      guifg=#aa5500 	guibg=NONE      gui=NONE
 hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#00786c 	guibg=NONE      gui=NONE
