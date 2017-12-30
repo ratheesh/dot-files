@@ -897,23 +897,14 @@ let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " rainbow_parenthesis {{{
 " ((((((((((((((((()))))))))))))))))
 let g:rbpt_colorpairs = [
-    \ [162,     'SeaGreen3'     ],
-    \ [178,     'RoyalBlue3'    ],
-    \ [12,      'DarkOrchid3'   ],
-    \ [132,     'firebrick3'    ],
-    \ [93,      'RoyalBlue3'    ],
-    \ [208,     'SeaGreen3'     ],
-    \ [126,     'DarkOrchid3'   ],
-    \ [94,      'firebrick3'    ],
-    \ [198,     'RoyalBlue3'    ],
-    \ [166,     'SeaGreen3'     ],
-    \ [142,     'DarkOrchid3'   ],
-    \ [172,     'firebrick3'    ],
-    \ [162,     'RoyalBlue3'    ],
-    \ [28,      'SeaGreen3'     ],
-    \ [96,      'DarkOrchid3'   ],
-    \ [34,     'firebrick3'     ],
+    \ [162,      '#cd5c5c'  ],
+    \ [178,      '#1e90ff'  ],
+    \ [12,       '#3cb371'  ],
+    \ [132,      '#daa520'  ],
+    \ [93,       '#c71585'  ],
+    \ [208,      '#bdb76b'  ],
     \ ]
+
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 au VimEnter     * RainbowParenthesesToggle
