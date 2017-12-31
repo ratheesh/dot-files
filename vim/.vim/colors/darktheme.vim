@@ -113,6 +113,8 @@ hi cOctalZero           ctermfg=180     ctermbg=NONE    cterm=NONE      guifg=#f
 hi c89Macro             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
 " hi cBlock               ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#bc8f8f 	guibg=NONE      gui=NONE
 hi cString              ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
+hi cCppOutWrapper       ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#008080 	guibg=NONE      gui=NONE
+hi cCppInWrapper        ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#008080 	guibg=NONE      gui=NONE
 " hi cCppOutIf2           ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#bc8f8f 	guibg=NONE      gui=NONE
 " }}}
 
@@ -300,7 +302,7 @@ hi vimGroup             ctermfg=67      ctermbg=NONE    cterm=NONE guifg=NONE   
 hi vimOption            ctermfg=68      ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimHiCtermFgBg       ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#cccccc  guibg=NONE gui=NONE
 hi vimHiGuiFgBg         ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#cccccc  guibg=NONE gui=NONE
-hi vimVar               ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
+hi vimVar               ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#cccccc  guibg=NONE gui=NONE
 hi vimHilight           ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimHiCterm           ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimHiGui             ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#cccccc  guibg=NONE gui=NONE
@@ -309,7 +311,7 @@ hi vimMap               ctermfg=24      ctermbg=NONE    cterm=NONE guifg=#5f9ea0
 hi vimAutoCmd           ctermfg=12      ctermbg=NONE    cterm=NONE guifg=#1b77e9  guibg=NONE gui=NONE
 hi vimMapModKey         ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimNotation          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
-hi vimCtrlChar          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#404040	guibg=NONE gui=NONE
+hi vimCtrlChar          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#404040  guibg=NONE gui=NONE
 " }}}
 
 " Markdown: {{{
