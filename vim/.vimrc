@@ -108,6 +108,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'rhysd/clever-f.vim'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedundo'
 " Plug 'WolfgangMehner/c-support'
 Plug 'vim-scripts/AutoAlign'
 Plug 'Shougo/neosnippet'
@@ -1166,8 +1167,25 @@ let g:scratch_filetype = 'text'
 " vim-highlightedyank {{{
 map y <Plug>(highlightedyank)
 " map Y <Plug>(highlightedyank)
-let g:highlightedyank_highlight_duration = 200
-hi HighlightedyankRegion ctermfg=180 ctermbg=236 cterm=NONE
+let g:highlightedyank_highlight_duration = 250
+hi HighlightedyankRegion ctermfg=180 ctermbg=236 cterm=NONE guifg=NONE 	guibg=#595959  gui=NONE
+" }}}
+
+" vim-highlightedundo {{{
+let g:highlightedundo#highlight_mode = 2
+" hi DiffAdd      ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32 guibg=#484848 gui=NONE
+" hi DiffDelete   ctermfg=180 ctermbg=237   cterm=NONE guifg=#fb091f guibg=#484848 gui=NONE
+" hi DiffChange   ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090 guibg=#484848 gui=NONE
+
+" hi HighlightedundoAdd      ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32 guibg=#484848 gui=NONE
+" hi HighlightedundoDelete   ctermfg=180 ctermbg=237   cterm=NONE guifg=#fb091f guibg=#484848 gui=NONE
+" hi HighlightedundoChange   ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090 guibg=#484848 gui=NONE
+
+nmap u     <Plug>(highlightedundo-undo)
+nmap <C-r> <Plug>(highlightedundo-redo)
+nmap U     <Plug>(highlightedundo-Undo)
+nmap g-    <Plug>(highlightedundo-gminus)
+nmap g+    <Plug>(highlightedundo-gplus)
 " }}}
 
 " Misc macros {{{
@@ -1177,7 +1195,7 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " }}}
 
-" Use guicolors in terminal (we seem to need to place this here)
+" Use guicolors in terminal (we need to place this here as it is easy to disable!)
 if has("termguicolors")
   set termguicolors
 endif

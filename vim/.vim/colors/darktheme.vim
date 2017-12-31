@@ -187,15 +187,20 @@ hi gitcommitAuthor              ctermfg=24      ctermbg=NONE    cterm=NONE     g
 " }}}
 
 " Diff {{{
-hi diffAdded            ctermfg=28      ctermbg=NONE    cterm=NONE      guifg=#32cd32 guibg=NONE  gui=bold
-hi diffRemoved          ctermfg=161     ctermbg=NONE    cterm=NONE      guifg=#cc241d guibg=NONE  gui=NONE
-hi diffChanged          ctermfg=65      ctermbg=NONE    cterm=NONE      guifg=#cccccc guibg=NONE  gui=NONE
-hi diffText             ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#cccccc guibg=NONE  gui=bold
-hi diffNewFile          ctermfg=95      ctermbg=NONE    cterm=italic    guifg=#fb4934 guibg=NONE  gui=bold
-hi diffFile             ctermfg=95      ctermbg=NONE    cterm=italic    guifg=#3cbc71 guibg=NONE  gui=bold
-hi diffLine             ctermfg=142     ctermbg=NONE    cterm=italic    guifg=#f4a460 guibg=NONE  gui=NONE
-hi diffIndexLine        ctermfg=127     ctermbg=NONE    cterm=italic    guifg=#cd5c5c guibg=NONE  gui=NONE
-hi diffSubname          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#a0a0a0 guibg=NONE  gui=bold
+hi diffAdded            ctermfg=28      ctermbg=NONE    cterm=NONE      guifg=#32cd32 guibg=NONE     gui=bold
+hi diffRemoved          ctermfg=161     ctermbg=NONE    cterm=NONE      guifg=#cc241d guibg=NONE     gui=NONE
+hi diffChanged          ctermfg=65      ctermbg=NONE    cterm=NONE      guifg=#cccccc guibg=NONE     gui=NONE
+hi diffText             ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#cccccc guibg=NONE     gui=NONE
+hi diffNewFile          ctermfg=95      ctermbg=NONE    cterm=italic    guifg=#fb4934 guibg=NONE     gui=italic
+hi diffFile             ctermfg=95      ctermbg=NONE    cterm=italic    guifg=#3cbc71 guibg=NONE     gui=italic
+hi diffLine             ctermfg=142     ctermbg=NONE    cterm=italic    guifg=#f4a460 guibg=NONE     gui=italic
+hi diffIndexLine        ctermfg=127     ctermbg=NONE    cterm=italic    guifg=#cd5c5c guibg=NONE     gui=italic
+hi diffSubname          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#a0a0a0 guibg=NONE     gui=NONE
+
+" Highlight undo customization
+hi DiffAdd      ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32 guibg=#484848 gui=NONE
+hi DiffDelete   ctermfg=180 ctermbg=237   cterm=NONE guifg=#db080b guibg=#484848 gui=NONE
+hi DiffChange   ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090 guibg=#484848 gui=NONE
 "}}}
 
 " Startify {{{
