@@ -108,6 +108,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'rhysd/clever-f.vim'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'machakann/vim-highlightedyank'
+" Plug 'kana/vim-operator-user'
+" Plug 'haya14busa/vim-operator-flashy'
 Plug 'machakann/vim-highlightedundo'
 " Plug 'WolfgangMehner/c-support'
 Plug 'vim-scripts/AutoAlign'
@@ -257,8 +259,8 @@ set linebreak
 if has('linebreak')
   set breakindent
   let &showbreak = '↳ '
-  set cpo+=n
 end
+set cpo+=n
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
 set wmh=0    " Windows need not have height
 set foldmethod=marker
@@ -266,7 +268,8 @@ set lazyredraw
 " set copyindent
 set gcr=a:blinkon0              " Disable cursor blink
 if has('clipboard')
-	set clipboard& clipboard+=unnamedplus
+	  " set clipboard& clipboard+=unnamedplus
+    set clipboard-=autoselect
 endif
 set encoding=utf-8
 set scrolloff=3       " Show next 3 lines while scrolling.
@@ -279,7 +282,8 @@ set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│
 " set list
-" set listchars+=eol:↲
+set listchars=eol:¬,trail:·,extends:❯,precedes:❮
+set showbreak=↪
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
@@ -893,13 +897,13 @@ let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " rainbow_parenthesis {{{
 " ((((((((((((((((()))))))))))))))))
 let g:rbpt_colorpairs = [
-    \ [162,      '#cd5c5c'  ],
-    \ [178,      '#1e90ff'  ],
-    \ [12,       '#3cb371'  ],
-    \ [132,      '#daa520'  ],
-    \ [93,       '#c71585'  ],
-    \ [208,      '#bdb76b'  ],
-    \ ]
+                        \ [162, '#27b062'],
+                        \ [178, '#1e90ff'],
+                        \ [12,  '#fa2cc7'],
+                        \ [132, '#daa520'],
+                        \ [93,  '#c71585'],
+                        \ [208, '#6f91e3'],
+                        \ ]
 
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
@@ -1165,22 +1169,21 @@ let g:scratch_filetype = 'text'
 " }}}
 
 " vim-highlightedyank {{{
-map y <Plug>(highlightedyank)
+nmap y <Plug>(highlightedyank)
+nmap Y <Plug>(highlightedyank)$
 " map Y <Plug>(highlightedyank)
-let g:highlightedyank_highlight_duration = 250
-hi HighlightedyankRegion ctermfg=180 ctermbg=236 cterm=NONE guifg=NONE 	guibg=#595959  gui=NONE
+let g:highlightedyank_highlight_duration = 200
+" hi HighlightedyankRegion cterm=reverse gui=reverse
+" }}}
+
+" vim-operatory-flashy {{{
+" let g:operator#flashy#flash_time=200
+" map y <Plug>(operator-flashy)
+" nmap Y <Plug>(operator-flashy)$<Paste>
 " }}}
 
 " vim-highlightedundo {{{
 let g:highlightedundo#highlight_mode = 2
-" hi DiffAdd      ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32 guibg=#484848 gui=NONE
-" hi DiffDelete   ctermfg=180 ctermbg=237   cterm=NONE guifg=#fb091f guibg=#484848 gui=NONE
-" hi DiffChange   ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090 guibg=#484848 gui=NONE
-
-" hi HighlightedundoAdd      ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32 guibg=#484848 gui=NONE
-" hi HighlightedundoDelete   ctermfg=180 ctermbg=237   cterm=NONE guifg=#fb091f guibg=#484848 gui=NONE
-" hi HighlightedundoChange   ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090 guibg=#484848 gui=NONE
-
 nmap u     <Plug>(highlightedundo-undo)
 nmap <C-r> <Plug>(highlightedundo-redo)
 nmap U     <Plug>(highlightedundo-Undo)
