@@ -29,7 +29,7 @@ hi Normal       ctermfg=7       ctermbg=233     cterm=NONE							guifg=#cccccc 	
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE							guifg=NONE 	    guibg=#101010 	gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold							guifg=#909194 	guibg=#1a1c1e 	gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold			guifg=NONE 	    guibg=NONE      gui=inverse,bold
-hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
+hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE							guifg=NONE      guibg=#383838 	gui=NONE
 hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE      guibg=#24272a 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE							guifg=#747474 	guibg=#282a36 	gui=NONE
@@ -189,7 +189,7 @@ hi gitcommitAuthor              ctermfg=24      ctermbg=NONE    cterm=NONE     g
 " }}}
 
 " Diff {{{
-hi diffAdded            ctermfg=28      ctermbg=NONE    cterm=NONE      guifg=#32cd32 guibg=NONE     gui=bold
+hi diffAdded            ctermfg=28      ctermbg=NONE    cterm=NONE      guifg=#32cd32 guibg=NONE     gui=NONE
 hi diffRemoved          ctermfg=161     ctermbg=NONE    cterm=NONE      guifg=#cc241d guibg=NONE     gui=NONE
 hi diffChanged          ctermfg=65      ctermbg=NONE    cterm=NONE      guifg=#cccccc guibg=NONE     gui=NONE
 hi diffText             ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#cccccc guibg=NONE     gui=NONE
@@ -200,48 +200,49 @@ hi diffIndexLine        ctermfg=127     ctermbg=NONE    cterm=italic    guifg=#c
 hi diffSubname          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#a0a0a0 guibg=NONE     gui=NONE
 
 " Highlight undo customization
-hi DiffAdd      ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32 guibg=#484848 gui=NONE
-hi DiffDelete   ctermfg=180 ctermbg=237   cterm=NONE guifg=#db080b guibg=#484848 gui=NONE
-hi DiffChange   ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090 guibg=#484848 gui=NONE
+hi DiffAdd              ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32  guibg=#444444 gui=NONE
+hi DiffDelete           ctermfg=180 ctermbg=237   cterm=NONE guifg=#cc241d  guibg=#444444 gui=NONE
+hi DiffChange           ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090  guibg=#444444 gui=NONE
+hi Flashy               ctermfg=180 ctermbg=237   cterm=NONE guifg=NONE     guibg=#444444 gui=NONE
 "}}}
 
 " Startify {{{
-hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#808080 guibg=NONE    gui=NONE
-hi StartifySelect       ctermfg=NONE    ctermbg=235     cterm=NONE      guifg=NONE    guibg=#303030 gui=NONE
-hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#367bf0 guibg=NONE    gui=NONE
-hi StartifySpecial      ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#cd5c5c guibg=NONE    gui=NONE
-hi StartifyPath         ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#64648a guibg=NONE    gui=NONE
-hi StartifyFile         ctermfg=60      ctermbg=NONE    cterm=italic    guifg=#1d8d77 guibg=NONE    gui=NONE
-hi StartifySlash        ctermfg=103     ctermbg=NONE    cterm=bold      guifg=#897588 guibg=NONE    gui=NONE
-hi StartifyHeader       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#268bd2 guibg=NONE    gui=NONE
-hi StartifySection      ctermfg=142     ctermbg=NONE    cterm=NONE      guifg=#bb3e79  guibg=NONE    gui=NONE
-hi StartifyFooter       ctermfg=6       ctermbg=NONE    cterm=NONE      guifg=#a0a0a0 guibg=NONE    gui=NONE
+hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#808080   guibg=NONE    gui=NONE
+hi StartifySelect       ctermfg=NONE    ctermbg=235     cterm=NONE      guifg=NONE      guibg=#303030 gui=NONE
+hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#367bf0   guibg=NONE    gui=NONE
+hi StartifySpecial      ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#cd5c5c   guibg=NONE    gui=NONE
+hi StartifyPath         ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#64648a   guibg=NONE    gui=NONE
+hi StartifyFile         ctermfg=60      ctermbg=NONE    cterm=italic    guifg=#1d8d77   guibg=NONE    gui=NONE
+hi StartifySlash        ctermfg=103     ctermbg=NONE    cterm=bold      guifg=#897588   guibg=NONE    gui=NONE
+hi StartifyHeader       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#268bd2   guibg=NONE    gui=NONE
+hi StartifySection      ctermfg=142     ctermbg=NONE    cterm=NONE      guifg=#bb3e79   guibg=NONE    gui=NONE
+hi StartifyFooter       ctermfg=6       ctermbg=NONE    cterm=NONE      guifg=#a0a0a0   guibg=NONE    gui=NONE
 " }}}
 
 " Ruby {{{
-hi rubyClass                    ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE gui=NONE
-hi rubyFunction                 ctermfg=84      ctermbg=NONE    cterm=NONE guifg=#50fa7b 	guibg=NONE gui=NONE
-hi rubyInterpolationDelimiter   ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE gui=NONE
-hi rubySymbol                   ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9 	guibg=NONE gui=NONE
-hi rubyConstant                 ctermfg=81      ctermbg=NONE    cterm=NONE guifg=#66d9ef 	guibg=NONE gui=italic
-hi rubyStringDelimiter          ctermfg=228     ctermbg=NONE    cterm=NONE guifg=#f1fa8c 	guibg=NONE gui=NONE
-hi rubyBlockParameter           ctermfg=215     ctermbg=NONE    cterm=NONE guifg=#ffb86c 	guibg=NONE gui=italic
-hi rubyInstanceVariable         ctermfg=203     ctermbg=NONE    cterm=NONE guifg=#ffb86c 	guibg=NONE gui=NONE
-hi rubyInclude                  ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE gui=NONE
-hi rubyGlobalVariable           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE gui=NONE
-hi rubyRegexp                   ctermfg=228     ctermbg=NONE    cterm=NONE guifg=#f1fa8c 	guibg=NONE gui=NONE
-hi rubyRegexpDelimiter          ctermfg=228     ctermbg=NONE    cterm=NONE guifg=#f1fa8c 	guibg=NONE gui=NONE
-hi rubyEscape                   ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9 	guibg=NONE gui=NONE
-hi rubyControl                  ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE gui=NONE
-hi rubyClassVariable            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE gui=NONE
-hi rubyOperator                 ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE gui=NONE
-hi rubyException                ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE gui=NONE
-hi rubyPseudoVariable           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE gui=NONE
-hi rubyRailsUserClass           ctermfg=81      ctermbg=NONE    cterm=NONE guifg=#66d9ef 	guibg=NONE gui=italic
-hi rubyRailsARAssociationMethod ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE gui=NONE
-hi rubyRailsARMethod            ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE gui=NONE
-hi rubyRailsRenderMethod        ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE gui=NONE
-hi rubyRailsMethod              ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE gui=NONE
+hi rubyClass                    ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE  gui=NONE
+hi rubyFunction                 ctermfg=84      ctermbg=NONE    cterm=NONE guifg=#50fa7b 	guibg=NONE  gui=NONE
+hi rubyInterpolationDelimiter   ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE  gui=NONE
+hi rubySymbol                   ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9 	guibg=NONE  gui=NONE
+hi rubyConstant                 ctermfg=81      ctermbg=NONE    cterm=NONE guifg=#66d9ef 	guibg=NONE  gui=italic
+hi rubyStringDelimiter          ctermfg=228     ctermbg=NONE    cterm=NONE guifg=#f1fa8c 	guibg=NONE  gui=NONE
+hi rubyBlockParameter           ctermfg=215     ctermbg=NONE    cterm=NONE guifg=#ffb86c 	guibg=NONE  gui=italic
+hi rubyInstanceVariable         ctermfg=203     ctermbg=NONE    cterm=NONE guifg=#ffb86c 	guibg=NONE  gui=NONE
+hi rubyInclude                  ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE  gui=NONE
+hi rubyGlobalVariable           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE  gui=NONE
+hi rubyRegexp                   ctermfg=228     ctermbg=NONE    cterm=NONE guifg=#f1fa8c 	guibg=NONE  gui=NONE
+hi rubyRegexpDelimiter          ctermfg=228     ctermbg=NONE    cterm=NONE guifg=#f1fa8c 	guibg=NONE  gui=NONE
+hi rubyEscape                   ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9 	guibg=NONE  gui=NONE
+hi rubyControl                  ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE  gui=NONE
+hi rubyClassVariable            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE  gui=NONE
+hi rubyOperator                 ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE  gui=NONE
+hi rubyException                ctermfg=212     ctermbg=NONE    cterm=NONE guifg=#ff79c6 	guibg=NONE  gui=NONE
+hi rubyPseudoVariable           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=NONE 		guibg=NONE  gui=NONE
+hi rubyRailsUserClass           ctermfg=81      ctermbg=NONE    cterm=NONE guifg=#66d9ef 	guibg=NONE  gui=italic
+hi rubyRailsARAssociationMethod ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE  gui=NONE
+hi rubyRailsARMethod            ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE  gui=NONE
+hi rubyRailsRenderMethod        ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE  gui=NONE
+hi rubyRailsMethod              ctermfg=117     ctermbg=NONE    cterm=NONE guifg=#8be9fd 	guibg=NONE  gui=NONE
 "}}}
 
 " eRuby {{{
