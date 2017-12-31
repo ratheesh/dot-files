@@ -1076,18 +1076,32 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 
 " vim-move {{{
 let g:move_map_keys = 0
-" vmap j <Plug>MoveBlockDown
-" vmap k <Plug>MoveBlockUp
-nmap j <Plug>MoveLineDown
-nmap k <Plug>MoveLineUp
+if has('nvim')
+  " vmap j <Plug>MoveBlockDown
+  " vmap k <Plug>MoveBlockUp
+  nmap <M-j> <Plug>MoveLineDown
+  nmap <M-k> <Plug>MoveLineUp
+else
+  " vmap j <Plug>MoveBlockDown
+  " vmap k <Plug>MoveBlockUp
+  nmap j <Plug>MoveLineDown
+  nmap k <Plug>MoveLineUp
+endif
 " }}}
 
 " vim-schlepp {{{
 " Move block/lines as you wish
-vmap k <Plug>SchleppUp
-vmap j <Plug>SchleppDown
-vmap h <Plug>SchleppLeft
-vmap l <Plug>SchleppRight
+if has('nvim')
+  vmap <M-k> <Plug>SchleppUp
+  vmap <M-j> <Plug>SchleppDown
+  vmap <M-h> <Plug>SchleppLeft
+  vmap <M-l> <Plug>SchleppRight
+else
+  vmap k <Plug>SchleppUp
+  vmap j <Plug>SchleppDown
+  vmap h <Plug>SchleppLeft
+  vmap l <Plug>SchleppRight
+endif
 
 " Duplication selection region
 vnoremap Dk <Plug>SchleppDupUp
