@@ -342,6 +342,11 @@ else
   set viminfo=%,<800,'300,/50,:100,h,f0,n$HOME/.viminfo
 endif
 
+if (has('nvim'))
+  " show results of substition as they're happening but don't open a split
+  set inccommand=nosplit
+endif
+
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd BufWritePost
     \ * if &l:filetype ==# '' || exists('b:ftdetect')
