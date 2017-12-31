@@ -338,9 +338,9 @@ if has('nvim')
 	"   @ - Maximum number of items in the input-line history to be
 	"   s - Maximum size of an item contents in KiB
 	"   h - Disable the effect of 'hlsearch' when loading the shada
-  set viminfo=%,<800,'300,/50,:100,s10,h,f0,n$HOME/.config/nvim/viminfo
+  set viminfo=%,<800,'300,/50,:100,s10,h,f1,n$HOME/.config/nvim/viminfo
 else
-  set viminfo=%,<800,'300,/50,:100,h,f0,n$HOME/.viminfo
+  set viminfo=%,<800,'300,/50,:100,h,f1,n$HOME/.viminfo
 endif
 
 if (has('nvim'))
