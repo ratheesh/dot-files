@@ -862,6 +862,7 @@ nmap <silent><Leader>jk <Plug>(easymotion-overwin-f2)
 nmap <silent><Leader>jl <Plug>(easymotion-overwin-line)
 let g:EasyMotion_smartcase        = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
+let g:EasyMotion_prompt = 'Jump to → '
 "}}}
 
 " UltiSnips {{{
@@ -1059,7 +1060,7 @@ inoremap <expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
 " Close popup and delete Airlinebackward character
 " inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
-inoremap <expr> <C-g> deoplete#undo_completion()
+inoremap <expr><C-g> deoplete#undo_completion()
 
 " let g:deoplete#disable_auto_complete = 1
 inoremap <silent><expr> <TAB>
@@ -1074,7 +1075,7 @@ inoremap <silent><expr> <TAB>
 " Use Tab to forward cycle
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 let g:deoplete#sources     = {}
 let g:deoplete#sources_   = [] " includes all sources
@@ -1171,8 +1172,7 @@ let g:scratch_filetype = 'text'
 " vim-highlightedyank {{{
 nmap y <Plug>(highlightedyank)
 nmap Y <Plug>(highlightedyank)$
-" map Y <Plug>(highlightedyank)
-let g:highlightedyank_highlight_duration = 200
+let g:highlightedyank_highlight_duration=300
 " hi HighlightedyankRegion cterm=reverse gui=reverse
 " }}}
 
