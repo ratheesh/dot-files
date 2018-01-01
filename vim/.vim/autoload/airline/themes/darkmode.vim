@@ -17,10 +17,10 @@ let s:gui01             = "#2e2e2e"
 let s:gui02             = "#484848"
 let s:gui03             = "#ffb86c"
 let s:gui04             = "#bd93f9"
-let s:gui05             = "#c34380"
+let s:gui05             = "#cc0066"
 let s:gui06             = "#bfa858"
-let s:gui07             = "#70bb70"
-let s:gui08             = "#b6919e"
+let s:gui07             = "#00cc66"
+let s:gui08             = "#009999"
 let s:gui09             = "#09643f"
 let s:gui10             = "#f4a460"
 let s:guiWhite          = "#cccccc"
@@ -60,9 +60,9 @@ let s:V2 = [ s:gui10    , s:gui02 , s:cterm11, s:cterm02 ]
 let s:V3 = [ s:guiCFG , s:gui01 , s:cterm09, s:cterm01 ]
 
 " Replace mode
-let s:R1 = [ s:guiBlack , s:gui05 , s:ctermWhite, s:cterm05 ]
+let s:R1 = [ s:guiWhite , s:gui05 , s:ctermWhite, s:cterm05 ]
 let s:R2 = [ s:gui10    , s:gui02 , s:cterm11, s:cterm02 ]
-let s:R3 = [ s:guiCFG , s:gui01 , s:cterm09, s:cterm01 ]
+let s:R3 = [ s:guiCFG   , s:gui01 , s:cterm09, s:cterm01 ]
 
 " File changed
 let s:changed = [ s:guiCFG , s:guiChangedColor , s:ctermChangedColor , s:cterm01 ]
@@ -113,7 +113,7 @@ let g:airline#themes#darkmode#palette.tabline = {
 :augroup modeToggle
 :autocmd!
 autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#a0522d 	gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#eeeeee	guibg=#228b22 	gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#eeeeee	guibg=#0066cc 	gui=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic

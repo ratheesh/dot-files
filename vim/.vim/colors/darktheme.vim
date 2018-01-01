@@ -30,12 +30,12 @@ hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE							guifg=NONE 	   
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold							guifg=#909194 	guibg=#1a1c1e 	gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold			guifg=NONE 	    guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE							guifg=NONE      guibg=#383838 	gui=NONE
-hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE      guibg=#24272a 	gui=NONE
+hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE							guifg=#747474 	guibg=#282a36 	gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#a0522d 	gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE							guifg=#64666d 	guibg=#64666d 	gui=bold
-hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold		guifg=#cc0000 	guibg=NONE 		  gui=underline
+hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold		guifg=#cc0000 	guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=196     ctermbg=NONE    cterm=underline,bold
 hi Braces       ctermfg=NONE    ctermbg=NONE    cterm=bold,underline
 hi StatusLine   ctermfg=7       ctermbg=236     cterm=bold							guifg=#f8f8f2 	guibg=#64666d 	gui=bold
@@ -95,7 +95,7 @@ hi cPPIncludeFile       ctermfg=60      ctermbg=NONE    cterm=italic    guifg=#f
 hi cOperator            ctermfg=62      ctermbg=NONE    cterm=NONE      guifg=#3e8c75 	guibg=NONE      gui=NONE
 hi cInclude             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0 	guibg=NONE      gui=NONE
 hi cDefine              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0 	guibg=NONE      gui=NONE
-hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#698bb8 	guibg=NONE      gui=NONE
+hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc0066 	guibg=NONE      gui=NONE
 hi cCommentError        ctermfg=240     ctermbg=NONE    cterm=italic    guifg=#cc0000 	guibg=NONE      gui=italic
 hi cGNUConstant         ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f 	guibg=NONE      gui=NONE
 hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f 	guibg=NONE      gui=NONE
@@ -103,7 +103,7 @@ hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#b
 " hi cMathOperator        ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
 hi cLogicalOperator     ctermfg=93      ctermbg=NONE    cterm=NONE      guifg=#6089b7 	guibg=NONE      gui=NONE
 hi cPointerOperator     ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#6089b7 	guibg=NONE      gui=NONE
-hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ad95d6 	guibg=NONE      gui=NONE
+hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc00cc 	guibg=NONE      gui=NONE
 hi cStructure           ctermfg=132     ctermbg=NONE    cterm=italic    guifg=#d56476 	guibg=NONE      gui=italic
 hi cType                ctermfg=25      ctermbg=NONE    cterm=italic    guifg=#3285c7 	guibg=NONE      gui=italic
 hi cConstant            ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#9c547e 	guibg=NONE      gui=NONE
@@ -165,7 +165,7 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=NONE     guibg=#404040 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#bc8f8f gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#c76d83 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#606060 gui=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#008b8b gui=NONE
 "}}}
@@ -200,10 +200,15 @@ hi diffIndexLine        ctermfg=127     ctermbg=NONE    cterm=italic    guifg=#c
 hi diffSubname          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#a0a0a0 guibg=NONE     gui=NONE
 
 " Highlight undo customization
-hi DiffAdd              ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32  guibg=#444444 gui=NONE
-hi DiffDelete           ctermfg=180 ctermbg=237   cterm=NONE guifg=#cc241d  guibg=#444444 gui=NONE
-hi DiffChange           ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090  guibg=#444444 gui=NONE
-hi Flashy               ctermfg=180 ctermbg=237   cterm=NONE guifg=NONE     guibg=#444444 gui=NONE
+hi DiffAdd              ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32  guibg=#383838 gui=NONE
+hi DiffDelete           ctermfg=180 ctermbg=237   cterm=NONE guifg=#fb091f  guibg=#383838 gui=NONE
+hi DiffChange           ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090  guibg=#383838 gui=NONE
+hi Flashy               ctermfg=180 ctermbg=237   cterm=NONE guifg=NONE     guibg=#383838 gui=NONE
+"}}}
+
+"easymotion {{{
+hi EasyMotionMoveHLDefault    ctermfg=180 ctermbg=237   cterm=NONE guifg=#cd5c5c  guibg=NONE gui=italic
+hi EasyMotionIncSearchDefault ctermfg=180 ctermbg=237   cterm=NONE guifg=#cd5c5c  guibg=NONE gui=italic
 "}}}
 
 " Startify {{{
