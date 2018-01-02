@@ -19,11 +19,11 @@ let s:gui03             = "#ffb86c"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#cc0066"
 let s:gui06             = "#bfa858"
-let s:gui07             = "#70bb70"
+let s:gui07             = "#09843f"
 let s:gui08             = "#a39396"
-let s:gui09             = "#09643f"
+let s:gui09             = "#1d8d77"
 let s:gui10             = "#f4a460"
-let s:guiWhite          = "#cccccc"
+let s:guiWhite          = "#eeeeee"
 let s:guiBlack          = "#000000"
 let s:guiCFG            = "#a0a0a0"
 let s:guiChangedColor   = "#2e2e2e"
@@ -50,7 +50,7 @@ let s:N2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:N3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 , 'italic']
 
 " Insert mode
-let s:I1 = [ s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08 ]
+let s:I1 = [ s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08 ]
 let s:I2 = [ s:gui10    , s:gui02 , s:cterm11 , s:cterm02 ]
 let s:I3 = [ s:guiCFG , s:gui01 , s:cterm09 , s:cterm01 ]
 
@@ -112,7 +112,7 @@ let g:airline#themes#darkmode#palette.tabline = {
 " Adjust colors in darktheme.vim
 :augroup modeToggle
 :autocmd!
-autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#0066cc 	gui=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#a0522d 	gui=NONE
 autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#eeeeee	guibg=#1d8d77 	gui=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic

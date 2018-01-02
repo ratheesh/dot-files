@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE							guifg=NONE     
 hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE							guifg=#747474 	guibg=#282a36 	gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#0066cc 	gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#a0522d 	gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE							guifg=#64666d 	guibg=#64666d 	gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold		guifg=#cc0000 	guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=196     ctermbg=NONE    cterm=underline,bold
@@ -58,7 +58,7 @@ hi Float        ctermfg=141     ctermbg=NONE    cterm=NONE							guifg=#bd93f9 	
 hi Function     ctermfg=61      ctermbg=NONE    cterm=NONE							guifg=#50fa7b 	guibg=NONE      gui=NONE
 hi Identifier   ctermfg=246     ctermbg=NONE    cterm=NONE							guifg=#8be9fd 	guibg=NONE      gui=italic
 hi Keyword      ctermfg=126     ctermbg=NONE    cterm=italic						guifg=#6272a4 	guibg=NONE      gui=NONE
-hi Label        ctermfg=132     ctermbg=NONE    cterm=NONE							guifg=#bd93f9 	guibg=NONE      gui=NONE
+hi Label        ctermfg=132     ctermbg=NONE    cterm=NONE							guifg=#8c506a 	guibg=NONE      gui=NONE
 hi NonText      ctermfg=244     ctermbg=NONE    cterm=NONE							guifg=#525563 	guibg=NONE      gui=NONE
 hi Number       ctermfg=180     ctermbg=NONE    cterm=NONE							guifg=#eb4a9c 	guibg=NONE      gui=NONE
 hi Operator     ctermfg=62      ctermbg=NONE    cterm=bold							guifg=#909194 	guibg=NONE      gui=bold
