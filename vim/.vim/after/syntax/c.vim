@@ -39,7 +39,7 @@ syn match       cLogicalOperatorError display "\(&&\|||\)="
 syn cluster     cOperator         add=cPointerOperator,cLogicalOperator,cBinaryOperator,cLogicalOperatorError,cBinaryOperatorError
 
 " data types
-syn keyword     c89Type           u8 u16 u32
+syn keyword     c89Type           u8 u16 u32 uint8_t uint16_t uint32_t SINT8 UINT8 SINT16 UINT16 SINT32 UINT32 FLT DBL BOOL bool
 syn cluster     cType             contains=c89Type
 
 " default syntax highlighting
