@@ -126,6 +126,10 @@ hi tmuxBoolean          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#9
 hi tmuxFormatString     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#3e8c75 	guibg=NONE      gui=NONE
 " }}}
 
+" sh {{{
+hi shVariable           ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#bc8f8f 	guibg=NONE      gui=NONE
+" }}}
+
 " doxygen {{{
 hi doxygenBrief                 ctermfg=132     ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
 hi doxygenBody                  ctermfg=132     ctermbg=NONE    cterm=italic    guifg=#808080 	guibg=NONE      gui=italic
