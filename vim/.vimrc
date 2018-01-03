@@ -128,8 +128,9 @@ Plug 'kshenoy/vim-signature'
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'mattn/ctrlp-mark'
 " Plug 'shinnya/ctrlp-jumplist'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
 " Plug 'luochen1990/rainbow'
+Plug 'eapache/rainbow_parentheses.vim'
 " Plug 'tpope/vim-characterize'
 Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
@@ -896,49 +897,34 @@ let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " }}}
 
 " rainbow_parenthesis {{{
-" ((((((((((((((((()))))))))))))))))
+let g:rbpt_max         = 15
+let g:bold_parentheses = 0      " Default on
+
 let g:rbpt_colorpairs = [
-                        \ [162, '#27b062'],
-                        \ [178, '#1e90ff'],
-                        \ [12,  '#fa2cc7'],
-                        \ [132, '#daa520'],
-                        \ [93,  '#c71585'],
-                        \ [208, '#6f91e3'],
-                        \ ]
+    \ ['red',         'RoyalBlue3'],
+    \ ['brown',       'DarkSeaGreen3'],
+    \ ['blue',        'DarkOrchid3'],
+    \ ['gray',        'firebrick3'],
+    \ ['green',       'RoyalBlue3'],
+    \ ['magenta',     'SeaGreen3'],
+    \ ['cyan',        'DarkOrchid3'],
+    \ ['darkred',     'firebrick3'],
+    \ ['brown',       'RoyalBlue3'],
+    \ ['darkblue',    'DarkOrchid3'],
+    \ ['gray',        'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkmagenta', 'SeaGreen3'],
+    \ ['darkcyan',    'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
-au VimEnter     * RainbowParenthesesToggle
-au Syntax       * RainbowParenthesesLoadRound
-au Syntax       * RainbowParenthesesLoadSquare
-au Syntax       * RainbowParenthesesLoadBraces
+au VimEnter  * RainbowParenthesesToggle
+au BufEnter  * RainbowParenthesesLoadRound
+au BufEnter  * RainbowParenthesesLoadSquare
+au BufEnter  * RainbowParenthesesLoadBraces
+au BufEnter  * RainbowParenthesesLoadChevrons
+
 " }}}
-
-"rainbow {{{
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-	\	'ctermfgs': [132, 64, 54, 68, 94],
-	\	'operators': '_,_',
-	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-	\	'separately': {
-	\		'*': {},
-	\		'tex': {
-	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-	\		},
-	\		'lisp': {
-	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-	\		},
-	\		'vim': {
-	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-	\		},
-	\		'html': {
-	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-	\		},
-	\		'css': 0,
-	\	}
-	\}
-"}}}
 
 "Expand region {{{
 
