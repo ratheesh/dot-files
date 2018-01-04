@@ -901,13 +901,13 @@ let g:rbpt_max         = 15
 let g:bold_parentheses = 0      " Default on
 
 let g:rbpt_colorpairs = [
-    \ ['red',         'RoyalBlue3'],
-    \ ['brown',       'DarkSeaGreen3'],
+    \ ['red',         'MediumVioletRed'],
+    \ ['brown',       'green3'],
     \ ['blue',        'DarkOrchid3'],
-    \ ['gray',        'firebrick3'],
-    \ ['green',       'RoyalBlue3'],
-    \ ['magenta',     'SeaGreen3'],
-    \ ['cyan',        'DarkOrchid3'],
+    \ ['gray',        'firebrick2'],
+    \ ['green',       'sienna'],
+    \ ['magenta',     'PeachPuff3'],
+    \ ['cyan',        'DodgerBlue'],
     \ ['darkred',     'firebrick3'],
     \ ['brown',       'RoyalBlue3'],
     \ ['darkblue',    'DarkOrchid3'],
