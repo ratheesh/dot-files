@@ -115,9 +115,9 @@ Plug 'machakann/vim-highlightedundo'
 Plug 'vim-scripts/AutoAlign'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/YankRing.vim'
@@ -844,16 +844,6 @@ nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
 " vim-signature {{{
 let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkTextHL        = "SignColumn"
-" }}}
-
-" nerd-commentar {{{
-let g:NERDSpaceDelims            = 1
-let g:NERDCompactSexyComs        = 1
-let g:NERDDefaultAlign           = 'left'
-let g:NERDAltDelims_java         = 1
-let g:NERDCustomDelimiters       = { 'c': { 'left': '/*','right': '*/' } }
-let g:NERDCommentEmptyLines      = 1
-let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " Easymotion {{{
