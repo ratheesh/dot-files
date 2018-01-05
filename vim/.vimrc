@@ -71,7 +71,7 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 " Plug 'DavidEGx/ctrlp-smarttabs'
 " Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'FelikZ/ctrlp-py-matcher'
-" Plug 'lokikl/vim-ctrlp-ag'
+Plug 'lokikl/vim-ctrlp-ag'
 " Plug 'ivan-cukic/vim-ctrlp-cscope'
 Plug 'dbeecham/ctrlp-commandpalette.vim'
 Plug 'brookhong/cscope.vim'
@@ -784,10 +784,10 @@ let g:ctrlp_yankring_minimum_chars   = 2
 " }}}
 
 " vim-ctrlp-ag {{{
-" nnoremap <c-f> :CtrlPag<CR>
-" vnoremap <c-f> :CtrlPagVisual<CR>
-nnoremap <silent><leader>ca :CtrlPagLocate
-nnoremap <silent><leader>cp :CtrlPagPrevious<CR>
+nnoremap <silent><Leader>cc :CtrlPag<CR>
+vnoremap <silent><Leader>cc :CtrlPagVisual<CR>
+nnoremap <leader>ca :CtrlPagLocate<space>
+nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "deps/*"
     \ --ignore "_build/*"
