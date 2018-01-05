@@ -396,6 +396,7 @@ augroup END
 " Little welcome message!
 autocmd VimEnter * echo "Willkommen zum meinem ViM Welt! (^-^)"
 autocmd VimEnter * set noshowmode
+autocmd VimEnter * set wrap
 
 " Treat c-header as C source file type
 let g:c_syntax_for_h = 1
