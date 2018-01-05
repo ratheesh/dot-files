@@ -258,8 +258,8 @@ if exists('+breakindent')
 endif
 set linebreak
 if has('linebreak')
-  set breakindent
-  let &showbreak = '↳ '
+    set breakindent
+    let &showbreak='↪ '
 end
 set cpo+=n
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
@@ -281,10 +281,9 @@ set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
 " set fillchars="vert:\│,fold:-"
-set fillchars+=vert:\│
-" set list
+set fillchars+=vert:\│,fold:-
+set list
 set listchars=eol:¬,trail:·,extends:❯,precedes:❮
-set showbreak=↪
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
