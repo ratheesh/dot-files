@@ -34,7 +34,7 @@ hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE     
 hi CursorColumn ctermbg=234                     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE							guifg=#747474 	guibg=#282a36 	gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#a0522d 	gui=NONE
-hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE							guifg=#64666d 	guibg=#64666d 	gui=bold
+hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE							guifg=#64666d 	guibg=NONE 	    gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold		guifg=#cc0000 	guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=196     ctermbg=NONE    cterm=underline,bold
 hi Braces       ctermfg=NONE    ctermbg=NONE    cterm=bold,underline
@@ -128,6 +128,7 @@ hi tmuxFormatString     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#3
 
 " sh {{{
 hi shVariable           ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#bc8f8f 	guibg=NONE      gui=NONE
+hi shFunction           ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#bdb76b 	guibg=NONE      gui=NONE
 " }}}
 
 " doxygen {{{
@@ -153,15 +154,22 @@ hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=italic  guifg=#468
 
 " }}}
 
+" git-signify {{{
+hi SignifySignAdd             ctermfg=26     ctermbg=233   cterm=bold  guifg=#27b062  guibg=#1a1c1e   gui=bold
+hi SignifySignChange          ctermfg=180    ctermbg=233   cterm=bold  guifg=#f7ca88  guibg=#1a1c1e   gui=bold
+hi SignifySignDelete          ctermfg=196    ctermbg=233   cterm=bold  guifg=#fb091f  guibg=#1a1c1e   gui=bold
+hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff5500  guibg=#1a1c1e   gui=bold
+" }}}
+
 " git-gutter {{{
-hi GitGutterAdd         ctermfg=26      ctermbg=233     cterm=bold  guifg=#27b062  guibg=#1a1c1e   gui=NONE
-hi GitGutterChange      ctermfg=180     ctermbg=233     cterm=bold  guifg=#f7ca88  guibg=#1a1c1e   gui=NONE
-hi GitGutterDelete      ctermfg=196     ctermbg=233     cterm=bold  guifg=#fb091f  guibg=#1a1c1e   gui=NONE
-hi GitGutterChangeDelete ctermfg=94     ctermbg=233     cterm=bold  guifg=#ff5500  guibg=#1a1c1e   gui=NONE
+hi GitGutterAdd         ctermfg=26      ctermbg=233     cterm=bold  guifg=#27b062  guibg=#1a1c1e   gui=bold
+hi GitGutterChange      ctermfg=180     ctermbg=233     cterm=bold  guifg=#f7ca88  guibg=#1a1c1e   gui=bold
+hi GitGutterDelete      ctermfg=196     ctermbg=233     cterm=bold  guifg=#fb091f  guibg=#1a1c1e   gui=bold
+hi GitGutterChangeDelete ctermfg=94     ctermbg=233     cterm=bold  guifg=#ff5500  guibg=#1a1c1e   gui=bold
 " }}}
 
 " CtrlP {{{
-hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=bold  guifg=#ffcc33  guibg=NONE   gui=bold
+hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#ffcc33  guibg=NONE   gui=NONE
 hi CtrlPPrtText         ctermfg=60      ctermbg=NONE    cterm=NONE  guifg=#1d8d77  guibg=NONE   gui=NONE
 hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=NONE  guifg=#27b062  guibg=NONE   gui=NONE
 hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#a42171  guibg=NONE   gui=bold
