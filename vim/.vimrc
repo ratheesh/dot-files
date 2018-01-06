@@ -907,7 +907,7 @@ let g:syntastic_python_flake8_post_args = '--ignore=W391'
 
 " rainbow_parenthesis {{{
 let g:rbpt_max         = 15
-let g:bold_parentheses = 0      " Default on
+let g:bold_parentheses = 0
 
 let g:rbpt_colorpairs = [
     \ ['red',         'MediumVioletRed'],
