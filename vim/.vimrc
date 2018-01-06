@@ -285,7 +285,8 @@ set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│,fold:-
 set list
-set listchars=eol:¬,trail:·,extends:❯,precedes:❮
+" set listchars=eol:¬,trail:·,extends:❯,precedes:❮
+set listchars=trail:·,extends:❯,precedes:❮
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
@@ -400,7 +401,7 @@ augroup focus_lost
 augroup END
 
 " Little welcome message!
-autocmd VimEnter * echo "Willkommen zum meinem ViM Welt! (^-^)"
+" autocmd VimEnter * echo "Willkommen zu meinem ViM Welt! (^-^)"
 autocmd VimEnter * set noshowmode
 autocmd VimEnter * set wrap
 
@@ -1196,9 +1197,9 @@ if &term =~ "xterm.*"
     let &t_SI = &t_SI . "\<ESC>[?2004h"
     let &t_EI = "\<ESC>[?2004l" . &t_EI
     function XTermPasteBegin(ret)
-	set pastetoggle=<Esc>[201~
-	set paste
-	return a:ret
+        set pastetoggle=<Esc>[201~
+        set paste
+        return a:ret
     endfunction
     map <expr> <Esc>[200~  XTermPasteBegin("i")
     imap <expr> <Esc>[200~ XTermPasteBegin("")
