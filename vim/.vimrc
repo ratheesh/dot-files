@@ -1178,6 +1178,10 @@ let g:highlightedyank_highlight_duration=300
 " nmap Y <Plug>(operator-flashy)$<Paste>
 " }}}
 
+" vim-commentary {{{
+autocmd FileType expect setlocal commentstring=#\ %s
+" }}}
+
 " vim-highlightedundo {{{
 let g:highlightedundo#highlight_mode = 2
 nmap u     <Plug>(highlightedundo-undo)
