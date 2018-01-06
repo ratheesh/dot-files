@@ -96,7 +96,8 @@ if !has('nvim')
 Plug 'thaerkh/vim-indentguides'
 endif
 Plug 'tpope/vim-git'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
+" Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'tpope/vim-repeat'
@@ -820,6 +821,18 @@ let g:startify_bookmarks = [
                         \ ]
 " }}}
 
+" vim-signify {{{
+let g:signify_vcs_list               = [ 'git', 'svn' ]
+let g:signify_realtime               = 1
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '='
+let g:signify_sign_show_count        = 1
+nmap <leader>gn <plug>(signify-next-hunk)
+nmap <leader>gp <plug>(signify-prev-hunk)
+" }}}
+
 " vim-gitgutter {{{
 let g:gitgutter_override_sign_column_highlight = 0
 if exists('&signcolumn')  " Vim 7.4.2201
@@ -828,17 +841,17 @@ else
         let g:gitgutter_sign_column_always = 1
 endif
 
-let g:gitgutter_eager = 1 " Update when switching/writing buffers
-" autocmd FileType tagbar,nerdtree setlocal signcolumn=no
+" let g:gitgutter_eager = 1 " Update when switching/writing buffers
+autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
-let g:gitgutter_sign_modified = '='
+" let g:gitgutter_sign_modified = '='
 
-nmap <silent><Leader>gn <Plug>GitGutterNextHunk
-nmap <silent><Leader>gp <Plug>GitGutterPrevHunk
-nmap <silent><Leader>ga <Plug>GitGutterStageHunk
-nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
-nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
-nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
+" nmap <silent><Leader>gn <Plug>GitGutterNextHunk
+" nmap <silent><Leader>gp <Plug>GitGutterPrevHunk
+" nmap <silent><Leader>ga <Plug>GitGutterStageHunk
+" nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
+" nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
+" nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
 " }}}
 
 " vim-signature {{{
