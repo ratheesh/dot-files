@@ -48,7 +48,6 @@ Plug 'tpope/vim-surround'
 Plug 'matze/vim-move'
 " Plug 'atweiden/vim-dragvisuals'
 Plug 'zirrostig/vim-schlepp'
-" Plug 'mhinz/vim-signify'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'terryma/vim-expand-region'
@@ -97,7 +96,7 @@ Plug 'thaerkh/vim-indentguides'
 endif
 Plug 'tpope/vim-git'
 Plug 'mhinz/vim-signify'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'tpope/vim-repeat'
@@ -851,14 +850,14 @@ endif
 " let g:gitgutter_eager = 1 " Update when switching/writing buffers
 autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
-" let g:gitgutter_sign_modified = '='
+let g:gitgutter_sign_modified = '='
 
-" nmap <silent><Leader>gn <Plug>GitGutterNextHunk
-" nmap <silent><Leader>gp <Plug>GitGutterPrevHunk
-" nmap <silent><Leader>ga <Plug>GitGutterStageHunk
-" nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
-" nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
-" nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
+nmap <silent><Leader>gn <Plug>GitGutterNextHunk
+nmap <silent><Leader>gp <Plug>GitGutterPrevHunk
+nmap <silent><Leader>ga <Plug>GitGutterStageHunk
+nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
+nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
+nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
 " }}}
 
 " vim-signature {{{
