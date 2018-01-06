@@ -154,6 +154,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug '~/.vim/local/c_std'
 Plug 'nsf/gocode'
 Plug 'lilydjwg/colorizer'
+" Plug 'ryanpcmcquen/fix-vim-pasting'
+" Plug 'ConradIrwin/vim-bracketed-paste'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -318,6 +320,10 @@ set formatoptions+=r  " Insert comment leader after hitting <Enter>
 " set formatoptions+=t  " Auto-wrap text using textwidth"
 set nostartofline
 set lbr
+
+" disable bracketed paste!
+" This causes issues with pasting using shift-Insert
+" set t_BE=
 
 " Show the effect of substitute incrementally
 if has('nvim')
@@ -1179,6 +1185,23 @@ nmap U     <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
 nmap g+    <Plug>(highlightedundo-gplus)
 " }}}
+
+" bracket-paste settings {{{
+if &term =~ "xterm.*"
+    let &t_SI = &t_SI . "\<ESC>[?2004h"
+    let &t_EI = "\<ESC>[?2004l" . &t_EI
+    function XTermPasteBegin(ret)
+	set pastetoggle=<Esc>[201~
+	set paste
+	return a:ret
+    endfunction
+    map <expr> <Esc>[200~  XTermPasteBegin("i")
+    imap <expr> <Esc>[200~ XTermPasteBegin("")
+    vmap <expr> <Esc>[200~ XTermPasteBegin("c")
+    cmap <Esc>[200~ <nop>
+    cmap <Esc>[201~ <nop>
+endif
+"}}}
 
 " Misc macros {{{
 " Print syntax highlight group for the work under cursor
