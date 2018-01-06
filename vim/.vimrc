@@ -299,6 +299,7 @@ setglobal spell spelllang=en_us
 " set nospell
 " ...but enable it for the English text files I use a lot.
 au BufRead,BufNewFile,BufWrite *.txt,*.tex,*.latex set spell
+au BufRead,BufNewFile,BufWrite *.exp,*.c,*.sh,*shrc setlocal nospell
 
 " Set scroll margin to 0 in git commit buffers to avoid cursor in non-zero pos
 " au BufRead,BufNewFile,BufWrite *.stgit*,COMMIT_EDITMSG set scrolloff=0
