@@ -284,7 +284,7 @@ endif
 set noshowmode
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│,fold:-
-set list
+" set list
 " set listchars=eol:¬,trail:·,extends:❯,precedes:❮
 set listchars=trail:·,extends:❯,precedes:❮
 set fillchars+=diff:⣿
@@ -837,8 +837,8 @@ let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
 let g:signify_sign_change            = '='
 let g:signify_sign_show_count        = 1
-nmap <leader>gn <plug>(signify-next-hunk)
-nmap <leader>gp <plug>(signify-prev-hunk)
+nmap <leader>sn <plug>(signify-next-hunk)
+nmap <leader>sp <plug>(signify-prev-hunk)
 " }}}
 
 " vim-gitgutter {{{
