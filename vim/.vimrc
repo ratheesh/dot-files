@@ -186,6 +186,8 @@ filetype plugin indent on
 set number relativenumber
 if !has('nvim')
   set esckeys
+else
+  set guicursor=
 endif
 set nostartofline
 set numberwidth=1
