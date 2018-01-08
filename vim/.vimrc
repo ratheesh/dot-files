@@ -836,7 +836,8 @@ let g:startify_bookmarks = [
 
 " vim-signify {{{
 let g:signify_vcs_list               = [ 'git', 'svn' ]
-let g:signify_realtime               = 1
+let g:signify_realtime               = 0
+let g:signify_update_on_bufenter     = 0
 let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
