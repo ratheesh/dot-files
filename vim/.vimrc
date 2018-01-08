@@ -1055,7 +1055,7 @@ inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> deoplete#close_popup()
 
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
-inoremap <expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
+inoremap <expr><ESC> pumvisible() ? deoplete#close_popup() : "\<ESC>"
 " Close popup and delete Airlinebackward character
 " inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
