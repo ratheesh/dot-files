@@ -1098,8 +1098,8 @@ if has('nvim')
 else
   " vmap j <Plug>MoveBlockDown
   " vmap k <Plug>MoveBlockUp
-  nmap j <Plug>MoveLineDown
-  nmap k <Plug>MoveLineUp
+  nmap = <Plug>MoveLineUp
+  nmap - <Plug>MoveLineDown
 endif
 " }}}
 
