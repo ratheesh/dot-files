@@ -122,7 +122,7 @@ Plug 'tpope/vim-commentary'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'antoyo/vim-licenses'
@@ -1173,10 +1173,8 @@ let g:scratch_filetype = 'text'
 " }}}
 
 " vim-highlightedyank {{{
-nmap y <Plug>(highlightedyank)
-nmap Y <Plug>(highlightedyank)$
+" NOTE: Enabling yankring plugin breaks this functionality!
 let g:highlightedyank_highlight_duration=300
-" hi HighlightedyankRegion cterm=reverse gui=reverse
 " }}}
 
 " vim-operatory-flashy {{{
