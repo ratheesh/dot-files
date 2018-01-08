@@ -107,6 +107,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'unblevable/quick-scope'
 " Plug 'rhysd/clever-f.vim'
 Plug 'ratheesh/vim-extended-ft'
+Plug 'bruno-/vim-vertical-move'
+Plug 't9md/vim-quickhl'
 Plug 'machakann/vim-highlightedyank'
 " Plug 'kana/vim-operator-user'
 " Plug 'haya14busa/vim-operator-flashy'
@@ -1190,6 +1192,13 @@ nmap <C-r> <Plug>(highlightedundo-redo)
 nmap U     <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
 nmap g+    <Plug>(highlightedundo-gplus)
+" }}}
+
+" vim-quickhl {{{
+    nmap <Space>m <Plug>(quickhl-manual-this)
+    xmap <Space>m <Plug>(quickhl-manual-this)
+    nmap <Space>M <Plug>(quickhl-manual-reset)
+    xmap <Space>M <Plug>(quickhl-manual-reset)
 " }}}
 
 " vim-cursormode {{{
