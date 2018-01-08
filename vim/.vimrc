@@ -614,6 +614,7 @@ let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
+let g:airline#extensions#cursormode#enabled       = 1
 nmap <silent><leader>1 <Plug>AirlineSelectTab1
 nmap <silent><leader>2 <Plug>AirlineSelectTab2
 nmap <silent><leader>3 <Plug>AirlineSelectTab3
@@ -1204,9 +1205,9 @@ nmap g+    <Plug>(highlightedundo-gplus)
 " vim-cursormode {{{
 let cursormode_color_map = {
       \   "n":      "#a0a0a0",
-      \   "i":      "#1272ba",
+      \   "i":      "#cc0000",
       \   "R":      "#ff1493",
-      \   "v":      "#d8b023",
+      \   "v":      "#007000",
       \   "V":      "#9932ac",
       \   "\<C-V>": "#ffcc33",
       \ }
