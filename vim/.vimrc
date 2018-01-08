@@ -87,7 +87,7 @@ Plug 'sjl/gundo.vim'
 " Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 Plug 'mtth/scratch.vim'
-" Plug 'vheon/vim-cursormode'
+Plug 'vheon/vim-cursormode'
 " Plug 'edkolev/promptline.vim'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'Yggdroot/indentLine'
@@ -1190,6 +1190,17 @@ nmap <C-r> <Plug>(highlightedundo-redo)
 nmap U     <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
 nmap g+    <Plug>(highlightedundo-gplus)
+" }}}
+
+" vim-cursormode {{{
+let cursormode_color_map = {
+      \   "n":      "#a0a0a0",
+      \   "i":      "#1272ba",
+      \   "R":      "#ff1493",
+      \   "v":      "#d8b023",
+      \   "V":      "#9932ac",
+      \   "\<C-V>": "#ffcc33",
+      \ }
 " }}}
 
 " bracket-paste settings {{{
