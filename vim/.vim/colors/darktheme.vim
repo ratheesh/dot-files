@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE							guifg=NONE     
 hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE							guifg=#747474 	guibg=#282a36 	gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#a0522d 	gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#c9124f 	gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE							guifg=#64666d 	guibg=NONE 	    gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold		guifg=#cc0000 	guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=196     ctermbg=NONE    cterm=underline,bold
@@ -48,12 +48,12 @@ hi Folded       ctermfg=61      ctermbg=235     cterm=NONE							guifg=#6272a4 	
 hi FoldColmun   ctermfg=246     ctermbg=235     cterm=NONE							guifg=#909194 	guibg=#44475a 	gui=NONE
 hi Boolean      ctermfg=129     ctermbg=NONE    cterm=NONE							guifg=#bd93f9 	guibg=NONE      gui=NONE
 hi Character    ctermfg=64      ctermbg=NONE    cterm=NONE							guifg=#bd93f9 	guibg=NONE      gui=NONE
-hi Comment      ctermfg=242     ctermbg=NONE    cterm=italic						guifg=#808080 	guibg=NONE      gui=italic
+hi Comment      ctermfg=242     ctermbg=NONE    cterm=italic						guifg=#808080 	guibg=NONE      gui=itaLIC
 hi Conditional  ctermfg=25      ctermbg=NONE    cterm=italic						guifg=#6494ed 	guibg=NONE      gui=NONE
 hi Constant     ctermfg=NONE    ctermbg=NONE    cterm=NONE							guifg=#5f9ea0		guibg=NONE      gui=NONE
 hi Define       ctermfg=66      ctermbg=NONE    cterm=NONE							guifg=#ff79c6 	guibg=NONE      gui=NONE
-hi ErrorMsg     ctermfg=7       ctermbg=212     cterm=NONE							guifg=#cc0000 	guibg=#303030 	gui=NONE
-hi WarningMsg   ctermfg=162     ctermbg=212     cterm=NONE							guifg=#cccc00 	guibg=#303030 	gui=NONE
+hi ErrorMsg     ctermfg=7       ctermbg=212     cterm=NONE							guifg=#fa2c77 	guibg=#303030 	gui=NONE
+hi WarningMsg   ctermfg=162     ctermbg=212     cterm=NONE							guifg=#fccc82 	guibg=#303030 	gui=NONE
 hi Float        ctermfg=141     ctermbg=NONE    cterm=NONE							guifg=#bd93f9 	guibg=NONE      gui=NONE
 hi Function     ctermfg=61      ctermbg=NONE    cterm=NONE							guifg=#50fa7b 	guibg=NONE      gui=NONE
 hi Identifier   ctermfg=246     ctermbg=NONE    cterm=NONE							guifg=#8be9fd 	guibg=NONE      gui=italic
@@ -220,10 +220,10 @@ hi diffIndexLine        ctermfg=127     ctermbg=NONE    cterm=italic    guifg=#c
 hi diffSubname          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#a0a0a0 guibg=NONE     gui=NONE
 
 " Highlight undo customization
-hi DiffAdd              ctermfg=28  ctermbg=NONE  cterm=NONE guifg=#32cd32  guibg=#383838 gui=NONE
-hi DiffDelete           ctermfg=180 ctermbg=237   cterm=NONE guifg=#fb091f  guibg=#383838 gui=NONE
-hi DiffChange           ctermfg=180 ctermbg=237   cterm=NONE guifg=#909090  guibg=#383838 gui=NONE
-hi Flashy               ctermfg=180 ctermbg=237   cterm=NONE guifg=NONE     guibg=#383838 gui=NONE
+hi DiffAdd               ctermfg=28   ctermbg=NONE   cterm=NONE    guifg=#3cbc71  guibg=#383838 gui=NONE
+hi DiffDelete            ctermfg=180  ctermbg=237    cterm=NONE    guifg=#fb091f  guibg=#383838 gui=NONE
+hi DiffChange            ctermfg=180  ctermbg=237    cterm=NONE    guifg=#909090  guibg=#383838 gui=NONE
+hi HighlightedyankRegion ctermfg=NONE ctermbg=NONE   cterm=NONE    guifg=#bdb76b  guibg=#383838 gui=NONE
 "}}}
 
 "easymotion {{{
