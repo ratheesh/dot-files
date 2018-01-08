@@ -1220,9 +1220,9 @@ if &term =~ "xterm.*"
     let &t_SI = &t_SI . "\<ESC>[?2004h"
     let &t_EI = "\<ESC>[?2004l" . &t_EI
     function XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
+	set pastetoggle=<Esc>[201~
+	set paste
+	return a:ret
     endfunction
     map <expr> <Esc>[200~  XTermPasteBegin("i")
     imap <expr> <Esc>[200~ XTermPasteBegin("")
@@ -1230,7 +1230,7 @@ if &term =~ "xterm.*"
     cmap <Esc>[200~ <nop>
     cmap <Esc>[201~ <nop>
 endif
-"}}}
+" }}}
 
 " Misc macros {{{
 " Print syntax highlight group for the work under cursor
