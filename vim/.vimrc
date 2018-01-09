@@ -123,6 +123,7 @@ Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
+Plug 'bfredl/nvim-miniyank'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'antoyo/vim-licenses'
@@ -967,6 +968,20 @@ call expand_region#custom_text_objects({
 nmap <silent><leader>y :YRShow<CR>
 " put the yankring_history file in ~/.backup
 " let g:yankring_history_dir = '~/.backup'
+" }}}
+
+" vim-miniyank {{{
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+
+" map <leader>p <Plug>(miniyank-startput)
+" map <leader>P <Plug>(miniyank-startPut)
+
+if !has('nvim')
+    map p <Plug>(miniyank-cycle)
+else
+    map <M-p> <Plug>(miniyank-cycle)
+endif
 " }}}
 
 " vim-indent-guide {{{
