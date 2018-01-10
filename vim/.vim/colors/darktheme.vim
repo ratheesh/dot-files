@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE							guifg=NONE     
 hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE							guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE							guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE							guifg=#747474 	guibg=#282a36 	gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#c9124f 	gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE							guifg=#eeeeee 	guibg=#a0522d 	gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE							guifg=#64666d 	guibg=NONE 	    gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold		guifg=#cc0000 	guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=196     ctermbg=NONE    cterm=underline,bold
