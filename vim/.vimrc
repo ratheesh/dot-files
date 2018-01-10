@@ -926,22 +926,22 @@ let g:rbpt_max         = 15
 let g:bold_parentheses = 0
 
 let g:rbpt_colorpairs = [
-    \ ['red',         'MediumVioletRed'],
-    \ ['brown',       'green3'],
-    \ ['blue',        'DarkOrchid3'],
-    \ ['gray',        'firebrick2'],
-    \ ['green',       'sienna'],
-    \ ['magenta',     'PeachPuff3'],
-    \ ['cyan',        'DodgerBlue'],
-    \ ['darkred',     'firebrick3'],
-    \ ['brown',       'RoyalBlue3'],
-    \ ['darkblue',    'DarkOrchid3'],
-    \ ['gray',        'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkmagenta', 'SeaGreen3'],
-    \ ['darkcyan',    'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+	    \ ['darkgreen',   'green3'         ],
+	    \ ['blue',        'DarkOrchid3'    ],
+	    \ ['gray',        'firebrick2'     ],
+	    \ ['green',       'sienna'         ],
+	    \ ['red',         'MediumVioletRed'],
+	    \ ['magenta',     'PeachPuff3'     ],
+	    \ ['cyan',        'DodgerBlue'     ],
+	    \ ['darkred',     'firebrick3'     ],
+	    \ ['brown',       'RoyalBlue3'     ],
+	    \ ['darkblue',    'DarkOrchid3'    ],
+	    \ ['gray',        'firebrick3'     ],
+	    \ ['darkgreen',   'RoyalBlue3'     ],
+	    \ ['darkmagenta', 'SeaGreen3'      ],
+	    \ ['darkcyan',    'DarkOrchid3'    ],
+	    \ ['red',         'firebrick3'     ],
+	    \ ]
 
 au VimEnter  * RainbowParenthesesToggle
 au BufEnter  * RainbowParenthesesLoadRound
@@ -1081,7 +1081,7 @@ inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> deoplete#close_popup()
 
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
-inoremap <expr><ESC> pumvisible() ? deoplete#close_popup() : "\<ESC>"
+" inoremap <expr><ESC> pumvisible() ? deoplete#close_popup() : "\<ESC>"
 " Close popup and delete Airlinebackward character
 " inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
