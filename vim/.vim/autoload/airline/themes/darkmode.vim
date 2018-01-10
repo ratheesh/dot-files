@@ -13,20 +13,20 @@
 
 " Color palette
 
-let s:gui01             = "#2a2a2a"
+let s:gui01             = "#2c2c2c"
 let s:gui02             = "#484848"
 let s:gui03             = "#fccc82"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#fa2c77"
 let s:gui06             = "#cdaf95"
-let s:gui07             = "#1d8d77"
-let s:gui08             = "#8b475d"
+let s:gui07             = "#28a473"
+let s:gui08             = "#00688b"
 let s:gui09             = "#1d8d77"
 let s:gui10             = "#f4a460"
 let s:guiWhite          = "#eeeeee"
 let s:guiBlack          = "#000000"
 let s:guiCFG            = "#a0a0a0"
-let s:guiChangedColor   = "#2e2e2e"
+let s:guiChangedColor   = "#2c2c2c"
 
 let s:cterm01           = "235"
 let s:cterm02           = "238"
@@ -101,7 +101,7 @@ let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate
 
 let g:airline#themes#darkmode#palette.tabline = {
 	\ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
-	\ 'airline_tabsel'  : ['#eeeeee' , '#00688b' , 0   , 66  , 'italic'],
+	\ 'airline_tabsel'  : ['#eeeeee' , '#8b475d' , 0   , 66  , 'italic'],
 	\ 'airline_tabfill' : ['#eeeeee' , '#2e2e2e' , 188 , 235 , 'none'  ],
 	\ 'airline_tabmod'  : ['#000000' , '#159867' ,  15 , 89  , 'none'  ],
 	\ 'airline_tabhid'  : ['#909090' , '#2e2e2e' , 103 , 235 , 'none'  ],
@@ -112,8 +112,8 @@ let g:airline#themes#darkmode#palette.tabline = {
 :augroup modeToggle
 " Adjust colors in darktheme.vim
 :autocmd!
-autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#c9124f 	gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#000000	guibg=#668b8b 	gui=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#a0522d 	gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#000000	guibg=#1d8d77 	gui=NONE
 
 " :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
 " :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
