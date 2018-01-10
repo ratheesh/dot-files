@@ -753,6 +753,7 @@ nnoremap <silent><Leader>ft :CtrlPBufTag<CR>
 nnoremap <silent><Leader>fT :CtrlPBufTagAll<CR>
 nnoremap <silent><Leader>fj :CtrlPJumpList<CR>
 nnoremap <silent><Leader>fp :CtrlPRegister<CR>
+nnoremap <silent><Leader>fl :CtrlPLine<CR>
 nnoremap <silent><leader>fc :CtrlPCommandPalette<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
@@ -761,7 +762,7 @@ let g:ctrlp_custom_ignore = {
         \ 'file': '\v\.(exe|so|o|dll|stgit*)$',
         \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
         \ }
-let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|__init__\.py'
 " }}}
 
 " ctrlp-funky {{{
