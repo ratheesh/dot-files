@@ -399,7 +399,6 @@ autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config f
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
 
 " Save when buffer command takes one to another file and when losing focus
-set autowrite
 augroup focus_lost
     au!
     au FocusLost * silent! wall
