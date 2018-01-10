@@ -1235,7 +1235,7 @@ let cursormode_color_map   = {
 if &term =~ "xterm.*"
     let &t_SI = &t_SI . "\<ESC>[?2004h"
     let &t_EI = "\<ESC>[?2004l" . &t_EI
-    function XTermPasteBegin(ret)
+    function! XTermPasteBegin(ret)
 	set pastetoggle=<Esc>[201~
 	set paste
 	return a:ret
