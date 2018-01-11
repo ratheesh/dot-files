@@ -103,7 +103,7 @@ hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#b
 " hi cMathOperator        ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c 	guibg=NONE      gui=NONE
 hi cLogicalOperator     ctermfg=93      ctermbg=NONE    cterm=NONE      guifg=#6089b7 	guibg=NONE      gui=NONE
 hi cPointerOperator     ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#6089b7 	guibg=NONE      gui=NONE
-hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc00cc 	guibg=NONE      gui=NONE
+hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#bb3e7e 	guibg=NONE      gui=NONE
 hi cStructure           ctermfg=132     ctermbg=NONE    cterm=italic    guifg=#d56476 	guibg=NONE      gui=italic
 hi cType                ctermfg=25      ctermbg=NONE    cterm=italic    guifg=#3285c7 	guibg=NONE      gui=italic
 hi cConstant            ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#9c547e 	guibg=NONE      gui=NONE
@@ -338,6 +338,7 @@ hi vimAutoCmd           ctermfg=12      ctermbg=NONE    cterm=NONE guifg=#1b77e9
 hi vimMapModKey         ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimNotation          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimCtrlChar          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#404040  guibg=NONE gui=NONE
+hi vimIsCommand         ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#bb3e79  guibg=NONE gui=NONE
 " }}}
 
 " Markdown: {{{

@@ -100,33 +100,29 @@ let g:airline#themes#darkmode#palette.replace_modified = airline#themes#generate
 let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate_color_map(s:V1, s:V2, s:changed)
 
 let g:airline#themes#darkmode#palette.tabline = {
-	\ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
-	\ 'airline_tabsel'  : ['#eeeeee' , '#8b475d' , 0   , 66  , 'italic'],
-	\ 'airline_tabfill' : ['#eeeeee' , '#2e2e2e' , 188 , 235 , 'none'  ],
-	\ 'airline_tabmod'  : ['#000000' , '#159867' ,  15 , 89  , 'none'  ],
-	\ 'airline_tabhid'  : ['#909090' , '#2e2e2e' , 103 , 235 , 'none'  ],
-  \ 'airline_tabtype' : ['#eeeeee' , '#b32425' , 253 , 125 , 'none'  ],
-  \ }
+            \ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
+            \ 'airline_tabsel'  : ['#eeeeee' , '#8b475d' , 0   , 66  , 'italic'],
+            \ 'airline_tabfill' : ['#eeeeee' , '#2e2e2e' , 188 , 235 , 'none'  ],
+            \ 'airline_tabmod'  : ['#000000' , '#159867' ,  15 , 89  , 'none'  ],
+            \ 'airline_tabhid'  : ['#909090' , '#2e2e2e' , 103 , 235 , 'none'  ],
+            \ 'airline_tabtype' : ['#eeeeee' , '#b32425' , 253 , 125 , 'none'  ],
+            \ }
 
 " Change colors during different modes
 :augroup modeToggle
-" Adjust colors in darktheme.vim
+" Adjust colors CursorLineNr in darktheme.vim accordingly
 :autocmd!
 autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#a0522d 	gui=NONE
 autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#000000	guibg=#1d8d77 	gui=NONE
-
-" :autocmd Insertleave   * hi TabLineSel  ctermfg=253  	ctermbg=25 cterm=italic
-" :autocmd InsertEnter   * hi TabLineSel  ctermfg=253 	ctermbg=22 cterm=italic
 :augroup END
 
-" CtrlP
+" CtrlP customization
 if !get(g:, 'loaded_ctrlp', 0)
   finish
 endif
 
 let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
 let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
-
 let s:CP3 = [ s:guiWhite , s:gui09 , s:ctermBlack , s:cterm10, 'italic' ]
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
