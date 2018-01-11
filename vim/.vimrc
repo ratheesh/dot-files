@@ -359,15 +359,16 @@ endif
 " endif
 " Remember last buffers loaded and file position
 if has('nvim')
-        "  ShaDa/viminfo:
-	"   ' - Maximum number of previously edited files marks
-	"   < - Maximum number of lines saved for each register
-	"   @ - Maximum number of items in the input-line history to be
-	"   s - Maximum size of an item contents in KiB
-	"   h - Disable the effect of 'hlsearch' when loading the shada
-  set viminfo=%,<800,'300,/50,:100,s10,h,f1,n$HOME/.config/nvim/viminfo
+    "  ShaDa/viminfo:
+    "   ' - Maximum number of previously edited files marks
+    "   < - Maximum number of lines saved for each register
+    "   @ - Maximum number of items in the input-line history to be
+    "   s - Maximum size of an item contents in KiB
+    "   h - Disable the effect of 'hlsearch' when loading the shada
+    "   set shada='50,s100,n$XDG_CACHE_HOME/nvim/shada
+  set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
 else
-  set viminfo=%,<800,'300,/50,:100,h,f1,n$HOME/.viminfo
+  set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.viminfo
 endif
 
 if (has('nvim'))
