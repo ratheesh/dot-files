@@ -399,9 +399,11 @@ let mapleader = "\<Space>"
 :augroup END
 
 " highlight command mode text
-hi Normal  ctermfg=7  ctermbg=233  cterm=NONE guifg=#cccccc guibg=#1a1a1a gui=NONE
-au CmdLineEnter * hi Normal ctermfg=2
-au CmdLineLeave * hi Normal ctermfg=253
+if !has('nvim')
+    hi Normal  ctermfg=7  ctermbg=233  cterm=NONE guifg=#cccccc guibg=#1a1a1a gui=NONE
+    au CmdLineEnter * hi Normal ctermfg=2
+    au CmdLineLeave * hi Normal ctermfg=253
+endif
 
 " Set default file types for specific file names
 autocmd BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
