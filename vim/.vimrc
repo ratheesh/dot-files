@@ -770,6 +770,7 @@ nnoremap <silent><Leader>fT :CtrlPBufTagAll<CR>
 nnoremap <silent><Leader>fj :CtrlPJumpList<CR>
 nnoremap <silent><Leader>fp :CtrlPRegister<CR>
 nnoremap <silent><Leader>fl :CtrlPLine<CR>
+nnoremap <silent><Leader>fy :CtrlPYankring<CR>
 nnoremap <silent><leader>fc :CtrlPCommandPalette<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
@@ -982,7 +983,7 @@ call expand_region#custom_text_objects({
 " }}}
 
 " YankRing {{{
-nmap <silent><leader>y :YRShow<CR>
+" nmap <silent><leader>y :YRShow<CR>
 " put the yankring_history file in ~/.backup
 " let g:yankring_history_dir = '~/.backup'
 " }}}
