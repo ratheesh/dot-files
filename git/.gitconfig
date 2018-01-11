@@ -33,13 +33,18 @@
 	whitespace = 197 reverse
 	plain      = 248
 
+[color "grep"]
+    linenumber = 162
+    match      = 142
+    filename   = 244
+
 [color "status"]
 	added     = 28
 	changed   = 180
 	untracked = 244
 
 [color "decorate"]
-	head         = 27
+	head         = 34
 	branch       = 129 italic
 	remoteBranch = 162
 	tag          = 180
@@ -68,7 +73,7 @@
 			%n%C(60)Date  %C(162):%C(132) %ad%C(8) ⌠%C(reset)%C(60)%ar%C(8)⌡%n%n%C(244)%w(0,4,4)%s%n%n%C(auto)%b"
 
 [magit]
-	extension   = stgit
+    extension   = stgit
 
 [core]
 	# editor = emacsclient -c
