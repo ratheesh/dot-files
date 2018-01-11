@@ -1248,13 +1248,13 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " vim-cursormode {{{
 let g:cursormode_exit_mode = 'd'
-let cursormode_color_map   = {
-      \   "n"     :  "#00b2ee",
-      \   "i"     :  "#ff6347",
+let cursormode_color_map = {
+      \   "n"     :  "#c0c0c0",
+      \   "i"     :  "#e75a3a",
       \   "R"     :  "#ff34be",
-      \   "v"     :  "#5eba7d",
-      \   "V"     :  "#436eee",
-      \   "\<C-V>":  "#cdaf95",
+      \   "v"     :  "#28b473",
+      \   "V"     :  "#0366d6",
+      \   "\<C-V>":  "#ffca88",
       \   "d"     :  "#eeeeee",
       \ }
 " }}}
