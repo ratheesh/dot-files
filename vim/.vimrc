@@ -431,6 +431,7 @@ augroup CursorLine
     au WinEnter     * setlocal cursorline
     au BufWinEnter  * setlocal cursorline
     au WinLeave     * setlocal nocursorline
+    au FocusGained  * setlocal cursorline
     au FocusLost    * setlocal nocursorline
 augroup END
 
