@@ -479,6 +479,11 @@ nnoremap <silent><Leader>qn     :q!<CR>
 nnoremap <silent><Leader>qp     :pclose<CR>
 nnoremap <silent><Leader>ql     :lcl<CR>
 
+" Write current buffer with sudo privileges
+" nnoremap <silent><Leader>sw     :w !sudo tee % &> /dev/null<CR>
+" Force saving files that require root permission
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
 " Move across vim split Windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
