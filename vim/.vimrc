@@ -369,7 +369,8 @@ if has('nvim')
     "   s - Maximum size of an item contents in KiB
     "   h - Disable the effect of 'hlsearch' when loading the shada
     "   set shada='50,s100,n$XDG_CACHE_HOME/nvim/shada
-  set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
+  " set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
+  set shada=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
 else
   set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.viminfo
 endif
