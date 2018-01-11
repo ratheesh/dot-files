@@ -953,22 +953,22 @@ let g:rbpt_max         = 15
 let g:bold_parentheses = 0
 
 let g:rbpt_colorpairs = [
-	    \ ['darkgreen',   'green3'         ],
-	    \ ['blue',        'DarkOrchid3'    ],
-	    \ ['gray',        'firebrick2'     ],
-	    \ ['green',       'sienna'         ],
-	    \ ['red',         'MediumVioletRed'],
-	    \ ['magenta',     'PeachPuff3'     ],
-	    \ ['cyan',        'DodgerBlue'     ],
-	    \ ['darkred',     'firebrick3'     ],
-	    \ ['brown',       'RoyalBlue3'     ],
-	    \ ['darkblue',    'DarkOrchid3'    ],
-	    \ ['gray',        'firebrick3'     ],
-	    \ ['darkgreen',   'RoyalBlue3'     ],
-	    \ ['darkmagenta', 'SeaGreen3'      ],
-	    \ ['darkcyan',    'DarkOrchid3'    ],
-	    \ ['red',         'firebrick3'     ],
-	    \ ]
+            \ ['darkgreen',   'green3'         ],
+            \ ['blue',        'DarkOrchid3'    ],
+            \ ['gray',        'firebrick2'     ],
+            \ ['green',       'sienna'         ],
+            \ ['red',         'MediumVioletRed'],
+            \ ['magenta',     'PeachPuff3'     ],
+            \ ['cyan',        'DodgerBlue'     ],
+            \ ['darkred',     'firebrick3'     ],
+            \ ['brown',       'RoyalBlue3'     ],
+            \ ['darkblue',    'DarkOrchid3'    ],
+            \ ['gray',        'firebrick3'     ],
+            \ ['darkgreen',   'RoyalBlue3'     ],
+            \ ['darkmagenta', 'SeaGreen3'      ],
+            \ ['darkcyan',    'DarkOrchid3'    ],
+            \ ['red',         'firebrick3'     ],
+            \ ]
 
 au VimEnter  * RainbowParenthesesToggle
 au BufEnter  * RainbowParenthesesLoadRound
@@ -1264,9 +1264,9 @@ if &term =~ "xterm.*"
     let &t_SI = &t_SI . "\<ESC>[?2004h"
     let &t_EI = "\<ESC>[?2004l" . &t_EI
     function! XTermPasteBegin(ret)
-	set pastetoggle=<Esc>[201~
-	set paste
-	return a:ret
+        set pastetoggle=<Esc>[201~
+        set paste
+        return a:ret
     endfunction
     map <expr> <Esc>[200~  XTermPasteBegin("i")
     imap <expr> <Esc>[200~ XTermPasteBegin("")
