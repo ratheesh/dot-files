@@ -1226,12 +1226,6 @@ let g:scratch_filetype = 'text'
 let g:highlightedyank_highlight_duration=300
 " }}}
 
-" vim-operatory-flashy {{{
-" let g:operator#flashy#flash_time=200
-" map y <Plug>(operator-flashy)
-" nmap Y <Plug>(operator-flashy)$<Paste>
-" }}}
-
 " vim-commentary {{{
 autocmd FileType expect setlocal commentstring=#\ %s
 " }}}
