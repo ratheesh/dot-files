@@ -222,7 +222,7 @@ set confirm
 " Shorten default to time to update swap files and gutter plugins
 set updatetime=500
 " Time in milliseconds waited for a mapping to complete
-set timeoutlen=550
+set timeoutlen=400
 " Time in milliseconds waited for a key code to complete
 set ttimeoutlen=0
 set wildmenu
