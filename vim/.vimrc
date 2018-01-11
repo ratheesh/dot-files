@@ -754,10 +754,9 @@ if executable('ag')
 else
         set grepprg=ag\ --nogroup\ --nocolor
         let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-        let g:ctrlp_clear_cache_on_exit = 0
 endif
 
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update =  300
 
 " let g:ctrlp_by_filename = 0
