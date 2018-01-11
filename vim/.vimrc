@@ -199,7 +199,6 @@ set bs=2
 " set ww=<,>,h,l
 set showmatch
 set matchtime=1
-set showcmd
 " set colorcolumn=81
 execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
@@ -230,7 +229,7 @@ set wildmenu
 set nobackup
 set noswapfile
 set fileformats=unix,dos,mac
-set magic
+
 " What to save for views:
 set viewoptions-=options
 set viewoptions+=slash,unix
@@ -247,6 +246,13 @@ set history=1000
 if has("persistent_undo")
 " Persistent undo (i.e vim remembers undo actions even if file is closed and
 " reopened)
+" if exists("&undofile")
+    " set undofile
+    " set undodir=$XDG_CACHE_HOME/vim/undo,$HOME/tmp,/tmp
+" endif
+
+" set undolevels=500                                  " more undo
+
     set undofile
     set undolevels=200   " Maximum number of changes that can be undone
     set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
@@ -278,7 +284,7 @@ set lazyredraw
 " set copyindent
 set gcr=a:blinkon0              " Disable cursor blink
 if has('clipboard')
-	  " set clipboard& clipboard+=unnamedplus
+	  set clipboard& clipboard+=unnamed
     set clipboard-=autoselect
 endif
 set encoding=utf-8
@@ -289,6 +295,7 @@ if !has('gui_running')
 set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
+set showtabline=2
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│,fold:-
 " set list
@@ -317,6 +324,7 @@ set novb
 if !has('nvim')
         set ttyfast
 endif
+" Text formatting options
 set formatoptions+=1
 set formatoptions+=c  " Autowrap comments using textwidth
 set formatoptions+=j  " Delete comment character when joining commented lines
