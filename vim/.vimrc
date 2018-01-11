@@ -422,10 +422,11 @@ augroup END
 
 augroup CursorLine
     au!
-    au VimEnter * setlocal cursorline
-    au WinEnter * setlocal cursorline
-    au BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
+    au VimEnter     * setlocal cursorline
+    au WinEnter     * setlocal cursorline
+    au BufWinEnter  * setlocal cursorline
+    au WinLeave     * setlocal nocursorline
+    au FocusLost    * setlocal nocursorline
 augroup END
 
 " Little welcome message!
