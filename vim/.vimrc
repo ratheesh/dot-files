@@ -411,6 +411,14 @@ augroup focus_lost
     au FocusLost * silent! wall
 augroup END
 
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorline
+    au WinEnter * setlocal cursorline
+    au BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
 " Little welcome message!
 " autocmd VimEnter * echo "Willkommen zu meinem ViM Welt! (^-^)"
 autocmd VimEnter * set noshowmode
