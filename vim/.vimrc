@@ -260,6 +260,9 @@ if has("persistent_undo")
     set undolevels=200   " Maximum number of changes that can be undone
     set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
     set undodir=$HOME/.vim/.undotree/
+    if !isdirectory(&undodir)
+        call mkdir(&undodir)
+    endif
 endif
 " Show filename and path in window title (even in terminal)
 set title
