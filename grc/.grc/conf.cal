@@ -16,4 +16,4 @@ colours=italic cyan
 =======
 # Current date
 regexp=_.\d_?.?\d?
-colours=reverse yellow
+colours=blue on_yellow
