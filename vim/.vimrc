@@ -546,8 +546,8 @@ nmap <silent><Leader><Tab>  :b#<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
 " make shift+tab and tab indent
-vnoremap > >gv
-vnoremap < <gv
+xnoremap > >gv
+xnoremap < <gv
 " imap <S-Tab> <C-o><<
 
 " Toggle keybindings
