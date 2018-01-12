@@ -56,7 +56,7 @@ Plug 'adelarsq/vim-matchit'
 " Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
-Plug 'd11wtq/ctrlp_bdelete.vim'
+Plug 'ratheesh/ctrlp_bdelete.vim'
 " Plug 'the9ball/ctrlp-gtags'
 " Plug 'mattn/ctrlp-mark'
 Plug 'mattn/ctrlp-register'
@@ -817,6 +817,7 @@ let g:ctrlp_funky_nolim            = 1
 
 " ctrlp_bdelete {{{
 call ctrlp_bdelete#init()
+let g:ctrlp_bdelete_keymap_trigger='<C-_>'
 "}}}
 
 " vim-ctrlp-tjump {{{
