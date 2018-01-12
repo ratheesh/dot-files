@@ -512,7 +512,7 @@ nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 " Write current buffer with sudo privileges
 " nnoremap <silent><Leader>sw     :w !sudo tee % &> /dev/null<CR>
 " Force saving files that require root permission
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Move across vim split Windows
 map <C-j> <C-W>j
