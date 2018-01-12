@@ -241,6 +241,7 @@ set wildmenu
 set nobackup
 set noswapfile
 set fileformats=unix,dos,mac
+set virtualedit=all
 
 " What to save for views:
 set viewoptions-=options
