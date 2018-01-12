@@ -79,7 +79,7 @@
 	# editor = emacsclient -c
 	# treat spaces before tabs, lines that are indented with 8 or more spaces,
 	# and all kinds of trailing whitespace as an error
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	whitespace = space-before-tab,trailing-space
 	pager      = /bin/less -R
 
 [apply]
