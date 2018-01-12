@@ -52,6 +52,7 @@ Plug 'zirrostig/vim-schlepp'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-smooth-scroll'
 " Plug 'adelarsq/vim-matchit'
 " Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -1236,6 +1237,13 @@ let g:gundo_prefer_python3=1
 let g:gundo_preview_bottom=1
 let g:gundo_right=1
 nnoremap <silent><Leader>u :GundoToggle<CR>
+" }}}
+
+" vim-smooth-scroll {{{
+noremap <silent><c-u> :call smooth_scroll#up(&scroll, 50, 4)<CR>
+noremap <silent><c-d> :call smooth_scroll#down(&scroll, 50, 4)<CR>
+noremap <silent><c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent><c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " }}}
 
 " scratch {{{
