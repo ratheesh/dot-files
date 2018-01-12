@@ -52,7 +52,7 @@ Plug 'zirrostig/vim-schlepp'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'terryma/vim-expand-region'
-Plug 'adelarsq/vim-matchit'
+" Plug 'adelarsq/vim-matchit'
 " Plug 'justinmk/vim-sneak'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -138,7 +138,7 @@ Plug 'kshenoy/vim-signature'
 " Plug 'luochen1990/rainbow'
 Plug 'eapache/rainbow_parentheses.vim'
 " Plug 'tpope/vim-characterize'
-Plug 'adelarsq/vim-matchit'
+" Plug 'adelarsq/vim-matchit'
 Plug 'vitalk/vim-shebang'
 Plug 'tpope/vim-endwise'
 " Plug 'vim-scripts/taglist.vim'
@@ -191,7 +191,14 @@ call plug#end()
 filetype plugin indent on
 set number relativenumber
 if !has('nvim')
-  set esckeys
+    set esckeys
+    filetype plugin indent on
+    syntax   on
+    if v:version >= 800
+	packadd! matchit
+    else
+	runtime macros/matchit.vim
+    endif
 else
   set guicursor=
 endif
