@@ -492,6 +492,22 @@ nnoremap <silent><Leader>qn     :q!<CR>
 nnoremap <silent><Leader>qp     :pclose<CR>
 nnoremap <silent><Leader>ql     :lcl<CR>
 
+" map up/down in command mode to C-p/C-u
+cnoremap <c-n>  <down>
+cnoremap <c-p>  <up>
+
+" redraw screen
+" nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l><Paste>
+
+" disable audio and visual bells
+set noerrorbells
+set novisualbell
+set t_vb=
+
+"Add empty lines
+nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
 " Write current buffer with sudo privileges
 " nnoremap <silent><Leader>sw     :w !sudo tee % &> /dev/null<CR>
 " Force saving files that require root permission
