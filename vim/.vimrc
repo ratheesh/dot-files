@@ -195,9 +195,9 @@ if !has('nvim')
     filetype plugin indent on
     syntax   on
     if v:version >= 800
-	packadd! matchit
+        packadd! matchit
     else
-	runtime macros/matchit.vim
+        runtime macros/matchit.vim
     endif
 else
   set guicursor=
