@@ -25,13 +25,22 @@ setlocal cindent
 setlocal smarttab
 setlocal autoindent
 
+let c_ansi_typedefs           = 1
+let c_ansi_constants          = 1
+let c_comment_strings         = 1
+let c_conditional_is_operator = 1
+let c_gnu                     = 1
+let c_no_curly_error          = 1
+let c_space_errors            = 1
+let c_syntax_for_h            = 1
+
 " set emacs style of indenting lines
 set cinkeys=0{,0},:,0#,!<Tab>,!^F
 
 " set customized c-indentation
 " Taken from https://github.com/halostatue/vim-config/blob/master/vimfiles/macros/c-style.vim
 " with few modifications
-setlocal cinoptions=
+setlocal cinoptions  =
 " setlocal cinoptions=:0,l1,t0,g0,(0
 setlocal cinoptions=
 setlocal cinoptions+=>s     " Normal indent by shiftwidth
@@ -65,7 +74,7 @@ setlocal cinoptions+=j1     " Anonymous classes are indented correctly.
 setlocal cinoptions+=)20    " Unclosed parens up to 20 lines away
 setlocal cinoptions+=*30    " Unclosed comments up to 30 lines away
 
-setlocal foldcolumn=2
+setlocal foldcolumn=1
 setlocal foldmethod=syntax
 
 " End of File
