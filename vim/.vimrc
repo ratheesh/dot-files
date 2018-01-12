@@ -26,7 +26,7 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
 
 " Using git URL
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
