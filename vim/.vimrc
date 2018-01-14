@@ -283,9 +283,9 @@ set autoread
 set autowrite
 set cursorline
 " set cursorcolumn
-if exists('+breakindent')
-  set breakindent showbreak=\ +
-endif
+" if exists('+breakindent')
+"   set breakindent showbreak=\ +
+" endif
 set linebreak
 if has('linebreak')
     set breakindent
