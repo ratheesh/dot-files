@@ -94,9 +94,7 @@ Plug 'mtth/scratch.vim'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'Yggdroot/indentLine'
 Plug 'ervandew/lookup'
-if !has('nvim')
 Plug 'thaerkh/vim-indentguides'
-endif
 Plug 'tpope/vim-git'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-halo'
