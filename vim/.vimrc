@@ -978,10 +978,11 @@ let g:rbpt_max         = 15
 let g:bold_parentheses = 0
 
 let g:rbpt_colorpairs = [
-            \ ['darkgreen',   'green3'         ],
-            \ ['blue',        'DarkOrchid3'    ],
             \ ['gray',        'firebrick2'     ],
-            \ ['green',       'sienna'         ],
+            \ ['darkgreen',   'SpringGreen3'   ],
+            \ ['blue',        'DodgerBlue'     ],
+            \ ['green',       'DeepPink3'      ],
+            \ ['blue',        'DarkOrchid3'    ],
             \ ['red',         'MediumVioletRed'],
             \ ['magenta',     'PeachPuff3'     ],
             \ ['cyan',        'DodgerBlue'     ],
