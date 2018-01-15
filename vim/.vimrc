@@ -1166,13 +1166,11 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " vim-move {{{
 let g:move_map_keys = 0
 if has('nvim')
-  " vmap j <Plug>MoveBlockDown
-  " vmap k <Plug>MoveBlockUp
-  nmap <M-j> <Plug>MoveLineDown
-  nmap <M-k> <Plug>MoveLineUp
+  nmap <M--> <Plug>MoveLineDown
+  nmap <M-=> <Plug>MoveLineUp
 else
-  " vmap j <Plug>MoveBlockDown
   " vmap k <Plug>MoveBlockUp
+  " vmap j <Plug>MoveBlockDown
   nmap = <Plug>MoveLineUp
   nmap - <Plug>MoveLineDown
 endif
