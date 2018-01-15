@@ -426,6 +426,7 @@ autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc
 autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
 autocmd FileType gitcommit setlocal scrolloff=0
+autocmd FileType gitcommit setlocal spell
 autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0]) " set cursor position to starting on gitcommit buffers
 autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
