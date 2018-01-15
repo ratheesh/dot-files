@@ -19,30 +19,27 @@
 syn match cDefineMacro  display '#define\s'
 
 " C math operators
-" syn match       cMathOperator     display "[-+\*/%=]"
-" C pointer operators - address of and dereference are context sensitive
-syn match       cPointerOperator  display "->\|\."
 
-" C logical   operators - boolean results
-syn match       cLogicalOperator  display "[!<>]=\="
-syn match       cLogicalOperator  display "=="
-
-" C bit operators
-syn match       cBinaryOperator   display "\(&\||\|\^\|<<\|>>\)=\="
-syn match       cBinaryOperator   display "\~"
-syn match       cBinaryOperatorError display "\~="
-
-" More C logical operators - highlight in preference to binary
-syn match       cLogicalOperator  display "&&\|||"
-syn match       cLogicalOperatorError display "\(&&\|||\)="
-
-syn cluster     cOperator         add=cPointerOperator,cLogicalOperator,cBinaryOperator,cLogicalOperatorError,cBinaryOperatorError
+syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
+syn match cOperator	"[.!~*&%<>^|=,+-]"
+syn match cOperator	"/[^/*=]"me=e-1
+syn match cOperator	"/$"
+syn match cOperator "&&\|||"
+syn match cOperator	"[][]"
 
 " data types
 syn keyword     c89Type           u8 u16 u32 uint8_t uint16_t uint32_t SINT8 UINT8 SINT16 UINT16 SINT32 UINT32 FLT DBL BOOL bool
 syn cluster     cType             contains=c89Type
 
+
+syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
+syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
+
 " default syntax highlighting
+hi def link cUserFunction cFunction
+hi def link cUserFunctionPointer cFunction
+
+hi link         cOperator Operator
 hi link         cDefineMacro cInclude
 hi link         c89Type cType
 
