@@ -117,8 +117,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
 " Plug 'WolfgangMehner/c-support'
 Plug 'vim-scripts/AutoAlign'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Plug 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-commentary'
 " Plug 'vim-scripts/DoxygenToolkit.vim'
 " Plug 'scrooloose/nerdcommenter'
@@ -940,9 +942,10 @@ let g:EasyMotion_prompt = 'Jump to → '
 "}}}
 
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger       = "<c-\>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-b>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
+let g:UltiSnipsExpandTrigger       = "<C-e>"
+let g:UltiSnipsListSnippets        = "<C-tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:indentLine_faster            = 1
 "}}}
@@ -1093,14 +1096,14 @@ nnoremap <silent><leader>th           :HardTimeToggle<CR>
 
 " neosnippet {{{
 " if  has('nvim')
-let g:neosnippet#enable_completed_snippet = 1
-imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <silent><C-k>     <Plug>(neosnippet_expand_target)
+" let g:neosnippet#enable_completed_snippet = 1
+" imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <silent><C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
+" imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
 " endif
 " }}}
 
