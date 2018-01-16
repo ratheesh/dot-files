@@ -189,12 +189,13 @@ call plug#end()
 "}}}
 
 " ViM generic settings {{{
+syntax   on
+filetype on
 filetype plugin indent on
 set number relativenumber
 if !has('nvim')
     set esckeys
     filetype plugin indent on
-    syntax   on
     if v:version >= 800
         packadd! matchit
     else
@@ -1014,12 +1015,6 @@ call expand_region#custom_text_objects({
             \ 'ic' :0,
             \ 'ac' :0,
             \ })
-" }}}
-
-" YankRing {{{
-" nmap <silent><leader>y :YRShow<CR>
-" put the yankring_history file in ~/.backup
-" let g:yankring_history_dir = '~/.backup'
 " }}}
 
 " vim-miniyank {{{
