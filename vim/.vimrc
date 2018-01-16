@@ -242,7 +242,7 @@ set wildmenu
 set nobackup
 set noswapfile
 set fileformats=unix,dos,mac
-set virtualedit=all
+" set virtualedit=all
 
 " What to save for views:
 set viewoptions-=options
@@ -458,7 +458,6 @@ autocmd VimEnter * set showcmd
 autocmd VimEnter * set wrap
 
 " Treat c-header as C source file type
-let g:c_syntax_for_h = 1
 autocmd BufNewFile,BufRead .h set filetype=ch
 
 " keybindings
@@ -1208,8 +1207,8 @@ let g:Schlepp#reindent             = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 " nnoremap <Leader>\ :NERDTreeToggle<CR>
-nnoremap <silent><Leader>v :NERDTreeFind<CR>
-nnoremap <silent><Leader>] :wincmd w<CR>
+" nnoremap <silent><Leader>v :NERDTreeFind<CR>
+" nnoremap <silent><Leader>] :wincmd w<CR>
 " }}}
 
 " cscope {{{
