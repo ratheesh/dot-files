@@ -437,12 +437,8 @@ augroup END
 
 augroup CursorLine
     au!
-    au VimEnter     * setlocal cursorline
-    au WinEnter     * setlocal cursorline
-    au BufWinEnter  * setlocal cursorline
-    au WinLeave     * setlocal nocursorline
-    au FocusGained  * setlocal cursorline
-    au FocusLost    * setlocal nocursorline
+    au VimEnter,WinEnter,BufWinEnter,FocusGained   * setlocal cursorline
+    au VimLeave,WinLeave,BufWinLeave,FocusLost     * setlocal nocursorline
 augroup END
 
 " Little welcome message!
@@ -1113,7 +1109,10 @@ let g:deoplete#file#enable_buffer_path    = 1
 let g:deoplete#max_list                   = 25
 let deoplete#tag#cache_limit_size         = 10000000
 let g:deoplete#complete_method            = "completefunc"
+
+" Don't align these lines!
 set completeopt=longest,menuone
+set pumheight=8 " set max. height of popup menu
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
