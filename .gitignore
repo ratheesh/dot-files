@@ -4,6 +4,9 @@
 org-clock-save.el
 *.dat
 **/ido*
+**/tmp/*
+**shada*
+**tmuxinator*
 tags
 TAGS
 *bookmarks*

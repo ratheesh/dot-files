@@ -239,8 +239,6 @@ set timeoutlen=500
 set ttimeout
 set ttimeoutlen=0
 set wildmenu
-set nobackup
-set noswapfile
 set fileformats=unix,dos,mac
 " set virtualedit=all
 
@@ -257,24 +255,6 @@ set magic
 set hlsearch
 set incsearch
 set history=1000
-if has("persistent_undo")
-" Persistent undo (i.e vim remembers undo actions even if file is closed and
-" reopened)
-" if exists("&undofile")
-    " set undofile
-    " set undodir=$XDG_CACHE_HOME/vim/undo,$HOME/tmp,/tmp
-" endif
-
-" set undolevels=500                                  " more undo
-
-    set undofile
-    set undolevels=200   " Maximum number of changes that can be undone
-    set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
-    set undodir=$HOME/.vim/.undotree/
-    if !isdirectory(&undodir)
-        call mkdir(&undodir)
-    endif
-endif
 " Show filename and path in window title (even in terminal)
 set title
 set showcmd
@@ -363,32 +343,6 @@ if has('nvim')
     set inccommand=nosplit
 endif
 
-" set iskeyword-=_
-
-" let python_highlight_all=1
-
-" nvim/vim
-" if has('nvim')
-    " set inccommand=split
-    " set viminfo+=n.vim-nviminfo
-" else
-    " set viminfo+=n.vim-viminfo
-" endif
-" Remember last buffers loaded and file position
-if has('nvim')
-    "  ShaDa/viminfo:
-    "   ' - Maximum number of previously edited files marks
-    "   < - Maximum number of lines saved for each register
-    "   @ - Maximum number of items in the input-line history to be
-    "   s - Maximum size of an item contents in KiB
-    "   h - Disable the effect of 'hlsearch' when loading the shada
-    "   set shada='50,s100,n$XDG_CACHE_HOME/nvim/shada
-  " set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
-  set shada=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
-else
-  set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.viminfo
-endif
-
 if (has('nvim'))
   " show results of substition as they're happening but don't open a split
   set inccommand=nosplit
@@ -405,6 +359,51 @@ let mapleader = "\<Space>"
 " }}}
 
 " General Config {{{
+" Create temporary files
+if !isdirectory($HOME.'/.vim/tmp') && exists('*mkdir')
+  call mkdir($HOME.'/.vim/tmp')
+endif
+
+if has("persistent_undo")
+    set undofile
+    set undolevels=200   " Maximum number of changes that can be undone
+    set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
+    set undodir=$HOME/.vim/tmp/undotree/
+    if !isdirectory(&undodir)
+        call mkdir(&undodir)
+    endif
+endif
+
+set backup
+set backupdir=$HOME/.vim/tmp/backup/
+set backupext=-vimbackup
+set backupskip=
+if !isdirectory(&backupdir)
+    call mkdir(&backupdir)
+endif
+
+" swap files
+set directory   =$HOME/.vim/tmp/swap//
+if !isdirectory(&directory)
+    call mkdir(&directory)
+endif
+set updatecount =100
+
+" viminfo settings
+if has('nvim')
+    "  ShaDa/viminfo:
+    "   ' - Maximum number of previously edited files marks
+    "   < - Maximum number of lines saved for each register
+    "   @ - Maximum number of items in the input-line history to be
+    "   s - Maximum size of an item contents in KiB
+    "   h - Disable the effect of 'hlsearch' when loading the shada
+    "   set shada='50,s100,n$XDG_CACHE_HOME/nvim/shada
+  " set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
+  set shada=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/shada.info
+else
+  set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.vim/tmp/viminfo
+endif
+
 " hooks
 " Relative linenumbers disabled in insertmode
 :augroup numbertoggle
