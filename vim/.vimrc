@@ -266,8 +266,14 @@ set autoread
 set autowrite
 set cursorline
 set linebreak
-set breakindent
-set showbreak=↪
+if has('linebreak')
+  try
+    set breakindent
+    let &showbreak='↪ '
+  catch /E518:/
+    " Unknown option: breakindent
+  endtry
+endif
 set cpo+=n
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
 set wmh=0    " Windows need not have height
