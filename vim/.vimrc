@@ -172,18 +172,18 @@ else
   " Plug 'zchee/deoplete-clang'
   " Plug 'tweekmonster/deoplete-clang2'
   Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+  " Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'zchee/deoplete-jedi'
-  Plug 'zchee/deoplete-go' , { 'do': 'make'}
-  Plug 'eagletmt/neco-ghc'
+  " Plug 'zchee/deoplete-go' , { 'do': 'make'}
+  " Plug 'eagletmt/neco-ghc'
   Plug 'zchee/deoplete-zsh'
 endif
 
 " Haskell plugins
-Plug 'itchyny/vim-haskell-indent'
-Plug 'sdiehl/haskell-vim-proto'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
+" Plug 'itchyny/vim-haskell-indent'
+" Plug 'sdiehl/haskell-vim-proto'
+" Plug 'eagletmt/ghcmod-vim'
+" Plug 'eagletmt/neco-ghc'
 
 call plug#end()
 "}}}
