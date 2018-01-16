@@ -166,17 +166,17 @@ Plug 'lilydjwg/colorizer'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
-  " Plug 'zchee/deoplete-clang'
-  " Plug 'tweekmonster/deoplete-clang2'
-  Plug 'roxma/nvim-yarp'
-  " Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'zchee/deoplete-jedi'
-  " Plug 'zchee/deoplete-go' , { 'do': 'make'}
-  " Plug 'eagletmt/neco-ghc'
-  Plug 'zchee/deoplete-zsh'
+    Plug 'Shougo/deoplete.nvim'
+    " Plug 'zchee/deoplete-clang'
+    " Plug 'tweekmonster/deoplete-clang2'
+    Plug 'roxma/nvim-yarp'
+    " Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'zchee/deoplete-jedi'
+    " Plug 'zchee/deoplete-go' , { 'do': 'make'}
+    " Plug 'eagletmt/neco-ghc'
+    Plug 'zchee/deoplete-zsh'
 endif
 
 " Haskell plugins
@@ -201,7 +201,7 @@ if !has('nvim')
         runtime macros/matchit.vim
     endif
 else
-  set guicursor=
+    set guicursor=
 endif
 set nostartofline
 set numberwidth=1
@@ -216,15 +216,15 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 set ruler
 set nofoldenable    " disable folding
 if has('wildmenu')
-	set nowildmenu
-	set wildmode=list:longest,full
-	set wildoptions=tagfile
-	set wildignorecase
-	set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
-	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
-	set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
-	set wildignore+=application/vendor/**,**/vendor/ckeditor/**,media/vendor/**
-	set wildignore+=__pycache__,*.egg-info
+    set nowildmenu
+    set wildmode=list:longest,full
+    set wildoptions=tagfile
+    set wildignorecase
+    set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+    set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+    set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+    set wildignore+=application/vendor/**,**/vendor/ckeditor/**,media/vendor/**
+    set wildignore+=__pycache__,*.egg-info
 endif
 " Abbreviations of messages and avoid 'hit enter' prompt
 set shortmess+=aoOtTIc
@@ -281,7 +281,7 @@ set lazyredraw
 " set copyindent
 set gcr=a:blinkon0              " Disable cursor blink
 if has('clipboard')
-	  set clipboard& clipboard+=unnamed
+    set clipboard& clipboard+=unnamed
     set clipboard-=autoselect
 endif
 set encoding=utf-8
@@ -289,7 +289,7 @@ set scrolloff=3       " Show next 3 lines while scrolling.
 set sidescrolloff=5   " Show next 5 columns while side-scrolling.
 set laststatus=2
 if !has('gui_running')
-set t_Co=256  " Support for 256 colors
+    set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
 set showtabline=2
@@ -319,7 +319,7 @@ au BufRead,BufNewFile,BufWrite *.exp,*.c,*.sh,*shrc setlocal nospell
 " set shortmess+=I
 set novb
 if !has('nvim')
-        set ttyfast
+    set ttyfast
 endif
 " Text formatting options
 set formatoptions+=1
@@ -344,16 +344,16 @@ if has('nvim')
 endif
 
 if (has('nvim'))
-  " show results of substition as they're happening but don't open a split
-  set inccommand=nosplit
+    " show results of substition as they're happening but don't open a split
+    set inccommand=nosplit
 endif
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd BufWritePost
-    \ * if &l:filetype ==# '' || exists('b:ftdetect')
-    \ |   unlet! b:ftdetect
-    \ |   filetype detect
-    \ | endif
+            \ * if &l:filetype ==# '' || exists('b:ftdetect')
+            \ |   unlet! b:ftdetect
+            \ |   filetype detect
+            \ | endif
 
 let mapleader = "\<Space>"
 " }}}
@@ -361,7 +361,7 @@ let mapleader = "\<Space>"
 " General Config {{{
 " Create temporary files
 if !isdirectory($HOME.'/.vim/tmp') && exists('*mkdir')
-  call mkdir($HOME.'/.vim/tmp')
+    call mkdir($HOME.'/.vim/tmp')
 endif
 
 if has("persistent_undo")
@@ -398,10 +398,10 @@ if has('nvim')
     "   s - Maximum size of an item contents in KiB
     "   h - Disable the effect of 'hlsearch' when loading the shada
     "   set shada='50,s100,n$XDG_CACHE_HOME/nvim/shada
-  " set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
-  set shada=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/shada.info
+    " set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
+    set shada=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/shada.info
 else
-  set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.vim/tmp/viminfo
+    set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.vim/tmp/viminfo
 endif
 
 " hooks
@@ -481,9 +481,9 @@ inoremap jj l
 nnoremap ' `
 nnoremap ` '
 if  has('nvim')
-nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
+    nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
 else
-nnoremap <silent><Leader>so     :source $MYVIMRC<CR>
+    nnoremap <silent><Leader>so     :source $MYVIMRC<CR>
 endif
 nnoremap <silent><Leader>w      :w<CR>
 " nnoremap <silent><Leader>ws     :w !sudo tee %
@@ -589,13 +589,13 @@ let g:load_doxygen_syntax = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 
 if has('nvim')
-  set mouse=nicr
+    set mouse=nicr
 else
-  set mouse=a
+    set mouse=a
 endif
 " let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled         = 0
@@ -691,60 +691,60 @@ endif
 
 " let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
 " let g:airline#extensions#tabline#buffer_idx_format = {
-        " \ '0': '⁰ ',
-        " \ '1': '೧ ',
-        " \ '2': '೨ ',
-        " \ '3': '೩ ',
-        " \ '4': '೪ ',
-        " \ '5': '೫ ',
-        " \ '6': '೬ ',
-        " \ '7': '೭ ',
-        " \ '8': '೮ ',
-        " \ '9': '೯ '
-        " \ }
+" \ '0': '⁰ ',
+" \ '1': '೧ ',
+" \ '2': '೨ ',
+" \ '3': '೩ ',
+" \ '4': '೪ ',
+" \ '5': '೫ ',
+" \ '6': '೬ ',
+" \ '7': '೭ ',
+" \ '8': '೮ ',
+" \ '9': '೯ '
+" \ }
 
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 " let g:airline#extensions#default#section_truncate_width = {
-                        " \ 'c': 30,
-                        " \ }
+" \ 'c': 30,
+" \ }
 
 let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'Ɲѳrmαl',
-      \ 'i'  : '¶ƞsεrt',
-      \ 'R'  : 'Rερlαcε',
-      \ 'c'  : '₵md',
-      \ 'v'  : 'Ʋisuαl',
-      \ 'V'  : 'Ʋ-Liƞε',
-      \ '' : 'Ʋ-ẞlѳck',
-      \ 's'  : 'Subst',
-      \ 'S'  : 'Subst-Liƞε',
-      \ '' : 'Subst-ẞlk',
-      \ }
+            \ '__' : '-',
+            \ 'n'  : 'Ɲѳrmαl',
+            \ 'i'  : '¶ƞsεrt',
+            \ 'R'  : 'Rερlαcε',
+            \ 'c'  : '₵md',
+            \ 'v'  : 'Ʋisuαl',
+            \ 'V'  : 'Ʋ-Liƞε',
+            \ '' : 'Ʋ-ẞlѳck',
+            \ 's'  : 'Subst',
+            \ 'S'  : 'Subst-Liƞε',
+            \ '' : 'Subst-ẞlk',
+            \ }
 " }}}
 
 " lightline {{{
 let g:lightline = {
-        \ 'colorscheme': 'Dracula',
-        \ 'active': {
-        \   'right': [ [ 'lineinfo' ],
-        \              [ 'percent' ],
-        \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-        \       },
-        \ 'enable': {
-        \       'statusline': 1,
-        \       'tabline': 1,
-        \ },
-        \ 'component': {
-        \   'charvaluehex': '0x%B'
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
-        \ },
-        \ }
+            \ 'colorscheme': 'Dracula',
+            \ 'active': {
+            \   'right': [ [ 'lineinfo' ],
+            \              [ 'percent' ],
+            \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+            \       },
+            \ 'enable': {
+            \       'statusline': 1,
+            \       'tabline': 1,
+            \ },
+            \ 'component': {
+            \   'charvaluehex': '0x%B'
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head'
+            \ },
+            \ }
 "}}}
 
 " Vim-licenses {{{
@@ -762,15 +762,15 @@ let g:sneak#s_next = 1
 
 " CtrlP {{{
 let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
-        \ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
+            \ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-        let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
-        let g:ctrlp_use_caching = 0
+    let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
 else
-        set grepprg=ag\ --nogroup\ --nocolor
-        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 endif
 
 let g:ctrlp_clear_cache_on_exit = 1
@@ -780,7 +780,7 @@ let g:ctrlp_lazy_update =  300
 " let g:ctrlp_follow_symlinks = 0
 
 " if executable('fzf')
-        " nnoremap <Leader>ff :FZF<CR>
+" nnoremap <Leader>ff :FZF<CR>
 " endif
 
 let g:ctrlp_match_window = 'min:1,max:10,results:100'
@@ -812,10 +812,10 @@ nnoremap <silent><leader>fc :CtrlPCommandPalette<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-        \ 'file': '\v\.(exe|so|o|dll|stgit*)$',
-        \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-        \ }
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|o|dll|stgit*)$',
+            \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+            \ }
 let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|__init__\.py'
 " }}}
 
@@ -860,9 +860,9 @@ vnoremap <silent><Leader>cc :CtrlPagVisual<CR>
 nnoremap <leader>ca :CtrlPagLocate<space>
 nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
-    \ --ignore "deps/*"
-    \ --ignore "_build/*"
-    \ --ignore "node_modules/*"'
+            \ --ignore "deps/*"
+            \ --ignore "_build/*"
+            \ --ignore "node_modules/*"'
 " }}}
 
 " supertab  {{{
@@ -871,24 +871,24 @@ let g_SuperTabDefaultCompletionType="context"
 
 " vim-startify {{{
 let g:startify_custom_header = get(g:, 'startify_custom_header', [
-  \'',
-  \'',
-  \'			 _    __ _  __  ___ __',
-  \'			| |  / /(_)/  |/  // /',
-  \'			| | / // // /|_/ // /',
-  \'			| |/ // // /  / //_/',
-  \'			|___//_//_/  /_/(_)',
-  \'',
-  \'',
-  \ ])
-  " }}}
+            \'',
+            \'',
+            \'			 _    __ _  __  ___ __',
+            \'			| |  / /(_)/  |/  // /',
+            \'			| | / // // /|_/ // /',
+            \'			| |/ // // /  / //_/',
+            \'			|___//_//_/  /_/(_)',
+            \'',
+            \'',
+            \ ])
+" }}}
 let g:startify_bookmarks = [
-                        \       {'c': '~/.vimrc'     },
-                        \       {'g': '~/.gitconfig' },
-                        \       {'s': '~/.screenrc'  },
-                        \       {'t': '~/.tmux.conf' },
-                        \       {'z': '~/.zshrc'     },
-                        \ ]
+            \       {'c': '~/.vimrc'     },
+            \       {'g': '~/.gitconfig' },
+            \       {'s': '~/.screenrc'  },
+            \       {'t': '~/.tmux.conf' },
+            \       {'z': '~/.zshrc'     },
+            \ ]
 " }}}
 
 " vim-signify {{{
@@ -907,9 +907,9 @@ nmap <leader>sp <plug>(signify-prev-hunk)
 " vim-gitgutter {{{
 let g:gitgutter_override_sign_column_highlight = 0
 if exists('&signcolumn')  " Vim 7.4.2201
-        set signcolumn=yes
+    set signcolumn=yes
 else
-        let g:gitgutter_sign_column_always = 1
+    let g:gitgutter_sign_column_always = 1
 endif
 
 " let g:gitgutter_eager = 1 " Update when switching/writing buffers
@@ -1008,18 +1008,18 @@ au BufEnter  * RainbowParenthesesLoadBraces
 " nmap J <Plug>(expand_region_shrink)
 
 call expand_region#custom_text_objects({
-    \ 'a]' :1,
-    \ 'ab' :1,
-    \ 'aB' :1,
-    \ 'ii' :0,
-    \ 'ai' :0,
-    \ 'iI' :0,
-    \ 'aI' :0,
-    \ 'if' :0,
-    \ 'af' :0,
-    \ 'ic' :0,
-    \ 'ac' :0,
-    \ })
+            \ 'a]' :1,
+            \ 'ab' :1,
+            \ 'aB' :1,
+            \ 'ii' :0,
+            \ 'ai' :0,
+            \ 'iI' :0,
+            \ 'aI' :0,
+            \ 'if' :0,
+            \ 'af' :0,
+            \ 'ic' :0,
+            \ 'ac' :0,
+            \ })
 " }}}
 
 " YankRing {{{
@@ -1111,7 +1111,7 @@ nnoremap <silent><leader>th           :HardTimeToggle<CR>
 set completeopt+=noinsert
 let g:deoplete#enable_at_startup          = 1
 if !has('nvim')
-let g:deoplete#enable_yarp                = 1
+    let g:deoplete#enable_yarp                = 1
 endif
 let g:deoplete#enable_refresh_always      = 1
 let g:deoplete#auto_complete_delay        = 50
@@ -1141,13 +1141,13 @@ inoremap <expr><C-g> deoplete#undo_completion()
 
 " let g:deoplete#disable_auto_complete = 1
 inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 " Use Tab to forward cycle
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -1165,28 +1165,28 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " vim-move {{{
 let g:move_map_keys = 0
 if has('nvim')
-  nmap <M--> <Plug>MoveLineDown
-  nmap <M-=> <Plug>MoveLineUp
+    nmap <M--> <Plug>MoveLineDown
+    nmap <M-=> <Plug>MoveLineUp
 else
-  " vmap k <Plug>MoveBlockUp
-  " vmap j <Plug>MoveBlockDown
-  nmap = <Plug>MoveLineUp
-  nmap - <Plug>MoveLineDown
+    " vmap k <Plug>MoveBlockUp
+    " vmap j <Plug>MoveBlockDown
+    nmap = <Plug>MoveLineUp
+    nmap - <Plug>MoveLineDown
 endif
 " }}}
 
 " vim-schlepp {{{
 " Move block/lines as you wish
 if has('nvim')
-  vmap <M-k> <Plug>SchleppUp
-  vmap <M-j> <Plug>SchleppDown
-  vmap <M-h> <Plug>SchleppLeft
-  vmap <M-l> <Plug>SchleppRight
+    vmap <M-k> <Plug>SchleppUp
+    vmap <M-j> <Plug>SchleppDown
+    vmap <M-h> <Plug>SchleppLeft
+    vmap <M-l> <Plug>SchleppRight
 else
-  vmap k <Plug>SchleppUp
-  vmap j <Plug>SchleppDown
-  vmap h <Plug>SchleppLeft
-  vmap l <Plug>SchleppRight
+    vmap k <Plug>SchleppUp
+    vmap j <Plug>SchleppDown
+    vmap h <Plug>SchleppLeft
+    vmap l <Plug>SchleppRight
 endif
 
 " Duplication selection region
@@ -1216,18 +1216,18 @@ map <C-n> :NERDTreeToggle<CR>
 let g:cscope_silent = 1
 
 if has("cscope")
-        set csprg=/usr/bin/cscope
-        set csto=0
-        set cst
-        set nocsverb
-        " add any database in current directory
-        if filereadable("cscope.out")
-            cs add cscope.out
+    set csprg=/usr/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
         " else add database pointed to by environment
-        elseif $CSCOPE_DB != ""
-            cs add $CSCOPE_DB
-        endif
-        set csverb
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
 endif
 " }}}
 
@@ -1279,14 +1279,14 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 " vim-cursormode {{{
 let g:cursormode_exit_mode = 'd'
 let cursormode_color_map = {
-      \   "n"     :  "#c0c0c0",
-      \   "i"     :  "#e75a3a",
-      \   "R"     :  "#ff34be",
-      \   "v"     :  "#28b473",
-      \   "V"     :  "#0366d6",
-      \   "\<C-V>":  "#ffca88",
-      \   "d"     :  "#eeeeee",
-      \ }
+            \   "n"     :  "#c0c0c0",
+            \   "i"     :  "#e75a3a",
+            \   "R"     :  "#ff34be",
+            \   "v"     :  "#28b473",
+            \   "V"     :  "#0366d6",
+            \   "\<C-V>":  "#ffca88",
+            \   "d"     :  "#eeeeee",
+            \ }
 " }}}
 
 " bracket-paste settings {{{
@@ -1309,13 +1309,13 @@ endif
 " Misc macros {{{
 " Print syntax highlight group for the work under cursor
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " }}}
 
 " Use guicolors in terminal (we need to place this here as it is easy to disable!)
 if has("termguicolors")
-  set termguicolors
+    set termguicolors
 endif
 
 " Autoload vimrc on save
