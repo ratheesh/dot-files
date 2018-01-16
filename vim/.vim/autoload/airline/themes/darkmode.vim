@@ -18,9 +18,9 @@ let s:gui02             = "#484848"
 let s:gui03             = "#fccc82"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#fa2c77"
-let s:gui06             = "#cdaf95"
-let s:gui07             = "#28a473"
-let s:gui08             = "#00688b"
+let s:gui06             = "#d7875f"
+let s:gui07             = "#00875f"
+let s:gui08             = "#136ca7"
 let s:gui09             = "#1d8d77"
 let s:gui10             = "#f4a460"
 let s:guiWhite          = "#eeeeee"
@@ -50,7 +50,7 @@ let s:N2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:N3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 , 'italic']
 
 " Insert mode
-let s:I1 = [ s:guiBlack , s:gui07 , s:ctermBlack  , s:cterm08 ]
+let s:I1 = [ s:guiWhite , s:gui07 , s:ctermBlack  , s:cterm08 ]
 let s:I2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:I3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 ]
 
