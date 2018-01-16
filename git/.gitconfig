@@ -1,98 +1,98 @@
 [alias]
-	lg          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	undopush    = push -f origin HEAD^:master
-	tags        = tag -l
-	branches    = branch -a
-	remotes     = remote -v
-	cv          = commit -v
+  lg          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+  undopush    = push -f origin HEAD^:master
+  tags        = tag -l
+  branches    = branch -a
+  remotes     = remote -v
+  cv          = commit -v
   checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
 
 [user]
-	name       = Ratheesh S
-	email      = ratheeshreddy@gmail.com
-	signingkey = B5A8692EC05DCFEA
+  name       = Ratheesh S
+  email      = ratheeshreddy@gmail.com
+  signingkey = B5A8692EC05DCFEA
 
 [color]
-	ui          = true
-	diff        = true
-	status      = true
-	branch      = true
-	interactive = true
-	pager       = true
+  ui          = true
+  diff        = true
+  status      = true
+  branch      = true
+  interactive = true
+  pager       = true
 
 [color "branch"]
-	current    = 27 italic
-	local      = 180
-	remote     = 65
+  current    = 27 italic
+  local      = 180
+  remote     = 65
 
 [color "diff"]
-	meta       = 95
-	frag       = 180
-	old        = 161
-	new        = 28
-	whitespace = 197 reverse
-	plain      = 248
+  meta       = 95
+  frag       = 180
+  old        = 161
+  new        = 28
+  whitespace = 197 reverse
+  plain      = 248
 
 [color "grep"]
-    linenumber = 162
-    match      = 142
-    filename   = 244
+  linenumber = 162
+  match      = 142
+  filename   = 244
 
 [color "status"]
-	added     = 28
-	changed   = 180
-	untracked = 244
+  added     = 28
+  changed   = 180
+  untracked = 244
 
 [color "decorate"]
-	head         = 34
-	branch       = 129 italic
-	remoteBranch = 162
-	tag          = 180
+  head         = 34
+  branch       = 129 italic
+  remoteBranch = 162
+  tag          = 180
 
 [merge]
-	# include summaries of merged commits in newly created merge commit messages
-	log = true
+  # include summaries of merged commits in newly created merge commit messages
+  log = true
 
 [sendemail]
-	from           = Ratheesh S <ratheeshreddy@gmail.com>
-	chainreplyto   = false
-	smtpencryption = tls
-	smtpserver     = smtp.gmail.com
-	smtpserverport = 587
-	smtpuser       = ratheeshreddy@gmail.com
+  from           = Ratheesh S <ratheeshreddy@gmail.com>
+  chainreplyto   = false
+  smtpencryption = tls
+  smtpserver     = smtp.gmail.com
+  smtpserverport = 587
+  smtpuser       = ratheeshreddy@gmail.com
 
 [oh-my-zsh]
-	hide-status = 1
+  hide-status = 1
 
 [log]
-	decorate    = auto
+  decorate    = auto
 
 [format]
-	pretty      = format:"%C(60)Commit%C(162): %C(137)%H%C(auto)%d\
-			%n%C(60)Author%C(162):%C(26 italic) %aN %C(reset)%C(162 bold)«%C(reset)%C(66 italic)%aE%C(reset)%C(162 bold)»\
-			%n%C(60)Date  %C(162):%C(132) %ad%C(8) ⌠%C(reset)%C(60)%ar%C(8)⌡%n%n%C(244)%w(0,4,4)%s%n%n%C(auto)%b"
+  pretty      = format:"%C(60)Commit%C(162): %C(137)%H%C(auto)%d\
+    %n%C(60)Author%C(162):%C(26 italic) %aN %C(reset)%C(162 bold)«%C(reset)%C(66 italic)%aE%C(reset)%C(162 bold)»\
+    %n%C(60)Date  %C(162):%C(132) %ad%C(8) ⌠%C(reset)%C(60)%ar%C(8)⌡%n%n%C(244)%w(0,4,4)%s%n%n%C(auto)%b"
 
 [magit]
-    extension   = stgit
+  extension   = stgit
 
 [core]
-	# editor = emacsclient -c
-	# treat spaces before tabs, lines that are indented with 8 or more spaces,
-	# and all kinds of trailing whitespace as an error
-	whitespace = space-before-tab,trailing-space
-	pager      = /bin/less -R
+  # editor = emacsclient -c
+  # treat spaces before tabs, lines that are indented with 8 or more spaces,
+  # and all kinds of trailing whitespace as an error
+  whitespace = space-before-tab,trailing-space
+  pager      = /bin/less -R
 
 [apply]
-	# detect whitespace errors when applying a patch
-	whitespace      = fix
+  # detect whitespace errors when applying a patch
+  whitespace      = fix
 
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 
 [credential]
-	helper          = cache --timeout=3600
+  helper          = cache --timeout=3600
 
 [commit]
-	verbose         = true
+  verbose         = true
 
 # End of File
