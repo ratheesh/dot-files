@@ -153,7 +153,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jalvesaq/vimcmdline'
 " Plug 'rhysd/vim-grammarous'
 " Plug 'pelodelfuego/vim-swoop'
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', {'branch': 'develop'}
 " Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 " Plug 'Vimjas/vim-python-pep8-indent'
 " Plug 'ntpeters/vim-airline-colornum'
@@ -173,10 +173,10 @@ else
     " Plug 'tweekmonster/deoplete-clang2'
     Plug 'roxma/nvim-yarp'
     " Plug 'roxma/vim-hug-neovim-rpc'
-    Plug 'zchee/deoplete-jedi'
+    " Plug 'zchee/deoplete-jedi'
     " Plug 'zchee/deoplete-go' , { 'do': 'make'}
     " Plug 'eagletmt/neco-ghc'
-    Plug 'zchee/deoplete-zsh'
+    " Plug 'zchee/deoplete-zsh'
 endif
 
 " Haskell plugins
@@ -574,6 +574,12 @@ color darktheme
 " Tagbar {{{
 nmap <silent><F8>            :TagbarToggle<CR>
 nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
+" }}}
+
+
+" python-mode {{{
+let g:pymode_options = 0
+let g:pymode_options_colorcolumn = 1
 " }}}
 
 " Doxygen {{{
