@@ -1254,7 +1254,7 @@ let g:scratch_filetype = 'text'
 
 " vim-highlightedyank {{{
 " NOTE: Enabling yankring plugin breaks this functionality!
-let g:highlightedyank_highlight_duration=250
+let g:highlightedyank_highlight_duration=200
 " }}}
 
 " vim-commentary {{{
@@ -1263,6 +1263,8 @@ autocmd FileType expect setlocal commentstring=#\ %s
 
 " vim-highlightedundo {{{
 let g:highlightedundo#highlight_mode = 2
+let g:highlightedundo#highlight_duration_delete=200
+let g:highlightedundo#highlight_duration_add=200
 nmap u     <Plug>(highlightedundo-undo)
 nmap <C-r> <Plug>(highlightedundo-redo)
 nmap U     <Plug>(highlightedundo-Undo)
