@@ -590,7 +590,7 @@ let g:load_doxygen_syntax = 1
 " let g:airline_highlighting_cache = 0
 
 " Appearance
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -636,7 +636,7 @@ let g:airline_symbols.readonly = ''
 " Customize Airline Layout
 function! AirlineInit()
     call airline#parts#define_accent('mode', 'italic')
-    call airline#parts#define_accent('branch', 'italic')
+    " call airline#parts#define_accent('branch', 'italic')
     call airline#parts#define_raw('linenr', '%l')
     call airline#parts#define_accent('linenr', 'bold')
     call airline#parts#define_raw('modified', '%{&modified ? "[+]" : ""}')
@@ -691,6 +691,8 @@ if !exists('g:airline_powerline_fonts')
     let g:airline#extensions#tabline#left_alt_sep  = '|'
     let g:airline#extensions#tabline#right_sep     = ''
     let g:airline#extensions#tabline#right_alt_sep = '|'
+    let g:airline_left_alt_sep                     = '│'
+    let g:airline_right_alt_sep                    = '│'
 endif
 
 " let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
