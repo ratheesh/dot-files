@@ -590,7 +590,7 @@ let g:load_doxygen_syntax = 1
 " let g:airline_highlighting_cache = 0
 
 " Appearance
-let g:airline_powerline_fonts = 0
+" let g:airline_powerline_fonts = 0
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -628,7 +628,7 @@ let g:airline#extensions#branch#enabled              = 1
 let g:airline#extensions#branch#displayed_head_limit = 20
 
 let g:airline_symbols.paste = 'ραstε'
-" let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.branch = '±'
 " let g:airline_symbols.spell = 'Ꞩ'
 " let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.readonly = ''
@@ -688,26 +688,26 @@ nmap <silent><leader>h <Plug>AirlineSelectPrevTab
 nmap <silent><leader>l <Plug>AirlineSelectNextTab
 if !exists('g:airline_powerline_fonts')
     let g:airline#extensions#tabline#left_sep      = ''
-    let g:airline#extensions#tabline#left_alt_sep  = '|'
+    let g:airline#extensions#tabline#left_alt_sep  = '│'
     let g:airline#extensions#tabline#right_sep     = ''
-    let g:airline#extensions#tabline#right_alt_sep = '|'
+    let g:airline#extensions#tabline#right_alt_sep = '│'
     let g:airline_left_alt_sep                     = '│'
     let g:airline_right_alt_sep                    = '│'
 endif
 
 " let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
-let g:airline#extensions#tabline#buffer_idx_format = {
-\ '0': '⁰ ',
-\ '1': '೧ ',
-\ '2': '೨ ',
-\ '3': '೩ ',
-\ '4': '೪ ',
-\ '5': '೫ ',
-\ '6': '೬ ',
-\ '7': '೭ ',
-\ '8': '೮ ',
-\ '9': '೯ '
-\ }
+" let g:airline#extensions#tabline#buffer_idx_format = {
+" \ '0': '⁰ ',
+" \ '1': '೧ ',
+" \ '2': '೨ ',
+" \ '3': '೩ ',
+" \ '4': '೪ ',
+" \ '5': '೫ ',
+" \ '6': '೬ ',
+" \ '7': '೭ ',
+" \ '8': '೮ ',
+" \ '9': '೯ '
+" \ }
 
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
