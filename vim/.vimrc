@@ -104,6 +104,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'osyo-manga/vim-anzu'
 " Plug 'itchyny/lightline.vim'
 " Plug 'ap/vim-buftabline'
 " Plug 'unblevable/quick-scope'
@@ -676,6 +677,7 @@ let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
 let g:airline#extensions#cursormode#enabled       = 1
+let g:airline#extensions#anzu#enabled             = 1
 nmap <silent><leader>1 <Plug>AirlineSelectTab1
 nmap <silent><leader>2 <Plug>AirlineSelectTab2
 nmap <silent><leader>3 <Plug>AirlineSelectTab3
@@ -729,6 +731,13 @@ let g:airline_mode_map = {
             \ 'S'  : 'Subst-Liƞε',
             \ '' : 'Subst-ẞlk',
             \ }
+" }}}
+
+" vim-anzu {{{
+nmap n <Plug>(anzu-n)
+nmap N <Plug>(anzu-N)
+nmap * <Plug>(anzu-star)
+nmap # <Plug>(anzu-sharp)
 " }}}
 
 " lightline {{{
