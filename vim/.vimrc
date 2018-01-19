@@ -121,7 +121,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Shougo/neosnippet'
 " Plug 'Shougo/neosnippet-snippets'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 " Plug 'vim-scripts/DoxygenToolkit.vim'
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
@@ -861,8 +862,8 @@ let g:ctrlp_yankring_minimum_chars   = 2
 " }}}
 
 " vim-ctrlp-ag {{{
-nnoremap <silent><Leader>cc :CtrlPag<CR>
-vnoremap <silent><Leader>cc :CtrlPagVisual<CR>
+nnoremap <silent><Leader>gg :CtrlPag<CR>
+vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
 nnoremap <leader>ca :CtrlPagLocate<space>
 nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
@@ -1261,6 +1262,14 @@ let g:highlightedyank_highlight_duration=200
 
 " vim-commentary {{{
 autocmd FileType expect setlocal commentstring=#\ %s
+" }}}
+
+" tcomment {{{
+let g:tcommentMaps = 0
+nnoremap <silent><leader>cc :TComment<CR>
+vnoremap <silent><leader>cc :TComment<CR>
+" nnoremap <silent><leader>cb :TCommentBlock<CR>
+" vnoremap <silent><leader>cb :TCommentBlock<CR>
 " }}}
 
 " vim-highlightedundo {{{
