@@ -341,11 +341,6 @@ set lbr
 " This causes issues with pasting using shift-Insert
 " set t_BE=
 
-" Show the effect of substitute incrementally
-if has('nvim')
-    set inccommand=nosplit
-endif
-
 if (has('nvim'))
     " show results of substition as they're happening but don't open a split
     set inccommand=nosplit
