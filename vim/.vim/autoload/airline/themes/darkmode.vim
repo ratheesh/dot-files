@@ -20,7 +20,7 @@ let s:gui04             = "#bd93f9"
 let s:gui05             = "#fa2c77"
 let s:gui06             = "#d7875f"
 let s:gui07             = "#00875f"
-let s:gui08             = "#136ca7"
+let s:gui08             = "#bfc1c7"
 let s:gui09             = "#1d8d77"
 let s:gui10             = "#f4a460"
 let s:guiWhite          = "#eeeeee"
@@ -45,7 +45,7 @@ let s:ctermBlack        = "16"
 let s:ctermChangedColor = "60"
 
 " Normal mode
-let s:N1 = [ s:guiWhite , s:gui08 , s:ctermWhite  , s:cterm07 ]
+let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite  , s:cterm07 ]
 let s:N2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:N3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 , 'italic']
 
@@ -101,9 +101,9 @@ let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate
 
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
-            \ 'airline_tabsel'  : ['#000000' , '#6e9884' , 0   , 66  , 'none'  ],
+            \ 'airline_tabsel'  : ['#eeeeee' , '#4682b4' , 0   , 66  , 'none'  ],
             \ 'airline_tabfill' : ['#eeeeee' , '#2e2e2e' , 188 , 235 , 'none'  ],
-            \ 'airline_tabmod'  : ['#000000' , '#c5788c' ,  15 , 89  , 'none'  ],
+            \ 'airline_tabmod'  : ['#eeeeee' , '#1d8d77' ,  15 , 89  , 'none'  ],
             \ 'airline_tabhid'  : ['#909090' , '#2e2e2e' , 103 , 235 , 'none'  ],
             \ 'airline_tabtype' : ['#eeeeee' , '#b32425' , 253 , 125 , 'none'  ],
             \ }
@@ -112,8 +112,8 @@ let g:airline#themes#darkmode#palette.tabline = {
 :augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 :autocmd!
-autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#8e2256 	gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#000000	guibg=#748273 	gui=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0	ctermbg=137 cterm=NONE guifg=#eeeeee	guibg=#a42171 	gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0	ctermbg=66  cterm=NONE guifg=#eeeeee   	guibg=#1d8d77 	gui=NONE
 :augroup END
 
 " CtrlP customization
