@@ -738,6 +738,10 @@ nmap n <Plug>(anzu-n)
 nmap N <Plug>(anzu-N)
 nmap * <Plug>(anzu-star)
 nmap # <Plug>(anzu-sharp)
+
+" This command is an overridden one to make sure otherone works if this plugin
+" is disabled
+nmap <silent><BS>       :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}
 
 " lightline {{{
