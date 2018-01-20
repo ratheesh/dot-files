@@ -1137,7 +1137,7 @@ let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path    = 1
 let g:deoplete#max_list                   = 25
 let deoplete#tag#cache_limit_size         = 10000000
-let g:deoplete#complete_method            = "completefunc"
+" let g:deoplete#complete_method            = "completefunc"
 
 " Don't align these lines!
 set completeopt=longest,menuone
@@ -1150,21 +1150,22 @@ inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> deoplete#close_popup()
 
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
-" inoremap <expr><ESC> pumvisible() ? deoplete#close_popup() : "\<ESC>"
-" Close popup and delete Airlinebackward character
-" inoremap <expr><BS> deoplete#smart_close_popup()."\<BS>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
 inoremap <expr><C-g> deoplete#undo_completion()
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 
 " let g:deoplete#disable_auto_complete = 1
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ deoplete#mappings#manual_complete()
+
 function! s:check_back_space() abort "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+endfunction
+" }}}
 
 " Use Tab to forward cycle
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
