@@ -488,8 +488,10 @@ nnoremap <silent><Leader>w      :w<CR>
 nnoremap <silent><Leader>x      :x<CR>
 nnoremap <silent><Leader>q      :q<CR>
 nnoremap <silent><Leader>qn     :q!<CR>
-nnoremap <silent><Leader>qp     :pclose<CR>
-nnoremap <silent><Leader>ql     :lcl<CR>
+" close preview
+nnoremap <silent><Leader>cp     :pclose<CR>
+" close locationlist
+nnoremap <silent><Leader>cl     :lcl<CR>
 
 " map up/down in command mode to C-p/C-u
 cnoremap <c-n>  <down>
