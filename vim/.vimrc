@@ -104,7 +104,7 @@ Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'tpope/vim-repeat'
+" Plug 'svermeulen/vim-easyclip'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'osyo-manga/vim-anzu'
@@ -1222,7 +1222,7 @@ let g:Schlepp#reindent             = 1
 
 " NERDTree {{{
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 " nnoremap <Leader>\ :NERDTreeToggle<CR>
 " nnoremap <silent><Leader>v :NERDTreeFind<CR>
 " nnoremap <silent><Leader>] :wincmd w<CR>
