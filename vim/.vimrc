@@ -878,7 +878,7 @@ let g:ctrlp_yankring_minimum_chars   = 2
 nnoremap <silent><Leader>gg :CtrlPag<CR>
 vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
 nnoremap <leader>ca :CtrlPagLocate<space>
-nnoremap <leader>cp :CtrlPagPrevious<CR>
+" nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
             \ --ignore "deps/*"
             \ --ignore "_build/*"
