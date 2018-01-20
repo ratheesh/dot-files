@@ -566,6 +566,9 @@ nnoremap zr zR
 
 " Use <tab> to move between bracket pairs (related to matchit plugin)
 map <tab> %
+
+"spell suggestion in a popup
+nnoremap \s ea<C-X><C-S>
 " }}}
 
 " Theme {{{
