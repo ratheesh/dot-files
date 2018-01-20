@@ -1271,6 +1271,7 @@ let g:scratch_filetype = 'text'
 
 " vim-highlightedyank {{{
 " NOTE: Enabling yankring plugin breaks this functionality!
+nnoremap Y yy
 let g:highlightedyank_highlight_duration=200
 " }}}
 
