@@ -386,6 +386,7 @@ set backupskip=
 if !isdirectory(&backupdir)
     call mkdir(&backupdir)
 endif
+set writebackup
 
 " swap files
 set directory   =$HOME/.vim/tmp/swap//
