@@ -497,6 +497,10 @@ nnoremap <silent><Leader>cl     :lcl<CR>
 cnoremap <c-n>  <down>
 cnoremap <c-p>  <up>
 
+" navigate naturally even with wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " redraw screen
 " nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l><Paste>
 
