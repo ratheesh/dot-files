@@ -298,6 +298,10 @@ if !has('gui_running')
     set t_Co=256  " Support for 256 colors
 endif
 set noshowmode
+
+set modeline
+set modelines=5
+
 set showtabline=2
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│,fold:-
@@ -1326,7 +1330,8 @@ let cursormode_color_map = {
             \ }
 " }}}
 
-" bracket-paste settings {{{
+" Misc useful functions {{{
+" bracket-paste settings
 if &term =~ "xterm.*"
     let &t_SI = &t_SI . "\<ESC>[?2004h"
     let &t_EI = "\<ESC>[?2004l" . &t_EI
@@ -1341,6 +1346,18 @@ if &term =~ "xterm.*"
     cmap <Esc>[200~ <nop>
     cmap <Esc>[201~ <nop>
 endif
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
 " }}}
 
 " Misc macros {{{
