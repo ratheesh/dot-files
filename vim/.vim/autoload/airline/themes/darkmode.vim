@@ -101,9 +101,9 @@ let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate
 
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
-            \ 'airline_tabsel'  : ['#eeeeee' , '#4682b4' , 0   , 66  , 'none'  ],
+            \ 'airline_tabsel'  : ['#000000' , '#5f9ea0' , 0   , 66  , 'italic'],
             \ 'airline_tabfill' : ['#eeeeee' , '#2e2e2e' , 188 , 235 , 'none'  ],
-            \ 'airline_tabmod'  : ['#eeeeee' , '#1d8d77' ,  15 , 89  , 'none'  ],
+            \ 'airline_tabmod'  : ['#000000' , '#e7839f' ,  15 , 89  , 'none'  ],
             \ 'airline_tabhid'  : ['#909090' , '#2e2e2e' , 103 , 235 , 'none'  ],
             \ 'airline_tabtype' : ['#eeeeee' , '#b32425' , 253 , 125 , 'none'  ],
             \ }
