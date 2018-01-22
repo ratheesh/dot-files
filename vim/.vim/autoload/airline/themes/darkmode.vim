@@ -56,13 +56,13 @@ let s:I3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 ]
 
 " Visual mode
 let s:V1 = [ s:guiBlack , s:gui06 , s:ctermBlack , s:cterm06 ]
-let s:V2 = [ s:gui10    , s:gui02 , s:cterm11, s:cterm02 ]
-let s:V3 = [ s:guiCFG   , s:gui01 , s:cterm09, s:cterm01 ]
+let s:V2 = [ s:gui10    , s:gui02 , s:cterm11    , s:cterm02 ]
+let s:V3 = [ s:guiCFG   , s:gui01 , s:cterm09    , s:cterm01 ]
 
 " Replace mode
-let s:R1 = [ s:guiWhite , s:gui05 , s:ctermWhite, s:cterm05 ]
-let s:R2 = [ s:gui10    , s:gui02 , s:cterm11, s:cterm02 ]
-let s:R3 = [ s:guiCFG   , s:gui01 , s:cterm09, s:cterm01 ]
+let s:R1 = [ s:guiWhite , s:gui05 , s:ctermWhite , s:cterm05 ]
+let s:R2 = [ s:gui10    , s:gui02 , s:cterm11    , s:cterm02 ]
+let s:R3 = [ s:guiCFG   , s:gui01 , s:cterm09    , s:cterm01 ]
 
 " File changed
 let s:changed = [ s:guiCFG , s:guiChangedColor , s:ctermChangedColor , s:cterm01 ]
@@ -74,9 +74,9 @@ let g:airline#themes#darkmode#palette.visual  = airline#themes#generate_color_ma
 let g:airline#themes#darkmode#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 
 " Inactive mode
-let s:IN1 = [ s:gui04 , s:guiWhite , s:cterm04 , s:ctermWhite ]
-let s:IN2 = [ s:gui04 , s:gui01 , s:cterm04  , s:cterm01 ]
-let s:IA  = [ s:IN1[1] , s:IN2[1] , s:IN1[3] , s:IN2[3] , '' ]
+let s:IN1 = [ s:gui04  , s:guiWhite , s:cterm04 , s:ctermWhite ]
+let s:IN2 = [ s:gui04  , s:gui01    , s:cterm04 , s:cterm01 ]
+let s:IA  = [ s:IN1[1] , s:IN2[1]   , s:IN1[3]  , s:IN2[3]       , '' ]
 let g:airline#themes#darkmode#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
 
 " Warning info
@@ -121,9 +121,9 @@ if !get(g:, 'loaded_ctrlp', 0)
   finish
 endif
 
-let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09 , s:cterm01 ]
-let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11 , s:cterm02 ]
-let s:CP3 = [ s:guiWhite , s:gui09 , s:ctermBlack , s:cterm10, 'italic' ]
+let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09    , s:cterm01 ]
+let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11    , s:cterm02 ]
+let s:CP3 = [ s:guiWhite , s:gui09 , s:ctermBlack , s:cterm10   , 'italic' ]
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
 " End of File
