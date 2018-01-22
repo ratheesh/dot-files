@@ -583,6 +583,7 @@ nnoremap \s ea<C-X><C-S>
 
 " Theme {{{
 syntax on
+let g:enable_bold_font = 1
 color darktheme
 " }}}
 
