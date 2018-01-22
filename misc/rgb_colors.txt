@@ -1,4 +1,4 @@
-Follwing are 24-bit RGB colors those can be used for development of plugins/themes
+Following are 24-bit RGB colors those can be used for development of plugins/themes
 and others
 
 #7a8a80 #afeeee #5f9ea0 #4682b4 #7b3513 #bbffbb #b32425
@@ -29,4 +29,4 @@ and others
 #28b473 #338933 #ff4848 #00afdb #3d7bbf #303b57 #e75a3a
 #449397 #1793d1 #7e5e8e #be013b #dd4714 #2e5050 #553d41
 #555d71 #cb4b27 #b58a22 #47d68e #ac6bf1 #cc676f #da0000
-#6da8d4
+#6da8d4 #d9634d #fe7d37 #80273f
