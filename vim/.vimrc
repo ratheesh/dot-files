@@ -371,8 +371,8 @@ endif
 
 if has("persistent_undo")
     set undofile
-    set undolevels=200   " Maximum number of changes that can be undone
-    set undoreload=1000  " Maximum number lines to save for undo on a buffer reload
+    set undolevels=500   " Maximum number of changes that can be undone
+    set undoreload=200   " Maximum number lines to save for undo on a buffer reload
     set undodir=$HOME/.vim/tmp/undotree/
     if !isdirectory(&undodir)
         call mkdir(&undodir)
