@@ -29,4 +29,5 @@ and others
 #28b473 #338933 #ff4848 #00afdb #3d7bbf #303b57 #e75a3a
 #449397 #1793d1 #7e5e8e #be013b #dd4714 #2e5050 #553d41
 #555d71 #cb4b27 #b58a22 #47d68e #ac6bf1 #cc676f #da0000
-#6da8d4 #d9634d #fe7d37 #80273f
+#6da8d4 #d9634d #fe7d37 #80273f #3a5795 #55acee #dd4b39
+#0177b5 #bd081c
