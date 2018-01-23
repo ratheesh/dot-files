@@ -273,12 +273,12 @@ set autowrite
 set cursorline
 set linebreak
 if has('linebreak')
-  try
-    set breakindent
-    let &showbreak='↪ '
-  catch /E518:/
-    " Unknown option: breakindent
-  endtry
+    try
+        set breakindent
+        let &showbreak='↪ '
+    catch /E518:/
+        " Unknown option: breakindent
+    endtry
 endif
 set cpo+=n
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
