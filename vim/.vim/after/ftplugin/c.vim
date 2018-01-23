@@ -35,7 +35,7 @@ let c_space_errors            = 1
 let c_syntax_for_h            = 1
 
 " set emacs style of indenting lines
-set cinkeys=0{,0},:,0#,!<Tab>,!^F
+set cinkeys=0{,0},:,0#,!^F,o,O,e
 
 " set customized c-indentation
 " Taken from https://github.com/halostatue/vim-config/blob/master/vimfiles/macros/c-style.vim
