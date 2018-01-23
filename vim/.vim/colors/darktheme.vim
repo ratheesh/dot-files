@@ -30,10 +30,10 @@ hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE				guifg=NONE 	    gu
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold			    guifg=#909194 	guibg=#1a1c1e 	gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold		guifg=NONE 	    guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE				guifg=NONE      guibg=#303030 	gui=NONE
-hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE				guifg=NONE      guibg=#162544 	gui=NONE
+hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE				guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE				guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE				guifg=#747474 	guibg=#282a36 	gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE				guifg=#eeeeee 	guibg=#a42171 	gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE				guifg=#eeeeee 	guibg=#8b3a3a 	gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE				guifg=#64666d 	guibg=NONE 	    gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold	guifg=NONE 	    guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=NONE     ctermbg=NONE    cterm=underline,bold
