@@ -29,7 +29,7 @@ hi Normal       ctermfg=7       ctermbg=233     cterm=NONE			    guifg=#cccccc 	
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE				guifg=NONE 	    guibg=#101010 	gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold			    guifg=#909194 	guibg=#1a1c1e 	gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold		guifg=NONE 	    guibg=NONE      gui=inverse,bold
-hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE				guifg=NONE      guibg=#383838 	gui=NONE
+hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE				guifg=NONE      guibg=#303030 	gui=NONE
 hi CursorLine   ctermbg=234     ctermbg=237     cterm=NONE				guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE				guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE				guifg=#747474 	guibg=#282a36 	gui=NONE
