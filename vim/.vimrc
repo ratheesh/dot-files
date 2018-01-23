@@ -167,6 +167,7 @@ Plug 'python-mode/python-mode', {'branch': 'develop'}
 " Plug '~/.vim/local/c_std'
 " Plug 'nsf/gocode'
 Plug 'lilydjwg/colorizer'
+Plug 'dhruvasagar/vim-table-mode'
 " Plug 'ryanpcmcquen/fix-vim-pasting'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 
@@ -1331,6 +1332,12 @@ let cursormode_color_map = {
             \   "\<C-V>":  "#ffca88",
             \   "d"     :  "#eeeeee",
             \ }
+" }}}
+
+" vim-tablemode {{{
+let g:table_mode_corner          = '|'
+let g:table_mode_corner_corner   = '+'
+let g:table_mode_header_fillchar = '='
 " }}}
 
 " Misc useful functions {{{
