@@ -126,9 +126,9 @@ Plug 'honza/vim-snippets'
 " Plug 'Shougo/neosnippet'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'tpope/vim-commentary'
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
 " Plug 'vim-scripts/DoxygenToolkit.vim'
-" Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
@@ -1291,16 +1291,36 @@ nnoremap Y yy
 let g:highlightedyank_highlight_duration=200
 " }}}
 
-" vim-commentary {{{
-autocmd FileType expect setlocal commentstring=#\ %s
+" nerd-commentar {{{
+let g:NERDCreateDefaultMappings  = 0
+let g:NERDSpaceDelims            = 1
+let g:NERDCompactSexyComs        = 1
+let g:NERDDefaultAlign           = 'left'
+let g:NERDCustomDelimiters       = { 'c': { 'left': '/*','right': '*/' } }
+let g:NERDCommentEmptyLines      = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+nmap <silent><Leader>;  :call NERDComment("n", "Append")<CR>
+
+nmap <silent><Leader>cc :call NERDComment("n", "Comment")<CR>
+xmap <silent><Leader>cc :call NERDComment("x", "Comment")<CR>
+
+nmap <silent><Leader>cu :call NERDComment("n", "Uncomment")<CR>
+xmap <silent><Leader>cu :call NERDComment("x", "Uncomment")<CR>
+
+nmap <silent><Leader>cs :call NERDComment("n", "Sexy")<CR>
+xmap <silent><Leader>cs :call NERDComment("x", "Sexy")<CR>
+
+nmap <silent><Leader>ct :call NERDComment("n", "Toggle")<CR>
+xmap <silent><Leader>ct :call NERDComment("x", "Toggle")<CR>
+
+" this does not work on ftypes that does not support multipart comment delimiters
+nmap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
+xmap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
 " }}}
 
-" tcomment {{{
-let g:tcommentMaps = 0
-nnoremap <silent><leader>cc :TComment<CR>
-vnoremap <silent><leader>cc :TComment<CR>
-" nnoremap <silent><leader>cb :TCommentBlock<CR>
-" vnoremap <silent><leader>cb :TCommentBlock<CR>
+" vim-commentary {{{
+autocmd FileType expect setlocal commentstring=#\ %s
 " }}}
 
 " vim-highlightedundo {{{
