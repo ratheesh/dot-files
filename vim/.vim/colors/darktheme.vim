@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE				guifg=NONE      gu
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE				guifg=NONE      guibg=#162544 	gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE				guifg=NONE      guibg=#44475a 	gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE				guifg=#747474 	guibg=#282a36 	gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE				guifg=#eeeeee 	guibg=#8b3a3a 	gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=137     cterm=NONE				guifg=#eeeeee 	guibg=#a42171 	gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE				guifg=#64666d 	guibg=NONE 	    gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold	guifg=NONE 	    guibg=NONE 		  gui=bold,underline
 hi ParenError   ctermfg=NONE     ctermbg=NONE    cterm=underline,bold
@@ -146,7 +146,6 @@ hi gitconfigVariable    ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#a0a
 hi gitconfigAssignment  ctermfg=7       ctermbg=NONE    cterm=NONE    guifg=#7a8a8a  guibg=NONE   gui=NONE
 hi gitconfigBoolean     ctermfg=60      ctermbg=NONE    cterm=italic  guifg=#008b8b  guibg=NONE   gui=NONE
 hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=italic  guifg=#4682b4  guibg=NONE   gui=NONE
-
 " }}}
 
 " git-signify {{{
@@ -179,10 +178,10 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 " }}}
 
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=NONE     guibg=#404040 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#ca7f85 gui=NONE
-hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#606060 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#008b8b gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=NONE     guibg=#383838 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#934269 gui=NONE
+hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#484848 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#00796b gui=NONE
 "}}}
 
 " GitCommit {{{
