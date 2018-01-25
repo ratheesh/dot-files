@@ -166,7 +166,7 @@ hi GitGutterChangeDelete ctermfg=94     ctermbg=233     cterm=bold  guifg=#ff550
 hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#ffcc33  guibg=NONE   gui=NONE
 hi CtrlPPrtText         ctermfg=60      ctermbg=NONE    cterm=NONE  guifg=#1d8d77  guibg=NONE   gui=NONE
 hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=NONE  guifg=#27b062  guibg=NONE   gui=NONE
-hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#a42171  guibg=NONE   gui=bold
+hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#c3107a  guibg=NONE   gui=bold
 hi CtrlPPrtCursor       ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#303030  guibg=NONE   gui=bold
 
 hi CtrlPBufferInd       ctermfg=162     ctermbg=NONE    cterm=NONE    guifg=#c76d83  guibg=NONE   gui=NONE
@@ -179,9 +179,9 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=NONE     guibg=#383838 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#934269 gui=NONE
-hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#484848 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#00796b gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#b47870 gui=NONE
+hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#2f4040 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#005f6b gui=NONE
 "}}}
 
 " GitCommit {{{

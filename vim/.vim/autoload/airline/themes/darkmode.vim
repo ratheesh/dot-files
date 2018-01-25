@@ -18,10 +18,10 @@ let s:gui02             = "#484848"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#fa2c77"
-let s:gui06             = "#d7875f"
+let s:gui06             = "#eb949b"
 let s:gui07             = "#00796b"
-let s:gui08             = "#8c506a"
-let s:gui09             = "#1d8d77"
+let s:gui08             = "#a0a0a0"
+let s:gui09             = "#00796b"
 let s:gui10             = "#f4a460"
 let s:guiWhite          = "#eeeeee"
 let s:guiBlack          = "#000000"
@@ -45,7 +45,7 @@ let s:ctermBlack        = "16"
 let s:ctermChangedColor = "60"
 
 " Normal mode
-let s:N1 = [ s:guiWhite , s:gui08 , s:ctermWhite  , s:cterm07 ]
+let s:N1 = [ s:guiBlack , s:gui08 , s:ctermWhite  , s:cterm07 ]
 let s:N2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:N3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 , 'italic']
 
@@ -111,10 +111,10 @@ let g:airline#themes#darkmode#palette.replace_modified.airline_error = s:ERROR
 
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
-            \ 'airline_tabsel'  : ['#eeeeee' , '#1c7499' , 0   , 66  , 'italic'],
-            \ 'airline_tabfill' : ['#eeeeee' , '#2e2e2e' , 188 , 235 , 'none'  ],
+            \ 'airline_tabsel'  : ['#eeeeee' , '#0177b5' , 0   , 66  , 'italic'],
+            \ 'airline_tabfill' : ['#eeeeee' , '#203438' , 188 , 235 , 'none'  ],
             \ 'airline_tabmod'  : ['#000000' , '#e7839f' ,  15 , 89  , 'none'  ],
-            \ 'airline_tabhid'  : ['#909090' , '#2e2e2e' , 103 , 235 , 'none'  ],
+            \ 'airline_tabhid'  : ['#a0a0a0' , '#203438' , 103 , 235 , 'none'  ],
             \ 'airline_tabtype' : ['#eeeeee' , '#b32425' , 253 , 125 , 'none'  ],
             \ }
 
