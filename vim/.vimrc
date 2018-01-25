@@ -991,7 +991,7 @@ let g:indentLine_faster            = 1
 
 " ale {{{
 let g:ale_sign_column_always   = 1
-let g:ale_lint_on_text_changed = "normal"
+let g:ale_lint_on_text_changed = "never"
 let g:ale_lint_on_insert_leave = 1
 autocmd BufEnter ControlP let b:ale_enabled = 0
 autocmd BufEnter ControlP set nonumber
