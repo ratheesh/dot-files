@@ -499,6 +499,8 @@ nnoremap <silent><Leader>qn     :q!<CR>
 nnoremap <silent><Leader>cp     :pclose<CR>
 " close locationlist
 nnoremap <silent><Leader>cl     :lcl<CR>
+" close quickfix
+nnoremap <silent><Leader>cq     :ccl<CR>
 
 " map up/down in command mode to C-p/C-u
 cnoremap <c-n>  <down>
