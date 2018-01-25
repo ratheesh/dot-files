@@ -175,10 +175,13 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
     Plug 'Shougo/deoplete.nvim'
+    " Following are required for deoplete to work in ViM
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+
+    " Following are optional
     " Plug 'zchee/deoplete-clang'
     " Plug 'tweekmonster/deoplete-clang2'
-    Plug 'roxma/nvim-yarp'
-    " Plug 'roxma/vim-hug-neovim-rpc'
     " Plug 'zchee/deoplete-jedi'
     " Plug 'zchee/deoplete-go' , { 'do': 'make'}
     " Plug 'eagletmt/neco-ghc'
@@ -1316,7 +1319,7 @@ xmap <silent><Leader>cs :call NERDComment("x", "Sexy")<CR>
 nmap <silent><Leader>ct :call NERDComment("n", "Toggle")<CR>
 xmap <silent><Leader>ct :call NERDComment("x", "Toggle")<CR>
 
-" this does not work on ftypes that does not support multipart comment delimiters
+" this does not work on ftypes that does not support multipart delimiters
 nmap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
 xmap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
 " }}}
