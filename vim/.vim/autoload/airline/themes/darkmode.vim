@@ -99,6 +99,16 @@ let g:airline#themes#darkmode#palette.insert_modified  = airline#themes#generate
 let g:airline#themes#darkmode#palette.replace_modified = airline#themes#generate_color_map(s:R1, s:R2, s:changed)
 let g:airline#themes#darkmode#palette.visual_modified  = airline#themes#generate_color_map(s:V1, s:V2, s:changed)
 
+let g:airline#themes#darkmode#palette.normal_modified.airline_warning  = s:WARNING
+let g:airline#themes#darkmode#palette.insert_modified.airline_warning  = s:WARNING
+let g:airline#themes#darkmode#palette.visual_modified.airline_warning  = s:WARNING
+let g:airline#themes#darkmode#palette.replace_modified.airline_warning = s:WARNING
+
+let g:airline#themes#darkmode#palette.normal_modified.airline_error  = s:ERROR
+let g:airline#themes#darkmode#palette.insert_modified.airline_error  = s:ERROR
+let g:airline#themes#darkmode#palette.visual_modified.airline_error  = s:ERROR
+let g:airline#themes#darkmode#palette.replace_modified.airline_error = s:ERROR
+
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : ['#000000' , '#909090' , 253 , 60  , 'none'  ],
             \ 'airline_tabsel'  : ['#eeeeee' , '#1c7499' , 0   , 66  , 'italic'],
