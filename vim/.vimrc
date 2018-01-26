@@ -612,7 +612,7 @@ let g:load_doxygen_syntax = 1
 " let g:airline_highlighting_cache = 0
 
 " Appearance
-" let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -709,7 +709,7 @@ nmap <silent><leader>8 <Plug>AirlineSelectTab8
 nmap <silent><leader>9 <Plug>AirlineSelectTab9
 nmap <silent><leader>h <Plug>AirlineSelectPrevTab
 nmap <silent><leader>l <Plug>AirlineSelectNextTab
-if !exists('g:airline_powerline_fonts')
+if !get(g:, 'airline_powerline_fonts', 0)
     let g:airline#extensions#tabline#left_sep      = ''
     let g:airline#extensions#tabline#left_alt_sep  = '│'
     let g:airline#extensions#tabline#right_sep     = ''
