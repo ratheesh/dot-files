@@ -989,12 +989,16 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:indentLine_faster            = 1
 "}}}
 
-" ale {{{
+" vim-ale {{{
 let g:ale_sign_column_always   = 1
 let g:ale_lint_on_text_changed = "never"
 let g:ale_lint_on_insert_leave = 1
 autocmd BufEnter ControlP let b:ale_enabled = 0
 autocmd BufEnter ControlP set nonumber
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
+let g:ale_open_list = 0
+let g:ale_gitcommit_gitlint_use_global=1
 " }}}
 
 " Syntastic {{{
