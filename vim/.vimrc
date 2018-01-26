@@ -696,7 +696,7 @@ let g:airline#extensions#tabline#show_tab_type    = 1
 let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
-let g:airline#extensions#cursormode#enabled       = 1
+" let g:airline#extensions#cursormode#enabled       = 1
 let g:airline#extensions#anzu#enabled             = 1
 nmap <silent><leader>1 <Plug>AirlineSelectTab1
 nmap <silent><leader>2 <Plug>AirlineSelectTab2
