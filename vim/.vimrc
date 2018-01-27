@@ -100,7 +100,7 @@ Plug 'ervandew/lookup'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-git'
 Plug 'mhinz/vim-signify'
-" Plug 'mhinz/vim-halo'
+Plug 'mhinz/vim-halo'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -1361,6 +1361,10 @@ let cursormode_color_map = {
             \   "\<C-V>":  "#ffca88",
             \   "d"     :  "#eeeeee",
             \ }
+" }}}
+
+" vim-halo {{{
+nnoremap <silent><CR> :call halo#run({'shape': 'cross1'})<CR>
 " }}}
 
 " vim-tablemode {{{
