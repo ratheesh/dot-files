@@ -1333,9 +1333,9 @@ autocmd FileType expect setlocal commentstring=#\ %s
 " }}}
 
 " vim-highlightedundo {{{
-let g:highlightedundo#highlight_mode = 2
-let g:highlightedundo#highlight_duration_delete=200
-let g:highlightedundo#highlight_duration_add=250
+let g:highlightedundo#highlight_mode            = 2
+let g:highlightedundo#highlight_duration_delete = 200
+let g:highlightedundo#highlight_duration_add    = 250
 nmap u     <Plug>(highlightedundo-undo)
 nmap <C-r> <Plug>(highlightedundo-redo)
 nmap U     <Plug>(highlightedundo-Undo)
@@ -1344,10 +1344,10 @@ nmap g+    <Plug>(highlightedundo-gplus)
 " }}}
 
 " vim-quickhl {{{
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>m <Plug>(quickhl-manual-this)
-nmap <Space>M <Plug>(quickhl-manual-reset)
-xmap <Space>M <Plug>(quickhl-manual-reset)
+nmap <Leader>m <Plug>(quickhl-manual-this)
+xmap <Leader>m <Plug>(quickhl-manual-this)
+nmap <Leader>M <Plug>(quickhl-manual-reset)
+xmap <Leader>M <Plug>(quickhl-manual-reset)
 " }}}
 
 " vim-cursormode {{{
