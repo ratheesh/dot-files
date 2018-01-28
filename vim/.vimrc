@@ -170,6 +170,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'dhruvasagar/vim-table-mode'
 " Plug 'ryanpcmcquen/fix-vim-pasting'
 " Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'junegunn/vim-slash'
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -1371,6 +1372,14 @@ nnoremap <silent><CR> :call halo#run({'shape': 'cross1'})<CR>
 let g:table_mode_corner          = '|'
 let g:table_mode_corner_corner   = '+'
 let g:table_mode_header_fillchar = '='
+" }}}
+
+" vim-slash {{{
+noremap <plug>(slash-after) zz
+
+if has('timers') && !has('nvim')
+  noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+endif
 " }}}
 
 " Misc useful functions {{{
