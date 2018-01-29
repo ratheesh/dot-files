@@ -1365,7 +1365,7 @@ let cursormode_color_map = {
 " }}}
 
 " vim-halo {{{
-nnoremap <silent><CR> :call halo#run({'shape': 'cross1'})<CR>
+nnoremap <silent>\\ :call halo#run({'shape': 'cross1'})<CR>
 " }}}
 
 " vim-tablemode {{{
