@@ -365,7 +365,8 @@ autocmd BufWritePost
             \ |   filetype detect
             \ | endif
 
-let mapleader = "\<Space>"
+let mapleader      = "\<Space>"
+let maplocalleader = "\\"
 " }}}
 
 " General Config {{{
