@@ -4,6 +4,6 @@
 [submodule "zsh-prezto/.zprezto"]
 	path = zsh-prezto/.zprezto
 	url = https://github.com/ratheesh/prezto.git
-[submodule "zsh-zimfw/.zimfw"]
-	path = zsh-zimfw/.zimfw
+[submodule "zsh-zimfw/.zim"]
+	path = zsh-zimfw/.zim
 	url = https://github.com/ratheesh/zimfw.git
