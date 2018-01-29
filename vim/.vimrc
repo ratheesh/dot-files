@@ -1255,8 +1255,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " }}}
 
 " cscope {{{
-" nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-" nnoremap <leader>fl :call ToggleLocationList()<CR>
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>fl :call ToggleLocationList()<CR>
 let g:cscope_silent = 1
 
 if has("cscope")
