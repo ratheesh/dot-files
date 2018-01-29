@@ -1,9 +1,6 @@
 [submodule "zsh-omz/.oh-my-zsh"]
 	path = zsh-omz/.oh-my-zsh
 	url = https://github.com/ratheesh/oh-my-zsh.git
-[submodule "zsh-zim/.zim"]
-	path = zsh-zim/.zim
-	url = https://github.com/ratheesh/zim.git
 [submodule "zsh-prezto/.zprezto"]
 	path = zsh-prezto/.zprezto
 	url = https://github.com/ratheesh/prezto.git
