@@ -942,8 +942,8 @@ let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
 let g:signify_sign_change            = '='
 let g:signify_sign_show_count        = 1
-nmap <leader>sn <plug>(signify-next-hunk)
-nmap <leader>sp <plug>(signify-prev-hunk)
+nmap <silent><leader>sn <plug>(signify-next-hunk)
+nmap <silent><leader>sp <plug>(signify-prev-hunk)
 " }}}
 
 " vim-gitgutter {{{
