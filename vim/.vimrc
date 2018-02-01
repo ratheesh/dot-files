@@ -1131,9 +1131,9 @@ nnoremap <silent><leader>th           :HardTimeToggle<CR>
 
 " deoplete {{{
 set completeopt+=noinsert
-let g:deoplete#enable_at_startup          = 1
+let g:deoplete#enable_at_startup = 1
 if !has('nvim')
-    let g:deoplete#enable_yarp                = 1
+    let g:deoplete#enable_yarp   = 1
 endif
 let g:deoplete#enable_refresh_always      = 1
 let g:deoplete#auto_complete_delay        = 50
@@ -1214,12 +1214,6 @@ else
     vmap h <Plug>SchleppLeft
     vmap l <Plug>SchleppRight
 endif
-
-" Duplication selection region
-vnoremap Dk <Plug>SchleppDupUp
-vnoremap Dj <Plug>SchleppDupDown
-vnoremap Dh <Plug>SchleppDupLeft
-vnoremap Dl <Plug>SchleppDupRight
 
 "Other settings
 let g:Schlepp#allowSquishingLines  = 1
