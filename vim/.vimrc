@@ -52,7 +52,7 @@ Plug 'matze/vim-move'
 Plug 'zirrostig/vim-schlepp'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
-Plug 'terryma/vim-expand-region'
+" Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-smooth-scroll'
 " Plug 'adelarsq/vim-matchit'
 " Plug 'justinmk/vim-sneak'
@@ -1048,26 +1048,6 @@ au BufEnter  * RainbowParenthesesLoadSquare
 au BufEnter  * RainbowParenthesesLoadBraces
 " au BufEnter  * RainbowParenthesesLoadChevrons
 
-" }}}
-
-"Expand region {{{
-
-" nmap K <Plug>(expand_region_expand)
-" nmap J <Plug>(expand_region_shrink)
-
-call expand_region#custom_text_objects({
-            \ 'a]' :1,
-            \ 'ab' :1,
-            \ 'aB' :1,
-            \ 'ii' :0,
-            \ 'ai' :0,
-            \ 'iI' :0,
-            \ 'aI' :0,
-            \ 'if' :0,
-            \ 'af' :0,
-            \ 'ic' :0,
-            \ 'ac' :0,
-            \ })
 " }}}
 
 " vim-miniyank {{{
