@@ -1442,6 +1442,13 @@ endfunction
 
 nmap <silent><leader>tl :call ToggleList("Location List", 'l')<CR>
 nmap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
+
+" Make text inserted in insertmode into smaller undo chunks.
+" This is useful for text mode. But for programming mode ???
+" inoremap . .<c-g>u
+" inoremap ? ?<c-g>u
+" inoremap ! !<c-g>u
+" inoremap , ,<c-g>u
 " }}}
 
 " Misc macros {{{
