@@ -132,7 +132,7 @@ Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-scripts/YankRing.vim'
-Plug 'bfredl/nvim-miniyank'
+" Plug 'bfredl/nvim-miniyank'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'antoyo/vim-licenses'
@@ -1051,17 +1051,17 @@ au BufEnter  * RainbowParenthesesLoadBraces
 " }}}
 
 " vim-miniyank {{{
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
+" map p <Plug>(miniyank-autoput)
+" map P <Plug>(miniyank-autoPut)
 
 " map <leader>p <Plug>(miniyank-startput)
 " map <leader>P <Plug>(miniyank-startPut)
 
-if !has('nvim')
-    map p <Plug>(miniyank-cycle)
-else
-    map <M-p> <Plug>(miniyank-cycle)
-endif
+" if !has('nvim')
+"     map p <Plug>(miniyank-cycle)
+" else
+"     map <M-p> <Plug>(miniyank-cycle)
+" endif
 " }}}
 
 " vim-indent-guide {{{
