@@ -167,7 +167,7 @@ Plug 'python-mode/python-mode', {'branch': 'develop'}
 " Plug '~/.vim/local/c_std'
 " Plug 'nsf/gocode'
 Plug 'lilydjwg/colorizer'
-Plug 'dhruvasagar/vim-table-mode'
+" Plug 'dhruvasagar/vim-table-mode'
 " Plug 'ryanpcmcquen/fix-vim-pasting'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'junegunn/vim-slash'
