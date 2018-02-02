@@ -171,6 +171,9 @@ Plug 'lilydjwg/colorizer'
 " Plug 'ryanpcmcquen/fix-vim-pasting'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'junegunn/vim-slash'
+Plug 'reedes/vim-pencil'
+Plug 'reedes/vim-colors-pencil'
+Plug 'muellan/vim-airline-formatting'
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -632,7 +635,7 @@ let g:airline#extensions#whitespace#enabled         = 0
 let g:airline#extensions#capslock#enabled           = 1
 let g:airline_detect_spelllang                      = 0
 let g:airline_detect_modified                       = 1
-let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
+" let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
 let g:airline_detect_paste                          = 1
 let g:airline#extensions#virtualenv#enabled         = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes  = 1
@@ -1356,6 +1359,35 @@ noremap <plug>(slash-after) zz
 if has('timers') && !has('nvim')
   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
 endif
+" }}}
+
+" vim-pencil {{{
+let g:pencil#autoformat = 1      " 0=disable, 1=enable (def)
+" let g:pencil#textwidth = 74
+let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)<Paste>
+
+augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd call pencil#init()
+                \ | call lexical#init()
+                \ | call litecorrect#init()
+                \ | call textobj#quote#init()
+                \ | call textobj#sentence#init()
+    autocmd FileType text call pencil#init({'wrap': 'hard'})
+augroup END
+" }}}
+
+" vim-airline-formatting {{{
+let g:airline#extensions#formatting#enabled = 1
+" spaces / tabs indicator
+let g:airline#extensions#formatting#space_glyph = '·'
+let g:airline#extensions#formatting#tab_glyph = '→'
+
+" symbolizes the text body
+let g:airline#extensions#formatting#text_glyph = '≡'
+
+" wrap/nowrap inidcator (if Pencil isn't found)
+let g:airline#extensions#formatting#wrap_no_pencil = '¶'
 " }}}
 
 " Misc useful functions {{{
