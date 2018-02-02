@@ -1326,10 +1326,10 @@ nmap U <C-R>
 " }}}
 
 " vim-quickhl {{{
-nmap <Leader>m <Plug>(quickhl-manual-this)
-xmap <Leader>m <Plug>(quickhl-manual-this)
-nmap <Leader>M <Plug>(quickhl-manual-reset)
-xmap <Leader>M <Plug>(quickhl-manual-reset)
+nmap <silent><Leader>m <Plug>(quickhl-manual-this)
+xmap <silent><Leader>m <Plug>(quickhl-manual-this)
+nmap <silent><Leader>M <Plug>(quickhl-manual-reset)
+xmap <silent><Leader>M <Plug>(quickhl-manual-reset)
 " }}}
 
 " vim-cursormode {{{
