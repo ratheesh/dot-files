@@ -88,7 +88,8 @@ Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 " Plug 'mbbill/undotree'
 " Plug 'simnalamburt/vim-mundo'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
+Plug 't9md/vim-smalls'
 Plug 'godlygeek/tabular'
 Plug 'tommcdo/vim-lion'
 " Plug 'mtth/scratch.vim'
@@ -976,15 +977,15 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkTextHL        = "SignColumn"
 " }}}
 
-" Easymotion {{{
-let g:EasyMotion_do_mapping       = 0 " Disable default mappings
-nmap <silent><Leader>jj <Plug>(easymotion-overwin-f)
-nmap <silent><Leader>jk <Plug>(easymotion-overwin-f2)
-nmap <silent><Leader>jl <Plug>(easymotion-overwin-line)
-let g:EasyMotion_smartcase        = 1
-let g:EasyMotion_use_smartsign_us = 1 " US layout
-let g:EasyMotion_prompt = 'Jump to → '
-"}}}
+" vim-smalls {{{
+let g:smalls_auto_jump = 1
+" map normal-mode 's' for simple search
+nmap s <Plug>(smalls)
+" if you want to use smalls in visual/operator or both mode.
+omap s <Plug>(smalls)
+xmap s <Plug>(smalls)
+set ignorecase smartcase
+" }}}
 
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger       = "<C-e>"
