@@ -120,6 +120,7 @@ Plug 'machakann/vim-highlightedyank'
 " Plug 'kana/vim-operator-user'
 " Plug 'haya14busa/vim-operator-flashy'
 Plug 'machakann/vim-highlightedundo'
+Plug 'ivyl/vim-bling'
 " Plug 'WolfgangMehner/c-support'
 " Plug 'vim-scripts/AutoAlign'
 Plug 'SirVer/ultisnips'
@@ -171,7 +172,7 @@ Plug 'lilydjwg/colorizer'
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'ryanpcmcquen/fix-vim-pasting'
 " Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'junegunn/vim-slash'
+" Plug 'junegunn/vim-slash'
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-colors-pencil'
 Plug 'muellan/vim-airline-formatting'
@@ -1392,6 +1393,19 @@ let g:airline#extensions#formatting#text_glyph = '≡'
 
 " wrap/nowrap inidcator (if Pencil isn't found)
 let g:airline#extensions#formatting#wrap_no_pencil = '¶'
+" }}}
+
+" vim-bling {{{
+let g:bling_time         = 200
+let g:bling_count        = 1
+let g:bling_color_fg     = '0'
+let g:bling_color_bg     = '131'
+let g:bling_color_cterm  = 'italic'
+let g:bling_color_gui_fg = '#000000'
+let g:bling_color_gui_bg = '#bdb76b'
+let g:bling_no_expr      = 0
+nnoremap <silent> n nzz:call BlingHighight()<CR>
+cnoremap <silent><expr><enter> BlingExpressionHighlight()
 " }}}
 
 " Misc useful functions {{{
