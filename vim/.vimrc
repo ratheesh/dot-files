@@ -441,7 +441,7 @@ autocmd BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profi
 autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc,zimrc,.zlogin,zlogin,.zlogout,zlogout set filetype=sh
 autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
-autocmd FileType gitcommit setlocal colorcolumn=73
+autocmd FileType gitcommit execute "set colorcolumn=" . join(range(73,335), ',')
 autocmd FileType gitcommit setlocal scrolloff=0
 autocmd FileType gitcommit setlocal spell
 autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
