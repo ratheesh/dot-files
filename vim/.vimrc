@@ -1365,9 +1365,9 @@ endif
 " }}}
 
 " vim-pencil {{{
-let g:pencil#autoformat = 0      " 0=disable, 1=enable (def)
-let g:pencil#textwidth = 74
-" let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)<Paste>
+let g:pencil#autoformat      = 0     " 0 = disable, 1 = enable (def)
+let g:pencil#textwidth       = 100
+" let g:pencil#cursorwrap    = 1     " 0 = disable, 1 = enable (def)<Paste>
 let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
 
 augroup pencil
@@ -1379,7 +1379,7 @@ augroup END
 " manual reformatting shortcuts
 nnoremap Q gqap<CR>
 xnoremap Q gq<CR>
-nnoremap <leader>Q vapJgqap<CR>
+nnoremap <silent><leader>Q vapJgqap<CR>
 " }}}
 
 " vim-airline-formatting {{{
