@@ -52,11 +52,9 @@ Plug 'tpope/vim-git'
 Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
-Plug 't9md/vim-quickhl'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
 Plug 'ivyl/vim-bling'
@@ -70,7 +68,6 @@ Plug 'eapache/rainbow_parentheses.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'jalvesaq/vimcmdline'
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'lilydjwg/colorizer'
 Plug 'reedes/vim-pencil'
@@ -368,11 +365,6 @@ noremap <Down>  <NOP>
 noremap <Left>  <NOP>
 noremap <Right> <NOP>
 
-" vnoremap <Up>    <NOP>
-" vnoremap <Down>  <NOP>
-" vnoremap <Left>  <NOP>
-" vnoremap <Right> <NOP>
-
 " set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
 " imap jj <Esc>
@@ -416,8 +408,8 @@ set novisualbell
 set t_vb=
 
 "Add empty lines
-nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+nnoremap [<space>  :<c-u>put! = repeat(nr2char(10), v:count1)<cr>'[
+nnoremap ]<space>  :<c-u>put  = repeat(nr2char(10), v:count1)<cr>
 
 " Write current buffer with sudo privileges
 " nnoremap <silent><Leader>sw     :w !sudo tee % &> /dev/null<CR>
@@ -1063,13 +1055,6 @@ nmap g+    <Plug>(highlightedundo-gplus)
 nmap U <C-R>
 " }}}
 
-" vim-quickhl {{{
-nmap <silent><Leader>m <Plug>(quickhl-manual-this)
-xmap <silent><Leader>m <Plug>(quickhl-manual-this)
-nmap <silent><Leader>M <Plug>(quickhl-manual-reset)
-xmap <silent><Leader>M <Plug>(quickhl-manual-reset)
-" }}}
-
 " vim-cursormode {{{
 let g:cursormode_exit_mode = 'd'
 let cursormode_color_map = {
@@ -1102,13 +1087,13 @@ nnoremap <silent><leader>Q vapJgqap<CR>
 " }}}
 
 " vim-airline-formatting {{{
-let g:airline#extensions#formatting#enabled = 1
+let g:airline#extensions#formatting#enabled        = 1
 " spaces / tabs indicator
-let g:airline#extensions#formatting#space_glyph = '·'
-let g:airline#extensions#formatting#tab_glyph = '→'
+let g:airline#extensions#formatting#space_glyph    = '·'
+let g:airline#extensions#formatting#tab_glyph      = '→'
 
 " symbolizes the text body
-let g:airline#extensions#formatting#text_glyph = '≡'
+let g:airline#extensions#formatting#text_glyph     = '≡'
 
 " wrap/nowrap inidcator (if Pencil isn't found)
 let g:airline#extensions#formatting#wrap_no_pencil = '¶'

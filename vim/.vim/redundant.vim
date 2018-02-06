@@ -89,6 +89,9 @@
 " Plug 'ryanpcmcquen/fix-vim-pasting'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'junegunn/vim-slash'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 't9md/vim-quickhl'
+" Plug 'jalvesaq/vimcmdline'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
