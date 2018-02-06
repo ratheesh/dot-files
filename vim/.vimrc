@@ -658,41 +658,11 @@ nmap # <Plug>(anzu-sharp)
 nmap <silent><BS>       :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}
 
-" lightline {{{
-let g:lightline = {
-            \ 'colorscheme': 'Dracula',
-            \ 'active': {
-            \   'right': [ [ 'lineinfo' ],
-            \              [ 'percent' ],
-            \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-            \       },
-            \ 'enable': {
-            \       'statusline': 1,
-            \       'tabline': 1,
-            \ },
-            \ 'component': {
-            \   'charvaluehex': '0x%B'
-            \ },
-            \ 'component_function': {
-            \   'gitbranch': 'fugitive#head'
-            \ },
-            \ }
-"}}}
-
 " Vim-licenses {{{
 let g:licenses_copyright_holders_name = 'Ratheesh <ratheeshreddy@gmail.com>'
 let g:licenses_authors_name           = 'Ratheesh S'
 let g:licenses_default_commands       = ['gplv2', 'mit']
 " }}}
-
-" vim-sneak{{{
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-let g:sneak#label  = 1
-let g:sneak#s_next = 1
-"}}}
 
 " CtrlP {{{
 let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
@@ -712,10 +682,6 @@ let g:ctrlp_lazy_update =  300
 
 " let g:ctrlp_by_filename = 0
 " let g:ctrlp_follow_symlinks = 0
-
-" if executable('fzf')
-" nnoremap <Leader>ff :FZF<CR>
-" endif
 
 let g:ctrlp_match_window = 'min:1,max:10,results:100'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -753,15 +719,6 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|__init__\.py'
 " }}}
 
-" ctrlp-funky {{{
-nnoremap <silent><Leader>fu :CtrlPFunky<CR>
-" Narrow the list down with a word under cursor
-nnoremap <silent><Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<CR>
-let g:ctrlp_funky_matchtype        = 'path'
-let g:ctrlp_funky_syntax_highlight = 1
-let g:ctrlp_funky_nolim            = 1
-" }}}
-
 " ctrlp_bdelete {{{
 call ctrlp_bdelete#init()
 let g:ctrlp_bdelete_keymap_trigger='<C-_>'
@@ -781,13 +738,6 @@ let g:ctrlp_yankring_use_textchanged = 1
 let g:ctrlp_yankring_minimum_chars   = 2
 " }}}
 
-" vim-swoop {{{
-" nmap <Leader>l :call Swoop()<CR>
-" vmap <Leader>l :call SwoopSelection()<CR>
-" let g:swoopIgnoreCase = 1
-" let g:swoopAutoInsertMode = 0
-" }}}
-
 " vim-ctrlp-ag {{{
 nnoremap <silent><Leader>gg :CtrlPag<CR>
 vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
@@ -798,10 +748,6 @@ let g:ctrlp_ag_ignores = '--ignore .git
             \ --ignore "_build/*"
             \ --ignore "node_modules/*"'
 " }}}
-
-" supertab  {{{
-let g_SuperTabDefaultCompletionType="context"
-"}}}
 
 " vim-startify {{{
 let g:startify_custom_header = get(g:, 'startify_custom_header', [
@@ -879,7 +825,6 @@ let g:UltiSnipsExpandTrigger       = "<C-e>"
 let g:UltiSnipsListSnippets        = "<C-tab>"
 let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
 let g:indentLine_faster            = 1
 "}}}
 
@@ -893,21 +838,6 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 0
 let g:ale_gitcommit_gitlint_use_global=1
-" }}}
-
-" Syntastic {{{
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list           = 0
-let g:syntastic_check_on_open           = 1
-let g:syntastic_check_on_wq             = 0
-let g:syntastic_reuse_loc_lists         = 0
-
-let g:syntastic_python_checkers         = ['python', 'flake8']
-let g:syntastic_python_flake8_post_args = '--ignore=W391'
 " }}}
 
 " rainbow_parenthesis {{{
@@ -938,64 +868,6 @@ au BufEnter  * RainbowParenthesesLoadRound
 au BufEnter  * RainbowParenthesesLoadSquare
 au BufEnter  * RainbowParenthesesLoadBraces
 " au BufEnter  * RainbowParenthesesLoadChevrons
-
-" }}}
-
-" vim-miniyank {{{
-" map p <Plug>(miniyank-autoput)
-" map P <Plug>(miniyank-autoPut)
-
-" map <leader>p <Plug>(miniyank-startput)
-" map <leader>P <Plug>(miniyank-startPut)
-
-" if !has('nvim')
-"     map p <Plug>(miniyank-cycle)
-" else
-"     map <M-p> <Plug>(miniyank-cycle)
-" endif
-" }}}
-
-" vim-indent-guide {{{
-let g:indentguides_ignorelist = ['text', 'vim']
-let g:indentguides_spacechar  = '┆'
-let g:indentguides_tabchar    = '¦'
-let g:indentguides_firstlevel = 0
-" }}}
-
-" quick-scope {{{
-let g:qs_highlight_on_keys                 = ['f', 'F', 't', 'T']
-let g:qs_first_occurrence_highlight_color  = 162
-let g:qs_second_occurrence_highlight_color = 130
-" }}}
-
-" vim-bookmarks {{{
-highlight BookmarkSign ctermbg=234 ctermfg=27
-" highlight BookmarkLine ctermbg=194 ctermfg=NONE
-" let g:bookmark_sign = '♥'
-" let g:bookmark_highlight_lines = 1
-let g:bookmark_no_default_key_mappings = 1
-let g:bookmark_auto_save               = 1
-let g:bookmark_auto_close              = 1
-" nmap <leader>mm  :BookmarkToggle<CR>
-" nmap <leader>mi  :BookmarkAnnotate<CR>
-" nmap <leader>mn  :BookmarkNext<CR>
-" nmap <leader>mp  :BookmarkPrev<CR>
-" nmap <leader>ma  :BookmarkShowAll<CR>
-" nmap <leader>mc  :BookmarkClear<CR>
-" nmap <leader>mx  :BookmarkClearAll<CR>
-" nmap <leader>mkk :BookmarkMoveUp<CR>
-" nmap <leader>mjj :BookmarkMoveDown<CR>
-" }}}
-
-" incsearch-fuzzy {{{
-map <silent>z/ <Plug>(incsearch-fuzzy-/)
-map <silent>z? <Plug>(incsearch-fuzzy-?)
-" }}}
-
-" vim-easyalign {{{
-xmap ga     <Plug>(EasyAlign)
-nmap ga     <Plug>(EasyAlign)
-xmap <cr>   <plug>(LiveEasyAlign)
 " }}}
 
 " hardtime {{{
@@ -1005,19 +877,6 @@ let g:hardtime_showmsg                = 1
 let g:hardtime_ignore_buffer_patterns = ["NERD.*", "Tagbar.*"]
 let g:hardtime_maxcount               = 2
 nnoremap <silent><leader>th           :HardTimeToggle<CR>
-" }}}
-
-" neosnippet {{{
-" if  has('nvim')
-" let g:neosnippet#enable_completed_snippet = 1
-" imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <silent><C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-" imap <silent><C-k>     <Plug>(neosnippet_expand_or_jump)
-" endif
 " }}}
 
 " deoplete {{{
@@ -1111,14 +970,6 @@ let g:Schlepp#allowSquishingLines  = 1
 let g:Schlepp#allowSquishingBlocks = 1
 let g:Schlepp#trimWS               = 1
 let g:Schlepp#reindent             = 1
-" }}}
-
-" NERDTree {{{
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" map <C-n> :NERDTreeToggle<CR>
-" nnoremap <Leader>\ :NERDTreeToggle<CR>
-" nnoremap <silent><Leader>v :NERDTreeFind<CR>
-" nnoremap <silent><Leader>] :wincmd w<CR>
 " }}}
 
 " cscope {{{
@@ -1230,24 +1081,6 @@ let cursormode_color_map = {
             \   "\<C-V>":  "#ffca88",
             \   "d"     :  "#eeeeee",
             \ }
-" }}}
-
-" vim-halo {{{
-nnoremap <silent><C-\> :call halo#run({'shape': 'cross1'})<CR>
-" }}}
-
-" vim-tablemode {{{
-let g:table_mode_corner          = '|'
-let g:table_mode_corner_corner   = '+'
-let g:table_mode_header_fillchar = '='
-" }}}
-
-" vim-slash {{{
-noremap <plug>(slash-after) zz
-
-if has('timers') && !has('nvim')
-  noremap <expr> <plug>(slash-after) slash#blink(2, 50)
-endif
 " }}}
 
 " vim-pencil {{{
