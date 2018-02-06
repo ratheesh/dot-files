@@ -866,6 +866,13 @@ au BufEnter  * RainbowParenthesesLoadBraces
 " au BufEnter  * RainbowParenthesesLoadChevrons
 " }}}
 
+" vim-indentguides {{{
+let g:indentguides_ignorelist = ['text', 'vim']
+let g:indentguides_spacechar  = '┆'
+let g:indentguides_tabchar    = '¦'
+let g:indentguides_firstlevel = 0
+" }}}
+
 " hardtime {{{
 let g:hardtime_default_on             = 0
 let g:hardtime_timeout                = 2000
