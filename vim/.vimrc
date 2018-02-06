@@ -399,6 +399,10 @@ cnoremap <c-p>  <up>
 nnoremap j gj
 nnoremap k gk
 
+" Don't lose deleted text in insert mode <C-u>
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
 " redraw screen
 " nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l><Paste>
 
