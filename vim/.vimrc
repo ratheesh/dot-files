@@ -833,7 +833,7 @@ autocmd BufEnter ControlP set nonumber
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 0
-let g:ale_gitcommit_gitlint_use_global=1
+" let g:ale_gitcommit_gitlint_use_global=1
 " }}}
 
 " rainbow_parenthesis {{{
