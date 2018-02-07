@@ -198,7 +198,7 @@ set modelines=5
 set showtabline=2
 " set fillchars="vert:\│,fold:-"
 set fillchars+=vert:\│,fold:-
-" set list
+set list
 " set listchars=eol:¬,trail:·,extends:❯,precedes:❮
 set listchars=trail:·,extends:❯,precedes:❮
 set fillchars+=diff:⣿
