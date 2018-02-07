@@ -913,8 +913,6 @@ inoremap <expr><C-y> deoplete#close_popup()
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
 inoremap <expr><C-g> deoplete#undo_completion()
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 
 " let g:deoplete#disable_auto_complete = 1
 inoremap <silent><expr> <TAB>
