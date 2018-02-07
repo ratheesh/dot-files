@@ -908,6 +908,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-\> pumvisible() ? "\<C-w>" : "\<C-\>"
 inoremap <expr><C-y> deoplete#close_popup()
 
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
