@@ -41,6 +41,7 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'ratheesh/ctrlp-extensions.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'lokikl/vim-ctrlp-ag'
+Plug 'shinnya/ctrlp-jumplist'
 Plug 'brookhong/cscope.vim'
 Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'
@@ -705,6 +706,7 @@ nnoremap <silent><Leader>fp :CtrlPRegister<CR>
 nnoremap <silent><Leader>fl :CtrlPLine<CR>
 nnoremap <silent><Leader>fy :CtrlPYankring<CR>
 nnoremap <silent><leader>fc :CtrlPCommandPalette<cr>
+nnoremap <silent><leader>fj :CtrlPJumpList<cr>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
