@@ -422,10 +422,17 @@ nnoremap ]<space>  :<c-u>put  = repeat(nr2char(10), v:count1)<cr>
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Move across vim split Windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+if has('nvim')
+    map <M-j> <C-W>j
+    map <M-k> <C-W>k
+    map <M-h> <C-W>h
+    map <M-l> <C-W>l
+else
+    map j <C-W>j
+    map k <C-W>k
+    map h <C-W>h
+    map l <C-W>l
+endif
 
 " Increase/decrease size and width (left, down, up and right) using ctrl-alt
 nnoremap <C-A-h> <C-w>2<
@@ -944,8 +951,8 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " vim-move {{{
 let g:move_map_keys = 0
 if has('nvim')
-    nmap <M-k> <Plug>MoveLineUp
-    nmap <M-j> <Plug>MoveLineDown
+    nmap <M-=> <Plug>MoveLineUp
+    nmap <M--> <Plug>MoveLineDown
 else
     " vmap k <Plug>MoveBlockUp
     " vmap j <Plug>MoveBlockDown
