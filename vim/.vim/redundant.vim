@@ -65,6 +65,7 @@
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'mattn/ctrlp-mark'
 " Plug 'kien/rainbow_parentheses.vim'
+" Plug 'dominikduda/vim_current_word'
 " Plug 'luochen1990/rainbow'
 " Plug 'tpope/vim-characterize'
 " Plug 'adelarsq/vim-matchit'
