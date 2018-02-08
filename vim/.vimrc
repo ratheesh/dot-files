@@ -818,9 +818,9 @@ let g:SignatureMarkTextHL        = "SignColumn"
 
 " vim-smalls {{{
 let g:smalls_auto_jump = 1
-" map normal-mode 's' for simple search
+let g:smalls_auto_jump_min_input_length=2
+let g:smalls_auto_jump_timeout=0.3
 nmap s <Plug>(smalls)
-" if you want to use smalls in visual/operator or both mode.
 omap s <Plug>(smalls)
 xmap s <Plug>(smalls)
 set ignorecase smartcase
