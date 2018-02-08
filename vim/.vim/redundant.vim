@@ -64,7 +64,6 @@
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'mattn/ctrlp-mark'
-" Plug 'shinnya/ctrlp-jumplist'
 " Plug 'kien/rainbow_parentheses.vim'
 " Plug 'luochen1990/rainbow'
 " Plug 'tpope/vim-characterize'
