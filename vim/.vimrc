@@ -472,7 +472,7 @@ nnoremap zm zM
 nnoremap zr zR
 
 " Use <tab> to move between bracket pairs (related to matchit plugin)
-map <tab> %
+" map <tab> %
 
 "spell suggestion in a popup
 nnoremap \s ea<C-X><C-S>
@@ -759,7 +759,6 @@ let g:startify_custom_header = get(g:, 'startify_custom_header', [
             \'',
             \'',
             \ ])
-" }}}
 let g:startify_bookmarks = [
             \       {'c': '~/.vimrc'     },
             \       {'g': '~/.gitconfig' },
