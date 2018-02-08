@@ -106,6 +106,7 @@ endif
 set nostartofline
 set numberwidth=1
 set tabstop=4
+set matchpairs+=<:>
 set bs=2
 " set ww=<,>,h,l
 set showmatch
