@@ -1110,8 +1110,8 @@ nnoremap <silent><leader>Q vapJgqap<CR>
 " vim-airline-formatting {{{
 let g:airline#extensions#formatting#enabled        = 1
 " spaces / tabs indicator
-let g:airline#extensions#formatting#space_glyph    = '·'
-let g:airline#extensions#formatting#tab_glyph      = '→'
+let g:airline#extensions#formatting#space_glyph    = '•'
+let g:airline#extensions#formatting#tab_glyph      = '▸'
 
 " symbolizes the text body
 let g:airline#extensions#formatting#text_glyph     = '≡'
