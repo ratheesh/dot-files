@@ -25,6 +25,7 @@ filetype off                  " required!
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
@@ -1117,6 +1118,13 @@ let g:airline#extensions#formatting#text_glyph     = '≡'
 
 " wrap/nowrap inidcator (if Pencil isn't found)
 let g:airline#extensions#formatting#wrap_no_pencil = '¶'
+" }}}
+
+" vim-easy-align {{{
+let g:easy_align_bypass_fold = 1
+nmap ga     <Plug>(EasyAlign)
+xmap ga     <Plug>(EasyAlign)
+xmap <CR>   <plug>(LiveEasyAlign)
 " }}}
 
 " vim-bling {{{
