@@ -857,9 +857,9 @@ let g:ale_lint_on_text_changed = "never"
 let g:ale_lint_on_insert_leave = 1
 autocmd BufEnter ControlP let b:ale_enabled = 0
 autocmd BufEnter ControlP set nonumber
-let g:ale_set_loclist = 0
+let g:ale_set_loclist  = 0
 let g:ale_set_quickfix = 1
-let g:ale_open_list = 0
+let g:ale_open_list    = 0
 " let g:ale_gitcommit_gitlint_use_global=1
 " }}}
 
