@@ -467,6 +467,7 @@ nnoremap <A-o> <C-w>ozv
 
 " nnoremap <Leader>j :
 nmap <silent><Leader><Leader> V
+xmap <silent><Leader><Leader> V
 nmap <silent><Leader><BS> <c-v>
 " map <F9>                  :bprev<CR>
 " map <F10>                 :bnext<CR>
