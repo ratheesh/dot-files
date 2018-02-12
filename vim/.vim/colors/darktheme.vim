@@ -17,7 +17,7 @@ scriptencoding utf-8
 highlight clear
 
 if exists("syntax_on")
-  syntax reset
+    syntax reset
 endif
 
 let g:colors_name = "darktheme"
@@ -29,7 +29,7 @@ hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#c
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#101010   gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#1a1c1e   gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
-hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#303030   gui=NONE
+hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#303438   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#162544   gui=NONE
 hi CursorColumn ctermbg=234                     cterm=NONE              guifg=NONE      guibg=#44475a   gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#747474   guibg=#282a36   gui=NONE
@@ -50,7 +50,7 @@ hi Boolean      ctermfg=129     ctermbg=NONE    cterm=NONE              guifg=#b
 hi Character    ctermfg=64      ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Comment      ctermfg=242     ctermbg=NONE    cterm=italic            guifg=#778080   guibg=NONE      gui=itaLIC
 hi Conditional  ctermfg=25      ctermbg=NONE    cterm=italic            guifg=#6494ed   guibg=NONE      gui=NONE
-hi Constant     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#5f9ea0       guibg=NONE      gui=NONE
+hi Constant     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#5f9ea0   guibg=NONE      gui=NONE
 hi Define       ctermfg=66      ctermbg=NONE    cterm=NONE              guifg=#ff79c6   guibg=NONE      gui=NONE
 hi ErrorMsg     ctermfg=7       ctermbg=212     cterm=NONE              guifg=#fa2c77   guibg=#303030   gui=NONE
 hi WarningMsg   ctermfg=162     ctermbg=212     cterm=NONE              guifg=#fccc82   guibg=#303030   gui=NONE
@@ -156,10 +156,10 @@ hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff
 " }}}
 
 " git-gutter {{{
-hi GitGutterAdd         ctermfg=26      ctermbg=233     cterm=bold  guifg=#27b062  guibg=#1a1c1e   gui=bold
-hi GitGutterChange      ctermfg=180     ctermbg=233     cterm=bold  guifg=#f7ca88  guibg=#1a1c1e   gui=bold
-hi GitGutterDelete      ctermfg=196     ctermbg=233     cterm=bold  guifg=#fb091f  guibg=#1a1c1e   gui=bold
-hi GitGutterChangeDelete ctermfg=94     ctermbg=233     cterm=bold  guifg=#ff5500  guibg=#1a1c1e   gui=bold
+hi GitGutterAdd          ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#1a1c1e gui=bold
+hi GitGutterChange       ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#1a1c1e gui=bold
+hi GitGutterDelete       ctermfg=196 ctermbg=233 cterm=bold guifg=#fb091f guibg=#1a1c1e gui=bold
+hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=#1a1c1e gui=bold
 " }}}
 
 " CtrlP {{{
@@ -178,10 +178,10 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 " }}}
 
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#909090  guibg=#30343c gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#a57d71 gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#334050 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#c6ad93 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#30343c gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#147272 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#3b7884 gui=NONE
 "}}}
 
 " GitCommit {{{
@@ -189,7 +189,7 @@ hi gitcommitcomment             ctermfg=240     ctermbg=none    cterm=none     g
 hi gitcommitoverflow            ctermfg=162     ctermbg=237     cterm=italic   guifg=#db080b guibg=#404040 gui=italic
 hi gitcommitsummary             ctermfg=7       ctermbg=none    cterm=none     guifg=#eeeeee guibg=NONE    gui=NONE
 hi gitcommitbranch              ctermfg=180     ctermbg=none    cterm=none     guifg=#f7cab8 guibg=NONE    gui=NONE
-hi gitcommitblank               ctermfg=9       ctermbg=237     cterm=italic   guifg=#db080b guibg=#404040 gui=italic
+hi GItcommitblank               ctermfg=9       ctermbg=237     cterm=italic   guifg=#db080b guibg=#404040 gui=italic
 hi gitcommitheader              ctermfg=246     ctermbg=none    cterm=none     guifg=#808080 guibg=NONE    gui=NONE
 hi gitcommitdiff                ctermfg=245     ctermbg=none    cterm=none     guifg=#c0c0c0 guibg=NONE    gui=NONE
 hi gitcommitselectedfile        ctermfg=66      ctermbg=none    cterm=none     guifg=#3e8c75 guibg=NONE    gui=NONE
@@ -279,9 +279,9 @@ hi htmlSpecialChar      ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9
 "}}}
 
 " Java Script {{{
-hi javaScriptFunction   ctermfg=117     ctermbg=NONE    cterm=NONE
-hi javaScriptRailsFunction ctermfg=117  ctermbg=NONE    cterm=NONE
-hi javaScriptBraces     ctermfg=NONE    ctermbg=NONE    cterm=NONE
+hi javaScriptFunction      ctermfg=117  ctermbg=NONE cterm=NONE
+hi javaScriptRailsFunction ctermfg=117  ctermbg=NONE cterm=NONE
+hi javaScriptBraces        ctermfg=NONE ctermbg=NONE cterm=NONE
 "}}}
 
 " Yaml {{{
@@ -303,9 +303,9 @@ hi cssBraces            ctermfg=NONE    ctermbg=NONE    cterm=NONE
 "}}}
 
 " TabLine {{{
-hi TabLine              ctermfg=248     ctermbg=235     cterm=NONE      guifg=#666666   guibg=#282a36 gui=none
-hi TabLineFill          ctermfg=246     ctermbg=235     cterm=NONE      guifg=#333333   guibg=#282a36 gui=none
-hi TabLineSel           ctermfg=15      ctermbg=24      cterm=italic    guifg=WHITE       guibg=#282a36 gui=none
+hi TabLine              ctermfg=248     ctermbg=235     cterm=NONE      guifg=#666666   guibg=#282a36 gui=NONE
+hi TabLineFill          ctermfg=246     ctermbg=235     cterm=NONE      guifg=#333333   guibg=#282a36 gui=NONE
+hi TabLineSel           ctermfg=15      ctermbg=24      cterm=italic    guifg=#eeeeee   guibg=#282a36 gui=NONE
 "}}}
 
 " Elixir {{{
