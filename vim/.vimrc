@@ -86,6 +86,10 @@ Plug 'junegunn/vim-after-object'
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-colors-pencil'
 Plug 'muellan/vim-airline-formatting'
+Plug 'reedes/vim-textobj-sentence'
+Plug 'reedes/vim-lexical'
+Plug 'reedes/vim-textobj-quote'
+Plug 'beloglazov/vim-online-thesaurus'
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
