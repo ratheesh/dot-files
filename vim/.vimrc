@@ -72,6 +72,17 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'lilydjwg/colorizer'
+
+" text objects related
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
+Plug 'junegunn/vim-after-object'
+" Plug 'wellle/targets.vim'
+
+" writing prose
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-colors-pencil'
 Plug 'muellan/vim-airline-formatting'
