@@ -356,6 +356,9 @@ autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config f
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
 autocmd BufEnter Makefile setlocal noexpandtab
 
+" close Quickfix/Locationlist when file is selected
+" autocmd FileType qf nmap <buffer> <CR> <CR>:lclose<CR>
+
 " Save when buffer command takes one to another file and when losing focus
 augroup focus_lost
     au!
@@ -923,13 +926,13 @@ let g:deoplete#enable_ignore_case         = 1
 let g:deoplete#enable_smart_case          = 1
 let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path    = 1
-let g:deoplete#max_list                   = 25
+let g:deoplete#max_list                   = 50
 let deoplete#tag#cache_limit_size         = 10000000
 " let g:deoplete#complete_method            = "completefunc"
 
 " Don't align these lines!
 set completeopt=longest,menuone
-set pumheight=8 " set max. height of popup menu
+set pumheight=8 " set max. Height of popup menu
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
