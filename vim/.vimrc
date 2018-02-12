@@ -477,7 +477,7 @@ map <F4>                    :echo expand('%:p')<CR>
 nmap <silent><Leader>bd     :bdelete<CR>
 nmap <silent><BS>           :nohlsearch<CR>
 nmap <silent><Leader>bh     :Startify<CR>
-nmap <silent><Leader><Tab>  :b#<CR>
+" nmap <silent><Leader><Tab>  :b#<CR>
 " nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
@@ -970,10 +970,12 @@ call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " }}}
 
 " vim-textmanip {{{
-xmap <Leader>do <Plug>(textmanip-duplicate-down)
-nmap <Leader>do <Plug>(textmanip-duplicate-down)
-xmap <Leader>dO <Plug>(textmanip-duplicate-up)
-nmap <Leader>dO <Plug>(textmanip-duplicate-up)
+xmap <Leader>dj <Plug>(textmanip-duplicate-down)
+nmap <Leader>dj <Plug>(textmanip-duplicate-down)
+xmap <Leader>dk <Plug>(textmanip-duplicate-up)
+nmap <Leader>dk <Plug>(textmanip-duplicate-up)
+xmap <Leader>dl <Plug>(textmanip-duplicate-right)
+xmap <Leader>dh <Plug>(textmanip-duplicate-left)
 
 if has('nvim')
     xmap <M-j> <Plug>(textmanip-move-down)
@@ -987,8 +989,8 @@ else
     xmap l <Plug>(textmanip-move-right)
 endif
 
-nmap <CR>   <Plug>(textmanip-blank-below)
-nmap <S-CR> <Plug>(textmanip-blank-above)
+nmap <Leader>o <Plug>(textmanip-blank-below)
+nmap <Leader>O <Plug>(textmanip-blank-above)
 
 " toggle insert/replace with <C-s>
 nmap <C-s> <Plug>(textmanip-toggle-mode)
