@@ -31,8 +31,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'matze/vim-move'
-Plug 'zirrostig/vim-schlepp'
+Plug 't9md/vim-textmanip'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'terryma/vim-smooth-scroll'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -837,9 +836,9 @@ let g:SignatureMarkTextHL        = "SignColumn"
 " }}}
 
 " vim-smalls {{{
-let g:smalls_auto_jump = 1
-let g:smalls_auto_jump_min_input_length=2
-let g:smalls_auto_jump_timeout=0.3
+let g:smalls_auto_jump                  = 1
+let g:smalls_auto_jump_min_input_length = 2
+let g:smalls_auto_jump_timeout          = 0.3
 nmap s <Plug>(smalls)
 omap s <Plug>(smalls)
 xmap s <Plug>(smalls)
@@ -970,38 +969,30 @@ call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " }}}
 
-" vim-move {{{
-let g:move_map_keys = 0
-if has('nvim')
-    nmap <M-=> <Plug>MoveLineUp
-    nmap <M--> <Plug>MoveLineDown
-else
-    " vmap k <Plug>MoveBlockUp
-    " vmap j <Plug>MoveBlockDown
-    nmap = <Plug>MoveLineUp
-    nmap - <Plug>MoveLineDown
-endif
-" }}}
+" vim-textmanip {{{
+xmap <Leader>do <Plug>(textmanip-duplicate-down)
+nmap <Leader>do <Plug>(textmanip-duplicate-down)
+xmap <Leader>dO <Plug>(textmanip-duplicate-up)
+nmap <Leader>dO <Plug>(textmanip-duplicate-up)
 
-" vim-schlepp {{{
-" Move block/lines as you wish
 if has('nvim')
-    vmap <M-k> <Plug>SchleppUp
-    vmap <M-j> <Plug>SchleppDown
-    vmap <M-h> <Plug>SchleppLeft
-    vmap <M-l> <Plug>SchleppRight
+    xmap <M-j> <Plug>(textmanip-move-down)
+    xmap <M-k> <Plug>(textmanip-move-up)
+    xmap <M-h> <Plug>(textmanip-move-left)
+    xmap <M-l> <Plug>(textmanip-move-right)
 else
-    vmap k <Plug>SchleppUp
-    vmap j <Plug>SchleppDown
-    vmap h <Plug>SchleppLeft
-    vmap l <Plug>SchleppRight
+    xmap j <Plug>(textmanip-move-down)
+    xmap k <Plug>(textmanip-move-up)
+    xmap h <Plug>(textmanip-move-left)
+    xmap l <Plug>(textmanip-move-right)
 endif
 
-"Other settings
-let g:Schlepp#allowSquishingLines  = 1
-let g:Schlepp#allowSquishingBlocks = 1
-let g:Schlepp#trimWS               = 1
-let g:Schlepp#reindent             = 1
+nmap <CR>   <Plug>(textmanip-blank-below)
+nmap <S-CR> <Plug>(textmanip-blank-above)
+
+" toggle insert/replace with <C-s>
+nmap <C-s> <Plug>(textmanip-toggle-mode)
+xmap <C-s> <Plug>(textmanip-toggle-mode)
 " }}}
 
 " cscope {{{

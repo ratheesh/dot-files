@@ -2,6 +2,8 @@
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'wincent/terminus'
+" Plug 'matze/vim-move'
+" Plug 'zirrostig/vim-schlepp'
 " Plug 'rstacruz/vim-opinion'
 " Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-tbone'
