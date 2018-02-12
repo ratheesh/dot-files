@@ -1,5 +1,4 @@
 " Plug 'junegunn/seoul256.vim'
-" Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'wincent/terminus'
