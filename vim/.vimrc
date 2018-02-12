@@ -1144,10 +1144,11 @@ let g:easy_align_bypass_fold = 1
 nmap ga     <Plug>(EasyAlign)
 xmap ga     <Plug>(EasyAlign)
 xmap <CR>   <plug>(LiveEasyAlign)
+let g:easy_align_ignore_groups = ['Comment', 'String']
 " }}}
 
 " vim-bling {{{
-let g:bling_time         = 200
+let g:bling_time         = 175
 let g:bling_count        = 1
 let g:bling_color_fg     = '0'
 let g:bling_color_bg     = '131'
