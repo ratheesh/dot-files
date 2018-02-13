@@ -417,8 +417,8 @@ cnoremap <c-n>  <down>
 cnoremap <c-p>  <up>
 
 " navigate naturally even with wrapped lines
-nnoremap j gj
-nnoremap k gk
+noremap <silent><expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent><expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Don't lose deleted text in insert mode <C-u>
 inoremap <c-u> <c-g>u<c-u>
