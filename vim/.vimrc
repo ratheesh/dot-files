@@ -845,9 +845,9 @@ let g:SignatureMarkTextHL        = "SignColumn"
 let g:smalls_auto_jump                  = 1
 let g:smalls_auto_jump_min_input_length = 2
 let g:smalls_auto_jump_timeout          = 0.3
-nmap s <Plug>(smalls)
-omap s <Plug>(smalls)
-xmap s <Plug>(smalls)
+nmap <Leader>j <Plug>(smalls)
+omap <Leader>j <Plug>(smalls)
+xmap <Leader>j <Plug>(smalls)
 set ignorecase smartcase
 " }}}
 
