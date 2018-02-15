@@ -394,8 +394,13 @@ imap <Esc> l
 vmap <Esc> l
 inoremap jj l
 " vnoremap jj l
+
+" swap ' and ` for easy marks navigation
 nnoremap ' `
 nnoremap ` '
+xnoremap ' `
+xnoremap ` '
+
 if  has('nvim')
     nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
 else
