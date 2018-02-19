@@ -27,16 +27,16 @@ let g:colors_name = "darktheme"
 
 hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#cccccc   guibg=#202020   gui=NONE
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#101010   gui=NONE
-hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#1a1c1e   gui=NONE
+hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#202020   gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#303438   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#162544   gui=NONE
-hi CursorColumn ctermbg=234                     cterm=NONE              guifg=NONE      guibg=#44475a   gui=NONE
-hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#747474   guibg=#282a36   gui=NONE
+hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#44475a   gui=NONE
+hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#909090   guibg=#343640   gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#e2e2e5   guibg=#a3495b   gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=NONE      guibg=NONE        gui=bold,underline
-hi ParenError   ctermfg=NONE     ctermbg=NONE    cterm=underline,bold
+hi ParenError   ctermfg=NONE    ctermbg=NONE    cterm=underline,bold
 hi Braces       ctermfg=NONE    ctermbg=NONE    cterm=bold,underline
 hi StatusLine   ctermfg=7       ctermbg=236     cterm=bold              guifg=#f8f8f2   guibg=#64666d   gui=bold
 hi StatusLineNC ctermfg=7       ctermbg=236     cterm=NONE              guifg=#f8f8f2   guibg=#64666d   gui=NONE
@@ -178,10 +178,10 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 " }}}
 
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#3a3a3c gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#c6ad93 gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#313540 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#a3495b gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#3a3a3c gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#3b7884 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#147272 gui=NONE
 "}}}
 
 " GitCommit {{{
