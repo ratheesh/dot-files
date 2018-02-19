@@ -960,6 +960,16 @@ let deoplete#tag#cache_limit_size         = 10000000
 set completeopt=longest,menuone
 set pumheight=8 " set max. Height of popup menu
 
+let g:deoplete#sources  = {}
+let g:deoplete#sources_ = [] " includes all sources
+
+" Use partial fuzzy matches like YouCompleteMe
+call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
+call deoplete#custom#set('_', 'sorters', ['sorter_word'])
+" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#set('ultisnips', 'rank', 9999)
+
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
@@ -987,13 +997,6 @@ endfunction
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-let g:deoplete#sources     = {}
-let g:deoplete#sources_   = [] " includes all sources
-
-" Use partial fuzzy matches like YouCompleteMe
-call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
 " }}}
 
 " vim-textmanip {{{
