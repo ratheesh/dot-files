@@ -583,19 +583,20 @@ let g:airline_symbols.readonly = ''
 
 " Customize Airline Layout
 function! AirlineInit()
-    call airline#parts#define_accent('mode', 'italic')
+    call airline#parts#define_accent('mode', 'bold')
     " call airline#parts#define_accent('branch', 'italic')
     call airline#parts#define_raw('linenr', '%l')
     call airline#parts#define_accent('linenr', 'bold')
     call airline#parts#define_raw('modified', '%{&modified ? "[+]" : ""}')
-    call airline#parts#define_accent('modified', 'red')
+    call airline#parts#define_accent('modified', 'orange')
     " call airline#parts#define_accent('readonly', 'bold')
-    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','keymap','capslock','iminsert','☰%l:%v'])
+    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','keymap','capslock','iminsert'])
     let g:airline_section_b = airline#section#create(['hunks'])
     let g:airline_section_c = airline#section#create(['readonly',' %f', 'modified'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['ffenc'])
-    let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','ch:%02B│','%p%%'])
+    " let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','ch:%02B│','%p%%'])
+    let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','%p%%'])
 endfunction
 
 autocmd User AirlineAfterInit,AirlineAfterTheme call AirlineInit()
