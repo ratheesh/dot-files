@@ -319,6 +319,7 @@ if has('nvim')
     "   set shada='50,s100,n$XDG_CACHE_HOME/nvim/shada
     " set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/viminfo
     set shada=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.config/nvim/shada.info
+    autocmd VimLeave * wshada!
 else
     set viminfo=%,<800,'300,/50,<1000,:100,s100,h,f1,n$HOME/.vim/tmp/viminfo
 endif
