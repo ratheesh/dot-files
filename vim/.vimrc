@@ -665,18 +665,32 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 " \ 'c': 30,
 " \ }
 
+" let g:airline_mode_map = {
+"             \ '__' : '-',
+"             \ 'n'  : 'Ɲѳrmαl',
+"             \ 'i'  : '¶ƞsεrt',
+"             \ 'R'  : 'Rερlαcε',
+"             \ 'c'  : '₵md',
+"             \ 'v'  : 'Ʋisuαl',
+"             \ 'V'  : 'Ʋ-Liƞε',
+"             \ '' : 'Ʋ-ẞlѳck',
+"             \ 's'  : 'Subst',
+"             \ 'S'  : 'Subst-Liƞε',
+"             \ '' : 'Subst-ẞlk',
+"             \ }
+
 let g:airline_mode_map = {
             \ '__' : '-',
-            \ 'n'  : 'Ɲѳrmαl',
-            \ 'i'  : '¶ƞsεrt',
-            \ 'R'  : 'Rερlαcε',
-            \ 'c'  : '₵md',
-            \ 'v'  : 'Ʋisuαl',
-            \ 'V'  : 'Ʋ-Liƞε',
-            \ '' : 'Ʋ-ẞlѳck',
-            \ 's'  : 'Subst',
-            \ 'S'  : 'Subst-Liƞε',
-            \ '' : 'Subst-ẞlk',
+            \ 'n'  : 'NORMΑL',
+            \ 'i'  : 'INSERT',
+            \ 'R'  : 'REPLACE',
+            \ 'c'  : 'COMMAND',
+            \ 'v'  : 'VISUAL',
+            \ 'V'  : 'V-LINE',
+            \ '' : 'V-BLOCK',
+            \ 's'  : 'SUBST',
+            \ 'S'  : 'SUBST-LINE',
+            \ '' : 'SUBST-BLOCK',
             \ }
 " }}}
 
