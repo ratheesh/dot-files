@@ -179,9 +179,9 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#313540 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#a3495b gui=NONE
-hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#3a3a3c gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#147272 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#147272 gui=NONE
+hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#313540 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#787878 gui=NONE
 "}}}
 
 " GitCommit {{{

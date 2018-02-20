@@ -17,9 +17,9 @@ let s:gui01             = "#2c2c2c"
 let s:gui02             = "#484848"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
-let s:gui05             = "#fa2c77"
-let s:gui06             = "#ebcb85"
-let s:gui07             = "#00b56f"
+let s:gui05             = "#bc1e44"
+let s:gui06             = "#81356c"
+let s:gui07             = "#008375"
 let s:gui08             = "#a0a0a0"
 let s:gui09             = "#00796b"
 let s:gui10             = "#f4a460"
@@ -51,12 +51,12 @@ let s:N2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:N3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 ]
 
 " Insert mode
-let s:I1 = [ s:guiBlack , s:gui07 , s:ctermBlack  , s:cterm08 ]
+let s:I1 = [ s:guiWhite , s:gui07 , s:ctermBlack  , s:cterm08 ]
 let s:I2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:I3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 ]
 
 " Visual mode
-let s:V1 = [ s:guiBlack , s:gui06 , s:ctermBlack , s:cterm06 ]
+let s:V1 = [ s:guiWhite , s:gui06 , s:ctermBlack , s:cterm06 ]
 let s:V2 = [ s:gui10    , s:gui02 , s:cterm11    , s:cterm02 ]
 let s:V3 = [ s:guiCFG   , s:gui01 , s:cterm09    , s:cterm01 ]
 
@@ -78,21 +78,21 @@ let g:airline#themes#darkmode#palette.normal  = {
             \ 'airline_y': [s:gui10    , s:gui02     , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08     , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.insert  = {
-            \ 'airline_a': [s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
             \ 'airline_y': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.visual  = {
-            \ 'airline_a': [s:guiBlack , s:gui06 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiWhite , s:gui06 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
             \ 'airline_y': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.replace = {
-            \ 'airline_a': [s:guiBlack , s:gui05 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiWhite , s:gui05 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
@@ -107,7 +107,7 @@ let g:airline#themes#darkmode#palette.inactive = airline#themes#generate_color_m
 
 " Warning info
 let s:WARNING = [ s:guiBlack, s:gui03, s:ctermBlack, s:cterm03 ]
-let s:ERROR   = [ s:guiBlack, s:gui05, s:ctermWhite, s:cterm05 ]
+let s:ERROR   = [ s:guiWhite, s:gui05, s:ctermWhite, s:cterm05 ]
 
 let g:airline#themes#darkmode#palette.normal.airline_warning  = s:WARNING
 let g:airline#themes#darkmode#palette.insert.airline_warning  = s:WARNING
@@ -129,21 +129,21 @@ let g:airline#themes#darkmode#palette.normal_modified  = {
             \ 'airline_y': [s:gui10    , s:gui02     , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08     , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.insert_modified  = {
-            \ 'airline_a': [s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
             \ 'airline_y': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.visual_modified  = {
-            \ 'airline_a': [s:guiBlack , s:gui06 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiWhite , s:gui06 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
             \ 'airline_y': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.replace_modified = {
-            \ 'airline_a': [s:guiBlack , s:gui05 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiWhite , s:gui05 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
