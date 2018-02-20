@@ -55,7 +55,6 @@ Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
@@ -692,17 +691,6 @@ let g:airline_mode_map = {
             \ 'S'  : 'SUBST-LINE',
             \ '' : 'SUBST-BLOCK',
             \ }
-" }}}
-
-" vim-anzu {{{
-nmap n <Plug>(anzu-n)
-nmap N <Plug>(anzu-N)
-nmap * <Plug>(anzu-star)
-nmap # <Plug>(anzu-sharp)
-
-" This command is an overridden one to make sure otherone works if this plugin
-" is disabled
-nmap <silent><BS>       :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}
 
 " Vim-licenses {{{
