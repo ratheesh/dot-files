@@ -149,17 +149,17 @@ hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=italic  guifg=#468
 " }}}
 
 " git-signify {{{
-hi SignifySignAdd             ctermfg=26     ctermbg=233   cterm=bold  guifg=#27b062  guibg=#1a1c1e   gui=bold
-hi SignifySignChange          ctermfg=180    ctermbg=233   cterm=bold  guifg=#f7ca88  guibg=#1a1c1e   gui=bold
-hi SignifySignDelete          ctermfg=196    ctermbg=233   cterm=bold  guifg=#fb091f  guibg=#1a1c1e   gui=bold
-hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff5500  guibg=#1a1c1e   gui=bold
+hi SignifySignAdd             ctermfg=26     ctermbg=233   cterm=bold  guifg=#27b062  guibg=#202020   gui=bold
+hi SignifySignChange          ctermfg=180    ctermbg=233   cterm=bold  guifg=#f7ca88  guibg=#202020   gui=bold
+hi SignifySignDelete          ctermfg=196    ctermbg=233   cterm=bold  guifg=#fb091f  guibg=#202020   gui=bold
+hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff5500  guibg=#202020   gui=bold
 " }}}
 
 " git-gutter {{{
-hi GitGutterAdd          ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#1a1c1e gui=bold
-hi GitGutterChange       ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#1a1c1e gui=bold
-hi GitGutterDelete       ctermfg=196 ctermbg=233 cterm=bold guifg=#fb091f guibg=#1a1c1e gui=bold
-hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=#1a1c1e gui=bold
+hi GitGutterAdd          ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#202020 gui=bold
+hi GitGutterChange       ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#202020 gui=bold
+hi GitGutterDelete       ctermfg=196 ctermbg=233 cterm=bold guifg=#fb091f guibg=#202020 gui=bold
+hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=#202020 gui=bold
 " }}}
 
 " CtrlP {{{
