@@ -623,7 +623,6 @@ let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
 " let g:airline#extensions#cursormode#enabled       = 1
-let g:airline#extensions#anzu#enabled             = 1
 nmap <silent><leader>1 <Plug>AirlineSelectTab1
 nmap <silent><leader>2 <Plug>AirlineSelectTab2
 nmap <silent><leader>3 <Plug>AirlineSelectTab3
@@ -1067,7 +1066,7 @@ let g:NERDCreateDefaultMappings  = 0
 let g:NERDSpaceDelims            = 1
 let g:NERDCompactSexyComs        = 1
 let g:NERDDefaultAlign           = 'left'
-let g:NERDCustomDelimiters       = { 'c': { 'left': '/*','right': '*/' } }
+" let g:NERDCustomDelimiters       = { 'c': { 'left': '/*','right': '*/' } }
 let g:NERDCommentEmptyLines      = 1
 let g:NERDTrimTrailingWhitespace = 1
 
@@ -1239,7 +1238,7 @@ nmap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
 " }}}
 
 " Misc macros {{{
-" Print syntax highlight group for the work under cursor
+" Print syntax highlight group for the word under cursor in command area
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
