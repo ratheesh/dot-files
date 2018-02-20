@@ -87,7 +87,7 @@
   whitespace      = fix
 
 [branch]
-  autosetuprebase = always
+  # autosetuprebase = always
 
 [credential]
   helper          = cache --timeout=3600
