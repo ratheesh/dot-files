@@ -14,7 +14,7 @@
 " Color palette
 
 let s:gui01             = "#2c2c2c"
-let s:gui02             = "#484848"
+let s:gui02             = "#505050"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#bc1e44"
@@ -23,7 +23,7 @@ let s:gui07             = "#008375"
 let s:gui08             = "#a0a0a0"
 let s:gui09             = "#00796b"
 let s:gui10             = "#f4a460"
-let s:guinormal         = "#6f42c1"
+let s:guinormal         = "#1878c6"
 let s:guiWhite          = "#eeeeee"
 let s:guiBlack          = "#000000"
 let s:guiCFG            = "#a0a0a0"
