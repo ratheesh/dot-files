@@ -382,10 +382,18 @@ autocmd BufNewFile,BufRead .h set filetype=ch
 
 " keybindings
 " disable arrow key navigation to break bad habit
-noremap <Up>    <NOP>
-noremap <Down>  <NOP>
-noremap <Left>  <NOP>
-noremap <Right> <NOP>
+nnoremap <Up>      <NOP>
+nnoremap <Down>    <NOP>
+nnoremap <Left>    <NOP>
+nnoremap <Right>   <NOP>
+xnoremap <Up>      <NOP>
+xnoremap <Down>    <NOP>
+xnoremap <Left>    <NOP>
+xnoremap <Right>   <NOP>
+inoremap <Up>      <NOP>
+inoremap <Down>    <NOP>
+inoremap <Left>    <NOP>
+inoremap <Right>   <NOP>
 
 " set pastetoggle=<F2> " Paste mode to avoid indented paste
 " nmap <Leader><Leader> :
