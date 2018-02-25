@@ -832,6 +832,7 @@ nmap <silent><leader>sp <plug>(signify-prev-hunk)
 " }}}
 
 " vim-gitgutter {{{
+let g:gitgutter_map_keys=0
 let g:gitgutter_override_sign_column_highlight = 0
 if exists('&signcolumn')  " Vim 7.4.2201
     set signcolumn=yes
