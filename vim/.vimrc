@@ -189,7 +189,10 @@ if has('linebreak')
         " Unknown option: breakindent
     endtry
 endif
-set cpo+=n
+set cpoptions+=n
+" $ for change command instead of deleting word then insert
+set cpoptions+=$
+
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
 set wmh=0    " Windows need not have height
 set foldmethod=marker
@@ -222,8 +225,6 @@ set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
-" $ for change command instead of deleting word then insert
-set cpoptions+=$
 
 " Spell checking
 setglobal spell spelllang=en_us
