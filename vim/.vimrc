@@ -602,8 +602,8 @@ function! AirlineInit()
     let g:airline_section_c = airline#section#create(['readonly',' %f', 'modified'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['ffenc'])
-    " let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','ch:%02B│','%p%%'])
-    let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','%p%%'])
+    let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','ch:%02B│','%p%%'])
+    " let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','%p%%'])
 endfunction
 
 autocmd User AirlineAfterInit,AirlineAfterTheme call AirlineInit()
@@ -684,20 +684,6 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 "             \ 'S'  : 'Subst-Liƞε',
 "             \ '' : 'Subst-ẞlk',
 "             \ }
-
-let g:airline_mode_map = {
-            \ '__' : '-',
-            \ 'n'  : 'NORMΑL',
-            \ 'i'  : 'INSERT',
-            \ 'R'  : 'REPLACE',
-            \ 'c'  : 'COMMAND',
-            \ 'v'  : 'VISUAL',
-            \ 'V'  : 'V-LINE',
-            \ '' : 'V-BLOCK',
-            \ 's'  : 'SUBST',
-            \ 'S'  : 'SUBST-LINE',
-            \ '' : 'SUBST-BLOCK',
-            \ }
 " }}}
 
 " Vim-licenses {{{
