@@ -71,6 +71,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'lilydjwg/colorizer'
+Plug 'vim-scripts/DrawIt'
 
 " text objects related
 Plug 'kana/vim-textobj-user'
@@ -79,6 +80,7 @@ Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'junegunn/vim-after-object'
+Plug 'glts/vim-textobj-comment'
 " Plug 'wellle/targets.vim'
 
 " writing prose
