@@ -327,7 +327,7 @@ if has('nvim')
     set shada=%,<300,'100,/10,:100,s100,h,f1,n$HOME/.config/nvim/shada.info
     " autocmd VimLeave * wshada!
 else
-    set viminfo=%,<100,'100,/10,:100,s100,h,f1,n$HOME/.vim/tmp/viminfo
+    set viminfo=%,<300,'100,/10,:100,s100,h,f1,n$HOME/.vim/tmp/viminfo
 endif
 
 " hooks
