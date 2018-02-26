@@ -66,6 +66,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'eapache/rainbow_parentheses.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -1092,6 +1093,11 @@ xmap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
 
 " vim-commentary {{{
 autocmd FileType expect setlocal commentstring=#\ %s
+" }}}
+
+" auto-pairs {{{
+let g:AutoPairsFlyMode            = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
 " }}}
 
 " vim-highlightedundo {{{
