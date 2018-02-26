@@ -207,7 +207,7 @@ if has('clipboard')
     endif
 endif
 set encoding=utf-8
-set scrolloff=3       " Show next 3 lines while scrolling.
+set scrolloff=5       " Show next 3 lines while scrolling.
 set sidescrolloff=5   " Show next 5 columns while side-scrolling.
 set laststatus=2
 if !has('gui_running')
