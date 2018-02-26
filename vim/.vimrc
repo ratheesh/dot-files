@@ -194,14 +194,17 @@ set cpoptions+=n
 set cpoptions+=$
 
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
-set wmh=0    " Windows need not have height
+set winminheight=0    " Windows need not have height
 set foldmethod=marker
 set lazyredraw
 " set copyindent
-set gcr=a:blinkon0              " Disable cursor blink
 if has('clipboard')
-    set clipboard& clipboard+=unnamed
-    set clipboard-=autoselect
+    if has('nvim')
+        set clipboard+=unnamedplus
+    else
+        set clipboard& clipboard+=unnamed
+        set clipboard-=autoselect
+    endif
 endif
 set encoding=utf-8
 set scrolloff=3       " Show next 3 lines while scrolling.
@@ -1098,7 +1101,7 @@ nmap <C-r> <Plug>(highlightedundo-redo)
 " nmap U   <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
 nmap g+    <Plug>(highlightedundo-gplus)
-nmap U <C-R>
+nmap U     <C-r>
 " }}}
 
 " vim-cursormode {{{
