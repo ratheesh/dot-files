@@ -33,7 +33,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 't9md/vim-textmanip'
 Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
-Plug 'terryma/vim-smooth-scroll'
+Plug 'ratheesh/vim-smooth-scroll'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ratheesh/ctrlp_bdelete.vim'
 Plug 'mattn/ctrlp-register'
