@@ -992,6 +992,8 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
 " vim-textmanip {{{
+xmap <Leader>dd <Plug>(textmanip-duplicate-down)
+nmap <Leader>dd <Plug>(textmanip-duplicate-down)
 xmap <Leader>dj <Plug>(textmanip-duplicate-down)
 nmap <Leader>dj <Plug>(textmanip-duplicate-down)
 xmap <Leader>dk <Plug>(textmanip-duplicate-up)
