@@ -564,8 +564,11 @@ endif
 if has('nvim')
     set mouse=nicr
 else
-    set mouse=a
+    if has('mouse')
+        set mouse=a
+    endif
 endif
+
 " let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled         = 0
 " let g:airline_skip_empty_sections                   = 1
