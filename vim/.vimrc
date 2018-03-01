@@ -1134,7 +1134,7 @@ let cursormode_color_map = {
 
 " vim-pencil {{{
 let g:pencil#autoformat      = 0     " 0 = disable, 1 = enable (def)
-let g:pencil#textwidth       = 100
+let g:pencil#textwidth       = 80
 let g:pencil#cursorwrap      = 0     " 0 = disable, 1 = enable (def)
 let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
 
