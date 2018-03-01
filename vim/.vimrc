@@ -1100,10 +1100,6 @@ nmap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
 xmap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
 " }}}
 
-" vim-commentary {{{
-autocmd FileType expect setlocal commentstring=#\ %s
-" }}}
-
 " auto-pairs {{{
 let g:AutoPairsFlyMode            = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
@@ -1194,7 +1190,7 @@ if &term =~ "xterm.*"
         set paste
         return a:ret
     endfunction
-    map <expr> <Esc>[200~  XTermPasteBegin("i")
+    map  <expr> <Esc>[200~ XTermPasteBegin("i")
     imap <expr> <Esc>[200~ XTermPasteBegin("")
     vmap <expr> <Esc>[200~ XTermPasteBegin("c")
     cmap <Esc>[200~ <nop>
