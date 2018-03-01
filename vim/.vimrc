@@ -492,6 +492,9 @@ nnoremap <A-o> <C-w>ozv
 nmap <silent><Leader><Leader> V
 xmap <silent><Leader><Leader> V
 nmap <silent><Leader><BS> <c-v>
+nmap <Leader>; :
+xmap <Leader>; :
+
 " map <F9>                  :bprev<CR>
 " map <F10>                 :bnext<CR>
 map <F4>                    :echo expand('%:p')<CR>
@@ -1072,7 +1075,11 @@ let g:NERDDefaultAlign           = 'left'
 let g:NERDCommentEmptyLines      = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-nmap <silent><Leader>;  :call NERDComment("n", "Append")<CR>
+if has('nvim')
+nmap <silent><M-;>  :call NERDComment("n", "Append")<CR>
+else
+nmap <silent>;    :call NERDComment("n", "Append")<CR>
+endif
 
 nmap <silent><Leader>cc :call NERDComment("n", "Comment")<CR>
 xmap <silent><Leader>cc :call NERDComment("x", "Comment")<CR>
