@@ -17,9 +17,9 @@ let s:gui01             = "#2c2c2c"
 let s:gui02             = "#505050"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
-let s:gui05             = "#d40074"
+let s:gui05             = "#e93e72"
 let s:gui06             = "#d7aa98"
-let s:gui07             = "#008375"
+let s:gui07             = "#63a384"
 let s:gui08             = "#a0a0a0"
 let s:gui09             = "#00796b"
 let s:gui10             = "#f4a460"
@@ -51,7 +51,7 @@ let s:N2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:N3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 ]
 
 " Insert mode
-let s:I1 = [ s:guiWhite , s:gui07 , s:ctermBlack  , s:cterm08 ]
+let s:I1 = [ s:guiBlack , s:gui07 , s:ctermBlack  , s:cterm08 ]
 let s:I2 = [ s:gui10    , s:gui02 , s:cterm11     , s:cterm02 ]
 let s:I3 = [ s:guiCFG   , s:gui01 , s:cterm09     , s:cterm01 ]
 
@@ -78,7 +78,7 @@ let g:airline#themes#darkmode#palette.normal  = {
             \ 'airline_y': [s:gui10    , s:gui02     , s:cterm11 , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08     , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.insert  = {
-            \ 'airline_a': [s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
@@ -129,7 +129,7 @@ let g:airline#themes#darkmode#palette.normal_modified  = {
             \ 'airline_y': [s:gui10    , s:gui02     , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08     , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.insert_modified  = {
-            \ 'airline_a': [s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'italic'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
@@ -174,7 +174,7 @@ let g:airline#themes#darkmode#palette.tabline = {
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 :autocmd!
 autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#a3495b   gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#eeeeee    guibg=#0097a7   gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#eeeeee    guibg=#00796b   gui=NONE
 :augroup END
 
 " CtrlP customization
