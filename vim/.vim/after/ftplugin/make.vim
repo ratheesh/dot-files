@@ -1,7 +1,5 @@
-" Copyright (C) 2017  Ratheesh <ratheeshreddy@gmail.com>
+" Copyright (C) 2018  Ratheesh <ratheeshreddy@gmail.com>
 " Author: Ratheesh S
-"
-" custom settings for vim filetypes
 "
 " This program is free software; you can redistribute it and/or
 " modify it under the terms of the GNU General Public License
@@ -16,11 +14,10 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+" Make filetype specific settings
 
-autocmd BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
-autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc,zimrc,.zlogin,zlogin,.zlogout,zlogout set filetype=sh
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal noexpandtab
 
 " End of File

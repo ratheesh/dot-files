@@ -130,7 +130,7 @@ set bs=2
 set showmatch
 set matchtime=1
 " set colorcolumn=81
-execute "set colorcolumn=" . join(range(81,335), ',')
+" execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set nofoldenable    " disable folding
@@ -346,22 +346,10 @@ if !has('nvim')
 endif
 
 " Set default file types for specific file names
-autocmd BufNewFile,BufRead .bashrc*,bashrc,bash.bashrc,.bash_aliases,.bash_profile*,.bash_logout*,*.bash,*.ebuild set filetype=sh
-autocmd BufNewFile,BufRead .zshrc,zshrc,.zprofile,zprofile,.zshenv,zshenv,.zimrc,zimrc,.zlogin,zlogin,.zlogout,zlogout set filetype=sh
-autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
-autocmd FileType gitcommit setlocal expandtab " Expand tabs in git commit mode
-autocmd FileType gitcommit execute "set colorcolumn=" . join(range(73,335), ',')
-autocmd FileType gitcommit setlocal scrolloff=0
-autocmd FileType gitcommit setlocal spell
 autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
-autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0]) " set cursor position to starting on gitcommit buffers
-autocmd FileType vim setlocal expandtab " Expand tabs in vim mode
-autocmd FileType vim setlocal colorcolumn=0
-autocmd FileType python setlocal expandtab " Expand tabs in python mode
-autocmd FileType python let b:match_words = '\<if\>:\<elif\>:\<else\>'
 autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
-autocmd BufEnter Makefile setlocal noexpandtab
+autocmd BufRead,BufNew,BufNewFile *.c,*.cpp,*.h,*.txt execute "set colorcolumn=" . join(range(81,335), ',')
 
 " close Quickfix/Locationlist when file is selected
 " autocmd FileType qf nmap <buffer> <CR> <CR>:lclose<CR>

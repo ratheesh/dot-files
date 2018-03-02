@@ -24,6 +24,7 @@ setlocal noexpandtab
 setlocal cindent
 setlocal smarttab
 setlocal autoindent
+execute "set colorcolumn=" . join(range(81,335), ',')
 
 let c_ansi_typedefs           = 1
 let c_ansi_constants          = 1

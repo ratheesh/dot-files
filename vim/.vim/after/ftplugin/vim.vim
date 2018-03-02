@@ -20,4 +20,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+setlocal expandtab      " Spaces only for vim mode
+setlocal colorcolumn=0
+
 " End of File
