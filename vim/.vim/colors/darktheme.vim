@@ -32,8 +32,8 @@ hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NO
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#313447   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
-hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#909090   guibg=#343640   gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#e2e2e5   guibg=#a3495b   gui=NONE
+hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#909090   guibg=#343648   gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#000000   guibg=#c08380   gui=italic
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=NONE      guibg=NONE        gui=bold,underline
 hi ParenError   ctermfg=NONE    ctermbg=NONE    cterm=underline,bold
@@ -45,7 +45,7 @@ hi Search       ctermfg=7       ctermbg=238     cterm=NONE              guifg=NO
 hi ExtSearch    ctermfg=9       ctermbg=NONE    cterm=italic,underline  guifg=#f92a5b   guibg=NONE      gui=italic,underline
 hi Directory    ctermfg=141     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Folded       ctermfg=61      ctermbg=235     cterm=NONE              guifg=#6272a4   guibg=#282a36   gui=NONE
-hi FoldColumn   ctermfg=246     ctermbg=235     cterm=NONE              guifg=#909194   guibg=#343640   gui=NONE
+hi FoldColumn   ctermfg=246     ctermbg=235     cterm=NONE              guifg=#909194   guibg=#343648   gui=NONE
 hi Boolean      ctermfg=129     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Character    ctermfg=64      ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Comment      ctermfg=242     ctermbg=NONE    cterm=italic            guifg=#778080   guibg=NONE      gui=itaLIC
@@ -185,7 +185,7 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#414349 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#6491ac gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#a84260 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#147272 gui=NONE
 "}}}
