@@ -125,7 +125,7 @@ set nostartofline
 set numberwidth=1
 set tabstop=4
 set matchpairs+=<:>
-set bs=2
+set backspace=2
 " set ww=<,>,h,l
 set showmatch
 set matchtime=1
@@ -245,10 +245,11 @@ au BufRead,BufNewFile,BufWrite *.exp,*.c,*.sh,*shrc setlocal nospell
 
 " Skip the splash screen
 " set shortmess+=I
-set novb
+set novisualbell
 if !has('nvim')
     set ttyfast
 endif
+
 " Text formatting options
 set formatoptions+=1
 set formatoptions+=c  " Autowrap comments using textwidth
