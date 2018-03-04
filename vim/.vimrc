@@ -878,7 +878,7 @@ let g:ale_open_list    = 0
 
 " rainbow_parenthesis {{{
 let g:rbpt_max         = 15
-let g:bold_parentheses = 0
+let g:bold_parentheses = 1
 
 let g:rbpt_colorpairs = [
             \ ['gray',        'firebrick2'     ],
