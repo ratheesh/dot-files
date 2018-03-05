@@ -83,6 +83,7 @@ Plug 'kana/vim-textobj-line'
 Plug 'junegunn/vim-after-object'
 Plug 'glts/vim-textobj-comment'
 " Plug 'wellle/targets.vim'
+Plug 'machakann/vim-swap' " to swap args
 
 " writing prose
 Plug 'reedes/vim-pencil'
