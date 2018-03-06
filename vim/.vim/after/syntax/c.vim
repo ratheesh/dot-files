@@ -28,7 +28,7 @@ syn match cOperator "&&\|||"
 syn match cOperator	"[][]"
 
 " data types
-syn keyword     c89Type           u8 u16 u32 uint8_t uint16_t uint32_t SINT8 UINT8 SINT16 UINT16 SINT32 UINT32 FLT DBL BOOL bool
+syn keyword     c89Type           u8 u16 u32 u64 uint8_t uint16_t uint32_t uint64_t SINT8 UINT8 SINT16 UINT16 SINT32 UINT32 SINT64 UINT64 FLT DBL BOOL bool
 syn cluster     cType             contains=c89Type
 
 
