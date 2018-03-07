@@ -749,6 +749,9 @@ let g:ctrlp_custom_ignore = {
             \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
             \ }
 let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|__init__\.py'
+
+" disable numbers in ctrlp buffer
+autocmd BufEnter ControlP set nonumber
 " }}}
 
 " ctrlp_bdelete {{{
