@@ -65,7 +65,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
-Plug 'eapache/rainbow_parentheses.vim'
+" Plug 'eapache/rainbow_parentheses.vim'
+Plug 'Yggdroot/hiPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'tmux-plugins/vim-tmux'
@@ -903,11 +904,33 @@ let g:rbpt_colorpairs = [
             \ ['red',         'firebrick3'     ],
             \ ]
 
-au VimEnter  * RainbowParenthesesToggle
-au BufEnter  * RainbowParenthesesLoadRound
-au BufEnter  * RainbowParenthesesLoadSquare
-au BufEnter  * RainbowParenthesesLoadBraces
+" au VimEnter  * RainbowParenthesesToggle
+" au BufEnter  * RainbowParenthesesLoadRound
+" au BufEnter  * RainbowParenthesesLoadSquare
+" au BufEnter  * RainbowParenthesesLoadBraces
 " au BufEnter  * RainbowParenthesesLoadChevrons
+" }}}
+
+" hipairs {{{
+let g:hiPairs_hl_matchPair = {
+            \    'term'    : 'underline,bold',
+            \    'ctermfg' : '24',
+            \    'ctermbg' : 'NONE',
+            \    'cterm'   : 'underline,bold',
+            \    'guifg'   : '#0366e6',
+            \    'guibg'   : 'NONE',
+            \    'gui'     : 'underline,bold',
+            \ }
+
+let g:hiPairs_hl_unmatchPair = {
+            \    'term'    : 'bold,underline',
+            \    'ctermfg' : 'NONE',
+            \    'ctermbg' : 'NONE',
+            \    'cterm'   : 'NONE',
+            \    'guifg'   : 'NONE',
+            \    'guibg'   : 'NONE',
+            \    'gui'     : 'NONE',
+            \ }
 " }}}
 
 " vim-indentguides {{{
