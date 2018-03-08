@@ -130,7 +130,7 @@ set matchpairs+=<:>
 set backspace=2
 " set ww=<,>,h,l
 set showmatch
-set matchtime=1
+set matchtime=9
 " set colorcolumn=81
 " execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
