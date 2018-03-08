@@ -13,7 +13,7 @@
 
 " Color palette
 
-let s:gui01             = "#233556"
+let s:gui01             = "#233546"
 let s:gui02             = "#505050"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
