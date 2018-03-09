@@ -917,19 +917,19 @@ let g:hiPairs_hl_matchPair = {
             \    'ctermfg' : '24',
             \    'ctermbg' : 'NONE',
             \    'cterm'   : 'underline,bold',
-            \    'guifg'   : '#0366e6',
+            \    'guifg'   : '#0386f6',
             \    'guibg'   : 'NONE',
             \    'gui'     : 'underline,bold',
             \ }
 
 let g:hiPairs_hl_unmatchPair = {
             \    'term'    : 'bold,underline',
-            \    'ctermfg' : 'NONE',
-            \    'ctermbg' : 'NONE',
-            \    'cterm'   : 'NONE',
-            \    'guifg'   : 'NONE',
-            \    'guibg'   : 'NONE',
-            \    'gui'     : 'NONE',
+            \    'ctermfg' : '0',
+            \    'ctermbg' : '2',
+            \    'cterm'   : 'bold,underline',
+            \    'guifg'   : '#000000',
+            \    'guibg'   : '#ff0000',
+            \    'gui'     : 'bold,underline',
             \ }
 " }}}
 
