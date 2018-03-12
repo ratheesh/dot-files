@@ -56,6 +56,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ratheesh/vim-extended-ft'
+Plug 'MaxMEllon/vim-shiny'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
 Plug 'ivyl/vim-bling'
@@ -1085,6 +1086,13 @@ let g:scratch_filetype = 'text'
 " NOTE: Enabling yankring plugin breaks this functionality!
 nnoremap Y yy
 let g:highlightedyank_highlight_duration=200
+" }}}
+
+" vim-shiny {{{
+nmap p  <Plug>(shiny-p)
+nmap P  <Plug>(shiny-P)
+nmap gp <Plug>(shiny-gp)
+nmap gP <Plug>(shiny-gP)
 " }}}
 
 " nerd-commentar {{{
