@@ -16,9 +16,10 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+setlocal shiftwidth=4
+setlocal softtabstop=4
+setlocal expandtab
+" setlocal matchpairs+=<:>
 
 setlocal expandtab      " Spaces only for vim mode
 setlocal colorcolumn=0
