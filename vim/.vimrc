@@ -115,7 +115,7 @@ filetype on
 filetype plugin indent on
 set number relativenumber
 if !has('nvim')
-    set esckeys
+    set noesckeys
     filetype plugin indent on
     if v:version >= 800
         packadd! matchit
@@ -127,17 +127,19 @@ else
 endif
 set nostartofline
 set numberwidth=1
-set tabstop=4
-set matchpairs+=<:>
-set backspace=2
+" set tabstop=4
+" set matchpairs+=<:>
+" set backspace=2
 " set ww=<,>,h,l
+set ww=<,>,[,]
 set showmatch
-set matchtime=9
+" set matchtime=4
 " set colorcolumn=81
 " execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set nofoldenable    " disable folding
+set display=lastline
 if has('wildmenu')
     set nowildmenu
     set wildmode=list:longest,full
@@ -157,13 +159,13 @@ set confirm
 set updatetime=200
 " Time in milliseconds waited for a mapping to complete
 set timeout
-set timeoutlen=500
+set timeoutlen=700
 " Time in milliseconds waited for a key code to complete
 set ttimeout
 set ttimeoutlen=0
 set wildmenu
 set fileformats=unix,dos,mac
-" set virtualedit=all
+set virtualedit=block
 
 " What to save for views:
 set viewoptions-=options
@@ -275,6 +277,8 @@ if (has('nvim'))
     " show results of substition as they're happening but don't open a split
     set inccommand=nosplit
 endif
+set splitbelow
+set splitright
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd BufWritePost
