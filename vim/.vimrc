@@ -721,7 +721,7 @@ let g:ctrlp_lazy_update =  300
 " let g:ctrlp_by_filename = 0
 " let g:ctrlp_follow_symlinks = 0
 
-let g:ctrlp_match_window = 'min:1,max:10,results:100'
+let g:ctrlp_match_window = 'min:1,max:10,results:1000'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
