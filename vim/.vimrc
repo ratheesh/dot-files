@@ -1027,11 +1027,17 @@ xmap <Leader>dl <Plug>(textmanip-duplicate-right)
 xmap <Leader>dh <Plug>(textmanip-duplicate-left)
 
 if has('nvim')
+    nmap <M-j> <Plug>(textmanip-move-down)
+    nmap <M-k> <Plug>(textmanip-move-up)
+
     xmap <M-j> <Plug>(textmanip-move-down)
     xmap <M-k> <Plug>(textmanip-move-up)
     xmap <M-h> <Plug>(textmanip-move-left)
     xmap <M-l> <Plug>(textmanip-move-right)
 else
+    nmap j <Plug>(textmanip-move-down)
+    nmap k <Plug>(textmanip-move-up)
+
     xmap j <Plug>(textmanip-move-down)
     xmap k <Plug>(textmanip-move-up)
     xmap h <Plug>(textmanip-move-left)
