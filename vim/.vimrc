@@ -91,7 +91,7 @@ Plug 'machakann/vim-swap' " to swap args
 " writing prose
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-colors-pencil'
-Plug 'muellan/vim-airline-formatting'
+Plug 'ratheesh/vim-airline-formatting'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-textobj-quote'
