@@ -18,7 +18,7 @@ let s:gui02             = "#505050"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#d65b84"
-let s:gui06             = "#a16946"
+let s:gui06             = "#a46497"
 let s:gui07             = "#639384"
 let s:gui08             = "#a0a0a0"
 let s:gui09             = "#3d9e93"
@@ -160,9 +160,10 @@ let g:airline#themes#darkmode#palette.insert_modified.airline_error  = s:ERROR
 let g:airline#themes#darkmode#palette.visual_modified.airline_error  = s:ERROR
 let g:airline#themes#darkmode#palette.replace_modified.airline_error = s:ERROR
 
+" #5e6e99
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : [s:guiBlack, '#909090' , 253 , 60  , 'none'  ],
-            \ 'airline_tabsel'  : [s:guiWhite, '#704390' , 0   , 66  , 'italic'],
+            \ 'airline_tabsel'  : [s:guiWhite, '#704390' , 0   , 66  , 'none'  ],
             \ 'airline_tabfill' : [s:guiWhite, '#203438' , 188 , 235 , 'none'  ],
             \ 'airline_tabmod'  : [s:guiWhite, '#2d8d77' ,  15 , 89  , 'none'  ],
             \ 'airline_tabhid'  : ['#a0a0a0' , '#203438' , 103 , 235 , 'none'  ],

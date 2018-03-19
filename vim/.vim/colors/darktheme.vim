@@ -74,6 +74,7 @@ hi Todo         ctermfg=61      ctermbg=NONE    cterm=inverse,bold      guifg=#6
 hi Title        ctermfg=7       ctermbg=NONE    cterm=bold              guifg=#f8f8f2   guibg=NONE      gui=bold
 hi Type         ctermfg=126     ctermbg=NONE    cterm=italic            guifg=#6494ed   guibg=NONE      gui=italic
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
+hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#5e6e99   gui=NONE
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -92,6 +93,7 @@ hi cIncluded            ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#9
 hi cDefine              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0   guibg=NONE      gui=NONE
 hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#d19a66   guibg=NONE      gui=NONE
 hi cCommentError        ctermfg=240     ctermbg=NONE    cterm=italic    guifg=#cc0000   guibg=NONE      gui=italic
+hi cParenError          ctermfg=240     ctermbg=NONE    cterm=italic    guifg=NONE      guibg=NONE      gui=NONE
 hi cGNUConstant         ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f   guibg=NONE      gui=NONE
 hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f   guibg=NONE      gui=NONE
 " hi cBinaryOperator      ctermfg=12      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c     guibg=NONE      gui=NONE
@@ -169,11 +171,11 @@ hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=
 " }}}
 
 " CtrlP {{{
-hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#ffcc33  guibg=NONE   gui=NONE
-hi CtrlPPrtText         ctermfg=60      ctermbg=NONE    cterm=NONE  guifg=#1d8d77  guibg=NONE   gui=NONE
-hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=NONE  guifg=#27b062  guibg=NONE   gui=NONE
-hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#c3107a  guibg=NONE   gui=bold
-hi CtrlPPrtCursor       ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#303030  guibg=NONE   gui=bold
+hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#ffcc33  guibg=NONE      gui=NONE
+hi CtrlPPrtText         ctermfg=60      ctermbg=NONE    cterm=NONE  guifg=#1d8d77  guibg=NONE      gui=NONE
+hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=NONE  guifg=#27b062  guibg=NONE      gui=NONE
+hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#c3107a  guibg=NONE      gui=bold
+hi CtrlPPrtCursor       ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#e0e0e0  guibg=#000000   gui=bold
 
 hi CtrlPBufferInd       ctermfg=162     ctermbg=NONE    cterm=NONE    guifg=#c76d83  guibg=NONE   gui=NONE
 hi CtrlPBufferNr        ctermfg=65      ctermbg=NONE    cterm=NONE    guifg=#ac6600  guibg=NONE   gui=NONE
@@ -187,7 +189,7 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=italic  guifg=#909
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#414349 gui=NONE
 hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#eeeeee  guibg=#007791 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#ba5252 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#a16946 gui=NONE
 "}}}
 
 " GitCommit {{{
