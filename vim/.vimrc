@@ -734,7 +734,7 @@ let g:ctrlp_lazy_update =  300
 " let g:ctrlp_by_filename = 0
 " let g:ctrlp_follow_symlinks = 0
 
-let g:ctrlp_match_window = 'min:1,max:10,results:1000'
+let g:ctrlp_match_window = 'min:1,max:15,results:2000'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
@@ -744,7 +744,7 @@ let g:ctrlp_match_current_file = 0
 let g:ctrlp_cmd               = 'CtrlPBuffer'
 let g:ctrlp_show_hidden       = 1
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_root_markers      = ['.ctrlp']
+let g:ctrlp_root_markers      = ['.ctrlp', '.git', '.svn', '.hg']
 let g:ctrlp_mruf_exclude      = '\v\.git/(COMMIT_EDITMSG|MERGE_MSG|index)'
 let g:ctrlp_max_files         = 200000
 " let g:ctrlp_mruf_relative   = 1
