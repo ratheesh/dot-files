@@ -1057,7 +1057,7 @@ call deoplete#custom#set('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 call deoplete#custom#set('ultisnips', 'rank', 9999)
 
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
