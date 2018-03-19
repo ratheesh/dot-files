@@ -1285,7 +1285,7 @@ let g:bling_color_bg     = '131'
 let g:bling_color_cterm  = 'italic'
 let g:bling_color_gui_fg = '#000000'
 let g:bling_color_gui_bg = '#bdb76b'
-let g:bling_no_expr      = 0
+let g:bling_no_expr      = 1
 " }}}
 
 " Misc useful functions {{{
