@@ -801,7 +801,7 @@ let g:root#echo = 0
 " vim-ctrlp-ag {{{
 nnoremap <silent><Leader>gg :CtrlPag<CR>
 vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
-nnoremap <leader>ca :CtrlPagLocate<space>
+nnoremap <leader>/          :CtrlPagLocate<space>
 " nnoremap <leader>cp :CtrlPagPrevious<CR>
 let g:ctrlp_ag_ignores = '--ignore .git
             \ --ignore "deps/*"
