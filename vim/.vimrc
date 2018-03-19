@@ -1088,8 +1088,8 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
 " vim-textmanip {{{
-xmap <Leader>dd <Plug>(textmanip-duplicate-down)
-nmap <Leader>dd <Plug>(textmanip-duplicate-down)
+" xmap <Leader>dd <Plug>(textmanip-duplicate-down)
+" nmap <Leader>dd <Plug>(textmanip-duplicate-down)
 xmap <Leader>dj <Plug>(textmanip-duplicate-down)
 nmap <Leader>dj <Plug>(textmanip-duplicate-down)
 xmap <Leader>dk <Plug>(textmanip-duplicate-up)
@@ -1098,17 +1098,17 @@ xmap <Leader>dl <Plug>(textmanip-duplicate-right)
 xmap <Leader>dh <Plug>(textmanip-duplicate-left)
 
 if has('nvim')
-    nmap <M-j> <Plug>(textmanip-move-down)
-    nmap <M-k> <Plug>(textmanip-move-up)
-
+    " nmap <M-j> <Plug>(textmanip-move-down)
+    " nmap <M-k> <Plug>(textmanip-move-up)
+    "
     xmap <M-j> <Plug>(textmanip-move-down)
     xmap <M-k> <Plug>(textmanip-move-up)
     xmap <M-h> <Plug>(textmanip-move-left)
     xmap <M-l> <Plug>(textmanip-move-right)
 else
-    nmap j <Plug>(textmanip-move-down)
-    nmap k <Plug>(textmanip-move-up)
-
+    " nmap j <Plug>(textmanip-move-down)
+    " nmap k <Plug>(textmanip-move-up)
+    "
     xmap j <Plug>(textmanip-move-down)
     xmap k <Plug>(textmanip-move-up)
     xmap h <Plug>(textmanip-move-left)
