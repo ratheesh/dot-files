@@ -20,15 +20,17 @@ syn match cDefineMacro  display '#define\s'
 
 " C math operators
 
-syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
-syn match cOperator	"[.!~*&%<>^|=,+-]"
-syn match cOperator	"/[^/*=]"me=e-1
-syn match cOperator	"/$"
-syn match cOperator "&&\|||"
-syn match cOperator	"[][]"
+syn match cOperator     "<<\|>>\|&&\|||\|++\|--\|->"
+syn match cOperator     "[.!~*&%<>^|=,+-]"
+syn match cOperator     "/[^/*=]"me=e-1
+syn match cOperator     "/$"
+syn match cOperator     "&&\|||"
+syn match cOperator     "[][]"
 
 " data types
-syn keyword     c89Type           u8 u16 u32 u64 uint8_t uint16_t uint32_t uint64_t SINT8 UINT8 SINT16 UINT16 SINT32 UINT32 SINT64 UINT64 FLT DBL BOOL bool
+syn keyword     c89Type u8 u16 u32 u64 __u8 __u16 __u32 __u64 __le16 __le32 __le64
+            \ __be16 __be32 __be64 uint8_t uint16_t uint32_t uint64_t SINT8 UINT8 SINT16
+            \ UINT16 SINT32 UINT32 SINT64 UINT64 FLT DBL BOOL bool
 syn cluster     cType             contains=c89Type
 
 
