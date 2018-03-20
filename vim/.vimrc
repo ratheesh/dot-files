@@ -294,7 +294,17 @@ endif
 set splitbelow
 set splitright
 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+"Remember the positions in files with some git-specific exceptions"
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$")
+            \           && expand("%") !~ "COMMIT_EDITMSG"
+            \           && expand("%") !~ "MERGE_EDITMSG"
+            \           && expand("%") !~ "ADD_EDIT.patch"
+            \           && expand("%") !~ "addp-hunk-edit.diff"
+            \           && expand("%") !~ "git-rebase-todo" |
+            \   exe "normal g`\"" |
+            \ endif
+
 autocmd BufWritePost
             \ * if &l:filetype ==# '' || exists('b:ftdetect')
             \ |   unlet! b:ftdetect
