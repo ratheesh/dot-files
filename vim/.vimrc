@@ -474,10 +474,6 @@ set noerrorbells
 set novisualbell
 set t_vb=
 
-"Add empty lines
-nnoremap [<space>  :<c-u>put! = repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space>  :<c-u>put  = repeat(nr2char(10), v:count1)<cr>
-
 " Write current buffer with sudo privileges
 " nnoremap <silent><Leader>sw     :w !sudo tee % &> /dev/null<CR>
 " Force saving files that require root permission
