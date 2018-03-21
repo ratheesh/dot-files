@@ -437,7 +437,7 @@ nnoremap ` '
 xnoremap ' `
 xnoremap ` '
 
-if  has('nvim')
+if has('nvim')
     nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
 else
     nnoremap <silent><Leader>so     :source $MYVIMRC<CR>
@@ -445,7 +445,7 @@ endif
 nnoremap <silent><Leader>w      :w<CR>
 " nnoremap <silent><Leader>ws     :w !sudo tee %
 nnoremap <silent><Leader>x      :x<CR>
-nnoremap <silent><Leader>q      :q<CR>
+nnoremap <silent><Leader>qq     :q<CR>
 nnoremap <silent><Leader>qn     :q!<CR>
 " close preview
 nnoremap <silent><Leader>cp     :pclose<CR>
