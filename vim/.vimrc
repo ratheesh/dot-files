@@ -1280,6 +1280,16 @@ let g:airline#extensions#formatting#text_glyph     = '≡'
 let g:airline#extensions#formatting#wrap_no_pencil = '¶'
 " }}}
 
+" vim-textobj-quote {{{
+augroup textobj_quote
+    autocmd!
+    autocmd FileType markdown call textobj#quote#init()
+    autocmd FileType textile call textobj#quote#init()
+    autocmd FileType text call textobj#quote#init({'educate': 0})
+augroup END
+
+" }}}
+
 " vim-easy-align {{{
 let g:easy_align_bypass_fold = 1
 nmap ga     <Plug>(EasyAlign)
