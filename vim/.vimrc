@@ -69,8 +69,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
-" Plug 'eapache/rainbow_parentheses.vim'
-Plug 'Yggdroot/hiPairs'
+Plug 'eapache/rainbow_parentheses.vim'
+" Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'tmux-plugins/vim-tmux'
@@ -991,11 +991,11 @@ let g:rbpt_colorpairs = [
             \ ['red',         'firebrick3'     ],
             \ ]
 
-" au VimEnter  * RainbowParenthesesToggle
-" au BufEnter  * RainbowParenthesesLoadRound
-" au BufEnter  * RainbowParenthesesLoadSquare
-" au BufEnter  * RainbowParenthesesLoadBraces
-" au BufEnter  * RainbowParenthesesLoadChevrons
+au VimEnter  * RainbowParenthesesToggle
+au BufEnter  * RainbowParenthesesLoadRound
+au BufEnter  * RainbowParenthesesLoadSquare
+au BufEnter  * RainbowParenthesesLoadBraces
+au BufEnter  * RainbowParenthesesLoadChevrons
 " }}}
 
 " hipairs {{{
