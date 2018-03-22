@@ -144,7 +144,6 @@ set nostartofline
 set numberwidth=1
 " set tabstop=4
 " set matchpairs+=<:>
-" set backspace=2
 " set ww=<,>,h,l
 set ww=<,>,[,]
 set showmatch
@@ -264,9 +263,6 @@ au BufRead,BufNewFile,BufWrite *.exp,*.c,*.sh,*shrc setlocal nospell
 " Set scroll margin to 0 in git commit buffers to avoid cursor in non-zero pos
 " au BufRead,BufNewFile,BufWrite *.stgit*,COMMIT_EDITMSG set scrolloff=0
 
-" Skip the splash screen
-" set shortmess+=I
-set novisualbell
 if !has('nvim')
     set ttyfast
 endif
@@ -281,8 +277,6 @@ set formatoptions+=o  " Insert comment leader after hitting o or O in normal mod
 set formatoptions+=q  " Allow formatting of comments with "gq".
 set formatoptions+=r  " Insert comment leader after hitting <Enter>
 " set formatoptions+=t  " Auto-wrap text using textwidth"
-set nostartofline
-set lbr
 
 " disable bracketed paste!
 " This causes issues with pasting using shift-Insert
@@ -943,7 +937,6 @@ let g:smalls_auto_jump_timeout          = 0.3
 nmap <Leader>j <Plug>(smalls)
 omap <Leader>j <Plug>(smalls)
 xmap <Leader>j <Plug>(smalls)
-set ignorecase smartcase
 " }}}
 
 " UltiSnips {{{
