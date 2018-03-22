@@ -16,11 +16,12 @@
 
 " gitcommit filetype localization
 
-setlocal expandtab " Expand tabs in git commit mode
-execute "set colorcolumn=" . join(range(73,335), ',')
+setlocal expandtab      " Expand tabs in git commit mode
 setlocal scrolloff=0
 setlocal spell
+
 call setpos('.', [0, 1, 1, 0]) " set cursor position to starting on gitcommit buffers
+execute "set colorcolumn=" . join(range(73,335), ',')
 
 autocmd BufNewFile,BufRead .stgit* set filetype=gitcommit
 
