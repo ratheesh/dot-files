@@ -89,6 +89,7 @@ Plug 'junegunn/vim-after-object'
 Plug 'glts/vim-textobj-comment'
 " Plug 'wellle/targets.vim'
 Plug 'machakann/vim-swap' " to swap args
+Plug 'tommcdo/vim-exchange' " exchange regions
 
 " writing prose
 Plug 'reedes/vim-pencil'
