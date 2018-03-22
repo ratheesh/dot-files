@@ -19,6 +19,7 @@
 setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal expandtab
+setlocal iskeyword-=#
 " setlocal matchpairs+=<:>
 
 setlocal expandtab      " Spaces only for vim mode
