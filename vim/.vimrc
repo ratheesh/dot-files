@@ -108,7 +108,6 @@ if has('nvim')
     Plug 'Shougo/neomru.vim',         { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/neoyank.vim',        { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/denite.nvim'
     Plug 'dunstontc/projectile.nvim'
     Plug 'chemzqm/denite-extra'
@@ -131,7 +130,6 @@ filetype plugin indent on
 set number relativenumber
 if !has('nvim')
     set noesckeys
-    filetype plugin indent on
     if v:version >= 800
         packadd! matchit
     else
@@ -144,8 +142,8 @@ set nostartofline
 set numberwidth=1
 " set tabstop=4
 " set matchpairs+=<:>
-" set ww=<,>,h,l
-set ww=<,>,[,]
+" set whichwrap=<,>,h,l
+set whichwrap=<,>,[,]
 set showmatch
 " set matchtime=4
 " set colorcolumn=81
@@ -1277,7 +1275,6 @@ augroup textobj_quote
     autocmd FileType textile call textobj#quote#init()
     autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
-
 " }}}
 
 " vim-easy-align {{{
