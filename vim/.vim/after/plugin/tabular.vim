@@ -30,8 +30,8 @@ nnoremap <silent><Leader>ar     :Tabularize rocket<CR>
 xnoremap <silent><Leader>ar     :Tabularize rocket<CR>
 nnoremap <silent><Leader>as     :Tabularize assignment<CR>
 xnoremap <silent><Leader>as     :Tabularize assignment<CR>
-nnoremap <silent><Leader>a\     :Tabularize /\<CR>
-xnoremap <silent><Leader>a\     :Tabularize /\<CR>
+nnoremap <silent><Leader>a\     :Tabularize /\\$<CR>
+xnoremap <silent><Leader>a\     :Tabularize /\\$<CR>
 
 " c comment starting delimiter
 nnoremap <silent><Leader>ac     :Tabularize /\/\*<CR>
