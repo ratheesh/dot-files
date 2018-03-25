@@ -15,5 +15,5 @@ regexp=[a-zA-Z]{3,}\s
 colours=italic cyan
 =======
 # Current date
-regexp=_.\d_?.?\d?
+regexp=_.?\d?_.?\d
 colours=blue on_yellow
