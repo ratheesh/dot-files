@@ -29,7 +29,7 @@ hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#c
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#101010   gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#201f23   gui=NONE
 hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
-hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#30333a   gui=NONE
+hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#384050   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#909090   guibg=#343648   gui=NONE
@@ -38,7 +38,7 @@ hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#6
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=#f92a5b   guibg=NONE      gui=bold,underline
 hi ParenError   ctermfg=NONE    ctermbg=NONE    cterm=underline,bold
 hi Braces       ctermfg=NONE    ctermbg=NONE    cterm=bold,underline
-hi StatusLine   ctermfg=7       ctermbg=236     cterm=bold              guifg=#f8f8f2   guibg=#64666d   gui=bold
+hi StatusLine   ctermfg=7       ctermbg=236     cterm=NONE              guifg=#f8f8f2   guibg=#033246   gui=NONE
 hi StatusLineNC ctermfg=7       ctermbg=236     cterm=NONE              guifg=#f8f8f2   guibg=#64666d   gui=NONE
 hi IncSearch    ctermfg=NONE    ctermbg=238     cterm=NONE              guifg=NONE      guibg=#44454a   gui=NONE
 hi Search       ctermfg=7       ctermbg=238     cterm=NONE              guifg=NONE      guibg=#44454a   gui=NONE
@@ -48,7 +48,7 @@ hi Folded       ctermfg=61      ctermbg=235     cterm=NONE              guifg=#6
 hi FoldColumn   ctermfg=246     ctermbg=235     cterm=NONE              guifg=#909194   guibg=#343648   gui=NONE
 hi Boolean      ctermfg=129     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Character    ctermfg=64      ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
-hi Comment      ctermfg=242     ctermbg=NONE    cterm=NONE              guifg=#778080   guibg=NONE      gui=NONE
+hi Comment      ctermfg=242     ctermbg=NONE    cterm=NONE              guifg=#909090   guibg=NONE      gui=NONE
 hi Conditional  ctermfg=25      ctermbg=NONE    cterm=italic            guifg=#6494ed   guibg=NONE      gui=NONE
 hi Constant     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#5f9ea0   guibg=NONE      gui=NONE
 hi Define       ctermfg=66      ctermbg=NONE    cterm=NONE              guifg=#ff79c6   guibg=NONE      gui=NONE
@@ -68,13 +68,13 @@ hi SpecialKey   ctermfg=238     ctermbg=NONE    cterm=NONE              guifg=#5
 " hi Conceal    ctermfg=238     ctermbg=NONE    cterm=NONE
 hi Statement    ctermfg=66      ctermbg=NONE    cterm=NONE              guifg=#4682B4   guibg=NONE      gui=NONE
 hi StorageClass ctermfg=54      ctermbg=NONE    cterm=NONE              guifg=#ad95d6   guibg=NONE      gui=italic
-hi String       ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#808080   guibg=NONE      gui=NONE
+hi String       ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#909090   guibg=NONE      gui=NONE
 hi Tag          ctermfg=212     ctermbg=NONE    cterm=NONE              guifg=#ff79c6   guibg=NONE      gui=NONE
 hi Todo         ctermfg=61      ctermbg=NONE    cterm=inverse,bold      guifg=#6272a4   guibg=NONE      gui=inverse,bold
 hi Title        ctermfg=7       ctermbg=NONE    cterm=bold              guifg=#f8f8f2   guibg=NONE      gui=bold
 hi Type         ctermfg=126     ctermbg=NONE    cterm=italic            guifg=#6494ed   guibg=NONE      gui=italic
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
-hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#5e6e99   gui=NONE
+hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#a3495b   gui=italic
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -110,7 +110,7 @@ hi cFloat               ctermfg=180     ctermbg=NONE    cterm=NONE      guifg=#f
 hi cOctalZero           ctermfg=180     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c   guibg=NONE      gui=NONE
 hi c89Macro             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c   guibg=NONE      gui=NONE
 " hi cBlock               ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#bc8f8f     guibg=NONE      gui=NONE
-hi cString              ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#808890   guibg=NONE      gui=NONE
+hi cString              ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=NONE      gui=NONE
 hi cCppOutWrapper       ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#008080   guibg=NONE      gui=NONE
 hi cCppInWrapper        ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#008080   guibg=NONE      gui=NONE
 " hi cCppOutIf2           ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#bc8f8f     guibg=NONE      gui=NONE
@@ -127,6 +127,11 @@ hi tmuxFlags            ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#2
 hi tmuxCommands         ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#6089b7   guibg=NONE      gui=NONE
 hi tmuxBoolean          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=NONE      gui=NONE
 hi tmuxFormatString     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#3e8c75   guibg=NONE      gui=NONE
+" }}}
+
+" denite {{{
+hi DeniteNormalHLLine   ctermfg=NONE    ctermbg=NONE    cterm=NONE        guifg=NONE      guibg=#444c5c   gui=NONE
+hi DenitePrompt         ctermfg=NONE    ctermbg=NONE    cterm=NONE        guifg=#27b062   guibg=NONE      gui=NONE
 " }}}
 
 " sh {{{
@@ -341,6 +346,7 @@ hi vimMapModKey         ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE   
 hi vimNotation          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE     guibg=NONE gui=NONE
 hi vimCtrlChar          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#404040  guibg=NONE gui=NONE
 hi vimIsCommand         ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#bb3e79  guibg=NONE gui=NONE
+hi vimFuncName          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#75828f  guibg=NONE gui=NONE
 " }}}
 
 " Markdown: {{{
