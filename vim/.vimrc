@@ -73,6 +73,7 @@ Plug 'eapache/rainbow_parentheses.vim'
 " Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
+Plug 'shiyanhui/vim-slash'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop'}
