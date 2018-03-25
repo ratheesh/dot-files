@@ -830,6 +830,8 @@ call denite#custom#option('default', {
             \ 'mode' : 'normal',
             \ 'root-markers' : '.git,.hg,.svn',
             \ 'smartcase' : v:true,
+            \ 'highlight_mode_normal' : 'DeniteNormalHLLine',
+            \ 'prompt_highlight': 'DenitePrompt',
             \ })
 
 call denite#custom#var('file_rec', 'command',
