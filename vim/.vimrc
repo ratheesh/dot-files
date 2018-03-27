@@ -423,6 +423,7 @@ inoremap <Right>   <NOP>
 imap <Esc> l
 vmap <Esc> l
 inoremap jj l
+nnoremap K i<CR><Esc>
 " vnoremap jj l
 
 " swap ' and ` for easy marks navigation
