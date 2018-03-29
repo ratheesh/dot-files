@@ -826,14 +826,14 @@ augroup deniteresize
 augroup end
 
 call denite#custom#option('default', {
-            \ 'prompt'                : '➜ ',
-            \ 'auto-accel'            : v:true,
-            \ 'auto-highlight'        : v:true,
-            \ 'mode'                  : 'normal',
-            \ 'root-markers'          : '.git,.hg,.svn',
-            \ 'smartcase'             : v:true,
-            \ 'highlight_mode_normal' : 'DeniteNormalHLLine',
-            \ 'prompt_highlight'      : 'DenitePrompt',
+            \ 'prompt'                :  '➜ ',
+            \ 'auto-accel'            :  v:true,
+            \ 'auto-highlight'        :  v:true,
+            \ 'mode'                  :  'normal',
+            \ 'root-markers'          :  '.git,.hg,.svn',
+            \ 'smartcase'             :  v:true,
+            \ 'highlight_mode_normal' :  'DeniteNormalHLLine',
+            \ 'prompt_highlight'      :  'DenitePrompt',
             \ })
 
 call denite#custom#var('file_rec', 'command',
