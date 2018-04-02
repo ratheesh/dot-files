@@ -69,7 +69,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
-Plug 'eapache/rainbow_parentheses.vim'
+" Plug 'eapache/rainbow_parentheses.vim'
 " Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
@@ -567,7 +567,7 @@ let g:load_doxygen_syntax = 1
 " let g:airline_highlighting_cache = 0
 
 " Appearance
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -962,7 +962,7 @@ let g:ale_open_list    = 0
 
 " rainbow_parenthesis {{{
 let g:rbpt_max         = 15
-let g:bold_parentheses = 1
+let g:bold_parentheses = 0
 
 let g:rbpt_colorpairs = [
             \ ['gray',        'firebrick2'     ],
@@ -983,11 +983,11 @@ let g:rbpt_colorpairs = [
             \ ['red',         'firebrick3'     ],
             \ ]
 
-au VimEnter  * RainbowParenthesesToggle
-au BufEnter  * RainbowParenthesesLoadRound
-au BufEnter  * RainbowParenthesesLoadSquare
-au BufEnter  * RainbowParenthesesLoadBraces
-au BufEnter  * RainbowParenthesesLoadChevrons
+" au VimEnter  * RainbowParenthesesToggle
+" au BufEnter  * RainbowParenthesesLoadRound
+" au BufEnter  * RainbowParenthesesLoadSquare
+" au BufEnter  * RainbowParenthesesLoadBraces
+" au BufEnter  * RainbowParenthesesLoadChevrons
 " }}}
 
 " hipairs {{{
@@ -1294,7 +1294,7 @@ let g:bling_time         = 175
 let g:bling_count        = 1
 let g:bling_color_fg     = '0'
 let g:bling_color_bg     = '131'
-let g:bling_color_cterm  = 'italic'
+let g:bling_color_cterm  = 'NONE'
 let g:bling_color_gui_fg = '#000000'
 let g:bling_color_gui_bg = '#bdb76b'
 let g:bling_no_expr      = 1
