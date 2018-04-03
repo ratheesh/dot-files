@@ -50,6 +50,7 @@ Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 't9md/vim-smalls'
+Plug 'ratheesh/toggle_words.vim'
 Plug 'godlygeek/tabular'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-git'
@@ -542,6 +543,8 @@ nnoremap zr zR
 nnoremap \s ea<C-X><C-S>
 " }}}
 
+" Plugins Customization
+
 " Theme {{{
 syntax on
 let g:enable_bold_font = 1
@@ -553,6 +556,17 @@ nmap <silent><F8>            :TagbarToggle<CR>
 nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
+" toggle_words {{{
+let g:toggle_words_dict = {'c': [
+            \ ['define','undef'],
+            \ ['char','short','int','long'],
+            \ ['uint8_t','uint16_t','uint32_t','uint64_t'],
+            \ ['signed','unsigned','register'],
+            \ [],
+            \ ],}
+
+nmap <silent>s :ToggleWord<CR>
+" }}}
 
 " python-mode {{{
 let g:pymode_options = 0
