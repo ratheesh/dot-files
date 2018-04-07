@@ -588,6 +588,13 @@ let g:cycle_default_groups_for_python = [
             \ [[ 'if', 'elseif', 'else', 'endif' ]],
             \ ]
 
+let g:cycle_default_groups_for_sh = [
+            \ [[ 'eq', 'gt', 'lt', 'le', 'ge' ]],
+            \ [[ '&&', '||' ]],
+            \ [[ '>=', '<=' ]],
+            \ [[ '-n', '-z' ]],
+            \ ]
+
 let g:cycle_default_groups = [
             \ [[ 'true', 'false' ]],
             \ [[ 'yes', 'no' ]],
