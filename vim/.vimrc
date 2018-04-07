@@ -1020,10 +1020,10 @@ xmap <Leader>j <Plug>(smalls)
 " }}}
 
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger       = "<C-e>"
-let g:UltiSnipsListSnippets        = "<C-tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger       = "<C-k>"
+let g:UltiSnipsListSnippets        = "<C-Tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:indentLine_faster            = 1
 "}}}
 
