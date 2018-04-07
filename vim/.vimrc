@@ -50,7 +50,8 @@ Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 't9md/vim-smalls'
-Plug 'ratheesh/toggle_words.vim'
+" Plug 'ratheesh/toggle_words.vim'
+Plug 'bootleq/vim-cycle'
 Plug 'godlygeek/tabular'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-git'
@@ -556,16 +557,66 @@ nmap <silent><F8>            :TagbarToggle<CR>
 nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
-" toggle_words {{{
-let g:toggle_words_dict = {'c': [
-            \ ['define','undef'],
-            \ ['char','short','int','long'],
-            \ ['uint8_t','uint16_t','uint32_t','uint64_t'],
-            \ ['signed','unsigned','register'],
-            \ [],
-            \ ],}
+"vim-cycle {{{
+nmap  <silent><Leader>e <Plug>CycleNext
+nmap  <silent><Leader>r <Plug>CyclePrev
 
-nmap <silent>s :ToggleWord<CR>
+let g:cycle_default_groups_for_c = [
+            \ [[ 'unsigned', 'signed', 'register' ]],
+            \ [[ 'char',  'short', 'int', 'long', 'void' ]],
+            \ [[ 'u8',  'u16', 'u32', 'u64' ]],
+            \ [[ 'uint8_t',  'uint16_t', 'uint32_t', 'uint64_t', 'ssize_t' ]],
+            \ [[ '>>', '<<' ]],
+            \ [[ '&&', '||' ]],
+            \ [[ '>=', '<=' ]],
+            \ [[ '->', '.'  ]],
+            \ ]
+
+let g:cycle_default_groups_for_cpp = [
+            \ [[ 'unsigned', 'signed', 'register' ]],
+            \ [[ 'bool', 'char',  'short', 'int', 'long' ]],
+            \ [[ 'u8',  'u16', 'u32', 'u64' ]],
+            \ [[ 'uint8_t',  'uint16_t', 'uint32_t', 'uint64_t', 'ssize_t' ]],
+            \ [[ '>>', '<<' ]],
+            \ [[ '&&', '||' ]],
+            \ [[ '>=', '<=' ]],
+            \ [[ '->', '.'  ]],
+            \ ]
+
+let g:cycle_default_groups_for_python = [
+            \ [[ 'if', 'elseif', 'else', 'endif' ]],
+            \ ]
+
+let g:cycle_default_groups = [
+            \ [[ 'true', 'false' ]],
+            \ [[ 'yes', 'no' ]],
+            \ [[ 'on', 'off' ]],
+            \ [[ '0', '1' ]],
+            \ [[ '+', '-' ]],
+            \ [[ '}', '{' ]],
+            \ [[ ')', '(' ]],
+            \ [[ ']', '[' ]],
+            \ [[ '>', '<' ]],
+            \ [[ '&', '|' ]],
+            \ [[ '==', '!=']],
+            \ [[ 'allow', 'deny' ]],
+            \ [[ 'before', 'after' ]],
+            \ [[ 'block', 'inline', 'none' ]],
+            \ [[ 'define', 'undef' ]],
+            \ [[ 'good', 'bad' ]],
+            \ [[ 'in', 'out' ]],
+            \ [[ 'left', 'right' ]],
+            \ [[ 'min', 'max' ]],
+            \ [[ 'on', 'off' ]],
+            \ [[ 'start', 'stop' ]],
+            \ [[ 'success', 'failure' ]],
+            \ [[ 'up', 'down' ]],
+            \ [[ 'left', 'right' ]],
+            \ [[ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday',
+            \    'friday', 'saturday' ]],
+            \ [[ 'january', 'february', 'march', 'april', 'may', 'june', 'july',
+            \    'august', 'september', 'october', 'november', 'december' ]],
+            \ ]
 " }}}
 
 " python-mode {{{
