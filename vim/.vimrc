@@ -1115,7 +1115,7 @@ endif
 let g:deoplete#enable_refresh_always      = 1
 let g:deoplete#auto_complete_delay        = 50
 let g:deoplete#auto_refresh_delay         = 50
-let g:deoplete#auto_complete_start_length = 3
+let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#enable_ignore_case         = 1
 let g:deoplete#enable_smart_case          = 1
 let g:deoplete#enable_camel_case          = 1
