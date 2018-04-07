@@ -80,7 +80,8 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'lilydjwg/colorizer'
-Plug 'vim-scripts/DrawIt'
+" Plug 'vim-scripts/DrawIt'
+Plug 'joshukraine/yankmatches'
 
 " text objects related
 Plug 'kana/vim-textobj-user'
@@ -622,6 +623,18 @@ let g:cycle_default_groups = [
 " python-mode {{{
 let g:pymode_options = 0
 let g:pymode_options_colorcolumn = 1
+" }}}
+
+" yankmatches {{{
+let g:YankMatches#ClipboardRegister='a'
+nmap <silent><Leader>dm    :call ForAllMatches('delete', {})<CR>
+nmap <silent><Leader>di    :call ForAllMatches('delete', {'inverse':1})<CR>
+nmap <silent><Leader>ym    :call ForAllMatches('yank',   {})<CR>
+nmap <silent><Leader>yi    :call ForAllMatches('yank',   {'inverse':1})<CR>
+vmap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1})<CR>
+vmap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1, 'inverse':1})<CR>
+vmap <silent><Leader>ym    :<C-U>call ForAllMatches('yank',   {'visual':1})<CR>
+vmap <silent><Leader>yi    :<C-U>call ForAllMatches('yank',   {'visual':1, 'inverse':1})<CR>
 " }}}
 
 " Doxygen {{{
