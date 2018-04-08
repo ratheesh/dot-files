@@ -641,7 +641,7 @@ nmap <silent><Leader>di    :call ForAllMatches('delete', {'inverse':1})<CR>
 nmap <silent><Leader>ym    :call ForAllMatches('yank',   {})<CR>
 nmap <silent><Leader>yi    :call ForAllMatches('yank',   {'inverse':1})<CR>
 vmap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1})<CR>
-vmap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1, 'inverse':1})<CR>
+vmap <silent><Leader>di    :<C-U>call ForAllMatches('delete', {'visual':1, 'inverse':1})<CR>
 vmap <silent><Leader>ym    :<C-U>call ForAllMatches('yank',   {'visual':1})<CR>
 vmap <silent><Leader>yi    :<C-U>call ForAllMatches('yank',   {'visual':1, 'inverse':1})<CR>
 " }}}
