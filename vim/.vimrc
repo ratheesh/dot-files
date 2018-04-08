@@ -508,6 +508,7 @@ nnoremap <A-o> <C-w>ozv
 nmap <silent><Leader><Leader> V
 xmap <silent><Leader><Leader> V
 nmap <silent><Leader><BS> <c-v>
+xmap <silent><Leader><BS> <c-v>
 nmap <Leader>; :
 xmap <Leader>; :
 
