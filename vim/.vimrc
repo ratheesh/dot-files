@@ -83,6 +83,7 @@ Plug 'lilydjwg/colorizer'
 " Plug 'vim-scripts/DrawIt'
 Plug 'joshukraine/yankmatches'
 Plug 'haya14busa/incsearch.vim'
+Plug 'triglav/vim-visual-increment'
 
 " text objects related
 Plug 'kana/vim-textobj-user'
@@ -1386,6 +1387,10 @@ map *      <Plug>(incsearch-nohl-*)
 map #      <Plug>(incsearch-nohl-#)
 map g*     <Plug>(incsearch-nohl-g*)
 map g#     <Plug>(incsearch-nohl-g#)
+" }}}
+
+" vim-visual-increment {{{
+set nrformats=alpha,octal,hex
 " }}}
 
 " vim-bling {{{
