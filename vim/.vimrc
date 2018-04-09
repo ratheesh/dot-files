@@ -1141,11 +1141,11 @@ let g:deoplete#sources  = {}
 let g:deoplete#sources_ = [] " includes all sources
 
 " Use partial fuzzy matches like YouCompleteMe
-call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
-call deoplete#custom#set('_', 'sorters', ['sorter_word'])
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
+call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('ultisnips', 'rank', 9999)
+call deoplete#custom#source('ultisnips', 'rank', 9999)
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -1163,12 +1163,10 @@ inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ deoplete#mappings#manual_complete()
-
-function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-" }}}
+            function! s:check_back_space() abort "{{{
+                let col = col('.') - 1
+                return !col || getline('.')[col - 1]  =~ '\s'
+            endfunction"}}}
 
 " Use Tab to forward cycle
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
