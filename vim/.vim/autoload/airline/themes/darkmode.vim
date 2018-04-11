@@ -78,7 +78,7 @@ let g:airline#themes#darkmode#palette.normal  = {
             \ 'airline_y': [s:gui10    , s:gui02     , s:cterm11 , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08     , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.insert  = {
-            \ 'airline_a': [s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'none'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
@@ -129,7 +129,7 @@ let g:airline#themes#darkmode#palette.normal_modified  = {
             \ 'airline_y': [s:gui10    , s:gui02     , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08     , s:ctermWhite , s:cterm07], }
 let g:airline#themes#darkmode#palette.insert_modified  = {
-            \ 'airline_a': [s:guiWhite , s:gui07 , s:ctermBlack , s:cterm08],
+            \ 'airline_a': [s:guiBlack , s:gui07 , s:ctermBlack , s:cterm08],
             \ 'airline_b': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_c': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07, 'none'],
             \ 'airline_x': [s:guiCFG   , s:gui01 , s:ctermWhite , s:cterm07],
