@@ -84,6 +84,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'joshukraine/yankmatches'
 Plug 'haya14busa/incsearch.vim'
 Plug 'triglav/vim-visual-increment'
+Plug 'vim-scripts/blockquote.vim'
 
 " text objects related
 Plug 'kana/vim-textobj-user'
