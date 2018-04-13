@@ -85,6 +85,7 @@ Plug 'joshukraine/yankmatches'
 Plug 'haya14busa/incsearch.vim'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/blockquote.vim'
+Plug 'greymd/oscyank.vim'
 
 " text objects related
 Plug 'kana/vim-textobj-user'
@@ -1393,6 +1394,10 @@ map g#     <Plug>(incsearch-nohl-g#)
 
 " vim-visual-increment {{{
 set nrformats=alpha,octal,hex
+" }}}
+
+" oscyank {{{
+noremap <leader>y :Oscyank<CR>
 " }}}
 
 " vim-bling {{{
