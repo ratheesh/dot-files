@@ -1323,7 +1323,7 @@ let cursormode_color_map = {
             \   "n"     :  "#c0c0c0",
             \   "i"     :  "#e75a3a",
             \   "R"     :  "#ff34be",
-            \   "v"     :  "#28b473",
+            \   "v"     :  "#46c28e",
             \   "V"     :  "#0366d6",
             \   "\<C-V>":  "#ffca88",
             \   "d"     :  "#eeeeee",
