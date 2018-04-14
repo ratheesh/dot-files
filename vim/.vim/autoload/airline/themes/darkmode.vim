@@ -28,6 +28,7 @@ let s:guiWhite          = "#eeeeee"
 let s:guiBlack          = "#000000"
 let s:guiCFG            = "#c0c0c0"
 let s:guiChangedColor   = "#2c2c2c"
+let s:guiCtrlP          = "#46c28e"
 
 let s:cterm01           = "235"
 let s:cterm02           = "238"
@@ -185,7 +186,7 @@ endif
 
 let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09    , s:cterm01 ]
 let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11    , s:cterm02 ]
-let s:CP3 = [ s:guiWhite , s:gui09 , s:ctermBlack , s:cterm10   , 'none' ]
+let s:CP3 = [ s:guiBlack , s:guiCtrlP , s:ctermBlack , s:cterm10   , 'none' ]
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
 " End of File
