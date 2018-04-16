@@ -1412,20 +1412,22 @@ let g:bling_no_expr      = 1
 " }}}
 
 " Misc useful functions {{{
-" bracket-paste settings
-if &term =~ "xterm.*"
-    let &t_SI = &t_SI . "\<ESC>[?2004h"
-    let &t_EI = "\<ESC>[?2004l" . &t_EI
-    function! XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
-    endfunction
-    map  <expr> <Esc>[200~ XTermPasteBegin("i")
-    imap <expr> <Esc>[200~ XTermPasteBegin("")
-    vmap <expr> <Esc>[200~ XTermPasteBegin("c")
-    cmap <Esc>[200~ <nop>
-    cmap <Esc>[201~ <nop>
+" bracket-paste settings - supports only ViM for now
+if !has('nvim') && has('patch-8.0-330')
+    if &term =~ "xterm.*"
+        let &t_SI = &t_SI . "\<ESC>[?2004h"
+        let &t_EI = "\<ESC>[?2004l" . &t_EI
+        function! XTermPasteBegin(ret)
+            set pastetoggle=<Esc>[201~
+            set paste
+            return a:ret
+        endfunction
+        map  <expr><Esc>[200~ XTermPasteBegin("i")
+        imap <expr><Esc>[200~ XTermPasteBegin("")
+        vmap <expr><Esc>[200~ XTermPasteBegin("c")
+        cmap <expr><Esc>[200~ <nop>
+        cmap <expr><Esc>[201~ <nop>
+    endif
 endif
 
 " Append modeline after last line in buffer.
