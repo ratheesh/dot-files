@@ -1278,9 +1278,9 @@ let g:NERDCommentEmptyLines      = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 if has('nvim')
-nmap <silent><M-;>  :call NERDComment("n", "Append")<CR>
+    nmap <silent><M-;>  :call NERDComment("n", "Append")<CR>
 else
-nmap <silent>;    :call NERDComment("n", "Append")<CR>
+    nmap <silent>;    :call NERDComment("n", "Append")<CR>
 endif
 
 nmap <silent><Leader>cc :call NERDComment("n", "Comment")<CR>
