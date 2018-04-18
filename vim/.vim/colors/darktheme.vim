@@ -78,6 +78,7 @@ hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
 hi SpellCap             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
+hi SpellLocal           ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
 " }}}
 
 " C/C++ {{{
