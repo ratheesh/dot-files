@@ -324,6 +324,11 @@ autocmd BufWritePost
             \ |   filetype detect
             \ | endif
 
+augroup vimrc-sync-onstart
+    autocmd!
+    autocmd BufEnter * :syntax sync maxlines=200
+augroup END
+
 let mapleader      = "\<Space>"
 let maplocalleader = "\\"
 " }}}
