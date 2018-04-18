@@ -474,6 +474,7 @@ inoremap <c-w> <c-g>u<c-w>
 " disable audio and visual bells
 set noerrorbells
 set novisualbell
+set belloff=all
 set t_vb=
 
 " Write current buffer with sudo privileges
