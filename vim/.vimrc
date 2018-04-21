@@ -1050,7 +1050,7 @@ xmap <Leader>j <Plug>(smalls)
 " }}}
 
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger       = "<C-k>"
+let g:UltiSnipsExpandTrigger       = ""
 let g:UltiSnipsListSnippets        = "<C-Tab>"
 let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
@@ -1168,6 +1168,8 @@ call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 call deoplete#custom#source('ultisnips', 'rank', 9999)
 
+call deoplete#custom#option('smart_case', v:true)
+
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
@@ -1194,6 +1196,13 @@ endfunction
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" following code works only in ViM for now
+if !has('nvim')
+    let g:UltiSnipsExpandTrigger = "<nop>"
+    inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
+endif
+
 " }}}
 
 " vim-textmanip {{{
