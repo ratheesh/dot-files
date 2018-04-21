@@ -62,14 +62,13 @@ Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 't9md/vim-smalls'
-" Plug 'ratheesh/toggle_words.vim'
-Plug 'bootleq/vim-cycle'
+Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
 Plug 'thaerkh/vim-indentguides'
-Plug 'tpope/vim-git'
+Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
-Plug 'ratheesh/git_patch_tags.vim'
+Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'vim-airline/vim-airline'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'MaxMEllon/vim-shiny'
@@ -90,7 +89,7 @@ Plug 'tpope/vim-endwise'
 Plug 'shiyanhui/vim-slash'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'python-mode/python-mode', {'branch': 'develop'}
+Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 Plug 'lilydjwg/colorizer'
 " Plug 'vim-scripts/DrawIt'
 Plug 'joshukraine/yankmatches'
