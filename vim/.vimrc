@@ -96,6 +96,7 @@ Plug 'joshukraine/yankmatches'
 Plug 'haya14busa/incsearch.vim'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/blockquote.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
 
 " text objects related
@@ -1435,6 +1436,10 @@ let g:bling_color_cterm  = 'NONE'
 let g:bling_color_gui_fg = '#000000'
 let g:bling_color_gui_bg = '#bdb76b'
 let g:bling_no_expr      = 1
+" }}}
+
+" vim-peekaboo {{{
+let g:peekaboo_window='vert bo 60new'
 " }}}
 
 " Misc useful functions {{{
