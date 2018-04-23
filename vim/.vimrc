@@ -1052,8 +1052,8 @@ xmap <Leader>j <Plug>(smalls)
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger       = ""
 let g:UltiSnipsListSnippets        = "<C-Tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 let g:indentLine_faster            = 1
 "}}}
 
@@ -1198,10 +1198,10 @@ endfunction
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " following code works only in ViM for now
-if !has('nvim')
-    let g:UltiSnipsExpandTrigger = "<nop>"
-    inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
-endif
+" if !has('nvim')
+    " let g:UltiSnipsExpandTrigger = "<nop>"
+    " inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
+" endif
 
 " }}}
 
