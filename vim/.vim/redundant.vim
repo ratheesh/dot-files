@@ -93,6 +93,8 @@
 " Plug 'jiangmiao/auto-pairs'
 " Plug 't9md/vim-quickhl'
 " Plug 'jalvesaq/vimcmdline'
+" Plug 'ratheesh/toggle_words.vim'
+" Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
