@@ -11,6 +11,7 @@ tags
 TAGS
 *bookmarks*
 **/nvim/.config/**
+!**/nvim/.config/nvim
 *auto-save-list*
 **/.emacs.d/elpa
 **/.emacs.d/recentf
@@ -34,3 +35,4 @@ TAGS
 /emacs/.emacs.d/semanticdb/!home!ratheesh!AM335xBluetopiaLinuxProduction-4.0.1.4.2U!BluetopiaPM!sample!LinuxSPPM!semantic.cache
 /emacs/.emacs.d/semanticdb/!home!ratheesh!ppcport!juno_utils!semantic.cache
 *viminfo*
+*plug.vim*
