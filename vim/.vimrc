@@ -237,7 +237,7 @@ set cpoptions+=$
 set hidden   " See http://items.sjbach.com/319/configuring-vim-right
 set winminheight=0    " Windows need not have height
 set foldmethod=marker
-set lazyredraw
+set lazyredraw " don't redraw while executing macros
 " set copyindent
 if has('clipboard')
     if has('nvim')
