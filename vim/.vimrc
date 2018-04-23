@@ -92,7 +92,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 Plug 'lilydjwg/colorizer'
 " Plug 'vim-scripts/DrawIt'
-Plug 'joshukraine/yankmatches'
+Plug 'ratheesh/yankmatches'
 Plug 'haya14busa/incsearch.vim'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/blockquote.vim'
