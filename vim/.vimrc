@@ -93,7 +93,7 @@ Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 Plug 'lilydjwg/colorizer'
 " Plug 'vim-scripts/DrawIt'
 Plug 'ratheesh/yankmatches'
-Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/is.vim'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -1411,20 +1411,6 @@ nmap ga     <Plug>(EasyAlign)
 xmap ga     <Plug>(EasyAlign)
 xmap <CR>   <plug>(LiveEasyAlign)
 let g:easy_align_ignore_groups = ['Comment', 'String']
-" }}}
-
-" incsearch.vim {{{
-let g:incsearch#auto_nohlsearch = 1
-
-map /      <Plug>(incsearch-forward)
-map ?      <Plug>(incsearch-backward)
-map g/     <Plug>(incsearch-stay)
-map n      <Plug>(incsearch-nohl-n)
-map N      <Plug>(incsearch-nohl-N)
-map *      <Plug>(incsearch-nohl-*)
-map #      <Plug>(incsearch-nohl-#)
-map g*     <Plug>(incsearch-nohl-g*)
-map g#     <Plug>(incsearch-nohl-g#)
 " }}}
 
 " vim-visual-increment {{{
