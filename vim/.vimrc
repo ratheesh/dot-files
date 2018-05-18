@@ -155,9 +155,8 @@ if !has('nvim')
     else
         runtime macros/matchit.vim
     endif
-else
-    set guicursor=
 endif
+
 set nostartofline
 set numberwidth=1
 " set tabstop=4
@@ -1515,6 +1514,20 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 " Use guicolors in terminal (we need to place this here as it is easy to disable!)
 if has("termguicolors")
     set termguicolors
+endif
+
+if has('nvim')
+    " Set cursor color based on mode. Though this is limited compared to cursor
+    " mode, this setting does not break locationlist/preview window title issue
+    " with airline plugin.
+    " Only neovim support for now!
+    highlight nCursor guifg=#e0e0e0 guibg=#e0e0e0 gui=inverse,bold cterm=inverse,bold
+    highlight iCursor guifg=#cf004f guibg=#cf004f gui=inverse,bold cterm=inverse,bold
+    highlight vCursor guifg=#f7b033 guibg=#f7b033 gui=inverse,bold cterm=inverse,bold
+    highlight oCursor guifg=#46c283 guibg=#46c283 gui=inverse,bold cterm=inverse,bold
+    highlight rCursor guifg=#e3047f guibg=#e3047f gui=inverse,bold cterm=inverse,bold
+    set guicursor=n:block-nCursor-blinkon0,i-ci:block-iCursor-blinkon0,v-ve:block-vCursor-blinkon0,o:block-oCursor-blinkon0,r-cr:block-rCursor-blinkon0
+    autocmd VimLeave * set guicursor=a:block-NCursor-blinkon0
 endif
 
 " Autoload vimrc on save
