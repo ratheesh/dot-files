@@ -10,6 +10,7 @@
 [user]
   name       = Ratheesh S
   email      = ratheeshreddy@gmail.com
+  useConfigOnly = true
   signingkey = B5A8692EC05DCFEA
 
 [color]
@@ -94,5 +95,21 @@
 
 [commit]
   verbose         = true
+
+[pack] # https://git-scm.com/docs/git-config#git-config-packwindow
+    compression = 9
+
+[advice]
+	waitingforeditor = false  # ignore "hint: Waiting for your editor to close the file..." message
+
+[fetch] # https://git-scm.com/docs/git-config#git-config-fetchrecurseSubmodules
+	recurseSubmodules = true
+
+[commit] # https://git-scm.com/docs/git-config#git-config-commitcleanup
+	# GPG-signed and Sign off the Developer Certificate of Origin <http://developercertificate.org>
+	# See also: <http://gerrit.googlecode.com/svn/documentation/2.0/user-signedoffby.html>
+	#           <http://stackoverflow.com/a/1962112/5228839>
+	; gpgSign = true
+	verbose = true
 
 # End of File
