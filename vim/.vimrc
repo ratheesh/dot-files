@@ -1520,10 +1520,10 @@ if has('nvim')
     " with airline plugin.
     " Only neovim support for now!
     highlight nCursor guifg=#e0e0e0 guibg=#e0e0e0 gui=inverse,bold cterm=inverse,bold
-    highlight iCursor guifg=#cf004f guibg=#cf004f gui=inverse,bold cterm=inverse,bold
-    highlight vCursor guifg=#f7b033 guibg=#f7b033 gui=inverse,bold cterm=inverse,bold
-    highlight oCursor guifg=#46c283 guibg=#46c283 gui=inverse,bold cterm=inverse,bold
-    highlight rCursor guifg=#e3047f guibg=#e3047f gui=inverse,bold cterm=inverse,bold
+    highlight iCursor guifg=#46c283 guibg=#46c283 gui=inverse,bold cterm=inverse,bold
+    highlight vCursor guifg=#fccc82 guibg=#fccc82 gui=inverse,bold cterm=inverse,bold
+    highlight oCursor guifg=#ff005f guibg=#ff005f gui=inverse,bold cterm=inverse,bold
+    highlight rCursor guifg=#d65b84 guibg=#d65b84 gui=inverse,bold cterm=inverse,bold
     set guicursor=n:block-nCursor-blinkon0,i-ci:block-iCursor-blinkon0,v-ve:block-vCursor-blinkon0,o:block-oCursor-blinkon0,r-cr:block-rCursor-blinkon0
     autocmd VimLeave * set guicursor=a:block-NCursor-blinkon0
 endif
