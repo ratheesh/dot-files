@@ -105,7 +105,8 @@
     helper          = cache --timeout=3600
 
 [commit]
-    verbose         = true
+    verbose = true
+    ; gpgsign = true
 
 [pack] # https://git-scm.com/docs/git-config#git-config-packwindow
     compression = 9
@@ -115,6 +116,18 @@
 
 [fetch] # https://git-scm.com/docs/git-config#git-config-fetchrecurseSubmodules
     recurseSubmodules = true
+    prune = true
+
+[push]
+    default    = current
+    followTags = true
+
+[rerere]
+    enabled = true
+
+[rebase]
+    missingCommitsCheck = error
+
 
 [commit] # https://git-scm.com/docs/git-config#git-config-commitcleanup
         # GPG-signed and Sign off the Developer Certificate of Origin <http://developercertificate.org>
