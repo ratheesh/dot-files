@@ -32,7 +32,7 @@ hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#9
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#3a4a65   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#29303b   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
-hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#909090   guibg=#343648   gui=NONE
+hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#343648   gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#e0e0e0   guibg=#a3495b   gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=#f92a5b   guibg=NONE      gui=bold,underline
