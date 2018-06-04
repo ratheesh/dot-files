@@ -59,7 +59,7 @@
     error  = red bold
 
 [merge]
-  # include summaries of merged commits in newly created merge commit messages
+    ; include summaries of merged commits in newly created merge commit messages
     log = true
 
 [sendemail]
@@ -78,31 +78,31 @@
 
 [format]
     pretty      = format:"%C(60)Commit%C(162): %C(137)%H%C(auto)%d\
-        %n%C(60)Author%C(162):%C(26 italic) %aN %C(reset)%C(162 bold)«%C(reset)%C(66 italic)%aE%C(reset)%C(162 bold)»\
-        %n%C(60)Date  %C(162):%C(132) %ad%C(8) ⌠%C(reset)%C(60)%ar%C(8)⌡%n%n%C(244)%w(0,4,4)%s%n%n%C(auto)%b"
+%n%C(60)Author%C(162):%C(26 italic) %aN %C(reset)%C(162 bold)«%C(reset)%C(66 italic)%aE%C(reset)%C(162 bold)»\
+%n%C(60)Date  %C(162):%C(132) %ad%C(8) ⌠%C(reset)%C(60)%ar%C(8)⌡%n%n%C(244)%w(0,4,4)%s%n%n%C(auto)%b"
 
 [magit]
     extension   = stgit
 
 [core]
-  # editor = emacsclient -c
-  # treat spaces before tabs, lines that are indented with 8 or more spaces,
-  # and all kinds of trailing whitespace as an error
+    ; editor = emacsclient -c
+    ; Treat spaces before tabs, lines that are indented with 8 or more spaces,
+    ; and all kinds of trailing whitespace as an error
     whitespace = space-before-tab,trailing-space
     pager      = /bin/less -R
 
 [apply]
-  # detect whitespace errors when applying a patch
-    whitespace      = fix
+    ; detect whitespace errors when applying a patch
+    whitespace = fix
 
 [status]
     submodulesummary = 1
 
 [branch]
-  # autosetuprebase = always
+    ; autosetuprebase = always
 
 [credential]
-    helper          = cache --timeout=3600
+    helper = cache --timeout=3600
 
 [commit]
     verbose = true
@@ -129,11 +129,11 @@
     missingCommitsCheck = error
 
 
-[commit] # https://git-scm.com/docs/git-config#git-config-commitcleanup
-        # GPG-signed and Sign off the Developer Certificate of Origin <http://developercertificate.org>
-        # See also: <http://gerrit.googlecode.com/svn/documentation/2.0/user-signedoffby.html>
-        #           <http://stackoverflow.com/a/1962112/5228839>
-        ; gpgSign = true
+[commit] ; https://git-scm.com/docs/git-config#git-config-commitcleanup
+    ; GPG-signed and Sign off the Developer Certificate of Origin <http://developercertificate.org>
+    ; See also: <http://gerrit.googlecode.com/svn/documentation/2.0/user-signedoffby.html>
+    ;           <http://stackoverflow.com/a/1962112/5228839>
+    ; gpgSign = true
     verbose = true
 
-# End of File
+; End of File
