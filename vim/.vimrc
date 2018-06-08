@@ -1321,6 +1321,9 @@ xmap <silent><Leader>cc :call NERDComment("x", "Comment")<CR>
 nmap <silent><Leader>cu :call NERDComment("n", "Uncomment")<CR>
 xmap <silent><Leader>cu :call NERDComment("x", "Uncomment")<CR>
 
+nmap <silent><Leader>ci :call NERDComment("n", "Invert")<CR>
+xmap <silent><Leader>ci :call NERDComment("x", "Invert")<CR>
+
 nmap <silent><Leader>cs :call NERDComment("n", "Sexy")<CR>
 xmap <silent><Leader>cs :call NERDComment("x", "Sexy")<CR>
 
