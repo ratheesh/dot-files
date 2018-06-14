@@ -8,8 +8,8 @@
     checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
 
 [user]
-    name       = Ratheesh S
-    email      = ratheeshreddy@gmail.com
+	name = Ratheesh S
+	email = ratheeshreddy@gmail.com
     useConfigOnly = true
     signingkey = B5A8692EC05DCFEA
 
@@ -88,8 +88,9 @@
     ; editor = emacsclient -c
     ; Treat spaces before tabs, lines that are indented with 8 or more spaces,
     ; and all kinds of trailing whitespace as an error
-    whitespace = space-before-tab,trailing-space
-    pager      = /bin/less -R
+    whitespace   = space-before-tab,trailing-space
+    pager        = /bin/less -R
+    preloadIndex = true ; help in getting git status faster
 
 [apply]
     ; detect whitespace errors when applying a patch
