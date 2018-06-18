@@ -1057,6 +1057,19 @@ nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
 nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
 " }}}
 
+" git-patch-tags {{{
+augroup gitCommmit
+    au!
+    autocmd FileType gitcommit
+                \  nmap <buffer> <LocalLeader>gs  <Plug>GitSignOff
+                \| nmap <buffer> <LocalLeader>gt  <Plug>GitTested
+                \| nmap <buffer> <LocalLeader>ga  <Plug>GitAck
+                \| nmap <buffer> <LocalLeader>gc  <Plug>GitCC
+                \| nmap <buffer> <LocalLeader>gr  <Plug>GitReviewed
+                \| nmap <buffer> <LocalLeader>gR  <Plug>GitReporter
+augroup END
+" }}}
+
 " vim-signature {{{
 let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkTextHL        = "SignColumn"
