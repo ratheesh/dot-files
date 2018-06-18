@@ -70,6 +70,7 @@ Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'vim-airline/vim-airline'
+Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'MaxMEllon/vim-shiny'
 Plug 'machakann/vim-highlightedyank'
@@ -822,6 +823,18 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 "             \ 'S'  : 'Subst-Liƞε',
 "             \ '' : 'Subst-ẞlk',
 "             \ }
+" }}}
+
+"nzu-N-with-echo vim-anzu {{{
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+let g:anzu_status_format = "%p(%i/%l) %w"
+
+" This command is an overridden one to make sure otherone works if this plugin
+" is disabled
+nmap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}
 
 " Vim-licenses {{{
