@@ -366,7 +366,7 @@ set directory   =$HOME/.vim/tmp/swap//
 if !isdirectory(&directory)
     call mkdir(&directory)
 endif
-set updatecount =100
+set updatecount=100
 
 " viminfo settings
 if has('nvim')
@@ -686,7 +686,7 @@ let g:load_doxygen_syntax = 1
 " let g:airline_highlighting_cache = 0
 
 " Appearance
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
