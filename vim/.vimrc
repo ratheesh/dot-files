@@ -745,7 +745,7 @@ function! AirlineInit()
     let g:airline_section_c = airline#section#create(['readonly',' %f', 'modified'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['ffenc'])
-    let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','ch:%02B│','%p%%'])
+    let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','ch:%02Bh│','%p%%'])
     " let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','☰%l:%v│','%p%%'])
 endfunction
 
