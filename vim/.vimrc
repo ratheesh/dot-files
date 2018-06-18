@@ -841,7 +841,7 @@ nmap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " Vim-licenses {{{
 let g:licenses_copyright_holders_name = 'Ratheesh <ratheeshreddy@gmail.com>'
 let g:licenses_authors_name           = 'Ratheesh S'
-let g:licenses_default_commands       = ['gplv2', 'mit']
+let g:licenses_default_commands       = ['gplv2', 'gplv3', 'mit']
 " }}}
 
 " CtrlP {{{
