@@ -31,6 +31,9 @@ if !filereadable(vimplug_exists)
     echo ""
     silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
+
+" disable shallow cloning
+let g:plug_shallow=0
 "}}}
 
 " Plugins {{{
