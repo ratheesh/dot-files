@@ -209,6 +209,7 @@ set viewoptions+=slash,unix
 set viewoptions=cursor,folds,unix,slash,curdir
 set viewdir=$CACHE/tmp/view
 set ignorecase
+set nojoinspaces
 set smartcase
 set smarttab
 set gdefault
