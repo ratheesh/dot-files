@@ -195,11 +195,16 @@ hi CtrlPBufferHid       ctermfg=7       ctermbg=NONE    cterm=NONE    guifg=#627
 hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=NONE    guifg=#909090  guibg=NONE   gui=NONE
 " }}}
 
+" showpairs {{{
+" hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#ff0080   guibg=#ff0080 gui=bold,underline
+hi ShowPairsHLp  ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#0366e6   guibg=NONE gui=bold,underline
+" }}}
+
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#414349 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#e0e0e0  guibg=#197093 gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#43464f gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#e0e0e0  guibg=#008375 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#a16946 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#808080 gui=NONE
 "}}}
 
 " GitCommit {{{
