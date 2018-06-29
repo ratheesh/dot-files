@@ -87,7 +87,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 " Plug 'eapache/rainbow_parentheses.vim'
-" Plug 'ratheesh/hiPairs'
+Plug 'ratheesh/hiPairs'
+" Plug 'vim-scripts/ShowPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'shiyanhui/vim-slash'
@@ -1135,6 +1136,9 @@ let g:rbpt_colorpairs = [
 " }}}
 
 " hipairs {{{
+let g:hiPairs_timeout=1000
+let g:hiPairs_insert_timeout=1000
+let g:hiPairs_stopline_more=150
 let g:hiPairs_hl_matchPair = {
             \    'term'    : 'underline,bold',
             \    'ctermfg' : '24',
