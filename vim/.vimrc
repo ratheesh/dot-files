@@ -1141,15 +1141,15 @@ let g:rbpt_colorpairs = [
 " hipairs {{{
 let g:hiPairs_timeout=1000
 let g:hiPairs_insert_timeout=1000
-let g:hiPairs_stopline_more=150
+let g:hiPairs_stopline_more=100
 let g:hiPairs_hl_matchPair = {
-            \    'term'    : 'underline,bold',
+            \    'term'    : 'bold,underline',
             \    'ctermfg' : '24',
             \    'ctermbg' : 'NONE',
-            \    'cterm'   : 'underline,bold',
+            \    'cterm'   : 'bold,underline',
             \    'guifg'   : '#0386f6',
             \    'guibg'   : 'NONE',
-            \    'gui'     : 'underline,bold',
+            \    'gui'     : 'bold,underline',
             \ }
 
 let g:hiPairs_hl_unmatchPair = {
