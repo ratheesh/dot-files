@@ -715,7 +715,6 @@ let g:airline_detect_paste                          = 1
 let g:airline#extensions#virtualenv#enabled         = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes  = 1
 let g:airline#extensions#tagbar#enabled             = 1
-let g:airline#extensions#virtualenv#enabled         = 1
 let g:airline#extensions#wordcount#enabled          = 1
 let g:airline#extensions#tagbar#enabled             = 1
 let g:airline#extensions#tagbar#flags               = 'f'
@@ -1105,7 +1104,7 @@ autocmd BufEnter ControlP let b:ale_enabled = 0
 let g:ale_set_loclist  = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list    = 0
-" let g:ale_gitcommit_gitlint_use_global=1
+let g:ale_gitcommit_gitlint_use_global=0
 " }}}
 
 " rainbow_parenthesis {{{
@@ -1561,7 +1560,7 @@ if has('nvim')
     " with airline plugin.
     " Only neovim support for now!
     highlight nCursor guifg=#e0e0e0 guibg=#e0e0e0 gui=inverse,bold cterm=inverse,bold
-    highlight iCursor guifg=#e75a3a guibg=#e75a3a gui=inverse,bold cterm=inverse,bold
+    highlight iCursor guifg=#fd4f57 guibg=#fd4f57 gui=inverse,bold cterm=inverse,bold
     highlight vCursor guifg=#ffca88 guibg=#ffca88 gui=inverse,bold cterm=inverse,bold
     highlight rCursor guifg=#d65b84 guibg=#d65b84 gui=inverse,bold cterm=inverse,bold
     highlight oCursor guifg=#ff005f guibg=#ff005f gui=inverse,bold cterm=inverse,bold
