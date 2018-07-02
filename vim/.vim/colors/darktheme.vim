@@ -197,7 +197,8 @@ hi CtrlPBufferPath      ctermfg=7       ctermbg=NONE    cterm=NONE    guifg=#909
 
 " showpairs {{{
 " hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#ff0080   guibg=#ff0080 gui=bold,underline
-hi ShowPairsHLp  ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#0366e6   guibg=NONE gui=bold,underline
+hi ShowPairsHLp  ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008fff   guibg=NONE gui=bold,underline
+hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008fff   guibg=NONE gui=bold,underline
 " }}}
 
 " Menu selection {{{
