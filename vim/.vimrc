@@ -1137,6 +1137,10 @@ let g:rbpt_colorpairs = [
 " au BufEnter  * RainbowParenthesesLoadChevrons
 " }}}
 
+" ShowPairs {{{
+let g:showpairs_limit=1000
+" }}}
+
 " hipairs {{{
 let g:hiPairs_timeout=1000
 let g:hiPairs_insert_timeout=1000
