@@ -87,8 +87,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 " Plug 'eapache/rainbow_parentheses.vim'
-" Plug 'ratheesh/hiPairs'
-Plug 'vim-scripts/ShowPairs'
+Plug 'ratheesh/hiPairs'
+" Plug 'ratheesh/ShowPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'shiyanhui/vim-slash'
@@ -193,7 +193,7 @@ set shortmess+=aoOtTIc
 " Ask for confirmation (instead of aborting an action)
 set confirm
 " Shorten default to time to update swap files and gutter plugins
-set updatetime=100
+set updatetime=150
 " Time in milliseconds waited for a mapping to complete
 set timeout
 set timeoutlen=700
@@ -1144,13 +1144,13 @@ let g:showpairs_limit=1000
 " hipairs {{{
 let g:hiPairs_timeout=1000
 let g:hiPairs_insert_timeout=1000
-let g:hiPairs_stopline_more=100
+let g:hiPairs_stopline_more=200
 let g:hiPairs_hl_matchPair = {
             \    'term'    : 'bold,underline',
             \    'ctermfg' : '24',
             \    'ctermbg' : 'NONE',
             \    'cterm'   : 'bold,underline',
-            \    'guifg'   : '#0386f6',
+            \    'guifg'   : '#008fff',
             \    'guibg'   : 'NONE',
             \    'gui'     : 'bold,underline',
             \ }
