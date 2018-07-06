@@ -453,6 +453,8 @@ vmap <Esc> l
 inoremap jj l
 nnoremap K i<CR><Esc>
 " vnoremap jj l
+noremap gV `[v`]
+noremap Y y$
 
 " swap ' and ` for easy marks navigation
 nnoremap ' `
