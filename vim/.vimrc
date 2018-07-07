@@ -1000,6 +1000,7 @@ nnoremap <silent><Leader>dp   :<C-u>Denite register -mode=normal<CR>
 nnoremap <silent><Leader>dl   :<C-u>Denite location_list -no-empty<CR>
 nnoremap <silent><Leader>du   :<C-u>Denite file_mru<CR>
 nnoremap <silent><Leader>dy   :<C-u>Denite neoyank<CR>
+nnoremap <silent><Leader>dr   :<C-u>Denite -resume<CR>
 " nnoremap <silent><leader>ds   :<C-u>Denite history:search -mode=normal<CR>
 " nnoremap <silent><leader>dc   :<C-u>Denite history:cmd -mode=normal<CR>
 
