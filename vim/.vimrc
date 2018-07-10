@@ -99,7 +99,7 @@ Plug 'lilydjwg/colorizer'
 " Plug 'vim-scripts/DrawIt'
 Plug 'ratheesh/yankmatches'
 Plug 'haya14busa/is.vim'
-Plug 'triglav/vim-visual-increment'
+" Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
@@ -484,8 +484,16 @@ cnoremap <c-n>  <down>
 cnoremap <c-p>  <up>
 
 " navigate naturally even with wrapped lines
-noremap <silent><expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent><expr> k (v:count == 0 ? 'gk' : 'k')
+noremap  <silent><expr> j (v:count == 0 ? 'gj' : 'j')
+noremap  <silent><expr> k (v:count == 0 ? 'gk' : 'k')
+
+xnoremap <silent><expr> j  mode() ==# "v" ? "gj" : "j"
+xnoremap <silent><expr> gj mode() ==# "v" ? "j"  : "gj"
+xnoremap <silent><expr> k  mode() ==# "v" ? "gk" : "k"
+xnoremap <silent><expr> gk mode() ==# "v" ? "k"  : "gk"
+
+" Increment selected range based on the normal/line or in visual block mode
+xnoremap <silent><expr> <C-a> mode() ==# "\<C-V>" ? "g\<c-a>"  : "\<c-a>"
 
 " Don't lose deleted text in insert mode <C-u>
 inoremap <c-u> <c-g>u<c-u>
