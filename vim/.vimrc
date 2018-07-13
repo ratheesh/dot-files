@@ -1164,23 +1164,23 @@ let g:hiPairs_timeout=1000
 let g:hiPairs_insert_timeout=1000
 let g:hiPairs_stopline_more=200
 let g:hiPairs_hl_matchPair = {
-            \    'term'    : 'bold,underline',
+            \    'term'    : 'bold',
             \    'ctermfg' : '24',
             \    'ctermbg' : 'NONE',
-            \    'cterm'   : 'bold,underline',
+            \    'cterm'   : 'bold',
             \    'guifg'   : '#008fff',
             \    'guibg'   : 'NONE',
-            \    'gui'     : 'bold,underline',
+            \    'gui'     : 'bold',
             \ }
 
 let g:hiPairs_hl_unmatchPair = {
-            \    'term'    : 'bold,underline',
+            \    'term'    : 'bold',
             \    'ctermfg' : '0',
             \    'ctermbg' : '2',
-            \    'cterm'   : 'bold,underline',
+            \    'cterm'   : 'bold',
             \    'guifg'   : '#000000',
             \    'guibg'   : '#ff0000',
-            \    'gui'     : 'bold,underline',
+            \    'gui'     : 'bold',
             \ }
 " }}}
 
