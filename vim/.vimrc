@@ -91,7 +91,7 @@ Plug 'ratheesh/hiPairs'
 " Plug 'ratheesh/ShowPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
-Plug 'shiyanhui/vim-slash'
+Plug 'ratheesh/vim-c-slash'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
