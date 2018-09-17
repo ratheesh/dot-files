@@ -502,6 +502,9 @@ xnoremap <silent><expr> <C-a> mode() ==# "\<C-V>" ? "g\<c-a>"  : "\<c-a>"
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+nnoremap <CR>   :call append(line('.'), '')<CR>
+nnoremap <M-CR> :call append(line('.')-1, '')<CR>
+
 " redraw screen
 " nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l><Paste>
 
