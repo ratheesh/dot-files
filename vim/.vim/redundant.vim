@@ -95,6 +95,12 @@
 " Plug 'jalvesaq/vimcmdline'
 " Plug 'ratheesh/toggle_words.vim'
 " Plug 'ConradIrwin/vim-bracketed-paste'
+" Plug 'terryma/vim-multiple-cursors'
+" Plug 'mg979/vim-visual-multi'
+" Plug 'wellle/targets.vim'
+" Plug 'triglav/vim-visual-increment'
+" Plug 'ratheesh/ShowPairs'
+" Plug 'eapache/rainbow_parentheses.vim'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
