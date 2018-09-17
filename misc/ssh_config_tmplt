@@ -2,20 +2,24 @@
 ForwardAgent yes
 AddKeysToAgent yes
 FingerprintHash sha256
+VisualHostKey yes
 TCPKeepAlive yes
 # ForwardX11 yes
+# ForwardX11Trusted yes
 HashKnownHosts no
 Compression yes
 SendEnv LANG LC_ALL=en_US.UTF-8
-# CompressionLevel=9
 ConnectTimeout 30
 
 Host *
   ServerAliveInterval 30
+  StrictHostKeyChecking=no
+#   UserKnownHostsFile=/dev/null
 
 # Host settings
-# Host odroid
+# Host example
 	# Hostname xxx.xxx.xxx.xxx
 	# Port 22
 	# User xxxxxx
 
+#End of File
