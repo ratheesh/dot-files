@@ -802,6 +802,8 @@ nmap <silent><leader>8 <Plug>AirlineSelectTab8
 nmap <silent><leader>9 <Plug>AirlineSelectTab9
 nmap <silent><leader>h <Plug>AirlineSelectPrevTab
 nmap <silent><leader>l <Plug>AirlineSelectNextTab
+nmap <silent><F9>      <Plug>AirlineSelectPrevTab
+nmap <silent><F10>     <Plug>AirlineSelectNextTab
 if !get(g:, 'airline_powerline_fonts', 0)
     let g:airline#extensions#tabline#left_sep      = ''
     let g:airline#extensions#tabline#left_alt_sep  = '│'
