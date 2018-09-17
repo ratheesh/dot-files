@@ -1578,7 +1578,7 @@ if has('nvim')
     " with airline plugin.
     " Only neovim support for now!
     highlight nCursor guifg=#e0e0e0 guibg=#e0e0e0 gui=inverse,bold cterm=inverse,bold
-    highlight iCursor guifg=#fd4f57 guibg=#fd4f57 gui=inverse,bold cterm=inverse,bold
+    highlight iCursor guifg=#00beff guibg=#00beff gui=inverse,bold cterm=inverse,bold
     highlight vCursor guifg=#ffca88 guibg=#ffca88 gui=inverse,bold cterm=inverse,bold
     highlight rCursor guifg=#d65b84 guibg=#d65b84 gui=inverse,bold cterm=inverse,bold
     highlight oCursor guifg=#ff005f guibg=#ff005f gui=inverse,bold cterm=inverse,bold
