@@ -1576,12 +1576,12 @@ if has('nvim')
     " mode, this setting does not break locationlist/preview window title issue
     " with airline plugin.
     " Only neovim support for now!
-    highlight nCursor guifg=#e0e0e0 guibg=#e0e0e0 gui=inverse,bold cterm=inverse,bold
-    highlight iCursor guifg=#00beff guibg=#00beff gui=inverse,bold cterm=inverse,bold
-    highlight vCursor guifg=#ffca88 guibg=#ffca88 gui=inverse,bold cterm=inverse,bold
-    highlight rCursor guifg=#d65b84 guibg=#d65b84 gui=inverse,bold cterm=inverse,bold
-    highlight oCursor guifg=#ff005f guibg=#ff005f gui=inverse,bold cterm=inverse,bold
-    set guicursor=n:block-nCursor-blinkon0,i-ci:block-iCursor-blinkon0,v-ve:block-vCursor-blinkon0,o:block-oCursor-blinkon0,r-cr:block-rCursor-blinkon0
+    highlight nCursor guifg=#e0e0e0 guibg=#e0e0e0 gui=bold cterm=bold
+    highlight iCursor guifg=#ffc706 guibg=#ffc706 gui=bold cterm=bold
+    highlight vCursor guifg=#00beff guibg=#00beff gui=bold cterm=bold
+    highlight rCursor guifg=#d65b84 guibg=#d65b84 gui=bold cterm=bold
+    highlight oCursor guifg=#ff0000 guibg=#ff0000 gui=bold cterm=bold
+    set guicursor=n:block-nCursor-blinkon0,i-ci:ver20-iCursor-blinkon0,v-ve:block-vCursor-blinkon0,o:hor30-oCursor-blinkon0,r-cr:block-rCursor-blinkon0
     autocmd VimLeave * set guicursor=a:block-NCursor-blinkon0
 endif
 
