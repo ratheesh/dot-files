@@ -65,12 +65,20 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # common settings
     # config.vm.synced_folder "src/", "/srv/website"
+    config.vm.provision :shell, path: "provision.sh"
+
+    Vagrant::Config.run do |cfg|
+        cfg.ssh.port            = 22
+        cfg.ssh.compression     = true
+        cfg.ssh.forward_agent   = true
+        cfg.ssh.verify_host_key :never
+        cfg.ssh.forward_agent   = true
+    end
 
     # Ubuntu 14.04
     config.vm.define "ubuntu1404", primary: true do |trusty|
-        trusty.vm.box = "ubunt/trusty64"
+        trusty.vm.box = "ubuntu/trusty64"
         trusty.vm.hostname="ubuntu1404"
-        trusty.vm.provision :shell, path: "provision.sh"
         trusty.vm.provider "ubuntu1404" do |vb|
             vb.customize ["modifyvm", :id, "--memory", 1024]
             vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -80,9 +88,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Ubuntu 16.04
     config.vm.define "ubuntu1604",autostart:false do |xenial|
-        xenial.vm.box = "ubunt/xenial64"
+        xenial.vm.box = "ubuntu/xenial64"
         xenial.vm.hostname="ubuntu1604"
-        xenial.vm.provision :shell, path: "provision.sh"
         xenial.vm.provider "ubuntu1604" do |vb|
             vb.customize ["modifyvm", :id, "--memory", 1024]
             vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -92,9 +99,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Ubuntu 18.04
     config.vm.define "ubuntu1804",autostart:false do |bionic|
-        bionic.vm.box = "ubunt/bionic64"
+        bionic.vm.box = "ubuntu/bionic64"
         bionic.vm.hostname="ubuntu1804"
-        bionic.vm.provision :shell, path: "provision.sh"
         bionic.vm.provider "ubuntu1804" do |vb|
             vb.customize ["modifyvm", :id, "--memory", 1024]
             vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
