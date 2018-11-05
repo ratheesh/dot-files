@@ -100,6 +100,7 @@ Plug 'haya14busa/is.vim'
 Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
+Plug 'dhruvasagar/vim-table-mode'
 
 " text objects related
 Plug 'kana/vim-textobj-user'
@@ -569,10 +570,10 @@ xnoremap < <gv
 " imap <S-Tab> <C-o><<
 
 " Toggle keybindings
-set pastetoggle=<Leader>tp
-nnoremap <silent><Leader>tg :GitGutterSignsToggle<CR>
-nnoremap <silent><Leader>ta :ALEToggle<CR>
-nnoremap <silent><Leader>ts :SignatureToggleSigns<CR>
+" set pastetoggle=<Leader>tp
+" nnoremap <silent><Leader>tg :GitGutterSignsToggle<CR>
+" nnoremap <silent><Leader>ta :ALEToggle<CR>
+" nnoremap <silent><Leader>ts :SignatureToggleSigns<CR>
 
 " folding
 " Close all folds and open and focus on fold containing current line
@@ -601,7 +602,7 @@ let g:tagbar_sort   = 0 " don't sort items by name
 let g:tagbar_indent = 1
 let g:tagbar_show_linenumbers = -1
 nmap <silent><F8>            :TagbarToggle<CR>
-nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
+" nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
 "vim-cycle {{{
@@ -1198,7 +1199,7 @@ let g:hardtime_timeout                = 2000
 let g:hardtime_showmsg                = 1
 let g:hardtime_ignore_buffer_patterns = ["NERD.*", "Tagbar.*"]
 let g:hardtime_maxcount               = 2
-nnoremap <silent><leader>th           :HardTimeToggle<CR>
+" nnoremap <silent><leader>th           :HardTimeToggle<CR>
 " }}}
 
 " deoplete {{{
@@ -1481,6 +1482,10 @@ set nrformats=alpha,octal,hex
 noremap <leader>y :Oscyank<CR>
 " }}}
 
+" vim-table-mode {{{
+let g:table_mode_corner_corner='+'
+" }}}
+
 " vim-bling {{{
 let g:bling_time         = 175
 let g:bling_count        = 1
@@ -1554,8 +1559,8 @@ function! ToggleList(bufname, pfx)
     endif
 endfunction
 
-nmap <silent><leader>tl :call ToggleList("Location List", 'l')<CR>
-nmap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
+" nmap <silent><leader>tl :call ToggleList("Location List", 'l')<CR>
+" nmap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
 
 " }}}
 
