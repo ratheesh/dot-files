@@ -111,7 +111,7 @@ Plug 'kana/vim-textobj-line'
 Plug 'junegunn/vim-after-object'
 Plug 'glts/vim-textobj-comment'
 Plug 'machakann/vim-swap' " to swap args
-Plug 'vim-scripts/argtextobj.vim'
+Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
 Plug 'tommcdo/vim-exchange' " exchange regions
 
 " writing prose
@@ -1464,6 +1464,22 @@ augroup textobj_quote
     autocmd FileType textile call textobj#quote#init()
     autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
+" }}}
+
+" vim-argumentative {{{
+let g:argumentative_no_mappings=1
+
+" custom mappings
+" nmap [a <Plug>Argumentative_Prev
+" nmap ]a <Plug>Argumentative_Next
+" xmap [a <Plug>Argumentative_XPrev
+" xmap ]a <Plug>Argumentative_XNext
+nmap <a <Plug>Argumentative_MoveLeft
+nmap >a <Plug>Argumentative_MoveRight
+xmap ia <Plug>Argumentative_InnerTextObject
+xmap aa <Plug>Argumentative_OuterTextObject
+omap ia <Plug>Argumentative_OpPendingInnerTextObject
+omap aa <Plug>Argumentative_OpPendingOuterTextObject
 " }}}
 
 " vim-easy-align {{{
