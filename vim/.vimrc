@@ -102,11 +102,15 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
 Plug 'dhruvasagar/vim-table-mode'
 
-" text objects related
+" Custom text objects related
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
+Plug 'rhysd/vim-textobj-conflict'  " i/a =
+Plug 'anyakichi/vim-textobj-ifdef' " i/a #
+Plug 'FooSoft/vim-argwrap'
+Plug 'augustold/vim-custom-surround'
 Plug 'kana/vim-textobj-line'
 Plug 'junegunn/vim-after-object'
 Plug 'glts/vim-textobj-comment'
