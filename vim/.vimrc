@@ -94,7 +94,6 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 Plug 'lilydjwg/colorizer'
-" Plug 'vim-scripts/DrawIt'
 Plug 'ratheesh/yankmatches'
 Plug 'haya14busa/is.vim'
 Plug 'vim-scripts/blockquote.vim'
@@ -141,7 +140,6 @@ else
     Plug 'Shougo/neomru.vim'
     Plug 'Shougo/neoyank.vim'
 
-    Plug 'Shougo/deoplete.nvim'
     " Following are required for deoplete to work in ViM
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
