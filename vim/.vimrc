@@ -699,8 +699,13 @@ let g:cycle_default_groups = [
 " }}}
 
 " python-mode {{{
+" let g:pymode_python = 'python2'
+let g:pymode_python = 'python'
 let g:pymode_options = 0
 let g:pymode_options_colorcolumn = 1
+let g:pymode_indent = 1
+let g:pymode_virtualenv = 1
+let g:pymode_lint_checkers = ['pylint', 'pep8', 'mccabe']
 " }}}
 
 " yankmatches {{{
