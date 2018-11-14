@@ -1558,6 +1558,10 @@ let g:bling_color_gui_bg = '#bdb76b'
 let g:bling_no_expr      = 1
 " }}}
 
+" vim-textobj-parameter {{{
+let g:vim_textobj_parameter_mapping = 'a'
+" }}}
+
 " vim-peekaboo {{{
 let g:peekaboo_window='vert bo 60new'
 " }}}
