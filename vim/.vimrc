@@ -1047,6 +1047,15 @@ hi link deniteMatchedChar Special
 " }}}
 
 " vim-startify {{{
+
+let g:startify_lists = [
+            \ { 'type': 'files',     'header': ['   Files']            },
+            \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+            \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ { 'type': 'commands',  'header': ['   Commands']       },
+            \ ]
+
 let g:startify_custom_header = get(g:, 'startify_custom_header', [
             \'',
             \'',
@@ -1058,6 +1067,10 @@ let g:startify_custom_header = get(g:, 'startify_custom_header', [
             \'',
             \'',
             \ ])
+
+let g:startify_files_number=10
+let g:startify_change_to_vcs_root=1
+
 let g:startify_bookmarks = [
             \       {'c': '~/.vimrc'     },
             \       {'g': '~/.gitconfig' },
