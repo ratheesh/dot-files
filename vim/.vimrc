@@ -1265,12 +1265,13 @@ let g:deoplete#enable_refresh_always      = 1
 let g:deoplete#auto_complete_delay        = 100
 let g:deoplete#auto_refresh_delay         = 100
 let g:deoplete#auto_complete_start_length = 2
-let g:deoplete#enable_ignore_case         = 1
+" let g:deoplete#enable_ignore_case         = 1
 let g:deoplete#enable_smart_case          = 1
-let g:deoplete#enable_camel_case          = 1
+" let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path    = 1
 let g:deoplete#max_list                   = 50
 let deoplete#tag#cache_limit_size         = 10000000
+let g:deoplete#buffer#require_same_filetype = 0
 " let g:deoplete#complete_method            = "completefunc"
 
 " Don't align these lines!
@@ -1282,11 +1283,16 @@ let g:deoplete#sources_ = [] " includes all sources
 
 " Use partial fuzzy matches like YouCompleteMe
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
-call deoplete#custom#source('_', 'sorters', ['sorter_word'])
+call deoplete#custom#source('_', 'converters', ['converter_remove_paren'])
+" call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#source('ultisnips', 'rank', 9999)
-
+call deoplete#custom#source('ultisnips', 'rank', 9956)
+call deoplete#custom#source('member', 'rank', 9955)
+call deoplete#custom#source('buffer', 'rank', 9954)
+call deoplete#custom#source('function', 'rank', 9953)
+call deoplete#custom#source('tag', 'rank', 9952)
+call deoplete#custom#source('jedi', 'rank', 9951)
+call deoplete#custom#source('clang', 'rank', 9950)
 call deoplete#custom#option('smart_case', v:true)
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -1294,7 +1300,7 @@ call deoplete#custom#option('smart_case', v:true)
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-\> pumvisible() ? "\<C-w>" : "\<C-\>"
-inoremap <expr><C-y> deoplete#close_popup()
+" inoremap <expr><Esc> pumvisible() ?deoplete#close_popup():"\<Esc>"
 
 inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
@@ -1308,7 +1314,7 @@ inoremap <silent><expr> <TAB>
 
 function! s:check_back_space() abort
     let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
+    return !col || getline('.')[col - 1]  =~? '\s'
 endfunction
 
 " Use Tab to forward cycle
@@ -1321,6 +1327,15 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
     " let g:UltiSnipsExpandTrigger = "<nop>"
     " inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
 " endif
+
+" call deoplete#custom#source('_', 'converters', [
+"       \ 'converter_remove_paren',
+"       \ 'converter_remove_overlap',
+"       \ 'matcher_length',
+"       \ 'converter_truncate_abbr',
+"       \ 'converter_truncate_menu',
+"       \ 'converter_auto_delimiter',
+"       \ ])
 
 " }}}
 
