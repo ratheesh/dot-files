@@ -89,10 +89,11 @@ Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
-Plug 'ratheesh/vim-c-slash'
+Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
 Plug 'haya14busa/is.vim'
