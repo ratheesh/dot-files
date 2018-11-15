@@ -1150,6 +1150,14 @@ let g:ale_set_loclist  = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list    = 0
 let g:ale_gitcommit_gitlint_use_global=0
+let g:ale_python_pylint_executable = 'python'
+
+if has('nvim')
+    let g:ale_virtualtext_cursor=1
+    let g:ale_virtualtext_delay=500
+    let g:ale_virtualtext_prefix='➜ '
+endif
+
 " }}}
 
 " rainbow_parenthesis {{{
