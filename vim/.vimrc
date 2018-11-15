@@ -1210,11 +1210,11 @@ let g:hiPairs_hl_matchPair = {
 
 let g:hiPairs_hl_unmatchPair = {
             \    'term'    : 'bold,underline',
-            \    'ctermfg' : '0',
+            \    'ctermfg' : 'NONE',
             \    'ctermbg' : '2',
             \    'cterm'   : 'bold,underline',
-            \    'guifg'   : '#000000',
-            \    'guibg'   : '#ff0000',
+            \    'guifg'   : 'NONE',
+            \    'guibg'   : '#f92a5b',
             \    'gui'     : 'bold,underline',
             \ }
 " }}}
