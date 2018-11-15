@@ -458,7 +458,7 @@ inoremap <Right>   <NOP>
 " nmap <Leader><Leader> :
 " imap jj <Esc>
 imap <Esc> l
-vmap <Esc> l
+" vmap <Esc> l
 inoremap jj l
 nnoremap K i<CR><Esc>
 " vnoremap jj l
@@ -1342,8 +1342,8 @@ else
     xmap l <Plug>(textmanip-move-right)
 endif
 
-nmap <Leader>o <Plug>(textmanip-blank-below)
-nmap <Leader>O <Plug>(textmanip-blank-above)
+" nmap <Leader>o <Plug>(textmanip-blank-below)
+" nmap <Leader>O <Plug>(textmanip-blank-above)
 
 " toggle insert/replace with <C-s>
 nmap <C-s> <Plug>(textmanip-toggle-mode)
@@ -1565,7 +1565,7 @@ let g:peekaboo_window='vert bo 60new'
 " }}}
 
 " Misc useful functions {{{
-" bracket-paste settings - supports only ViM for now
+" bracketed-paste settings - supports only ViM for now
 if !has('nvim') && has('patch-8.0-330')
     if &term =~ "xterm.*"
         let &t_SI = &t_SI . "\<ESC>[?2004h"
