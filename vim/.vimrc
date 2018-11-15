@@ -505,7 +505,7 @@ xnoremap <silent><expr> k  mode() ==# "v" ? "gk" : "k"
 xnoremap <silent><expr> gk mode() ==# "v" ? "k"  : "gk"
 
 " Increment selected range based on the normal/line or in visual block mode
-xnoremap <silent><expr> <C-a> mode() ==# "\<C-V>" ? "g\<c-a>"  : "\<c-a>"
+" xnoremap <silent><expr> <C-a> mode() ==# "\<C-V>" ? "g\<c-a>"  : "\<c-a>"
 
 " Don't lose deleted text in insert mode <C-u>
 inoremap <c-u> <c-g>u<c-u>
