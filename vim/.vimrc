@@ -126,6 +126,7 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-textobj-quote'
 Plug 'beloglazov/vim-online-thesaurus'
 
+Plug 'Shougo/echodoc.vim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-jedi',          { 'do': ':UpdateRemotePlugins' }
@@ -1246,6 +1247,15 @@ let g:jedi#usages_command           = "<leader>n"
 let g:jedi#completions_command      = "<C-Space>"
 let g:jedi#rename_command           = "<leader>R"
 "}}}
+
+" echodoc {{{
+let g:echodoc#enable_at_startup=1
+let g:echodoc#enable_force_overwrite=1
+if has('nvim')
+    let g:echodoc#type="virtual"
+    " let g:echodoc#type="signature"
+endif
+" }}}
 
 " deoplete {{{
 set completeopt+=noinsert
