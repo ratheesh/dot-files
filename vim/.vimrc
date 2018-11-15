@@ -747,6 +747,7 @@ let g:airline#extensions#tagbar#enabled             = 1
 let g:airline#extensions#tagbar#flags               = 'f'
 let g:airline#extensions#wordcount#formatter        = 'default'
 let g:airline#extensions#wordcount#format           = '%dWords'
+let g:airline#extensions#anzu#enabled               = 1
 " let g:airline#extensions#wordcount#filetypes        = ''
 
 " vcs
