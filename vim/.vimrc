@@ -129,36 +129,21 @@ Plug 'beloglazov/vim-online-thesaurus'
 Plug 'Shougo/echodoc.vim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-jedi',          { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
-    Plug 'dunstontc/projectile.nvim',    { 'do': ':UpdateRemotePlugins' }
-    Plug 'chemzqm/denite-extra',         { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/neomru.vim',            { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/neoyank.vim',           { 'do': ':UpdateRemotePlugins' }
-    Plug 'tweekmonster/deoplete-clang2', { 'do': ':UpdateRemotePlugins' }
 else
     Plug 'Shougo/deoplete.nvim'
-    Plug 'zchee/deoplete-jedi'
     Plug 'Shougo/denite.nvim'
-    Plug 'dunstontc/projectile.nvim'
-    Plug 'chemzqm/denite-extra'
-    Plug 'Shougo/neomru.vim'
-    Plug 'Shougo/neoyank.vim'
-    Plug 'tweekmonster/deoplete-clang2'
 
     " Following are required for deoplete to work in ViM
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-
-" Plug 'Shougo/deoplete-clangx'
-Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \ }
-
-Plug 'davidhalter/jedi-vim'
-Plug 'ujihisa/neco-look'
+Plug 'zchee/deoplete-jedi'
+Plug 'dunstontc/projectile.nvim'
+Plug 'chemzqm/denite-extra'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/neoyank.vim'
+Plug 'Shougo/deoplete-clangx'
 
 call plug#end()
 
