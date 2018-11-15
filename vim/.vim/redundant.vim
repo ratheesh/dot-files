@@ -100,7 +100,20 @@
 " Plug 'wellle/targets.vim'
 " Plug 'triglav/vim-visual-increment'
 " Plug 'ratheesh/ShowPairs'
+" Plug 'Shougo/neopairs.vim'
 " Plug 'eapache/rainbow_parentheses.vim'
+" Plug 'vim-scripts/argtextobj.vim'
+" Plug 'vim-scripts/DrawIt'
+" Plug 'sgur/vim-textobj-parameter'
+" Plug 'gaving/vim-textobj-argument'
+" Plug 'saaguero/vim-textobj-pastedtext'
+" Plug 'maralla/completor.vim'
+" Plug 'tweekmonster/deoplete-clang2'
+" Plug 'zchee/deoplete-jedi'
+" Plug 'autozimu/LanguageClient-neovim', {
+"             \ 'branch': 'next',
+"             \ 'do': 'bash install.sh',
+"             \ }
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
