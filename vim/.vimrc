@@ -74,7 +74,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-anzu'
-Plug 'ratheesh/vim-extended-ft'
+" Plug 'ratheesh/vim-extended-ft'
+Plug 'boucherm/ShowMotion'
 Plug 'MaxMEllon/vim-shiny'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
@@ -876,6 +877,23 @@ let g:anzu_status_format = "%p(%i/%l) %w"
 " This command is an overridden one to make sure otherone works if this plugin
 " is disabled
 nmap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
+" }}}
+
+" ShowMotion {{{
+nmap w <Plug>(show-motion-both-w)
+nmap W <Plug>(show-motion-both-W)
+nmap b <Plug>(show-motion-both-b)
+nmap B <Plug>(show-motion-both-B)
+nmap e <Plug>(show-motion-both-e)
+nmap E <Plug>(show-motion-both-E)
+
+"Show motion for chars:
+nmap f <Plug>(show-motion-f)
+nmap t <Plug>(show-motion-t)
+nmap F <Plug>(show-motion-F)
+nmap T <Plug>(show-motion-T)
+nmap ; <Plug>(show-motion-;)
+nmap , <Plug>(show-motion-,)
 " }}}
 
 " Vim-licenses {{{
