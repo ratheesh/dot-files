@@ -91,6 +91,9 @@ Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
+if has('nvim')
+Plug 'lambdalisue/suda.vim'
+endif
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
@@ -526,8 +529,13 @@ set t_vb=
 
 " Write current buffer with sudo privileges
 " nnoremap <silent><Leader>sw     :w !sudo tee % &> /dev/null<CR>
-" Force saving files that require root permission
-command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+if !has('nvim')
+    " Force saving files that require root permission
+    command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+else
+    command! W :w suda://%
+    command! E :e suda://%
+endif
 
 " Move across vim split Windows
 if has('nvim')
