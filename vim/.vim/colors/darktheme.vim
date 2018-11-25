@@ -94,6 +94,7 @@ hi cDefine              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5
 hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#d19a66   guibg=NONE      gui=NONE
 hi cCommentError        ctermfg=240     ctermbg=NONE    cterm=NONE      guifg=#cc0000   guibg=NONE      gui=NONE
 hi cParenError          ctermfg=240     ctermbg=NONE    cterm=NONE      guifg=NONE      guibg=NONE      gui=NONE
+hi cParen               ctermfg=240     ctermbg=NONE    cterm=NONE      guifg=NONE      guibg=NONE      gui=NONE
 hi cGNUConstant         ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f   guibg=NONE      gui=NONE
 hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#bc8f8f   guibg=NONE      gui=NONE
 " hi cBinaryOperator      ctermfg=12      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c     guibg=NONE      gui=NONE
@@ -151,11 +152,6 @@ hi DeniteNormalHLLine   ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=NO
 hi DenitePrompt         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#27b062   guibg=NONE      gui=NONE
 " }}}
 
-" ale {{{
-hi AleError                 ctermfg=198    ctermbg=NONE    cterm=NONE      guifg=#f92a5b      guibg=NONE   gui=italic
-hi AleWarning               ctermfg=5      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0      guibg=NONE   gui=italic
-" }}}
-
 " sh {{{
 hi shVariable           ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#bc8f8f   guibg=NONE      gui=NONE
 hi shFunction           ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
@@ -189,6 +185,12 @@ hi gitconfigBoolean     ctermfg=60      ctermbg=NONE    cterm=NONE    guifg=#008
 hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
 " }}}
 
+" ShowMotion {{{
+highlight SM_SmallMotionGroup ctermfg=231 ctermbg=53 cterm=italic,bold,underline
+highlight SM_BigMotionGroup   ctermfg=231 ctermbg=54 cterm=italic,bold,underline
+highlight SM_CharSearchGroup  ctermfg=231 ctermbg=4  cterm=italic,bold,underline
+" }}}
+
 " git-signify {{{
 hi SignifySignAdd             ctermfg=26     ctermbg=233   cterm=bold  guifg=#27b062  guibg=#202020   gui=bold
 hi SignifySignChange          ctermfg=180    ctermbg=233   cterm=bold  guifg=#f7ca88  guibg=#202020   gui=bold
@@ -196,11 +198,24 @@ hi SignifySignDelete          ctermfg=196    ctermbg=233   cterm=bold  guifg=#fb
 hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff5500  guibg=#202020   gui=bold
 " }}}
 
+" ale {{{
+" hi AleError                 ctermfg=198    ctermbg=NONE    cterm=NONE      guifg=#f92a5b      guibg=NONE   gui=italic
+" hi AleWarning               ctermfg=5      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0      guibg=NONE   gui=italic
+" }}}
+
 " git-gutter {{{
 hi GitGutterAdd          ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#202020 gui=bold
 hi GitGutterChange       ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#202020 gui=bold
 hi GitGutterDelete       ctermfg=196 ctermbg=233 cterm=bold guifg=#fb091f guibg=#202020 gui=bold
 hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=#202020 gui=bold
+" }}}
+
+" Braceless {{{
+hi  BracelessIndent     ctermfg=NONE     ctermbg=237    cterm=NONE      guifg=NONE      guibg=#5e6e99   gui=NONE
+" }}}
+
+" wstrip {{{
+hi  WStripTrailing     ctermfg=9     ctermbg=NONE    cterm=underline      guifg=NONE      guibg=#505050   gui=underline
 " }}}
 
 " CtrlP {{{
@@ -381,6 +396,7 @@ hi vimNotation          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=NONE   
 hi vimCtrlChar          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#404040  guibg=NONE gui=NONE
 hi vimIsCommand         ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#bb3e79  guibg=NONE gui=NONE
 hi vimFuncName          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#75828f  guibg=NONE gui=NONE
+hi vimUserFunc          ctermfg=132     ctermbg=NONE    cterm=NONE guifg=#75828f  guibg=NONE gui=NONE
 " }}}
 
 " Markdown: {{{
