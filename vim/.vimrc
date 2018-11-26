@@ -99,6 +99,7 @@ endif
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
+Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
@@ -709,6 +710,10 @@ let g:pymode_options_colorcolumn = 1
 let g:pymode_indent = 1
 let g:pymode_virtualenv = 1
 let g:pymode_lint_checkers = ['pylint', 'pep8', 'mccabe']
+" }}}
+
+" braceless {{{
+autocmd FileType python BracelessEnable +indent +highlight
 " }}}
 
 " yankmatches {{{
