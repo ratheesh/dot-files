@@ -85,6 +85,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
+" Plug 'thirtythreeforty/lessspace.vim'
+Plug 'tweekmonster/wstrip.vim'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
@@ -1490,6 +1492,21 @@ xmap <silent><Leader>ct :call NERDComment("x", "Toggle")<CR>
 " this does not work on ftypes that does not support multipart delimiters
 nmap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
 xmap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
+" }}}
+
+" vim-better-whitespace {{{
+let g:better_whitespace_enabled=0
+let g:better_whitespace_filetypes_blacklist= ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
+" }}}
+
+" lessspace {{{
+let g:lessspace_enabled = 0
+let g:lessspace_whitelist = ['c', 'cxx', 'cpp', 'python', 'vim']
+" let g:lessspace_normal = 0
+" }}}
+
+" wstrip {{{
+let g:wstrip_auto = 1
 " }}}
 
 " auto-pairs {{{
