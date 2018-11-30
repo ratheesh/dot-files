@@ -111,7 +111,6 @@ Plug 'haya14busa/is.vim'
 Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
-Plug 'ujihisa/neco-look'
 Plug 'dhruvasagar/vim-table-mode'
 
 " Custom text objects related
