@@ -72,6 +72,10 @@ Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-easytags'
+Plug 'ludovicchabant/vim-gutentags'
+" Plug 'skywind3000/gutentags_plus'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-anzu'
 " Plug 'ratheesh/vim-extended-ft'
@@ -1153,6 +1157,19 @@ augroup gitCommmit
                 \| nmap <buffer> <LocalLeader>gR  <Plug>GitReporter
 augroup END
 " }}}
+
+" gutentags {{{
+" enable only ctags
+let g:gutentags_modules = []
+
+" config project root markers.
+let g:gutentags_project_root = ['.root', '.git', '.svn']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+" let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" }}}
+
 
 " vim-signature {{{
 let g:SignatureMarkTextHLDynamic = 1
