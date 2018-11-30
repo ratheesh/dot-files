@@ -1616,7 +1616,9 @@ omap aa <Plug>Argumentative_OpPendingOuterTextObject
 let g:easy_align_bypass_fold = 1
 nmap ga     <Plug>(EasyAlign)
 xmap ga     <Plug>(EasyAlign)
-xmap <CR>   <plug>(LiveEasyAlign)
+xmap <M-BS>   <plug>(LiveEasyAlign)
+let g:easy_align_interactive_modes = ['l', 'r']
+let g:easy_align_bang_interactive_modes = ['c', 'r']
 let g:easy_align_ignore_groups = ['Comment', 'String']
 " }}}
 
