@@ -1297,7 +1297,8 @@ let g:echodoc#enable_at_startup=1
 let g:echodoc#enable_force_overwrite=1
 if has('nvim')
     let g:echodoc#type="virtual"
-    " let g:echodoc#type="signature"
+else
+    let g:echodoc#type="echo"
 endif
 " }}}
 
