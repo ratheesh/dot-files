@@ -114,6 +114,13 @@
 "             \ 'branch': 'next',
 "             \ 'do': 'bash install.sh',
 "             \ }
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'ncm2/ncm2-pyclang'
+" Plug 'Shougo/deoplete-clangx'
+" Plug 'maralla/completor.vim'
+" Plug 'ozelentok/deoplete-gtags'
+" Plug 'ujihisa/neco-look'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
