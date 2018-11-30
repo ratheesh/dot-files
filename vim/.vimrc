@@ -140,6 +140,12 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-textobj-quote'
 Plug 'beloglazov/vim-online-thesaurus'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" Shougo's plugins
 Plug 'Shougo/echodoc.vim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
@@ -157,7 +163,15 @@ Plug 'dunstontc/projectile.nvim'
 Plug 'chemzqm/denite-extra'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/neoyank.vim'
-Plug 'Shougo/deoplete-clangx'
+
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ratheesh/ncm2-tagprefix', {'branch': 'func_signature'}
+Plug 'Shougo/neco-syntax'
+Plug 'ncm2/ncm2-syntax'
 
 call plug#end()
 
@@ -1302,6 +1316,16 @@ else
 endif
 " }}}
 
+" Languageclient-Neovim {{{
+let g:LanguageClient_diagnosticsEnable=0
+let g:LanguageClient_diagnosticsSignsMax=1
+let g:LanguageClient_serverCommands = {
+            \ 'c': ['/usr/bin/clangd-6.0'],
+            \ 'cpp': ['/usr/bin/clangd-6.0'],
+            \ 'python': ['/usr/local/bin/pyls'],
+            \ }
+" }}}
+
 " deoplete {{{
 set completeopt+=noinsert
 let g:deoplete#enable_at_startup = 1
@@ -1384,6 +1408,20 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "       \ 'converter_auto_delimiter',
 "       \ ])
 
+" ncm2#enable_for_buffer {{{
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+let g:ncm2#complete_delay = 200
+let g:ncm2#popup_delay    = 100
+let g:ncm2#matcher='abbrfuzzy'
+let g:ncm2#sorter='abbrfuzzy'
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
+" let g:ncm2_tagprefix='[T]'
+" let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+" let $NVIM_PYTHON_LOG_LEVEL="INFO"
 " }}}
 
 " vim-textmanip {{{
