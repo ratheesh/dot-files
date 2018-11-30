@@ -1328,43 +1328,68 @@ let g:LanguageClient_serverCommands = {
 
 " deoplete {{{
 set completeopt+=noinsert
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
-let g:deoplete#enable_refresh_always      = 1
-let g:deoplete#auto_complete_delay        = 100
-let g:deoplete#auto_refresh_delay         = 100
-let g:deoplete#auto_complete_start_length = 2
+let g:deoplete#enable_refresh_always        = 1
+let g:deoplete#auto_complete_delay          = 100
+let g:deoplete#auto_refresh_delay           = 100
+" let g:deoplete#auto_complete_start_length   = 3
 " let g:deoplete#enable_ignore_case         = 1
-let g:deoplete#enable_smart_case          = 1
+" let g:deoplete#enable_smart_case          = 1
 " let g:deoplete#enable_camel_case          = 1
-let g:deoplete#file#enable_buffer_path    = 1
-let g:deoplete#max_list                   = 50
-let deoplete#tag#cache_limit_size         = 10000000
+let g:deoplete#file#enable_buffer_path      = 1
+let g:deoplete#max_list                     = 50
+let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
-" let g:deoplete#complete_method            = "completefunc"
+" let g:deoplete#complete_method              = "completefunc"
+" let g:deoplete#complete_method            = "omnifunc"
+
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 200,
+    \ 'ignore_case': v:false,
+    \ 'smart_case': v:true,
+    \ 'complete_method': 'omnifunc',
+    \ 'min_pattern_length': 2,
+    \ 'async_timeout': 100,
+    \ 'refresh_always': v:true,
+    \ 'num_processes': 0,
+    \ })
+
+" call deoplete#custom#option('refresh_always', v:true)
+" call deoplete#custom#option('num_processes', 0)
 
 " Don't align these lines!
 set completeopt=longest,menuone
-set pumheight=8 " set max. Height of popup menu
+set pumheight=10 " set max. Height of popup menu
 
 let g:deoplete#sources  = {}
 let g:deoplete#sources_ = [] " includes all sources
 
 " Use partial fuzzy matches like YouCompleteMe
-call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('_', 'converters', ['converter_remove_paren'])
-" call deoplete#custom#source('_', 'sorters', ['sorter_word'])
-" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#source('ultisnips', 'rank', 9956)
-call deoplete#custom#source('member', 'rank', 9955)
-call deoplete#custom#source('buffer', 'rank', 9954)
-call deoplete#custom#source('function', 'rank', 9953)
-call deoplete#custom#source('tag', 'rank', 9952)
-call deoplete#custom#source('jedi', 'rank', 9951)
-call deoplete#custom#source('clang', 'rank', 9950)
-call deoplete#custom#option('smart_case', v:true)
+" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
+
+" Disable the candidates in Comment/String syntaxes.
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+
+call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
+call deoplete#custom#source('clangx'         , 'mark' , '[CLang')
+call deoplete#custom#source('clang'          , 'mark' , '[CLang')
+call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
+call deoplete#custom#source('member'         , 'mark' , '[Member]')
+call deoplete#custom#source('function'       , 'mark' , '[Func]')
+
+call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
+call deoplete#custom#source('member'    , 'rank' , 9958)
+call deoplete#custom#source('ultisnips' , 'rank' , 9957)
+call deoplete#custom#source('tag'       , 'rank' , 9956)
+call deoplete#custom#source('clangx'    , 'rank' , 9955)
+call deoplete#custom#source('clang'     , 'rank' , 9955)
+call deoplete#custom#source('buffer'    , 'rank' , 9954)
+call deoplete#custom#source('function'  , 'rank' , 9953)
+call deoplete#custom#source('jedi'      , 'rank' , 9952)
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -1399,14 +1424,15 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
     " inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
 " endif
 
-" call deoplete#custom#source('_', 'converters', [
-"       \ 'converter_remove_paren',
-"       \ 'converter_remove_overlap',
-"       \ 'matcher_length',
-"       \ 'converter_truncate_abbr',
-"       \ 'converter_truncate_menu',
-"       \ 'converter_auto_delimiter',
-"       \ ])
+call deoplete#custom#source('_', 'converters', [
+      \ 'converter_remove_paren',
+      \ 'converter_remove_overlap',
+      \ 'converter_truncate_abbr',
+      \ 'converter_truncate_menu',
+      \ 'converter_auto_delimiter',
+      \ ])
+
+" }}}
 
 " ncm2#enable_for_buffer {{{
 autocmd BufEnter * call ncm2#enable_for_buffer()
