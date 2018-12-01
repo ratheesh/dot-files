@@ -1320,8 +1320,8 @@ endif
 let g:LanguageClient_diagnosticsEnable=0
 let g:LanguageClient_diagnosticsSignsMax=1
 let g:LanguageClient_serverCommands = {
-            \ 'c': ['/usr/bin/clangd-6.0'],
-            \ 'cpp': ['/usr/bin/clangd-6.0'],
+            \ 'c': ['/usr/bin/clangd'],
+            \ 'cpp': ['/usr/bin/clangd'],
             \ 'python': ['/usr/local/bin/pyls'],
             \ }
 " }}}
