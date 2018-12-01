@@ -163,14 +163,13 @@ Plug 'chemzqm/denite-extra'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/neoyank.vim'
 
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-Plug 'ratheesh/ncm2-tagprefix', {'branch': 'func_signature'}
-Plug 'Shougo/neco-syntax'
-Plug 'ncm2/ncm2-syntax'
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ratheesh/ncm2-tagprefix', {'branch': 'func_signature'}
+" Plug 'ncm2/ncm2-syntax'
 
 call plug#end()
 
@@ -1435,22 +1434,22 @@ call deoplete#custom#source('_', 'converters', [
 " }}}
 
 " ncm2#enable_for_buffer {{{
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-let g:ncm2#complete_delay = 200
-let g:ncm2#popup_delay    = 100
-let g:ncm2#matcher='abbrfuzzy'
-let g:ncm2#sorter='abbrfuzzy'
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" set completeopt=noinsert,menuone,noselect
+" let g:ncm2#complete_delay = 200
+" let g:ncm2#popup_delay    = 100
+" let g:ncm2#matcher='abbrfuzzy'
+" let g:ncm2#sorter='abbrfuzzy'
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-call ncm2#override_source('tagprefix'        , {'mark': 'T'})
-call ncm2#override_source('bufword'          , {'mark': 'B'})
-call ncm2#override_source('bufpath'          , {'mark': 'BufPath'})
-call ncm2#override_source('cwdpath'          , {'mark': './'})
-call ncm2#override_source('rootpath'         , {'mark': '#'})
-call ncm2#override_source('tmux'             , {'mark': 'Tmux'})
-call ncm2#override_source('LanguageClient_c' , {'mark': 'LSP'})
+" call ncm2#override_source('tagprefix'        , {'mark': 'T'})
+" call ncm2#override_source('bufword'          , {'mark': 'B'})
+" call ncm2#override_source('bufpath'          , {'mark': 'BufPath'})
+" call ncm2#override_source('cwdpath'          , {'mark': './'})
+" call ncm2#override_source('rootpath'         , {'mark': '#'})
+" call ncm2#override_source('tmux'             , {'mark': 'Tmux'})
+" call ncm2#override_source('LanguageClient_c' , {'mark': 'LSP'})
 
 " call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
 " let g:ncm2_tagprefix='[T]'
