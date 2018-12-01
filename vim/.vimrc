@@ -1444,6 +1444,14 @@ let g:ncm2#sorter='abbrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+call ncm2#override_source('tagprefix'        , {'mark': 'T'})
+call ncm2#override_source('bufword'          , {'mark': 'B'})
+call ncm2#override_source('bufpath'          , {'mark': 'BufPath'})
+call ncm2#override_source('cwdpath'          , {'mark': './'})
+call ncm2#override_source('rootpath'         , {'mark': '#'})
+call ncm2#override_source('tmux'             , {'mark': 'Tmux'})
+call ncm2#override_source('LanguageClient_c' , {'mark': 'LSP'})
+
 " call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
 " let g:ncm2_tagprefix='[T]'
 " let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
