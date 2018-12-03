@@ -1327,7 +1327,7 @@ let g:LanguageClient_serverCommands = {
 
 " deoplete {{{
 set completeopt+=noinsert
-let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 1
 if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
@@ -1343,18 +1343,18 @@ let g:deoplete#max_list                     = 50
 let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
 " let g:deoplete#complete_method              = "completefunc"
-" let g:deoplete#complete_method            = "omnifunc"
+let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
-    \ 'auto_complete_delay': 200,
-    \ 'ignore_case': v:false,
-    \ 'smart_case': v:true,
-    \ 'complete_method': 'omnifunc',
-    \ 'min_pattern_length': 2,
-    \ 'async_timeout': 100,
-    \ 'refresh_always': v:true,
-    \ 'num_processes': 0,
-    \ })
+            \ 'auto_complete_delay' : 100,
+            \ 'ignore_case'         : v:false,
+            \ 'smart_case'          : v:true,
+            \ 'complete_method'     : 'omnifunc',
+            \ 'min_pattern_length'  : 2,
+            \ 'async_timeout'       : 100,
+            \ 'refresh_always'      : v:true,
+            \ 'num_processes'       : 0,
+            \ })
 
 " call deoplete#custom#option('refresh_always', v:true)
 " call deoplete#custom#option('num_processes', 0)
@@ -1367,8 +1367,8 @@ let g:deoplete#sources  = {}
 let g:deoplete#sources_ = [] " includes all sources
 
 " Use partial fuzzy matches like YouCompleteMe
-" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+" call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 
 " Disable the candidates in Comment/String syntaxes.
 call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
@@ -1381,14 +1381,16 @@ call deoplete#custom#source('member'         , 'mark' , '[Member]')
 call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
-call deoplete#custom#source('member'    , 'rank' , 9958)
-call deoplete#custom#source('ultisnips' , 'rank' , 9957)
-call deoplete#custom#source('tag'       , 'rank' , 9956)
-call deoplete#custom#source('clangx'    , 'rank' , 9955)
-call deoplete#custom#source('clang'     , 'rank' , 9955)
-call deoplete#custom#source('buffer'    , 'rank' , 9954)
-call deoplete#custom#source('function'  , 'rank' , 9953)
-call deoplete#custom#source('jedi'      , 'rank' , 9952)
+
+call deoplete#custom#source('member'         , 'rank' , 9958)
+call deoplete#custom#source('ultisnips'      , 'rank' , 9957)
+call deoplete#custom#source('LanguageClient' , 'rank' , 9956)
+call deoplete#custom#source('tag'            , 'rank' , 9955)
+call deoplete#custom#source('clangx'         , 'rank' , 9954)
+call deoplete#custom#source('clang'          , 'rank' , 9953)
+call deoplete#custom#source('buffer'         , 'rank' , 9952)
+call deoplete#custom#source('function'       , 'rank' , 9951)
+call deoplete#custom#source('jedi'           , 'rank' , 9950)
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
