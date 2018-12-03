@@ -1173,7 +1173,7 @@ augroup END
 
 " gutentags {{{
 " enable only ctags
-let g:gutentags_modules = []
+let g:gutentags_modules = ['ctags']
 
 " config project root markers.
 let g:gutentags_project_root = ['.root', '.git', '.svn']
