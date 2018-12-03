@@ -157,6 +157,7 @@ else
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'Shougo/neco-syntax'
 Plug 'zchee/deoplete-jedi'
 Plug 'dunstontc/projectile.nvim'
 Plug 'chemzqm/denite-extra'
