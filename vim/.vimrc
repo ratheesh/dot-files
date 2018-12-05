@@ -635,9 +635,11 @@ color darktheme
 " }}}
 
 " Tagbar {{{
-let g:tagbar_sort   = 0 " don't sort items by name
-let g:tagbar_indent = 1
-let g:tagbar_show_linenumbers = -1
+let g:tagbar_sort             = 0 " don't sort items by name
+let g:tagbar_indent           = 1
+let g:tagbar_expand           = 0
+let g:tagbar_show_linenumbers = 0
+let g:tagbar_autoshowtag      = 1
 nmap <silent><F8>            :TagbarToggle<CR>
 " nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
