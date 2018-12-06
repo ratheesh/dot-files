@@ -121,6 +121,7 @@ Plug 'kana/vim-textobj-indent'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'rhysd/vim-textobj-conflict'  " i/a =
 Plug 'anyakichi/vim-textobj-ifdef' " i/a #
+Plug 'idbrii/textobj-word-column.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'augustold/vim-custom-surround'
 Plug 'kana/vim-textobj-line'
@@ -129,6 +130,7 @@ Plug 'glts/vim-textobj-comment'
 Plug 'machakann/vim-swap' " to swap args
 Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
 Plug 'tommcdo/vim-exchange' " exchange regions
+Plug 'vim-scripts/ReplaceWithRegister'
 
 " writing prose
 Plug 'reedes/vim-pencil'
