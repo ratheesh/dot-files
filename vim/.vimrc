@@ -649,8 +649,9 @@ nmap <silent><F8>            :TagbarToggle<CR>
 " }}}
 
 "vim-cycle {{{
-nmap  <silent><Leader>e <Plug>CycleNext
-nmap  <silent><Leader>r <Plug>CyclePrev
+let g:cycle_no_mappings = 1
+nmap  <silent>- <Plug>CycleNext
+nmap  <silent>+ <Plug>CyclePrev
 
 let g:cycle_default_groups_for_c = [
             \ [[ 'unsigned', 'signed', 'register' ]],
