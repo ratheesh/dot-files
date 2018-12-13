@@ -85,8 +85,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
 Plug 'ratheesh/vim-bling'
 Plug 'ckarnell/Antonys-macro-repeater'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'thirtythreeforty/lessspace.vim'
@@ -165,6 +165,8 @@ Plug 'dunstontc/projectile.nvim'
 Plug 'chemzqm/denite-extra'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/neoyank.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 " Plug 'ncm2/ncm2'
 " Plug 'roxma/nvim-yarp'
@@ -1210,6 +1212,29 @@ let g:UltiSnipsJumpForwardTrigger  = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 let g:indentLine_faster            = 1
 "}}}
+
+" neo-snippets {{{
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+let g:neosnippet#enable_completed_snippet = 1
+
+imap <expr><TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ neosnippet#expandable_or_jumpable() ?
+            \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+smap <expr><TAB>
+            \ neosnippet#expandable_or_jumpable() ?
+            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+    set conceallevel=2 concealcursor=niv
+endif
+
+" }}}
 
 " vim-ale {{{
 let g:ale_sign_column_always   = 1
