@@ -1387,7 +1387,7 @@ let g:deoplete#buffer#require_same_filetype = 0
 let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 100,
+            \ 'auto_complete_delay' : 10,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
             \ 'complete_method'     : 'omnifunc',
@@ -1423,9 +1423,10 @@ call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
-call deoplete#custom#source('member'         , 'rank' , 9958)
-call deoplete#custom#source('ultisnips'      , 'rank' , 9957)
-call deoplete#custom#source('LanguageClient' , 'rank' , 9956)
+call deoplete#custom#source('neosnippet'     , 'rank' , 9958)
+call deoplete#custom#source('ultisnips'      , 'rank' , 9958)
+call deoplete#custom#source('LanguageClient' , 'rank' , 9957)
+call deoplete#custom#source('member'         , 'rank' , 9956)
 call deoplete#custom#source('tag'            , 'rank' , 9955)
 call deoplete#custom#source('clangx'         , 'rank' , 9954)
 call deoplete#custom#source('clang'          , 'rank' , 9953)
@@ -1445,10 +1446,10 @@ inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
 inoremap <expr><C-g> deoplete#undo_completion()
 
 " let g:deoplete#disable_auto_complete = 1
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ deoplete#mappings#manual_complete()
+" inoremap <silent><expr> <TAB>
+"             \ pumvisible() ? "\<C-n>" :
+"             \ <SID>check_back_space() ? "\<TAB>" :
+"             \ deoplete#mappings#manual_complete()
 
 function! s:check_back_space() abort
     let col = col('.') - 1
