@@ -57,7 +57,8 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'ratheesh/ctrlp-extensions.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'dylanaraps/root.vim'
-Plug 'lokikl/vim-ctrlp-ag'
+" Plug 'lokikl/vim-ctrlp-ag'
+Plug 'wsdjeg/FlyGrep.vim'
 Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
 Plug 'brookhong/cscope.vim'
@@ -1030,14 +1031,19 @@ let g:root#echo = 0
 " }}}
 
 " vim-ctrlp-ag {{{
-nnoremap <silent><Leader>gg :CtrlPag<CR>
-vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
-nnoremap <leader>/          :CtrlPagLocate<space>
-" nnoremap <leader>cp :CtrlPagPrevious<CR>
-let g:ctrlp_ag_ignores = '--ignore .git
-            \ --ignore "deps/*"
-            \ --ignore "_build/*"
-            \ --ignore "node_modules/*"'
+" nnoremap <silent><Leader>gg :CtrlPag<CR>
+" vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
+" nnoremap <leader>/          :CtrlPagLocate<space>
+" " nnoremap <leader>cp :CtrlPagPrevious<CR>
+" let g:ctrlp_ag_ignores = '--ignore .git
+"             \ --ignore "deps/*"
+"             \ --ignore "_build/*"
+"             \ --ignore "node_modules/*"'
+" }}}
+
+" fly-grep {{{
+nnoremap <Space>/ :FlyGrep<cr>
+let g:FlyGrep_input_delay = 1000
 " }}}
 
 " ctrlp-mark {{{
