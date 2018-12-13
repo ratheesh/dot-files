@@ -694,6 +694,10 @@ let g:cycle_default_groups_for_sh = [
             \ [[ '-n', '-z' ]],
             \ ]
 
+let g:cycle_default_groups_for_gitrebase = [
+            \ [[ 'pick', 'fixup', 'reword', 'edit', 'squash', 'drop' ]],
+            \ ]
+
 let g:cycle_default_groups = [
             \ [[ 'true', 'false' ]],
             \ [[ 'yes', 'no' ]],
