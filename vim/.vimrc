@@ -79,7 +79,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
-" Plug 'boucherm/ShowMotion'
+Plug 'boucherm/ShowMotion'
 Plug 'MaxMEllon/vim-shiny'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
@@ -932,12 +932,12 @@ nmap e <Plug>(show-motion-both-e)
 nmap E <Plug>(show-motion-both-E)
 
 "Show motion for chars:
-nmap f <Plug>(show-motion-f)
-nmap t <Plug>(show-motion-t)
-nmap F <Plug>(show-motion-F)
-nmap T <Plug>(show-motion-T)
-nmap ; <Plug>(show-motion-;)
-nmap , <Plug>(show-motion-,)
+" nmap f <Plug>(show-motion-f)
+" nmap t <Plug>(show-motion-t)
+" nmap F <Plug>(show-motion-F)
+" nmap T <Plug>(show-motion-T)
+" nmap ; <Plug>(show-motion-;)
+" nmap , <Plug>(show-motion-,)
 " }}}
 
 " Vim-licenses {{{
