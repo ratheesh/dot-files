@@ -48,7 +48,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 't9md/vim-textmanip'
-Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
+" Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'ratheesh/vim-smooth-scroll'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ratheesh/ctrlp_bdelete.vim'
