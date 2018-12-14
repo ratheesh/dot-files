@@ -61,6 +61,7 @@ Plug 'dylanaraps/root.vim'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
+Plug 'liuchengxu/vim-which-key'
 Plug 'brookhong/cscope.vim'
 Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'

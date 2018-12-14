@@ -185,6 +185,13 @@ hi gitconfigBoolean     ctermfg=60      ctermbg=NONE    cterm=NONE    guifg=#008
 hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
 " }}}
 
+" which-key {{{
+hi WhichKey                 ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=NONE
+hi WhichKeySeperator        ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#ff5500  guibg=NONE   gui=NONE
+hi WhichKeyGroup            ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#ceab5a  guibg=NONE   gui=NONE
+hi WhichKeyDesc             ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
+" }}}
+
 " ShowMotion {{{
 highlight SM_SmallMotionGroup ctermfg=231 ctermbg=53 cterm=italic,bold,underline
 highlight SM_BigMotionGroup   ctermfg=231 ctermbg=54 cterm=italic,bold,underline
