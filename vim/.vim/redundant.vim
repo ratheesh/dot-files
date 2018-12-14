@@ -25,6 +25,7 @@
 " Plug 'JazzCore/ctrlp-cmatcher'
 " Plug 'ivan-cukic/vim-ctrlp-cscope'
 " Plug 'dbeecham/ctrlp-commandpalette.vim'
+" Plug 'lokikl/vim-ctrlp-ag'
 " Plug 'Vaelatern/vim-script-refactor'
 " Plug 'pelodelfuego/vim-swoop'
 " Plug 'yuttie/comfortable-motion.vim'
@@ -121,6 +122,13 @@
 " Plug 'maralla/completor.vim'
 " Plug 'ozelentok/deoplete-gtags'
 " Plug 'ujihisa/neco-look'
+" Plug 'mg979/vim-xtabline'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-easytags'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'skywind3000/gutentags_plus'
+" Plug 'lokikl/vim-ctrlp-ag'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
