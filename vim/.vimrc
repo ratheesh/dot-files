@@ -81,7 +81,7 @@ Plug 'boucherm/ShowMotion'
 Plug 'MaxMEllon/vim-shiny'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
-Plug 'ratheesh/vim-bling'
+" Plug 'ratheesh/vim-bling'
 Plug 'ckarnell/Antonys-macro-repeater'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -790,7 +790,7 @@ let g:airline#extensions#tagbar#enabled             = 1
 let g:airline#extensions#tagbar#flags               = 'f'
 let g:airline#extensions#wordcount#formatter        = 'default'
 let g:airline#extensions#wordcount#format           = '%dWords'
-let g:airline#extensions#anzu#enabled               = 1
+let g:airline#extensions#anzu#enabled               = 0
 " let g:airline#extensions#wordcount#filetypes        = ''
 
 " vcs
@@ -907,14 +907,16 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 "             \ }
 " }}}
 
-"nzu-N-with-echo vim-anzu {{{
+" vim-anzu {{{
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
-let g:anzu_status_format = "%p(%i/%l) %w"
+" let g:anzu_status_format = "%p(%i/%l) %w"
+let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow# ➜ %#AnzuSearchObj#%p
+            \%#AnzuParen#(%#AnzuSearchCnt#%i%#AnzuSeparator#/%#AnzuSearchCnt#%l%#AnzuParen#)%#None#"
 
-" This command is an overridden one to make sure otherone works if this plugin
+" This command is an overridden one to make sure other one works if this plugin
 " is disabled
 nmap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}

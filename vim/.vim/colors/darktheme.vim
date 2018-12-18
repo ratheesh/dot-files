@@ -205,6 +205,15 @@ hi SignifySignDelete          ctermfg=196    ctermbg=233   cterm=bold  guifg=#fb
 hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff5500  guibg=#202020   gui=bold
 " }}}
 
+" vim-anzu {{{
+hi AnzuNormal               ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#f7ca88  guibg=NONE   gui=NONE
+hi AnzuArrow                ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#fb091f  guibg=NONE   gui=bold
+hi AnzuSearchObj            ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=bold,italic
+hi AnzuSeparator            ctermfg=172     ctermbg=NONE    cterm=NONE    guifg=#ceab5a  guibg=NONE   gui=NONE
+hi AnzuSearchCnt            ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#5f9ea0  guibg=NONE   gui=NONE
+hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=#aaaaaa  guibg=NONE   gui=NONE
+" }}}
+
 " ale {{{
 " hi AleError                 ctermfg=198    ctermbg=NONE    cterm=NONE      guifg=#f92a5b      guibg=NONE   gui=italic
 " hi AleWarning               ctermfg=5      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0      guibg=NONE   gui=italic
