@@ -219,6 +219,11 @@ hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=
 " hi AleWarning               ctermfg=5      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0      guibg=NONE   gui=italic
 " }}}
 
+" echodoc {{{
+hi EchoDocFunc            ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#f399af  guibg=NONE   gui=bold
+hi EchoDocParam           ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#00bbff  guibg=NONE   gui=italic
+" }}}
+
 " git-gutter {{{
 hi GitGutterAdd          ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#202020 gui=bold
 hi GitGutterChange       ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#202020 gui=bold

@@ -1351,6 +1351,9 @@ if has('nvim')
 else
     let g:echodoc#type="echo"
 endif
+
+let g:echodoc#highlight_identifier = "EchoDocFunc"
+let g:echodoc#highlight_arguments  = "EchoDocParam"
 " }}}
 
 " Languageclient-Neovim {{{
