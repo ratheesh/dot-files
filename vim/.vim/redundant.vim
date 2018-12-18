@@ -129,6 +129,7 @@
 " Plug 'honza/vim-snippets'
 " Plug 'skywind3000/gutentags_plus'
 " Plug 'lokikl/vim-ctrlp-ag'
+" Plug 'osyo-manga/vim-over'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
