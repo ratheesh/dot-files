@@ -1357,13 +1357,15 @@ let g:echodoc#highlight_arguments  = "EchoDocParam"
 " }}}
 
 " Languageclient-Neovim {{{
-let g:LanguageClient_diagnosticsEnable=0
-let g:LanguageClient_diagnosticsSignsMax=1
-let g:LanguageClient_serverCommands = {
+let g:LanguageClient_selectionUI         = 'location-list'
+let g:LanguageClient_diagnosticsEnable   = 0
+let g:LanguageClient_diagnosticsSignsMax = 0
+let g:LanguageClient_serverCommands      = {
             \ 'c': ['/usr/bin/clangd'],
             \ 'cpp': ['/usr/bin/clangd'],
             \ 'python': ['/usr/local/bin/pyls'],
             \ }
+let g:LanguageClient_autoStart = 1
 " }}}
 
 " deoplete {{{
