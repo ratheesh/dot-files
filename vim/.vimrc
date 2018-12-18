@@ -1420,7 +1420,7 @@ call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
 call deoplete#custom#source('clangx'         , 'mark' , '[CLang')
 call deoplete#custom#source('clang'          , 'mark' , '[CLang')
 call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
-call deoplete#custom#source('member'         , 'mark' , '[Member]')
+" call deoplete#custom#source('member'         , 'mark' , '[M]')
 call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
