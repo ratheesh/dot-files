@@ -171,6 +171,12 @@ let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tabtype' : [ s:guiWhite, '#b32425' , 253 , 125 , 'none' ],
             \ }
 
+let g:airline#themes#darkmode#palette.accents = {
+            \ 'ft_color'     : [ '#47d68e' , '' , 160 , '', 'italic'  ],
+            \ 'tagbar_color' : [ '#6494ed' , '' , 160 , '', 'none'  ],
+            \ 'path_color'   : [ '#bc8bf1' , '' , 160 , '', 'italic'  ],
+            \ }
+
 " Change colors during different modes
 :augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
