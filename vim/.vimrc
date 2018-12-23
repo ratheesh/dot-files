@@ -1171,6 +1171,13 @@ nmap <silent><Leader>ga <Plug>GitGutterStageHunk
 nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
 nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
 nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
+
+" textobj for hunks (i/a)h
+omap ih <Plug>GitGutterTextObjectInnerPending
+omap ah <Plug>GitGutterTextObjectOuterPending
+xmap ih <Plug>GitGutterTextObjectInnerVisual
+xmap ah <Plug>GitGutterTextObjectOuterVisual
+
 " }}}
 
 " git-patch-tags {{{
