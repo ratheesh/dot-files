@@ -25,14 +25,14 @@ let g:colors_name = "darktheme"
 " syn match Braces display '[{}()\[\]]'
 " syntax match Operator "[-+&|<>=!\/~:*%&^?]"
 
-hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#cccccc   guibg=#22242a   gui=NONE
+hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#cccccc   guibg=#222831   gui=NONE
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#101010   gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#201f23   gui=NONE
 " hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#4d4d57   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#333856   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
-hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#343648   gui=NONE
+hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3a455e   gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#e0e0e0   guibg=#a3495b   gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=#f92a5b   guibg=NONE      gui=bold,underline
@@ -188,7 +188,7 @@ hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=NONE    guifg=#468
 " which-key {{{
 hi WhichKey                 ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=NONE
 hi WhichKeySeperator        ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#ff5500  guibg=NONE   gui=NONE
-hi WhichKeyGroup            ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#ceab5a  guibg=NONE   gui=NONE
+hi WhichKeyGroup            ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#89b7b5  guibg=NONE   gui=NONE
 hi WhichKeyDesc             ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
 " }}}
 
