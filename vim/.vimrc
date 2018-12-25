@@ -1374,6 +1374,7 @@ let g:echodoc#highlight_arguments  = "EchoDocParam"
 let g:LanguageClient_selectionUI         = 'location-list'
 let g:LanguageClient_diagnosticsEnable   = 0
 let g:LanguageClient_diagnosticsSignsMax = 0
+let g:LanguageClient_hasSnippetSupport   = 0
 let g:LanguageClient_serverCommands      = {
             \ 'c': ['/usr/bin/clangd'],
             \ 'cpp': ['/usr/bin/clangd'],
