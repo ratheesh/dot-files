@@ -855,6 +855,7 @@ let g:airline#extensions#tabline#exclude_preview  = 1
 let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
 " let g:airline#extensions#cursormode#enabled       = 1
+
 nmap <silent><leader>1 <Plug>AirlineSelectTab1
 nmap <silent><leader>2 <Plug>AirlineSelectTab2
 nmap <silent><leader>3 <Plug>AirlineSelectTab3
@@ -868,6 +869,7 @@ nmap <silent><leader>h <Plug>AirlineSelectPrevTab
 nmap <silent><leader>l <Plug>AirlineSelectNextTab
 nmap <silent><F9>      <Plug>AirlineSelectPrevTab
 nmap <silent><F10>     <Plug>AirlineSelectNextTab
+
 if !get(g:, 'airline_powerline_fonts', 0)
     let g:airline#extensions#tabline#left_sep      = ''
     let g:airline#extensions#tabline#left_alt_sep  = '│'
@@ -876,6 +878,10 @@ if !get(g:, 'airline_powerline_fonts', 0)
     let g:airline_left_alt_sep                     = '│'
     let g:airline_right_alt_sep                    = '│'
 endif
+
+let g:airline#extensions#default#section_truncate_width = {
+            \ 'c': 25,
+            \ }
 
 " let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
 " let g:airline#extensions#tabline#buffer_idx_format = {
