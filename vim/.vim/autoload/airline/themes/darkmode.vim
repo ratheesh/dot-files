@@ -13,8 +13,8 @@
 
 " Color palette
 
-let s:gui01             = "#343648"
-let s:gui02             = "#505050"
+let s:gui01             = "#383a4c"
+let s:gui02             = "#4c5870"
 let s:gui03             = "#f5be85"
 let s:gui04             = "#bd93f9"
 let s:gui05             = "#d65b84"
@@ -172,7 +172,7 @@ let g:airline#themes#darkmode#palette.tabline = {
             \ }
 
 let g:airline#themes#darkmode#palette.accents = {
-            \ 'ft_color'     : [ '#47d68e' , '' , 160 , '', 'italic'  ],
+            \ 'ft_color'     : [ '#ee4c9b' , '' , 160 , '', 'bold,italic'  ],
             \ 'tagbar_color' : [ '#6494ed' , '' , 160 , '', 'none'  ],
             \ 'path_color'   : [ '#bc8bf1' , '' , 160 , '', 'italic'  ],
             \ }
@@ -192,7 +192,7 @@ endif
 
 let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09    , s:cterm01 ]
 let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11    , s:cterm02 ]
-let s:CP3 = [ s:guiBlack , s:guiCtrlP , s:ctermBlack , s:cterm10   , 'none' ]
+let s:CP3 = [ s:guiBlack , s:guiCtrlP , s:ctermBlack , s:cterm10   , 'bold,italic' ]
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
 " End of File
