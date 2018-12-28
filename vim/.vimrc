@@ -805,7 +805,7 @@ let g:airline_symbols.paste = 'ραstε'
 let g:airline_symbols.branch = '±'
 " let g:airline_symbols.spell = 'Ꞩ'
 " let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.readonly = ''
+let g:airline_symbols.readonly = '🔒'
 
 " Customize Airline Layout
 function! AirlineInit()
