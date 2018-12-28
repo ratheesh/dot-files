@@ -172,9 +172,11 @@ let g:airline#themes#darkmode#palette.tabline = {
             \ }
 
 let g:airline#themes#darkmode#palette.accents = {
-            \ 'ft_color'     : [ '#ee4c9b' , '' , 160 , '', 'bold,italic'  ],
-            \ 'tagbar_color' : [ '#6494ed' , '' , 160 , '', 'none'  ],
-            \ 'path_color'   : [ '#bc8bf1' , '' , 160 , '', 'italic'  ],
+            \ 'ft_color'            : [ '#ee4c9b' , '' , 160 , '', 'bold,italic'],
+            \ 'tagbar_color'        : [ '#6494ed' , '' , 160 , '', 'none'],
+            \ 'path_color'          : [ '#bc8bf1' , '' , 160 , '', ''],
+            \ 'gitroot_color'       : [ '#00beff' , '' , 160 , '', 'bold,italic'],
+            \ 'gitroot_paren_color' : [ '#ee4c9b' , '' , 160 , '', 'bold'],
             \ }
 
 " Change colors during different modes

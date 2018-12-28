@@ -812,18 +812,32 @@ function! AirlineInit()
     call airline#parts#define_accent('mode', 'bold')
     " call airline#parts#define_accent('branch', 'italic')
     call airline#parts#define_raw('linenr', '%l')
-    call airline#parts#define_raw('path', '%f')
-    call airline#parts#define_accent('path', 'path_color')
     call airline#parts#define_accent('linenr', 'bold')
     call airline#parts#define_raw('modified', '%{&modified ? "[+]" : ""}')
     call airline#parts#define_accent('modified', 'orange')
     call airline#parts#define_accent('tagbar', 'tagbar_color')
     call airline#parts#define_accent('filetype', 'ft_color')
     call airline#parts#define_raw('gutentags', '%{gutentags#statusline()}')
+
+    " Condense path to manageable length
+    call airline#parts#define_raw('path', '%{utils#CondensePath(expand("%f"), 25)}')
+    call airline#parts#define_accent('path', 'path_color')
+
+    " project root segment
+    if !exists('g:gitroot')
+        let g:gitroot=''
+    endif
+    call airline#parts#define_raw('gitroot', '%{utils#gitroot()}')
+    call airline#parts#define_accent('gitroot', 'gitroot_color')
+    call airline#parts#define_raw('gitroot_[', '%{empty(g:gitroot)? "" : "["}')
+    call airline#parts#define_accent('gitroot_[', 'gitroot_paren_color')
+    call airline#parts#define_raw('gitroot_]', '%{empty(g:gitroot)? "" : "]"}')
+    call airline#parts#define_accent('gitroot_]', 'gitroot_paren_color')
+
     " call airline#parts#define_accent('readonly', 'bold')
     let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','keymap','capslock','iminsert'])
     let g:airline_section_b = airline#section#create(['hunks', 'gutentags'])
-    let g:airline_section_c = airline#section#create(['readonly','path', 'modified'])
+    let g:airline_section_c = airline#section#create(['gitroot_[','gitroot','gitroot_]','readonly','path', 'modified'])
     let g:airline_section_x = airline#section#create_right(['tagbar','filetype'])
     let g:airline_section_y = airline#section#create_right(['ffenc'])
     let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','≡%l:%v│','ch:%02Bh│','%p%%'])
