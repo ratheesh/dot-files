@@ -151,16 +151,6 @@ let g:airline#themes#darkmode#palette.replace_modified = {
             \ 'airline_y': [s:gui10    , s:gui02 , s:ctermBlack , s:cterm08],
             \ 'airline_z': [s:guiBlack , s:gui08 , s:ctermWhite , s:cterm07], }
 
-let g:airline#themes#darkmode#palette.normal_modified.airline_warning  = s:WARNING
-let g:airline#themes#darkmode#palette.insert_modified.airline_warning  = s:WARNING
-let g:airline#themes#darkmode#palette.visual_modified.airline_warning  = s:WARNING
-let g:airline#themes#darkmode#palette.replace_modified.airline_warning = s:WARNING
-
-let g:airline#themes#darkmode#palette.normal_modified.airline_error  = s:ERROR
-let g:airline#themes#darkmode#palette.insert_modified.airline_error  = s:ERROR
-let g:airline#themes#darkmode#palette.visual_modified.airline_error  = s:ERROR
-let g:airline#themes#darkmode#palette.replace_modified.airline_error = s:ERROR
-
 " #5e6e99
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : [ s:guiWhite, '#5e6e99' , 253 , 60  , 'none' ],
@@ -168,22 +158,23 @@ let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tabfill' : [ s:guiWhite, '#203438' , 188 , 235 , 'none' ],
             \ 'airline_tabmod'  : [ s:guiWhite, '#3e8c75' ,  15 , 89  , 'none' ],
             \ 'airline_tabhid'  : [ '#a0a0a0' , '#203438' , 103 , 235 , 'none' ],
-            \ 'airline_tabtype' : [ s:guiWhite, '#b32425' , 253 , 125 , 'none' ],
+            \ 'airline_tablabel': [ "#f7cab8" , s:gui02   , 253 , 125 , 'italic' ],
             \ }
 
 let g:airline#themes#darkmode#palette.accents = {
             \ 'ft_color'            : [ '#ee4c9b' , '' , 160 , '', 'bold,italic'],
-            \ 'tagbar_color'        : [ '#6494ed' , '' , 160 , '', 'none'],
-            \ 'path_color'          : [ '#bc8bf1' , '' , 160 , '', ''],
-            \ 'gitroot_color'       : [ '#00beff' , '' , 160 , '', 'bold,italic'],
-            \ 'gitroot_paren_color' : [ '#ee4c9b' , '' , 160 , '', 'bold'],
+            \ 'tagbar_color'        : [ '#a580ff' , '' , 160 , '', 'none'],
+            \ 'path_color'          : [ '#6faeb0' , '' , 160 , '', 'italic'],
+            \ 'modified_color'      : [ '#fa2c07' , '' , 160 , '', 'italic'],
+            \ 'gitroot_color'       : [ '#f7cab8' , '' , 160 , '', ''],
+            \ 'gitroot_paren_color' : [ '#fa2c77' , '' , 160 , '', 'bold'],
             \ }
 
 " Change colors during different modes
 :augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 :autocmd!
-autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#e0e0e0    guibg=#a3495b  gui=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#a3495b  gui=NONE
 autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#e0e0e0    guibg=#62913f  gui=NONE
 :augroup END
 
@@ -192,9 +183,9 @@ if !get(g:, 'loaded_ctrlp', 0)
   finish
 endif
 
-let s:CP1 = [ s:guiWhite , s:gui01 , s:cterm09    , s:cterm01 ]
-let s:CP2 = [ s:guiWhite , s:gui02 , s:cterm11    , s:cterm02 ]
-let s:CP3 = [ s:guiBlack , s:guiCtrlP , s:ctermBlack , s:cterm10   , 'bold,italic' ]
+let s:CP1 = [ s:guiWhite , s:gui01    , s:cterm09    , s:cterm01 ]
+let s:CP2 = [ s:guiWhite , s:gui02    , s:cterm11    , s:cterm02 ]
+let s:CP3 = [ s:guiBlack , s:guiCtrlP , s:ctermBlack , s:cterm10 , 'italic' ]
 let g:airline#themes#darkmode#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:CP1, s:CP2, s:CP3)
 
 " End of File
