@@ -424,11 +424,11 @@ endif
 
 " hooks
 " Relative linenumbers disabled in insertmode
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,InsertLeave * set relativenumber
-:  autocmd BufLeave,InsertEnter * set norelativenumber
-:augroup END
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,InsertLeave * set relativenumber
+  autocmd BufLeave,InsertEnter * set norelativenumber
+augroup END
 
 " highlight command mode text
 if !has('nvim')
