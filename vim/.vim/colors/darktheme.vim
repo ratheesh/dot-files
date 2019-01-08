@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NO
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#333856   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3a455e   gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#e0e0e0   guibg=#a3495b   gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#eeeeee   guibg=#a3495b   gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=#f92a5b   guibg=NONE      gui=bold,underline
 hi ParenError   ctermfg=NONE    ctermbg=NONE    cterm=underline,bold
@@ -243,7 +243,7 @@ hi  WStripTrailing     ctermfg=9     ctermbg=NONE    cterm=underline      guifg=
 hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#ffcc33  guibg=NONE      gui=NONE
 hi CtrlPPrtText         ctermfg=60      ctermbg=NONE    cterm=NONE  guifg=#1d8d77  guibg=NONE      gui=NONE
 hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=NONE  guifg=#27b062  guibg=NONE      gui=NONE
-hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#c3107a  guibg=NONE      gui=bold
+hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#ad5d60  guibg=NONE      gui=bold
 hi CtrlPPrtCursor       ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#e0e0e0  guibg=#000000   gui=bold
 
 hi CtrlPBufferInd       ctermfg=162     ctermbg=NONE    cterm=NONE    guifg=#c76d83  guibg=NONE   gui=NONE
@@ -307,6 +307,14 @@ hi HighlightedyankRegion ctermfg=NONE ctermbg=NONE   cterm=NONE    guifg=#bdb76b
 hi EasyMotionMoveHLDefault    ctermfg=180 ctermbg=237   cterm=NONE guifg=#cd5c5c  guibg=NONE gui=NONE
 hi EasyMotionIncSearchDefault ctermfg=180 ctermbg=237   cterm=NONE guifg=#cd5c5c  guibg=NONE gui=NONE
 "}}}
+
+" peekaboo {{{
+hi peekabooTitle        ctermfg=180 ctermbg=237   cterm=NONE guifg=#00afdb  guibg=NONE    gui=bold,italic
+hi peekabooTitleColon   ctermfg=180 ctermbg=237   cterm=NONE guifg=#808080  guibg=NONE    gui=bold
+hi peekabooReg          ctermfg=180 ctermbg=237   cterm=NONE guifg=#fa2c77  guibg=NONE    gui=NONE
+hi peekabooRegColon     ctermfg=180 ctermbg=237   cterm=NONE guifg=#808080  guibg=NONE    gui=bold
+hi peekabooSelected     ctermfg=180 ctermbg=237   cterm=NONE guifg=#f4a460  guibg=#4c5870 gui=NONE
+" }}}
 
 " Startify {{{
 hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#808080   guibg=NONE    gui=NONE
