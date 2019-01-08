@@ -71,7 +71,7 @@ Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ludovicchabant/vim-gutentags'
