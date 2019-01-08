@@ -20,7 +20,7 @@ if &compatible | set nocompatible | endif
 set hidden
 filetype off                  " required!
 
-" install vimplug if it is not installed
+" Install vimplug if it is not already installed
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 if !filereadable(vimplug_exists)
     if !executable("curl")
