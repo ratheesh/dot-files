@@ -1,4 +1,4 @@
-Following are 24-bit RGB colors those can be used for development of
+Following are 24-bit RGB colors which can be used for development of
 plugins/themes and others
 
 #7a8a80 #afeeee #5f9ea0 #4682b4 #7b3513 #bbffbb #b32425 #400040 #55ff55 #ff5600
@@ -30,7 +30,7 @@ plugins/themes and others
 #007799 #434e50 #147272 #292f34 #755757 #2c77a2 #3385a1 #f46c77 #f3c74f #5f4aa1
 #286090 #337ab7 #d9534f #185886 #fdc46d #f46e6a #6f42c1 #fd4f57 #81356c #f16272
 #353840 #5159ac #dea584 #8f3a81 #704390 #5fba7d #2187c9 #f5981b #f79d27 #e99695
-
 #558ed5 #17375e #92d050 #e46c0a #7030a0 #00b050 #62913f #fac090 #9f005c #c0504d
-#333856 #ad5d60 #8f4f4b #1a5950 #034f43 #aa759f #f388af #63c4a4 #c4636b #63c4bf
-#0bc294
+#333856 #ad5d60 #8f4f4b #1a5950 #034f43 #aa759f #f388af #63c4a4 #c4636b #f7cab8
+#0bc294 #f18359 #075858 #1ab4eb #09b89d #ee4c9b #901f5b #f36b24 #1bb1e7 #ef4c9b
+#f48120 #ffa500 #ffd700 #E40083 #FF7F27 #00D7BB #00A6EB #007cba #706f01
