@@ -974,12 +974,24 @@ let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
             \ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
+
+let g:ctrlp_prompt_mappings = { 'PrtExit()': ['<esc>', '<c-c>', '<c-g>'] }
+
+let g:ctrlp_use_caching = 0
+if executable('fd')
+    let g:ctrlp_user_command = 'fd --type f --hidden --color never "" %s'
+    " let g:ctrlp_user_command = 'fd --hidden --color=never "" "%s"'
+    set grepprg=rg\ --color=never
+elseif executable('rg')
+    let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+    set grepprg=rg\ --color=never
+elseif executable('ag')
     let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-else
     set grepprg=ag\ --nogroup\ --nocolor
+else
+    echom "Can\'t find fd/rg/ag executable. CtrlP may be slow!!!"
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+    let g:ctrlp_use_caching = 1
 endif
 
 let g:ctrlp_clear_cache_on_exit = 1
