@@ -26,9 +26,10 @@ function! utils#gitroot()
     let l:path = system("git rev-parse --show-toplevel")
     if v:shell_error
         let g:gitroot=''
-        return ''
+        return g:gitroot
     endif
     let l:path = substitute(l:path, '\n\+$', '', '')
+    let l:path = fnamemodify(l:path, ":~")
     let l:directory = split(l:path,'/')
     let g:gitroot=l:directory[-1]
     " let l:gitroot = join(['[',l:gitroot,']'], '')
@@ -40,8 +41,8 @@ endfunction
 " length
 function! utils#CondensePath(path, maxlen)
     let l:path = a:path
-    let l:len = (a:maxlen - 3)
-    if strlen(a:path) > l:len
+    if strlen(a:path) > a:maxlen
+        let l:len = (a:maxlen - 3)
         let l:path = join(['...', l:path[strlen(a:path)-l:len:]], '')
     endif
     " echom 'condensed path: ' . l:path
