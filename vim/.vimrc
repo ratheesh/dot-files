@@ -57,7 +57,7 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'ratheesh/ctrlp-extensions.vim'
 Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
 Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'dylanaraps/root.vim'
+" Plug 'dylanaraps/root.vim'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
@@ -1059,11 +1059,6 @@ let g:ctrlp_yankring_limit           = 100
 let g:ctrlp_yankring_highlight       = 1
 let g:ctrlp_yankring_use_textchanged = 1
 let g:ctrlp_yankring_minimum_chars   = 2
-" }}}
-
-" root.vim {{{
-let g:root#auto = 1
-let g:root#echo = 0
 " }}}
 
 " vim-ctrlp-ag {{{
