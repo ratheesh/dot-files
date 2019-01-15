@@ -104,7 +104,7 @@ hi cPointerOperator     ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#6
 hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#a580ff   guibg=NONE      gui=NONE
 hi cStructure           ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#ad5d60   guibg=NONE      gui=italic
 hi cType                ctermfg=25      ctermbg=NONE    cterm=italic    guifg=#0088cc   guibg=NONE      gui=italic
-hi cConstant            ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
+hi cConstant            ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
 hi cFormat              ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#458b74   guibg=NONE      gui=NONE
 hi cStatement           ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#bd74d2   guibg=NONE      gui=NONE
 hi cUserFunction        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#cccccc   guibg=NONE      gui=NONE
