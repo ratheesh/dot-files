@@ -828,7 +828,8 @@ function! AirlineInit()
     if !exists('g:gitroot')
         let g:gitroot=''
     endif
-    call airline#parts#define_raw('gitroot', '%{utils#gitroot()}')
+    " call airline#parts#define_raw('gitroot', '%{utils#gitroot()}')
+    call airline#parts#define_raw('gitroot', '%{utils#getprojectname()}')
     call airline#parts#define_accent('gitroot', 'gitroot_color')
     call airline#parts#define_raw('gitroot_[', '%{empty(g:gitroot)? "" : "["}')
     call airline#parts#define_accent('gitroot_[', 'gitroot_paren_color')

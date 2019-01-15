@@ -164,9 +164,9 @@ let g:airline#themes#darkmode#palette.tabline = {
 let g:airline#themes#darkmode#palette.accents = {
             \ 'ft_color'            : [ '#ee4c9b' , '' , 160 , '', 'bold,italic'],
             \ 'tagbar_color'        : [ '#a580ff' , '' , 160 , '', 'none'],
-            \ 'path_color'          : [ '#6faeb0' , '' , 160 , '', 'italic'],
+            \ 'path_color'          : [ '#6faeb0' , '' , 160 , '', ''],
             \ 'modified_color'      : [ '#fa2c07' , '' , 160 , '', 'italic'],
-            \ 'gitroot_color'       : [ '#f7cab8' , '' , 160 , '', ''],
+            \ 'gitroot_color'       : [ '#f7cab8' , '' , 160 , '', 'italic'],
             \ 'gitroot_paren_color' : [ '#fa2c77' , '' , 160 , '', 'bold'],
             \ }
 
