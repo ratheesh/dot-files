@@ -45,7 +45,8 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-abolish'
 Plug 't9md/vim-textmanip'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
@@ -1544,6 +1545,33 @@ call deoplete#custom#source('_', 'converters', [
 " let g:ncm2_tagprefix='[T]'
 " let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 " let $NVIM_PYTHON_LOG_LEVEL="INFO"
+" }}}
+
+" vim-sandwich {{{
+let g:operator_sandwich_no_default_key_mappings = 1
+" Use surround keybinding for now
+runtime macros/sandwich/keymap/surround.vim
+
+" To emulate surround with space(pressing '{','[','(')
+let g:sandwich#recipes += [
+      \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+      \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
+      \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
+      \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['{']},
+      \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['[']},
+      \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
+      \ ]
+
+xmap ib <Plug>(textobj-sandwich-auto-i)
+omap ib <Plug>(textobj-sandwich-auto-i)
+xmap ab <Plug>(textobj-sandwich-auto-a)
+omap ab <Plug>(textobj-sandwich-auto-a)
+
+xmap iq <Plug>(textobj-sandwich-query-i)
+omap iq <Plug>(textobj-sandwich-query-i)
+xmap aq <Plug>(textobj-sandwich-query-a)
+omap aq <Plug>(textobj-sandwich-query-a)
+
 " }}}
 
 " vim-textmanip {{{
