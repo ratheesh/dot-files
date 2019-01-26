@@ -134,6 +134,7 @@ Plug 'machakann/vim-swap' " to swap args
 Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
 Plug 'tommcdo/vim-exchange' " exchange regions
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'haya14busa/vim-operator-flashy'
 
 " writing prose
 Plug 'reedes/vim-pencil'
