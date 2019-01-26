@@ -98,7 +98,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
-Plug 'lambdalisue/suda.vim'
+    Plug 'lambdalisue/suda.vim'
 endif
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -146,9 +146,9 @@ Plug 'reedes/vim-textobj-quote'
 Plug 'beloglazov/vim-online-thesaurus'
 
 Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+            \ 'branch': 'next',
+            \ 'do': 'bash install.sh',
+            \ }
 
 " Shougo's plugins
 Plug 'Shougo/echodoc.vim'
@@ -432,9 +432,9 @@ endif
 " hooks
 " Relative linenumbers disabled in insertmode
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,InsertLeave * set relativenumber
-  autocmd BufLeave,InsertEnter * set norelativenumber
+    autocmd!
+    autocmd BufEnter,InsertLeave * set relativenumber
+    autocmd BufLeave,InsertEnter * set norelativenumber
 augroup END
 
 " highlight command mode text
@@ -1516,17 +1516,17 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " following code works only in ViM for now
 " if !has('nvim')
-    " let g:UltiSnipsExpandTrigger = "<nop>"
-    " inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
+" let g:UltiSnipsExpandTrigger = "<nop>"
+" inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
 " endif
 
 call deoplete#custom#source('_', 'converters', [
-      \ 'converter_remove_paren',
-      \ 'converter_remove_overlap',
-      \ 'converter_truncate_abbr',
-      \ 'converter_truncate_menu',
-      \ 'converter_auto_delimiter',
-      \ ])
+            \ 'converter_remove_paren',
+            \ 'converter_remove_overlap',
+            \ 'converter_truncate_abbr',
+            \ 'converter_truncate_menu',
+            \ 'converter_auto_delimiter',
+            \ ])
 
 " }}}
 
@@ -1561,13 +1561,13 @@ runtime macros/sandwich/keymap/surround.vim
 
 " To emulate surround with space(pressing '{','[','(')
 let g:sandwich#recipes += [
-      \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
-      \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
-      \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
-      \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['{']},
-      \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['[']},
-      \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
-      \ ]
+            \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+            \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
+            \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
+            \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['{']},
+            \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['[']},
+            \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
+            \ ]
 
 xmap ib <Plug>(textobj-sandwich-auto-i)
 omap ib <Plug>(textobj-sandwich-auto-i)
