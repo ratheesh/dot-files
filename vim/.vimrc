@@ -114,6 +114,7 @@ Plug 'vim-scripts/blockquote.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'haya14busa/is.vim'
+Plug 'romainl/vim-cool'
 
 " Custom text objects related
 Plug 'kana/vim-textobj-user'
