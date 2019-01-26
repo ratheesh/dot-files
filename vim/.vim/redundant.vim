@@ -130,6 +130,12 @@
 " Plug 'skywind3000/gutentags_plus'
 " Plug 'lokikl/vim-ctrlp-ag'
 " Plug 'osyo-manga/vim-over'
+" Plug 'Yilin-Yang/vim-markbar'
+" Plug 'jaxbot/selective-undo.vim'
+" Plug 'ratheesh/vim-ctrlp-ag'
+" Plug 'imomaliev/registers.vim'
+" Plug 'saaguero/vim-textobj-pastedtext'
+" Plug 'rhysd/vim-operator-surround'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
