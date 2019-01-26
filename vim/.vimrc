@@ -49,6 +49,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-abolish'
 Plug 't9md/vim-textmanip'
+Plug 'tpope/vim-capslock'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'ratheesh/vim-smooth-scroll'
 Plug 'ctrlpvim/ctrlp.vim'
