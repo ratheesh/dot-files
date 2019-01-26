@@ -111,7 +111,10 @@ Plug 'haya14busa/is.vim'
 Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
+Plug 'vim-scripts/blockquote.vim'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'haya14busa/is.vim'
 
 " Custom text objects related
 Plug 'kana/vim-textobj-user'
