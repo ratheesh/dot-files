@@ -21,7 +21,7 @@
 " CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 " Return project root folder name. This is to mimic projectile plugin in emacs
-function! utils#getprojectname()
+function! utils#getprojectname() abort
     let l:path = s:projroot_guess()
     if !len(l:path)
         let g:gitroot=''
@@ -36,9 +36,18 @@ function! utils#getprojectname()
     return g:gitroot
 endfunction
 
+function! utils#projectpath() abort
+    let l:path = s:projroot_guess()
+    if !len(l:path)
+        return ''
+    else
+        return l:path
+    endif
+endfunction
+
 " This function is adapted from https://github.com/dbakker/vim-projectroot
 " projectroot#guess([file]): guesses and returns the project root
-function! s:projroot_guess(...)
+function! s:projroot_guess(...) abort
     let projroot = s:projroot_get(a:0?a:1:'')
     " echom 'ProjectRoot: '. projroot
     if len(projroot)
@@ -51,7 +60,7 @@ function! s:projroot_guess(...)
     " return !isdirectory(fullfile) ? fnamemodify(fullfile, ':h') : fullfile
 endfunction
 
-function! s:projroot_get(...)
+function! s:projroot_get(...) abort
     let l:rootmarkers = ['.git', '.hg', '.svn', '.bzr']
     let fullfile = s:getfullname(a:0 ? a:1 : '')
     if exists('b:projectroot')
@@ -83,7 +92,7 @@ function! s:projroot_get(...)
     return ''
 endfunction
 
-function! s:getfullname(f)
+function! s:getfullname(f) abort
     let f = a:f
     let f = f=~"'." ? s:getmarkfile(f[1]) : f
     let f = len(f) ? f : expand('%')
@@ -103,7 +112,7 @@ function! s:getmarkfile(mark)
 endfunction
 
 " Return git root folder name. This is to mimic projectile plugin in emacs
-function! utils#gitroot()
+function! utils#gitroot() abort
     let g:gitroot = get(g:, 'gitroot', '')
     let l:path = system("git rev-parse --show-toplevel")
     if v:shell_error
@@ -121,7 +130,7 @@ endfunction
 
 " Condense string to specified character limit - can be used to limit path
 " length
-function! utils#CondensePath(path, maxlen)
+function! utils#CondensePath(path, maxlen) abort
     let l:path = a:path
     if strlen(a:path) > a:maxlen
         let l:len = (a:maxlen - 3)
