@@ -107,7 +107,6 @@ Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
-Plug 'haya14busa/is.vim'
 Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'greymd/oscyank.vim'
