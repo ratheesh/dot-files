@@ -1078,7 +1078,8 @@ let g:ctrlp_yankring_minimum_chars   = 2
 
 " fly-grep {{{
 nnoremap <Space>/ :FlyGrep<cr>
-let g:FlyGrep_input_delay = 1000
+let g:FlyGrep_input_delay=1000
+let g:spacevim_commandline_prompt='==>'
 " }}}
 
 " ctrlp-mark {{{
