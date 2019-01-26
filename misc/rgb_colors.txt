@@ -33,4 +33,5 @@ plugins/themes and others
 #558ed5 #17375e #92d050 #e46c0a #7030a0 #00b050 #62913f #fac090 #9f005c #c0504d
 #333856 #ad5d60 #8f4f4b #1a5950 #034f43 #aa759f #f388af #63c4a4 #c4636b #f7cab8
 #0bc294 #f18359 #075858 #1ab4eb #09b89d #ee4c9b #901f5b #f36b24 #1bb1e7 #ef4c9b
-#f48120 #ffa500 #ffd700 #E40083 #FF7F27 #00D7BB #00A6EB #007cba #706f01
+#f48120 #ffa500 #ffd700 #E40083 #FF7F27 #00D7BB #00A6EB #007cba #706f01 #f0474c
+#e44d4d #3d9e93 #7c32c8 #e84260 #E70788 #866c89 #8db56f #7e4df7 #7c55e1 #f6fc7e
