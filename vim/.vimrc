@@ -1556,7 +1556,10 @@ call deoplete#custom#source('_', 'converters', [
 " }}}
 
 " vim-sandwich {{{
+let g:sandwich_no_default_key_mappings          = 1
 let g:operator_sandwich_no_default_key_mappings = 1
+let g:textobj_sandwich_no_default_key_mappings  = 1
+
 " Use surround keybinding for now
 runtime macros/sandwich/keymap/surround.vim
 
@@ -1570,10 +1573,11 @@ let g:sandwich#recipes += [
             \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
             \ ]
 
-xmap ib <Plug>(textobj-sandwich-auto-i)
-omap ib <Plug>(textobj-sandwich-auto-i)
-xmap ab <Plug>(textobj-sandwich-auto-a)
-omap ab <Plug>(textobj-sandwich-auto-a)
+" Following bindings cause vim-anyblock plugin to misbehave
+" xmap ib <Plug>(textobj-sandwich-auto-i)
+" omap ib <Plug>(textobj-sandwich-auto-i)
+" xmap ab <Plug>(textobj-sandwich-auto-a)
+" omap ab <Plug>(textobj-sandwich-auto-a)
 
 xmap iq <Plug>(textobj-sandwich-query-i)
 omap iq <Plug>(textobj-sandwich-query-i)
