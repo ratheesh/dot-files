@@ -95,7 +95,8 @@ Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
+Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
     Plug 'lambdalisue/suda.vim'
@@ -1724,6 +1725,13 @@ let g:wstrip_auto = 1
 " auto-pairs {{{
 let g:AutoPairsFlyMode            = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
+" }}}
+
+" vim-endwize {{{
+inoremap <silent><CR> <CR><C-r>=endwize#crend()<CR>
+
+let g:endwize_add_info_filetypes = [ 'vim', 'sh', 'zsh', 'c', 'cpp']
+let g:endwize_add_verbose_info_filetypes = [ 'c', 'cpp' ]
 " }}}
 
 " vim-highlightedundo {{{
