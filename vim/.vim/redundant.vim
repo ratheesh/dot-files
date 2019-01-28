@@ -1,3 +1,5 @@
+" Plugins that I have tried and not using in near future
+
 " Plug 'junegunn/seoul256.vim'
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -136,6 +138,12 @@
 " Plug 'imomaliev/registers.vim'
 " Plug 'saaguero/vim-textobj-pastedtext'
 " Plug 'rhysd/vim-operator-surround'
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+" Plug 'boucherm/ShowMotion'
+" Plug 'ratheesh/vim-bling'
+" Plug 'thirtythreeforty/lessspace.vim'
+" Plug 'mhinz/vim-signify'
+" Plug 'dylanaraps/root.vim'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
@@ -150,3 +158,5 @@
 " Plug 'sdiehl/haskell-vim-proto'
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'eagletmt/neco-ghc'
+
+" End of File
