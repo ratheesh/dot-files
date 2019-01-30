@@ -111,6 +111,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'haya14busa/is.vim'
 Plug 'romainl/vim-cool'
+Plug 'gelguy/Cmd2.vim'
 
 " Custom text objects related
 Plug 'kana/vim-textobj-user'
@@ -1817,6 +1818,48 @@ noremap <leader>y :Oscyank<CR>
 
 " vim-table-mode {{{
 let g:table_mode_corner_corner='+'
+" }}}
+
+" Cmd2 {{{
+let g:Cmd2_cursor_blink = 0
+
+nmap : :<F6>
+nmap / /<F6>
+nmap ? ?<F6>
+cmap <F6> <Plug>(Cmd2Suggest)
+
+function! s:Peekaboo()
+    call peekaboo#peek(1, 'ctrl-r',  0)
+endfunction
+
+let g:Cmd2_cmd_mappings = {
+            \ 'iw': {'command': 'iw', 'type': 'text', 'flags': 'Cpv'},
+            \ 'ap': {'command': 'ap', 'type': 'line', 'flags': 'pv'},
+            \ '^' : {'command': '^', 'type': 'normal!', 'flags': 'r'},
+            \ 'w' : {'command': 'Cmd2#functions#Cword',
+            \ 'type': 'function', 'flags': 'Cr'},
+            \ 'Peekaboo': {'command': function('s:Peekaboo'), 'type': 'function'},
+            \ }
+cmap <C-R> <Plug>(Cmd2)Peekaboo
+
+let g:Cmd2_options = {
+            \ '_complete_ignorecase'      : 1,
+            \ '_complete_uniq_ignorecase' : 0,
+            \ '_quicksearch_ignorecase'   : 1,
+            \ '_complete_start_pattern'   : '\<\(\k\+\(_\|\#\)\)\?',
+            \ '_complete_fuzzy'           : 1,
+            \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
+            \ 'menu_hl'                   : 'airline_x',
+            \ 'menu_selected_hl'          : 'airline_y',
+            \ 'menu_separator_hl'         : 'airline_x',
+            \ }
+
+" <Tab>: Perform completion using Cmd2.
+cmap <expr> <Tab> Cmd2#ext#complete#InContext() ?
+            \ '\<Plug>(Cmd2Complete)' :
+            \ '\<Tab>'
+set wildcharm=<Tab>
+
 " }}}
 
 " vim-bling {{{
