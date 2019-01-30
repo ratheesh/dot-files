@@ -596,13 +596,13 @@ xmap <silent><Leader><BS> <c-v>
 nmap <Leader>; :
 xmap <Leader>; :
 
-" map <F9>                  :bprev<CR>
-" map <F10>                 :bnext<CR>
-map <F4>                    :echo expand('%:p')<CR>
-nmap <silent><Leader>bd     :bdelete<CR>
-nmap <silent><BS>           :nohlsearch<CR>
-nmap <silent><Leader>bh     :Startify<CR>
-" nmap <silent><Leader><Tab>  :b#<CR>
+" nnoremap <F9>                  :bprev<CR>
+" nnoremap <F10>                 :bnext<CR>
+noremap <F4>                    :echo expand('%:p')<CR>
+nnoremap <silent><Leader>bd     :bdelete<CR>
+nnoremap <silent><BS>           :nohlsearch<CR>
+nnoremap <silent><Leader>bh     :Startify<CR>
+" nnoremap <silent><Leader><Tab>  :b#<CR>
 " nnoremap <Leader>[        :let @+ = expand("%")<CR>
 
 " visual indentation (does not exit Visual mode after indentation)
@@ -645,7 +645,7 @@ let g:tagbar_indent           = 1
 let g:tagbar_expand           = 0
 let g:tagbar_show_linenumbers = 0
 let g:tagbar_autoshowtag      = 1
-nmap <silent><F8>            :TagbarToggle<CR>
+nnoremap <silent><F8>            :TagbarToggle<CR>
 " nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
 " }}}
 
@@ -747,14 +747,14 @@ autocmd FileType python BracelessEnable +indent +highlight
 
 " yankmatches {{{
 let g:YankMatches#ClipboardRegister='a'
-nmap <silent><Leader>dm    :call ForAllMatches('delete', {})<CR>
-nmap <silent><Leader>di    :call ForAllMatches('delete', {'inverse':1})<CR>
-nmap <silent><Leader>ym    :call ForAllMatches('yank',   {})<CR>
-nmap <silent><Leader>yi    :call ForAllMatches('yank',   {'inverse':1})<CR>
-vmap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1})<CR>
-vmap <silent><Leader>di    :<C-U>call ForAllMatches('delete', {'visual':1, 'inverse':1})<CR>
-vmap <silent><Leader>ym    :<C-U>call ForAllMatches('yank',   {'visual':1})<CR>
-vmap <silent><Leader>yi    :<C-U>call ForAllMatches('yank',   {'visual':1, 'inverse':1})<CR>
+nnoremap <silent><Leader>dm    :call ForAllMatches('delete', {})<CR>
+nnoremap <silent><Leader>di    :call ForAllMatches('delete', {'inverse':1})<CR>
+nnoremap <silent><Leader>ym    :call ForAllMatches('yank',   {})<CR>
+nnoremap <silent><Leader>yi    :call ForAllMatches('yank',   {'inverse':1})<CR>
+vnoremap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1})<CR>
+vnoremap <silent><Leader>di    :<C-U>call ForAllMatches('delete', {'visual':1, 'inverse':1})<CR>
+vnoremap <silent><Leader>ym    :<C-U>call ForAllMatches('yank',   {'visual':1})<CR>
+vnoremap <silent><Leader>yi    :<C-U>call ForAllMatches('yank',   {'visual':1, 'inverse':1})<CR>
 " }}}
 
 " Doxygen {{{
@@ -1665,29 +1665,29 @@ let g:NERDCommentEmptyLines      = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 if has('nvim')
-    nmap <silent><M-;>  :call NERDComment("n", "Append")<CR>
+    nnoremap <silent><M-;>  :call NERDComment("n", "Append")<CR>
 else
-    nmap <silent>;    :call NERDComment("n", "Append")<CR>
+    nnoremap <silent>;    :call NERDComment("n", "Append")<CR>
 endif
 
-nmap <silent><Leader>cc :call NERDComment("n", "Comment")<CR>
-xmap <silent><Leader>cc :call NERDComment("x", "Comment")<CR>
+nnoremap <silent><Leader>cc :call NERDComment("n", "Comment")<CR>
+xnoremap <silent><Leader>cc :call NERDComment("x", "Comment")<CR>
 
-nmap <silent><Leader>cu :call NERDComment("n", "Uncomment")<CR>
-xmap <silent><Leader>cu :call NERDComment("x", "Uncomment")<CR>
+nnoremap <silent><Leader>cu :call NERDComment("n", "Uncomment")<CR>
+xnoremap <silent><Leader>cu :call NERDComment("x", "Uncomment")<CR>
 
-nmap <silent><Leader>ci :call NERDComment("n", "Invert")<CR>
-xmap <silent><Leader>ci :call NERDComment("x", "Invert")<CR>
+nnoremap <silent><Leader>ci :call NERDComment("n", "Invert")<CR>
+xnoremap <silent><Leader>ci :call NERDComment("x", "Invert")<CR>
 
-nmap <silent><Leader>cs :call NERDComment("n", "Sexy")<CR>
-xmap <silent><Leader>cs :call NERDComment("x", "Sexy")<CR>
+nnoremap <silent><Leader>cs :call NERDComment("n", "Sexy")<CR>
+xnoremap <silent><Leader>cs :call NERDComment("x", "Sexy")<CR>
 
-nmap <silent><Leader>ct :call NERDComment("n", "Toggle")<CR>
-xmap <silent><Leader>ct :call NERDComment("x", "Toggle")<CR>
+nnoremap <silent><Leader>ct :call NERDComment("n", "Toggle")<CR>
+xnoremap <silent><Leader>ct :call NERDComment("x", "Toggle")<CR>
 
 " this does not work on ftypes that does not support multipart delimiters
-nmap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
-xmap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
+nnoremap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
+xnoremap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
 " }}}
 
 " vim-better-whitespace {{{
@@ -1939,8 +1939,8 @@ function! ToggleList(bufname, pfx)
     endif
 endfunction
 
-" nmap <silent><leader>tl :call ToggleList("Location List", 'l')<CR>
-" nmap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
+" nnoremap <silent><leader>tl :call ToggleList("Location List", 'l')<CR>
+" nnoremap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
 
 " }}}
 
