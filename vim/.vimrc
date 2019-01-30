@@ -1565,6 +1565,10 @@ omap aq <Plug>(textobj-sandwich-query-a)
 
 " }}}
 
+" vim-textobj-anyblock {{{
+let g:textobj#anyblock#blocks = [ '(', '{', '[', '"', "'"]
+" }}}
+
 " vim-textmanip {{{
 " xmap <Leader>dd <Plug>(textmanip-duplicate-down)
 " nmap <Leader>dd <Plug>(textmanip-duplicate-down)
