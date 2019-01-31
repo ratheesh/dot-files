@@ -113,6 +113,7 @@ Plug 'haya14busa/is.vim'
 Plug 'romainl/vim-cool'
 Plug 'gelguy/Cmd2.vim'
 
+Plug 'kana/vim-submode'
 " Custom text objects related
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-user'
@@ -1865,6 +1866,44 @@ cmap <expr> <Tab> Cmd2#ext#complete#InContext() ?
 set wildcharm=<Tab>
 
 " }}}
+
+" vim-submode {{{
+let g:submode_always_show_submode = 1
+let g:submode_keyseqs_to_leave    = ['<Esc>']
+let g:submode_timeout             = 0
+
+" Submode for Gitgutter plugin -> navigate next/prev hunk using j/k keys
+call submode#enter_with('git-gutter', 'n', 'r', '<leader>gn', '<Plug>GitGutterNextHunk')
+call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<Plug>GitGutterPrevHunk')
+call submode#leave_with('git-gutter', 'n', '', '<Esc>')
+call submode#map('git-gutter', 'n', 'r', 'j', '<Plug>GitGutterNextHunk')
+call submode#map('git-gutter', 'n', 'r', 'k', '<Plug>GitGutterPrevHunk')
+
+" Submode for undo/redo with g-/+ -> use -/= to undo and redo
+call submode#enter_with('undo/redo', 'n', '', 'g-', 'g-')
+call submode#enter_with('undo/redo', 'n', '', 'g+', 'g+')
+call submode#leave_with('undo/redo', 'n', '', '<Esc>')
+call submode#map('undo/redo', 'n', '', '-', 'g-')
+call submode#map('undo/redo', 'n', '', '=', 'g+')
+
+" Submode for textmanip plugin(visual mode) for moving line/region with h/j/k/l
+call submode#enter_with('textmanip', 'x', 'r', '<M-j>', '<Plug>(textmanip-move-down)')
+call submode#enter_with('textmanip', 'x', 'r', '<M-k>', '<Plug>(textmanip-move-up)')
+call submode#enter_with('textmanip', 'x', 'r', '<M-h>', '<Plug>(textmanip-move-left)')
+call submode#enter_with('textmanip', 'x', 'r', '<M-l>', '<Plug>(textmanip-move-right)')
+call submode#leave_with('textmanip', 'x', '', '<Esc>')
+call submode#map('textmanip', 'x', 'r', 'j', '<Plug>(textmanip-move-down)')
+call submode#map('textmanip', 'x', 'r', 'k', '<Plug>(textmanip-move-up)')
+call submode#map('textmanip', 'x', 'r', 'h', '<Plug>(textmanip-move-left)')
+call submode#map('textmanip', 'x', 'r', 'l', '<Plug>(textmanip-move-right)')
+
+" Submode for switching buffers. Use h/l to navigate between neighboring buffers
+call submode#enter_with('buf-nav', 'n', 'r', '<leader>h', '<Plug>AirlineSelectPrevTab')
+call submode#enter_with('buf-nav', 'n', 'r', '<leader>l', '<Plug>AirlineSelectNextTab')
+call submode#leave_with('buf-nav', 'n', '', '<Esc>')
+call submode#map('buf-nav', 'n', 'r', 'h', '<Plug>AirlineSelectPrevTab')
+call submode#map('buf-nav', 'n', 'r', 'l', '<Plug>AirlineSelectNextTab')
+"}}}
 
 " vim-bling {{{
 let g:bling_time         = 175
