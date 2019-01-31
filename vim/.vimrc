@@ -1856,7 +1856,7 @@ let g:Cmd2_options = {
             \ '_complete_fuzzy'           : 1,
             \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
             \ 'menu_hl'                   : 'airline_x',
-            \ 'menu_selected_hl'          : 'airline_y',
+            \ 'menu_selected_hl'          : 'WildMenu',
             \ 'menu_separator_hl'         : 'airline_x',
             \ }
 
