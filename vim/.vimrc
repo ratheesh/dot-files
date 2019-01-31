@@ -1712,6 +1712,7 @@ let g:wstrip_auto = 1
 
 " auto-pairs {{{
 let g:AutoPairsFlyMode            = 1
+let g:AutoPairsMultilineClose     = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 " }}}
 
