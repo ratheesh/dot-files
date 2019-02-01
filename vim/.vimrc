@@ -1832,6 +1832,9 @@ let g:Cmd2_cursor_blink = 0
 nmap : :<F6>
 nmap / /<F6>
 nmap ? ?<F6>
+xmap : :<F6>
+" xmap / /<F6>
+xmap ? ?<F6>
 cmap <F6> <Plug>(Cmd2Suggest)
 
 function! s:Peekaboo()
