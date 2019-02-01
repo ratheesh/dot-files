@@ -1902,11 +1902,18 @@ call submode#map('textmanip', 'x', 'r', 'h', '<Plug>(textmanip-move-left)')
 call submode#map('textmanip', 'x', 'r', 'l', '<Plug>(textmanip-move-right)')
 
 " Submode for switching buffers. Use h/l to navigate between neighboring buffers
-call submode#enter_with('buf-nav', 'n', 'r', '<leader>h', '<Plug>AirlineSelectPrevTab')
-call submode#enter_with('buf-nav', 'n', 'r', '<leader>l', '<Plug>AirlineSelectNextTab')
-call submode#leave_with('buf-nav', 'n', '', '<Esc>')
-call submode#map('buf-nav', 'n', 'r', 'h', '<Plug>AirlineSelectPrevTab')
-call submode#map('buf-nav', 'n', 'r', 'l', '<Plug>AirlineSelectNextTab')
+" call submode#enter_with('buf-nav', 'n', 'r', '<leader>h', '<Plug>AirlineSelectPrevTab')
+" call submode#enter_with('buf-nav', 'n', 'r', '<leader>l', '<Plug>AirlineSelectNextTab')
+" call submode#leave_with('buf-nav', 'n', '', '<Esc>')
+" call submode#map('buf-nav', 'n', 'r', 'h', '<Plug>AirlineSelectPrevTab')
+" call submode#map('buf-nav', 'n', 'r', 'l', '<Plug>AirlineSelectNextTab')
+
+" Submode for navigating marks. Use j/k to navigate between marks
+call submode#enter_with('marks', 'n', 'r', '<leader>mn', ']`')
+call submode#enter_with('marks', 'n', 'r', '<leader>mp', '[`')
+call submode#leave_with('marks', 'n', '', '<Esc>')
+call submode#map('marks', 'n', 'r', 'j', ']`')
+call submode#map('marks', 'n', 'r', 'k', '[`')
 "}}}
 
 " vim-bling {{{
