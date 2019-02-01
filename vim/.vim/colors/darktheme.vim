@@ -40,8 +40,8 @@ hi ParenError   ctermfg=NONE    ctermbg=NONE    cterm=underline,bold
 hi Braces       ctermfg=NONE    ctermbg=NONE    cterm=bold,underline
 hi StatusLine   ctermfg=7       ctermbg=236     cterm=NONE              guifg=#f8f8f2   guibg=#383a4c   gui=NONE
 hi StatusLineNC ctermfg=7       ctermbg=236     cterm=NONE              guifg=#f8f8f2   guibg=#64666d   gui=NONE
-hi IncSearch    ctermfg=NONE    ctermbg=238     cterm=NONE              guifg=NONE      guibg=#44454a   gui=NONE
-hi Search       ctermfg=7       ctermbg=238     cterm=NONE              guifg=NONE      guibg=#44454a   gui=NONE
+hi IncSearch    ctermfg=NONE    ctermbg=238     cterm=NONE              guifg=NONE      guibg=#3a455e   gui=NONE
+hi Search       ctermfg=7       ctermbg=238     cterm=NONE              guifg=NONE      guibg=#3a455e   gui=NONE
 hi ExtSearch    ctermfg=9       ctermbg=NONE    cterm=underline         guifg=#f92a5b   guibg=NONE      gui=bold,underline
 hi Directory    ctermfg=141     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Folded       ctermfg=61      ctermbg=235     cterm=NONE              guifg=#6272a4   guibg=#282a36   gui=NONE
@@ -73,7 +73,8 @@ hi Todo         ctermfg=61      ctermbg=NONE    cterm=inverse,bold      guifg=#6
 hi Title        ctermfg=7       ctermbg=NONE    cterm=bold              guifg=#f8f8f2   guibg=NONE      gui=bold
 hi Type         ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6494ed   guibg=NONE      gui=NONE
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
-hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#a3495b   gui=NONE
+hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
+hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#5f9ea0   gui=italic
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -116,7 +117,7 @@ hi c89Macro             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#f
 hi cString              ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#7a8a80   guibg=NONE      gui=italic
 hi cCppOutWrapper       ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#008080   guibg=NONE      gui=NONE
 hi cCppInWrapper        ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#008080   guibg=NONE      gui=NONE
-hi cAnsiFunction        ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#ebcb85   guibg=NONE      gui=NONE
+" hi cAnsiFunction        ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#ebcb85   guibg=NONE      gui=NONE
 " hi cCppOutIf2           ctermfg=172     ctermbg=NONE    cterm=NONE    guifg=#bc8f8f     guibg=NONE      gui=NONE
 " }}}
 
