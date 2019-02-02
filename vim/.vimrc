@@ -1446,7 +1446,7 @@ call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 " call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 
 " Disable the candidates in Comment/String syntaxes.
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+" call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 
 call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
 call deoplete#custom#source('clangx'         , 'mark' , '[CLang')
