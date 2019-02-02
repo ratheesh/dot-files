@@ -2008,6 +2008,8 @@ nnoremap <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> t
 " Use guicolors in terminal (we need to place this here as it is easy to disable!)
 if has("termguicolors")
     set termguicolors
+else
+    echom "24Bit colors are not supported in this ViM!"
 endif
 
 if has('nvim')
