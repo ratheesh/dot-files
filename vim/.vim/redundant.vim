@@ -144,6 +144,8 @@
 " Plug 'thirtythreeforty/lessspace.vim'
 " Plug 'mhinz/vim-signify'
 " Plug 'dylanaraps/root.vim'
+" Plug 'inside/vim-search-pulse'
+" Plug 'kana/vim-submode'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
