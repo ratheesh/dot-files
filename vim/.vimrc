@@ -1408,28 +1408,28 @@ if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
 let g:deoplete#enable_refresh_always        = 1
-let g:deoplete#auto_complete_delay          = 100
-let g:deoplete#auto_refresh_delay           = 100
+let g:deoplete#auto_complete_delay          = 30
+let g:deoplete#auto_refresh_delay           = 30
 " let g:deoplete#auto_complete_start_length   = 3
 " let g:deoplete#enable_ignore_case         = 1
 " let g:deoplete#enable_smart_case          = 1
 " let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path      = 1
-let g:deoplete#max_list                     = 50
+let g:deoplete#max_list                     = 100
 let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
 " let g:deoplete#complete_method              = "completefunc"
 let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 10,
+            \ 'auto_complete_delay' : 30,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
             \ 'complete_method'     : 'omnifunc',
             \ 'min_pattern_length'  : 2,
             \ 'async_timeout'       : 100,
             \ 'refresh_always'      : v:true,
-            \ 'num_processes'       : 0,
+            \ 'num_processes'       : 2,
             \ })
 
 " call deoplete#custom#option('refresh_always', v:true)
@@ -1502,11 +1502,11 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
 " endif
 
+" \ 'converter_remove_overlap',
+" \ 'converter_truncate_menu',
+" \ 'converter_truncate_abbr',
 call deoplete#custom#source('_', 'converters', [
             \ 'converter_remove_paren',
-            \ 'converter_remove_overlap',
-            \ 'converter_truncate_abbr',
-            \ 'converter_truncate_menu',
             \ 'converter_auto_delimiter',
             \ ])
 
