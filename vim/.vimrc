@@ -950,7 +950,7 @@ let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow# ➜ %#AnzuSearchObj#%p
 
 " This command is an overridden one to make sure other one works if this plugin
 " is disabled
-nmap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
+nnoremap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}
 
 " Vim-licenses {{{
