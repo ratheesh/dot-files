@@ -945,7 +945,8 @@ nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 " let g:anzu_status_format = "%p(%i/%l) %w"
 let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow# ➜ %#AnzuSearchObj#%p
-            \%#AnzuParen#(%#AnzuSearchCnt#%i%#AnzuSeparator#/%#AnzuSearchCnt#%l%#AnzuParen#)%#None#"
+            \ %#AnzuParen#(%#AnzuSearchCnt#%i%#AnzuSeparator#/%#AnzuSearchTotalCnt
+            \ #%l%#AnzuParen#)%#None#"
 
 " This command is an overridden one to make sure other one works if this plugin
 " is disabled

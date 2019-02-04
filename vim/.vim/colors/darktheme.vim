@@ -212,8 +212,9 @@ hi AnzuNormal               ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=
 hi AnzuArrow                ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#fb091f  guibg=NONE   gui=bold
 hi AnzuSearchObj            ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=bold,italic
 hi AnzuSeparator            ctermfg=172     ctermbg=NONE    cterm=NONE    guifg=#ceab5a  guibg=NONE   gui=NONE
-hi AnzuSearchCnt            ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#5f9ea0  guibg=NONE   gui=NONE
-hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=#aaaaaa  guibg=NONE   gui=NONE
+hi AnzuSearchCnt            ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#f399af  guibg=NONE   gui=NONE
+hi AnzuSearchTotalCnt       ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#27b062  guibg=NONE   gui=NONE
+hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=#fa2c77  guibg=NONE   gui=NONE
 " }}}
 
 " ale {{{
