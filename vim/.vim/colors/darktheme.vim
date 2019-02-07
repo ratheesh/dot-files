@@ -194,6 +194,10 @@ hi WhichKeyGroup            ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=
 hi WhichKeyDesc             ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
 " }}}
 
+" vim-matchup {{{
+hi MatchWord                ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#fa2c77  guibg=NONE   gui=italic,underline
+" }}}
+
 " ShowMotion {{{
 highlight SM_SmallMotionGroup ctermfg=231 ctermbg=53 cterm=italic,bold,underline
 highlight SM_BigMotionGroup   ctermfg=231 ctermbg=54 cterm=italic,bold,underline

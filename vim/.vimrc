@@ -112,6 +112,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'haya14busa/is.vim'
 Plug 'romainl/vim-cool'
 Plug 'gelguy/Cmd2.vim'
+Plug 'andymass/vim-matchup'
 
 Plug 'kana/vim-submode'
 " Custom text objects related
@@ -196,9 +197,9 @@ set number relativenumber
 if !has('nvim')
     set noesckeys
     if v:version >= 800
-        packadd! matchit
+        " packadd! matchit
     else
-        runtime macros/matchit.vim
+        " runtime macros/matchit.vim
     endif
 endif
 
@@ -1870,6 +1871,10 @@ cmap <expr> <Tab> Cmd2#ext#complete#InContext() ?
             \ '\<Tab>'
 set wildcharm=<Tab>
 
+" }}}
+
+" vim-matchup {{{
+let b:matchup_matchparen_enabled = 0
 " }}}
 
 " vim-submode {{{
