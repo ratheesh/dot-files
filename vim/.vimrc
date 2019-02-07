@@ -1883,6 +1883,7 @@ call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<Plug>GitGutterPr
 call submode#leave_with('git-gutter', 'n', '', '<Esc>')
 call submode#map('git-gutter', 'n', 'r', 'j', '<Plug>GitGutterNextHunk')
 call submode#map('git-gutter', 'n', 'r', 'k', '<Plug>GitGutterPrevHunk')
+call submode#map('git-gutter', 'n', 'r', '.', '.')
 
 " Submode for undo/redo with g-/+ -> use -/= to undo and redo
 call submode#enter_with('undo/redo', 'n', '', 'g-', 'g-')
