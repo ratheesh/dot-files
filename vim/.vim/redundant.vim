@@ -146,6 +146,9 @@
 " Plug 'dylanaraps/root.vim'
 " Plug 'inside/vim-search-pulse'
 " Plug 'kana/vim-submode'
+" Plug 'mg979/vim-visual-multi'
+" Plug 'machakann/vim-multiselect'
+" Plug 'coderifous/textobj-word-column.vim'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'

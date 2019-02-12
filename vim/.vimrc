@@ -124,7 +124,6 @@ Plug 'kana/vim-textobj-indent'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'rhysd/vim-textobj-conflict'  " i/a =
 Plug 'anyakichi/vim-textobj-ifdef' " i/a #
-Plug 'coderifous/textobj-word-column.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'augustold/vim-custom-surround'
 Plug 'kana/vim-textobj-line'
