@@ -311,7 +311,7 @@ set fillchars+=vert:\│,fold:-
 set list
 " set listchars=eol:¬,trail:·,extends:❯,precedes:❮
 " set listchars=trail:·,extends:❯,precedes:❮
-set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:¦\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set fillchars+=diff:⣿
 set completeopt+=preview
 set cscopetag
