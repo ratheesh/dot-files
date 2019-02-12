@@ -75,6 +75,7 @@ hi Type         ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
 hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#5f9ea0   gui=italic
+hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#383a4c   guibg=NONE      gui=NONE
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -134,6 +135,7 @@ hi pythonExtraOperator     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg
 hi pythonOperator          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ceab5a   guibg=NONE      gui=italic
 hi pythonException         ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#70bb70   guibg=NONE      gui=italic
 hi pythonParam             ctermfg=7       ctermbg=233     cterm=NONE      guifg=#cccccc   guibg=NONE      gui=NONE
+hi pythonBuiltinFunc       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#7c32c8   guibg=NONE      gui=NONE
 " }}}
 
 " Make {{{
@@ -215,10 +217,10 @@ hi SignifySignChangeDelete    ctermfg=94     ctermbg=233   cterm=bold  guifg=#ff
 hi AnzuNormal               ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#f7ca88  guibg=NONE   gui=NONE
 hi AnzuArrow                ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#fb091f  guibg=NONE   gui=bold
 hi AnzuSearchObj            ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=bold,italic
-hi AnzuSeparator            ctermfg=172     ctermbg=NONE    cterm=NONE    guifg=#ceab5a  guibg=NONE   gui=NONE
+hi AnzuSeparator            ctermfg=172     ctermbg=NONE    cterm=NONE    guifg=#00bbff  guibg=NONE   gui=bold
 hi AnzuSearchCnt            ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#f399af  guibg=NONE   gui=NONE
-hi AnzuSearchTotalCnt       ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#27b062  guibg=NONE   gui=NONE
-hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=#fa2c77  guibg=NONE   gui=NONE
+hi AnzuSearchTotalCnt       ctermfg=32      ctermbg=NONE    cterm=NONE    guifg=#857073  guibg=NONE   gui=bold
+hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=#a3495b  guibg=NONE   gui=bold
 " }}}
 
 " ale {{{
@@ -324,15 +326,15 @@ hi peekabooSelected     ctermfg=180 ctermbg=237   cterm=NONE guifg=#f4a460  guib
 " }}}
 
 " Startify {{{
-hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#808080   guibg=NONE    gui=NONE
+hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#eb949b   guibg=NONE    gui=NONE
 hi StartifySelect       ctermfg=NONE    ctermbg=235     cterm=NONE      guifg=NONE      guibg=#303030 gui=NONE
-hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#367bf0   guibg=NONE    gui=NONE
+hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#808080   guibg=NONE    gui=NONE
 hi StartifySpecial      ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#cd5c5c   guibg=NONE    gui=NONE
 hi StartifyPath         ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#64648a   guibg=NONE    gui=NONE
 hi StartifyFile         ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#1d8d77   guibg=NONE    gui=NONE
 hi StartifySlash        ctermfg=103     ctermbg=NONE    cterm=bold      guifg=#897588   guibg=NONE    gui=NONE
-hi StartifyHeader       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#268bd2   guibg=NONE    gui=NONE
-hi StartifySection      ctermfg=142     ctermbg=NONE    cterm=NONE      guifg=#bb3e79   guibg=NONE    gui=NONE
+hi StartifyHeader       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#bb3e79   guibg=NONE    gui=NONE
+hi StartifySection      ctermfg=142     ctermbg=NONE    cterm=NONE      guifg=#00afdb   guibg=NONE    gui=italic
 hi StartifyFooter       ctermfg=6       ctermbg=NONE    cterm=NONE      guifg=#a0a0a0   guibg=NONE    gui=NONE
 " }}}
 

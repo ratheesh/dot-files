@@ -154,11 +154,11 @@ let g:airline#themes#darkmode#palette.replace_modified = {
 " #5e6e99
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : [ s:guiWhite, '#5e6e99' , 253 , 60  , 'none' ],
-            \ 'airline_tabsel'  : [ s:guiWhite, '#007791' , 0   , 66  , 'italic' ],
+            \ 'airline_tabsel'  : [ s:guiBlack, '#5f9ea0' , 0   , 66  , 'italic' ],
             \ 'airline_tabfill' : [ s:guiWhite, '#383a4c' , 188 , 235 , 'none' ],
             \ 'airline_tabmod'  : [ s:guiWhite, '#3e8c75' ,  15 , 89  , 'none' ],
             \ 'airline_tabhid'  : [ '#a0a0a0' , '#383a4c' , 103 , 235 , 'none' ],
-            \ 'airline_tablabel': [ '#f7cab8' ,  s:gui02  , 253 , 125 , 'italic' ],
+            \ 'airline_tablabel': [ '#fcb05d' ,  s:gui02  , 253 , 125 , 'italic' ],
             \ }
 
 let g:airline#themes#darkmode#palette.accents = {
@@ -175,7 +175,7 @@ augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 autocmd!
 autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#a3495b  gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#e0e0e0    guibg=#62913f  gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#e0e0e0    guibg=#208860  gui=NONE
 augroup END
 
 " CtrlP customization
