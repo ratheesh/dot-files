@@ -113,6 +113,7 @@ Plug 'haya14busa/is.vim'
 Plug 'romainl/vim-cool'
 Plug 'gelguy/Cmd2.vim'
 Plug 'andymass/vim-matchup'
+Plug 'fvictorio/vim-yank-queue'
 
 Plug 'kana/vim-submode'
 " Custom text objects related
