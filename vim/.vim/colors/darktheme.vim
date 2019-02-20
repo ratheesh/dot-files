@@ -75,7 +75,7 @@ hi Type         ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
 hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#5f9ea0   gui=italic
-hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#383a4c   guibg=NONE      gui=NONE
+hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#505050   guibg=NONE      gui=NONE
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -93,7 +93,8 @@ hi cOperator            ctermfg=62      ctermbg=NONE    cterm=NONE      guifg=#7
 hi cInclude             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ad64c2   guibg=NONE      gui=NONE
 hi cIncluded            ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#98a379   guibg=NONE      gui=NONE
 hi cDefine              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0   guibg=NONE      gui=NONE
-hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#d19a66   guibg=NONE      gui=NONE
+hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#eb4a9c   guibg=NONE      gui=NONE
+hi cppNumber            ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#eb4a9c   guibg=NONE      gui=NONE
 hi cCommentError        ctermfg=240     ctermbg=NONE    cterm=NONE      guifg=#cc0000   guibg=NONE      gui=NONE
 hi cParenError          ctermfg=240     ctermbg=NONE    cterm=NONE      guifg=NONE      guibg=NONE      gui=NONE
 hi cParen               ctermfg=240     ctermbg=NONE    cterm=NONE      guifg=NONE      guibg=NONE      gui=NONE
