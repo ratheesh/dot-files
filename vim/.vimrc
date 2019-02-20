@@ -153,10 +153,10 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'Shougo/echodoc.vim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
 else
     Plug 'Shougo/deoplete.nvim'
-    Plug 'Shougo/denite.nvim'
+    " Plug 'Shougo/denite.nvim'
 
     " Following are required for deoplete to work in ViM
     Plug 'roxma/nvim-yarp'
@@ -1072,62 +1072,6 @@ let g:spacevim_commandline_prompt='==>'
 " ctrlp-mark {{{
 " leaveout all except alphabhets
 let g:ctrlp_mark_match_string = 'v:val !~ "^ \\(\\W\\|\\d\\).*"'
-" }}}
-
-" denite {{{
-
-" reset 50% winheight on window resize
-augroup deniteresize
-    autocmd!
-    autocmd VimResized,VimEnter * call denite#custom#option('default',
-                \'winheight', winheight(0) / 3)
-augroup end
-
-call denite#custom#option('default', {
-            \ 'prompt'                :  '➜ ',
-            \ 'auto-accel'            :  v:true,
-            \ 'auto-highlight'        :  v:true,
-            \ 'mode'                  :  'normal',
-            \ 'root-markers'          :  '.git,.hg,.svn',
-            \ 'smartcase'             :  v:true,
-            \ 'highlight_mode_normal' :  'DeniteNormalHLLine',
-            \ 'prompt_highlight'      :  'DenitePrompt',
-            \ })
-
-call denite#custom#var('file_rec', 'command',
-            \ ['rg', '--files', '--glob', '!.git', ''])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-            \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
-            \'noremap')
-call denite#custom#map('normal', '<Esc>', '<NOP>',
-            \'noremap')
-call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
-            \'noremap')
-call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
-            \'noremap')
-call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
-            \'noremap')
-
-nnoremap <silent><Leader>do   :P<C-u>Denite file_rec -mode=insert<CR>
-nnoremap <silent><Leader>db   :<C-u>Denite buffer -mode=normal<CR>
-nnoremap <silent><Leader>dd   :P<C-u>DeniteCursorWord grep<CR>
-nnoremap <silent><Leader>d/   :P<C-u>DeniteProjectDir grep<CR>
-nnoremap <silent><Leader>dp   :<C-u>Denite register -mode=normal<CR>
-nnoremap <silent><Leader>dl   :<C-u>Denite location_list -no-empty<CR>
-nnoremap <silent><Leader>du   :<C-u>Denite file_mru<CR>
-nnoremap <silent><Leader>dy   :<C-u>Denite neoyank<CR>
-nnoremap <silent><Leader>dr   :<C-u>Denite -resume<CR>
-" nnoremap <silent><leader>ds   :<C-u>Denite history:search -mode=normal<CR>
-" nnoremap <silent><leader>dc   :<C-u>Denite history:cmd -mode=normal<CR>
-
-hi link deniteMatchedChar Special
-
 " }}}
 
 " vim-startify {{{
