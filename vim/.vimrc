@@ -57,7 +57,6 @@ Plug 'ratheesh/ctrlp_bdelete.vim'
 Plug 'mattn/ctrlp-register'
 Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'ratheesh/ctrlp-extensions.vim'
-Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'shinnya/ctrlp-jumplist'
@@ -996,8 +995,6 @@ let g:ctrlp_match_window = 'min:1,max:15,results:2000'
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_match_current_file = 0
-
-" let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 
 " let g:ctrlp_map             = '<Leader>p'
 let g:ctrlp_cmd               = 'CtrlPBuffer'
