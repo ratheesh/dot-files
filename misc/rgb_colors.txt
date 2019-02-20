@@ -36,6 +36,6 @@ plugins/themes and others
 #f48120 #ffa500 #ffd700 #E40083 #FF7F27 #00D7BB #00A6EB #007cba #706f01 #f0474c
 #e44d4d #3d9e93 #7c32c8 #e84260 #E70788 #866c89 #8db56f #7e4df7 #7c55e1 #f6fc7e
 #fd5866 #e56660 #78909c #283242 #cc6677 #44aa99 #88ccee #ddcc77 #aa4499 #376B83
-#384E58 #F7921E
+#384E58 #F7921E #465672
 
 -*- END OF FILE -*-
