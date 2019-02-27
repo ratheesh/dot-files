@@ -1783,6 +1783,7 @@ let g:easy_align_bang_interactive_modes = ['c', 'r']
 let g:easy_align_ignore_groups = ['Comment', 'String']
 " }}}
 
+
 " vim-visual-increment {{{
 set nrformats=alpha,octal,hex
 " }}}
@@ -1806,36 +1807,48 @@ xmap : :<F6>
 xmap ? ?<F6>
 cmap <F6> <Plug>(Cmd2Suggest)
 
+let g:Cmd2_options = {
+            \ '_complete_ignorecase'      : 1,
+            \ '_complete_uniq_ignorecase' : 0,
+            \ '_quicksearch_ignorecase'   : 1,
+            \ '_complete_start_pattern'   : '\<\(\[agls]\:\)\?\(\k\*\[_\-#]\)\?',
+            \ '_complete_fuzzy'           : 1,
+            \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
+            \ '_complete_string_pattern'  : '\v\k(\k|\.)*',
+            \ '_complete_loading_text'    : '...',
+            \ 'menu_hl'                   : 'airline_x',
+            \ 'menu_selected_hl'          : 'WildMenu',
+            \ 'menu_separator_hl'         : 'airline_x',
+            \ 'menu_next'                 : '⇛',
+            \ 'menu_previous'             : '⇚',
+            \ }
+
 function! s:Peekaboo()
     call peekaboo#peek(1, 'ctrl-r',  0)
 endfunction
 
 let g:Cmd2_cmd_mappings = {
-            \ 'iw': {'command': 'iw', 'type': 'text', 'flags': 'Cpv'},
-            \ 'ap': {'command': 'ap', 'type': 'line', 'flags': 'pv'},
-            \ '^' : {'command': '^', 'type': 'normal!', 'flags': 'r'},
-            \ 'w' : {'command': 'Cmd2#functions#Cword',
-            \ 'type': 'function', 'flags': 'Cr'},
-            \ 'Peekaboo': {'command': function('s:Peekaboo'), 'type': 'function'},
+            \ 'Peekaboo'        : {'command': function('s:Peekaboo'), 'type': 'function'},
+            \ 'iw'              : {'command': 'iw', 'type': 'text', 'flags': 'Cpv'},
+            \ 'ap'              : {'command': 'ap', 'type': 'line', 'flags': 'pv'},
+            \ '^'               : {'command': '^', 'type': 'normal!', 'flags': 'r'},
+            \ 's'               : {'command': 's/###/###/g', 'type': 'snippet'},
+            \ 'S'               : {'command': 'Cmd2#functions#CopySearch', 'type': 'function'},
+            \ 'b'               : {'command': 'Cmd2#functions#Back', 'type': 'function', 'flags': 'r'},
+            \ 'e'               : {'command': 'Cmd2#functions#End', 'type': 'function', 'flags': 'r'},
+            \ 'CF'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
+            \ 'CB'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
+            \ 'w'               : {'command': 'Cmd2#functions#Cword', 'type': 'function', 'flags': 'Cr'},
+            \ '\<Plug>Cmd2Tab'  : {'command': "Cmd2#functions#TabForward", 'type': 'function', 'flags': 'C'},
+            \ '\<Plug>Cmd2STab' : {'command': "Cmd2#functions#TabBackward", 'type': 'function', 'flags': 'C'},
+            \ '\<Tab>'          : {'command': "\<Plug>Cmd2Tab", 'type': 'remap', 'flags': 'C'},
+            \ '\<S-Tab>'        : {'command': "\<Plug>Cmd2STab", 'type': 'remap', 'flags': 'C'},
             \ }
+cmap <C-L> <Plug>Cmd2
+" cmap <expr> <C-N> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CF" : "\<Tab>"
+" cmap <expr> <C-P> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CB" : "\<S-Tab>"
 cmap <C-R> <Plug>(Cmd2)Peekaboo
 
-let g:Cmd2_options = {
-            \ '_complete_ignorecase'      : 1,
-            \ '_complete_uniq_ignorecase' : 0,
-            \ '_quicksearch_ignorecase'   : 1,
-            \ '_complete_start_pattern'   : '\<\(\k\+\(_\|\#\)\)\?',
-            \ '_complete_fuzzy'           : 1,
-            \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
-            \ 'menu_hl'                   : 'airline_x',
-            \ 'menu_selected_hl'          : 'WildMenu',
-            \ 'menu_separator_hl'         : 'airline_x',
-            \ }
-
-" <Tab>: Perform completion using Cmd2.
-cmap <expr> <Tab> Cmd2#ext#complete#InContext() ?
-            \ '\<Plug>(Cmd2Complete)' :
-            \ '\<Tab>'
 set wildcharm=<Tab>
 
 " }}}
