@@ -1103,8 +1103,8 @@ call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
             \'noremap')
-call denite#custom#map('normal', '<Esc>', '<NOP>',
-            \'noremap')
+" call denite#custom#map('normal', '<Esc>', '<NOP>',
+"             \'noremap')
 call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
             \'noremap')
 call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
