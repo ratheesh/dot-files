@@ -61,6 +61,7 @@ Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
+Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'brookhong/cscope.vim'
 Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
@@ -1017,6 +1018,7 @@ nnoremap <silent><Leader>fp :CtrlPRegister<CR>
 nnoremap <silent><Leader>fl :CtrlPLine<CR>
 nnoremap <silent><Leader>fy :CtrlPYankring<CR>
 nnoremap <silent><leader>fj :CtrlPJumpList<CR>
+nnoremap <silent><leader>fg :CtrlPModified<CR>
 nnoremap <silent><leader>fm :CtrlPMark<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
