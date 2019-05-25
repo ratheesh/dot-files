@@ -102,6 +102,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
 Plug 'vim-scripts/blockquote.vim'
@@ -762,6 +763,10 @@ vnoremap <silent><Leader>dm    :<C-U>call ForAllMatches('delete', {'visual':1})<
 vnoremap <silent><Leader>di    :<C-U>call ForAllMatches('delete', {'visual':1, 'inverse':1})<CR>
 vnoremap <silent><Leader>ym    :<C-U>call ForAllMatches('yank',   {'visual':1})<CR>
 vnoremap <silent><Leader>yi    :<C-U>call ForAllMatches('yank',   {'visual':1, 'inverse':1})<CR>
+" }}}
+
+" git-messenger {{{
+nnoremap <silent><Leader>gm <Plug>(git-messenger)
 " }}}
 
 " Doxygen {{{
