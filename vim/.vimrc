@@ -112,7 +112,11 @@ Plug 'dhruvasagar/vim-table-mode'
 " Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'haya14busa/is.vim'
 Plug 'romainl/vim-cool'
-Plug 'gelguy/Cmd2.vim'
+if has('nvim')
+    Plug 'gelguy/wilder.nvim',         { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'gelguy/Cmd2.vim'
+endif " if
 Plug 'andymass/vim-matchup'
 Plug 'fvictorio/vim-yank-queue'
 
@@ -1809,60 +1813,107 @@ let g:table_mode_corner_corner='+'
 " }}}
 
 " Cmd2 {{{
-let g:Cmd2_cursor_blink = 0
+if !has('nvim')
+    let g:Cmd2_cursor_blink = 0
 
-nmap : :<F6>
-nmap / /<F6>
-nmap ? ?<F6>
-xmap : :<F6>
-" xmap / /<F6>
-xmap ? ?<F6>
-cmap <F6> <Plug>(Cmd2Suggest)
+    nmap : :<F6>
+    nmap / /<F6>
+    nmap ? ?<F6>
+    xmap : :<F6>
+    " xmap / /<F6>
+    xmap ? ?<F6>
+    cmap <F6> <Plug>(Cmd2Suggest)
 
-let g:Cmd2_options = {
-            \ '_complete_ignorecase'      : 1,
-            \ '_complete_uniq_ignorecase' : 0,
-            \ '_quicksearch_ignorecase'   : 1,
-            \ '_complete_start_pattern'   : '\<\(\[agls]\:\)\?\(\k\*\[_\-#]\)\?',
-            \ '_complete_fuzzy'           : 1,
-            \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
-            \ '_complete_string_pattern'  : '\v\k(\k|\.)*',
-            \ '_complete_loading_text'    : '...',
-            \ 'menu_hl'                   : 'airline_x',
-            \ 'menu_selected_hl'          : 'WildMenu',
-            \ 'menu_separator_hl'         : 'airline_x',
-            \ 'menu_next'                 : '⇛',
-            \ 'menu_previous'             : '⇚',
-            \ }
+    let g:Cmd2_options = {
+                \ '_complete_ignorecase'      : 1,
+                \ '_complete_uniq_ignorecase' : 0,
+                \ '_quicksearch_ignorecase'   : 1,
+                \ '_complete_start_pattern'   : '\<\(\[agls]\:\)\?\(\k\*\[_\-#]\)\?',
+                \ '_complete_fuzzy'           : 1,
+                \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
+                \ '_complete_string_pattern'  : '\v\k(\k|\.)*',
+                \ '_complete_loading_text'    : '...',
+                \ 'menu_hl'                   : 'airline_x',
+                \ 'menu_selected_hl'          : 'WildMenu',
+                \ 'menu_separator_hl'         : 'airline_x',
+                \ 'menu_next'                 : '⇛',
+                \ 'menu_previous'             : '⇚',
+                \ }
 
-function! s:Peekaboo()
-    call peekaboo#peek(1, 'ctrl-r',  0)
-endfunction
+    function! s:Peekaboo()
+        call peekaboo#peek(1, 'ctrl-r',  0)
+    endfunction
 
-let g:Cmd2_cmd_mappings = {
-            \ 'Peekaboo'        : {'command': function('s:Peekaboo'), 'type': 'function'},
-            \ 'iw'              : {'command': 'iw', 'type': 'text', 'flags': 'Cpv'},
-            \ 'ap'              : {'command': 'ap', 'type': 'line', 'flags': 'pv'},
-            \ '^'               : {'command': '^', 'type': 'normal!', 'flags': 'r'},
-            \ 's'               : {'command': 's/###/###/g', 'type': 'snippet'},
-            \ 'S'               : {'command': 'Cmd2#functions#CopySearch', 'type': 'function'},
-            \ 'b'               : {'command': 'Cmd2#functions#Back', 'type': 'function', 'flags': 'r'},
-            \ 'e'               : {'command': 'Cmd2#functions#End', 'type': 'function', 'flags': 'r'},
-            \ 'CF'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
-            \ 'CB'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
-            \ 'w'               : {'command': 'Cmd2#functions#Cword', 'type': 'function', 'flags': 'Cr'},
-            \ '\<Plug>Cmd2Tab'  : {'command': "Cmd2#functions#TabForward", 'type': 'function', 'flags': 'C'},
-            \ '\<Plug>Cmd2STab' : {'command': "Cmd2#functions#TabBackward", 'type': 'function', 'flags': 'C'},
-            \ '\<Tab>'          : {'command': "\<Plug>Cmd2Tab", 'type': 'remap', 'flags': 'C'},
-            \ '\<S-Tab>'        : {'command': "\<Plug>Cmd2STab", 'type': 'remap', 'flags': 'C'},
-            \ }
-cmap <C-L> <Plug>Cmd2
-" cmap <expr> <C-N> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CF" : "\<Tab>"
-" cmap <expr> <C-P> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CB" : "\<S-Tab>"
-cmap <C-R> <Plug>(Cmd2)Peekaboo
+    let g:Cmd2_cmd_mappings = {
+                \ 'Peekaboo'        : {'command': function('s:Peekaboo'), 'type': 'function'},
+                \ 'iw'              : {'command': 'iw', 'type': 'text', 'flags': 'Cpv'},
+                \ 'ap'              : {'command': 'ap', 'type': 'line', 'flags': 'pv'},
+                \ '^'               : {'command': '^', 'type': 'normal!', 'flags': 'r'},
+                \ 's'               : {'command': 's/###/###/g', 'type': 'snippet'},
+                \ 'S'               : {'command': 'Cmd2#functions#CopySearch', 'type': 'function'},
+                \ 'b'               : {'command': 'Cmd2#functions#Back', 'type': 'function', 'flags': 'r'},
+                \ 'e'               : {'command': 'Cmd2#functions#End', 'type': 'function', 'flags': 'r'},
+                \ 'CF'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
+                \ 'CB'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
+                \ 'w'               : {'command': 'Cmd2#functions#Cword', 'type': 'function', 'flags': 'Cr'},
+                \ '\<Plug>Cmd2Tab'  : {'command': "Cmd2#functions#TabForward", 'type': 'function', 'flags': 'C'},
+                \ '\<Plug>Cmd2STab' : {'command': "Cmd2#functions#TabBackward", 'type': 'function', 'flags': 'C'},
+                \ '\<Tab>'          : {'command': "\<Plug>Cmd2Tab", 'type': 'remap', 'flags': 'C'},
+                \ '\<S-Tab>'        : {'command': "\<Plug>Cmd2STab", 'type': 'remap', 'flags': 'C'},
+                \ }
+    cmap <C-L> <Plug>Cmd2
+    " cmap <expr> <C-N> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CF" : "\<Tab>"
+    " cmap <expr> <C-P> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CB" : "\<S-Tab>"
+    cmap <C-R> <Plug>(Cmd2)Peekaboo
 
-set wildcharm=<Tab>
+    set wildcharm=<Tab>
+endif
+" }}}
 
+" wilder {{{
+if has('nvim')
+    call wilder#enable_cmdline_enter()
+    cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
+    cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+    set wildcharm=<Tab>
+
+    let s:status_hl = wilder#make_hl('WilderStatus', 'airline_c')
+    let s:mode_hl   = wilder#make_hl('WilderMode', 'airline_a')
+    let s:index_hl  = wilder#make_hl('WilderIndex', 'airline_z')
+
+    call wilder#set_option('pipeline', [
+                \   wilder#branch(
+                \     [
+                \       wilder#check({_, x -> empty(x)}),
+                \       wilder#history(15),
+                \     ],
+                \     wilder#cmdline_pipeline(),
+                \     [
+                \       wilder#python_fuzzy_delimiter(),
+                \       wilder#python_search({'engine': 're'}),
+                \       wilder#result_output_escape('^$,*~[]/\'),
+                \     ],
+                \   ),
+                \ ])
+    " ⧫
+    " call wilder#separator(' • ', '234', '')
+
+    call wilder#set_option('renderer', wilder#statusline_renderer({
+                \ 'separator':' • ',
+                \ 'hl': s:status_hl,
+                \ 'left': [
+                \    {'value': [' WILDER', wilder#spinner()], 'hl': s:mode_hl},
+                \    wilder#separator('', s:mode_hl, s:status_hl, 'left'), ' ',
+                \ ],
+                \ 'right': [
+                \    ' ', wilder#separator('', s:index_hl, s:status_hl, 'right'),
+                \    wilder#index({'hl': s:index_hl}),
+                \ ],
+                \ }))
+
+    " Enable cmdline completion (for Neovim only)
+    call wilder#set_option('modes', ['/', '?', ':'])
+endif
 " }}}
 
 " vim-matchup {{{
