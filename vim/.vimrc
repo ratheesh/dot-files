@@ -1374,7 +1374,7 @@ let g:hiPairs_hl_unmatchPair = {
 " }}}
 
 " vim-indentguides {{{
-let g:indentguides_ignorelist = ['text', 'vim']
+let g:indentguides_ignorelist = ['text', 'vim', 'python']
 let g:indentguides_spacechar  = '┆'
 let g:indentguides_tabchar    = '¦'
 let g:indentguides_firstlevel = 0
