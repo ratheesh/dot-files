@@ -742,17 +742,25 @@ let g:cycle_default_groups = [
 " }}}
 
 " python-mode {{{
-" let g:pymode_python = 'python2'
-let g:pymode_python = 'python'
-let g:pymode_options = 0
+" let g:pymode_python            = 'python2'
+let g:pymode_python              = 'python'
+let g:pymode_options             = 0
 let g:pymode_options_colorcolumn = 1
-let g:pymode_indent = 1
-let g:pymode_virtualenv = 1
-let g:pymode_lint_checkers = ['pylint', 'pep8', 'mccabe']
+let g:pymode_indent              = 1
+let g:pymode_virtualenv          = 1
+let g:pymode_indent              = 1
+let g:pymode_lint                = 1
+let g:pymode_lint_cwindow        = 0
+let g:pymode_lint_signs          = 0
+" let g:pymode_lint_checkers       = ['pylint', 'pep8', 'mccabe']
+let g:pymode_lint_checkers       = ['pep8']
+" let g:pymode_lint_ignore       = "E501"
+
 " }}}
 
 " braceless {{{
-autocmd FileType python BracelessEnable +indent +highlight
+autocmd FileType python BracelessEnable +indent +fold +highlight
+let g:braceless_block_key = 'i'
 " }}}
 
 " yankmatches {{{
