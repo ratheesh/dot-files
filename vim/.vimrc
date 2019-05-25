@@ -1468,6 +1468,7 @@ call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
+call deoplete#custom#source('jedi'           , 'rank' , 9959)
 call deoplete#custom#source('neosnippet'     , 'rank' , 9958)
 call deoplete#custom#source('ultisnips'      , 'rank' , 9958)
 call deoplete#custom#source('member'         , 'rank' , 9957)
@@ -1477,7 +1478,6 @@ call deoplete#custom#source('clangx'         , 'rank' , 9954)
 call deoplete#custom#source('clang'          , 'rank' , 9953)
 call deoplete#custom#source('buffer'         , 'rank' , 9952)
 call deoplete#custom#source('function'       , 'rank' , 9951)
-call deoplete#custom#source('jedi'           , 'rank' , 9950)
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
