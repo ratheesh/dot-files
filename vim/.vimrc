@@ -86,6 +86,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tweekmonster/wstrip.vim'
+Plug 'terryma/vim-expand-region'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
@@ -1683,6 +1684,11 @@ let g:lessspace_whitelist = ['c', 'cxx', 'cpp', 'python', 'vim']
 
 " wstrip {{{
 let g:wstrip_auto = 1
+" }}}
+
+" vim-expand-region {{{
+map <C-l> <Plug>(expand_region_expand)
+map <C-h> <Plug>(expand_region_shrink)
 " }}}
 
 " auto-pairs {{{
