@@ -228,7 +228,11 @@ set display=lastline
 if has('wildmenu')
     set nowildmenu
     set wildmode=list:longest,full
-    set wildoptions=tagfile
+    if has('nvim')
+        set wildoptions=pum
+    else
+        set wildoptions=tagfile
+    endif " if nvim
     set wildignorecase
     set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
     set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
