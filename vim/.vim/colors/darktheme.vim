@@ -10,7 +10,7 @@
 " @author Ratheesh <ratheeshreddy@gmail.com> <@ratheeshreddy>
 " @author Trevor Heins <@heinst>
 " @author Éverton Ribeiro <nuxlli@gmail.com>
-" @author Zeno Rocha <hi@zenorocha.com>
+" 0author Zeno Rocha <hi@zenorocha.com>
 
 set background=dark
 scriptencoding utf-8
@@ -63,7 +63,7 @@ hi Number       ctermfg=180     ctermbg=NONE    cterm=NONE              guifg=#e
 hi Operator     ctermfg=62      ctermbg=NONE    cterm=bold              guifg=#7e8aa2   guibg=NONE      gui=bold
 hi PreProc      ctermfg=31      ctermbg=NONE    cterm=NONE              guifg=#808080   guibg=NONE      gui=NONE
 hi Special      ctermfg=65      ctermbg=NONE    cterm=NONE              guifg=#f08080   guibg=NONE      gui=NONE
-hi SpecialKey   ctermfg=238     ctermbg=NONE    cterm=NONE              guifg=#525563   guibg=NONE      gui=NONE
+hi SpecialKey   ctermfg=238     ctermbg=NONE    cterm=NONE              guifg=#424553   guibg=NONE      gui=NONE
 " hi Conceal    ctermfg=238     ctermbg=NONE    cterm=NONE
 hi Statement    ctermfg=66      ctermbg=NONE    cterm=NONE              guifg=#4682B4   guibg=NONE      gui=NONE
 hi StorageClass ctermfg=54      ctermbg=NONE    cterm=NONE              guifg=#ad95d6   guibg=NONE      gui=NONE
@@ -91,7 +91,7 @@ hi cRepeat              ctermfg=95      ctermbg=NONE    cterm=NONE      guifg=#2
 hi cPPIncludeFile       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#f1fa8c   guibg=NONE      gui=NONE
 hi cOperator            ctermfg=62      ctermbg=NONE    cterm=NONE      guifg=#7e8aa2   guibg=NONE      gui=NONE
 hi cInclude             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ad64c2   guibg=NONE      gui=NONE
-hi cIncluded            ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#98a379   guibg=NONE      gui=NONE
+hi cIncluded            ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#7f7fa7   guibg=NONE      gui=italic
 hi cDefine              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5f9ea0   guibg=NONE      gui=NONE
 hi cNumber              ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#eb4a9c   guibg=NONE      gui=NONE
 hi cppNumber            ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#eb4a9c   guibg=NONE      gui=NONE
@@ -130,13 +130,19 @@ hi pythonFunction          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg
 hi pythonRepeat            ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
 hi pythonConditional       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
 hi pythonBuiltinObj        ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac6bf1   guibg=NONE      gui=NONE
-hi pythonBuiltinFunc       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#00cd00   guibg=NONE      gui=NONE
+hi pythonSelf              ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#6f91e3   guibg=NONE      gui=italic
 hi pythonDot               ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#00cd00   guibg=NONE      gui=NONE
-hi pythonExtraOperator     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5fba7d   guibg=NONE      gui=italic
+hi pythonExtraOperator     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5fba7d   guibg=NONE      gui=NONE
 hi pythonOperator          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ceab5a   guibg=NONE      gui=italic
-hi pythonException         ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#70bb70   guibg=NONE      gui=italic
+hi pythonException         ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=italic
 hi pythonParam             ctermfg=7       ctermbg=233     cterm=NONE      guifg=#cccccc   guibg=NONE      gui=NONE
-hi pythonBuiltinFunc       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#7c32c8   guibg=NONE      gui=NONE
+hi pythonBuiltinFunc       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#28b473   guibg=NONE      gui=italic
+" }}}
+
+" gdb {{{
+hi gdbFuncDef              ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
+hi gdbNumber               ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ac6bf1   guibg=NONE      gui=NONE
+hi gdbDocument             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=NONE      gui=NONE
 " }}}
 
 " Make {{{
@@ -231,7 +237,7 @@ hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=
 
 " echodoc {{{
 hi EchoDocFunc            ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#f399af  guibg=NONE   gui=bold
-hi EchoDocParam           ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#00bbff  guibg=NONE   gui=italic
+hi EchoDocParam           ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#729FCF  guibg=NONE   gui=italic
 " }}}
 
 " git-gutter {{{
@@ -242,7 +248,7 @@ hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=
 " }}}
 
 " Braceless {{{
-hi  BracelessIndent     ctermfg=NONE     ctermbg=237    cterm=NONE      guifg=NONE      guibg=#5e6e99   gui=NONE
+hi  BracelessIndent     ctermfg=NONE     ctermbg=237    cterm=NONE      guifg=NONE      guibg=#505050   gui=NONE
 " }}}
 
 " wstrip {{{
@@ -272,7 +278,7 @@ hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008f
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#43464f gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#5f9ea0 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#997A9C gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#657b83 gui=NONE
 "}}}

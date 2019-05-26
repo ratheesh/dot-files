@@ -155,9 +155,9 @@ let g:airline#themes#darkmode#palette.replace_modified = {
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : [ s:guiWhite, '#5e6e99' , 253 , 60  , 'none' ],
             \ 'airline_tabsel'  : [ s:guiBlack, '#5f9ea0' , 0   , 66  , 'italic' ],
-            \ 'airline_tabfill' : [ s:guiWhite, '#383a4c' , 188 , 235 , 'none' ],
+            \ 'airline_tabfill' : [ s:guiWhite, '#3b3c58' , 188 , 235 , 'none' ],
             \ 'airline_tabmod'  : [ s:guiWhite, '#3e8c75' ,  15 , 89  , 'none' ],
-            \ 'airline_tabhid'  : [ '#a0a0a0' , '#383a4c' , 103 , 235 , 'none' ],
+            \ 'airline_tabhid'  : [ '#a0a0a0' , '#3b3c58' , 103 , 235 , 'none' ],
             \ 'airline_tablabel': [ '#fcb05d' ,  s:gui02  , 253 , 125 , 'italic' ],
             \ }
 
@@ -166,7 +166,7 @@ let g:airline#themes#darkmode#palette.accents = {
             \ 'tagbar_color'        : [ '#a580ff' , '' , 160 , '', 'none'],
             \ 'path_color'          : [ '#6faeb0' , '' , 160 , '', ''],
             \ 'modified_color'      : [ '#fa2c07' , '' , 160 , '', 'italic'],
-            \ 'gitroot_color'       : [ '#f7cab8' , '' , 160 , '', 'italic'],
+            \ 'gitroot_color'       : [ '#BC8BF1' , '' , 160 , '', 'italic'],
             \ 'gitroot_paren_color' : [ '#fa2c77' , '' , 160 , '', 'bold'],
             \ }
 
@@ -175,7 +175,7 @@ augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 autocmd!
 autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#a3495b  gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#e0e0e0    guibg=#208860  gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#000000    guibg=#0BC294  gui=NONE
 augroup END
 
 " CtrlP customization
