@@ -149,6 +149,10 @@
 " Plug 'mg979/vim-visual-multi'
 " Plug 'machakann/vim-multiselect'
 " Plug 'coderifous/textobj-word-column.vim'
+" Plug 'rstacruz/vim-closer'
+" Plug 'kana/vim-textobj-indent'
+" Plug 'vim-scripts/TagHighlight'
+" Plug 'vim-scripts/Conque-GDB'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
