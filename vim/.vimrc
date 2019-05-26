@@ -160,6 +160,7 @@ Plug 'Shougo/echodoc.vim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
+    Plug 'ncm2/float-preview.nvim',      { 'do': ':UpdateRemotePlugins' }
 else
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/denite.nvim'
