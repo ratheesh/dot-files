@@ -124,11 +124,13 @@
     followTags = true
 
 [rerere]
-    enabled = true
+    enabled = false
 
 [rebase]
     missingCommitsCheck = error
 
+[svn]
+    rmdir = true
 
 [commit] ; https://git-scm.com/docs/git-config#git-config-commitcleanup
     ; GPG-signed and Sign off the Developer Certificate of Origin <http://developercertificate.org>
