@@ -1900,6 +1900,7 @@ if has('nvim')
     let s:status_hl = wilder#make_hl('WilderStatus', 'airline_c')
     let s:mode_hl   = wilder#make_hl('WilderMode', 'airline_a')
     let s:index_hl  = wilder#make_hl('WilderIndex', 'airline_z')
+    let s:sep_hl    = wilder#make_hl('WilderSep', 'WilderSeparator')
 
     call wilder#set_option('pipeline', [
                 \   wilder#branch(
@@ -1915,11 +1916,10 @@ if has('nvim')
                 \     ],
                 \   ),
                 \ ])
-    " ⧫
-    " call wilder#separator(' • ', '234', '')
 
     call wilder#set_option('renderer', wilder#statusline_renderer({
                 \ 'separator':' • ',
+                \ 'separator_hl': s:sep_hl,
                 \ 'hl': s:status_hl,
                 \ 'left': [
                 \    {'value': [' WILDER', wilder#spinner()], 'hl': s:mode_hl},

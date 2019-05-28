@@ -385,6 +385,10 @@ hi htmlArg              ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#50fa7b
 hi htmlSpecialChar      ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9    guibg=NONE gui=NONE
 "}}}
 
+" Wilder {{{
+hi WilderSeparator      ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#AC6BF1    guibg=#383a4c gui=NONE
+" }}}
+
 " Java Script {{{
 hi javaScriptFunction      ctermfg=117  ctermbg=NONE cterm=NONE
 hi javaScriptRailsFunction ctermfg=117  ctermbg=NONE cterm=NONE
