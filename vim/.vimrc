@@ -1897,8 +1897,8 @@ if has('nvim')
     cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
     set wildcharm=<Tab>
 
-    let s:status_hl = wilder#make_hl('WilderStatus', 'airline_c')
-    let s:mode_hl   = wilder#make_hl('WilderMode', 'airline_a')
+    let s:status_hl = wilder#make_hl('WilderStatus', 'WildStatus')
+    let s:mode_hl   = wilder#make_hl('WilderMode', 'WildMode')
     let s:index_hl  = wilder#make_hl('WilderIndex', 'airline_z')
     let s:sep_hl    = wilder#make_hl('WilderSep', 'WilderSeparator')
 
