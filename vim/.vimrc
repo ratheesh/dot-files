@@ -1922,7 +1922,7 @@ if has('nvim')
                 \ 'separator_hl': s:sep_hl,
                 \ 'hl': s:status_hl,
                 \ 'left': [
-                \    {'value': [' WILDER', wilder#spinner()], 'hl': s:mode_hl},
+                \    {'value': [{-> getcmdtype() ==# ':' ? ' Kommand ' : ' Suche '}, wilder#spinner()], 'hl': s:mode_hl},
                 \    wilder#separator('', s:mode_hl, s:status_hl, 'left'), ' ',
                 \ ],
                 \ 'right': [
