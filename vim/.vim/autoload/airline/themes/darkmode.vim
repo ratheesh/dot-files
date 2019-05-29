@@ -174,7 +174,7 @@ let g:airline#themes#darkmode#palette.accents = {
 augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 autocmd!
-autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#a3495b  gui=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#9A175E  gui=NONE
 autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#000000    guibg=#0BC294  gui=NONE
 augroup END
 
