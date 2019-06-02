@@ -1409,7 +1409,11 @@ let g:jedi#rename_command           = "<leader>R"
 let g:echodoc#enable_at_startup=1
 let g:echodoc#enable_force_overwrite=1
 if has('nvim')
-    let g:echodoc#type="virtual"
+    if exists('*nvim_open_win')
+        let g:echodoc#type="floating"
+    else
+        let g:echodoc#type="virtual"
+    endif
 else
     let g:echodoc#type="echo"
 endif
