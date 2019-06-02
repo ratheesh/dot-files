@@ -1913,7 +1913,7 @@ if has('nvim')
                 \   wilder#branch(
                 \     [
                 \       wilder#check({_, x -> empty(x)}),
-                \       wilder#history(15),
+                \       wilder#history(10),
                 \     ],
                 \     wilder#cmdline_pipeline(),
                 \     [
