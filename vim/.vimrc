@@ -1544,6 +1544,9 @@ call deoplete#custom#source('_', 'converters', [
             \ 'converter_auto_delimiter',
             \ ])
 
+" show doc strings for jedi
+let g:deoplete#sources#jedi#show_docstring = 1
+
 " }}}
 
 " ncm2#enable_for_buffer {{{
