@@ -33,7 +33,7 @@ hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NO
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#053864   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3a455e   gui=NONE
-hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#eeeeee   guibg=#9A175E   gui=NONE
+hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#eeeeee   guibg=#BA176E   gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=#f92a5b   guibg=NONE      gui=bold,underline
 hi ParenError   ctermfg=NONE    ctermbg=NONE    cterm=underline,bold
@@ -74,7 +74,7 @@ hi Title        ctermfg=7       ctermbg=NONE    cterm=bold              guifg=#f
 hi Type         ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6494ed   guibg=NONE      gui=NONE
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
-hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#c0c0c0   gui=NONE
+hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#c0c090   gui=NONE
 hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#505050   guibg=NONE      gui=NONE
 
 " spelling {{{
@@ -137,6 +137,10 @@ hi pythonOperator          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg
 hi pythonException         ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=italic
 hi pythonParam             ctermfg=7       ctermbg=233     cterm=NONE      guifg=#cccccc   guibg=NONE      gui=NONE
 hi pythonBuiltinFunc       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#28b473   guibg=NONE      gui=italic
+hi pythonBuiltin           ctermfg=7       ctermbg=233     cterm=NONE      guifg=#AC6BF1   guibg=NONE      gui=italic
+hi pythonDottedName        ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=NONE
+hi pythonDecorator         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
+hi pythonDecoratorName     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
 " }}}
 
 " gdb {{{
@@ -161,6 +165,7 @@ hi tmuxFormatString     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#3
 " denite {{{
 hi DeniteNormalHLLine   ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=NONE      guibg=#444c5c   gui=NONE
 hi DenitePrompt         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#27b062   guibg=NONE      gui=NONE
+hi DeniteFloatWin       ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#152C53   guibg=NONE      gui=NONE
 " }}}
 
 " sh {{{
@@ -236,8 +241,9 @@ hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=
 " }}}
 
 " echodoc {{{
-hi EchoDocFunc            ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#f399af  guibg=NONE   gui=bold
-hi EchoDocParam           ctermfg=93      ctermbg=NONE    cterm=NONE    guifg=#729FCF  guibg=NONE   gui=italic
+hi EchoDocFunc       ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#0056B9  guibg=NONE       gui=NONE
+hi EchoDocParam      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#8C3149  guibg=NONE       gui=bold,italic
+hi EchoDocFloat      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#000000  guibg=#F0F0C0    gui=NONE
 " }}}
 
 " git-gutter {{{
@@ -277,7 +283,7 @@ hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008f
 " }}}
 
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#43464f gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#365063 gui=NONE
 hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#997A9C gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#657b83 gui=NONE
@@ -333,7 +339,7 @@ hi peekabooSelected     ctermfg=180 ctermbg=237   cterm=NONE guifg=#f4a460  guib
 " }}}
 
 " Startify {{{
-hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#eb949b   guibg=NONE    gui=NONE
+hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#BF0075   guibg=NONE    gui=NONE
 hi StartifySelect       ctermfg=NONE    ctermbg=235     cterm=NONE      guifg=NONE      guibg=#303030 gui=NONE
 hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#808080   guibg=NONE    gui=NONE
 hi StartifySpecial      ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#cd5c5c   guibg=NONE    gui=NONE
@@ -386,7 +392,7 @@ hi htmlSpecialChar      ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9
 "}}}
 
 " Wilder {{{
-hi WildMode             ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#e0e0e0    guibg=#8F575A gui=NONE
+hi WildMode             ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#e0e0e0    guibg=#8F575A gui=italic
 hi WildStatus           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#F7CAB8    guibg=#153C63 gui=NONE
 hi WilderSeparator      ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
 " }}}
