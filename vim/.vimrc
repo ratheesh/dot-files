@@ -748,15 +748,20 @@ let g:cycle_default_groups = [
 
 " python-mode {{{
 " let g:pymode_python            = 'python2'
-let g:pymode_python              = 'python'
+" let g:pymode_python              = 'python'
 let g:pymode_options             = 0
 let g:pymode_options_colorcolumn = 1
-let g:pymode_indent              = 1
 let g:pymode_virtualenv          = 1
-let g:pymode_indent              = 1
+let g:pymode_indent              = 0
+let g:pymode_rope_completion     = 0
 let g:pymode_lint                = 1
 let g:pymode_lint_cwindow        = 0
 let g:pymode_lint_signs          = 0
+let g:pymode_syntax_space_errors = 0
+let g:pymode_trim_whitespaces    = 0
+let g:pymode_debug               = 0
+let g:pymode_rope                = 0
+let g:pydoc_perform_mappings     = 0
 " let g:pymode_lint_checkers       = ['pylint', 'pep8', 'mccabe']
 let g:pymode_lint_checkers       = ['pep8']
 " let g:pymode_lint_ignore       = "E501"
@@ -1396,9 +1401,13 @@ let g:hardtime_maxcount               = 2
 
 "jedi-vim {{{
 let g:jedi#show_call_signatures     = "1"
+let g:jedi#popup_on_dot             = 1
 " let g:jedi#goto_command           = "<leader>d"
+let g:jedi#auto_vim_configuration   = 0
+let g:jedi#popup_select_first       = 0
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = ""
+let g:jedi#completions_enabled      = 0
 let g:jedi#documentation_command    = "K"
 let g:jedi#usages_command           = "<leader>n"
 let g:jedi#completions_command      = "<C-Space>"
