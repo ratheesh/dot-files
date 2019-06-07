@@ -1466,13 +1466,8 @@ let g:deoplete#enable_at_startup = 1
 if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
-let g:deoplete#enable_refresh_always        = 1
-let g:deoplete#auto_complete_delay          = 30
+" let g:deoplete#auto_complete_delay          = 30
 let g:deoplete#auto_refresh_delay           = 30
-" let g:deoplete#auto_complete_start_length   = 3
-" let g:deoplete#enable_ignore_case         = 1
-" let g:deoplete#enable_smart_case          = 1
-" let g:deoplete#enable_camel_case          = 1
 let g:deoplete#file#enable_buffer_path      = 1
 let g:deoplete#max_list                     = 100
 let deoplete#tag#cache_limit_size           = 10000000
@@ -1481,7 +1476,7 @@ let g:deoplete#buffer#require_same_filetype = 0
 let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 30,
+            \ 'auto_complete_delay' : 0,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
             \ 'complete_method'     : 'omnifunc',
@@ -1491,6 +1486,19 @@ call deoplete#custom#option({
             \ 'num_processes'       : 2,
             \ })
 
+" call deoplete#custom#option('candidate_marks',
+"             \ ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'])
+
+" inoremap <expr>A  pumvisible() ? deoplete#insert_candidate(0) : 'A'
+" inoremap <expr>S  pumvisible() ? deoplete#insert_candidate(1) : 'S'
+" inoremap <expr>D  pumvisible() ? deoplete#insert_candidate(2) : 'D'
+" inoremap <expr>F  pumvisible() ? deoplete#insert_candidate(3) : 'F'
+" inoremap <expr>G  pumvisible() ? deoplete#insert_candidate(4) : 'G'
+" inoremap <expr>H  pumvisible() ? deoplete#insert_candidate(5) : 'H'
+" inoremap <expr>J  pumvisible() ? deoplete#insert_candidate(6) : 'J'
+" inoremap <expr>K  pumvisible() ? deoplete#insert_candidate(7) : 'K'
+" inoremap <expr>L  pumvisible() ? deoplete#insert_candidate(8) : 'L'
+
 " call deoplete#custom#option('refresh_always', v:true)
 " call deoplete#custom#option('num_processes', 0)
 
@@ -1498,15 +1506,18 @@ call deoplete#custom#option({
 set completeopt=longest,menuone
 set pumheight=10 " set max. Height of popup menu
 
-let g:deoplete#sources  = {}
-let g:deoplete#sources_ = [] " includes all sources
+" let g:deoplete#sources  = {}
+" let g:deoplete#sources_ = [] " includes all sources
+call deoplete#custom#option('sources', {
+            \ '_': [],
+            \})
 
 " Use partial fuzzy matches like YouCompleteMe
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 " call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 
 " Disable the candidates in Comment/String syntaxes.
-" call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 
 call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
 call deoplete#custom#source('clangx'         , 'mark' , '[CLang')
@@ -1528,6 +1539,14 @@ call deoplete#custom#source('clang'          , 'rank' , 9953)
 call deoplete#custom#source('buffer'         , 'rank' , 9952)
 call deoplete#custom#source('function'       , 'rank' , 9951)
 
+call deoplete#custom#var('around', {
+            \   'range_above': 5,
+            \   'range_below': 5,
+            \   'mark_above': '[↑]',
+            \   'mark_below': '[↓]',
+            \   'mark_changes': '[*]',
+            \})
+
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
@@ -1539,16 +1558,14 @@ inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
 inoremap <expr><C-g> deoplete#undo_completion()
 
-" let g:deoplete#disable_auto_complete = 1
-" inoremap <silent><expr> <TAB>
-"             \ pumvisible() ? "\<C-n>" :
-"             \ <SID>check_back_space() ? "\<TAB>" :
-"             \ deoplete#mappings#manual_complete()
-
-function! s:check_back_space() abort
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
     let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~? '\s'
-endfunction
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 " Use Tab to forward cycle
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
