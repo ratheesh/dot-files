@@ -1114,17 +1114,40 @@ augroup deniteresize
 augroup end
 
 call denite#custom#option('default', {
-            \ 'prompt'                :  '➜ ',
-            \ 'auto-accel'            :  v:true,
-            \ 'auto-highlight'        :  v:true,
-            \ 'mode'                  :  'normal',
-            \ 'root-markers'          :  '.git,.hg,.svn',
-            \ 'smartcase'             :  v:true,
-            \ 'highlight_mode_normal' :  'DeniteNormalHLLine',
-            \ 'prompt_highlight'      :  'DenitePrompt',
+            \ 'prompt'                      : '➜ ',
+            \ 'auto-accel'                  : v:true,
+            \ 'auto-highlight'              : v:true,
+            \ 'mode'                        : 'normal',
+            \ 'start-filter'                : v:true,
+            \ 'empty'                       : v:false,
+            \ 'reversed'                    : v:true,
+            \ 'root-markers'                : '.git,.hg,.svn',
+            \ 'smartcase'                   : v:true,
+            \ 'highlight_mode_normal'       : 'DeniteNormalHLLine',
+            \ 'highlight-filter-background' : 'DeniteFloatWin',
+            \ 'prompt_highlight'            : 'DenitePrompt',
+            \ 'split'                       : 'horizantal',
             \ })
 
-call denite#custom#var('file_rec', 'command',
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr><CR>    denite#do_map('do_action')
+    nnoremap <silent><buffer><expr>d       denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr>p       denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr>q       denite#do_map('quit')
+    nnoremap <silent><buffer><expr><Esc>   denite#do_map('quit')
+    nnoremap <silent><buffer><expr>i       denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr>a       denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr><C-l>   denite#do_map('redraw')
+    nnoremap <silent><buffer><expr><C-h>   denite#do_map('restore_sources')
+    nnoremap <silent><buffer><expr><Space> denite#do_map('toggle_select').'j'
+    nnoremap <silent><buffer><expr><Tab>   denite#do_map('choose_action')
+endfunction
+
+" Denite variables
+call denite#custom#var('file/rec', 'command',
             \ ['rg', '--files', '--glob', '!.git', ''])
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',
@@ -1133,22 +1156,15 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
-            \'noremap')
-" call denite#custom#map('normal', '<Esc>', '<NOP>',
-"             \'noremap')
-call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
-            \'noremap')
-call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
-            \'noremap')
-call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
-            \'noremap')
 
-nnoremap <silent><Leader>do   :P<C-u>Denite file_rec -mode=insert<CR>
-nnoremap <silent><Leader>db   :<C-u>Denite buffer -mode=normal<CR>
+" Denite sources
+"
+
+nnoremap <silent><Leader>do   :<C-u>Denite file/rec<CR>
+nnoremap <silent><Leader>db   :<C-u>Denite buffer<CR>
 nnoremap <silent><Leader>dd   :P<C-u>DeniteCursorWord grep<CR>
 nnoremap <silent><Leader>d/   :P<C-u>DeniteProjectDir grep<CR>
-nnoremap <silent><Leader>dp   :<C-u>Denite register -mode=normal<CR>
+nnoremap <silent><Leader>dp   :<C-u>Denite register<CR>
 nnoremap <silent><Leader>dl   :<C-u>Denite location_list -no-empty<CR>
 nnoremap <silent><Leader>du   :<C-u>Denite file_mru<CR>
 nnoremap <silent><Leader>dy   :<C-u>Denite neoyank<CR>
