@@ -1483,18 +1483,18 @@ call deoplete#custom#option({
             \ 'num_processes'       : 2,
             \ })
 
-" call deoplete#custom#option('candidate_marks',
-"             \ ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'])
+call deoplete#custom#option('candidate_marks',
+            \ ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'])
 
-" inoremap <expr>A  pumvisible() ? deoplete#insert_candidate(0) : 'A'
-" inoremap <expr>S  pumvisible() ? deoplete#insert_candidate(1) : 'S'
-" inoremap <expr>D  pumvisible() ? deoplete#insert_candidate(2) : 'D'
-" inoremap <expr>F  pumvisible() ? deoplete#insert_candidate(3) : 'F'
-" inoremap <expr>G  pumvisible() ? deoplete#insert_candidate(4) : 'G'
-" inoremap <expr>H  pumvisible() ? deoplete#insert_candidate(5) : 'H'
-" inoremap <expr>J  pumvisible() ? deoplete#insert_candidate(6) : 'J'
-" inoremap <expr>K  pumvisible() ? deoplete#insert_candidate(7) : 'K'
-" inoremap <expr>L  pumvisible() ? deoplete#insert_candidate(8) : 'L'
+inoremap <expr>A  pumvisible() ? deoplete#insert_candidate(0) : 'A'
+inoremap <expr>S  pumvisible() ? deoplete#insert_candidate(1) : 'S'
+inoremap <expr>D  pumvisible() ? deoplete#insert_candidate(2) : 'D'
+inoremap <expr>F  pumvisible() ? deoplete#insert_candidate(3) : 'F'
+inoremap <expr>G  pumvisible() ? deoplete#insert_candidate(4) : 'G'
+inoremap <expr>H  pumvisible() ? deoplete#insert_candidate(5) : 'H'
+inoremap <expr>J  pumvisible() ? deoplete#insert_candidate(6) : 'J'
+inoremap <expr>K  pumvisible() ? deoplete#insert_candidate(7) : 'K'
+inoremap <expr>L  pumvisible() ? deoplete#insert_candidate(8) : 'L'
 
 " call deoplete#custom#option('refresh_always', v:true)
 " call deoplete#custom#option('num_processes', 0)
