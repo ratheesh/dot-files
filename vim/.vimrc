@@ -1445,6 +1445,7 @@ endif
 
 let g:echodoc#highlight_identifier = "EchoDocFunc"
 let g:echodoc#highlight_arguments  = "EchoDocParam"
+let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 " }}}
 
 " Languageclient-Neovim {{{
