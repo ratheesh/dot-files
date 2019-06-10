@@ -153,6 +153,12 @@
 " Plug 'kana/vim-textobj-indent'
 " Plug 'vim-scripts/TagHighlight'
 " Plug 'vim-scripts/Conque-GDB'
+" Plug 'raghur/fruzzy' , {'do': { -> fruzzy#install()}}
+" Plug 'kmnk/denite-dirmark'
+" Plug 'wsdjeg/FlyGrep.vim'
+" Plug 'machakann/vim-sandwich'
+" Plug 'tweekmonster/wstrip.vim'
+" Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
