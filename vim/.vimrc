@@ -1475,7 +1475,7 @@ let g:deoplete#buffer#require_same_filetype = 0
 let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 0,
+            \ 'auto_complete_delay' : 50,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
             \ 'complete_method'     : 'omnifunc',
