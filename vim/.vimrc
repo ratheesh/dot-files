@@ -1429,8 +1429,9 @@ let g:jedi#rename_command             = "<leader>R"
 "}}}
 
 " echodoc {{{
-let g:echodoc#enable_at_startup=1
-let g:echodoc#enable_force_overwrite=1
+let g:echodoc#enable_at_startup      = 1
+let g:echodoc#enable_force_overwrite = 1
+let g:deoplete#_prev_completion      = 1
 if has('nvim')
     if exists('*nvim_open_win')
         let g:echodoc#type="floating"
