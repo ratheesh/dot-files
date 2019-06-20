@@ -123,7 +123,7 @@ Plug 'kana/vim-submode'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-indent'
+" Plug 'kana/vim-textobj-indent'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'rhysd/vim-textobj-conflict'  " i/a =
 Plug 'anyakichi/vim-textobj-ifdef' " i/a #
