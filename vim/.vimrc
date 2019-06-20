@@ -74,6 +74,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
+Plug 'retorillo/airline-tablemode.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'MaxMEllon/vim-shiny'
