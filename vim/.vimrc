@@ -1417,12 +1417,12 @@ let g:hardtime_maxcount               = 2
 " }}}
 
 "jedi-vim {{{
-let g:jedi#show_call_signatures       = 1
+let g:jedi#show_call_signatures       = 2
 let g:jedi#popup_on_dot               = 1
 " let g:jedi#goto_command             = "<leader>d"
 let g:jedi#auto_vim_configuration     = 0
 let g:jedi#popup_select_first         = 0
-let g:jedi#show_call_signatures_delay = 100
+let g:jedi#show_call_signatures_delay = 0
 let g:jedi#smart_auto_mappings        = 1
 let g:jedi#goto_assignments_command   = "<leader>g"
 let g:jedi#goto_definitions_command   = ""
