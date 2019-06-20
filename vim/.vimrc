@@ -1533,11 +1533,11 @@ call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
+call deoplete#custom#source('LanguageClient' , 'rank' , 9960)
 call deoplete#custom#source('jedi'           , 'rank' , 9959)
 call deoplete#custom#source('neosnippet'     , 'rank' , 9958)
 call deoplete#custom#source('ultisnips'      , 'rank' , 9958)
 call deoplete#custom#source('member'         , 'rank' , 9957)
-call deoplete#custom#source('LanguageClient' , 'rank' , 9956)
 call deoplete#custom#source('tag'            , 'rank' , 9955)
 call deoplete#custom#source('clangx'         , 'rank' , 9954)
 call deoplete#custom#source('clang'          , 'rank' , 9953)
