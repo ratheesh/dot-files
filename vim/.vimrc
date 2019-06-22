@@ -1596,6 +1596,10 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 " }}}
 
+" vim-go {{{
+let g:go_fmt_command = "goimports"
+" }}}
+
 " ncm2#enable_for_buffer {{{
 " autocmd BufEnter * call ncm2#enable_for_buffer()
 " set completeopt=noinsert,menuone,noselect
