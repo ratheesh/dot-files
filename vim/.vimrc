@@ -1540,6 +1540,7 @@ call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
+call deoplete#custom#source('go'             , 'rank' , 9961)
 call deoplete#custom#source('LanguageClient' , 'rank' , 9960)
 call deoplete#custom#source('jedi'           , 'rank' , 9959)
 call deoplete#custom#source('neosnippet'     , 'rank' , 9958)
