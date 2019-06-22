@@ -774,7 +774,10 @@ augroup END
 " }}}
 
 " braceless {{{
-autocmd FileType python BracelessEnable +indent +fold +highlight
+augroup braceless
+    autocmd!
+    autocmd FileType python BracelessEnable +indent +fold +highlight
+augroup END
 let g:braceless_block_key = 'i'
 " }}}
 
