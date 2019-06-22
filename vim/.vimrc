@@ -767,6 +767,10 @@ let g:pydoc_perform_mappings     = 0
 let g:pymode_lint_checkers       = ['pep8']
 " let g:pymode_lint_ignore       = "E501"
 
+augroup autopep
+    autocmd!
+    au FileType python setlocal formatprg=autopep8\ -
+augroup END
 " }}}
 
 " braceless {{{
