@@ -177,7 +177,7 @@ Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
@@ -663,6 +663,34 @@ let g:tagbar_show_linenumbers = 0
 let g:tagbar_autoshowtag      = 1
 nnoremap <silent><F8>            :TagbarToggle<CR>
 " nnoremap <silent><leader>tt  :TagbarOpenAutoClose<CR>
+
+let g:tagbar_type_go = {
+            \ 'ctagstype'  : 'go',
+            \ 'kinds'      : [
+            \ 'p:package',
+            \ 'i:imports:1',
+            \ 'c:constants',
+            \ 'v:variables',
+            \ 't:types',
+            \ 'n:interfaces',
+            \ 'w:fields',
+            \ 'e:embedded',
+            \ 'm:methods',
+            \ 'r:constructor',
+            \ 'f:functions'
+            \ ],
+            \ 'sro'        : '.',
+            \ 'kind2scope' : {
+            \ 't'          : 'ctype',
+            \ 'n'          : 'ntype'
+            \ },
+            \ 'scope2kind' : {
+            \ 'ctype'      : 't',
+            \ 'ntype'      : 'n'
+            \ },
+            \ 'ctagsbin'   : 'gotags',
+            \ 'ctagsargs'  : '-sort -silent'
+            \ }
 " }}}
 
 "vim-cycle {{{
@@ -1605,7 +1633,20 @@ let g:deoplete#sources#jedi#show_docstring = 1
 " }}}
 
 " vim-go {{{
-let g:go_fmt_command = "goimports"
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields      = 1
+let g:go_highlight_functions   = 1
+let g:go_highlight_methods     = 1
+let g:go_highlight_operators   = 1
+let g:go_highlight_structs     = 1
+let g:go_highlight_types       = 1
+let g:go_auto_type_info        = 1
+let g:go_auto_sameids          = 1
+" let g:deoplete#sources#go#unimported_packages = 1
+let g:go_snippet_engine = "neosnippet"
+let g:go_auto_type_info = 1
+let g:go_fmt_command    = "goimports"
 " }}}
 
 " ncm2#enable_for_buffer {{{
