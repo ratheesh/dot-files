@@ -25,12 +25,12 @@ let g:colors_name = "darktheme"
 " syn match Braces display '[{}()\[\]]'
 " syntax match Operator "[-+&|<>=!\/~:*%&^?]"
 
-hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#cccccc   guibg=#222831   gui=NONE
+hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#cccccc   guibg=#2B303B   gui=NONE
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#101010   gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#201f23   gui=NONE
 " hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#4d4d57   gui=NONE
-hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#053864   gui=NONE
+hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#053f6f   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3a455e   gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#eeeeee   guibg=#BA176E   gui=NONE
@@ -76,6 +76,7 @@ hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NO
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
 hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#c0c090   gui=NONE
 hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#505050   guibg=NONE      gui=NONE
+hi NormalFloat  ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#051E30   guibg=NONE      gui=NONE
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -124,29 +125,43 @@ hi cCppInWrapper        ctermfg=172     ctermbg=NONE    cterm=NONE      guifg=#0
 " }}}
 
 " python {{{
-hi pythonInclude           ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#bd74d2   guibg=NONE      gui=NONE
-hi pythonString            ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#75828f   guibg=NONE      gui=italic
-hi pythonFunction          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
-hi pythonRepeat            ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
-hi pythonConditional       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
-hi pythonBuiltinObj        ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac6bf1   guibg=NONE      gui=NONE
-hi pythonSelf              ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#6f91e3   guibg=NONE      gui=italic
-hi pythonDot               ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#00cd00   guibg=NONE      gui=NONE
-hi pythonExtraOperator     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5fba7d   guibg=NONE      gui=NONE
-hi pythonOperator          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ceab5a   guibg=NONE      gui=italic
-hi pythonException         ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=italic
-hi pythonParam             ctermfg=7       ctermbg=233     cterm=NONE      guifg=#cccccc   guibg=NONE      gui=NONE
-hi pythonBuiltinFunc       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#28b473   guibg=NONE      gui=italic
-hi pythonBuiltin           ctermfg=7       ctermbg=233     cterm=NONE      guifg=#AC6BF1   guibg=NONE      gui=italic
-hi pythonDottedName        ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=NONE
-hi pythonDecorator         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
-hi pythonDecoratorName     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
+hi pythonInclude        ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#59B7C5   guibg=NONE      gui=italic
+hi pythonString         ctermfg=172     ctermbg=NONE    cterm=italic    guifg=#75828f   guibg=NONE      gui=italic
+hi pythonFunction       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
+hi pythonRepeat         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
+hi pythonConditional    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
+hi pythonBuiltinObj     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac6bf1   guibg=NONE      gui=NONE
+hi pythonSelf           ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#6f91e3   guibg=NONE      gui=italic
+hi pythonClass          ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#50BA9A   guibg=NONE      gui=bold,italic
+hi pythonDot            ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#00cd00   guibg=NONE      gui=NONE
+hi pythonExtraOperator  ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#5fba7d   guibg=NONE      gui=NONE
+hi pythonOperator       ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ceab5a   guibg=NONE      gui=italic
+hi pythonException      ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=italic
+hi pythonParam          ctermfg=7       ctermbg=233     cterm=NONE      guifg=#cccccc   guibg=NONE      gui=NONE
+hi pythonBuiltinFunc    ctermfg=7       ctermbg=233     cterm=NONE      guifg=#28b473   guibg=NONE      gui=italic
+hi pythonBuiltin        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#AC6BF1   guibg=NONE      gui=italic
+hi pythonDottedName     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE      gui=NONE
+hi pythonDecorator      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
+hi pythonDecoratorName  ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
+hi pythonStatement      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#cc9977  guibg=NONE      gui=NONE
+" }}}
+
+" Go {{{
+hi goDeclaration    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC676F  guibg=NONE      gui=NONE
+hi goImport         ctermfg=7       ctermbg=233     cterm=NONE      guifg=#AC6BF1  guibg=NONE      gui=italic
+hi goPackage        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#AC6BF1  guibg=NONE      gui=italic
+hi goFunction       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#46a6a2  guibg=NONE      gui=NONE
+hi goFloats         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
+hi goSignedInts     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
+hi goUnsignedInts   ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
+hi goComplexes      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
+hi goVar            ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#AC6BF1  guibg=NONE      gui=italic
 " }}}
 
 " gdb {{{
-hi gdbFuncDef              ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
-hi gdbNumber               ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ac6bf1   guibg=NONE      gui=NONE
-hi gdbDocument             ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=NONE      gui=NONE
+hi gdbFuncDef           ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
+hi gdbNumber            ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#ac6bf1   guibg=NONE      gui=NONE
+hi gdbDocument          ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=NONE      gui=NONE
 " }}}
 
 " Make {{{
@@ -165,7 +180,13 @@ hi tmuxFormatString     ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#3
 " denite {{{
 hi DeniteNormalHLLine   ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=NONE      guibg=#444c5c   gui=NONE
 hi DenitePrompt         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#27b062   guibg=NONE      gui=NONE
-hi DeniteFloatWin       ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#152C53   guibg=NONE      gui=NONE
+hi DeniteFloatWin       ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#000000   guibg=#EFE7D4   gui=NONE
+hi deniteGrepPatterns   ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#BFA161   guibg=NONE      gui=NONE
+hi deniteSource_grep    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#c0c0c0   guibg=NONE      gui=NONE
+" }}}
+
+" tagbar {{{
+hi TagbarScope    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#c0c0c0   guibg=NONE      gui=NONE
 " }}}
 
 " sh {{{
@@ -213,9 +234,9 @@ hi MatchWord                ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=
 " }}}
 
 " ShowMotion {{{
-highlight SM_SmallMotionGroup ctermfg=231 ctermbg=53 cterm=italic,bold,underline
-highlight SM_BigMotionGroup   ctermfg=231 ctermbg=54 cterm=italic,bold,underline
-highlight SM_CharSearchGroup  ctermfg=231 ctermbg=4  cterm=italic,bold,underline
+highlight ShowMotion_SmallMotionGroup cterm=underline      ctermbg=53 guifg=#00AFDB guibg=NONE    gui=underline
+highlight ShowMotion_BigMotionGroup   cterm=underline      ctermbg=57 guifg=#00AFDB guibg=NONE    gui=underline
+highlight ShowMotion_CharSearchGroup  cterm=bold,underline ctermbg=4  guifg=#f92a5b guibg=NONE    gui=bold,underline
 " }}}
 
 " git-signify {{{
@@ -241,9 +262,10 @@ hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=
 " }}}
 
 " echodoc {{{
-hi EchoDocFunc       ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#0056B9  guibg=NONE       gui=NONE
-hi EchoDocParam      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#8C3149  guibg=NONE       gui=bold,italic
-hi EchoDocFloat      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#000000  guibg=#F0F0C0    gui=NONE
+hi EchoDocFunc       ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#8C3149  guibg=NONE       gui=NONE
+hi EchoDocParam      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#0056B9  guibg=NONE       gui=bold,italic
+hi EchoDocFloat      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#000000  guibg=#EFE7D4    gui=NONE
+hi EchoDocTrailing   ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#CE4CAB  guibg=NONE       gui=NONE
 " }}}
 
 " git-gutter {{{
@@ -284,9 +306,9 @@ hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008f
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#365063 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#997A9C gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#e0e0e0  guibg=#8C506A gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#657b83 gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#cc9977 gui=NONE
 "}}}
 
 " GitCommit {{{
@@ -341,7 +363,7 @@ hi peekabooSelected     ctermfg=180 ctermbg=237   cterm=NONE guifg=#f4a460  guib
 " Startify {{{
 hi StartifyNumber       ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#BF0075   guibg=NONE    gui=NONE
 hi StartifySelect       ctermfg=NONE    ctermbg=235     cterm=NONE      guifg=NONE      guibg=#303030 gui=NONE
-hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#808080   guibg=NONE    gui=NONE
+hi StartifyBracket      ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#cc9977   guibg=NONE    gui=NONE
 hi StartifySpecial      ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#cd5c5c   guibg=NONE    gui=NONE
 hi StartifyPath         ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#64648a   guibg=NONE    gui=NONE
 hi StartifyFile         ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#1d8d77   guibg=NONE    gui=NONE
