@@ -46,7 +46,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
 Plug 't9md/vim-textmanip'
 Plug 'tpope/vim-capslock'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
@@ -62,7 +61,6 @@ Plug 'mattn/ctrlp-mark'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'brookhong/cscope.vim'
-Plug 'takac/vim-hardtime'    " Make life under ViM little difficult!
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 't9md/vim-smalls'
@@ -95,21 +93,17 @@ Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
     Plug 'lambdalisue/suda.vim'
 endif
-Plug 'tmux-plugins/vim-tmux'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
-Plug 'vim-scripts/blockquote.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'greymd/oscyank.vim'
-Plug 'vim-scripts/blockquote.vim'
+if !has('nvim')
+    Plug 'greymd/oscyank.vim' " Currently, this works only in ViM
+endif " if
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'haya14busa/is.vim'
-Plug 'romainl/vim-cool'
 if has('nvim')
     Plug 'gelguy/wilder.nvim',         { 'do': ':UpdateRemotePlugins' }
 else
@@ -123,10 +117,7 @@ Plug 'kana/vim-submode'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-function'
-" Plug 'kana/vim-textobj-indent'
 Plug 'rhysd/vim-textobj-anyblock'
-Plug 'rhysd/vim-textobj-conflict'  " i/a =
-Plug 'anyakichi/vim-textobj-ifdef' " i/a #
 Plug 'FooSoft/vim-argwrap'
 Plug 'augustold/vim-custom-surround'
 Plug 'kana/vim-textobj-line'
@@ -170,24 +161,12 @@ Plug 'Shougo/neco-syntax'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 
-Plug 'dunstontc/projectile.nvim'
-Plug 'chemzqm/denite-extra'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ratheesh/ncm2-tagprefix', {'branch': 'func_signature'}
-" Plug 'ncm2/ncm2-syntax'
 
 call plug#end()
 

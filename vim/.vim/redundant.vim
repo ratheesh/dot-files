@@ -174,4 +174,30 @@
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'eagletmt/neco-ghc'
 
+" Plug 'tpope/vim-abolish'
+" Plug 'takac/vim-hardtime'    " Make life harder with ViM!
+" Plug 'tmux-plugins/vim-tmux'
+" Plug 'vim-scripts/blockquote.vim'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'haya14busa/is.vim'
+" Plug 'romainl/vim-cool'
+" Plug 'kana/vim-textobj-indent'
+" Plug 'rhysd/vim-textobj-conflict'  " i/a =
+" Plug 'anyakichi/vim-textobj-ifdef' " i/a #
+
+"denite related
+" Plug 'dunstontc/projectile.nvim'
+" Plug 'chemzqm/denite-extra'
+" Plug 'Shougo/neomru.vim'
+" Plug 'Shougo/neoyank.vim'
+
+" NCM2 - alternative to deoplete
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ratheesh/ncm2-tagprefix', {'branch': 'func_signature'}
+" Plug 'ncm2/ncm2-syntax'
+
 " End of File
