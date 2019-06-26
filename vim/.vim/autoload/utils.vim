@@ -146,4 +146,8 @@ function! utils#testfunc()
     let l:val = empty(l:str)? "empty" : "not empty"
     echom l:val
 endfunction
+
+" Command to clear contents of all registers
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+
 " End of File
