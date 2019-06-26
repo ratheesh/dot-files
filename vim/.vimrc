@@ -1390,9 +1390,9 @@ let g:showpairs_limit=1000
 " }}}
 
 " hipairs {{{
-let g:hiPairs_timeout=1000
-let g:hiPairs_insert_timeout=1000
-let g:hiPairs_stopline_more=200
+" let g:hiPairs_timeout=20
+" let g:hiPairs_insert_timeout=20
+" let g:hiPairs_stopline_more=200
 let g:hiPairs_hl_matchPair = {
             \    'term'    : 'bold,underline',
             \    'ctermfg' : '24',
