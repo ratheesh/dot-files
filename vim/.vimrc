@@ -1835,7 +1835,7 @@ let g:endwize_add_verbose_info_filetypes = [ 'c', 'cpp' ]
 let g:highlightedundo#highlight_mode            = 2
 let g:highlightedundo#highlight_duration_delete = 200
 let g:highlightedundo#highlight_duration_add    = 250
-" nmap u     <Plug>(highlightedundo-undo)
+nmap u     <Plug>(highlightedundo-undo)
 nmap <C-r> <Plug>(highlightedundo-redo)
 nmap U     <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
