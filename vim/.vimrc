@@ -1660,9 +1660,10 @@ let g:go_updatetime                  = &updatetime
 " deoplete-go {{{
 " for supporting completion of unimported packages issue
 " $ gocode set unimported-packages true --> from shell
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:go_textobj_include_function_doc      = 1
-let g:deoplete#sources#go#sort_class       = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#jedi#show_docstring    = 1
+let g:go_textobj_include_function_doc         = 1
+let g:deoplete#sources#go#unimported_packages = 1
+let g:deoplete#sources#go#sort_class          = ['package', 'func', 'type', 'var', 'const']
 " }}}
 
 " ncm2#enable_for_buffer {{{
