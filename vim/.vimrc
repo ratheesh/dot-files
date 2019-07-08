@@ -70,6 +70,7 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
+" Plug 'ryanoasis/vim-devicons'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'retorillo/airline-tablemode.vim'
@@ -1282,6 +1283,14 @@ augroup gitCommmit
                 \| nmap <buffer> <LocalLeader>gr  <Plug>GitReviewed
                 \| nmap <buffer> <LocalLeader>gR  <Plug>GitReporter
 augroup END
+" }}}
+
+" devicons {{{
+let g:webdevicons_enable                    = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_ctrlp              = 1
+let g:webdevicons_enable_denite             = 0
+let g:WebDevIconsOS                         = 'unix'
 " }}}
 
 " gutentags {{{
