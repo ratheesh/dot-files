@@ -1133,18 +1133,25 @@ call denite#custom#option('default', {
             \ 'prompt'                      : '➜ ',
             \ 'auto-accel'                  : v:true,
             \ 'auto-highlight'              : v:true,
+            \ 'auto_resize'                 : 1,
+            \ 'start_filter'                : v:false,
+            \ 'source_names'                : 'short',
             \ 'mode'                        : 'normal',
+            \ 'direction'                   : 'dynamicbottom',
             \ 'start-filter'                : v:true,
             \ 'empty'                       : v:false,
             \ 'reversed'                    : v:true,
             \ 'root-markers'                : '.git,.hg,.svn',
             \ 'smartcase'                   : v:true,
+            \ 'statusline'                  : v:false,
             \ 'highlight_mode_normal'       : 'DeniteNormalHLLine',
             \ 'highlight-filter-background' : 'DeniteFloatWin',
             \ 'prompt_highlight'            : 'DenitePrompt',
-            \ 'split'                       : 'horizantal',
+            \ 'split'                       : 'floating',
             \ })
 
+" Remove date from buffer list
+call denite#custom#var('buffer', 'date_format', '')
 
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
@@ -1162,9 +1169,17 @@ function! s:denite_my_settings() abort
     nnoremap <silent><buffer><expr><Tab>   denite#do_map('choose_action')
 endfunction
 
+" Denite filter mappings
+autocmd FileType denite-filter call s:denite_filter_settings()
+function! s:denite_filter_settings() abort
+    call deoplete#custom#buffer_option('auto_complete', v:false)
+    imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
+    nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
+endfunction
+
 " Denite variables
 call denite#custom#var('file/rec', 'command',
-            \ ['rg', '--files', '--glob', '!.git', ''])
+            \ ['rg', '--files', '--glob', '!.git', '--no-messages'])
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',
             \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
@@ -1176,7 +1191,7 @@ call denite#custom#var('grep', 'final_opts', [])
 " Denite sources
 "
 
-nnoremap <silent><Leader>do   :<C-u>Denite file/rec<CR>
+nnoremap <silent><Leader>do   :<C-u>DeniteProjectDir -buffer-name=git -split=floating -start-filter file/rec<CR>
 nnoremap <silent><Leader>db   :<C-u>Denite buffer<CR>
 nnoremap <silent><Leader>dd   :P<C-u>DeniteCursorWord grep<CR>
 nnoremap <silent><Leader>d/   :P<C-u>DeniteProjectDir grep<CR>
