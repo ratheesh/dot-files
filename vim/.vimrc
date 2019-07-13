@@ -1191,7 +1191,7 @@ call denite#custom#var('grep', 'final_opts', [])
 " Denite sources
 "
 
-nnoremap <silent><Leader>do   :<C-u>DeniteProjectDir -buffer-name=git -split=floating -start-filter file/rec<CR>
+nnoremap <silent><Leader>do   :<C-u>DeniteProjectDir -buffer-name=git -start-filter file/rec<CR>
 nnoremap <silent><Leader>db   :<C-u>Denite buffer<CR>
 nnoremap <silent><Leader>dd   :P<C-u>DeniteCursorWord grep<CR>
 nnoremap <silent><Leader>d/   :P<C-u>DeniteProjectDir grep<CR>
