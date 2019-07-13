@@ -1147,7 +1147,7 @@ call denite#custom#option('default', {
             \ 'highlight_mode_normal'       : 'DeniteNormalHLLine',
             \ 'highlight-filter-background' : 'DeniteFloatWin',
             \ 'prompt_highlight'            : 'DenitePrompt',
-            \ 'split'                       : 'floating',
+            \ 'split'                       : 'horizontal',
             \ })
 
 " Remove date from buffer list
