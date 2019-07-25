@@ -490,6 +490,8 @@ imap <Esc> l
 inoremap jj l
 nnoremap K i<CR><Esc>
 " vnoremap jj l
+
+" select lasted pasted text
 noremap gV `[v`]
 noremap Y y$
 
@@ -498,6 +500,10 @@ nnoremap ' `
 nnoremap ` '
 xnoremap ' `
 xnoremap ` '
+
+" search partials
+nnoremap * g*
+nnoremap # g#
 
 if has('nvim')
     nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
