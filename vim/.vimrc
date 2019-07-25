@@ -39,7 +39,7 @@ let g:plug_shallow=0
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
