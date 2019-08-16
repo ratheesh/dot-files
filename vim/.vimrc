@@ -162,8 +162,10 @@ Plug 'Shougo/neco-syntax'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mdempsky/gocode/', { 'rtp': 'nvim', 'do': '~/.vim/plugged/gocode/nvim/symlink.sh' }
@@ -1342,28 +1344,31 @@ xmap <Leader>j <Plug>(smalls)
 " }}}
 
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger       = ""
-let g:UltiSnipsListSnippets        = "<C-Tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-let g:indentLine_faster            = 1
+let g:UltiSnipsExpandTrigger         = "<C-y>"
+let g:UltiSnipsListSnippets          = "<C-Tab>"
+let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger   = "<S-Tab>"
+let g:indentLine_faster              = 1
+let g:UltiSnipsEditSplit             = "vertical"
+" let g:UltiSnipsJumpForwardTrigger  = "<C-j>"
+" let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 "}}}
 
 " neo-snippets {{{
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
+" imap <C-k> <Plug>(neosnippet_expand_or_jump)
+" smap <C-k> <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k> <Plug>(neosnippet_expand_target)
 
-let g:neosnippet#enable_completed_snippet = 1
+" let g:neosnippet#enable_completed_snippet = 1
 
-imap <expr><TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ neosnippet#expandable_or_jumpable() ?
-            \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+"             \ pumvisible() ? "\<C-n>" :
+"             \ neosnippet#expandable_or_jumpable() ?
+"             \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-smap <expr><TAB>
-            \ neosnippet#expandable_or_jumpable() ?
-            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB>
+"             \ neosnippet#expandable_or_jumpable() ?
+"             \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
@@ -1608,19 +1613,24 @@ inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
 inoremap <expr><C-g> deoplete#undo_completion()
 
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+" inoremap <silent><expr> <TAB>
+"             \ pumvisible() ? "\<C-n>" :
+"             \ <SID>check_back_space() ? "\<TAB>" :
+"             \ deoplete#manual_complete()
+" function! s:check_back_space() abort "{{{
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction"}}}
 
 " Use Tab to forward cycle
-" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+    return deoplete#close_popup() . "\<CR>"
+endfunction
 
 " following code works only in ViM for now
 " if !has('nvim')
