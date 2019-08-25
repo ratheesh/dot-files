@@ -161,6 +161,7 @@ endif
 Plug 'Shougo/neco-syntax'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
+Plug 'deathlyfrantic/deoplete-spell'
 
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
