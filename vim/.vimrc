@@ -1850,10 +1850,6 @@ let g:lessspace_whitelist = ['c', 'cxx', 'cpp', 'python', 'vim']
 " let g:lessspace_normal = 0
 " }}}
 
-" wstrip {{{
-let g:wstrip_auto = 1
-" }}}
-
 " vim-expand-region {{{
 map <C-l> <Plug>(expand_region_expand)
 map <C-h> <Plug>(expand_region_shrink)
