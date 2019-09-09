@@ -1281,18 +1281,18 @@ autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
 let g:gitgutter_sign_modified = '='
 
-nmap <silent><Leader>gn <Plug>GitGutterNextHunk
-nmap <silent><Leader>gp <Plug>GitGutterPrevHunk
-nmap <silent><Leader>ga <Plug>GitGutterStageHunk
-nmap <silent><Leader>gr <Plug>GitGutterRevertHunk
-nmap <silent><Leader>gu <Plug>GitGutterUndoHunk
-nmap <silent><Leader>gP <Plug>GitGutterPreviewHunk
+nmap <silent><Leader>gn <Plug>(GitGutterNextHunk)
+nmap <silent><Leader>gp <Plug>(GitGutterPrevHunk)
+nmap <silent><Leader>ga <Plug>(GitGutterStageHunk)
+nmap <silent><Leader>gr <Plug>(GitGutterRevertHunk)
+nmap <silent><Leader>gu <Plug>(GitGutterUndoHunk)
+nmap <silent><Leader>gP <Plug>(GitGutterPreviewHunk)
 
 " textobj for hunks (i/a)h
-omap ih <Plug>GitGutterTextObjectInnerPending
-omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerVisual
-xmap ah <Plug>GitGutterTextObjectOuterVisual
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " }}}
 
@@ -2093,11 +2093,11 @@ let g:submode_keyseqs_to_leave    = ['<Esc>']
 let g:submode_timeout             = 0
 
 " Submode for Gitgutter plugin -> navigate next/prev hunk using j/k keys
-call submode#enter_with('git-gutter', 'n', 'r', '<leader>gn', '<Plug>GitGutterNextHunk')
-call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<Plug>GitGutterPrevHunk')
+call submode#enter_with('git-gutter', 'n', 'r', '<leader>gn', '<Plug>(GitGutterNextHunk)')
+call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<Plug>(GitGutterPrevHunk)')
 call submode#leave_with('git-gutter', 'n', '', '<Esc>')
-call submode#map('git-gutter', 'n', 'r', 'j', '<Plug>GitGutterNextHunk')
-call submode#map('git-gutter', 'n', 'r', 'k', '<Plug>GitGutterPrevHunk')
+call submode#map('git-gutter', 'n', 'r', 'j', '<Plug>(GitGutterNextHunk)')
+call submode#map('git-gutter', 'n', 'r', 'k', '<Plug>(GitGutterPrevHunk)')
 call submode#map('git-gutter', 'n', 'r', '.', '.')
 
 " Submode for undo/redo with g-/+ -> use -/= to undo and redo
