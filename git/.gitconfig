@@ -139,4 +139,7 @@
     ; gpgSign = true
     verbose = true
 
+[http]
+	sslverify = false
+
 ; End of File
