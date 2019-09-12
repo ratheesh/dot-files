@@ -29,7 +29,7 @@ hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#c
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#101010   gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#201f23   gui=NONE
 " hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
-hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#4d4d57   gui=NONE
+hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#435068   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#053f6f   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
 hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3a455e   gui=NONE
@@ -76,7 +76,7 @@ hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NO
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
 hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#c0c090   gui=NONE
 hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#505050   guibg=NONE      gui=NONE
-hi NormalFloat  ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#00334D   gui=NONE
+hi NormalFloat  ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#314457   gui=NONE
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -147,16 +147,20 @@ hi pythonStatement      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#c
 " }}}
 
 " Golang {{{
-hi goDeclaration    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#AC6BF1  guibg=NONE      gui=NONE
+hi goDeclaration    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#47D68E  guibg=NONE      gui=NONE
 hi goImport         ctermfg=7       ctermbg=233     cterm=NONE      guifg=#BC70A4  guibg=NONE      gui=italic
-hi goPackage        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#CE3175  guibg=NONE      gui=italic
-hi goFunction       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#5AADCF  guibg=NONE      gui=NONE
+hi goTypeDecl       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#BC70A4  guibg=NONE      gui=italic
+hi goTypeName       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#1BB1E7  guibg=NONE      gui=bold
+hi goPackage        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#EF4C9B  guibg=NONE      gui=NONE
+hi goFunction       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#af5f5f  guibg=NONE      gui=NONE
 hi goFloats         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
 hi goSignedInts     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
 hi goUnsignedInts   ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
 hi goComplexes      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
-hi goType           ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CA7F85  guibg=NONE      gui=NONE
-hi goVar            ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#AC6BF1  guibg=NONE      gui=italic
+hi goType           ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CA7F85  guibg=NONE      gui=italic
+hi goVar            ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#59B7C5  guibg=NONE      gui=italic
+hi goVarDefs        ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#AC6BF1  guibg=NONE      gui=italic
+hi goLabel          ctermfg=7       ctermbg=233     cterm=NONE      guifg=#BC70A4  guibg=NONE      gui=NONE
 hi goConditional    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#46a6a2  guibg=NONE      gui=NONE
 hi goRepeat         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#46a6a2  guibg=NONE      gui=NONE
 hi goStatement      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
@@ -197,6 +201,10 @@ hi TagbarFoldIcon   ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#B6795
 hi TagbarKind       ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#258FB8   guibg=NONE      gui=bold,italic
 hi TagbarType       ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#BFA161   guibg=NONE      gui=italic
 hi TagbarNestedKind ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#CD5061   guibg=NONE      gui=NONE
+" }}}
+
+" vim-better-whitespace {{{
+hi ExtraWhitespace  ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#CD5061   guibg=NONE      gui=NONE
 " }}}
 
 " sh {{{
@@ -279,10 +287,12 @@ hi EchoDocTrailing   ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#CE4CAB  g
 " }}}
 
 " git-gutter {{{
-hi GitGutterAdd          ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#202020 gui=bold
-hi GitGutterChange       ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#202020 gui=bold
-hi GitGutterDelete       ctermfg=196 ctermbg=233 cterm=bold guifg=#fb091f guibg=#202020 gui=bold
-hi GitGutterChangeDelete ctermfg=94  ctermbg=233 cterm=bold guifg=#ff5500 guibg=#202020 gui=bold
+hi GitGutterAdd             ctermfg=26  ctermbg=233 cterm=bold guifg=#27b062 guibg=#202020 gui=bold
+hi GitGutterChange          ctermfg=180 ctermbg=233 cterm=bold guifg=#f7ca88 guibg=#202020 gui=bold
+hi GitGutterDelete          ctermfg=196 ctermbg=233 cterm=bold guifg=#fb091f guibg=#202020 gui=bold
+hi GitGutterAddLineNr       ctermfg=94  ctermbg=233 cterm=bold guifg=NONE    guibg=#3E8C75 gui=bold
+hi GitGutterChangeLineNr    ctermfg=94  ctermbg=233 cterm=bold guifg=NONE    guibg=#7A8A80 gui=bold
+hi GitGutterDeleteLineNr    ctermfg=94  ctermbg=233 cterm=bold guifg=NONE    guibg=#7B3513 gui=bold
 " }}}
 
 " Braceless {{{
@@ -294,7 +304,7 @@ hi  WStripTrailing     ctermfg=9     ctermbg=NONE    cterm=underline      guifg=
 " }}}
 
 " CtrlP {{{
-hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#ffcc33  guibg=NONE      gui=NONE
+hi CtrlPMatch           ctermfg=6       ctermbg=NONE    cterm=NONE  guifg=#F46E6A  guibg=NONE      gui=bold
 hi CtrlPPrtText         ctermfg=60      ctermbg=NONE    cterm=NONE  guifg=#1d8d77  guibg=NONE      gui=NONE
 hi CtrlPLinePre         ctermfg=172     ctermbg=NONE    cterm=NONE  guifg=#27b062  guibg=NONE      gui=NONE
 hi CtrlPPrtBase         ctermfg=172     ctermbg=NONE    cterm=bold  guifg=#ad5d60  guibg=NONE      gui=bold
@@ -316,9 +326,9 @@ hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008f
 
 " Menu selection {{{
 hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#314457 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#e0e0e0  guibg=#8C506A gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#79A7A5 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
-hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#9E969A gui=NONE
+hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#8C7F70 gui=NONE
 "}}}
 
 " GitCommit {{{

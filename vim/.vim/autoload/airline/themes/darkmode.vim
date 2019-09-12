@@ -154,10 +154,10 @@ let g:airline#themes#darkmode#palette.replace_modified = {
 " #5e6e99
 let g:airline#themes#darkmode#palette.tabline = {
             \ 'airline_tab'     : [ s:guiWhite, '#5e6e99' , 253 , 60  , 'none' ],
-            \ 'airline_tabsel'  : [ s:guiBlack, '#90a0b0' , 0   , 66  , 'italic' ],
-            \ 'airline_tabfill' : [ s:guiWhite, '#3b3c58' , 188 , 235 , 'none' ],
+            \ 'airline_tabsel'  : [ s:guiBlack, '#CFBBA0' , 0   , 66  , 'italic' ],
+            \ 'airline_tabfill' : [ s:guiWhite, '#3A405B' , 188 , 235 , 'none' ],
             \ 'airline_tabmod'  : [ s:guiWhite, '#3e8c75' ,  15 , 89  , 'none' ],
-            \ 'airline_tabhid'  : [ '#a0a0a0' , '#3b3c58' , 103 , 235 , 'none' ],
+            \ 'airline_tabhid'  : [ '#a0a0a0' , '#3A405B' , 103 , 235 , 'none' ],
             \ 'airline_tablabel': [ '#fcb05d' ,  s:gui02  , 253 , 125 , 'italic' ],
             \ }
 
@@ -166,7 +166,7 @@ let g:airline#themes#darkmode#palette.accents = {
             \ 'tagbar_color'        : [ '#a580ff' , '' , 160 , '', 'none'],
             \ 'path_color'          : [ '#6faeb0' , '' , 160 , '', ''],
             \ 'modified_color'      : [ '#fa2c07' , '' , 160 , '', 'italic'],
-            \ 'gitroot_color'       : [ '#BC8BF1' , '' , 160 , '', 'italic'],
+            \ 'gitroot_color'       : [ '#fcb05d' , '' , 160 , '', 'italic'],
             \ 'gitroot_paren_color' : [ '#fa2c77' , '' , 160 , '', 'bold'],
             \ }
 
