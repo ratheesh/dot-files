@@ -74,7 +74,7 @@ hi Title        ctermfg=7       ctermbg=NONE    cterm=bold              guifg=#f
 hi Type         ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6494ed   guibg=NONE      gui=NONE
 hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NONE      guibg=NONE      gui=underline
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
-hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#c0c090   gui=NONE
+hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#909090   gui=NONE
 hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#505050   guibg=NONE      gui=NONE
 hi NormalFloat  ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#314457   gui=NONE
 
@@ -435,7 +435,7 @@ hi htmlSpecialChar      ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9
 
 " Wilder {{{
 hi WildMode             ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#e0e0e0    guibg=#8F575A gui=italic
-hi WildStatus           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#F7CAB8    guibg=#153C63 gui=NONE
+hi WildStatus           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#988C99    guibg=#153C63 gui=NONE
 hi WilderSeparator      ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
 " }}}
 
