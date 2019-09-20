@@ -159,6 +159,8 @@
 " Plug 'machakann/vim-sandwich'
 " Plug 'tweekmonster/wstrip.vim'
 " Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'chrisbra/DynamicSigns'
+" Plug 'mg979/vim-yanktools'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
