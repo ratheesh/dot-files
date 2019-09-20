@@ -146,6 +146,8 @@ Plug 'autozimu/LanguageClient-neovim', {
             \ 'do': 'bash install.sh',
             \ }
 
+Plug 'wellle/tmux-complete.vim'
+
 " Shougo's plugins
 Plug 'Shougo/echodoc.vim'
 if has('nvim')
@@ -1515,6 +1517,10 @@ let g:LanguageClient_serverCommands      = {
             \ 'python': ['/usr/local/bin/pyls'],
             \ }
 let g:LanguageClient_autoStart = 1
+" }}}
+
+" tmux-complete.vim {{{
+let g:tmuxcomplete#trigger = ''
 " }}}
 
 " deoplete {{{
