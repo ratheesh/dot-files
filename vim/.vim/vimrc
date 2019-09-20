@@ -21,7 +21,7 @@ set hidden
 filetype off                  " required!
 
 " Install vimplug if it is not already installed
-let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+let vimplug_exists=expand('$HOME/.vim/autoload/plug.vim')
 if !filereadable(vimplug_exists)
     if !executable("curl")
         echoerr "You have to install curl or first install vim-plug yourself!"
@@ -29,7 +29,7 @@ if !filereadable(vimplug_exists)
     endif
     echo "Installing Vim-Plug..."
     echo ""
-    silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !\curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 " disable shallow cloning
@@ -37,9 +37,9 @@ let g:plug_shallow=0
 "}}}
 
 " Plugins {{{
-call plug#begin('~/.vim/plugged')
+call plug#begin('$HOME/.vim/plugged')
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '$HOME/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
@@ -173,7 +173,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'mdempsky/gocode/', { 'rtp': 'nvim', 'do': '~/.vim/plugged/gocode/nvim/symlink.sh' }
+Plug 'mdempsky/gocode/', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 call plug#end()
@@ -513,7 +513,7 @@ nnoremap * g*
 nnoremap # g#
 
 if has('nvim')
-    nnoremap <silent><Leader>so     :source ~/.config/nvim/init.vim<CR>
+    nnoremap <silent><Leader>so     :source $HOME/.config/nvim/init.vim<CR>
 else
     nnoremap <silent><Leader>so     :source $MYVIMRC<CR>
 endif
@@ -1246,11 +1246,11 @@ let g:startify_files_number=10
 let g:startify_change_to_vcs_root=1
 
 let g:startify_bookmarks = [
-            \       {'c': '~/.vimrc'     },
-            \       {'g': '~/.gitconfig' },
-            \       {'s': '~/.screenrc'  },
-            \       {'t': '~/.tmux.conf' },
-            \       {'z': '~/.zshrc'     },
+            \       {'c': '$HOME/.vim/vimrc'     },
+            \       {'g': '$HOME/.gitconfig' },
+            \       {'s': '$HOME/.screenrc'  },
+            \       {'t': '$HOME/.tmux.conf' },
+            \       {'z': '$HOME/.zshrc'     },
             \ ]
 " }}}
 
@@ -1329,7 +1329,7 @@ let g:gutentags_modules = ['ctags']
 let g:gutentags_project_root = ['.root', '.git', '.svn']
 
 " generate datebases in my cache directory, prevent gtags files polluting my project
-" let g:gutentags_cache_dir = expand('~/.cache/tags')
+" let g:gutentags_cache_dir = expand('$HOME/.cache/tags')
 
 " }}}
 
