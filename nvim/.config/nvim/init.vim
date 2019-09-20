@@ -14,12 +14,13 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-" Bootstrap settings {{{
+" Neovim Bootstrap Settings {{{
 " set nocompatible               " be iMproved
 
-set runtimepath+=~/.vim,~/.vim/after
-set packpath+=~/.vim
-source ~/.vimrc
+set runtimepath+=$HOME/.vim,$HOME/.vim/after
+set packpath+=$HOME/.vim
+source $HOME/.vim/vimrc
 
+" }}}
 
 "End of File
