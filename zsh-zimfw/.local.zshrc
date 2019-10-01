@@ -1,1 +1,0 @@
-.zim/runcoms/local.zshrc
