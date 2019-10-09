@@ -1019,7 +1019,7 @@ let g:airline#extensions#default#section_truncate_width = {
 " \ '9': '೯ '
 " \ }
 
-autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
+" autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 " let g:airline#extensions#default#section_truncate_width = {
 " \ 'c': 30,
