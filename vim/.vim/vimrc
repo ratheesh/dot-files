@@ -60,6 +60,8 @@ Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
+" Plug 'airblade/vim-rooter'
+Plug 'liuchengxu/vim-clap'
 Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -646,6 +648,45 @@ nnoremap \s ea<C-X><C-S>
 syntax on
 let g:enable_bold_font = 1
 color darktheme
+" }}}
+
+" vim-rooter {{{
+let g:rooter_patterns      = ['.svn', '.git/']
+let g:rooter_resolve_links = 1
+let g:rooter_silent_chdir  = 1
+let g:rooter_change_directory_for_non_project_files = ''
+" }}}
+
+" vim-clap {{{
+nnoremap <silent><Leader>co :Clap files<CR>
+nnoremap <silent><Leader>cg :Clap git_files<CR>
+nnoremap <silent><Leader>c/ :Clap grep<CR>
+nnoremap <silent><Leader>ch :Clap command_history<CR>
+
+" let g:clap_current_selection_sign_definition='➤'
+let g:clap_current_selection_sign_definition={ 'text': '➤', 'texthl': "#D59572", "#154058": "PmenuSel"}
+
+function! ClapEnter() abort
+    let g:deoplete#_initialized =  0
+    call g:clap.display.setbufvar_batch({
+                \ '&wrap': 0,
+                \ '&number': 0,
+                \ '&relativenumber': 0,
+                \ '&cursorline': 1,
+                \ '&signcolumn': 'yes',
+                \ })
+endfunction " function
+
+function! ClapExit() abort
+    let g:deoplete#_initialized =  1
+endfunction
+
+augroup ClapGrp
+    autocmd!
+    autocmd User ClapOnEnter   call ClapEnter()
+    autocmd User ClapOnExit    call ClapExit()
+augroup END
+
 " }}}
 
 " Tagbar {{{

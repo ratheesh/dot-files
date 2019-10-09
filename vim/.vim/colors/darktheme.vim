@@ -194,6 +194,13 @@ hi deniteSource_grep    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#c
 hi deniteMatchedChar    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#EE4C9B   guibg=NONE      gui=bold
 " }}}
 
+" vim-clap {{{
+hi  ClapInput           ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#e0e0e0   guibg=#444c5c   gui=NONE
+hi  ClapDisplay         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#BFA161   guibg=#155078   gui=NONE
+hi  ClapPreview         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=#155078   gui=NONE
+hi  ClapMatches         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#CD5061   guibg=#155078   gui=bold
+" }}}
+
 " tagbar {{{
 hi TagbarScope      ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#AC6BF1   guibg=NONE      gui=NONE
 hi TagbarHighlight  ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#47D68E   guibg=NONE      gui=bold
