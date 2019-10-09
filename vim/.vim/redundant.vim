@@ -161,6 +161,7 @@
 " Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'chrisbra/DynamicSigns'
 " Plug 'mg979/vim-yanktools'
+" Plug 'goldfeld/ctrlr.vim'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
