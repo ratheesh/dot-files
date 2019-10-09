@@ -65,6 +65,7 @@ Plug 'liuchengxu/vim-clap'
 Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
+" Plug 'matze/vim-move'
 Plug 't9md/vim-smalls'
 Plug 'junegunn/vim-slash'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
