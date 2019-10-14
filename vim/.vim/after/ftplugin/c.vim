@@ -75,7 +75,7 @@ setlocal cinoptions+=j1     " Anonymous classes are indented correctly.
 setlocal cinoptions+=)20    " Unclosed parens up to 20 lines away
 setlocal cinoptions+=*30    " Unclosed comments up to 30 lines away
 
-setlocal foldcolumn=1
+" setlocal foldcolumn=1
 setlocal foldmethod=syntax
 
 " End of File
