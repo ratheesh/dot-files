@@ -194,6 +194,11 @@ hi deniteSource_grep    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#c
 hi deniteMatchedChar    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#EE4C9B   guibg=NONE      gui=bold
 " }}}
 
+" line-number-interval {{{
+hi HighlightedLineNr  ctermfg=60  ctermbg=235  cterm=NONE  guifg=#fcb05d   guibg=#3a455e   gui=NONE
+hi link DimLineNr LineNr
+" }}}
+
 " vim-clap {{{
 hi  ClapInput           ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#e0e0e0   guibg=#444c5c   gui=NONE
 hi  ClapDisplay         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#BFA161   guibg=#155078   gui=NONE

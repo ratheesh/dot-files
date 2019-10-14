@@ -97,6 +97,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
+    Plug 'IMOKURI/line-number-interval.nvim'
     Plug 'lambdalisue/suda.vim'
 endif
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
@@ -1322,7 +1323,7 @@ let g:gitgutter_map_keys=0
 let g:gitgutter_override_sign_column_highlight = 0
 if exists('&signcolumn')  " Vim 7.4.2201
     if has('nvim')
-        set signcolumn=auto:3
+        set signcolumn=auto
     else
         set signcolumn=yes
     endif " if nvim
@@ -1809,6 +1810,14 @@ endif
 " toggle insert/replace with <C-s>
 nmap <C-s> <Plug>(textmanip-toggle-mode)
 xmap <C-s> <Plug>(textmanip-toggle-mode)
+" }}}
+
+" line-number-interval {{{
+if has('nvim')
+    let g:line_number_interval#enable_at_startup = 1
+    let g:line_number_interval = 5
+    " let g:line_number_interval#use_custom = 1
+endif " if
 " }}}
 
 " cscope {{{
