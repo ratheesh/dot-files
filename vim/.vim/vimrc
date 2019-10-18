@@ -614,7 +614,7 @@ xmap <Leader>; :
 " nnoremap <F10>                 :bnext<CR>
 noremap <F4>                    :echo expand('%:p')<CR>
 nnoremap <silent><Leader>bd     :bdelete<CR>
-nnoremap <silent><BS>           :nohlsearch<CR>
+" nnoremap <silent><BS>           :nohlsearch<CR>
 nnoremap <silent><Leader>bh     :Startify<CR>
 " nnoremap <silent><Leader><Tab>  :b#<CR>
 " nnoremap <Leader>[        :let @+ = expand("%")<CR>
@@ -2116,6 +2116,18 @@ if has('nvim')
     cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
     set wildcharm=<Tab>
 
+    " Enable cmdline completion (for Neovim only)
+    call wilder#set_option('modes', ['/', '?', ':', '-'])
+
+    let s:wilder_show_history = 0
+    function! s:wilder_toggle_history() abort
+        let s:wilder_show_history = 1 - s:wilder_show_history
+        call timer_start(0, {-> feedkeys("\<BS>")})
+        " return space which is then deleted by the <BS> to trigger CmdlineChanged
+        return ' '
+    endfunction
+    cmap <expr> <C-F> wilder#in_context() ? <SID>wilder_toggle_history() : "\<C-F>"
+
     let s:status_hl = wilder#make_hl('WilderStatus', 'WildStatus')
     let s:mode_hl   = wilder#make_hl('WilderMode', 'WildMode')
     let s:index_hl  = wilder#make_hl('WilderIndex', 'airline_z')
@@ -2124,8 +2136,13 @@ if has('nvim')
     call wilder#set_option('pipeline', [
                 \   wilder#branch(
                 \     [
+                \       wilder#check({-> s:wilder_show_history}),
+                \       wilder#history(50),
+                \       {ctx, xs -> filter(xs, {i, x -> match(x, ctx.input) != -1})},
+                \     ],
+                \     [
                 \       wilder#check({_, x -> empty(x)}),
-                \       wilder#history(10),
+                \       wilder#history(20),
                 \     ],
                 \     wilder#cmdline_pipeline(),
                 \     [
@@ -2136,12 +2153,17 @@ if has('nvim')
                 \   ),
                 \ ])
 
+    function! s:wilder_adjust_cmdmode(cmd) abort
+        let l:modestr = a:cmd ==# ':' ? ' Kommand' : ' Suche'
+        return join([l:modestr , s:wilder_show_history ==# 1 ? '★' : ' '], '')
+    endfunction
+
     call wilder#set_option('renderer', wilder#statusline_renderer({
                 \ 'separator':' • ',
                 \ 'separator_hl': s:sep_hl,
                 \ 'hl': s:status_hl,
                 \ 'left': [
-                \    {'value': [{-> getcmdtype() ==# ':' ? ' Kommand ' : ' Suche '}, wilder#spinner()], 'hl': s:mode_hl},
+                \    {'value': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#spinner()], 'hl': s:mode_hl},
                 \    wilder#separator('', s:mode_hl, s:status_hl, 'left'), ' ',
                 \ ],
                 \ 'right': [
@@ -2150,8 +2172,6 @@ if has('nvim')
                 \ ],
                 \ }))
 
-    " Enable cmdline completion (for Neovim only)
-    call wilder#set_option('modes', ['/', '?', ':'])
 endif
 " }}}
 
