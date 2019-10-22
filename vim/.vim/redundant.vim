@@ -162,6 +162,7 @@
 " Plug 'chrisbra/DynamicSigns'
 " Plug 'mg979/vim-yanktools'
 " Plug 'goldfeld/ctrlr.vim'
+" Plug 'airblade/vim-rooter'
 
 " Following are optional
 " Plug 'zchee/deoplete-clang'
@@ -189,6 +190,7 @@
 " Plug 'anyakichi/vim-textobj-ifdef' " i/a #
 
 "denite related
+" Plug 'Shougo/denite.nvim'
 " Plug 'dunstontc/projectile.nvim'
 " Plug 'chemzqm/denite-extra'
 " Plug 'Shougo/neomru.vim'
