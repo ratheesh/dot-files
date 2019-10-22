@@ -60,7 +60,6 @@ Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
-" Plug 'airblade/vim-rooter'
 Plug 'liuchengxu/vim-clap'
 Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
@@ -654,10 +653,10 @@ color darktheme
 " }}}
 
 " vim-rooter {{{
-let g:rooter_patterns      = ['.svn', '.git/']
-let g:rooter_resolve_links = 1
-let g:rooter_silent_chdir  = 1
-let g:rooter_change_directory_for_non_project_files = ''
+" let g:rooter_patterns      = ['.svn', '.git/']
+" let g:rooter_resolve_links = 1
+" let g:rooter_silent_chdir  = 1
+" let g:rooter_change_directory_for_non_project_files = ''
 " }}}
 
 " vim-clap {{{
