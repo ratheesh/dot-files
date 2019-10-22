@@ -661,22 +661,30 @@ let g:rooter_change_directory_for_non_project_files = ''
 " }}}
 
 " vim-clap {{{
-nnoremap <silent><Leader>co :Clap files<CR>
-nnoremap <silent><Leader>cg :Clap git_files<CR>
-nnoremap <silent><Leader>c/ :Clap grep<CR>
-nnoremap <silent><Leader>ch :Clap command_history<CR>
+nnoremap <silent><Leader>co :Clap files ++ef=fzf --hidden<CR>
+nnoremap <silent><Leader>cb :Clap buffers ++ef=fzf<CR>
+nnoremap <silent><Leader>cr :Clap history ++ef=fzf<CR>
+nnoremap <silent><Leader>cl :Clap blines ++ef=fzf<CR>
+nnoremap <silent><Leader>c/ :Clap grep ++query=<cword> <CR>
+nnoremap <silent><Leader>ch :Clap command_history ++ef=fzf<CR>
 
 " let g:clap_current_selection_sign_definition='➤'
-let g:clap_current_selection_sign_definition={ 'text': '➤', 'texthl': "#D59572", "#154058": "PmenuSel"}
+let g:clap_current_selection_sign={ 'text': '>>', 'texthl': "#D59572", "#154058": "PmenuSel"}
+let g:clap_selection_sign={ 'text': '>', 'texthl': "#D59572", "#154058": "PmenuSel"}
+let g:clap_open_action={ 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
+
+let g:clap_provider_grep_delay = 400
+let g:clap_provider_grep_blink = [3, 200]
 
 function! ClapEnter() abort
     let g:deoplete#_initialized =  0
     call g:clap.display.setbufvar_batch({
-                \ '&wrap': 0,
-                \ '&number': 0,
-                \ '&relativenumber': 0,
-                \ '&cursorline': 1,
-                \ '&signcolumn': 'yes',
+                \ '&wrap'           : 0,
+                \ '&number'         : 0,
+                \ '&relativenumber' : 0,
+                \ '&cursorline'     : 1,
+                \ '&signcolumn'     : 'yes',
+                \ '&spell'          : 0,
                 \ })
 endfunction " function
 
