@@ -162,8 +162,8 @@ let g:airline#themes#darkmode#palette.tabline = {
             \ }
 
 let g:airline#themes#darkmode#palette.accents = {
-            \ 'ft_color'            : [ '#ee4c9b' , '' , 160 , '', 'bold,italic'],
-            \ 'tagbar_color'        : [ '#a580ff' , '' , 160 , '', 'none'],
+            \ 'ft_color'            : [ '#ee4c9b' , '' , 160 , '', 'bold'],
+            \ 'tagbar_color'        : [ '#a580ff' , '' , 160 , '', 'italic'],
             \ 'path_color'          : [ '#6faeb0' , '' , 160 , '', ''],
             \ 'modified_color'      : [ '#fa2c07' , '' , 160 , '', 'italic'],
             \ 'gitroot_color'       : [ '#fcb05d' , '' , 160 , '', 'italic'],
@@ -174,8 +174,8 @@ let g:airline#themes#darkmode#palette.accents = {
 augroup modeToggle
 " Adjust colors CursorLineNr in darktheme.vim accordingly
 autocmd!
-autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#A42171  gui=NONE
-autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#000000    guibg=#0BC294  gui=NONE
+autocmd Insertleave   * hi CursorLineNr ctermfg=0   ctermbg=137 cterm=NONE guifg=#eeeeee    guibg=#96594E  gui=NONE
+autocmd InsertEnter   * hi CursorLineNr ctermfg=0   ctermbg=66  cterm=NONE guifg=#000000    guibg=#47D68E  gui=NONE
 augroup END
 
 " CtrlP customization
