@@ -195,15 +195,46 @@ hi deniteMatchedChar    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#E
 " }}}
 
 " line-number-interval {{{
-hi HighlightedLineNr  ctermfg=60  ctermbg=235  cterm=NONE  guifg=#fcb05d   guibg=#3a455e   gui=NONE
+hi HighlightedLineNr  ctermfg=60  ctermbg=235  cterm=NONE  guifg=#c0c0c0   guibg=#4a5a64   gui=NONE
 hi link DimLineNr LineNr
 " }}}
 
 " vim-clap {{{
-hi  ClapInput           ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#e0e0e0   guibg=#444c5c   gui=NONE
-hi  ClapDisplay         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#BFA161   guibg=#155078   gui=NONE
-hi  ClapPreview         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#909090   guibg=#155078   gui=NONE
-hi  ClapMatches         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#CD5061   guibg=#155078   gui=bold
+hi ClapInput                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#e0e0e0   guibg=#314457   gui=NONE
+hi ClapDisplay                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#2a456e   gui=NONE
+hi ClapPreview                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#909090   guibg=#2a456e   gui=NONE
+hi ClapMatches1                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches2                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapMatches3                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches4                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapMatches5                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches6                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapMatches7                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches8                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapFuzzyMatches1            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapFuzzyMatches2            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapFuzzyMatches3            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapFuzzyMatches4            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapFuzzyMatches5            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapFuzzyMatches6            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapFuzzyMatches7            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapFuzzyMatches8            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapFuzzyMatches9            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapFuzzyMatches10           ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapFuzzyMatches11           ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapFuzzyMatches12           ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapSelected                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=NONE      guibg=NONE      gui=NONE
+hi ClapCurrentSelected          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#356088   gui=NONE
+hi ClapCurrentSelection         ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=NONE      guibg=#356088   gui=NONE
+hi ClapSelectedSign             ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#DDCC77   guibg=NONE      gui=NONE
+hi ClapCurrentSelectedSign      ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#2BBAEF   guibg=NONE      gui=NONE
+hi ClapDefaultCurrentSelection  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=NONE      gui=NONE
+
+" clap grep
+hi ClapFpath                ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#E79498   guibg=NONE   gui=NONE
+hi ClapLinNr                ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#AC6BF1   guibg=NONE   gui=NONE
+hi ClapColumn               ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#DDCC77   guibg=NONE   gui=NONE
+hi ClapLinNrColumn          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#2BBAEF   guibg=NONE   gui=NONE
 " }}}
 
 " tagbar {{{
@@ -312,7 +343,7 @@ hi  BracelessIndent     ctermfg=NONE     ctermbg=237    cterm=NONE      guifg=NO
 " }}}
 
 " wstrip {{{
-hi  WStripTrailing     ctermfg=9     ctermbg=NONE    cterm=underline      guifg=NONE      guibg=#505050   gui=underline
+hi  WStripTrailing     ctermfg=9     ctermbg=NONE    cterm=underline      guifg=NONE      guibg=#155078   gui=underline
 " }}}
 
 " CtrlP {{{
@@ -337,14 +368,14 @@ hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008f
 " }}}
 
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#314457 gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#c0c0c0  guibg=#415467 gui=NONE
 hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#79A7A5 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#8C7F70 gui=NONE
 "}}}
 
 " GitCommit {{{
-hi gitcommitcomment             ctermfg=240     ctermbg=none    cterm=none     guifg=#505050 guibg=NONE    gui=NONE
+hi gitcommitcomment             ctermfg=240     ctermbg=none    cterm=none     guifg=#686868 guibg=NONE    gui=NONE
 hi gitcommitoverflow            ctermfg=162     ctermbg=237     cterm=NONE     guifg=#db080b guibg=#404040 gui=NONE
 hi gitcommitsummary             ctermfg=7       ctermbg=none    cterm=none     guifg=#eeeeee guibg=NONE    gui=NONE
 hi gitcommitbranch              ctermfg=180     ctermbg=none    cterm=none     guifg=#f7cab8 guibg=NONE    gui=NONE
