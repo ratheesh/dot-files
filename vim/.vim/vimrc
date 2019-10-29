@@ -1183,12 +1183,6 @@ let g:ctrlp_yankring_minimum_chars   = 2
 "             \ --ignore "node_modules/*"'
 " }}}
 
-" fly-grep {{{
-nnoremap <Space>/ :FlyGrep<cr>
-let g:FlyGrep_input_delay=1000
-let g:spacevim_commandline_prompt='==>'
-" }}}
-
 " ctrlp-mark {{{
 " leaveout all except alphabhets
 let g:ctrlp_mark_match_string = 'v:val !~ "^ \\(\\W\\|\\d\\).*"'
@@ -1955,13 +1949,6 @@ map <C-h> <Plug>(expand_region_shrink)
 let g:AutoPairsFlyMode            = 1
 let g:AutoPairsMultilineClose     = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-" }}}
-
-" vim-endwize {{{
-inoremap <silent><CR> <CR><C-r>=endwize#crend()<CR>
-
-let g:endwize_add_info_filetypes = [ 'vim', 'sh', 'zsh', 'c', 'cpp']
-let g:endwize_add_verbose_info_filetypes = [ 'c', 'cpp' ]
 " }}}
 
 " vim-highlightedundo {{{
