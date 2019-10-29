@@ -1128,18 +1128,18 @@ let g:ctrlp_max_files         = 200000
 " let g:ctrlp_mruf_relative   = 1
 set autochdir
 
-nnoremap <silent><Leader>fo :CtrlP<CR>
-nnoremap <silent><Leader>fb :CtrlPBuffer<CR>
-nnoremap <silent><Leader>fr :CtrlPMRU<CR>
-nnoremap <silent><Leader>ft :CtrlPBufTag<CR>
-nnoremap <silent><Leader>fT :CtrlPBufTagAll<CR>
-nnoremap <silent><Leader>fj :CtrlPJumpList<CR>
-nnoremap <silent><Leader>fp :CtrlPRegister<CR>
-nnoremap <silent><Leader>fl :CtrlPLine<CR>
-nnoremap <silent><Leader>fy :CtrlPYankring<CR>
-nnoremap <silent><leader>fj :CtrlPJumpList<CR>
-nnoremap <silent><leader>fg :CtrlPModified<CR>
-nnoremap <silent><leader>fm :CtrlPMark<CR>
+" nnoremap <silent><Leader>fo :CtrlP<CR>
+" nnoremap <silent><Leader>fb :CtrlPBuffer<CR>
+" nnoremap <silent><Leader>fr :CtrlPMRU<CR>
+" nnoremap <silent><Leader>ft :CtrlPBufTag<CR>
+" nnoremap <silent><Leader>fT :CtrlPBufTagAll<CR>
+" nnoremap <silent><Leader>fj :CtrlPJumpList<CR>
+" nnoremap <silent><Leader>fp :CtrlPRegister<CR>
+" nnoremap <silent><Leader>fl :CtrlPLine<CR>
+" nnoremap <silent><Leader>fy :CtrlPYankring<CR>
+" nnoremap <silent><leader>fj :CtrlPJumpList<CR>
+" nnoremap <silent><leader>fg :CtrlPModified<CR>
+" nnoremap <silent><leader>fm :CtrlPMark<CR>
 " nnoremap <Leader>fm :CtrlPMixed<CR>
 
 let g:ctrlp_custom_ignore = {
@@ -1165,7 +1165,7 @@ let g:ctrlp_tjump_only_silent = 1
 " }}}
 
 " ctrlp-extensions {{{
-nnoremap <silent><Leader>fy :CtrlPYankring<CR>
+" nnoremap <silent><Leader>fy :CtrlPYankring<CR>
 let g:ctrlp_yankring_limit           = 100
 let g:ctrlp_yankring_highlight       = 1
 let g:ctrlp_yankring_use_textchanged = 1
