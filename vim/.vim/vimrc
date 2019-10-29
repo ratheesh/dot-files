@@ -923,11 +923,9 @@ let g:airline#extensions#anzu#enabled               = 0
 " let g:airline#extensions#wordcount#filetypes        = ''
 
 " vcs
-let g:airline#extensions#vimagit#enabled             = 1
 let g:airline#extensions#hunks#enabled               = 1
 let g:airline#extensions#hunks#non_zero_only         = 1
-let g:airline#extensions#branch#enabled              = 1
-let g:airline#extensions#branch#displayed_head_limit = 20
+let g:airline#extensions#branch#enabled              = 0 " disable this if hunks should be included but branch is excluded
 
 let g:airline_symbols.paste = 'ραstε'
 let g:airline_symbols.branch = '±'
