@@ -660,23 +660,35 @@ color darktheme
 " }}}
 
 " vim-clap {{{
-nnoremap <silent><Leader>co :Clap files ++ef=fzf --hidden<CR>
-nnoremap <silent><Leader>cb :Clap buffers ++ef=fzf<CR>
-nnoremap <silent><Leader>cr :Clap history ++ef=fzf<CR>
-nnoremap <silent><Leader>cl :Clap blines ++ef=fzf<CR>
-nnoremap <silent><Leader>c/ :Clap grep ++query=<cword> <CR>
-nnoremap <silent><Leader>ch :Clap command_history ++ef=fzf<CR>
+nnoremap <silent><Leader>fo :Clap files ++ef=fzf --hidden<CR>
+nnoremap <silent><Leader>fb :Clap buffers ++ef=fzf<CR>
+nnoremap <silent><Leader>fr :Clap history ++ef=fzf<CR>
+nnoremap <silent><Leader>fl :Clap blines ++ef=fzf<CR>
+nnoremap <silent><Leader>/  :Clap grep ++ef=fzf <CR>
+nnoremap <silent><Leader>fh :Clap command_history ++ef=fzf <CR>
+nnoremap <silent><Leader>fy :Clap yanks ++ef=fzf<CR>
+xnoremap <silent><Leader>fy :Clap yanks ++ef=fzf<CR>
 
 " let g:clap_current_selection_sign_definition='➤'
-let g:clap_current_selection_sign={ 'text': '>>', 'texthl': "#D59572", "#154058": "PmenuSel"}
-let g:clap_selection_sign={ 'text': '>', 'texthl': "#D59572", "#154058": "PmenuSel"}
-let g:clap_open_action={ 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
+let g:clap_multi_selection_warning_silent = 1
+let g:clap_current_selection_sign = { 'text': '☛', 'texthl': "ClapCurrentSelectedSign", "linehl": "ClapCurrentSelection" }
+let g:clap_selected_sign  = { 'text': ' •', 'texthl': "ClapSelectedSign", "linehl": "ClapSelected" }
+let g:clap_open_action    = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
+let g:clap_no_matches_msg = 'Keine Gleiche gefunden'
 
-let g:clap_provider_grep_delay = 400
-let g:clap_provider_grep_blink = [3, 200]
+let g:clap_provider_grep_delay       = 400
+let g:clap_provider_grep_blink       = [2, 200]
+let g:clap_provider_grep_opts        = '--hidden'
+let g:clap_provider_grep_enable_icon = 0
+
+" Yank provider
+let g:clap_enable_yanks_provider = 1
+
+" Beautify clap input window
+let g:clap_search_box_border_symbols = { 'arrow': ["\ue0b2", "\ue0b0"], 'curve': ["\ue0b6", "\ue0b4"], 'nil': ['', ''] }
+let g:clap_search_box_border_style   = 'curve'
 
 function! ClapEnter() abort
-    let g:deoplete#_initialized =  0
     call g:clap.display.setbufvar_batch({
                 \ '&wrap'           : 0,
                 \ '&number'         : 0,
@@ -684,11 +696,11 @@ function! ClapEnter() abort
                 \ '&cursorline'     : 1,
                 \ '&signcolumn'     : 'yes',
                 \ '&spell'          : 0,
+                \ '&colorcolumn'    : 0,
                 \ })
 endfunction " function
 
 function! ClapExit() abort
-    let g:deoplete#_initialized =  1
 endfunction
 
 augroup ClapGrp
