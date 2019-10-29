@@ -92,8 +92,8 @@ Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'tpope/vim-endwise'
-Plug 'rhysd/endwize.vim'
+Plug 'tpope/vim-endwise'
+" Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
     Plug 'IMOKURI/line-number-interval.nvim'
