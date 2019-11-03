@@ -203,14 +203,15 @@ hi link DimLineNr LineNr
 hi ClapInput                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#e0e0e0   guibg=#314457   gui=NONE
 hi ClapDisplay                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#2a456e   gui=NONE
 hi ClapPreview                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#909090   guibg=#2a456e   gui=NONE
-hi ClapMatches1                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
-hi ClapMatches2                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
-hi ClapMatches3                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00CEFF   guibg=NONE      gui=bold,underline,italic
+hi ClapMatches1                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=NONE
+hi ClapMatches2                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapMatches4                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
-hi ClapMatches5                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches3                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapMatches6                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
-hi ClapMatches7                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches5                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapMatches8                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapMatches7                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapFuzzyMatches1            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapFuzzyMatches2            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
 hi ClapFuzzyMatches3            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
@@ -225,10 +226,12 @@ hi ClapFuzzyMatches11           ctermfg=NONE    ctermbg=NONE    cterm=NONE   gui
 hi ClapFuzzyMatches12           ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
 hi ClapSelected                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=NONE      guibg=NONE      gui=NONE
 hi ClapCurrentSelected          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#356088   gui=NONE
-hi ClapCurrentSelection         ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=NONE      guibg=#356088   gui=NONE
+hi ClapCurrentSelection         ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#F7CAB8   guibg=#356088   gui=NONE
 hi ClapSelectedSign             ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#DDCC77   guibg=NONE      gui=NONE
 hi ClapCurrentSelectedSign      ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#2BBAEF   guibg=NONE      gui=NONE
 hi ClapDefaultCurrentSelection  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=NONE      gui=NONE
+hi ClapQuery                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=NONE      gui=NONE
+hi ClapSpinner                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=#314457   gui=NONE
 
 " clap grep
 hi ClapFpath                ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#E79498   guibg=NONE   gui=NONE
@@ -284,20 +287,20 @@ hi gitconfigSection     ctermfg=60      ctermbg=NONE    cterm=NONE    guifg=#468
 " }}}
 
 " which-key {{{
-hi WhichKey                 ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=NONE
-hi WhichKeySeperator        ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#ff5500  guibg=NONE   gui=NONE
-hi WhichKeyGroup            ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#89b7b5  guibg=NONE   gui=NONE
-hi WhichKeyDesc             ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
+hi WhichKey             ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#a580ff  guibg=NONE   gui=NONE
+hi WhichKeySeperator    ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#ff5500  guibg=NONE   gui=NONE
+hi WhichKeyGroup        ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#89b7b5  guibg=NONE   gui=NONE
+hi WhichKeyDesc         ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#4682b4  guibg=NONE   gui=NONE
 " }}}
 
 " vim-matchup {{{
-hi MatchWord                ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#fa2c77  guibg=NONE   gui=italic,underline
+hi MatchWord          ctermfg=62      ctermbg=NONE    cterm=NONE    guifg=#fa2c77  guibg=NONE   gui=italic,underline
 " }}}
 
 " ShowMotion {{{
-highlight ShowMotion_SmallMotionGroup cterm=underline      ctermbg=53 guifg=#00AFDB guibg=NONE    gui=underline
-highlight ShowMotion_BigMotionGroup   cterm=underline      ctermbg=57 guifg=#00AFDB guibg=NONE    gui=underline
-highlight ShowMotion_CharSearchGroup  cterm=bold,underline ctermbg=4  guifg=#f92a5b guibg=NONE    gui=bold,underline
+highlight SM_SmallMotionGroup ctermfg=NONE    ctermbg=NONE    cterm=bold,italic,underline guifg=NONE guibg=NONE    gui=bold,italic,underline
+highlight SM_BigMotionGroup   ctermfg=NONE    ctermbg=NONE    cterm=bold,italic,underline guifg=NONE guibg=NONE    gui=bold,italic,underline
+highlight SM_CharSearchGroup  ctermfg=NONE    ctermbg=NONE    cterm=bold,italic,underline guifg=NONE guibg=NONE    gui=bold,italic,underline
 " }}}
 
 " git-signify {{{
