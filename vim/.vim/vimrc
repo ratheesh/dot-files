@@ -660,26 +660,7 @@ color darktheme
 " }}}
 
 " vim-clap {{{
-
-" `:Clap quick_open` to open some dotfiles quickly.
-let g:clap_provider_quick_open = {
-      \ 'source': [
-      \ '$HOME/.vim/vimrc',
-      \ '$HOME/.zshrc',
-      \ '$HOME/.tmux.conf'
-      \ ],
-      \ 'sink': 'e',
-      \ }
-
-nnoremap <silent><Leader>fo :Clap! files ++ef=fzf --hidden<CR>
-nnoremap <silent><Leader>fb :Clap! buffers ++ef=fzf<CR>
-nnoremap <silent><Leader>fr :Clap! history ++ef=fzf<CR>
-nnoremap <silent><Leader>fl :Clap! blines ++ef=fzf<CR>
-nnoremap <silent><Leader>/  :Clap! grep<CR>
-nnoremap <silent><Leader>fm :Clap! marks ++ef=fzf<CR>
-nnoremap <silent><Leader>fh :Clap! command_history<CR>
-nnoremap <silent><Leader>fy :Clap! yanks ++ef=fzf<CR>
-nnoremap <silent><Leader>fq :Clap! quick_open ++ef=fzf<CR>
+let g:clap_default_external_filter = 'fzf'
 
 " let g:clap_current_selection_sign_definition='➤'
 let g:clap_multi_selection_warning_silent = 1
@@ -688,6 +669,7 @@ let g:clap_selected_sign  = { 'text': ' •', 'texthl': "ClapSelectedSign", "lin
 let g:clap_open_action    = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
 let g:clap_no_matches_msg = 'Keine Gleiche gefunden'
 
+" grep options
 let g:clap_provider_grep_executable  = 'rg'
 let g:clap_provider_grep_opts        = '-H --no-heading --vimgrep --smart-case --hidden'
 let g:clap_provider_grep_delay       = 300
@@ -696,7 +678,7 @@ let g:clap_provider_grep_enable_icon = 0
 
 " Yank provider
 let g:clap_enable_yanks_provider      = 1
-let g:clap_provider_yanks_max_entries = 5
+let g:clap_provider_yanks_max_entries = 30
 let g:clap_provider_yanks_min_len     = 3
 
 " Beautify clap input window
@@ -704,15 +686,15 @@ let g:clap_search_box_border_symbols = { 'arrow': ["\ue0b2", "\ue0b0"], 'curve':
 let g:clap_search_box_border_style   = 'curve'
 
 function! ClapEnter() abort
-    call g:clap.display.setbufvar_batch({
-                \ '&wrap'           : 0,
-                \ '&number'         : 0,
-                \ '&relativenumber' : 0,
-                \ '&cursorline'     : 1,
-                \ '&signcolumn'     : 'yes',
-                \ '&spell'          : 0,
-                \ '&colorcolumn'    : 0,
-                \ })
+  call g:clap.display.setbufvar_batch({
+        \ '&wrap'           : 0,
+        \ '&number'         : 0,
+        \ '&relativenumber' : 0,
+        \ '&cursorline'     : 1,
+        \ '&signcolumn'     : 'yes',
+        \ '&spell'          : 0,
+        \ '&colorcolumn'    : 0,
+        \ })
 endfunction " function
 
 function! ClapExit() abort
@@ -723,6 +705,26 @@ augroup ClapGrp
     autocmd User ClapOnEnter   call ClapEnter()
     autocmd User ClapOnExit    call ClapExit()
 augroup END
+
+" Clap quick_open to open some dotfiles quickly.
+let g:clap_provider_quick_open = {
+      \ 'source': [
+      \ '$HOME/.vim/vimrc',
+      \ '$HOME/.zshrc',
+      \ '$HOME/.tmux.conf'
+      \ ],
+      \ 'sink': 'e',
+      \ }
+
+nnoremap <silent><Leader>fo :Clap files --hidden<CR>
+nnoremap <silent><Leader>fb :Clap buffers<CR>
+nnoremap <silent><Leader>fr :Clap history<CR>
+nnoremap <silent><Leader>fl :Clap blines<CR>
+nnoremap <silent><Leader>/  :Clap grep<CR>
+nnoremap <silent><Leader>fm :Clap marks<CR>
+nnoremap <silent><Leader>fh :Clap command_history<CR>
+nnoremap <silent><Leader>fy :Clap yanks<CR>
+nnoremap <silent><Leader>fw :Clap quick_open<CR>
 
 " }}}
 
