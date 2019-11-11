@@ -660,6 +660,8 @@ color darktheme
 " }}}
 
 " vim-clap {{{
+let g:clap_spinner_frames =  ["●∙∙", "∙●∙", "∙∙●"]
+" let g:clap_prompt_format = ''
 let g:clap_default_external_filter = 'fzf'
 
 " let g:clap_current_selection_sign_definition='➤'
