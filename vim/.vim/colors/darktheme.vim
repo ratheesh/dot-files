@@ -200,18 +200,18 @@ hi link DimLineNr LineNr
 " }}}
 
 " vim-clap {{{
-hi ClapInput                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#e0e0e0   guibg=#314457   gui=NONE
+hi ClapInput                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=#314457   gui=NONE
 hi ClapDisplay                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#2a456e   gui=NONE
 hi ClapPreview                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#909090   guibg=#2a456e   gui=NONE
-hi ClapMatches                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00CEFF   guibg=NONE      gui=bold,underline,italic
+hi ClapMatches                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold,underline,italic
 hi ClapMatches1                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=NONE
 hi ClapMatches2                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapMatches4                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
 hi ClapMatches3                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapMatches6                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
 hi ClapMatches5                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
-hi ClapMatches8                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
-hi ClapMatches7                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
+hi ClapMatches7                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
+hi ClapMatches8                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapFuzzyMatches1            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
 hi ClapFuzzyMatches2            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold
 hi ClapFuzzyMatches3            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
