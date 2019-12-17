@@ -60,7 +60,8 @@ Plug 'shinnya/ctrlp-jumplist'
 Plug 'mattn/ctrlp-mark'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
-Plug 'liuchengxu/vim-clap'
+" The Rust extension will only be installed if cargo is available.
+Plug 'liuchengxu/vim-clap', { 'do': function('clap#helper#build_all') }
 Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
