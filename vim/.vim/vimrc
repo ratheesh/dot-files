@@ -79,6 +79,7 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'retorillo/airline-tablemode.vim'
+Plug 'delphinus/vim-auto-cursorline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'MaxMEllon/vim-shiny'
@@ -1149,6 +1150,10 @@ let g:airline#extensions#default#section_truncate_width = {
 "             \ 'S'  : 'Subst-Liƞε',
 "             \ '' : 'Subst-ẞlk',
 "             \ }
+" }}}
+
+" vim-auto-cursorline {{{
+g:auto_cursorline_wait_ms = 1000
 " }}}
 
 " vim-anzu {{{
