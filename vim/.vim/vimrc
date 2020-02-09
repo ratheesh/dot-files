@@ -2497,4 +2497,7 @@ endif
 " Autoload vimrc on save
 " autocmd BufWritePost .vimrc source %
 
+let g:surround_42 = "/* \r */"
+let g:surround_{char2nr("q")} = "“\r”"
+
 " End of File
