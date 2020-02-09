@@ -50,15 +50,15 @@ Plug 't9md/vim-textmanip'
 Plug 'tpope/vim-capslock'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'ratheesh/vim-smooth-scroll'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ratheesh/ctrlp_bdelete.vim'
-Plug 'mattn/ctrlp-register'
-Plug 'ivalkeen/vim-ctrlp-tjump'
-Plug 'ratheesh/ctrlp-extensions.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'shinnya/ctrlp-jumplist'
-Plug 'mattn/ctrlp-mark'
-Plug 'jasoncodes/ctrlp-modified.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ratheesh/ctrlp_bdelete.vim'
+" Plug 'mattn/ctrlp-register'
+" Plug 'ivalkeen/vim-ctrlp-tjump'
+" Plug 'ratheesh/ctrlp-extensions.vim'
+" Plug 'FelikZ/ctrlp-py-matcher'
+" Plug 'shinnya/ctrlp-jumplist'
+" Plug 'mattn/ctrlp-mark'
+" Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
 " Plug 'liuchengxu/vim-clap', { 'do': function('clap#helper#build_all') }
@@ -1245,14 +1245,14 @@ autocmd BufEnter ControlP set nonumber
 " }}}
 
 " ctrlp_bdelete {{{
-call ctrlp_bdelete#init()
-let g:ctrlp_bdelete_keymap_trigger='<C-_>'
+" call ctrlp_bdelete#init()
+" let g:ctrlp_bdelete_keymap_trigger='<C-_>'
 "}}}
 
 " vim-ctrlp-tjump {{{
-nnoremap <silent><c-]> :CtrlPtjump<CR>
-vnoremap <silent><c-]> :CtrlPtjumpVisual<CR>
-let g:ctrlp_tjump_only_silent = 1
+" nnoremap <silent><c-]> :CtrlPtjump<CR>
+" vnoremap <silent><c-]> :CtrlPtjumpVisual<CR>
+" let g:ctrlp_tjump_only_silent = 1
 " }}}
 
 " ctrlp-extensions {{{
