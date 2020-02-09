@@ -903,6 +903,7 @@ let g:cycle_default_groups = [
             \ [[ 'min', 'max' ]],
             \ [[ 'on', 'off' ]],
             \ [[ 'start', 'stop' ]],
+            \ [[ 'enable', 'disable' ]],
             \ [[ 'success', 'failure' ]],
             \ [[ 'up', 'down' ]],
             \ [[ 'left', 'right' ]],
