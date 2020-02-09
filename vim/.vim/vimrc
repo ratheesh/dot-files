@@ -45,7 +45,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 Plug 't9md/vim-textmanip'
 Plug 'tpope/vim-capslock'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
@@ -83,6 +83,7 @@ Plug 'ratheesh/vim-extended-ft'
 Plug 'MaxMEllon/vim-shiny'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
+Plug 'machakann/vim-sandwich'
 Plug 'ckarnell/Antonys-macro-repeater'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
@@ -1980,6 +1981,33 @@ nmap U     <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
 nmap g+    <Plug>(highlightedundo-gplus)
 " nmap U     <C-r>
+" }}}
+
+" vim-sandwich {{{
+let g:operator#sandwich#highlight_duration=200
+runtime macros/sandwich/keymap/surround.vim
+let g:sandwich#recipes += [
+      \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1,
+      \    'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+      \
+      \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1,
+      \    'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
+      \
+      \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1,
+      \    'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
+      \
+      \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1,
+      \    'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'],
+      \    'action': ['delete'], 'input': ['{']},
+      \
+      \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1,
+      \    'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'],
+      \    'action': ['delete'], 'input': ['[']},
+      \
+      \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1,
+      \    'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'],
+      \    'action': ['delete'], 'input': ['(']},
+      \ ]
 " }}}
 
 " vim-cursormode {{{
