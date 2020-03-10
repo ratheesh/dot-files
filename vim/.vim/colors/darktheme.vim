@@ -502,6 +502,11 @@ hi htmlArg              ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#50fa7b
 hi htmlSpecialChar      ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9    guibg=NONE gui=NONE
 "}}}
 
+" XML {{{
+hi xmlTagName           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#bd93f9    guibg=NONE gui=NONE
+hi xmlEndTag            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#bd93f9    guibg=NONE gui=NONE
+" }}}
+
 " Wilder {{{
 hi WildMode             ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#e0e0e0    guibg=#8F575A gui=italic
 hi WildStatus           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#988C99    guibg=#153C63 gui=NONE
