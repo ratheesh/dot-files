@@ -199,6 +199,22 @@ hi HighlightedLineNr  ctermfg=60  ctermbg=235  cterm=NONE  guifg=#c0c0c0   guibg
 hi link DimLineNr LineNr
 " }}}
 
+" fzf.vim {{{
+hi FZFMain              ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#cccccc   guibg=#000000   gui=NONE
+hi FZFPreview           ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#cccccc   guibg=#314457   gui=NONE
+hi FZFHighlight         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#cccccc   guibg=#df678f   gui=NONE
+hi FZFCurrentLn         ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#cfd780   guibg=#242C44   gui=NONE
+hi FZFGutter            ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#cccccc   guibg=#444c5c   gui=NONE
+hi FZFHighlightCurLn    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#1BC1E7   guibg=#343c4c   gui=bold
+hi FZFBorder            ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#5DADEC   guibg=NONE      gui=bold
+hi FZFPrompt            ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#d7005f   guibg=NONE      gui=NONE
+hi FZFPointer           ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#af5fff   guibg=NONE      gui=NONE
+hi FZFMarker            ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#1BC1E7   guibg=NONE      gui=NONE
+hi FZFSpinner           ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#af5fff   guibg=NONE      gui=bold
+hi FZFHeader            ctermfg=NONE    ctermbg=NONE    cterm=italic    guifg=#61afef   guibg=NONE      gui=NONE
+hi FZFInfo              ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#e79498   guibg=NONE      gui=NONE
+" }}}
+
 " vim-clap {{{
 hi ClapInput                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=#314457   gui=NONE
 hi ClapDisplay                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#2a456e   gui=NONE
