@@ -39,6 +39,21 @@ let g:which_key_map.a = {
             \ '|': 'Align Table',
             \ }
 
+
+let g:which_key_map.k = {
+      \ 'name': '+LSP',
+      \ 'd': 'Definition',
+      \ 'r': 'Rename',
+      \ 'f': 'Format',
+      \ 't': 'Type Definition',
+      \ 'x': 'References',
+      \ 'a': 'Apply Edit',
+      \ 'c': 'Completion',
+      \ 'h': 'Hover',
+      \ 's': 'Symbol',
+      \ 'm': 'Context Menu',
+      \ }
+
 let g:which_key_map.1   = 'Select Buffer 1'
 let g:which_key_map.2   = 'Select Buffer 2'
 let g:which_key_map.3   = 'Select Buffer 3'
