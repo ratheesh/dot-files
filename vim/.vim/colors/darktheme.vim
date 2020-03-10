@@ -319,6 +319,13 @@ highlight SM_BigMotionGroup   ctermfg=NONE    ctermbg=NONE    cterm=bold,italic,
 highlight SM_CharSearchGroup  ctermfg=NONE    ctermbg=NONE    cterm=bold,italic,underline guifg=NONE guibg=NONE    gui=bold,italic,underline
 " }}}
 
+" vim-sandwitch {{{
+hi OperatorSandwichBuns       ctermfg=26     ctermbg=233   cterm=bold  guifg=#00bbff  guibg=NONE   gui=bold
+hi OperatorSandwichAdd        ctermfg=26     ctermbg=233   cterm=bold  guifg=#47F0A2  guibg=NONE   gui=bold
+hi OperatorSandwichChange     ctermfg=180    ctermbg=233   cterm=bold  guifg=#f7da68  guibg=NONE   gui=bold
+hi OperatorSandwichDelete     ctermfg=196    ctermbg=233   cterm=bold  guifg=#fb091f  guibg=NONE   gui=bold
+" }}}
+
 " git-signify {{{
 hi SignifySignAdd             ctermfg=26     ctermbg=233   cterm=bold  guifg=#27b062  guibg=#202020   gui=bold
 hi SignifySignChange          ctermfg=180    ctermbg=233   cterm=bold  guifg=#f7ca88  guibg=#202020   gui=bold
