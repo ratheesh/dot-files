@@ -88,6 +88,7 @@
     ; editor = emacsclient -c
     ; Treat spaces before tabs, lines that are indented with 8 or more spaces,
     ; and all kinds of trailing whitespace as an error
+    editor       = nvr --remote-wait-silent
     whitespace   = space-before-tab,trailing-space
     pager        = /bin/less -R
     preloadIndex = true ; help in getting git status faster
