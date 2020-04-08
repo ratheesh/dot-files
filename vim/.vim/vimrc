@@ -75,6 +75,7 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
+Plug 'kdheepak/lazygit.vim'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
@@ -1472,6 +1473,11 @@ augroup gitCommmit
                 \| nmap <buffer> <LocalLeader>gr  <Plug>GitReviewed
                 \| nmap <buffer> <LocalLeader>gR  <Plug>GitReporter
 augroup END
+" }}}
+
+" lazygit {{{
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
 " }}}
 
 " devicons {{{
