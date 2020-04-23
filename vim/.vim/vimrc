@@ -72,6 +72,7 @@ Plug 'junegunn/vim-slash'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
 Plug 'thaerkh/vim-indentguides'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
@@ -1412,7 +1413,7 @@ let g:startify_files_number=10
 let g:startify_change_to_vcs_root=1
 
 let g:startify_bookmarks = [
-            \       {'c': '$HOME/.vim/vimrc'     },
+            \       {'c': '$HOME/.vim/vimrc' },
             \       {'g': '$HOME/.gitconfig' },
             \       {'s': '$HOME/.screenrc'  },
             \       {'t': '$HOME/.tmux.conf' },
@@ -2202,7 +2203,7 @@ omap aa <Plug>Argumentative_OpPendingOuterTextObject
 let g:easy_align_bypass_fold = 1
 nmap ga     <Plug>(EasyAlign)
 xmap ga     <Plug>(EasyAlign)
-xmap <M-BS>   <plug>(LiveEasyAlign)
+xmap <M-BS> <plug>(LiveEasyAlign)
 let g:easy_align_interactive_modes = ['l', 'r']
 let g:easy_align_bang_interactive_modes = ['c', 'r']
 let g:easy_align_ignore_groups = ['Comment', 'String']
