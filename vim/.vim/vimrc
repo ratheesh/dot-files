@@ -1172,6 +1172,11 @@ let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow# ➜ %#AnzuSearchObj#%p
 nnoremap <silent><BS>  :nohlsearch<CR>\|<Plug>(anzu-clear-search-status)
 " }}}
 
+" vim-expand-region {{{
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+" }}}
+
 " Vim-licenses {{{
 let g:licenses_copyright_holders_name = 'Ratheesh <ratheeshreddy@gmail.com>'
 let g:licenses_authors_name           = 'Ratheesh S'
