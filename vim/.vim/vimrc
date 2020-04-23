@@ -747,7 +747,7 @@ function! CreateCenteredFloatingWindow()
     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
 
     let top = "╭" . repeat("━", width - 2) . "╮"
-    let mid = "┃" . repeat(" ", width - 2) . "┃"
+    let mid = "│" . repeat(" ", width - 2) . "│"
     let bot = "╰" . repeat("━", width - 2) . "╯"
     let lines = [top] + repeat([mid], height - 2) + [bot]
     let s:buf = nvim_create_buf(v:false, v:true)
@@ -761,7 +761,7 @@ function! CreateCenteredFloatingWindow()
     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
-" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
