@@ -1156,7 +1156,7 @@ let g:airline#extensions#default#section_truncate_width = {
 " }}}
 
 " vim-auto-cursorline {{{
-g:auto_cursorline_wait_ms = 1000
+" g:auto_cursorline_wait_ms = 1000
 " }}}
 
 " vim-anzu {{{
