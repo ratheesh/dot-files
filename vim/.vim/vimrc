@@ -1735,9 +1735,9 @@ if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
 " let g:deoplete#auto_complete_delay          = 30
-let g:deoplete#auto_refresh_delay           = 30
-let g:deoplete#file#enable_buffer_path      = 1
-let g:deoplete#max_list                     = 100
+" let g:deoplete#auto_refresh_delay           = 30
+" let g:deoplete#file#enable_buffer_path      = 1
+" let g:deoplete#max_list                     = 100
 let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
 " let g:deoplete#complete_method              = "completefunc"
@@ -1745,6 +1745,8 @@ let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
             \ 'auto_complete_delay' : 50,
+            \ 'auto_refresh_delay'  : 30,
+            \ 'max_list'            : 100,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
             \ 'complete_method'     : 'omnifunc',
@@ -1755,7 +1757,10 @@ call deoplete#custom#option({
             \ 'max_abbr_width'      : 50,
             \ })
 
->
+call deoplete#custom#var('file', {
+      \   'enable_buffer_path': 1,
+      \ })
+
 call deoplete#custom#option('candidate_marks',
       \ ['<F1>', '<F2>', '<F3>', '<F4>', '<F5>'])
 inoremap <expr><F1> pumvisible() ? deoplete#insert_candidate(0) : '<F1>'
