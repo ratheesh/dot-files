@@ -1810,10 +1810,12 @@ call deoplete#custom#source('buffer'         , 'rank' , 9952)
 call deoplete#custom#source('function'       , 'rank' , 9951)
 
 call deoplete#custom#var('around', {
-            \   'mark_above'   : '[↑]',
-            \   'mark_below'   : '[↓]',
-            \   'mark_changes' : '[*]',
-            \ })
+      \   'range_above'  : 500,
+      \   'range_below'  : 500,
+      \   'mark_above'   : '[↑]',
+      \   'mark_below'   : '[↓]',
+      \   'mark_changes' : '[*]',
+      \ })
 
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
