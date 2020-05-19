@@ -29,8 +29,8 @@
 [color "diff"]
     meta       = 95
     frag       = 180
-    old        = 161
-    new        = 28
+    old        = 124
+    new        = 29
     whitespace = 197 reverse
     plain      = 248
 
@@ -57,6 +57,14 @@
     prompt = reverse
     help   = bold
     error  = red bold
+
+[pager]
+; Procedure to get diff-highlight on Linux OS(Procedure mentioned below is tested on Ubuntu based system)
+; Create and add $HOME/bin to PATH variable is not already done
+; cd /usr/share/doc/git/contrib/diff-highlight; sudo make; mv diff-highlight $HOME/bin
+    log  = $HOME/bin/diff-highlight | less
+    show = $HOME/bin/diff-highlight | less
+    diff = $HOME/bin/diff-highlight | less
 
 [merge]
     ; include summaries of merged commits in newly created merge commit messages
