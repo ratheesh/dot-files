@@ -2306,7 +2306,7 @@ if has('nvim')
     cmap <expr> <C-F> wilder#in_context() ? <SID>wilder_toggle_history() : "\<C-F>"
 
     call wilder#set_option('pipeline', [
-          \   wilder#branch(
+          \    wilder#branch(
           \     [
           \       wilder#check({-> s:wilder_show_history}),
           \       wilder#history(100),
@@ -2316,27 +2316,28 @@ if has('nvim')
           \       wilder#check({_, x -> empty(x)}),
           \       wilder#history(100),
           \     ],
+          \     wilder#substitute_pipeline({
+          \       'fuzzy':1,
+          \       'use_python':1,
+          \     }),
           \     wilder#cmdline_pipeline({
-          \     'fuzzy': 1,
-          \     'fuzzy_filter': wilder#python_fuzzy_filter(),
-          \    }),
-          \     [
-          \       wilder#python_fuzzy_match(),
-          \       wilder#python_search(),
-          \       wilder#result_output_escape('^$,*~[]/\'),
-          \     ],
-          \    [
-          \       wilder#python_fuzzy_match(),
-          \       wilder#python_search(),
-          \       wilder#result_output_escape('^$,*~[]/\'),
-          \    ],
-          \   ),
-          \ ])
+          \       'fuzzy': 1,
+          \       'use_python': 1,
+          \     }),
+          \     wilder#python_search_pipeline({
+          \       'regex': 'fuzzy',
+          \       'engine': 're',
+          \       'sort': function('wilder#python_sort_difflib'),
+          \     }),
+          \     ),
+          \  ])
 
-    let s:status_hl = wilder#make_hl('WilderStatus' , 'WildStatus')
-    let s:mode_hl   = wilder#make_hl('WilderMode'   , 'WildMode')
-    let s:index_hl  = wilder#make_hl('WilderIndex'  , 'airline_z')
-    let s:sep_hl    = wilder#make_hl('WilderSep'    , 'WilderSeparator')
+    let s:status_hl       = wilder#make_hl('WilderStatus' , 'WildStatus')
+    let s:mode_hl         = wilder#make_hl('WilderMode'   , 'WildMode')
+    let s:index_hl        = wilder#make_hl('WilderIndex'  , 'airline_z')
+    let s:sep_hl          = wilder#make_hl('WilderSep'    , 'WildSeparator')
+    let s:accent_hl       = wilder#make_hl('WilderAccent' , 'WildAccent')
+    let s:select_acc_hl   = wilder#make_hl('WilderSelectedAccent', 'WildSelectedAccent')
 
     function! s:wilder_adjust_cmdmode(cmd) abort
         let l:modestr = a:cmd ==# ':' ? ' Kommand' : ' Suche'
@@ -2344,10 +2345,23 @@ if has('nvim')
     endfunction
 
     call wilder#set_option('renderer', wilder#statusline_renderer({
-          \ 'separator':' • ',
-          \ 'separator_hl': s:sep_hl,
-          \ 'hl': s:status_hl,
-          \ 'ellipsis': '...',
+          \ 'spinner': [wilder#spinner({
+          \   'frames'   : '-\|/',
+          \   'done'     : ' ',
+          \   'delay'    : 50,
+          \   'interval' : 100,
+          \ }),
+          \ ],
+          \ 'highlights': {
+          \   'default'         : s:status_hl,
+          \   'selected'        : 'WildMenu',
+          \   'accent'          : s:accent_hl,
+          \ },
+          \ 'apply_highlights' : wilder#query_common_subsequence_spans(),
+          \ 'separator'        : ' • ',
+          \ 'separator_hl'     : s:sep_hl,
+          \ 'hl'               : s:status_hl,
+          \ 'ellipsis'         : '...',
           \ 'left': [
           \    {'value': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#spinner()], 'hl': s:mode_hl},
           \    wilder#separator('', s:mode_hl, s:status_hl, 'left'), ' ',

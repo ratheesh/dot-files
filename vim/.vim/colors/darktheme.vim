@@ -510,7 +510,9 @@ hi xmlEndTag            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#bd93f9
 " Wilder {{{
 hi WildMode             ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#e0e0e0    guibg=#8F575A gui=italic
 hi WildStatus           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#988C99    guibg=#153C63 gui=NONE
-hi WilderSeparator      ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
+hi WildSeparator        ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
+hi WildSelectedAccent   ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
+hi WildAccent           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#47D68E    guibg=#153C63 gui=bold,underline
 " }}}
 
 " Java Script {{{
