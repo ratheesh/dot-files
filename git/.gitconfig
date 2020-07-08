@@ -8,8 +8,8 @@
     checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
 
 [user]
-	name = Ratheesh S
-	email = ratheeshreddy@gmail.com
+    name = Ratheesh S
+    email = ratheeshreddy@gmail.com
     useConfigOnly = true
     signingkey = B5A8692EC05DCFEA
 
@@ -58,9 +58,9 @@
     error  = red bold
 
 [color "diff-highlight"]
-    oldNormal    = 125 bold
+    oldNormal    = 125
     oldHighlight = red bold 52
-    newNormal    = 65 bold
+    newNormal    = 65
     newHighlight = green bold 22
 
 [pager]
@@ -103,7 +103,7 @@
     ; and all kinds of trailing whitespace as an error
     editor       = nvr --remote-wait-silent
     whitespace   = space-before-tab,trailing-space
-	pager = diff-highlight | less -R
+    pager = diff-highlight | less -R
     preloadIndex = true ; help in getting git status faster
 
 [apply]
@@ -137,6 +137,10 @@
     default    = current
     followTags = true
 
+[pull]
+    rebase = true
+    ff = only
+
 [rerere]
     enabled = false
 
@@ -154,6 +158,6 @@
     verbose = true
 
 [http]
-	sslverify = false
+    sslverify = false
 
 ; End of File
