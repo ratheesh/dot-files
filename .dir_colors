@@ -1,123 +1,123 @@
-# Configuration file for dircolors, a utility to help you set the
-# LS_COLORS environment variable used by GNU ls with the --color option.
-# Copyright (C) 1996-2016 Free Software Foundation, Inc.
-# Copying and distribution of this file, with or without modification,
-# are permitted provided the copyright notice and this notice are preserved.
-# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
-# slackware version of dircolors) are recognized but ignored.
-# Below are TERM entries, which can be a glob patterns, to match
-# against the TERM environment variable to determine if it is colorizable.
+# Configuration file for the 256color ls utility
+# This file goes in the /etc directory, and must be world readable.
+# Synchronized with coreutils 8.5 dircolors
+# You can copy this file to .dir_colors in your $HOME directory to override
+# the system defaults.
+# In the case that you are not satisfied with supplied colors, please
+# submit your color configuration or attach your file with colors readable
+# on ALL color background schemas (white,gray,black) to RedHat Bugzilla
+# ticket on https://bugzilla.redhat.com/show_bug.cgi?id=429121 . TIA.
+# Please just keep ls color conventions from 8 color scheme.
 
-TERM Eterm
-TERM ansi
-TERM color-xterm
-TERM con[0-9]*x[0-9]*
-TERM cons25
-TERM console
-TERM cygwin
-TERM dtterm
-TERM eterm-color
-TERM gnome
-TERM gnome-256color
-TERM hurd
-TERM jfbterm
-TERM konsole
-TERM kterm
-TERM linux
-TERM linux-c
-TERM mach-color
-TERM mach-gnu-color
-TERM mlterm
-TERM putty
+# COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
+# pipes. 'all' adds color characters to all output. 'none' shuts colorization
+# off.
+COLOR tty
+
+# Extra command line options for ls go here.
+# Basically these ones are:
+#  -F = show '/' for dirs, '*' for executables, etc.
+#  -T 0 = don't trust tab spacing when formatting ls output.
+OPTIONS -F -T 0
+
+# Below, there should be one TERM entry for each termtype that is colorizable
 TERM putty-256color
-TERM rxvt*
-TERM screen*
-TERM st
-TERM st-256color
-TERM terminator
-TERM tmux*
-TERM vt100
-TERM xterm*
+TERM rxvt-256color
+TERM rxvt-unicode256
+TERM screen-256color
+TERM xterm-256color
+TERM gnome-256color
+
+# EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
+EIGHTBIT 1
 
 # Below are the color init strings for the basic file types. A color init
 # string consists of one or more of the following numeric codes:
 # Attribute codes:
 # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
+# Text color(8 colors mode) codes:
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
+# Background color(8 colors mode) codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-#NORMAL 00 # no color code at all
+# Text color(256 colors mode) codes:
+# Valid syntax for text 256color is 38;5;<color number> , where color number
+# is number between 0 and 255.
+# You may find following command useful to search the best one for you:
+# for ((x=0; x<=255; x++));do echo -e "${x}:\033[38;5;${x}mcolor\033[000m";done
+# Background color(256 colors mode) codes:
+# Valid syntax for background 256color is 48;5;<color number> , where
+# color number is number between 0 and 255.
+# You may find following command useful to search the best one for you:
+# for ((x=0; x<=255; x++));do echo -e "${x}:\033[48;5;${x}mcolor\033[000m";done
 
 #FILE 00 # regular file: use no color at all
-RESET 	0 # reset to "normal" color
-DIR 	0;94 # directory
-LINK 	3;36 # symbolic link. (If you set this to 'target' instead of a
+RESET 			0 	# reset to "normal" color
+DIR 			0;38;5;26 	# directory
+LINK 			3;38;5;6 	# symbolic link. (If you set this to 'target' instead of a
 # numerical value, the color is as for the file pointed to.)
-MULTIHARDLINK 00 # regular file with more than one link
-FIFO 	3;40;35 # pipe
-SOCK 	3;00;35 # socket
-DOOR 	00;35 # door
-BLK 	3;95 # block device driver
-CHR 	3;93 # character device driver
-ORPHAN 5;30;101 # symlink to nonexistent file, or non-stat'able file ...
-MISSING 	5;33; # ... and the files they point to
-SETUID 		37;41 # file that is setuid (u+s)
-SETGID 		30;43 # file that is setgid (g+s)
-CAPABILITY 	30;41 # file with capability
-STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 	34;42 # dir that is other-writable (o+w) and not sticky
-STICKY 		37;44 # dir with the sticky bit set (+t) and not other-writable
+MULTIHARDLINK 		00 		# regular file with more than one link
+FIFO 			3;40;35 	# pipe
+SOCK 			3;00;35 	# socket
+DOOR 			00;35 		# door
+BLK 			3;38;5;5 		# block device driver
+CHR 			3;38;5;142 	# character device driver
+ORPHAN 			5;38;5;160 	# symlink to nonexistent file, or non-stat'able file ...
+MISSING 		5;38;5;124 		# ... and the files they point to
+SETUID 			37;41 		# file that is setuid (u+s)
+SETGID 			30;43 		# file that is setgid (g+s)
+CAPABILITY 		30;41 		# file with capability
+STICKY_OTHER_WRITABLE 	30;42 		# dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 		34;42 		# dir that is other-writable (o+w) and not sticky
+STICKY 			37;44 		# dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 03;92
-
+EXEC 			3;38;5;40
 # Or if you want to colorize scripts even if they do not have the
 # executable bit actually set.
 #.sh 00;92
 #.csh 00;92
 
 # archives or compressed (bright red)
-.tar 	00;91
-.tgz 	00;91
-.arc 	00;91
-.arj 	00;91
-.taz 	00;91
-.lha 	00;91
-.lz4 	00;91
-.lzh 	00;91
-.lzma 	00;91
-.tlz 	00;91
-.txz 	00;91
-.tzo 	00;91
-.t7z 	00;91
-.zip 	00;91
-.z 	00;91
-.Z 	00;91
-.dz 	00;91
-.gz 	00;91
-.lrz 	00;91
-.lz 	00;91
-.lzo 	00;91
-.xz 	00;91
-.bz2 	00;91
-.bz 	00;91
-.tbz 	00;91
-.tbz2	00;91
-.tz 	00;91
-.deb 	00;91
-.rpm 	00;91
-.jar 	00;91
-.war 	00;91
-.ear 	00;91
-.sar 	00;91
-.rar 	00;91
-.alz 	00;91
-.ace 	00;91
-.zoo 	00;91
-.cpio 	00;91
-.7z 	00;91
-.rz 	00;91
-.cab 	00;91
+.tar 	00;38;5;126
+.tgz 	00;38;5;126
+.arc 	00;38;5;126
+.arj 	00;38;5;126
+.taz 	00;38;5;126
+.lha 	00;38;5;126
+.lz4 	00;38;5;126
+.lzh 	00;38;5;126
+.lzma 	00;38;5;126
+.tlz 	00;38;5;126
+.txz 	00;38;5;126
+.tzo 	00;38;5;126
+.t7z 	00;38;5;126
+.zip 	00;38;5;126
+.z 	00;38;5;126
+.Z 	00;38;5;126
+.dz 	00;38;5;126
+.gz 	00;38;5;126
+.lrz 	00;38;5;126
+.lz 	00;38;5;126
+.lzo 	00;38;5;126
+.xz 	00;38;5;126
+.bz2 	00;38;5;126
+.bz 	00;38;5;126
+.tbz 	00;38;5;126
+.tbz2	00;38;5;126
+.tz 	00;38;5;126
+.deb 	00;38;5;126
+.rpm 	00;38;5;126
+.jar 	00;38;5;126
+.war 	00;38;5;126
+.ear 	00;38;5;126
+.sar 	00;38;5;126
+.rar 	00;38;5;126
+.alz 	00;38;5;126
+.ace 	00;38;5;126
+.zoo 	00;38;5;126
+.cpio 	00;38;5;126
+.7z 	00;38;5;126
+.rz 	00;38;5;126
+.cab 	00;38;5;126
 
 # image formats
 .jpg 	00;35
