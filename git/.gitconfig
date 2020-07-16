@@ -14,11 +14,11 @@
     signingkey = B5A8692EC05DCFEA
 
 [color]
-    ui          = always
-    diff        = always
-    status      = always
-    branch      = always
-    interactive = always
+    ui          = auto
+    diff        = auto
+    status      = auto
+    branch      = auto
+    interactive = auto
 
 [color "branch"]
     current    = 27 italic
