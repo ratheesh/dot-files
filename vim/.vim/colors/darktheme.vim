@@ -32,7 +32,7 @@ hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#9
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#435068   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#053f6f   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#033246   gui=NONE
-hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3a455e   gui=NONE
+hi LineNr       ctermfg=60      ctermbg=235     cterm=NONE              guifg=#a0a0a0   guibg=#3D4F5D   gui=NONE
 hi CursorLineNr ctermfg=0       ctermbg=131     cterm=NONE              guifg=#eeeeee   guibg=#96594E   gui=NONE
 hi VertSplit    ctermfg=60      ctermbg=NONE    cterm=NONE              guifg=#64666d   guibg=NONE      gui=bold
 hi MatchParen   ctermfg=126     ctermbg=NONE    cterm=underline,bold    guifg=#f92a5b   guibg=NONE      gui=bold,underline
@@ -195,7 +195,7 @@ hi deniteMatchedChar    ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#E
 " }}}
 
 " line-number-interval {{{
-hi HighlightedLineNr  ctermfg=60  ctermbg=235  cterm=NONE  guifg=#c0c0c0   guibg=#4a5a64   gui=NONE
+hi HighlightedLineNr  ctermfg=60  ctermbg=235  cterm=NONE  guifg=#c8c8c8   guibg=#586460   gui=NONE
 hi link DimLineNr LineNr
 " }}}
 
@@ -266,7 +266,7 @@ hi TagbarNestedKind ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#CD506
 " }}}
 
 " vim-better-whitespace {{{
-hi ExtraWhitespace  ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=#CD5061   guibg=NONE      gui=NONE
+hi ExtraWhitespace  ctermfg=NONE    ctermbg=NONE    cterm=NONE      guifg=NONE   guibg=#808080   gui=NONE
 " }}}
 
 " sh {{{
@@ -508,11 +508,12 @@ hi xmlEndTag            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#bd93f9
 " }}}
 
 " Wilder {{{
-hi WildMode             ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#e0e0e0    guibg=#8F575A gui=italic
-hi WildStatus           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#988C99    guibg=#153C63 gui=NONE
-hi WildSeparator        ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
-hi WildSelectedAccent   ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#FA2C77    guibg=#153C63 gui=NONE
-hi WildAccent           ctermfg=1     ctermbg=NONE    cterm=NONE guifg=#47D68E    guibg=#153C63 gui=bold,underline
+hi WildSelected         ctermfg=NONE  ctermbg=NONE    cterm=NONE guifg=#e0e0e0   guibg=#466A8B gui=NONE
+hi WildMode             ctermfg=NONE  ctermbg=NONE    cterm=NONE guifg=#e0e0e0   guibg=#8F575A gui=italic
+hi WildStatus           ctermfg=NONE  ctermbg=NONE    cterm=NONE guifg=#988C99   guibg=#153C63 gui=NONE
+hi WildSeparator        ctermfg=NONE  ctermbg=NONE    cterm=NONE guifg=#FA2C77   guibg=#153C63 gui=NONE
+hi WildSelectedAccent   ctermfg=NONE  ctermbg=NONE    cterm=NONE guifg=NONE      guibg=NONE    gui=NONE
+hi WildAccent           ctermfg=NONE  ctermbg=NONE    cterm=NONE guifg=#47D68E   guibg=#153C63 gui=bold
 " }}}
 
 " Java Script {{{
