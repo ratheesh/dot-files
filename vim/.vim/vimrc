@@ -764,7 +764,7 @@ function! CreateCenteredFloatingWindow()
     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
-let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
@@ -2342,19 +2342,20 @@ if has('nvim')
           \     ),
           \  ])
 
-    let s:status_hl       = wilder#make_hl('WilderStatus' , 'WildStatus')
-    let s:mode_hl         = wilder#make_hl('WilderMode'   , 'WildMode')
-    let s:index_hl        = wilder#make_hl('WilderIndex'  , 'airline_z')
-    let s:sep_hl          = wilder#make_hl('WilderSep'    , 'WildSeparator')
-    let s:accent_hl       = wilder#make_hl('WilderAccent' , 'WildAccent')
+    let s:status_hl       = wilder#make_hl('WilderStatus'  , 'WildStatus')
+    let s:mode_hl         = wilder#make_hl('WilderMode'    , 'WildMode')
+    let s:index_hl        = wilder#make_hl('WilderIndex'   , 'airline_z')
+    let s:sep_hl          = wilder#make_hl('WilderSep'     , 'WildSeparator')
+    let s:selected_hl     = wilder#make_hl('WilderSelected', 'WildSelected')
+    let s:accent_hl       = wilder#make_hl('WilderAccent'  , 'WildAccent')
     let s:select_acc_hl   = wilder#make_hl('WilderSelectedAccent', 'WildSelectedAccent')
 
     function! s:wilder_adjust_cmdmode(cmd) abort
         let l:modestr = a:cmd ==# ':' ? ' Kommand' : ' Suche'
-        return join([l:modestr , s:wilder_show_history ==# 1 ? '★' : ' '], '')
+        return join([l:modestr , s:wilder_show_history ==# 1 ? '★' : ''], '')
     endfunction
 
-    call wilder#set_option('renderer', wilder#statusline_renderer({
+    call wilder#set_option('renderer', wilder#wildmenu_renderer({
           \ 'spinner': [wilder#spinner({
           \   'frames'   : '-\|/',
           \   'done'     : ' ',
@@ -2364,8 +2365,9 @@ if has('nvim')
           \ ],
           \ 'highlights': {
           \   'default'         : s:status_hl,
-          \   'selected'        : 'WildMenu',
+          \   'selected'        : s:selected_hl,
           \   'accent'          : s:accent_hl,
+          \   'select_accent'   : s:select_acc_hl,
           \ },
           \ 'apply_highlights' : wilder#query_common_subsequence_spans(),
           \ 'separator'        : ' • ',
@@ -2381,7 +2383,6 @@ if has('nvim')
           \    wilder#index({'hl': s:index_hl}),
           \ ],
           \ }))
-
 endif
 " }}}
 
