@@ -136,12 +136,13 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'augustold/vim-custom-surround'
 Plug 'kana/vim-textobj-line'
 Plug 'junegunn/vim-after-object'
-Plug 'glts/vim-textobj-comment'
+" Plug 'glts/vim-textobj-comment'
 Plug 'machakann/vim-swap' " to swap args
 Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
 Plug 'tommcdo/vim-exchange' " exchange regions
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'haya14busa/vim-operator-flashy'
+Plug 'idbrii/textobj-word-column.vim'
 
 " writing prose
 Plug 'reedes/vim-pencil'
