@@ -184,7 +184,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'mdempsky/gocode/', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
+" Run $ go get -u github.com/stamblerre/gocode for below plugin to work properly
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 call plug#end()
@@ -1698,7 +1699,9 @@ let g:LanguageClient_serverCommands      = {
             \ 'c'      : ['/usr/bin/clangd-10', '--background-index'],
             \ 'cpp'    : ['/usr/bin/clangd-10', '--background-index'],
             \ 'python' : ['/usr/local/bin/pyls'],
+            \ 'go'     : ['gopls'],
             \ }
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 let g:LanguageClient_loggingLevel = 'INFO'
 let g:LanguageClient_virtualTextPrefix = ''
