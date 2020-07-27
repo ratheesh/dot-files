@@ -176,7 +176,8 @@ endif
 Plug 'Shougo/neco-syntax'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
-Plug 'deathlyfrantic/deoplete-spell'
+Plug 'deathlyfrantic/deoplete-spell', {'branch': 'main'}
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
