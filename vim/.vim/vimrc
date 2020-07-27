@@ -68,7 +68,7 @@ Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 " Plug 'matze/vim-move'
 Plug 't9md/vim-smalls'
-Plug 'junegunn/vim-slash'
+" Plug 'junegunn/vim-slash'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
 Plug 'thaerkh/vim-indentguides'
@@ -1161,9 +1161,15 @@ let g:airline#extensions#default#section_truncate_width = {
 
 " vim-anzu {{{
 nmap n <Plug>(anzu-n-with-echo)
-nmap N <Plug>(anzu-N-with-echo)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
+nmap n <plug>(anzu-n-with-echo)
+nmap * <plug>(anzu-star-with-echo)
+nmap # <plug>(anzu-sharp-with-echo)
+
+" nmap n <Plug>(anzu-mode-n)
+" nmap N <Plug>(anzu-mode-N)
+" nmap * <Plug>(anzu-mode-star)
+" nmap # <Plug>(anzu-mode-sharp)
+
 " let g:anzu_status_format = "%p(%i/%l) %w"
 let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow# ➜ %#AnzuSearchObj#%p
             \%#AnzuParen#(%#AnzuSearchCnt#%i%#AnzuSeparator#/%#AnzuSearchTotalCnt
