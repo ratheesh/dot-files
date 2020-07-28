@@ -1174,7 +1174,7 @@ nmap # <plug>(anzu-sharp-with-echo)
 " nmap # <Plug>(anzu-mode-sharp)
 
 " let g:anzu_status_format = "%p(%i/%l) %w"
-let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow# ➜ %#AnzuSearchObj#%p
+let g:anzu_status_format = "%#AnzuNormal#anzu%#AnzuArrow#➜ %#AnzuSearchObj#%p
             \%#AnzuParen#(%#AnzuSearchCnt#%i%#AnzuSeparator#/%#AnzuSearchTotalCnt
             \#%l%#AnzuParen#)%#None#"
 
