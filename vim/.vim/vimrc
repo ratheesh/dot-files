@@ -1164,7 +1164,7 @@ let g:airline#extensions#default#section_truncate_width = {
 
 " vim-anzu {{{
 nmap n <Plug>(anzu-n-with-echo)
-nmap n <plug>(anzu-n-with-echo)
+nmap N <plug>(anzu-N-with-echo)
 nmap * <plug>(anzu-star-with-echo)
 nmap # <plug>(anzu-sharp-with-echo)
 
