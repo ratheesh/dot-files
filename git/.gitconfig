@@ -65,7 +65,7 @@
 
 [pager]
 ; Procedure to get diff-highlight on Linux OS(Procedure mentioned below is tested on Ubuntu based system)
-; Create and add $HOME/bin to PATH variable is not already done
+; Create and add $HOME/bin to PATH env variable
 ; cd /usr/share/doc/git/contrib/diff-highlight; sudo make; mv diff-highlight $HOME/bin
     log  = $HOME/bin/diff-highlight | less -R
     show = $HOME/bin/diff-highlight | less -R
