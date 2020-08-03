@@ -1747,18 +1747,15 @@ let g:deoplete#enable_at_startup = 1
 if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
-" let g:deoplete#auto_complete_delay          = 30
-" let g:deoplete#auto_refresh_delay           = 30
 " let g:deoplete#file#enable_buffer_path      = 1
-" let g:deoplete#max_list                     = 100
 let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
-" let g:deoplete#complete_method              = "completefunc"
 let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
             \ 'auto_complete_delay' : 50,
             \ 'auto_refresh_delay'  : 30,
+            \ 'auto_complete_popup' : 'auto',
             \ 'max_list'            : 100,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
@@ -1803,10 +1800,10 @@ call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 
 call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
-call deoplete#custom#source('clangx'         , 'mark' , '[CLang')
-call deoplete#custom#source('clang'          , 'mark' , '[CLang')
+call deoplete#custom#source('clangx'         , 'mark' , '[CLang]')
+call deoplete#custom#source('clang'          , 'mark' , '[CLang]')
 call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
-" call deoplete#custom#source('member'         , 'mark' , '[M]')
+call deoplete#custom#source('member'         , 'mark' , '[M]')
 call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
