@@ -1915,7 +1915,7 @@ let g:deoplete#sources#jedi#show_docstring    = 1
 let g:go_textobj_include_function_doc         = 1
 let g:deoplete#sources#go#fallback_to_source  = 1
 let g:deoplete#sources#go#unimported_packages = 1
-let g:deoplete#sources#go#package_dot         = 1
+let g:deoplete#sources#go#package_dot         = 0
 let g:deoplete#sources#go#sort_class          = ['package', 'func', 'type', 'var', 'const']
 " }}}
 
