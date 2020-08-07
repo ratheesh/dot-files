@@ -5,7 +5,7 @@ if ! [ -x "$(command -v iostat)" ]; then
 	exit 1
 else
 	# cpu=$(ps -A -o pcpu | tail -n+2 | paste -sd+ | bc)
-	cpu=$(iostat -c 1 2 | tail -n 3 | head -n 1 | awk '{usage=100-$NF} END {printf("%.1f%%", usage)}' | sed 's/,/./')
+	cpu=$(iostat -c 1 2 | tail -n 4 | head -n 1 | awk '{usage=100-$NF} END {printf("%.1f%%", usage)}' | sed 's/,/./')
 	echo -e ${cpu}
 fi
 # End of File
