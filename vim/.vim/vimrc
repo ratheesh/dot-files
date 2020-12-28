@@ -1758,8 +1758,8 @@ let g:deoplete#buffer#require_same_filetype = 0
 let g:deoplete#complete_method            = "omnifunc"
 
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 50,
-            \ 'auto_refresh_delay'  : 30,
+            \ 'auto_complete_delay' : 100,
+            \ 'auto_refresh_delay'  : 50,
             \ 'auto_complete_popup' : 'auto',
             \ 'max_list'            : 100,
             \ 'ignore_case'         : v:false,
@@ -1770,6 +1770,7 @@ call deoplete#custom#option({
             \ 'refresh_always'      : v:true,
             \ 'num_processes'       : 2,
             \ 'max_abbr_width'      : 50,
+            \ 'skip_multibyte'      : v:true,
             \ })
 
 call deoplete#custom#var('file', {
@@ -1784,8 +1785,8 @@ inoremap <expr><F3> pumvisible() ? deoplete#insert_candidate(2) : '<F3>'
 inoremap <expr><F4> pumvisible() ? deoplete#insert_candidate(3) : '<F4>'
 inoremap <expr><F5> pumvisible() ? deoplete#insert_candidate(4) : '<F5>'
 
-" call deoplete#custom#option('refresh_always', v:true)
-" call deoplete#custom#option('num_processes', 0)
+call deoplete#custom#option('refresh_always', v:true)
+call deoplete#custom#option('num_processes', 0)
 
 " Don't align these lines!
 set completeopt=longest,menuone
@@ -1807,17 +1808,18 @@ call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
 call deoplete#custom#source('clangx'         , 'mark' , '[CLang]')
 call deoplete#custom#source('clang'          , 'mark' , '[CLang]')
-call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
+" call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
 call deoplete#custom#source('member'         , 'mark' , '[M]')
 call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
-call deoplete#custom#source('go'             , 'rank' , 9961)
+call deoplete#custom#source('ultisnips'      , 'rank' , 9962)
 call deoplete#custom#source('LanguageClient' , 'rank' , 9960)
+call deoplete#custom#source('lsp'            , 'rank' , 9960)
+call deoplete#custom#source('go'             , 'rank' , 9959)
 call deoplete#custom#source('jedi'           , 'rank' , 9959)
 call deoplete#custom#source('neosnippet'     , 'rank' , 9958)
-call deoplete#custom#source('ultisnips'      , 'rank' , 9958)
 call deoplete#custom#source('member'         , 'rank' , 9957)
 call deoplete#custom#source('tag'            , 'rank' , 9955)
 call deoplete#custom#source('clangx'         , 'rank' , 9954)
