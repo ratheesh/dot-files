@@ -153,10 +153,14 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-textobj-quote'
 Plug 'beloglazov/vim-online-thesaurus'
 
-Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"             \ 'branch': 'next',
+"             \ 'do': 'bash install.sh',
+"             \ }
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/diagnostic-nvim'
+Plug 'nvim-lua/completion-nvim'
 
 Plug 'wellle/tmux-complete.vim'
 
@@ -179,6 +183,7 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 Plug 'deathlyfrantic/deoplete-spell', {'branch': 'main'}
 " Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'Shougo/deoplete-lsp'
 
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
@@ -1695,45 +1700,45 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 " }}}
 
 " Languageclient-Neovim {{{
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_selectionUI         = 'location-list'
-let g:LanguageClient_diagnosticsEnable   = 0
-let g:LanguageClient_diagnosticsSignsMax = 0
-let g:LanguageClient_hasSnippetSupport   = 1
-let g:LanguageClient_serverCommands      = {
-            \ 'c'      : ['/usr/bin/clangd-10', '--background-index'],
-            \ 'cpp'    : ['/usr/bin/clangd-10', '--background-index'],
-            \ 'python' : ['/usr/local/bin/pyls'],
-            \ 'go'     : ['gopls'],
-            \ }
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+" let g:LanguageClient_autoStart = 0
+" let g:LanguageClient_selectionUI         = 'location-list'
+" let g:LanguageClient_diagnosticsEnable   = 0
+" let g:LanguageClient_diagnosticsSignsMax = 0
+" let g:LanguageClient_hasSnippetSupport   = 1
+" let g:LanguageClient_serverCommands      = {
+"             \ 'c'      : ['/usr/bin/clangd-10', '--background-index'],
+"             \ 'cpp'    : ['/usr/bin/clangd-10', '--background-index'],
+"             \ 'python' : ['/usr/local/bin/pyls'],
+"             \ 'go'     : ['gopls'],
+"             \ }
+" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
-let g:LanguageClient_loggingLevel = 'INFO'
-let g:LanguageClient_virtualTextPrefix = ''
-let $RUST_BACKTRACE = 1
+" let g:LanguageClient_loggingLevel = 'INFO'
+" let g:LanguageClient_virtualTextPrefix = ''
+" let $RUST_BACKTRACE = 1
 
-" let g:neosnippet#enable_complete_done = 1
-" let g:clang_include_fixer_path = "clang-include-fixer-9"
-" let g:LanguageClient_loggingLevel ='DEBUG'
-" let g:LanguageClient_loggingFile= expand('~/log')
+" " let g:neosnippet#enable_complete_done = 1
+" " let g:clang_include_fixer_path = "clang-include-fixer-9"
+" " let g:LanguageClient_loggingLevel ='DEBUG'
+" " let g:LanguageClient_loggingFile= expand('~/log')
 
-function SetLSPShortcuts()
-  nnoremap <leader>kd :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <leader>kr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>kf :call LanguageClient#textDocument_formatting()<CR>
-  nnoremap <leader>kt :call LanguageClient#textDocument_typeDefinition()<CR>
-  nnoremap <leader>kx :call LanguageClient#textDocument_references()<CR>
-  nnoremap <leader>ka :call LanguageClient_workspace_applyEdit()<CR>
-  nnoremap <leader>kc :call LanguageClient#textDocument_completion()<CR>
-  nnoremap <leader>kh :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <leader>ks :call LanguageClient_textDocument_documentSymbol()<CR>
-  nnoremap <leader>km :call LanguageClient_contextMenu()<CR>
-endfunction()
+" function SetLSPShortcuts()
+"   nnoremap <leader>kd :call LanguageClient#textDocument_definition()<CR>
+"   nnoremap <leader>kr :call LanguageClient#textDocument_rename()<CR>
+"   nnoremap <leader>kf :call LanguageClient#textDocument_formatting()<CR>
+"   nnoremap <leader>kt :call LanguageClient#textDocument_typeDefinition()<CR>
+"   nnoremap <leader>kx :call LanguageClient#textDocument_references()<CR>
+"   nnoremap <leader>ka :call LanguageClient_workspace_applyEdit()<CR>
+"   nnoremap <leader>kc :call LanguageClient#textDocument_completion()<CR>
+"   nnoremap <leader>kh :call LanguageClient#textDocument_hover()<CR>
+"   nnoremap <leader>ks :call LanguageClient_textDocument_documentSymbol()<CR>
+"   nnoremap <leader>km :call LanguageClient_contextMenu()<CR>
+" endfunction()
 
-augroup LSP
-  autocmd!
-  autocmd FileType cpp,c call SetLSPShortcuts()
-augroup END
+" augroup LSP
+"   autocmd!
+"   autocmd FileType cpp,c call SetLSPShortcuts()
+" augroup END
 
 " }}}
 
@@ -2554,5 +2559,65 @@ endif
 
 let g:surround_42 = "/* \r */"
 let g:surround_{char2nr("q")} = "“\r”"
+
+function! GetJumps()
+  redir => cout
+  silent jumps
+  redir END
+  return reverse(split(cout, "\n")[1:])
+endfunction
+
+function! GoToJump(jump)
+  let jumpnumber = split(a:jump, '\s\+')[0]
+  execute "normal " . jumpnumber . "\<c-o>"
+endfunction
+
+command! Jumps call fzf#run(fzf#wrap({
+      \ 'source': GetJumps(),
+      \ 'sink': function('GoToJump')}))
+
+" neovim lsp specific config
+lua require("lspconfig")
+lua << EOF
+  local lspconfig = require'lspconfig'
+  local diagnostic = require'diagnostic'
+  local completion = require'completion'
+
+  vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
+
+  local servers = {'pyls', 'gopls'}
+  for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+    }
+
+    -- local opts = { noremap=true, silent=true  }
+
+  end
+
+  lspconfig.gopls.setup{
+    root_dir = lspconfig.util.root_pattern('.git');
+  }
+
+  require'lspconfig'.bashls.setup{}
+
+  lspconfig.clangd.setup {
+    cmd = {"/usr/bin/clangd-10", "--background-index"};
+  }
+
+EOF
+
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gh    <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+
+let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_enable_fuzzy_match = 1
+let g:diagnostic_enable_virtual_text = 1
 
 " End of File
