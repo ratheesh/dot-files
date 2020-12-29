@@ -54,7 +54,7 @@ hi Define       ctermfg=66      ctermbg=NONE    cterm=NONE              guifg=#f
 hi ErrorMsg     ctermfg=7       ctermbg=212     cterm=NONE              guifg=#fa2c77   guibg=#303030   gui=NONE
 hi WarningMsg   ctermfg=162     ctermbg=212     cterm=NONE              guifg=#fccc82   guibg=#303030   gui=NONE
 hi Float        ctermfg=141     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
-hi Function     ctermfg=61      ctermbg=NONE    cterm=NONE              guifg=#50fa7b   guibg=NONE      gui=NONE
+hi Function     ctermfg=61      ctermbg=NONE    cterm=NONE              guifg=#1BB1E7   guibg=NONE      gui=NONE
 hi Identifier   ctermfg=246     ctermbg=NONE    cterm=NONE              guifg=#0097a7   guibg=NONE      gui=NONE
 hi Keyword      ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6272a4   guibg=NONE      gui=NONE
 hi Label        ctermfg=132     ctermbg=NONE    cterm=NONE              guifg=#698bb8   guibg=NONE      gui=NONE
@@ -147,11 +147,12 @@ hi pythonStatement      ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#c
 " }}}
 
 " Golang {{{
-hi goDeclaration    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#47D68E  guibg=NONE      gui=NONE
+hi goDeclaration    ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#28b473  guibg=NONE      gui=NONE
 hi goImport         ctermfg=7       ctermbg=233     cterm=NONE      guifg=#BC70A4  guibg=NONE      gui=italic
 hi goTypeDecl       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#BC70A4  guibg=NONE      gui=italic
 hi goTypeName       ctermfg=7       ctermbg=233     cterm=NONE      guifg=#1BB1E7  guibg=NONE      gui=bold
 hi goPackage        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#EF4C9B  guibg=NONE      gui=NONE
+hi goParamName      ctermfg=246     ctermbg=NONE    cterm=NONE      guifg=#0097a7  guibg=NONE      gui=italic
 hi goFunction       ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#af5f5f  guibg=NONE      gui=NONE
 hi goFloats         ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
 hi goSignedInts     ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#CC9977  guibg=NONE      gui=NONE
