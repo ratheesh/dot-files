@@ -192,8 +192,11 @@ Plug 'honza/vim-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Run $ go get -u github.com/stamblerre/gocode for below plugin to work properly
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+" Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
+" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
+" Under testing plugins
+Plug 'kvngvikram/rightclick-macros'
 
 call plug#end()
 
@@ -1742,6 +1745,14 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 
 " }}}
 
+" neovim_lspconfig {{{
+lua require("lsp")
+let g:completion_enable_snippet        = 'UltiSnips'
+let g:completion_enable_fuzzy_match    = 1
+let g:diagnostic_enable_virtual_text   = 1
+let g:lsp_highlight_references_enabled = 1
+" }}}
+
 " tmux-complete.vim {{{
 let g:tmuxcomplete#trigger = ''
 " }}}
@@ -2577,49 +2588,5 @@ endfunction
 command! Jumps call fzf#run(fzf#wrap({
       \ 'source': GetJumps(),
       \ 'sink': function('GoToJump')}))
-
-" neovim lsp specific config
-lua require("lspconfig")
-lua << EOF
-  local lspconfig = require'lspconfig'
-  local diagnostic = require'diagnostic'
-  local completion = require'completion'
-
-  vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
-
-  local servers = {'pyls', 'gopls'}
-  for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-      on_attach = on_attach,
-    }
-
-    -- local opts = { noremap=true, silent=true  }
-
-  end
-
-  lspconfig.gopls.setup{
-    root_dir = lspconfig.util.root_pattern('.git');
-  }
-
-  require'lspconfig'.bashls.setup{}
-
-  lspconfig.clangd.setup {
-    cmd = {"/usr/bin/clangd-10", "--background-index"};
-  }
-
-EOF
-
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gh    <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-
-let g:completion_enable_snippet = 'UltiSnips'
-let g:completion_enable_fuzzy_match = 1
-let g:diagnostic_enable_virtual_text = 1
 
 " End of File
