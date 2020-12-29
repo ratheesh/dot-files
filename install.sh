@@ -25,13 +25,13 @@ if [ $? -ne 0 ];then
     exit 1
 fi
 
-for i in "cgdb" "emacs" "screen" "tmux" "vim" "X" "zsh";do
+for i in "cgdb" "emacs" "screen" "tmux" "vim" "X" "zsh" "gitconfig";do
     echo "Installing $i ..."
     stow -v -R -t $TARGET_DIR $i
     echo
 done
 
 # This should be copied manually due to email id difference
-cp -v $PWD/git/.gitconfig $TARGET_DIR
+# cp -v $PWD/git/.gitconfig $TARGET_DIR
 
 # End of File
