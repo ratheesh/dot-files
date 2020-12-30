@@ -62,7 +62,7 @@ Plug 'ratheesh/vim-smooth-scroll'
 Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
 " Plug 'liuchengxu/vim-clap', { 'do': function('clap#helper#build_all') }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -751,68 +751,84 @@ let g:clap_provider_quick_open = {
 
 "fzf.vim {{{
 
-function! CreateCenteredFloatingWindow()
-    let width = min([&columns - 4, max([80, &columns - 20])])
-    let height = min([&lines - 4, max([20, &lines - 10])])
-    let top = ((&lines - height) / 2) - 1
-    let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+" function! CreateCenteredFloatingWindow()
+"     let width = min([&columns - 4, max([80, &columns - 20])])
+"     let height = min([&lines - 4, max([20, &lines - 10])])
+"     let top = ((&lines - height) / 2) - 1
+"     let left = (&columns - width) / 2
+"     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
 
-    let top = "╭" . repeat("╍", width - 2) . "╮"
-    let mid = "┇" . repeat(" ", width - 2) . "┇"
-    let bot = "╰" . repeat("╍", width - 2) . "╯"
-    let lines = [top] + repeat([mid], height - 2) + [bot]
-    let s:buf = nvim_create_buf(v:false, v:true)
-    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-    call nvim_open_win(s:buf, v:true, opts)
-    set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
-    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-    au BufWipeout <buffer> exe 'bw '.s:buf
-endfunction
-" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+"     let top = "╭" . repeat("╍", width - 2) . "╮"
+"     let mid = "┇" . repeat(" ", width - 2) . "┇"
+"     let bot = "╰" . repeat("╍", width - 2) . "╯"
+"     let lines = [top] + repeat([mid], height - 2) + [bot]
+"     let s:buf = nvim_create_buf(v:false, v:true)
+"     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+"     call nvim_open_win(s:buf, v:true, opts)
+"     set winhl=Normal:Floating
+"     let opts.row += 1
+"     let opts.height -= 2
+"     let opts.col += 2
+"     let opts.width -= 4
+"     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+"     au BufWipeout <buffer> exe 'bw '.s:buf
+" endfunction
+" " let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
-" [Buffers] Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
+" " [Buffers] Jump to the existing window if possible
+" let g:fzf_buffers_jump = 1
 
-" [[B]Commits] Customize the options used by 'git log':
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" " [[B]Commits] Customize the options used by 'git log':
+" let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
-" [Tags] Command to generate tags file
-let g:fzf_tags_command = 'ctags -R'
+" " [Tags] Command to generate tags file
+" let g:fzf_tags_command = 'ctags -R'
 
-" [Commands] --expect expression for directly executing the command
-let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+" " [Commands] --expect expression for directly executing the command
+" let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-let g:fzf_colors =
-      \ {
-      \ 'fg': ['fg', 'FZFMain'],
-      \ 'bg': ['bg', 'FZFMain'],
-      \ 'fg+': ['fg', 'FZFCurrentLn'],
-      \ 'bg+': ['bg', 'FZFCurrentLn'],
-      \ 'hl+': ['fg', 'FZFHighlightCurLn'],
-      \ 'info': ['fg', 'FZFInfo'],
-      \ 'border': ['fg', 'FZFBorder'],
-      \ 'pointer': ['fg', 'FZFPointer'],
-      \ 'marker': ['fg', 'FZFMarker'],
-      \ 'spinner': ['bg', 'FZFSpinner'],
-      \ 'header': ['bg', 'FZFHeader'],
-      \ }
+" let g:fzf_colors =
+"       \ {
+"       \ 'fg': ['fg', 'FZFMain'],
+"       \ 'bg': ['bg', 'FZFMain'],
+"       \ 'fg+': ['fg', 'FZFCurrentLn'],
+"       \ 'bg+': ['bg', 'FZFCurrentLn'],
+"       \ 'hl+': ['fg', 'FZFHighlightCurLn'],
+"       \ 'info': ['fg', 'FZFInfo'],
+"       \ 'border': ['fg', 'FZFBorder'],
+"       \ 'pointer': ['fg', 'FZFPointer'],
+"       \ 'marker': ['fg', 'FZFMarker'],
+"       \ 'spinner': ['bg', 'FZFSpinner'],
+"       \ 'header': ['bg', 'FZFHeader'],
+"       \ }
 
-nnoremap <silent><Leader>fo :GFiles<CR>
-nnoremap <silent><Leader>fb :Buffers<CR>
-nnoremap <silent><Leader>fr :History<CR>
-nnoremap <silent><Leader>fl :Blines<CR>
-nnoremap <silent><Leader>/  :Grep<CR>
-nnoremap <silent><Leader>fm :Marks<CR>
-nnoremap <silent><Leader>fy :yanks<CR>
-nnoremap <silent><Leader>fT :Tags<CR>
-nnoremap <silent><Leader>ft :BTags<CR>
+" nnoremap <silent><Leader>fo :GFiles<CR>
+" nnoremap <silent><Leader>fb :Buffers<CR>
+" nnoremap <silent><Leader>fr :History<CR>
+" nnoremap <silent><Leader>fl :Blines<CR>
+" nnoremap <silent><Leader>/  :Grep<CR>
+" nnoremap <silent><Leader>fm :Marks<CR>
 " nnoremap <silent><Leader>fy :yanks<CR>
-" nnoremap <silent><Leader>fw :quick_open<CR>
+" nnoremap <silent><Leader>fT :Tags<CR>
+" nnoremap <silent><Leader>ft :BTags<CR>
+" " nnoremap <silent><Leader>fy :yanks<CR>
+" " nnoremap <silent><Leader>fw :quick_open<CR>
+
+" function! GetJumps()
+"   redir => cout
+"   silent jumps
+"   redir END
+"   return reverse(split(cout, "\n")[1:])
+" endfunction
+
+" function! GoToJump(jump)
+"   let jumpnumber = split(a:jump, '\s\+')[0]
+"   execute "normal " . jumpnumber . "\<c-o>"
+" endfunction
+
+" command! Jumps call fzf#run(fzf#wrap({
+"       \ 'source': GetJumps(),
+"       \ 'sink': function('GoToJump')}))
 
 "}}}
 
