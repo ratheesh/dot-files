@@ -17,12 +17,21 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+-- Notes
+-- Python LSP -> use jedi_language_server
+-- $ pip3 install -U -user jedi_language_server
+--
+-- C/C++ -> Using CCLS
+-- $ sudo apt get install ccls libtinfo5
+--
+-- bashls
+-- $ npm install -g bashls
 
 local lspconfig = require'lspconfig'
 local diagnostic = require'diagnostic'
 local completion = require'completion'
 
-vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
+-- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -39,24 +48,14 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
-local servers = {'pyls', 'bashls', 'vimls', 'cmake'}
+local servers = {'ccls','jedi_language_server','bashls', 'vimls', 'cmake'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
   }
 end
 
-lspconfig.gopls.setup{
-    root_dir = lspconfig.util.root_pattern('.git');
-}
-
-lspconfig.clangd.setup {
-  cmd = { "clangd-10", "--background-index", "--pch-storage=memory",
-  "--clang-tidy", "--suggest-missing-includes", "--header-insertion=iwyu",
-  "--header-insertion-decorators"};
-}
-
-vim.api.nvim_command('echomsg "Configured NeoViM LSP Client!"')
+vim.api.nvim_command('echomsg "NeoViM LSP Client configured!"')
 
 -- End of File
 
