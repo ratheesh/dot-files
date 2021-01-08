@@ -61,7 +61,7 @@ Plug 'ratheesh/vim-smooth-scroll'
 " Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
-" Plug 'liuchengxu/vim-clap', { 'do': function('clap#helper#build_all') }
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 " Plug 'junegunn/fzf.vim'
 Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
@@ -737,15 +737,16 @@ let g:clap_provider_quick_open = {
       \ 'sink': 'e',
       \ }
 
-" nnoremap <silent><Leader>fo :Clap files --hidden<CR>
-" nnoremap <silent><Leader>fb :Clap buffers<CR>
-" nnoremap <silent><Leader>fr :Clap history<CR>
-" nnoremap <silent><Leader>fl :Clap blines<CR>
-" nnoremap <silent><Leader>/  :Clap grep<CR>
-" nnoremap <silent><Leader>fm :Clap marks<CR>
-" nnoremap <silent><Leader>fh :Clap command_history<CR>
-" nnoremap <silent><Leader>fy :Clap yanks<CR>
-" nnoremap <silent><Leader>fw :Clap quick_open<CR>
+nnoremap <silent><Leader>fo :Clap files --hidden<CR>
+nnoremap <silent><Leader>fb :Clap buffers<CR>
+nnoremap <silent><Leader>fr :Clap history<CR>
+nnoremap <silent><Leader>fl :Clap blines<CR>
+nnoremap <silent><Leader>/  :Clap grep<CR>
+nnoremap <silent><Leader>d/  :Clap grep ++query=<cword>
+nnoremap <silent><Leader>fm :Clap marks<CR>
+nnoremap <silent><Leader>fh :Clap command_history<CR>
+nnoremap <silent><Leader>fy :Clap yanks<CR>
+nnoremap <silent><Leader>fw :Clap quick_open<CR>
 
 " }}}
 
