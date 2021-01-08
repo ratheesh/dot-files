@@ -2608,20 +2608,4 @@ endif
 let g:surround_42 = "/* \r */"
 let g:surround_{char2nr("q")} = "“\r”"
 
-function! GetJumps()
-  redir => cout
-  silent jumps
-  redir END
-  return reverse(split(cout, "\n")[1:])
-endfunction
-
-function! GoToJump(jump)
-  let jumpnumber = split(a:jump, '\s\+')[0]
-  execute "normal " . jumpnumber . "\<c-o>"
-endfunction
-
-command! Jumps call fzf#run(fzf#wrap({
-      \ 'source': GetJumps(),
-      \ 'sink': function('GoToJump')}))
-
 " End of File
