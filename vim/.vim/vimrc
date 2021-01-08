@@ -1780,24 +1780,25 @@ if !has('nvim')
     let g:deoplete#enable_yarp   = 1
 endif
 " let g:deoplete#file#enable_buffer_path      = 1
-let deoplete#tag#cache_limit_size           = 10000000
+" let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
-let g:deoplete#complete_method            = "omnifunc"
+" let g:deoplete#complete_method            = "omnifunc"
 
+            " \ 'skip_multibyte'      : v:false,
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 100,
+            \ 'auto_complete_delay' : 30,
             \ 'auto_refresh_delay'  : 50,
             \ 'auto_complete_popup' : 'auto',
             \ 'max_list'            : 100,
             \ 'ignore_case'         : v:false,
             \ 'smart_case'          : v:true,
             \ 'complete_method'     : 'omnifunc',
-            \ 'min_pattern_length'  : 2,
-            \ 'async_timeout'       : 100,
-            \ 'refresh_always'      : v:true,
-            \ 'num_processes'       : 2,
-            \ 'max_abbr_width'      : 50,
-            \ 'skip_multibyte'      : v:true,
+            \ 'min_pattern_length'  : 1,
+            \ 'async_timeout'       : 500,
+            \ 'refresh_always'      : v:false,
+            \ 'refresh_backspace'   : v:true,
+            \ 'num_processes'       : 4,
+            \ 'max_abbr_width'      : 0,
             \ })
 
 call deoplete#custom#var('file', {
@@ -1841,12 +1842,12 @@ call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
 call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
-call deoplete#custom#source('ultisnips'      , 'rank' , 9962)
-call deoplete#custom#source('LanguageClient' , 'rank' , 9960)
-call deoplete#custom#source('lsp'            , 'rank' , 9960)
-call deoplete#custom#source('go'             , 'rank' , 9959)
-call deoplete#custom#source('jedi'           , 'rank' , 9959)
-call deoplete#custom#source('neosnippet'     , 'rank' , 9958)
+call deoplete#custom#source('ultisnips'      , 'rank' , 9965)
+call deoplete#custom#source('neosnippet'     , 'rank' , 9964)
+call deoplete#custom#source('LanguageClient' , 'rank' , 9963)
+call deoplete#custom#source('lsp'            , 'rank' , 9962)
+call deoplete#custom#source('go'             , 'rank' , 9961)
+call deoplete#custom#source('jedi'           , 'rank' , 9960)
 call deoplete#custom#source('member'         , 'rank' , 9957)
 call deoplete#custom#source('tag'            , 'rank' , 9955)
 call deoplete#custom#source('clangx'         , 'rank' , 9954)
@@ -1899,15 +1900,17 @@ endfunction
 " endif
 
 " \ 'converter_remove_overlap',
-" \ 'converter_truncate_menu',
 " \ 'converter_truncate_abbr',
+            " \ 'converter_auto_delimiter',
 call deoplete#custom#source('_', 'converters', [
             \ 'converter_remove_paren',
-            \ 'converter_auto_delimiter',
+            \ 'converter_truncate_menu',
             \ ])
 
 " show doc strings for jedi
 let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#lsp#handler_enabled = v:false
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " }}}
 
