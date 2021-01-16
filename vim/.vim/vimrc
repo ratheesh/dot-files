@@ -73,8 +73,6 @@ Plug 'coreyja/fzf.devicon.vim'
 Plug 'datwaft/bubbly.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-signify'
-" Plug 'vim-airline/vim-airline'
-" Plug 'retorillo/airline-tablemode.vim'
 " Plug 'delphinus/vim-auto-cursorline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
@@ -1066,194 +1064,6 @@ hi BufferTabLineFill       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=
 hi IconNameDevicon          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 " }}}
 
-" Vim-airline {{{
-
-" Appearance
-let g:airline_powerline_fonts = 0
-let g:airline_theme           = 'darkmode' " sane ones -> ubaryd sol wombat bubblegum
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-if has('nvim')
-    set mouse=nicr
-else
-    if has('mouse')
-        set mouse=a
-    endif
-endif
-
-" let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#whitespace#enabled         = 0
-" let g:airline_skip_empty_sections                   = 1
-let g:airline#extensions#capslock#enabled           = 1
-let g:airline_detect_spelllang                      = 0
-let g:airline_detect_modified                       = 1
-" let g:airline#parts#ffenc#skip_expected_string      = 'utf-8[unix]'
-let g:airline_detect_paste                          = 1
-let g:airline#extensions#virtualenv#enabled         = 1
-let g:airline#extensions#ctrlp#show_adjacent_modes  = 1
-let g:airline#extensions#tagbar#enabled             = 1
-let g:airline#extensions#wordcount#enabled          = 1
-let g:airline#extensions#tagbar#enabled             = 1
-let g:airline#extensions#tagbar#flags               = 'f'
-let g:airline#extensions#wordcount#formatter        = 'default'
-let g:airline#extensions#wordcount#format           = '%dWords'
-let g:airline#extensions#anzu#enabled               = 0
-" let g:airline#extensions#wordcount#filetypes        = ''
-let g:airline#extensions#fzf#enabled                = 1
-
-" vcs
-let g:airline#extensions#hunks#enabled               = 1
-let g:airline#extensions#hunks#non_zero_only         = 1
-let g:airline#extensions#branch#enabled              = 0 " disable this if hunks should be included but branch is excluded
-
-let g:airline_symbols.paste = 'ραstε'
-let g:airline_symbols.branch = '±'
-" let g:airline_symbols.spell = 'Ꞩ'
-" let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.readonly = '🔒'
-
-" Customize Airline Layout
-function! AirlineInit()
-    call airline#parts#define_accent('mode', 'bold')
-    " call airline#parts#define_accent('branch', 'italic')
-    call airline#parts#define_accent('readonly', 'bold')
-    call airline#parts#define_raw('linenr', '%l')
-    call airline#parts#define_accent('linenr', 'bold')
-    call airline#parts#define_raw('modified', '%{&modified ? "[+]" : ""}')
-    call airline#parts#define_accent('modified', 'orange')
-    call airline#parts#define_accent('tagbar', 'tagbar_color')
-    call airline#parts#define_raw('ft_with_icon', '%{WebDevIconsGetFileTypeSymbol()}')
-    " call airline#parts#define_raw('ft_with_icon', '%{&filetype . " " . WebDevIconsGetFileTypeSymbol()}')
-    call airline#parts#define_accent('ft_with_icon', 'ft_color')
-    call airline#parts#define_accent('filetype', 'ft_color')
-    call airline#parts#define_raw('gutentags', '%{gutentags#statusline()}')
-
-    " Condense path to manageable length
-    call airline#parts#define_raw('path', '%{utils#CondensePath(expand("%f"), 25)}')
-    call airline#parts#define_accent('path', 'path_color')
-
-    " project root segment
-    if !exists('g:gitroot')
-        let g:gitroot=''
-    endif
-    " call airline#parts#define_raw('gitroot', '%{utils#gitroot()}')
-    call airline#parts#define_raw('gitroot', '%{utils#getprojectname()}')
-    call airline#parts#define_accent('gitroot', 'gitroot_color')
-    call airline#parts#define_raw('gitroot_[', '%{empty(g:gitroot)? "" : "["}')
-    call airline#parts#define_accent('gitroot_[', 'gitroot_paren_color')
-    call airline#parts#define_raw('gitroot_]', '%{empty(g:gitroot)? "" : "]"}')
-    call airline#parts#define_accent('gitroot_]', 'gitroot_paren_color')
-
-    let g:airline_section_a = airline#section#create_left(['mode','crypt','paste','keymap','capslock','iminsert'])
-    let g:airline_section_b = airline#section#create(['hunks', 'gutentags'])
-    let g:airline_section_c = airline#section#create(['readonly' ,'path', 'modified'])
-    let g:airline_section_x = airline#section#create_right(['tagbar', 'ft_with_icon'])
-    let g:airline_section_y = airline#section#create_right(['ffenc'])
-    let g:airline_section_z = airline#section#create_right(['≡%l:%v','ch:%02Bh','%p%%'])
-    " let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','≡%l:%v│','ch:%02Bh│','%p%%'])
-    " let g:airline_section_z = airline#section#create_right(['branch','windowswap','obsession','≡l:%v│','%p%%'])
-endfunction
-
-autocmd User AirlineAfterInit,AirlineAfterTheme call AirlineInit()
-" autocmd VimEnter * call AirlineInit()
-
-" Error checking
-" let g:airline#extensions#syntastic#enabled   = 1
-let g:airline#extensions#ale#enabled      = 1
-let airline#extensions#ale#warning_symbol = 'ω:'
-let airline#extensions#ale#error_symbol   = 'Ԑ:'
-
-" Tabline settings
-let g:airline#extensions#tabline#enabled          = 1
-let g:airline#extensions#tabline#buffers_label    = 'Buffers'
-let g:airline#extensions#tabline#tabs_level       = 'Tabs'
-let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline#extensions#tabline#formatter        = 'unique_tail_improved'
-let g:airline#extensions#tabline#show_splits      = 1
-let g:airline#extensions#tabline#show_tab_type    = 1
-let g:airline#extensions#tabline#show_tab_nr      = 1
-let g:airline#extensions#tabline#buffer_min_count = 1
-let g:airline#extensions#tabline#tab_min_count    = 1
-let g:airline#extensions#tabline#show_tab_type    = 1
-let g:airline#extensions#tabline#exclude_preview  = 1
-let airline#extensions#tabline#disable_refresh    = 0
-let g:airline#extensions#tabline#buffer_idx_mode  = 1
-" let g:airline#extensions#cursormode#enabled       = 1
-
-" nmap <silent><leader>1 <Plug>AirlineSelectTab1
-" nmap <silent><leader>2 <Plug>AirlineSelectTab2
-" nmap <silent><leader>3 <Plug>AirlineSelectTab3
-" nmap <silent><leader>4 <Plug>AirlineSelectTab4
-" nmap <silent><leader>5 <Plug>AirlineSelectTab5
-" nmap <silent><leader>6 <Plug>AirlineSelectTab6
-" nmap <silent><leader>7 <Plug>AirlineSelectTab7
-" nmap <silent><leader>8 <Plug>AirlineSelectTab8
-" nmap <silent><leader>9 <Plug>AirlineSelectTab9
-" nmap <silent><leader>h <Plug>AirlineSelectPrevTab
-" nmap <silent><leader>l <Plug>AirlineSelectNextTab
-" nmap <silent><F9>      <Plug>AirlineSelectPrevTab
-" nmap <silent><F10>     <Plug>AirlineSelectNextTab
-
-if !get(g:, 'airline_powerline_fonts', 0)
-  let g:airline#extensions#tabline#left_sep      = ''
-  let g:airline#extensions#tabline#left_alt_sep  = '│'
-  let g:airline#extensions#tabline#right_sep     = ''
-  let g:airline#extensions#tabline#right_alt_sep = '│'
-  let g:airline_left_alt_sep                     = '│'
-  let g:airline_right_alt_sep                    = '│'
-else
-  let g:airline#extensions#tabline#left_sep      = ''
-  let g:airline#extensions#tabline#left_alt_sep  = ''
-  let g:airline#extensions#tabline#right_sep     = ''
-  let g:airline#extensions#tabline#right_alt_sep = ''
-  let g:airline_left_sep                         = ''
-  let g:airline_right_sep                        = ''
-  let g:airline_left_alt_sep                     = ''
-  let g:airline_right_alt_sep                    = ''
-
-endif
-
-let g:airline#extensions#default#section_truncate_width = {
-            \ 'c': 25,
-            \ }
-
-" let g:airline#extensions#tabline#excludes = ['COMMIT_EDITMSG']
-" let g:airline#extensions#tabline#buffer_idx_format = {
-" \ '0': '⁰ ',
-" \ '1': '೧ ',
-" \ '2': '೨ ',
-" \ '3': '೩ ',
-" \ '4': '೪ ',
-" \ '5': '೫ ',
-" \ '6': '೬ ',
-" \ '7': '೭ ',
-" \ '8': '೮ ',
-" \ '9': '೯ '
-" \ }
-
-" autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
-
-" let g:airline#extensions#default#section_truncate_width = {
-" \ 'c': 30,
-" \ }
-
-" let g:airline_mode_map = {
-"             \ '__' : '-',
-"             \ 'n'  : 'Ɲѳrmαl',
-"             \ 'i'  : '¶ƞsεrt',
-"             \ 'R'  : 'Rερlαcε',
-"             \ 'c'  : '₵md',
-"             \ 'v'  : 'Ʋisuαl',
-"             \ 'V'  : 'Ʋ-Liƞε',
-"             \ '' : 'Ʋ-ẞlѳck',
-"             \ 's'  : 'Subst',
-"             \ 'S'  : 'Subst-Liƞε',
-"             \ '' : 'Subst-ẞlk',
-"             \ }
-" }}}
-
 " vim-auto-cursorline {{{
 " g:auto_cursorline_wait_ms = 1000
 " }}}
@@ -1486,9 +1296,6 @@ augroup END
 " devicons {{{
 let g:webdevicons_enable                    = 1
 let g:webdevicons_enable_startify           = 1
-let g:webdevicons_enable_airline_tabline    = 1
-let g:webdevicons_enable_airline_statusline = 1
-let g:webdevicons_enable_ctrlp              = 1
 let g:webdevicons_enable_denite             = 0
 let g:WebDevIconsOS                         = 'unix'
 " }}}
@@ -1945,19 +1752,6 @@ augroup END
 nnoremap Q gqap<CR>
 xnoremap Q gq<CR>
 nnoremap <silent><leader>Q vapJgqap<CR>
-" }}}
-
-" vim-airline-formatting {{{
-let g:airline#extensions#formatting#enabled        = 1
-" spaces / tabs indicator
-let g:airline#extensions#formatting#space_glyph    = '•'
-let g:airline#extensions#formatting#tab_glyph      = '▸'
-
-" symbolizes the text body
-let g:airline#extensions#formatting#text_glyph     = '≡'
-
-" wrap/nowrap inidcator (if Pencil isn't found)
-let g:airline#extensions#formatting#wrap_no_pencil = '¶'
 " }}}
 
 " vim-textobj-quote {{{
