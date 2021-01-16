@@ -80,8 +80,11 @@ Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'coreyja/fzf.devicon.vim'
 " Plug 'ludovicchabant/vim-gutentags'
-Plug 'vim-airline/vim-airline'
-Plug 'retorillo/airline-tablemode.vim'
+Plug 'datwaft/bubbly.nvim'
+Plug 'romgrk/barbar.nvim'
+Plug 'mhinz/vim-signify'
+" Plug 'vim-airline/vim-airline'
+" Plug 'retorillo/airline-tablemode.vim'
 " Plug 'delphinus/vim-auto-cursorline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
@@ -1009,8 +1012,78 @@ nnoremap <silent><Leader>gm <Plug>(git-messenger)
 let g:load_doxygen_syntax = 1
 " }}}
 
+" bubbly.nvim {{{
+lua require("bubbly")
+let g:bubbly_tabline = 0
+" }}}
+
+" barbar.nvim {{{
+" Magic buffer-picking mode
+nnoremap <silent><C-s> :BufferPick<CR>
+
+" Sort automatically by...
+" nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+" nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+
+" Move to previous/next
+nnoremap <silent><Leader>h :BufferPrevious<CR>
+nnoremap <silent><Leader>l :BufferNext<CR>
+
+" Re-order to previous/next
+nnoremap <silent><A-<> :BufferMovePrevious<CR>
+nnoremap <silent><A->> :BufferMoveNext<CR>
+
+" Goto buffer in position...
+nnoremap <silent><Leader>1 :BufferGoto 1<CR>
+nnoremap <silent><Leader>2 :BufferGoto 2<CR>
+nnoremap <silent><Leader>3 :BufferGoto 3<CR>
+nnoremap <silent><Leader>4 :BufferGoto 4<CR>
+nnoremap <silent><Leader>5 :BufferGoto 5<CR>
+nnoremap <silent><Leader>6 :BufferGoto 6<CR>
+nnoremap <silent><Leader>7 :BufferGoto 7<CR>
+nnoremap <silent><Leader>8 :BufferGoto 8<CR>
+nnoremap <silent><Leader>9 :BufferLast<CR>
+
+" Close buffer
+nnoremap <silent>    <A-d> :BufferClose<CR>
+
+let bufferline = {}
+
+" Enable/disable animations
+let bufferline.animation = v:true
+" Enable/disable auto-hiding the tab bar when there is a single buffer
+let bufferline.icons = "both"
+let bufferline.maximum_padding = 0
+
+" Configure icons on the bufferline.
+let bufferline.icon_separator_active   = '▎'
+let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_close_tab          = 'x'
+let g:bufferline.closable              = v:false
+let g:bufferline.clickable             = v:false
+let bufferline.icon_close_tab_modified = '●'
+let bufferline.semantic_letters        = v:true
+
+hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=NONE
+hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#ff0000  guibg=#383a4c      gui=NONE
+hi BufferCurrentTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferVisible           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
+hi BufferVisibleMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferVisibleSign       ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
+hi BufferVisibleTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferInactive          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
+hi BufferInactiveMod       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
+hi BufferInactiveSign      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
+hi BufferInactiveTarget    ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferTabLineSel        ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferTabLineFill       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+" }}}
+
+" nvim-web-devicons {{{
+hi IconNameDevicon          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+" }}}
+
 " Vim-airline {{{
-" let g:airline_highlighting_cache = 0
 
 " Appearance
 let g:airline_powerline_fonts = 0
@@ -1126,19 +1199,19 @@ let airline#extensions#tabline#disable_refresh    = 0
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
 " let g:airline#extensions#cursormode#enabled       = 1
 
-nmap <silent><leader>1 <Plug>AirlineSelectTab1
-nmap <silent><leader>2 <Plug>AirlineSelectTab2
-nmap <silent><leader>3 <Plug>AirlineSelectTab3
-nmap <silent><leader>4 <Plug>AirlineSelectTab4
-nmap <silent><leader>5 <Plug>AirlineSelectTab5
-nmap <silent><leader>6 <Plug>AirlineSelectTab6
-nmap <silent><leader>7 <Plug>AirlineSelectTab7
-nmap <silent><leader>8 <Plug>AirlineSelectTab8
-nmap <silent><leader>9 <Plug>AirlineSelectTab9
-nmap <silent><leader>h <Plug>AirlineSelectPrevTab
-nmap <silent><leader>l <Plug>AirlineSelectNextTab
-nmap <silent><F9>      <Plug>AirlineSelectPrevTab
-nmap <silent><F10>     <Plug>AirlineSelectNextTab
+" nmap <silent><leader>1 <Plug>AirlineSelectTab1
+" nmap <silent><leader>2 <Plug>AirlineSelectTab2
+" nmap <silent><leader>3 <Plug>AirlineSelectTab3
+" nmap <silent><leader>4 <Plug>AirlineSelectTab4
+" nmap <silent><leader>5 <Plug>AirlineSelectTab5
+" nmap <silent><leader>6 <Plug>AirlineSelectTab6
+" nmap <silent><leader>7 <Plug>AirlineSelectTab7
+" nmap <silent><leader>8 <Plug>AirlineSelectTab8
+" nmap <silent><leader>9 <Plug>AirlineSelectTab9
+" nmap <silent><leader>h <Plug>AirlineSelectPrevTab
+" nmap <silent><leader>l <Plug>AirlineSelectNextTab
+" nmap <silent><F9>      <Plug>AirlineSelectPrevTab
+" nmap <silent><F10>     <Plug>AirlineSelectNextTab
 
 if !get(g:, 'airline_powerline_fonts', 0)
   let g:airline#extensions#tabline#left_sep      = ''
