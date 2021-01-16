@@ -50,15 +50,6 @@ Plug 't9md/vim-textmanip'
 Plug 'tpope/vim-capslock'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'ratheesh/vim-smooth-scroll'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'ratheesh/ctrlp_bdelete.vim'
-" Plug 'mattn/ctrlp-register'
-" Plug 'ivalkeen/vim-ctrlp-tjump'
-" Plug 'ratheesh/ctrlp-extensions.vim'
-" Plug 'FelikZ/ctrlp-py-matcher'
-" Plug 'shinnya/ctrlp-jumplist'
-" Plug 'mattn/ctrlp-mark'
-" Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
@@ -79,7 +70,6 @@ Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 " Plug 'kdheepak/lazygit.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'coreyja/fzf.devicon.vim'
-" Plug 'ludovicchabant/vim-gutentags'
 Plug 'datwaft/bubbly.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-signify'
@@ -672,13 +662,6 @@ nnoremap \s ea<C-X><C-S>
 syntax on
 let g:enable_bold_font = 1
 color darktheme
-" }}}
-
-" vim-rooter {{{
-" let g:rooter_patterns      = ['.svn', '.git/']
-" let g:rooter_resolve_links = 1
-" let g:rooter_silent_chdir  = 1
-" let g:rooter_change_directory_for_non_project_files = ''
 " }}}
 
 " vim-clap {{{
@@ -1310,113 +1293,6 @@ let g:licenses_authors_name           = 'Ratheesh S'
 let g:licenses_default_commands       = ['gplv2', 'gpl', 'mit']
 " }}}
 
-" CtrlP {{{
-let g:ctrlp_extensions = [ 'tag', 'buffertag', 'quickfix', 'undo', 'line',
-            \ 'changes', 'mixed', 'cscope', 'jumplist', 'marks', 'register' ]
-
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-
-let g:ctrlp_prompt_mappings = { 'PrtExit()': ['<esc>', '<c-c>', '<c-g>'] }
-
-let g:ctrlp_use_caching = 0
-if executable('fd')
-    let g:ctrlp_user_command = 'fd --type f --hidden --color never "" %s'
-    " let g:ctrlp_user_command = 'fd --hidden --color=never "" "%s"'
-    set grepprg=rg\ --color=never
-elseif executable('rg')
-    let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
-    set grepprg=rg\ --color=never
-elseif executable('ag')
-    let g:ctrlp_user_command = 'ag %s --hidden -l --nocolor -g ""'
-    set grepprg=ag\ --nogroup\ --nocolor
-else
-    echom "Can\'t find fd/rg/ag executable. CtrlP may be slow!!!"
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-    let g:ctrlp_use_caching = 1
-endif
-
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_lazy_update =  300
-
-" let g:ctrlp_by_filename = 0
-" let g:ctrlp_follow_symlinks = 0
-
-let g:ctrlp_match_window = 'min:1,max:15,results:2000'
-" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_match_current_file = 0
-
-" let g:ctrlp_map             = '<Leader>p'
-let g:ctrlp_cmd               = 'CtrlPBuffer'
-let g:ctrlp_show_hidden       = 1
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_root_markers      = ['.ctrlp', '.git', '.svn', '.hg']
-let g:ctrlp_mruf_exclude      = '\v\.git/(COMMIT_EDITMSG|MERGE_MSG|index)'
-let g:ctrlp_max_files         = 200000
-" let g:ctrlp_mruf_relative   = 1
-set autochdir
-
-" nnoremap <silent><Leader>fo :CtrlP<CR>
-" nnoremap <silent><Leader>fb :CtrlPBuffer<CR>
-" nnoremap <silent><Leader>fr :CtrlPMRU<CR>
-" nnoremap <silent><Leader>ft :CtrlPBufTag<CR>
-" nnoremap <silent><Leader>fT :CtrlPBufTagAll<CR>
-" nnoremap <silent><Leader>fj :CtrlPJumpList<CR>
-" nnoremap <silent><Leader>fp :CtrlPRegister<CR>
-" nnoremap <silent><Leader>fl :CtrlPLine<CR>
-" nnoremap <silent><Leader>fy :CtrlPYankring<CR>
-" nnoremap <silent><leader>fj :CtrlPJumpList<CR>
-" nnoremap <silent><leader>fg :CtrlPModified<CR>
-" nnoremap <silent><leader>fm :CtrlPMark<CR>
-" nnoremap <Leader>fm :CtrlPMixed<CR>
-
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|o|dll|stgit*)$',
-            \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-            \ }
-let g:ctrlp_custom_ignore = '\v\~$|\.git/COMMIT_EDITMSG$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|__init__\.py'
-
-" disable numbers in ctrlp buffer
-autocmd BufEnter ControlP set nonumber
-" }}}
-
-" ctrlp_bdelete {{{
-" call ctrlp_bdelete#init()
-" let g:ctrlp_bdelete_keymap_trigger='<C-_>'
-"}}}
-
-" vim-ctrlp-tjump {{{
-" nnoremap <silent><c-]> :CtrlPtjump<CR>
-" vnoremap <silent><c-]> :CtrlPtjumpVisual<CR>
-" let g:ctrlp_tjump_only_silent = 1
-" }}}
-
-" ctrlp-extensions {{{
-" nnoremap <silent><Leader>fy :CtrlPYankring<CR>
-let g:ctrlp_yankring_limit           = 100
-let g:ctrlp_yankring_highlight       = 1
-let g:ctrlp_yankring_use_textchanged = 1
-let g:ctrlp_yankring_minimum_chars   = 2
-" }}}
-
-" vim-ctrlp-ag {{{
-" nnoremap <silent><Leader>gg :CtrlPag<CR>
-" vnoremap <silent><Leader>gg :CtrlPagVisual<CR>
-" nnoremap <leader>/          :CtrlPagLocate<space>
-" " nnoremap <leader>cp :CtrlPagPrevious<CR>
-" let g:ctrlp_ag_ignores = '--ignore .git
-"             \ --ignore "deps/*"
-"             \ --ignore "_build/*"
-"             \ --ignore "node_modules/*"'
-" }}}
-
-" ctrlp-mark {{{
-" leaveout all except alphabhets
-let g:ctrlp_mark_match_string = 'v:val !~ "^ \\(\\W\\|\\d\\).*"'
-" }}}
-
 " denite {{{
 
 " reset 50% winheight on window resize
@@ -1607,11 +1483,6 @@ augroup gitCommmit
 augroup END
 " }}}
 
-" lazygit {{{
-let g:lazygit_floating_window_winblend = 0 " transparency of floating window
-let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
-" }}}
-
 " devicons {{{
 let g:webdevicons_enable                    = 1
 let g:webdevicons_enable_startify           = 1
@@ -1621,19 +1492,6 @@ let g:webdevicons_enable_ctrlp              = 1
 let g:webdevicons_enable_denite             = 0
 let g:WebDevIconsOS                         = 'unix'
 " }}}
-
-" gutentags {{{
-" enable only ctags
-let g:gutentags_modules = ['ctags']
-
-" config project root markers.
-let g:gutentags_project_root = ['.root', '.git', '.svn']
-
-" generate datebases in my cache directory, prevent gtags files polluting my project
-" let g:gutentags_cache_dir = expand('$HOME/.cache/tags')
-
-" }}}
-
 
 " vim-signature {{{
 let g:SignatureMarkTextHLDynamic = 1
@@ -1656,79 +1514,7 @@ let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger   = "<S-Tab>"
 let g:indentLine_faster              = 1
 let g:UltiSnipsEditSplit             = "vertical"
-" let g:UltiSnipsJumpForwardTrigger  = "<C-j>"
-" let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 "}}}
-
-" neo-snippets {{{
-" imap <C-k> <Plug>(neosnippet_expand_or_jump)
-" smap <C-k> <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" let g:neosnippet#enable_completed_snippet = 1
-
-" imap <expr><TAB>
-"             \ pumvisible() ? "\<C-n>" :
-"             \ neosnippet#expandable_or_jumpable() ?
-"             \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" smap <expr><TAB>
-"             \ neosnippet#expandable_or_jumpable() ?
-"             \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-    set conceallevel=2 concealcursor=niv
-endif
-
-" }}}
-
-" vim-ale {{{
-let g:ale_sign_column_always   = 1
-let g:ale_lint_on_text_changed = "never"
-let g:ale_lint_on_insert_leave = 1
-autocmd BufEnter ControlP let b:ale_enabled = 0
-let g:ale_set_loclist  = 0
-let g:ale_set_quickfix = 1
-let g:ale_open_list    = 0
-let g:ale_gitcommit_gitlint_use_global=0
-let g:ale_python_pylint_executable = 'python'
-
-" }}}
-
-" rainbow_parenthesis {{{
-let g:rbpt_max         = 15
-let g:bold_parentheses = 0
-
-let g:rbpt_colorpairs = [
-            \ ['gray',        'firebrick2'     ],
-            \ ['darkgreen',   'SpringGreen3'   ],
-            \ ['blue',        'DodgerBlue'     ],
-            \ ['green',       'DeepPink3'      ],
-            \ ['blue',        'DarkOrchid3'    ],
-            \ ['red',         'MediumVioletRed'],
-            \ ['magenta',     'PeachPuff3'     ],
-            \ ['cyan',        'DodgerBlue'     ],
-            \ ['darkred',     'firebrick3'     ],
-            \ ['brown',       'RoyalBlue3'     ],
-            \ ['darkblue',    'DarkOrchid3'    ],
-            \ ['gray',        'firebrick3'     ],
-            \ ['darkgreen',   'RoyalBlue3'     ],
-            \ ['darkmagenta', 'SeaGreen3'      ],
-            \ ['darkcyan',    'DarkOrchid3'    ],
-            \ ['red',         'firebrick3'     ],
-            \ ]
-
-" au VimEnter  * RainbowParenthesesToggle
-" au BufEnter  * RainbowParenthesesLoadRound
-" au BufEnter  * RainbowParenthesesLoadSquare
-" au BufEnter  * RainbowParenthesesLoadBraces
-" au BufEnter  * RainbowParenthesesLoadChevrons
-" }}}
-
-" ShowPairs {{{
-let g:showpairs_limit=1000
-" }}}
 
 " hipairs {{{
 " let g:hiPairs_timeout=20
@@ -1771,23 +1557,6 @@ let g:hardtime_maxcount               = 2
 " nnoremap <silent><leader>th           :HardTimeToggle<CR>
 " }}}
 
-"jedi-vim {{{
-let g:jedi#show_call_signatures       = 2
-let g:jedi#popup_on_dot               = 1
-" let g:jedi#goto_command             = "<leader>d"
-let g:jedi#auto_vim_configuration     = 0
-let g:jedi#popup_select_first         = 0
-let g:jedi#show_call_signatures_delay = 0
-let g:jedi#smart_auto_mappings        = 1
-let g:jedi#goto_assignments_command   = "<leader>g"
-let g:jedi#goto_definitions_command   = ""
-let g:jedi#completions_enabled        = 0
-let g:jedi#documentation_command      = "K"
-let g:jedi#usages_command             = "<leader>n"
-let g:jedi#completions_command        = "<C-Space>"
-let g:jedi#rename_command             = "<leader>R"
-"}}}
-
 " echodoc {{{
 let g:echodoc#enable_at_startup      = 1
 let g:echodoc#enable_force_overwrite = 1
@@ -1805,49 +1574,6 @@ endif
 let g:echodoc#highlight_identifier = "EchoDocFunc"
 let g:echodoc#highlight_arguments  = "EchoDocParam"
 let g:echodoc#highlight_trailing   = "EchoDocTrailing"
-" }}}
-
-" Languageclient-Neovim {{{
-" let g:LanguageClient_autoStart = 0
-" let g:LanguageClient_selectionUI         = 'location-list'
-" let g:LanguageClient_diagnosticsEnable   = 0
-" let g:LanguageClient_diagnosticsSignsMax = 0
-" let g:LanguageClient_hasSnippetSupport   = 1
-" let g:LanguageClient_serverCommands      = {
-"             \ 'c'      : ['/usr/bin/clangd-10', '--background-index'],
-"             \ 'cpp'    : ['/usr/bin/clangd-10', '--background-index'],
-"             \ 'python' : ['/usr/local/bin/pyls'],
-"             \ 'go'     : ['gopls'],
-"             \ }
-" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-
-" let g:LanguageClient_loggingLevel = 'INFO'
-" let g:LanguageClient_virtualTextPrefix = ''
-" let $RUST_BACKTRACE = 1
-
-" " let g:neosnippet#enable_complete_done = 1
-" " let g:clang_include_fixer_path = "clang-include-fixer-9"
-" " let g:LanguageClient_loggingLevel ='DEBUG'
-" " let g:LanguageClient_loggingFile= expand('~/log')
-
-" function SetLSPShortcuts()
-"   nnoremap <leader>kd :call LanguageClient#textDocument_definition()<CR>
-"   nnoremap <leader>kr :call LanguageClient#textDocument_rename()<CR>
-"   nnoremap <leader>kf :call LanguageClient#textDocument_formatting()<CR>
-"   nnoremap <leader>kt :call LanguageClient#textDocument_typeDefinition()<CR>
-"   nnoremap <leader>kx :call LanguageClient#textDocument_references()<CR>
-"   nnoremap <leader>ka :call LanguageClient_workspace_applyEdit()<CR>
-"   nnoremap <leader>kc :call LanguageClient#textDocument_completion()<CR>
-"   nnoremap <leader>kh :call LanguageClient#textDocument_hover()<CR>
-"   nnoremap <leader>ks :call LanguageClient_textDocument_documentSymbol()<CR>
-"   nnoremap <leader>km :call LanguageClient_contextMenu()<CR>
-" endfunction()
-
-" augroup LSP
-"   autocmd!
-"   autocmd FileType cpp,c call SetLSPShortcuts()
-" augroup END
-
 " }}}
 
 " neovim_lspconfig {{{
@@ -1906,7 +1632,6 @@ call deoplete#custom#option('refresh_always', v:true)
 call deoplete#custom#option('num_processes', 0)
 
 " Don't align these lines!
-set completeopt=longest,menuone
 set pumheight=10 " set max. Height of popup menu
 
 " let g:deoplete#sources  = {}
@@ -1963,13 +1688,6 @@ inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
 " Undo completion i.e remove whole completed word (default plugin mapping)
 inoremap <expr><C-g> deoplete#undo_completion()
 
-" inoremap <silent><expr> <TAB>
-"             \ pumvisible() ? "\<C-n>" :
-"             \ <SID>check_back_space() ? "\<TAB>" :
-"             \ deoplete#manual_complete()
-" function! s:check_back_space() abort "{{{
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1]  =~ '\s'
 " endfunction"}}}
 
 " Use Tab to forward cycle
@@ -1981,12 +1699,6 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
     return deoplete#close_popup() . "\<CR>"
 endfunction
-
-" following code works only in ViM for now
-" if !has('nvim')
-" let g:UltiSnipsExpandTrigger = "<nop>"
-" inoremap <CR> <C-r>=pumvisible() ? UltiSnips#ExpandSnippetOrJump() : "\n"<CR>
-" endif
 
 " \ 'converter_remove_overlap',
 " \ 'converter_truncate_abbr',
@@ -2045,37 +1757,11 @@ let g:deoplete#sources#go#package_dot         = 0
 let g:deoplete#sources#go#sort_class          = ['package', 'func', 'type', 'var', 'const']
 " }}}
 
-" ncm2#enable_for_buffer {{{
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-" set completeopt=noinsert,menuone,noselect
-" let g:ncm2#complete_delay = 200
-" let g:ncm2#popup_delay    = 100
-" let g:ncm2#matcher='abbrfuzzy'
-" let g:ncm2#sorter='abbrfuzzy'
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" call ncm2#override_source('tagprefix'        , {'mark': 'T'})
-" call ncm2#override_source('bufword'          , {'mark': 'B'})
-" call ncm2#override_source('bufpath'          , {'mark': 'BufPath'})
-" call ncm2#override_source('cwdpath'          , {'mark': './'})
-" call ncm2#override_source('rootpath'         , {'mark': '#'})
-" call ncm2#override_source('tmux'             , {'mark': 'Tmux'})
-" call ncm2#override_source('LanguageClient_c' , {'mark': 'LSP'})
-
-" call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
-" let g:ncm2_tagprefix='[T]'
-" let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
-" let $NVIM_PYTHON_LOG_LEVEL="INFO"
-" }}}
-
 " vim-textobj-anyblock {{{
 let g:textobj#anyblock#blocks = [ '(', '{', '[', '"', "'"]
 " }}}
 
 " vim-textmanip {{{
-" xmap <Leader>dd <Plug>(textmanip-duplicate-down)
-" nmap <Leader>dd <Plug>(textmanip-duplicate-down)
 xmap <Leader>dj <Plug>(textmanip-duplicate-down)
 nmap <Leader>dj <Plug>(textmanip-duplicate-down)
 xmap <Leader>dk <Plug>(textmanip-duplicate-up)
@@ -2084,25 +1770,16 @@ xmap <Leader>dl <Plug>(textmanip-duplicate-right)
 xmap <Leader>dh <Plug>(textmanip-duplicate-left)
 
 if has('nvim')
-    " nmap <M-j> <Plug>(textmanip-move-down)
-    " nmap <M-k> <Plug>(textmanip-move-up)
-    "
     xmap <M-j> <Plug>(textmanip-move-down)
     xmap <M-k> <Plug>(textmanip-move-up)
     xmap <M-h> <Plug>(textmanip-move-left)
     xmap <M-l> <Plug>(textmanip-move-right)
 else
-    " nmap j <Plug>(textmanip-move-down)
-    " nmap k <Plug>(textmanip-move-up)
-    "
     xmap j <Plug>(textmanip-move-down)
     xmap k <Plug>(textmanip-move-up)
     xmap h <Plug>(textmanip-move-left)
     xmap l <Plug>(textmanip-move-right)
 endif
-
-" nmap <Leader>o <Plug>(textmanip-blank-below)
-" nmap <Leader>O <Plug>(textmanip-blank-above)
 
 " toggle insert/replace with <C-s>
 nmap <C-s> <Plug>(textmanip-toggle-mode)
@@ -2115,27 +1792,6 @@ if has('nvim')
     let g:line_number_interval = 5
     " let g:line_number_interval#use_custom = 1
 endif " if
-" }}}
-
-" cscope {{{
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>fl :call ToggleLocationList()<CR>
-let g:cscope_silent = 1
-
-if has("cscope")
-    set csprg=/usr/bin/cscope
-    set csto=0
-    set cst
-    set nocsverb
-    " add any database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out
-        " else add database pointed to by environment
-    elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
-    endif
-    set csverb
-endif
 " }}}
 
 " gundo {{{
@@ -2273,19 +1929,6 @@ let g:sandwich#recipes += [
       \ ]
 " }}}
 
-" vim-cursormode {{{
-let g:cursormode_exit_mode = 'd'
-let cursormode_color_map = {
-            \   "n"     :  "#c0c0c0",
-            \   "i"     :  "#e75a3a",
-            \   "R"     :  "#ff34be",
-            \   "v"     :  "#46c28e",
-            \   "V"     :  "#0366d6",
-            \   "\<C-V>":  "#ffca88",
-            \   "d"     :  "#eeeeee",
-            \ }
-" }}}
-
 " vim-pencil {{{
 let g:pencil#autoformat      = 0     " 0 = disable, 1 = enable (def)
 let g:pencil#textwidth       = 80
@@ -2330,10 +1973,6 @@ augroup END
 let g:argumentative_no_mappings=1
 
 " custom mappings
-" nmap [a <Plug>Argumentative_Prev
-" nmap ]a <Plug>Argumentative_Next
-" xmap [a <Plug>Argumentative_XPrev
-" xmap ]a <Plug>Argumentative_XNext
 nmap <a <Plug>Argumentative_MoveLeft
 nmap >a <Plug>Argumentative_MoveRight
 xmap ia <Plug>Argumentative_InnerTextObject
@@ -2363,64 +2002,6 @@ noremap <leader>y :Oscyank<CR>
 
 " vim-table-mode {{{
 let g:table_mode_corner_corner='+'
-" }}}
-
-" Cmd2 {{{
-if !has('nvim')
-    let g:Cmd2_cursor_blink = 0
-
-    nmap : :<F6>
-    nmap / /<F6>
-    nmap ? ?<F6>
-    xmap : :<F6>
-    " xmap / /<F6>
-    xmap ? ?<F6>
-    cmap <F6> <Plug>(Cmd2Suggest)
-
-    let g:Cmd2_options = {
-                \ '_complete_ignorecase'      : 1,
-                \ '_complete_uniq_ignorecase' : 0,
-                \ '_quicksearch_ignorecase'   : 1,
-                \ '_complete_start_pattern'   : '\<\(\[agls]\:\)\?\(\k\*\[_\-#]\)\?',
-                \ '_complete_fuzzy'           : 1,
-                \ '_suggest_render'           : 'Cmd2#render#New().WithInsertCursor().WithAirlineMenu()',
-                \ '_complete_string_pattern'  : '\v\k(\k|\.)*',
-                \ '_complete_loading_text'    : '...',
-                \ 'menu_hl'                   : 'airline_x',
-                \ 'menu_selected_hl'          : 'WildMenu',
-                \ 'menu_separator_hl'         : 'airline_x',
-                \ 'menu_next'                 : '⇛',
-                \ 'menu_previous'             : '⇚',
-                \ }
-
-    function! s:Peekaboo()
-        call peekaboo#peek(1, 'ctrl-r',  0)
-    endfunction
-
-    let g:Cmd2_cmd_mappings = {
-                \ 'Peekaboo'        : {'command': function('s:Peekaboo'), 'type': 'function'},
-                \ 'iw'              : {'command': 'iw', 'type': 'text', 'flags': 'Cpv'},
-                \ 'ap'              : {'command': 'ap', 'type': 'line', 'flags': 'pv'},
-                \ '^'               : {'command': '^', 'type': 'normal!', 'flags': 'r'},
-                \ 's'               : {'command': 's/###/###/g', 'type': 'snippet'},
-                \ 'S'               : {'command': 'Cmd2#functions#CopySearch', 'type': 'function'},
-                \ 'b'               : {'command': 'Cmd2#functions#Back', 'type': 'function', 'flags': 'r'},
-                \ 'e'               : {'command': 'Cmd2#functions#End', 'type': 'function', 'flags': 'r'},
-                \ 'CF'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
-                \ 'CB'              : {'command': function('Cmd2#ext#complete#Main'), 'type': 'function'},
-                \ 'w'               : {'command': 'Cmd2#functions#Cword', 'type': 'function', 'flags': 'Cr'},
-                \ '\<Plug>Cmd2Tab'  : {'command': "Cmd2#functions#TabForward", 'type': 'function', 'flags': 'C'},
-                \ '\<Plug>Cmd2STab' : {'command': "Cmd2#functions#TabBackward", 'type': 'function', 'flags': 'C'},
-                \ '\<Tab>'          : {'command': "\<Plug>Cmd2Tab", 'type': 'remap', 'flags': 'C'},
-                \ '\<S-Tab>'        : {'command': "\<Plug>Cmd2STab", 'type': 'remap', 'flags': 'C'},
-                \ }
-    cmap <C-L> <Plug>Cmd2
-    " cmap <expr> <C-N> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CF" : "\<Tab>"
-    " cmap <expr> <C-P> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CB" : "\<S-Tab>"
-    cmap <C-R> <Plug>(Cmd2)Peekaboo
-
-    set wildcharm=<Tab>
-endif
 " }}}
 
 " wilder {{{
@@ -2563,17 +2144,6 @@ call submode#map('marks', 'n', 'r', 'j', ']`')
 call submode#map('marks', 'n', 'r', 'k', '[`')
 "}}}
 
-" vim-bling {{{
-let g:bling_time         = 175
-let g:bling_count        = 1
-let g:bling_color_fg     = '0'
-let g:bling_color_bg     = '131'
-let g:bling_color_cterm  = 'NONE'
-let g:bling_color_gui_fg = '#000000'
-let g:bling_color_gui_bg = '#bdb76b'
-let g:bling_no_expr      = 1
-" }}}
-
 " vim-textobj-parameter {{{
 let g:vim_textobj_parameter_mapping = 'a'
 " }}}
@@ -2640,9 +2210,6 @@ function! ToggleList(bufname, pfx)
     endif
 endfunction
 
-" nnoremap <silent><leader>tl :call ToggleList("Location List", 'l')<CR>
-" nnoremap <silent><leader>tq :call ToggleList("Quickfix List", 'c')<CR>
-
 " }}}
 
 " Misc macros {{{
@@ -2674,9 +2241,6 @@ if has('nvim')
     set guicursor=n:block-nCursor-blinkon0,i-ci:ver20-iCursor-blinkon0,v-ve:block-vCursor-blinkon0,o:hor30-oCursor-blinkon0,r-cr:block-rCursor-blinkon0
     autocmd VimLeave * set guicursor=a:block-NCursor-blinkon0
 endif
-
-" Autoload vimrc on save
-" autocmd BufWritePost .vimrc source %
 
 let g:surround_42 = "/* \r */"
 let g:surround_{char2nr("q")} = "“\r”"
