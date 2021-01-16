@@ -68,8 +68,9 @@ Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 " Plug 'kdheepak/lazygit.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'coreyja/fzf.devicon.vim'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'coreyja/fzf.devicon.vim'
 Plug 'datwaft/bubbly.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-signify'
@@ -1060,10 +1061,6 @@ hi BufferTabLineSel        ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=
 hi BufferTabLineFill       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 " }}}
 
-" nvim-web-devicons {{{
-hi IconNameDevicon          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
-" }}}
-
 " vim-auto-cursorline {{{
 " g:auto_cursorline_wait_ms = 1000
 " }}}
@@ -1298,6 +1295,10 @@ let g:webdevicons_enable                    = 1
 let g:webdevicons_enable_startify           = 1
 let g:webdevicons_enable_denite             = 0
 let g:WebDevIconsOS                         = 'unix'
+" }}}
+
+" nvim-web-devicons {{{
+hi IconNameDevicon          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 " }}}
 
 " vim-signature {{{
