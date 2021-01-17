@@ -246,6 +246,8 @@ if has('wildmenu')
 endif
 " Abbreviations of messages and avoid 'hit enter' prompt
 set shortmess+=aoOtTIc
+" Complete options
+set completeopt=noinsert,menuone,noselect
 " Ask for confirmation (instead of aborting an action)
 set confirm
 " Shorten default to time to update swap files and gutter plugins
@@ -1402,7 +1404,6 @@ let g:tmuxcomplete#trigger = ''
 " }}}
 
 " deoplete {{{
-set completeopt+=noinsert
 let g:deoplete#enable_at_startup = 1
 if !has('nvim')
     let g:deoplete#enable_yarp   = 1
@@ -1410,11 +1411,10 @@ endif
 " let g:deoplete#file#enable_buffer_path      = 1
 " let deoplete#tag#cache_limit_size           = 10000000
 let g:deoplete#buffer#require_same_filetype = 0
-" let g:deoplete#complete_method            = "omnifunc"
 
             " \ 'skip_multibyte'      : v:false,
 call deoplete#custom#option({
-            \ 'auto_complete_delay' : 30,
+            \ 'auto_complete_delay' : 0,
             \ 'auto_refresh_delay'  : 50,
             \ 'auto_complete_popup' : 'auto',
             \ 'max_list'            : 100,
@@ -1425,8 +1425,10 @@ call deoplete#custom#option({
             \ 'async_timeout'       : 500,
             \ 'refresh_always'      : v:false,
             \ 'refresh_backspace'   : v:true,
+            \ 'nofile_complete_filetypes': ['denite-filter', 'zsh'],
             \ 'num_processes'       : 4,
             \ 'max_abbr_width'      : 0,
+            \ 'max_menu_width'      : 50,
             \ })
 
 call deoplete#custom#var('file', {
@@ -1515,10 +1517,11 @@ endfunction
 
 " \ 'converter_remove_overlap',
 " \ 'converter_truncate_abbr',
-            " \ 'converter_auto_delimiter',
+" \ 'converter_auto_delimiter',
+" \ 'converter_truncate_menu',
+" \ 'max_menu_width',
 call deoplete#custom#source('_', 'converters', [
             \ 'converter_remove_paren',
-            \ 'converter_truncate_menu',
             \ ])
 
 " show doc strings for jedi
