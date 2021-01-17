@@ -7,6 +7,7 @@ vim.g.bubbly_statusline = {
   'divisor',
 
 
+  'current_function',
   'builtinlsp',
   'filetype',
   'progress',
@@ -22,14 +23,17 @@ vim.g.bubbly_palette = {
   blue        = "#6cb6eb",
   purple      = "#d38aea",
   cyan        = "#5dbbc1",
-  white       = "#c5cdd9",
+  white       = "#eeeeee",
   lightgrey   = "#4c5870",
   darkgrey    = "#404247",
   projbg      = "#404247",
   projfg      = "#f5be85",
   brightgreen = "#66d28e",
   cream       = '#EFEAD8',
-  hexcharbg   = '#00707B',
+  hexcharbg   = '#007799',
+  curfn_fg    = '#FDC46D',
+  yellow1     = '#FDC46D',
+  ftbg        = '#B6919E',
 }
 
 vim.g.bubbly_colors = {
@@ -47,7 +51,7 @@ vim.g.bubbly_colors = {
   },
 
   path = {
-    project      = { background = 'lightgrey', foreground = 'purple' },
+    project      = { background = 'lightgrey', foreground = 'red' },
     readonly     = { background = 'lightgrey', foreground = 'foreground'  },
     unmodifiable = { background = 'darkgrey', foreground  = 'foreground'  },
     path         = { background = 'cream'   , foreground  = 'black'  },
@@ -78,12 +82,13 @@ vim.g.bubbly_colors = {
     current_function = 'purple',
   },
 
-  filetype = 'blue',
+  current_function = { background = 'lightgrey', foreground = 'curfn_fg'  },
+  filetype         = { background = 'ftbg', foreground = 'black'  },
 
   progress = {
     rowandcol  = { background = 'lightgrey', foreground = 'foreground'  },
     percentage = { background = 'lightgrey', foreground  = 'foreground'  },
-    hexchar    = { background = 'hexcharbg', foreground  = 'foreground'  },
+    hexchar    = { background = 'hexcharbg', foreground  = 'white'  },
   },
 
   tabline = {
@@ -125,6 +130,8 @@ vim.g.bubbly_styles = {
     current_function = 'bold'
   },
 
+  current_function = 'italic',
+
   filetype = '',
   progress = {
     rowandol   = '',
@@ -144,7 +151,7 @@ vim.g.bubbly_symbols = {
   path = {
     readonly     = 'RO',
     unmodifiable = '',
-    modified     = '+',
+    modified     = '[+]',
   },
 
   signify = {
@@ -164,7 +171,7 @@ vim.g.bubbly_symbols = {
       warning = 'W%s', --requires 1
     },
   },
-  branch = ' %s' -- requires 1
+  branch = ' %s', -- requires 1
 }
 
 vim.g.bubbly_tags = {
