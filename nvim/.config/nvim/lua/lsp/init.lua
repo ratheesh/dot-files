@@ -31,7 +31,7 @@ local lspconfig = require'lspconfig'
 local diagnostic = require'diagnostic'
 local completion = require'completion'
 
--- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
+vim.lsp.callbacks["textDocument/publishDiagnostics"] = nil
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -48,12 +48,33 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
-local servers = {'ccls','jedi_language_server','bashls', 'vimls', 'cmake'}
+local servers = {'ccls','gopls','jedi_language_server','bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
   }
 end
+
+-- placeholder option will only work in recent (after 7-Oct-2019)
+lspconfig.ccls.setup {
+  init_options = {
+    cache = {
+      directory = ".ccls-cache";
+    },
+    codeLens = {
+      localVariables = true;
+    },
+    client = {
+      snippetSupport = true;
+    };
+    completion = {
+      placeholder   = false;
+      detailedLabel = true;
+      spellChecking = true;
+      -- filterAndSort = false;
+    };
+  }
+}
 
 vim.api.nvim_command('echomsg "NeoViM LSP Client configured!"')
 
