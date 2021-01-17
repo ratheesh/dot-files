@@ -350,10 +350,10 @@ hi AnzuParen                ctermfg=238     ctermbg=NONE    cterm=NONE    guifg=
 " }}}
 
 " echodoc {{{
-hi EchoDocFunc       ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#8C3149  guibg=NONE       gui=NONE
+hi EchoDocFunc       ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#8C3149  guibg=bold       gui=NONE
 hi EchoDocParam      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#0056B9  guibg=NONE       gui=bold,italic
-hi EchoDocFloat      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#000000  guibg=#EFE7D4    gui=NONE
-hi EchoDocTrailing   ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#CE4CAB  guibg=NONE       gui=NONE
+hi EchoDocFloat      ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#000000  guibg=#EFEAD8    gui=NONE
+hi EchoDocTrailing   ctermfg=93   ctermbg=NONE    cterm=NONE    guifg=#CE4CAB  guibg=italic     gui=NONE
 " }}}
 
 " git-gutter {{{
