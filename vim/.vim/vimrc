@@ -1038,15 +1038,15 @@ let bufferline.icons = "both"
 let bufferline.maximum_padding = 0
 
 " Configure icons on the bufferline.
-let bufferline.icon_separator_active   = '▎'
-let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_separator_active   = '▌'
+let bufferline.icon_separator_inactive = '▌'
 let bufferline.icon_close_tab          = 'x'
 let g:bufferline.closable              = v:false
 let g:bufferline.clickable             = v:false
 let bufferline.icon_close_tab_modified = '●'
 let bufferline.semantic_letters        = v:true
 
-hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=NONE
+hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=italic
 hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#ff0000  guibg=#383a4c      gui=NONE
 hi BufferCurrentTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferVisible           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
@@ -1059,6 +1059,11 @@ hi BufferInactiveSign      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=
 hi BufferInactiveTarget    ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferTabLineSel        ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferTabLineFill       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+
+hi BufferCurrentIndex      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#ec7279  guibg=#383a4c      gui=NONE
+hi BufferCurrentSign       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#ec7279  guibg=#383a4c      gui=NONE
+hi BufferVisibleIndex      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
+hi BufferInactiveIndex     ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 " }}}
 
 " vim-auto-cursorline {{{
