@@ -33,8 +33,47 @@ local completion = require'completion'
 
 vim.lsp.callbacks["textDocument/publishDiagnostics"] = nil
 
+-- define an chain complete list
+local chain_complete_list = {
+  default = {
+    {complete_items = {'snippet', 'lsp', 'buffers', 'tmux'}},
+    {complete_items = {'path'}, triggered_only = {'/'}},
+  },
+
+  string = {
+    {complete_items = {'path'}, triggered_only = {'/'}},
+    { complete_items = { 'buffer', 'buffers'  } },
+  },
+
+  comment = {
+    { complete_items = { 'path'  } },
+    { complete_items = { 'buffer', 'buffers'  } }
+  },
+}
+
+-- autocmd BufEnter * lua require'completion'.on_attach()
+
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- passing in a table with on_attach function
+  -- require'completion'.on_attach({
+  --   enable_snippet = 'UltiSnips',
+  --   enable_auto_popup = 1,
+  --   enable_auto_signature = 1,
+  --   auto_change_source=1,
+  --   enable_auto_hover = 1,
+  --   enable_auto_signature = 1,
+  --   enable_auto_paren = 1,
+  --   matching_smart_case = 1,
+  --   trigger_on_delete = 1,
+  --   trigger_keyword_length = 2,
+  --   timer_cycle = 200,
+  --   confirm_key = "<C-y>",
+  --   sorting = 'alphabet',
+  --   matching_strategy_list = {'exact', 'fuzzy', 'substring', 'all'},
+  --   chain_complete_list = chain_complete_list,
+  -- })
 
   -- Mappings
   local opts = { noremap=true, silent=true  }

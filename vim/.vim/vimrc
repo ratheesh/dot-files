@@ -153,8 +153,12 @@ Plug 'beloglazov/vim-online-thesaurus'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'nvim-lua/completion-nvim'
+" Plug 'steelsojka/completion-buffers'
+" Plug 'nvim-treesitter/completion-treesitter'
+" Plug 'albertoCaroM/completion-tmux'
 
 Plug 'wellle/tmux-complete.vim'
+" Plug 'wellle/targets.vim'
 
 " Shougo's plugins
 Plug 'Shougo/echodoc.vim'
@@ -330,7 +334,7 @@ set list
 " set listchars=trail:·,extends:❯,precedes:❮
 set listchars=tab:¦\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set fillchars+=diff:⣿
-set completeopt+=preview
+set completeopt-=preview
 set cscopetag
 
 " Spell checking
@@ -1041,8 +1045,8 @@ let bufferline.maximum_padding = 0
 " Configure icons on the bufferline.
 let bufferline.icon_separator_active   = '▌'
 let bufferline.icon_separator_inactive = '▌'
-let bufferline.icon_close_tab          = 'x'
-let g:bufferline.closable              = v:false
+let bufferline.icon_close_tab          = ''
+let g:bufferline.closable              = v:true
 let g:bufferline.clickable             = v:false
 let bufferline.icon_close_tab_modified = '●'
 let bufferline.semantic_letters        = v:true
@@ -1394,6 +1398,17 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 lua require("lsp")
 " }}}
 
+" completion-nvim {{{
+" Set completeopt to have a better completion experience
+" set completeopt=menuone,noinsert,noselect
+" set pumheight=10
+
+" autocmd BufEnter * lua require'completion'.on_attach()
+
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" }}}
+
 " tmux-complete.vim {{{
 let g:tmuxcomplete#trigger = ''
 " }}}
@@ -1410,7 +1425,7 @@ let g:deoplete#buffer#require_same_filetype = 0
             " \ 'skip_multibyte'      : v:false,
 call deoplete#custom#option({
             \ 'auto_complete_delay' : 0,
-            \ 'auto_refresh_delay'  : 50,
+            \ 'auto_refresh_delay'  : 20,
             \ 'auto_complete_popup' : 'auto',
             \ 'max_list'            : 100,
             \ 'ignore_case'         : v:false,
@@ -1422,7 +1437,7 @@ call deoplete#custom#option({
             \ 'refresh_backspace'   : v:true,
             \ 'nofile_complete_filetypes': ['denite-filter', 'zsh'],
             \ 'num_processes'       : 4,
-            \ 'max_abbr_width'      : 0,
+            \ 'max_abbr_width'      : 50,
             \ 'max_menu_width'      : 50,
             \ })
 
@@ -1471,11 +1486,8 @@ call deoplete#custom#source('neosnippet'     , 'rank' , 9964)
 call deoplete#custom#source('LanguageClient' , 'rank' , 9963)
 call deoplete#custom#source('lsp'            , 'rank' , 9962)
 call deoplete#custom#source('go'             , 'rank' , 9961)
-call deoplete#custom#source('jedi'           , 'rank' , 9960)
 call deoplete#custom#source('member'         , 'rank' , 9957)
 call deoplete#custom#source('tag'            , 'rank' , 9955)
-call deoplete#custom#source('clangx'         , 'rank' , 9954)
-call deoplete#custom#source('clang'          , 'rank' , 9953)
 call deoplete#custom#source('buffer'         , 'rank' , 9952)
 call deoplete#custom#source('function'       , 'rank' , 9951)
 
