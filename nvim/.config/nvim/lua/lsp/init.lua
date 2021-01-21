@@ -98,7 +98,13 @@ end
 lspconfig.ccls.setup {
   init_options = {
     cache = {
-      directory = ".ccls-cache";
+      directory    = "$HOME/.ccls-cache";
+      cacheFormat  = "json",
+      rootPatterns = {"compile_comman1s.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
+      clang = {
+        extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
+        excludeArgs = {},
+      },
     },
     codeLens = {
       localVariables = true;
@@ -112,6 +118,10 @@ lspconfig.ccls.setup {
       spellChecking = true;
       -- filterAndSort = false;
     };
+    index = {
+      onChange        = true,
+      trackDependency = 1
+    },
   }
 }
 
