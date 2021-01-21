@@ -34,6 +34,7 @@ vim.g.bubbly_palette = {
   curfn_fg    = '#FDC46D',
   yellow1     = '#FDC46D',
   ftbg        = '#B6919E',
+  pathbg      = '#1D3CE6',
 }
 
 vim.g.bubbly_colors = {
@@ -54,7 +55,7 @@ vim.g.bubbly_colors = {
     project      = { background = 'lightgrey', foreground = 'red' },
     readonly     = { background = 'lightgrey', foreground = 'foreground'  },
     unmodifiable = { background = 'darkgrey', foreground  = 'foreground'  },
-    path         = { background = 'cream'   , foreground  = 'black'  },
+    path         = { background = 'cream'   , foreground  = 'pathbg'  },
     modified     = { background = 'lightgrey', foreground = 'foreground'  },
   },
 
@@ -103,8 +104,8 @@ vim.g.bubbly_styles = {
   path = {
     readonly     = '',
     unmodifiable = '',
-    project      = 'italic',
-    path         = '',
+    project      = '',
+    path         = 'italic',
     modified     = '',
   },
 
