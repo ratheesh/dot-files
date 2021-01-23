@@ -106,9 +106,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
 Plug 'junegunn/vim-peekaboo'
-if !has('nvim')
-    Plug 'greymd/oscyank.vim' " Currently, this works only in ViM
-endif " if
+Plug 'ojroques/vim-oscyank'
 Plug 'dhruvasagar/vim-table-mode'
 if has('nvim')
     " Plug 'voldikss/vim-floaterm'
@@ -1807,7 +1805,8 @@ set nrformats=alpha,octal,hex
 " }}}
 
 " oscyank {{{
-noremap <leader>y :Oscyank<CR>
+vnoremap <leader>y :OSCYank<CR>
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | OSCYankReg + | endif
 " }}}
 
 " vim-table-mode {{{
