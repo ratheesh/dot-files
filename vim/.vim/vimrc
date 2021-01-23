@@ -1027,7 +1027,8 @@ nnoremap <silent><Leader>5 :BufferGoto 5<CR>
 nnoremap <silent><Leader>6 :BufferGoto 6<CR>
 nnoremap <silent><Leader>7 :BufferGoto 7<CR>
 nnoremap <silent><Leader>8 :BufferGoto 8<CR>
-nnoremap <silent><Leader>9 :BufferLast<CR>
+nnoremap <silent><Leader>9 :BufferGoto 9<CR>
+nnoremap <silent><Leader>0 :BufferLast<CR>
 
 " Close buffer
 nnoremap <silent>    <A-d> :BufferClose<CR>
