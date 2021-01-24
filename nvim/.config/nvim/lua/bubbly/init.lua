@@ -188,7 +188,7 @@ vim.g.bubbly_tags = {
     replace     = 'REPLACE',
     default     = 'UNKOWN',
   },
-  paste = 'PASTE',
+  paste = 'ραstε',
   filetype = {
     noft = 'no ft',
   },
