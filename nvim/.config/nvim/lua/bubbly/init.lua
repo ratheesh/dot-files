@@ -1,6 +1,7 @@
 
 vim.g.bubbly_statusline = {
   'mode',
+  'paste',
   'truncate',
   'path',
   'signify',
@@ -116,7 +117,7 @@ vim.g.bubbly_styles = {
     removed  = '',
   },
 
-  paste = 'bold',
+  paste = 'italic',
   coc = {
     error   = 'bold',
     warning = 'bold',
