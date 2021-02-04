@@ -36,18 +36,23 @@ vim.lsp.callbacks["textDocument/publishDiagnostics"] = nil
 -- define an chain complete list
 local chain_complete_list = {
   default = {
-    {complete_items = {'snippet', 'lsp', 'buffers', 'tmux'}},
+    {complete_items = {'snippet'}},
     {complete_items = {'path'}, triggered_only = {'/'}},
+    {complete_items = {'lsp'}},
+    {complete_items = {'buffer'}},
+    {complete_items = {'buffers'}},
+    {complete_items = {'tmux'}},
   },
 
   string = {
-    {complete_items = {'path'}, triggered_only = {'/'}},
-    { complete_items = { 'buffer', 'buffers'  } },
+    {complete_items  = {'path'}, triggered_only   = {'/'}},
+    { complete_items = { 'buffer', 'buffers'  }},
   },
 
   comment = {
-    { complete_items = { 'path'  } },
-    { complete_items = { 'buffer', 'buffers'  } }
+    { complete_items = { 'path'  }},
+    { complete_items = { 'buffer'}},
+    { complete_items = {'buffers'}}
   },
 }
 
@@ -58,21 +63,22 @@ local on_attach = function(_, bufnr)
 
   -- passing in a table with on_attach function
   require'completion'.on_attach({
-    enable_snippet = 'UltiSnips',
-    enable_auto_popup = 1,
-    enable_auto_signature = 1,
-    auto_change_source=1,
-    enable_auto_hover = 1,
-    enable_auto_signature = 1,
-    enable_auto_paren = 1,
-    matching_smart_case = 1,
-    trigger_on_delete = 1,
-    trigger_keyword_length = 2,
-    timer_cycle = 200,
-    confirm_key = "<C-y>",
-    sorting = 'alphabet',
-    matching_strategy_list = {'exact', 'fuzzy', 'substring', 'all'},
-    chain_complete_list = chain_complete_list,
+    enable_snippet         = 'vsnippet',
+    enable_auto_popup      = 1,
+    enable_auto_signature  = 1,
+    auto_change_source     = 1,
+    enable_auto_hover      = 1,
+    enable_auto_signature  = 1,
+    enable_auto_paren      = 1,
+    matching_smart_case    = 1,
+    trigger_on_delete      = 1,
+    auto_change_source     = 1,
+    trigger_keyword_length = 1,
+    timer_cycle            = 200,
+    confirm_key            = "<C-y>",
+    sorting                = 'alphabet',
+    matching_strategy_list = {'exact', 'substring', 'fuzzy', 'all'},
+    chain_complete_list    = chain_complete_list,
   })
 
   -- Mappings
@@ -98,7 +104,7 @@ end
 lspconfig.ccls.setup {
   init_options = {
     cache = {
-      directory    = "$HOME/.ccls-cache";
+      directory    = "/home/ratheesh/.ccls-cache";
       cacheFormat  = "json",
       rootPatterns = {"compile_comman1s.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
       clang = {
@@ -114,7 +120,7 @@ lspconfig.ccls.setup {
     };
     completion = {
       placeholder   = false;
-      detailedLabel = true;
+      detailedLabel = false;
       spellChecking = true;
       -- filterAndSort = false;
     };
