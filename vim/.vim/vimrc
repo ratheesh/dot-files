@@ -161,23 +161,36 @@ Plug 'wellle/tmux-complete.vim'
 " Shougo's plugins
 Plug 'Shougo/echodoc.vim'
 if has('nvim')
-    Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
     Plug 'ncm2/float-preview.nvim',      { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/deoplete.nvim'
+    " Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/denite.nvim'
 
     " Following are required for deoplete to work in ViM
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'Shougo/neco-syntax'
+
+" Plug 'Shougo/neco-syntax'
 " Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'deoplete-plugins/deoplete-tag'
-Plug 'deathlyfrantic/deoplete-spell', {'branch': 'main'}
+" Plug 'deoplete-plugins/deoplete-tag'
+" Plug 'deathlyfrantic/deoplete-spell', {'branch': 'main'}
 " Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-Plug 'Shougo/deoplete-lsp'
+" Plug 'Shougo/deoplete-lsp'
+
+" Assuming you're using vim-plug: https://github.com/junegunn/vim-plug
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2-match-highlight'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-tagprefix'
+Plug 'ncm2/ncm2-go'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'oncomouse/ncm2-lsp'
 
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
@@ -1161,7 +1174,7 @@ endfunction
 " Denite filter mappings
 autocmd FileType denite-filter call s:denite_filter_settings()
 function! s:denite_filter_settings() abort
-    call deoplete#custom#buffer_option('auto_complete', v:false)
+    " call deoplete#custom#buffer_option('auto_complete', v:false)
     imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
     nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
 endfunction
@@ -1377,7 +1390,7 @@ let g:hardtime_maxcount               = 2
 " echodoc {{{
 let g:echodoc#enable_at_startup      = 1
 let g:echodoc#enable_force_overwrite = 1
-let g:deoplete#_prev_completion      = 1
+" let g:deoplete#_prev_completion      = 1
 if has('nvim')
     if exists('*nvim_open_win')
         let g:echodoc#type="floating"
@@ -1413,128 +1426,166 @@ let g:tmuxcomplete#trigger = ''
 " }}}
 
 " deoplete {{{
-let g:deoplete#enable_at_startup = 1
-if !has('nvim')
-    let g:deoplete#enable_yarp   = 1
-endif
-" let g:deoplete#file#enable_buffer_path      = 1
-" let deoplete#tag#cache_limit_size           = 10000000
-let g:deoplete#buffer#require_same_filetype = 0
+" let g:deoplete#enable_at_startup = 1
+" if !has('nvim')
+"     let g:deoplete#enable_yarp   = 1
+" endif
+" " let g:deoplete#file#enable_buffer_path      = 1
+" " let deoplete#tag#cache_limit_size           = 10000000
+" let g:deoplete#buffer#require_same_filetype = 0
 
-            " \ 'skip_multibyte'      : v:false,
-call deoplete#custom#option({
-            \ 'auto_complete_delay' : 0,
-            \ 'auto_refresh_delay'  : 20,
-            \ 'auto_complete_popup' : 'auto',
-            \ 'max_list'            : 100,
-            \ 'ignore_case'         : v:false,
-            \ 'smart_case'          : v:true,
-            \ 'complete_method'     : 'omnifunc',
-            \ 'min_pattern_length'  : 1,
-            \ 'async_timeout'       : 500,
-            \ 'refresh_always'      : v:false,
-            \ 'refresh_backspace'   : v:true,
-            \ 'nofile_complete_filetypes': ['denite-filter', 'zsh'],
-            \ 'num_processes'       : 4,
-            \ 'max_abbr_width'      : 50,
-            \ 'max_menu_width'      : 50,
-            \ })
+"             " \ 'skip_multibyte'      : v:false,
+" call deoplete#custom#option({
+"             \ 'auto_complete_delay' : 0,
+"             \ 'auto_refresh_delay'  : 10,
+"             \ 'auto_complete_popup' : 'auto',
+"             \ 'max_list'            : 100,
+"             \ 'ignore_case'         : v:true,
+"             \ 'smart_case'          : v:true,
+"             \ 'complete_method'     : 'omnifunc',
+"             \ 'min_pattern_length'  : 2,
+"             \ 'async_timeout'       : 500,
+"             \ 'refresh_always'      : v:true,
+"             \ 'refresh_backspace'   : v:true,
+"             \ 'nofile_complete_filetypes': ['denite-filter', 'zsh'],
+"             \ 'num_processes'       : 1,
+"             \ 'max_abbr_width'      : 0,
+"             \ 'max_menu_width'      : 150,
+"             \ })
 
-call deoplete#custom#var('file', {
-      \   'enable_buffer_path': 1,
-      \ })
+" call deoplete#custom#var('file', {
+"       \   'enable_buffer_path': 1,
+"       \ })
 
-call deoplete#custom#option('candidate_marks',
-      \ ['<F1>', '<F2>', '<F3>', '<F4>', '<F5>'])
-inoremap <expr><F1> pumvisible() ? deoplete#insert_candidate(0) : '<F1>'
-inoremap <expr><F2> pumvisible() ? deoplete#insert_candidate(1) : '<F2>'
-inoremap <expr><F3> pumvisible() ? deoplete#insert_candidate(2) : '<F3>'
-inoremap <expr><F4> pumvisible() ? deoplete#insert_candidate(3) : '<F4>'
-inoremap <expr><F5> pumvisible() ? deoplete#insert_candidate(4) : '<F5>'
+" call deoplete#custom#option('candidate_marks',
+"       \ ['<F1>', '<F2>', '<F3>', '<F4>', '<F5>'])
+" inoremap <expr><F1> pumvisible() ? deoplete#insert_candidate(0) : '<F1>'
+" inoremap <expr><F2> pumvisible() ? deoplete#insert_candidate(1) : '<F2>'
+" inoremap <expr><F3> pumvisible() ? deoplete#insert_candidate(2) : '<F3>'
+" inoremap <expr><F4> pumvisible() ? deoplete#insert_candidate(3) : '<F4>'
+" inoremap <expr><F5> pumvisible() ? deoplete#insert_candidate(4) : '<F5>'
 
-call deoplete#custom#option('refresh_always', v:true)
-call deoplete#custom#option('num_processes', 0)
+" call deoplete#custom#option('refresh_always', v:true)
+" call deoplete#custom#option('num_processes', 0)
 
-" Don't align these lines!
-set pumheight=10 " set max. Height of popup menu
+" " Don't align these lines!
+" set pumheight=10 " set max. Height of popup menu
 
-" let g:deoplete#sources  = {}
-" let g:deoplete#sources_ = [] " includes all sources
-call deoplete#custom#option('sources', {
-            \ '_': [],
-            \})
+" " let g:deoplete#sources  = {}
+" " let g:deoplete#sources_ = [] " includes all sources
+" call deoplete#custom#option('sources', {
+"             \ '_': [],
+"             \})
 
-" Use partial fuzzy matches like YouCompleteMe
-call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-" call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
+" " Use partial fuzzy matches like YouCompleteMe
+" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+" " call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 
-" Disable the candidates in Comment/String syntaxes.
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+" " Disable the candidates in Comment/String syntaxes.
+" call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 
-call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
-call deoplete#custom#source('clangx'         , 'mark' , '[CLang]')
-call deoplete#custom#source('clang'          , 'mark' , '[CLang]')
-" call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
-call deoplete#custom#source('member'         , 'mark' , '[M]')
-call deoplete#custom#source('function'       , 'mark' , '[Func]')
+" call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
+" call deoplete#custom#source('clangx'         , 'mark' , '[CLang]')
+" call deoplete#custom#source('clang'          , 'mark' , '[CLang]')
+" " call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
+" call deoplete#custom#source('member'         , 'mark' , '[M]')
+" call deoplete#custom#source('function'       , 'mark' , '[Func]')
 
-call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
+" call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
 
-call deoplete#custom#source('ultisnips'      , 'rank' , 9965)
-call deoplete#custom#source('neosnippet'     , 'rank' , 9964)
-call deoplete#custom#source('LanguageClient' , 'rank' , 9963)
-call deoplete#custom#source('lsp'            , 'rank' , 9962)
-call deoplete#custom#source('go'             , 'rank' , 9961)
-call deoplete#custom#source('member'         , 'rank' , 9957)
-call deoplete#custom#source('tag'            , 'rank' , 9955)
-call deoplete#custom#source('buffer'         , 'rank' , 9952)
-call deoplete#custom#source('function'       , 'rank' , 9951)
+" call deoplete#custom#source('ultisnips'      , 'rank' , 9965)
+" call deoplete#custom#source('neosnippet'     , 'rank' , 9964)
+" call deoplete#custom#source('LanguageClient' , 'rank' , 9963)
+" call deoplete#custom#source('lsp'            , 'rank' , 9962)
+" call deoplete#custom#source('go'             , 'rank' , 9961)
+" call deoplete#custom#source('member'         , 'rank' , 9957)
+" call deoplete#custom#source('tag'            , 'rank' , 9955)
+" call deoplete#custom#source('buffer'         , 'rank' , 9952)
+" call deoplete#custom#source('function'       , 'rank' , 9951)
 
-call deoplete#custom#var('around', {
-      \   'range_above'  : 500,
-      \   'range_below'  : 500,
-      \   'mark_above'   : '[↑]',
-      \   'mark_below'   : '[↓]',
-      \   'mark_changes' : '[*]',
-      \ })
+" call deoplete#custom#var('around', {
+"       \   'range_above'  : 500,
+"       \   'range_below'  : 500,
+"       \   'mark_above'   : '[↑]',
+"       \   'mark_below'   : '[↓]',
+"       \   'mark_changes' : '[*]',
+"       \ })
 
-" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-\> pumvisible() ? "\<C-w>" : "\<C-\>"
-" inoremap <expr><Esc> pumvisible() ?deoplete#close_popup():"\<Esc>"
+" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-\> pumvisible() ? "\<C-w>" : "\<C-\>"
+" " inoremap <expr><Esc> pumvisible() ?deoplete#close_popup():"\<Esc>"
 
-inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
-" Undo completion i.e remove whole completed word (default plugin mapping)
-inoremap <expr><C-g> deoplete#undo_completion()
+" inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
+" " Undo completion i.e remove whole completed word (default plugin mapping)
+" inoremap <expr><C-g> deoplete#undo_completion()
 
-" endfunction"}}}
+" " endfunction"}}}
 
-" Use Tab to forward cycle
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" use tab to backward cycle
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" " Use Tab to forward cycle
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" " use tab to backward cycle
+" inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-    return deoplete#close_popup() . "\<CR>"
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function() abort
+"     return deoplete#close_popup() . "\<CR>"
+" endfunction
+
+" " \ 'converter_remove_overlap',
+" " \ 'converter_truncate_abbr',
+" " \ 'converter_auto_delimiter',
+" " \ 'converter_truncate_menu',
+" " \ 'max_menu_width',
+" call deoplete#custom#source('_', 'converters', [
+"             \ 'converter_remove_paren',
+"             \ ])
+
+" " show doc strings for jedi
+" let g:deoplete#sources#jedi#show_docstring = 1
+" let g:deoplete#lsp#handler_enabled = v:false
+" call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+
+" }}}
+
+" ncm2 {{{
+set pumheight=10
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+set shortmess+=c
+inoremap <c-c> <ESC>
+
+" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <silent><expr> <TAB>
+		\ pumvisible() ? "\<C-n>" :
+		\ <SID>check_back_space() ? "\<TAB>" :
+		\ deoplete#mappings#manual_complete()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" \ 'converter_remove_overlap',
-" \ 'converter_truncate_abbr',
-" \ 'converter_auto_delimiter',
-" \ 'converter_truncate_menu',
-" \ 'max_menu_width',
-call deoplete#custom#source('_', 'converters', [
-            \ 'converter_remove_paren',
-            \ ])
+call ncm2#override_source('ultisnips', {'priority': 10})
+call ncm2#override_source('lsp',     {'priority': 9})
+call ncm2#override_source('tag',     {'priority': 8})
+call ncm2#override_source('bufword', {'priority': 7})
+call ncm2#override_source('path',    {'priority': 6})
+call ncm2#override_source('tmux',    {'priority': 5})
 
-" show doc strings for jedi
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#lsp#handler_enabled = v:false
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-
+let ncm2#complete_length = [[1, 2]]
+let g:ncm2#matcher = 'substrfuzzy'
+" let g:ncm2#match_highlight = 'Consolas Nerd Font'
+" let g:ncm2#match_highlight = 'underline'
 " }}}
 
 " vim-go {{
