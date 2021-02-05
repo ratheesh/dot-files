@@ -106,7 +106,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
 Plug 'junegunn/vim-peekaboo'
-Plug 'ojroques/vim-oscyank'
+Plug 'ojroques/vim-oscyank', { 'branch' : 'main' }
 Plug 'dhruvasagar/vim-table-mode'
 if has('nvim')
     " Plug 'voldikss/vim-floaterm'
