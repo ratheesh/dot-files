@@ -70,7 +70,7 @@ Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 " Plug 'kdheepak/lazygit.vim'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'coreyja/fzf.devicon.vim'
+Plug 'coreyja/fzf.devicon.vim'
 Plug 'datwaft/bubbly.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-signify'
@@ -806,7 +806,7 @@ let g:fzf_colors =
       \ 'header': ['bg', 'FZFHeader'],
       \ }
 
-nnoremap <silent><Leader>fo :GFiles<CR>
+nnoremap <silent><Leader>fo :FilesWithDevicons<CR>
 nnoremap <silent><Leader>fb :Buffers<CR>
 nnoremap <silent><Leader>fr :History<CR>
 nnoremap <silent><Leader>fl :Blines<CR>
