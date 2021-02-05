@@ -92,6 +92,7 @@ Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
 Plug 'jiangmiao/auto-pairs'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua'  }
 Plug 'tpope/vim-endwise'
 " Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
@@ -343,7 +344,7 @@ set fillchars+=vert:\│,fold:-
 set list
 " set listchars=eol:¬,trail:·,extends:❯,precedes:❮
 " set listchars=trail:·,extends:❯,precedes:❮
-set listchars=tab:¦\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+" set listchars=tab:¦\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set fillchars+=diff:⣿
 set completeopt-=preview
 set cscopetag
@@ -1764,6 +1765,12 @@ map <C-h> <Plug>(expand_region_shrink)
 let g:AutoPairsFlyMode            = 1
 let g:AutoPairsMultilineClose     = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
+" }}}
+
+" indent-blankline {{{
+let g:indent_blankline_char = '¦'
+let g:indent_blankline_char_highlight = 'NonText'
+" let g:indent_blankline_extra_indent_level = -1
 " }}}
 
 " vim-highlightedundo {{{
