@@ -1065,7 +1065,7 @@ let bufferline.icon_close_tab_modified = '●'
 let bufferline.semantic_letters        = v:true
 
 hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=italic
-hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#ff0000  guibg=#383a4c      gui=NONE
+hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=NONE
 hi BufferCurrentTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferVisible           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 hi BufferVisibleMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
