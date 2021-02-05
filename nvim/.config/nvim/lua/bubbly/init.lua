@@ -1,3 +1,17 @@
+-- Copyright 2021 Ratheesh <ratheeshreddy@gmail.com>
+-- Author: Ratheesh S
+--
+-- Licensed under the Apache License, Version 2.0 (the "License");
+-- you may not use this file except in compliance with the License.
+-- You may obtain a copy of the License at
+--
+--   http://www.apache.org/licenses/LICENSE-2.0
+--
+-- Unless required by applicable law or agreed to in writing, software
+-- distributed under the License is distributed on an "AS IS" BASIS,
+-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
 
 vim.g.bubbly_statusline = {
   'mode',
@@ -36,13 +50,15 @@ vim.g.bubbly_palette = {
   yellow1     = '#FDC46D',
   ftbg        = '#B6919E',
   pathbg      = '#1D3CE6',
+  pathbg1     = '#7C32C8',
+  pathbg2     = '#9f369f',
 }
 
 vim.g.bubbly_colors = {
   default = 'red',
 
   mode = {
-    normal      = 'cyan',
+    normal      = { background = 'pathbg1', foreground = 'white' },
     insert      = 'green',
     visual      = 'red',
     visualblock = 'red',
