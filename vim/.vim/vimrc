@@ -1585,7 +1585,8 @@ call ncm2#override_source('path',    {'priority': 6})
 call ncm2#override_source('tmux',    {'priority': 5})
 
 let ncm2#complete_length = [[1, 2]]
-let g:ncm2#matcher = 'substrfuzzy'
+let g:ncm2#matcher = 'abbrfuzzy'
+let g:ncm2#sorter  = 'abbrfuzzy'
 " let g:ncm2#match_highlight = 'Consolas Nerd Font'
 " let g:ncm2#match_highlight = 'underline'
 " }}}
