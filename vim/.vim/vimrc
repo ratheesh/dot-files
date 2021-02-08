@@ -1553,15 +1553,15 @@ let g:tmuxcomplete#trigger = ''
 " }}}
 
 " ncm2 {{{
-set pumheight=10
+set pumheight=12
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
-inoremap <c-c> <ESC>
 
-" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-" inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
+" let g:ncm2#complete_delay = 50
+
+inoremap <c-c> <ESC>
 
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -1570,25 +1570,24 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
 		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
+		\ ncm2#manual_trigger()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-call ncm2#override_source('ultisnips', {'priority': 10})
-call ncm2#override_source('lsp',     {'priority': 9})
-call ncm2#override_source('tag',     {'priority': 8})
-call ncm2#override_source('bufword', {'priority': 7})
-call ncm2#override_source('path',    {'priority': 6})
-call ncm2#override_source('tmux',    {'priority': 5})
+call ncm2#override_source('ultisnips' , {'priority': 10})
+call ncm2#override_source('lsp'       , {'priority': 9})
+call ncm2#override_source('tag'       , {'priority': 8})
+call ncm2#override_source('bufword'   , {'priority': 7})
+call ncm2#override_source('path'      , {'priority': 6})
+call ncm2#override_source('tmux'      , {'priority': 5})
 
 let ncm2#complete_length = [[1, 2]]
-let g:ncm2#matcher = 'abbrfuzzy'
+let g:ncm2#matcher = 'substrfuzzy'
 let g:ncm2#sorter  = 'abbrfuzzy'
-" let g:ncm2#match_highlight = 'Consolas Nerd Font'
-" let g:ncm2#match_highlight = 'underline'
+
 " }}}
 
 " vim-go {{
