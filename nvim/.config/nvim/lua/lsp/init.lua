@@ -28,57 +28,16 @@
 
 local lspconfig = require'lspconfig'
 local diagnostic = require'diagnostic'
-local completion = require'completion'
+local compe = require'compe'
+
+-- ViM specific settings
+vim.o.completeopt = "noinsert,menuone,noselect"
+vim.o.pumheight = 10
 
 vim.lsp.callbacks["textDocument/publishDiagnostics"] = nil
 
--- define an chain complete list
-local chain_complete_list = {
-  default = {
-    {complete_items = {'snippet'}},
-    {complete_items = {'path'}, triggered_only = {'/'}},
-    {complete_items = {'lsp'}},
-    {complete_items = {'buffer'}},
-    {complete_items = {'buffers'}},
-    {complete_items = {'tmux'}},
-  },
-
-  string = {
-    {complete_items  = {'path'}, triggered_only   = {'/'}},
-    { complete_items = { 'buffer', 'buffers'  }},
-  },
-
-  comment = {
-    { complete_items = { 'path'  }},
-    { complete_items = { 'buffer'}},
-    { complete_items = {'buffers'}}
-  },
-}
-
--- autocmd BufEnter * lua require'completion'.on_attach()
-
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- passing in a table with on_attach function
-  require'completion'.on_attach({
-    enable_snippet         = 'vsnippet',
-    enable_auto_popup      = 1,
-    enable_auto_signature  = 1,
-    auto_change_source     = 1,
-    enable_auto_hover      = 1,
-    enable_auto_signature  = 1,
-    enable_auto_paren      = 1,
-    matching_smart_case    = 1,
-    trigger_on_delete      = 1,
-    auto_change_source     = 1,
-    trigger_keyword_length = 1,
-    timer_cycle            = 200,
-    confirm_key            = "<C-y>",
-    sorting                = 'alphabet',
-    matching_strategy_list = {'exact', 'substring', 'fuzzy', 'all'},
-    chain_complete_list    = chain_complete_list,
-  })
 
   -- Mappings
   local opts = { noremap=true, silent=true  }
@@ -99,8 +58,23 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  cmd = {
+    '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
+  },
+
+  init_options = {
+    clangdFileStatus = true,
+    usePlaceholders = true,
+    completeUnimported = true,
+    semanticHighlighting = true
+  }
+}
+
 -- placeholder option will only work in recent (after 7-Oct-2019)
 lspconfig.ccls.setup {
+  on_attach = on_attach,
   init_options = {
     cache = {
       directory    = "/home/ratheesh/.ccls-cache";
