@@ -1786,6 +1786,7 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 let g:indent_blankline_char = '¦'
 let g:indent_blankline_char_highlight = 'NonText'
 " let g:indent_blankline_extra_indent_level = -1
+let g:indentLine_fileTypeExclude = ['help', 'chadtree', 'startify', 'fzf', 'tagbar']
 " }}}
 
 " vim-highlightedundo {{{
