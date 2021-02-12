@@ -107,7 +107,8 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-peekaboo'
+Plug 'gennaro-tedesco/nvim-peekup'
 Plug 'ojroques/vim-oscyank', { 'branch' : 'main' }
 Plug 'dhruvasagar/vim-table-mode'
 if has('nvim')
@@ -2032,6 +2033,14 @@ let g:vim_textobj_parameter_mapping = 'a'
 
 " vim-peekaboo {{{
 let g:peekaboo_window='vert bo 60new'
+" }}}
+
+" nvim-peekup {{{
+lua require('nvim-peekup.config').geometry["height"] = 0.8
+lua require('nvim-peekup.config').geometry["title"] = 'Registers Peek'
+lua require('nvim-peekup.config').on_keystroke["delay"] = '300ms'
+lua require('nvim-peekup.config').on_keystroke["autoclose"] = true
+let g:peekup_open = '"'
 " }}}
 
 " Misc useful functions {{{
