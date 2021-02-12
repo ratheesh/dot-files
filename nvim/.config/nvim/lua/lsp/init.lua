@@ -51,7 +51,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
-local servers = {'ccls','gopls','jedi_language_server','bashls', 'vimls'}
+local servers = {'clangd','gopls','jedi_language_server','bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
