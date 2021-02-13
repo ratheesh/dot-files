@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: alacritty
+  TERM: xterm-256color
   LC_ALL: en_US.UTF-8
 
 window:
@@ -61,7 +61,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  # startup_mode: Maximized
 
   # Window title
   title: Alacritty
@@ -137,7 +137,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 10.5
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -149,7 +149,7 @@ font:
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upward.
   glyph_offset:
-    x: -1
+    x: 0
     y: 0
 
   # Thin stroke font rendering (macOS only)
@@ -162,10 +162,10 @@ font:
 # draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
+  primary:
+    background: '#000000'
   #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -346,12 +346,12 @@ selection:
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
-  thickness: 0.15
+  thickness: 0.2
 
 # Live config reload (changes require restart)
 live_config_reload: true
 
-# Shell
+#Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
@@ -361,8 +361,9 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: C:\Program Files\Git\bin\bash
-  args:
+   program: C:\Windows\System32\bash.exe
+   # program: C:\Program Files\Git\bin\bash.exe
+   args:
     - --login
     - -i
 
@@ -370,7 +371,7 @@ shell:
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
-working_directory: "c:\\users\\rreddy"
+# working_directory: "c:\\users\\rreddy"
 
 # WinPTY backend (Windows only)
 #
