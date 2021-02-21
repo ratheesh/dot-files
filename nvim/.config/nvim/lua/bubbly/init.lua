@@ -23,7 +23,6 @@ vim.g.bubbly_statusline = {
 
 
   'current_function',
-  'builtinlsp',
   'filetype',
   'progress',
 }
@@ -34,6 +33,7 @@ vim.g.bubbly_palette = {
   black       = "#000000",
   red         = "#ec7279",
   green       = "#a0c980",
+  green1      = "#669279",
   yellow      = "#deb974",
   blue        = "#6cb6eb",
   purple      = "#d38aea",
@@ -49,10 +49,13 @@ vim.g.bubbly_palette = {
   curfn_fg    = '#FDC46D',
   yellow1     = '#FDC46D',
   ftbg        = '#B6919E',
+  ftbg1       = '#8F7C76',
   pathbg      = '#1D3CE6',
   pathbg1     = '#7C32C8',
   pathbg2     = '#9f369f',
 }
+
+vim.g.bubbly_inactive_color = { background = 'lightgrey', foreground = 'foreground' }
 
 vim.g.bubbly_colors = {
   default = 'red',
@@ -100,11 +103,11 @@ vim.g.bubbly_colors = {
     current_function = 'purple',
   },
 
-  current_function = { background = 'lightgrey', foreground = 'curfn_fg'  },
+  current_function = { background = 'lightgrey', foreground = 'yellow1'  },
   filetype         = { background = 'ftbg', foreground = 'black'  },
 
   progress = {
-    rowandcol  = { background = 'lightgrey', foreground = 'foreground'  },
+    rowandcol  = { background = 'lightgrey', foreground  = 'foreground'  },
     percentage = { background = 'lightgrey', foreground  = 'foreground'  },
     hexchar    = { background = 'hexcharbg', foreground  = 'white'  },
   },
@@ -211,3 +214,10 @@ vim.g.bubbly_tags = {
   },
 }
 
+vim.g.bubbly_width = {
+  default = 0,
+  progress = {
+    rowandcol = 3,
+  },
+}
+-- End of File
