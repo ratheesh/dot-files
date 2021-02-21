@@ -108,14 +108,21 @@ lspconfig.clangd.setup {
   on_init = ncm2.register_lsp_source,
   cmd = {
     '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
-  },
+  };
 
   init_options = {
     clangdFileStatus = true,
     usePlaceholders = false,
     completeUnimported = true,
     semanticHighlighting = true
-  }
+  };
+
+  completion = {
+    placeholder   = true;
+    detailedLabel = false;
+    spellChecking = true;
+    -- filterAndSort = false;
+  };
 }
 
 -- placeholder option will only work in recent (after 7-Oct-2019)
