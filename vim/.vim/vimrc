@@ -1055,19 +1055,20 @@ nnoremap <silent>    <A-d> :BufferClose<CR>
 let bufferline = {}
 
 " Enable/disable animations
-let bufferline.animation = v:true
+let g:bufferline.animation = v:true
+let g:bufferline.auto_hide = v:true
 " Enable/disable auto-hiding the tab bar when there is a single buffer
-let bufferline.icons = "both"
-let bufferline.maximum_padding = 0
+let g:bufferline.icons = 'both'
+let g:bufferline.maximum_padding = 0
 
 " Configure icons on the bufferline.
-let bufferline.icon_separator_active   = '▌'
-let bufferline.icon_separator_inactive = '▌'
-let bufferline.icon_close_tab          = ''
-let g:bufferline.closable              = v:true
-let g:bufferline.clickable             = v:false
-let bufferline.icon_close_tab_modified = '●'
-let bufferline.semantic_letters        = v:true
+let g:bufferline.icon_separator_active   = '▌'
+let g:bufferline.icon_separator_inactive = '▌'
+let g:bufferline.icon_close_tab          = ''
+let g:bufferline.closable                = v:true
+let g:bufferline.clickable               = v:false
+let g:bufferline.icon_close_tab_modified = '●'
+let g:bufferline.semantic_letters        = v:true
 
 hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=italic
 hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=NONE
