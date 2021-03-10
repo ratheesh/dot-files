@@ -1933,6 +1933,10 @@ if has('nvim')
           \       wilder#check({_, x -> empty(x)}),
           \       wilder#history(100),
           \     ],
+          \     wilder#python_file_finder_pipeline({
+          \       'command': [ 'fd','-tf', '--follow', '--hidden', '--color=never'],
+          \       'filters': ['filter_fuzzy', 'sort_difflib'],
+          \     }),
           \     wilder#substitute_pipeline({
           \       'fuzzy':1,
           \       'use_python':1,
@@ -1944,7 +1948,7 @@ if has('nvim')
           \     wilder#python_search_pipeline({
           \       'regex': 'fuzzy',
           \       'engine': 're',
-          \       'sort': function('wilder#python_sort_difflib'),
+          \       'sort': wilder#python_sorter_difflib(),
           \     }),
           \     ),
           \  ])
@@ -1965,7 +1969,7 @@ if has('nvim')
     call wilder#set_option('renderer', wilder#wildmenu_renderer({
           \ 'spinner': [wilder#spinner({
           \   'frames'   : '-\|/',
-          \   'done'     : ' ',
+          \   'done'     : '·',
           \   'delay'    : 50,
           \   'interval' : 100,
           \ }),
@@ -1983,14 +1987,15 @@ if has('nvim')
           \ 'ellipsis'         : '...',
           \ 'left': [
           \    {'value': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#spinner()], 'hl': s:mode_hl},
-          \    wilder#separator('', s:mode_hl, s:status_hl, 'left'), ' ',
+          \    wilder#powerline_separator('', s:mode_hl, s:status_hl, 'left'), ' ',
           \ ],
           \ 'right': [
-          \    ' ', wilder#separator('', s:index_hl, s:status_hl, 'right'),
+          \    '', wilder#powerline_separator('', s:index_hl, s:status_hl, 'right'),
           \    wilder#index({'hl': s:index_hl}),
           \ ],
           \ }))
 endif
+
 " }}}
 
 " vim-matchup {{{
