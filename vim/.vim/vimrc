@@ -151,8 +151,17 @@ Plug 'beloglazov/vim-online-thesaurus'
 "             \ 'do': 'bash install.sh',
 "             \ }
 
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'romgrk/nvim-treesitter-context'
+" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/completion-treesitter'
+Plug 'tree-sitter/tree-sitter-c', { 'do': 'mkdir -p parser && cc -o parser/c.so -shared src/parser.c -I./src'  }
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
+
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'steelsojka/completion-buffers'
 " Plug 'nvim-treesitter/completion-treesitter'
@@ -1415,6 +1424,76 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 
 " neovim_lspconfig {{{
 lua require("lsp")
+" }}}
+
+" nvim-ts-rainbow {{{
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+rainbow = {
+    enable = true
+  }
+}
+EOF
+" }}}
+
+" searchReplace.vim {{{
+" Open search prompt
+nnoremap <silent><C-f><C-f> :Search<CR>
+
+" Search directly for word under cursor
+nnoremap <silent><C-f><C-w> :Search <C-R><C-W><CR>
+nnoremap <silent><C-f>w     :Search <C-R><C-W><CR>"
+
+let g:searchReplace = get(g:, 'searchReplace', {})
+
+" Closes window on BufLeave event
+
+let g:searchReplace.close_on_exit = v:true
+
+" The edit comment to use to open files
+let g:searchReplace.edit_command = 'EditPreviousWindow'
+
+" for example, this can be used to unfocus the search window
+" before opening the match
+
+command! -nargs=1 EditPreviousWindow :execute 'wincmd p | edit ' . <f-args>
+
+" Open the search window yourself
+let g:searchReplace.open_window = {->execute('aboveleft split')}
+
+" }}}
+
+" treesitter-textobjects {{{
+" lua require("ts-textobjs")
+" }}}
+
+" lspsaga {{{
+lua require("lspsaga")
+" lsp provider to find the cursor word definition and reference
+nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+"or use command LspSagaFinder
+" nnoremap <silent> gh :Lspsaga lsp_finder<CR>
+
+" preview definition
+nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+
+" show hover doc
+nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
+
+" scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" scroll up hover doc
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+" show signature help
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+
+" rename
+nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
+
+" preview definition
+nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+
 " }}}
 
 " compe {{{
