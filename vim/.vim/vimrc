@@ -163,6 +163,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
 
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'steelsojka/completion-buffers'
 " Plug 'nvim-treesitter/completion-treesitter'
@@ -696,33 +700,33 @@ color darktheme
 " }}}
 
 " vim-clap {{{
-let g:clap_spinner_frames =  ["●••", "•●•", "••●"]
+" let g:clap_spinner_frames =  ["●••", "•●•", "••●"]
 " let g:clap_prompt_format = ''
 " let g:clap_default_external_filter = 'fzf'
-let g:clap_insert_mode_only = 1
+" let g:clap_insert_mode_only = 1
 
 " let g:clap_current_selection_sign_definition='➤'
-let g:clap_multi_selection_warning_silent = 1
-let g:clap_current_selection_sign = { 'text': '➢', 'texthl': "ClapCurrentSelectedSign", "linehl": "ClapCurrentSelection" }
-let g:clap_selected_sign  = { 'text': ' •', 'texthl': "ClapSelectedSign", "linehl": "ClapSelected" }
-let g:clap_open_action    = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
-let g:clap_no_matches_msg = 'Keine Gleiche gefunden'
+" let g:clap_multi_selection_warning_silent = 1
+" let g:clap_current_selection_sign = { 'text': '➢', 'texthl': "ClapCurrentSelectedSign", "linehl": "ClapCurrentSelection" }
+" let g:clap_selected_sign  = { 'text': ' •', 'texthl': "ClapSelectedSign", "linehl": "ClapSelected" }
+" let g:clap_open_action    = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
+" let g:clap_no_matches_msg = 'Keine Gleiche gefunden'
 
 " grep options
-let g:clap_provider_grep_executable  = 'rg'
-let g:clap_provider_grep_opts        = '-H --no-heading --vimgrep --smart-case --hidden'
-let g:clap_provider_grep_delay       = 500
-let g:clap_provider_grep_blink       = [1, 200]
-let g:clap_provider_grep_enable_icon = 0
+" let g:clap_provider_grep_executable  = 'rg'
+" let g:clap_provider_grep_opts        = '-H --no-heading --vimgrep --smart-case --hidden'
+" let g:clap_provider_grep_delay       = 500
+" let g:clap_provider_grep_blink       = [1, 200]
+" let g:clap_provider_grep_enable_icon = 0
 
 " Yank provider
-let g:clap_enable_yanks_provider      = 1
-let g:clap_provider_yanks_max_entries = 30
-let g:clap_provider_yanks_min_len     = 3
+" let g:clap_enable_yanks_provider      = 1
+" let g:clap_provider_yanks_max_entries = 30
+" let g:clap_provider_yanks_min_len     = 3
 
 " Beautify clap input window
-let g:clap_search_box_border_symbols = { 'arrow': ["\ue0b2", "\ue0b0"], 'curve': ["\ue0b6", "\ue0b4"], 'nil': ['', ''] }
-let g:clap_search_box_border_style   = 'curve'
+" let g:clap_search_box_border_symbols = { 'arrow': ["\ue0b2", "\ue0b0"], 'curve': ["\ue0b6", "\ue0b4"], 'nil': ['', ''] }
+" let g:clap_search_box_border_style   = 'curve'
 
 " function! ClapEnter() abort
 "   call g:clap.display.setbufvar_batch({
@@ -755,16 +759,16 @@ let g:clap_search_box_border_style   = 'curve'
 "       \ 'sink': 'e',
 "       \ }
 
-nnoremap <silent><Leader>fo :Clap files --hidden<CR>
-nnoremap <silent><Leader>fb :Clap buffers<CR>
-nnoremap <silent><Leader>fr :Clap history<CR>
-nnoremap <silent><Leader>fl :Clap blines<CR>
-nnoremap <silent><Leader>/  :Clap grep<CR>
-nnoremap <silent><Leader>d/  :Clap grep ++query=<cword>
-nnoremap <silent><Leader>fm :Clap marks<CR>
-nnoremap <silent><Leader>fh :Clap command_history<CR>
-nnoremap <silent><Leader>fy :Clap yanks<CR>
-nnoremap <silent><Leader>fw :Clap quick_open<CR>
+" nnoremap <silent><Leader>fo :Clap files --hidden<CR>
+" nnoremap <silent><Leader>fb :Clap buffers<CR>
+" nnoremap <silent><Leader>fr :Clap history<CR>
+" nnoremap <silent><Leader>fl :Clap blines<CR>
+" nnoremap <silent><Leader>/  :Clap grep<CR>
+" nnoremap <silent><Leader>d/  :Clap grep ++query=<cword>
+" nnoremap <silent><Leader>fm :Clap marks<CR>
+" nnoremap <silent><Leader>fh :Clap command_history<CR>
+" nnoremap <silent><Leader>fy :Clap yanks<CR>
+" nnoremap <silent><Leader>fw :Clap quick_open<CR>
 
 " }}}
 
@@ -821,15 +825,15 @@ let g:fzf_colors =
       \ 'header': ['bg', 'FZFHeader'],
       \ }
 
-nnoremap <silent><Leader>fo :FilesWithDevicons<CR>
-nnoremap <silent><Leader>fb :Buffers<CR>
-nnoremap <silent><Leader>fr :History<CR>
-nnoremap <silent><Leader>fl :Blines<CR>
-nnoremap <silent><Leader>/  :Grep<CR>
-nnoremap <silent><Leader>fm :Marks<CR>
-nnoremap <silent><Leader>fy :yanks<CR>
-nnoremap <silent><Leader>fT :Tags<CR>
-nnoremap <silent><Leader>ft :BTags<CR>
+" nnoremap <silent><Leader>fo :FilesWithDevicons<CR>
+" nnoremap <silent><Leader>fb :Buffers<CR>
+" nnoremap <silent><Leader>fr :History<CR>
+" nnoremap <silent><Leader>fl :Blines<CR>
+" nnoremap <silent><Leader>/  :Grep<CR>
+" nnoremap <silent><Leader>fm :Marks<CR>
+" nnoremap <silent><Leader>fy :yanks<CR>
+" nnoremap <silent><Leader>fT :Tags<CR>
+" nnoremap <silent><Leader>ft :BTags<CR>
 " nnoremap <silent><Leader>fy :yanks<CR>
 " nnoremap <silent><Leader>fw :quick_open<CR>
 
@@ -1494,6 +1498,22 @@ nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
 
 " preview definition
 nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+
+" }}}
+
+" {{{ telescope.nvim
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>fo <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fl <cmd>Telescope git_files<cr>
+nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+
+nnoremap <Leader>fr :lua require'telescope.builtin'.oldfiles{}<cr>
+" nnoremap <Leader>ft :lua require'telescope.builtin'.tags{}<cr>
+
+nnoremap <Leader>lr :lua require'telescope.builtin'.lsp_references{}<cr>
 
 " }}}
 
