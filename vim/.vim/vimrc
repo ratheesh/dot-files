@@ -171,7 +171,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " Plug 'steelsojka/completion-buffers'
 " Plug 'nvim-treesitter/completion-treesitter'
 " Plug 'albertoCaroM/completion-tmux'
-" Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-compe'
 
 Plug 'wellle/tmux-complete.vim'
 " Plug 'wellle/targets.vim'
@@ -199,16 +199,16 @@ endif
 " Plug 'Shougo/deoplete-lsp'
 
 " Assuming you're using vim-plug: https://github.com/junegunn/vim-plug
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
 " Plug 'ncm2/ncm2-match-highlight'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-tagprefix'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-tagprefix'
 " Plug 'ncm2/ncm2-go'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'oncomouse/ncm2-lsp'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-ultisnips'
+" Plug 'oncomouse/ncm2-lsp'
 
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
@@ -1518,13 +1518,14 @@ nnoremap <Leader>lr :lua require'telescope.builtin'.lsp_references{}<cr>
 " }}}
 
 " compe {{{
-" lua require("nvim-compe")
+lua require("nvim-compe")
 
-" inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <C-Space> compe#complete()
 " inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4  })
-" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
+" inoremap <silent><expr> <BS>      <BS>compe#complete()
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4  })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
 " }}}
 
 " completion-nvim {{{
@@ -1668,56 +1669,56 @@ let g:tmuxcomplete#trigger = ''
 " }}}
 
 " ncm2 {{{
-set pumheight=12
-" enable ncm2 for all buffers
-set completeopt=noinsert,menuone,noselect
-set shortmess+=c
+" set pumheight=12
+" " enable ncm2 for all buffers
+" set completeopt=noinsert,menuone,noselect
+" set shortmess+=c
 
-" let g:ncm2#complete_delay = 50
+" " let g:ncm2#complete_delay = 50
 
-augroup ncm2_completion
-  autocmd!
-  autocmd BufEnter      * call ncm2#enable_for_buffer()
-  autocmd TextChangedI  * call ncm2#auto_trigger()
-augroup END
+" augroup ncm2_completion
+"   autocmd!
+"   autocmd BufEnter      * call ncm2#enable_for_buffer()
+"   autocmd TextChangedI  * call ncm2#auto_trigger()
+" augroup END
 
-inoremap <c-c> <ESC>
+" inoremap <c-c> <ESC>
 
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" " Use <TAB> to select the popup menu:
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ ncm2#manual_trigger()
+" inoremap <silent><expr> <TAB>
+" 		\ pumvisible() ? "\<C-n>" :
+" 		\ <SID>check_back_space() ? "\<TAB>" :
+" 		\ ncm2#manual_trigger()
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
 
-inoremap <silent><expr> <C-Space> ncm2#manual_trigger()
+" inoremap <silent><expr> <C-Space> ncm2#manual_trigger()
 
-call ncm2#override_source('ultisnips' , {'priority': 10})
-call ncm2#override_source('nlc'       , {'priority': 9})
-call ncm2#override_source('lsp'       , {'priority': 8})
-call ncm2#override_source('tag'       , {'priority': 7})
-call ncm2#override_source('bufword'   , {'priority': 6})
-call ncm2#override_source('path'      , {'priority': 5})
-call ncm2#override_source('tmux'      , {'priority': 4})
+" call ncm2#override_source('ultisnips' , {'priority': 10})
+" call ncm2#override_source('lsp'       , {'priority': 9})
+" call ncm2#override_source('nlc'       , {'priority': 8})
+" call ncm2#override_source('tag'       , {'priority': 7})
+" call ncm2#override_source('bufword'   , {'priority': 6})
+" call ncm2#override_source('path'      , {'priority': 5})
+" call ncm2#override_source('tmux'      , {'priority': 4})
 
-call ncm2#override_source('tmux', {
-      \ 'filter'     : {
-      \   'name'     : 'abbr_ellipsis',
-      \   'ellipsis' : '..',
-      \   'priority' : 5,
-      \   'limit'    : 80,
-      \ }})
+" call ncm2#override_source('tmux', {
+"       \ 'filter'     : {
+"       \   'name'     : 'abbr_ellipsis',
+"       \   'ellipsis' : '..',
+"       \   'priority' : 5,
+"       \   'limit'    : 80,
+"       \ }})
 
-" let ncm2#complete_length = [[1, 1]]
-let g:ncm2#matcher = 'substrfuzzy'
-let g:ncm2#sorter  = 'abbrfuzzy'
+" " let ncm2#complete_length = [[1, 1]]
+" let g:ncm2#matcher = 'substrfuzzy'
+" let g:ncm2#sorter  = 'abbrfuzzy'
 
 " }}}
 

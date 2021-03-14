@@ -30,17 +30,17 @@ require'compe'.setup {
   documentation    = true;
 
   source = {
-    path          = true;
-    buffer        = true;
-    calc          = true;
-    vsnip         = false;
-    nvim_lsp      = true;
-    nvim_lua      = true;
-    spell         = true;
-    tags          = true;
-    snippets_nvim = false;
-    ultisnips     = true;
+    ultisnips     = {priority = 50};
+    path          = {priority = 49};
+    nvim_lsp      = {priority = 48};
+    tags          = {priority = 47};
+    buffer        = {priority = 46};
+    spell         = {priority = 45};
+    calc          = {priority = 44};
+    nvim_lua      = {priority = 43};
     treesitter    = false;
+    vsnip         = false;
+    snippets_nvim = false;
   };
 }
 
