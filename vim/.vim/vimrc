@@ -156,6 +156,7 @@ Plug 'romgrk/nvim-treesitter-context'
 " Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'tree-sitter/tree-sitter-c', { 'do': 'mkdir -p parser && cc -o parser/c.so -shared src/parser.c -I./src'  }
+Plug 'onsails/lspkind-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
