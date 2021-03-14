@@ -113,7 +113,7 @@ Plug 'ojroques/vim-oscyank', { 'branch' : 'main' }
 Plug 'dhruvasagar/vim-table-mode'
 if has('nvim')
     " Plug 'voldikss/vim-floaterm'
-    Plug 'gelguy/wilder.nvim',         { 'do': ':UpdateRemotePlugins' }
+    Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 else
     Plug 'gelguy/Cmd2.vim'
 endif " if
@@ -499,7 +499,7 @@ endif
 autocmd VimEnter COMMIT_EDITMSG if getline(1) == '' | execute 1 | startinsert | endif
 autocmd BufRead,BufNew,BufNewFile gitconfig setlocal ft=gitconfig " git config file
 autocmd BufRead,BufNew,BufNewFile *.md,*.markdown,*.mkd setlocal ft=markdown
-autocmd BufRead,BufNew,BufNewFile *.c,*.cpp,*.h,*.txt execute "set colorcolumn=" . join(range(81,335), ',')
+" autocmd BufRead,BufNew,BufNewFile *.c,*.cpp,*.h,*.txt execute "set colorcolumn=" . join(range(81,335), ',')
 
 " close Quickfix/Locationlist when file is selected
 " autocmd FileType qf nmap <buffer> <CR> <CR>:lclose<CR>
@@ -2010,7 +2010,7 @@ autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | OS
 let g:table_mode_corner_corner='+'
 " }}}
 
-" wilder {{{
+" wilder.nvim {{{
 if has('nvim')
     call wilder#enable_cmdline_enter()
     cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
@@ -2043,18 +2043,22 @@ if has('nvim')
           \     wilder#python_file_finder_pipeline({
           \       'command': [ 'fd','-tf', '--follow', '--hidden', '--color=never'],
           \       'filters': ['filter_fuzzy', 'sort_difflib'],
+          \       'debounce': 50,
           \     }),
           \     wilder#substitute_pipeline({
           \       'fuzzy':1,
           \       'use_python':1,
+          \       'debounce': 50,
           \     }),
           \     wilder#cmdline_pipeline({
           \       'fuzzy': 1,
           \       'use_python': 1,
+          \       'debounce': 50,
           \     }),
           \     wilder#python_search_pipeline({
           \       'regex': 'fuzzy',
           \       'engine': 're',
+          \       'debounce': 50,
           \       'sort': wilder#python_sorter_difflib(),
           \     }),
           \     ),
