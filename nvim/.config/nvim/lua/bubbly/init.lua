@@ -13,6 +13,16 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 
+-- vim.g.bubbly_characters = {
+
+--   -- Bubble delimiters.
+--   left =  '',
+--   right = '',
+
+--   -- Close character for the tabline.
+--   close = 'x',
+-- }
+
 vim.g.bubbly_statusline = {
   'mode',
   'paste',
@@ -23,6 +33,7 @@ vim.g.bubbly_statusline = {
 
 
   'current_function',
+  'lsp_status',
   'filetype',
   'progress',
 }
@@ -31,10 +42,11 @@ vim.g.bubbly_palette = {
   background  = "#383a4c",
   foreground  = "#c5cdd9",
   black       = "#000000",
-  red         = "#ec7279",
-  green       = "#a0c980",
+  red         = "#ec5f67",
+  green       = "#99c794",
   green1      = "#669279",
-  yellow      = "#deb974",
+  yellow      = "#f99157",
+  yellow1     = "#deb974",
   blue        = "#6cb6eb",
   purple      = "#d38aea",
   cyan        = "#5dbbc1",
@@ -53,6 +65,7 @@ vim.g.bubbly_palette = {
   pathbg      = '#1D3CE6',
   pathbg1     = '#7C32C8',
   pathbg2     = '#9f369f',
+  modifiedfg  = '#5CD96F',
 }
 
 vim.g.bubbly_inactive_color = { background = 'lightgrey', foreground = 'foreground' }
@@ -72,11 +85,11 @@ vim.g.bubbly_colors = {
   },
 
   path = {
-    project      = { background = 'lightgrey', foreground = 'red' },
+    project      = { background = 'lightgrey', foreground = 'red'         },
     readonly     = { background = 'lightgrey', foreground = 'foreground'  },
-    unmodifiable = { background = 'darkgrey', foreground  = 'foreground'  },
-    path         = { background = 'cream'   , foreground  = 'pathbg'  },
-    modified     = { background = 'lightgrey', foreground = 'foreground'  },
+    unmodifiable = { background = 'darkgrey' , foreground = 'foreground'  },
+    path         = { background = 'cream'    , foreground = 'pathbg'      },
+    modified     = { background = 'lightgrey', foreground = 'modifiedfg'  },
   },
 
   branch = 'purple',
@@ -172,7 +185,7 @@ vim.g.bubbly_symbols = {
   path = {
     readonly     = 'RO',
     unmodifiable = '',
-    modified     = '[+]',
+    modified     = '✱ ',
   },
 
   signify = {
@@ -220,4 +233,5 @@ vim.g.bubbly_width = {
     rowandcol = 3,
   },
 }
+
 -- End of File
