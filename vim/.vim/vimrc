@@ -102,7 +102,7 @@ if has('nvim')
     Plug 'lambdalisue/suda.vim'
 endif
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
-Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
+" Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
@@ -1003,11 +1003,11 @@ augroup END
 " }}}
 
 " braceless {{{
-augroup braceless
-    autocmd!
-    autocmd FileType python BracelessEnable +indent +fold +highlight
-augroup END
-let g:braceless_block_key = 'i'
+" augroup braceless
+"     autocmd!
+"     autocmd FileType python BracelessEnable +indent +fold +highlight
+" augroup END
+" let g:braceless_block_key = 'i'
 " }}}
 
 " yankmatches {{{
