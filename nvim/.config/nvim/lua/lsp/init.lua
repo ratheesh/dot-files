@@ -28,14 +28,16 @@
 
 local lspconfig  = require'lspconfig'
 local diagnostic = require'diagnostic'
-local ncm2       = require('ncm2')
--- local compe = require'compe'
+-- local ncm2       = require('ncm2')
+local configs    = require 'lspconfig/configs'
+local util       = require 'lspconfig/util'
+local compe      = require 'compe'
 
 -- ViM specific settings
 vim.o.completeopt = "noinsert,menuone,noselect"
-vim.o.pumheight = 10
+vim.o.pumheight   = 10
 
-vim.lsp.callbacks["textDocument/publishDiagnostics"] = nil
+-- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
 
 --- define an chain complete list
 local chain_complete_list = {
@@ -49,7 +51,7 @@ local chain_complete_list = {
   },
 
   string = {
-    {complete_items  = {'path'}, triggered_only   = {'/'}},
+    { complete_items  = {'path'}, triggered_only   = {'/'}},
     { complete_items = { 'buffer', 'buffers'   } },
   },
 
@@ -92,41 +94,43 @@ require('lspkind').init({
 
   -- Mappings
   local opts = { noremap=true, silent=true  }
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
 local servers = {'ccls','gopls','jedi_language_server','bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
-    on_init = ncm2.register_lsp_source,
+    -- on_init = ncm2.register_lsp_source,
+    init_options = {
+    },
   }
 end
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
-  on_init = ncm2.register_lsp_source,
+  -- on_init = ncm2.register_lsp_source,
   cmd = {
     '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
   };
 
   init_options = {
     clangdFileStatus = true,
-    usePlaceholders = false,
+    usePlaceholders = true,
     completeUnimported = true,
     semanticHighlighting = true
   };
 
   completion = {
     placeholder   = true;
-    detailedLabel = false;
+    detailedLabel = true;
     spellChecking = true;
     -- filterAndSort = false;
   };
@@ -135,7 +139,7 @@ lspconfig.clangd.setup {
 -- placeholder option will only work in recent (after 7-Oct-2019)
 lspconfig.ccls.setup {
   on_attach = on_attach,
-  on_init = ncm2.register_lsp_source,
+  -- on_init = ncm2.register_lsp_source,
   init_options = {
     cache = {
       directory    = "/home/ratheesh/.ccls-cache";
@@ -154,7 +158,7 @@ lspconfig.ccls.setup {
     };
     completion = {
       placeholder   = true;
-      detailedLabel = false;
+      detailedLabel = true;
       spellChecking = true;
       -- filterAndSort = false;
     };
