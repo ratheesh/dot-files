@@ -166,6 +166,8 @@ Plug 'nvim-lua/diagnostic-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-project.nvim'
 
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'steelsojka/completion-buffers'
@@ -1502,18 +1504,18 @@ nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 " }}}
 
 " {{{ telescope.nvim
+lua require("tscope")
 
-" Find files using Telescope command-line sugar.
 nnoremap <leader>fo <cmd>Telescope find_files<cr>
+nnoremap <leader>F  <cmd>Telescope git_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fl <cmd>Telescope git_files<cr>
 nnoremap <leader>ft <cmd>Telescope treesitter<cr>
-
-nnoremap <Leader>fr :lua require'telescope.builtin'.oldfiles{}<cr>
-" nnoremap <Leader>ft :lua require'telescope.builtin'.tags{}<cr>
-
-nnoremap <Leader>lr :lua require'telescope.builtin'.lsp_references{}<cr>
+" nnoremap <leader>ft <cmd>Telescope current_buffer_tags<cr>
+nnoremap <leader>ff <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <Leader>fr <cmd>lua require'telescope.builtin'.oldfiles{}<cr>
+nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 
 " }}}
 
