@@ -1740,18 +1740,21 @@ let g:go_highlight_operators             = 1
 let g:go_highlight_function_parameters   = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments  = 0
-let g:go_auto_type_info                  = 1
+let g:go_auto_type_info                  = 0
 let g:go_gocode_unimported_packages      = 1
+let g:go_code_completion_enabled         = 1
+let g:go_gopls_use_placeholders          = v:null
 let g:go_highlight_types                 = 1
 let g:go_auto_type_info                  = 1
 let g:go_echo_progress                   = 1
-let g:go_echo_go_info                    = 1
+let g:go_echo_go_info                    = 0
 let g:go_echo_command_info               = 1
 let g:go_auto_sameids                    = 1
 let g:go_snippet_engine                  = "ultisnips"
 let g:go_auto_type_info                  = 1
 let g:go_fmt_command                     = "goimports"
 let g:go_updatetime                      = &updatetime
+let g:go_def_mode                        = 'gopls'
 " }}}
 
 " deoplete-go {{{
