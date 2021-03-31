@@ -154,16 +154,15 @@ Plug 'beloglazov/vim-online-thesaurus'
 "             \ 'do': 'bash install.sh',
 "             \ }
 
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romgrk/nvim-treesitter-context'
-" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/completion-treesitter'
-Plug 'tree-sitter/tree-sitter-c', { 'do': 'mkdir -p parser && cc -o parser/c.so -shared src/parser.c -I./src'  }
 Plug 'onsails/lspkind-nvim'
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'romgrk/searchReplace.vim'
+" Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
+" Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 Plug 'ray-x/lsp_signature.nvim'
@@ -1452,64 +1451,27 @@ rainbow = {
 EOF
 " }}}
 
-" searchReplace.vim {{{
-" Open search prompt
-nnoremap <silent><C-f><C-f> :Search<CR>
+" treesitter {{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = fase,
+  },
 
-" Search directly for word under cursor
-nnoremap <silent><C-f><C-w> :Search <C-R><C-W><CR>
-nnoremap <silent><C-f>w     :Search <C-R><C-W><CR>"
-
-let g:searchReplace = get(g:, 'searchReplace', {})
-
-" Closes window on BufLeave event
-
-let g:searchReplace.close_on_exit = v:true
-
-" The edit comment to use to open files
-let g:searchReplace.edit_command = 'EditPreviousWindow'
-
-" for example, this can be used to unfocus the search window
-" before opening the match
-
-command! -nargs=1 EditPreviousWindow :execute 'wincmd p | edit ' . <f-args>
-
-" Open the search window yourself
-let g:searchReplace.open_window = {->execute('aboveleft split')}
-
+  indent = {
+    enable = true
+  }
+}
+EOF
 " }}}
 
 " treesitter-textobjects {{{
 " lua require("ts-textobjs")
 " }}}
 
-" lspsaga {{{
-lua require("lspsaga")
-" lsp provider to find the cursor word definition and reference
-nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
-"or use command LspSagaFinder
-" nnoremap <silent> gh :Lspsaga lsp_finder<CR>
-
-" preview definition
-nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-
-" show hover doc
-nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-
-" scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-
-" show signature help
-nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-
-" rename
-nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
-
-" preview definition
-nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-
+" lsp_signature.nvim {{{
+lua require'lsp_signature'.on_attach()
+lua require'lsp_signature'.signature()
 " }}}
 
 " {{{ telescope.nvim
@@ -1537,17 +1499,6 @@ inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4  })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
-" }}}
-
-" completion-nvim {{{
-" Set completeopt to have a better completion experience
-" set completeopt=menuone,noinsert,noselect
-" set pumheight=10
-
-" autocmd BufEnter * lua require'completion'.on_attach()
-
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " }}}
 
 " tmux-complete.vim {{{
