@@ -63,8 +63,8 @@ Plug 't9md/vim-smalls'
 " Plug 'junegunn/vim-slash'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
-Plug 'thaerkh/vim-indentguides'
-" Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'thaerkh/vim-indentguides'
+" Plug 'justinmk/vim-syntax-extra' " C and bison syntax highlighting"
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
@@ -93,8 +93,10 @@ Plug 'terryma/vim-expand-region'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
-Plug 'jiangmiao/auto-pairs'
-Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua'  }
+Plug 'cohama/lexima.vim'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'windwp/nvim-autopairs'
+" Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua'  }
 Plug 'tpope/vim-endwise'
 " Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
@@ -163,6 +165,8 @@ Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+Plug 'ray-x/lsp_signature.nvim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -1897,21 +1901,46 @@ map <C-l> <Plug>(expand_region_expand)
 map <C-h> <Plug>(expand_region_shrink)
 " }}}
 
+" lexima {{{
+let g:lexima_enable_basic_rules   = 1
+let g:lexima_enable_newline_rules = 0
+let g:lexima_enable_endwise_rules = 0
+" }}}
+
 " auto-pairs {{{
 let g:AutoPairsFlyMode            = 1
 let g:AutoPairsMultilineClose     = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 " }}}
 
+" nvim-autopairs {{{
+" lua << EOF
+" require('nvim-autopairs').setup({
+"   disable_filetype = { "TelescopePrompt" , "vim" },
+"   })
+" EOF
+" }}}
+
 " indent-blankline {{{
 let g:indent_blankline_char = '│'
 " let g:indent_blankline_space_char = '│'
-let g:indent_blankline_char_highlight = 'NonText'
+let g:indent_blankline_char_highlight = 'BlankLine'
 let g:indent_blankline_strict_tabs = 1
 " let g:indent_blankline_extra_indent_level = -1
 let g:indent_blankline_show_trailing_blankline_indent = v:false
 let g:indent_blankline_show_first_indent_level = v:false
-let g:indentLine_fileTypeExclude = ['help', 'chadtree', 'startify', 'fzf', 'tagbar']
+let g:indentLine_fileTypeExclude = ['help', 'chadtre', 'startify', 'fzf', 'tagbar']
+
+" let g:indent_blankline_use_treesitter       = v:true
+let g:indent_blankline_show_current_context = v:true
+let g:indent_blankline_context_highlight    = 'BlankLineContext'
+let g:indent_blankline_context_patterns     = ['class', 'function', 'method', 'if', 'while', 'for', 'do', 'switch']
+" let g:indent_blankline_context_highlight_list = ['Error', 'Warning']
+
+if &diff
+  let g:indent_blankline_enabled = v:false
+endif
+
 " }}}
 
 " vim-highlightedundo {{{
