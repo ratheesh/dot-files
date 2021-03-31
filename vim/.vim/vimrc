@@ -48,30 +48,20 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-surround'
 Plug 't9md/vim-textmanip'
-Plug 'tpope/vim-capslock'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-Plug 'junegunn/fzf.vim'
-Plug 'brookhong/cscope.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
-" Plug 'matze/vim-move'
-Plug 't9md/vim-smalls'
-" Plug 'junegunn/vim-slash'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
-" Plug 'thaerkh/vim-indentguides'
-" Plug 'justinmk/vim-syntax-extra' " C and bison syntax highlighting"
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'airblade/vim-gitgutter'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
-" Plug 'kdheepak/lazygit.vim'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'coreyja/fzf.devicon.vim'
 " Plug 'datwaft/bubbly.nvim', { 'branch' : 'custom' }
 Plug 'glepnir/galaxyline.nvim'
 Plug 'romgrk/barbar.nvim'
@@ -95,8 +85,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
 Plug 'cohama/lexima.vim'
 " Plug 'jiangmiao/auto-pairs'
-" Plug 'windwp/nvim-autopairs'
-" Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua'  }
 Plug 'tpope/vim-endwise'
 " Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
@@ -677,12 +665,6 @@ xnoremap > >gv
 xnoremap < <gv
 " imap <S-Tab> <C-o><<
 
-" Toggle keybindings
-" set pastetoggle=<Leader>tp
-" nnoremap <silent><Leader>tg :GitGutterSignsToggle<CR>
-" nnoremap <silent><Leader>ta :ALEToggle<CR>
-" nnoremap <silent><Leader>ts :SignatureToggleSigns<CR>
-
 " folding
 " Close all folds and open and focus on fold containing current line
 nnoremap <silent><Leader>z zMzvzz
@@ -704,162 +686,6 @@ syntax on
 let g:enable_bold_font = 1
 color darktheme
 " }}}
-
-" vim-clap {{{
-" let g:clap_spinner_frames =  ["●••", "•●•", "••●"]
-" let g:clap_prompt_format = ''
-" let g:clap_default_external_filter = 'fzf'
-" let g:clap_insert_mode_only = 1
-
-" let g:clap_current_selection_sign_definition='➤'
-" let g:clap_multi_selection_warning_silent = 1
-" let g:clap_current_selection_sign = { 'text': '➢', 'texthl': "ClapCurrentSelectedSign", "linehl": "ClapCurrentSelection" }
-" let g:clap_selected_sign  = { 'text': ' •', 'texthl': "ClapSelectedSign", "linehl": "ClapSelected" }
-" let g:clap_open_action    = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
-" let g:clap_no_matches_msg = 'Keine Gleiche gefunden'
-
-" grep options
-" let g:clap_provider_grep_executable  = 'rg'
-" let g:clap_provider_grep_opts        = '-H --no-heading --vimgrep --smart-case --hidden'
-" let g:clap_provider_grep_delay       = 500
-" let g:clap_provider_grep_blink       = [1, 200]
-" let g:clap_provider_grep_enable_icon = 0
-
-" Yank provider
-" let g:clap_enable_yanks_provider      = 1
-" let g:clap_provider_yanks_max_entries = 30
-" let g:clap_provider_yanks_min_len     = 3
-
-" Beautify clap input window
-" let g:clap_search_box_border_symbols = { 'arrow': ["\ue0b2", "\ue0b0"], 'curve': ["\ue0b6", "\ue0b4"], 'nil': ['', ''] }
-" let g:clap_search_box_border_style   = 'curve'
-
-" function! ClapEnter() abort
-"   call g:clap.display.setbufvar_batch({
-"         \ '&wrap'           : 0,
-"         \ '&number'         : 0,
-"         \ '&relativenumber' : 0,
-"         \ '&cursorline'     : 1,
-"         \ '&signcolumn'     : 'yes',
-"         \ '&spell'          : 0,
-"         \ '&colorcolumn'    : 0,
-"         \ })
-" endfunction " function
-
-" function! ClapExit() abort
-" endfunction
-
-" augroup ClapGrp
-"     autocmd!
-"     autocmd User ClapOnEnter   call ClapEnter()
-"     autocmd User ClapOnExit    call ClapExit()
-" augroup END
-
-" Clap quick_open to open some dotfiles quickly.
-" let g:clap_provider_quick_open = {
-"       \ 'source': [
-"       \ '$HOME/.vim/vimrc',
-"       \ '$HOME/.zshrc',
-"       \ '$HOME/.tmux.conf'
-"       \ ],
-"       \ 'sink': 'e',
-"       \ }
-
-" nnoremap <silent><Leader>fo :Clap files --hidden<CR>
-" nnoremap <silent><Leader>fb :Clap buffers<CR>
-" nnoremap <silent><Leader>fr :Clap history<CR>
-" nnoremap <silent><Leader>fl :Clap blines<CR>
-" nnoremap <silent><Leader>/  :Clap grep<CR>
-" nnoremap <silent><Leader>d/  :Clap grep ++query=<cword>
-" nnoremap <silent><Leader>fm :Clap marks<CR>
-" nnoremap <silent><Leader>fh :Clap command_history<CR>
-" nnoremap <silent><Leader>fy :Clap yanks<CR>
-" nnoremap <silent><Leader>fw :Clap quick_open<CR>
-
-" }}}
-
-"fzf.vim {{{
-
-function! CreateCenteredFloatingWindow()
-    let width = min([&columns - 4, max([80, &columns - 20])])
-    let height = min([&lines - 4, max([20, &lines - 10])])
-    let top = ((&lines - height) / 2) - 1
-    let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-
-    let top = "╭" . repeat("╍", width - 2) . "╮"
-    let mid = "┇" . repeat(" ", width - 2) . "┇"
-    let bot = "╰" . repeat("╍", width - 2) . "╯"
-    let lines = [top] + repeat([mid], height - 2) + [bot]
-    let s:buf = nvim_create_buf(v:false, v:true)
-    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-    call nvim_open_win(s:buf, v:true, opts)
-    set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
-    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-    au BufWipeout <buffer> exe 'bw '.s:buf
-endfunction
-" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
-
-" [Buffers] Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
-
-" [[B]Commits] Customize the options used by 'git log':
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-
-" [Tags] Command to generate tags file
-let g:fzf_tags_command = 'ctags -R'
-
-" [Commands] --expect expression for directly executing the command
-let g:fzf_commands_expect = 'alt-enter,ctrl-x'
-
-let g:fzf_colors =
-      \ {
-      \ 'fg': ['fg', 'FZFMain'],
-      \ 'bg': ['bg', 'FZFMain'],
-      \ 'fg+': ['fg', 'FZFCurrentLn'],
-      \ 'bg+': ['bg', 'FZFCurrentLn'],
-      \ 'hl+': ['fg', 'FZFHighlightCurLn'],
-      \ 'info': ['fg', 'FZFInfo'],
-      \ 'border': ['fg', 'FZFBorder'],
-      \ 'pointer': ['fg', 'FZFPointer'],
-      \ 'marker': ['fg', 'FZFMarker'],
-      \ 'spinner': ['bg', 'FZFSpinner'],
-      \ 'header': ['bg', 'FZFHeader'],
-      \ }
-
-" nnoremap <silent><Leader>fo :FilesWithDevicons<CR>
-" nnoremap <silent><Leader>fb :Buffers<CR>
-" nnoremap <silent><Leader>fr :History<CR>
-" nnoremap <silent><Leader>fl :Blines<CR>
-" nnoremap <silent><Leader>/  :Grep<CR>
-" nnoremap <silent><Leader>fm :Marks<CR>
-" nnoremap <silent><Leader>fy :yanks<CR>
-" nnoremap <silent><Leader>fT :Tags<CR>
-" nnoremap <silent><Leader>ft :BTags<CR>
-" nnoremap <silent><Leader>fy :yanks<CR>
-" nnoremap <silent><Leader>fw :quick_open<CR>
-
-function! GetJumps()
-  redir => cout
-  silent jumps
-  redir END
-  return reverse(split(cout, "\n")[1:])
-endfunction
-
-function! GoToJump(jump)
-  let jumpnumber = split(a:jump, '\s\+')[0]
-  execute "normal " . jumpnumber . "\<c-o>"
-endfunction
-
-command! Jumps call fzf#run(fzf#wrap({
-      \ 'source': GetJumps(),
-      \ 'sink': function('GoToJump')}))
-
-"}}}
 
 " Tagbar {{{
 let g:tagbar_sort             = 0 " don't sort items by name
@@ -1006,14 +832,6 @@ augroup autopep
     autocmd!
     au FileType python setlocal formatprg=autopep8\ -
 augroup END
-" }}}
-
-" braceless {{{
-" augroup braceless
-"     autocmd!
-"     autocmd FileType python BracelessEnable +indent +fold +highlight
-" augroup END
-" let g:braceless_block_key = 'i'
 " }}}
 
 " yankmatches {{{
@@ -1753,11 +1571,6 @@ else
     xmap l <Plug>(textmanip-move-right)
 endif
 
-" toggle insert/replace with <C-s>
-nmap <C-s> <Plug>(textmanip-toggle-mode)
-xmap <C-s> <Plug>(textmanip-toggle-mode)
-" }}}
-
 " line-number-interval {{{
 if has('nvim')
     let g:line_number_interval#enable_at_startup = 1
@@ -1836,17 +1649,6 @@ let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_filetypes_blacklist= ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
 " }}}
 
-" wstrip.vim {{{
-let g:wstrip_auto      = 1
-let g:wstrip_highlight = 1
-" }}}
-
-" lessspace {{{
-let g:lessspace_enabled = 0
-let g:lessspace_whitelist = ['c', 'cxx', 'cpp', 'python', 'vim']
-" let g:lessspace_normal = 0
-" }}}
-
 " vim-expand-region {{{
 map <C-l> <Plug>(expand_region_expand)
 map <C-h> <Plug>(expand_region_shrink)
@@ -1862,14 +1664,6 @@ let g:lexima_enable_endwise_rules = 0
 let g:AutoPairsFlyMode            = 1
 let g:AutoPairsMultilineClose     = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-" }}}
-
-" nvim-autopairs {{{
-" lua << EOF
-" require('nvim-autopairs').setup({
-"   disable_filetype = { "TelescopePrompt" , "vim" },
-"   })
-" EOF
 " }}}
 
 " indent-blankline {{{
