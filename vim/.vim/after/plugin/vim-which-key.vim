@@ -76,8 +76,8 @@ let g:which_key_map.x   = 'Save All and Exit Vim'
 " let g:which_key_map.y.i = 'Copy All non-matched Lines'
 
 
-call which_key#register('<Space>', "g:which_key_map")
-nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+" call which_key#register('<Space>', "g:which_key_map")
+" nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+" vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 
 " End of File
