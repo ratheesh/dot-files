@@ -109,7 +109,7 @@ else
     Plug 'gelguy/Cmd2.vim'
 endif " if
 Plug 'andymass/vim-matchup'
-Plug 'fvictorio/vim-yank-queue'
+" Plug 'fvictorio/vim-yank-queue'
 
 Plug 'kana/vim-submode'
 " Custom text objects related
@@ -135,7 +135,7 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-textobj-quote'
-Plug 'beloglazov/vim-online-thesaurus'
+" Plug 'beloglazov/vim-online-thesaurus'
 
 " Plug 'autozimu/LanguageClient-neovim', {
 "             \ 'branch': 'next',
