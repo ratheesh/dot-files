@@ -22,6 +22,7 @@ local fileinfo   = require('galaxyline.provider_fileinfo')
 local diagnostic = require('galaxyline.provider_diagnostic')
 local lspclient  = require('galaxyline.provider_lsp')
 local icons      = require('galaxyline.provider_fileinfo').define_file_icon()
+local sbar       = require('galaxyline.provider_extensions').scrollbar_instance()
 
 -----------------------
 local function get_basename(file)
@@ -38,20 +39,17 @@ end
 ----------------------
 local colors = {
   dark      = '#000000',
-  black     = '#383a4c',
+  black     = '#303040',
   bblack    = '#928374',
-  red       = '#cc241d',
   bred      = '#ec5f67',
   pink      = '#F80069',
   purple    = "#d38aea",
-  green     = '#98971a',
   bgreen    = '#99c794',
   green1    = '#66d28e',
   grey      = '#909090',
   bgrey     = "#4c5870",
   yellow    = '#f99157',
   byellow   = '#deb974',
-  blue      = '#0365E6',
   bblue     = '#6cb6eb',
   magenta   = '#D85A93',
   bmagenta  = '#d3869b',
@@ -59,58 +57,106 @@ local colors = {
   bcyan     = '#47A4A5',
   white     = '#cccccc',
   bwhite    = '#ebdbb2',
-  projbg    = "#005f8f",
-  projfg    = "#f5be85",
+  projbg    = "#89B7B5",
+  projfg    = "#000000",
   cream     = '#EFEAD8',
+
+  background  = "#383a4c",
+  foreground  = "#c5cdd9",
+  red         = "#ec5f67",
+  green       = "#99c794",
+  yellow1     = "#deb974",
+  blue        = "#6cb6eb",
+  purple      = "#d38aea",
+  cyan        = "#5dbbc1",
+  white       = "#eeeeee",
+  lightgrey   = "#4c5870",
+  darkgrey    = "#404247",
+  brightgreen = "#66d28e",
+  cream       = '#EFEAD8',
+  hexcharbg   = '#007799',
+  curfn_fg    = '#FDC46D',
+  yellow1     = '#FDC46D',
+  ftbg        = '#B6919E',
+  ftbg1       = '#8F7C76',
+  pathbg1     = '#7C32C8',
+  pathbg2     = '#9f369f',
+  modifiedfg  = '#5CD96F',
 }
 
 icons['man'] = {colors.green, ''}
 
+local mode_alias = {
+  ['n']  = 'NORMAL',
+  ['no'] = 'N·Operator Pending',
+  ['v']  = 'VISUAL',
+  ['V']  = 'V·LINE',
+  [''] = 'V·BLOCK',
+  ['s']  = 'SELECT',
+  ['S']  = 'S·LINE',
+  [''] = 'S·BLOCK',
+  ['i']  = 'INSERT',
+  ['ic'] = 'INSERT',
+  ['ix'] = 'INSERT',
+  ['R']  = 'REPLACE',
+  ['Rv'] = 'V·REPLACE',
+  ['c']  = 'COMMAND',
+  ['cv'] = 'VIM Ex',
+  ['ce'] = 'Ex',
+  ['r']  = 'PROMPT',
+  ['rm'] = 'MORE',
+  ['r?'] = 'CONFIRM',
+  ['!']  = 'SHELL',
+  ['t']  = 'TERMINAL'
+}
+
+local mode_color = {
+  n      = colors.purple,
+  no     = colors.purple,
+  i      = colors.green1,
+  v      = colors.blue,
+  V      = colors.blue,
+  [''] = colors.blue,
+  c      = colors.purple,
+  no     = colors.magenta,
+  s      = colors.orange,
+  S      = colors.orange,
+  [''] = colors.orange,
+  ic     = colors.yellow,
+  R      = colors.red,
+  Rv     = colors.red,
+  cv     = colors.red,
+  ce     = colors.red,
+  r      = colors.cyan,
+  rm     = colors.cyan,
+  ['r?'] = colors.cyan,
+  ['!']  = colors.red,
+  t      = colors.red,
+}
+
 gls.left = {
+  {
+    FirstElement = {
+      provider = function() return '' end,
+      vim.api.nvim_command('hi GalaxyModeInv guifg='..mode_color[vim.fn.mode()]..' guibg='..colors.black),
+      highlight = 'GalaxyModeInv'
+    },
+  },
   {
     Mode = {
       provider = function()
-        local alias = {
-          n    = 'NORMAL',
-          i    = 'INSERT',
-          c    = 'COMMAND',
-          v    = 'VISUAL',
-          V    = 'VISUAL',
-          [''] = 'VISUAL',
-          s    = 'SUBSTITUTE',
-          S    = 'S-LINE',
-        }
+        -- local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',v= 'VISUAL',V= 'VISUAL LINE', [''] = 'VISUAL BLOCK'}
 
         if not condition.hide_in_width() then
-          alias = {n = 'N', i = 'I', c = 'C', V= 'V', [''] = 'V'}
+          -- alias = {n = 'N', i = 'I', c = 'C', V= 'V', [''] = 'V'}
         end
 
-        local mode_color = {
-          n      = colors.purple,
-          i      = colors.green1,
-          v      = colors.blue,
-          ['']   = colors.blue,
-          V      = colors.blue,
-          c      = colors.purple,
-          no     = colors.magenta,
-          s      = colors.orange,
-          S      = colors.orange,
-          [''] = colors.orange,
-          ic     = colors.yellow,
-          R      = colors.red,
-          Rv     = colors.red,
-          cv     = colors.red,
-          ce     = colors.red,
-          r      = colors.cyan,
-          rm     = colors.cyan,
-          ['r?'] = colors.cyan,
-          ['!']  = colors.red,
-          t      = colors.red,
-        }
-        vim.api.nvim_command('hi GalaxyMode guibg='..mode_color[vim.fn.mode()])
-        return string.format('  %s ', alias[vim.fn.mode()])
+        vim.api.nvim_command('hi GalaxyMode guifg=#000000 guibg='..mode_color[vim.fn.mode()])
+        vim.api.nvim_command('hi GalaxyModeInv guifg='..mode_color[vim.fn.mode()]..' guibg='..colors.black)
+        return string.format('  %s ', mode_alias[vim.fn.mode()])
       end,
-      highlight = {colors.black, colors.yellow, 'bold'},
+      separator = '',
+      separator_highlight = 'GalaxyModeInv'
     }
   },
   {
@@ -134,17 +180,63 @@ gls.left = {
   --   }
   -- },
   {
-    GitRoot = {
-      -- provider = function() return string.format('  [%s] ', GetGitRoot()) end,
-      provider = function() return string.format('  %s ', vim.call('utils#getprojectname')) end,
-      condition = function() return condition.check_git_workspace() and condition.hide_in_width() end,
-      highlight = {colors.projfg, colors.projbg,}
+    ProjLeftSpace = {
+      provider = function() return '' end,
+      condition = function()
+        local projname = vim.call('utils#getprojectname')
+        if projname == '' and condition.hide_in_width() then
+          return false
+        else
+          return true
+        end
+      end,
+      -- condition = condition.buffer_not_empty,
+      highlight = {colors.projbg, colors.black}
     }
   },
   {
-    BlankSpace = {
-      provider = function() return '  ' end,
-      highlight = {colors.black, colors.black}
+    GitRoot = {
+      -- provider = function() return string.format('  [%s] ', GetGitRoot()) end,
+      provider = function() return string.format('%s', vim.call('utils#getprojectname')) end,
+      -- condition = condition.buffer_not_empty,
+      highlight = {colors.projfg, colors.projbg},
+      -- separator_highlight = {colors.projbg, colors.bgrey}
+    }
+  },
+  {
+    ProjRightSpace = {
+      provider = function()
+        if vim.call('utils#getprojectname') == '' then
+          if condition.buffer_not_empty and vim.api.nvim_buf_get_option(0, 'ft') ~= 'startify' then
+            return string.format('%s', '')
+          else
+            return string.format('')
+          end
+        else
+          return string.format('%s','')
+        end
+      end,
+      -- condition = function() return condition.buffer_not_empty and condition.check_git_workspace() end,
+      highlight = {
+        function()
+          if vim.call('utils#getprojectname') == '' then
+            return colors.bgrey
+          else return colors.projbg
+          end
+        end,
+        function()
+          if vim.call('utils#getprojectname') == '' or vim.api.nvim_buf_get_option(0, 'ft') == 'startify' then
+            return colors.black
+          else return colors.bgrey
+          end
+        end}
+    }
+  },
+  {
+    BlankSpaceFileIcon = {
+      provider = function() return ' ' end,
+      condition = condition.buffer_not_empty,
+      highlight = {colors.bgrey, colors.bgrey}
     }
   },
   {
@@ -153,17 +245,19 @@ gls.left = {
       condition = condition.buffer_not_empty,
       highlight = {
         fileinfo.get_file_icon_color,
-        colors.black
+        colors.bgrey
       },
     },
   },
   {
     FileName = {
       provider = function()
-        return string.format('%s ', fileinfo.get_current_file_name())
+        return string.format('%s', fileinfo.get_current_file_name())
       end,
       condition = condition.buffer_not_empty,
-      highlight = {colors.bwhite, colors.black, 'italic'}
+      highlight = {colors.bwhite, colors.bgrey, 'italic'},
+      separator = '',
+      separator_highlight = {colors.bgrey, colors.black}
     }
   },
   {
@@ -268,8 +362,14 @@ gls.right = {
   -- },
   {
     LineInfo = {
-      provider = function() return string.format('   %s ', fileinfo.line_column()) end,
+      provider = function() return string.format('  ≡%s ', fileinfo.line_column()) end,
       highlight = {colors.dark, colors.magenta}
+    }
+  },
+  {
+    Scrollbar = {
+      provider = 'ScrollBar',
+      highlight = {colors.grey, colors.bgrey}
     }
   },
   {
