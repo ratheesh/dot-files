@@ -20,7 +20,7 @@ require'compe'.setup {
   autocomplete     = true;
   debug            = false;
   min_length       = 2;
-  preselect        = 'enable';
+  preselect        = 'disable';
   throttle_time    = 80;
   source_timeout   = 200;
   incomplete_delay = 400;
@@ -38,7 +38,7 @@ require'compe'.setup {
     spell         = {priority = 45};
     calc          = {priority = 44};
     nvim_lua      = {priority = 43};
-    treesitter    = false;
+    treesitter    = true;
     vsnip         = false;
     snippets_nvim = false;
   };
