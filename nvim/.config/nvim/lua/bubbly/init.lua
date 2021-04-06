@@ -53,7 +53,7 @@ vim.g.bubbly_palette = {
   white       = "#eeeeee",
   lightgrey   = "#4c5870",
   darkgrey    = "#404247",
-  projbg      = "#404247",
+  projbg      = "#005f8f",
   projfg      = "#f5be85",
   brightgreen = "#66d28e",
   cream       = '#EFEAD8',
@@ -85,11 +85,11 @@ vim.g.bubbly_colors = {
   },
 
   path = {
-    project      = { background = 'lightgrey', foreground = 'red'         },
-    readonly     = { background = 'lightgrey', foreground = 'foreground'  },
-    unmodifiable = { background = 'darkgrey' , foreground = 'foreground'  },
-    path         = { background = 'cream'    , foreground = 'pathbg'      },
-    modified     = { background = 'lightgrey', foreground = 'modifiedfg'  },
+    project      = { background = 'projbg'    , foreground  = 'projfg'      },
+    readonly     = { background = 'lightgrey' , foreground  = 'purple'  },
+    unmodifiable = { background = 'lightgrey' , foreground  = 'foreground'  },
+    path         = { background = 'cream'     , foreground  = 'pathbg'      },
+    modified     = { background = 'lightgrey' , foreground  = 'modifiedfg'  },
   },
 
   branch = 'purple',
@@ -189,9 +189,9 @@ vim.g.bubbly_symbols = {
   },
 
   signify = {
-    added    = '+%s', -- requires 1
-    modified = '~%s', -- requires 1
-    removed  = '-%s', -- requires 1
+    added    = ' %s', -- requires 1
+    modified = ' %s', -- requires 1
+    removed  = ' %s', -- requires 1
   },
 
   coc = {
