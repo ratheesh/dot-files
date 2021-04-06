@@ -217,7 +217,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Under testing plugins
-Plug 'kvngvikram/rightclick-macros'
+Plug 'LumaKernel/nvim-visual-eof.lua'
+" Plug 'semanticart/tag-peek.vim'
 
 call plug#end()
 
@@ -1944,12 +1945,24 @@ let g:vim_textobj_parameter_mapping = 'a'
 let g:peekaboo_window='vert bo 60new'
 " }}}
 
-" nvim-peekup {{{
-lua require('nvim-peekup.config').geometry["height"] = 0.8
-lua require('nvim-peekup.config').geometry["title"] = 'Registers Peek'
-lua require('nvim-peekup.config').on_keystroke["delay"] = '300ms'
-lua require('nvim-peekup.config').on_keystroke["autoclose"] = true
-let g:peekup_open = '"'
+" nvim-visual-eof {{{
+lua << EOF
+    require'visual-eof'.setup()
+EOF
+" }}}
+
+" tag-peek.vim {{{
+nnoremap <leader>q :call tag_peek#ShowTag()<CR>
+function! MyFloatConfig()
+  return {
+        \ 'relative': 'editor',
+        \ 'row': 10,
+        \ 'col': 10,
+        \ 'width': 80,
+        \ 'height': 20
+        \ }
+endfunction
+let g:tag_peek_float_config="MyFloatConfig"
 " }}}
 
 " Misc useful functions {{{
