@@ -544,6 +544,9 @@ inoremap jj l
 nnoremap K i<CR><Esc>
 " vnoremap jj l
 
+" switch to last buffer <C-j> is also mapped <C-Enter>
+nnoremap <silent><C-j> :e #<CR>
+
 " select lasted pasted text
 noremap gV `[v`]
 noremap Y y$
