@@ -918,7 +918,7 @@ let g:bufferline.semantic_letters        = v:true
 
 hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=italic
 hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=NONE
-hi BufferCurrentTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferCurrentTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#FA2C77  guibg=#383a4c      gui=bold,italic,underline
 hi BufferVisible           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 hi BufferVisibleMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferVisibleSign       ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
@@ -926,7 +926,7 @@ hi BufferVisibleTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=
 hi BufferInactive          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 hi BufferInactiveMod       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 hi BufferInactiveSign      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
-hi BufferInactiveTarget    ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
+hi BufferInactiveTarget    ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#FA2C77  guibg=#383a4c      gui=bold,italic,underline
 hi BufferTabLineSel        ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferTabLineFill       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 
