@@ -1822,8 +1822,9 @@ if has('nvim')
           \       wilder#history(100),
           \     ],
           \     wilder#python_file_finder_pipeline({
-          \       'command': [ 'fd','-tf', '--follow', '--hidden', '--color=never'],
-          \       'filters': ['filter_fuzzy', 'sort_difflib'],
+          \       'file_command': [ 'fd','-tf', '--follow', '--hidden', '--color=never'],
+          \       'dir_command' : [ 'fd','-td', '--follow', '--hidden', '--color=never'],
+          \       'filters': ['fuzzy_filter'],
           \       'debounce': 50,
           \     }),
           \     wilder#substitute_pipeline({
@@ -1843,6 +1844,7 @@ if has('nvim')
           \       'sort': wilder#python_sorter_difflib(),
           \     }),
           \     ),
+          \   wilder#result_draw_devicons(),
           \  ])
 
     let s:status_hl       = wilder#make_hl('WilderStatus'  , 'WildStatus')
