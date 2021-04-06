@@ -98,8 +98,8 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
-" Plug 'junegunn/vim-peekaboo'
-Plug 'gennaro-tedesco/nvim-peekup'
+Plug 'junegunn/vim-peekaboo'
+" Plug 'gennaro-tedesco/nvim-peekup'
 Plug 'ojroques/vim-oscyank', { 'branch' : 'main' }
 Plug 'dhruvasagar/vim-table-mode'
 if has('nvim')
