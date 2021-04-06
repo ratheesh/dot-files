@@ -1208,7 +1208,7 @@ let g:hiPairs_hl_matchPair = {
             \    'ctermfg' : '24',
             \    'ctermbg' : 'NONE',
             \    'cterm'   : 'bold,underline',
-            \    'guifg'   : '#008fff',
+            \    'guifg'   : 'NONE',
             \    'guibg'   : 'NONE',
             \    'gui'     : 'bold,underline',
             \ }
