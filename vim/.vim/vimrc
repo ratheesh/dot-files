@@ -150,7 +150,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 " Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
-" Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
+Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 Plug 'ray-x/lsp_signature.nvim'
@@ -859,12 +859,12 @@ let g:load_doxygen_syntax = 1
 " }}}
 
 " bubbly.nvim {{{
-" lua require("bubbly")
+" lua require("bubbly_init")
 let g:bubbly_tabline = 0
 " }}}
 
 " galaxyline.nvim {{{
-lua require("glxyline")
+lua require("galaxyline_init")
 " }}}
 
 " barbar.nvim {{{
@@ -1260,7 +1260,23 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 " }}}
 
 " neovim_lspconfig {{{
-lua require("lsp")
+lua require("lsp_init")
+" }}}
+
+" lspsaga.nvim {{{
+lua require("lspsaga_init")
+nnoremap <silent>gh :Lspsaga lsp_finder<CR>
+
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+nnoremap <silent>gs :Lspsaga signature_help<CR>
+nnoremap <silent>gr :Lspsaga rename<CR>
+" nnoremap <silent>gd :Lspsaga preview_definition<CR>
 " }}}
 
 " nvim-ts-rainbow {{{
@@ -1288,7 +1304,7 @@ EOF
 " }}}
 
 " treesitter-textobjects {{{
-" lua require("ts-textobjs")
+" lua require("treesitter-textobjs_init")
 " }}}
 
 " lsp_signature.nvim {{{
@@ -1297,7 +1313,7 @@ lua require'lsp_signature'.signature()
 " }}}
 
 " {{{ telescope.nvim
-lua require("tscope")
+lua require("telescope_init")
 
 nnoremap <leader>fo <cmd>Telescope find_files<cr>
 nnoremap <leader>F  <cmd>Telescope git_files<cr>
@@ -1313,7 +1329,7 @@ nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 " }}}
 
 " compe {{{
-lua require("nvim-compe")
+lua require("nvim-compe_init")
 
 inoremap <silent><expr> <C-Space> compe#complete()
 " inoremap <silent><expr> <CR>      compe#confirm('<CR>')
