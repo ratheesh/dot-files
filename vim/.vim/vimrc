@@ -63,7 +63,8 @@ Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'datwaft/bubbly.nvim', { 'branch' : 'custom' }
-Plug 'glepnir/galaxyline.nvim'
+" Plug 'glepnir/galaxyline.nvim'
+Plug 'famiu/feline.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'mhinz/vim-signify'
 " Plug 'delphinus/vim-auto-cursorline'
@@ -864,7 +865,11 @@ let g:bubbly_tabline = 0
 " }}}
 
 " galaxyline.nvim {{{
-lua require("galaxyline_init")
+" lua require("galaxyline_init")
+" }}}
+
+" feline.nvim {{{
+lua require ("feline_init")
 " }}}
 
 " barbar.nvim {{{
