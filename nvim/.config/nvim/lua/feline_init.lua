@@ -5,6 +5,16 @@ local vi_mode_utils = require('feline.providers.vi_mode')
 
 -- local is_project_valid = false
 
+local function is_project_valid()
+  local project = vim.call('utils#getprojectname')
+  if project == '' then
+    return false
+  else
+    return true
+  end
+end
+
+
 local colors = {
   dark      = '#000000',
   black     = '#303040',
@@ -42,6 +52,7 @@ local colors = {
   curfn_fg    = '#FDC46D',
   ftbg        = '#B6919E',
   ftbg1       = '#8F7C76',
+  projbg1     = '#337AB7',
   pathbg1     = '#7C32C8',
   pathbg2     = '#9f369f',
   modifiedfg  = '#5CD96F',
@@ -53,30 +64,30 @@ local colors = {
   mode_replace = '#d65b84'
 }
 
--- local mode_alias = {
---   ['n']  = 'NORMAL',
---   ['no'] = 'N·Operator Pending',
---   ['ni'] = '(INSERT)',
---   ['v']  = 'VISUAL',
---   ['V']  = 'V·LINE',
---   [''] = 'V·BLOCK',
---   ['s']  = 'SELECT',
---   ['S']  = 'S·LINE',
---   [''] = 'S·BLOCK',
---   ['i']  = 'INSERT',
---   ['ic'] = 'INS-COMPLETE',
---   ['ix'] = 'INSERT',
---   ['R']  = 'REPLACE',
---   ['Rv'] = 'V·REPLACE',
---   ['c']  = 'COMMAND',
---   ['cv'] = 'VIM Ex',
---   ['ce'] = 'Ex',
---   ['r']  = 'PROMPT',
---   ['rm'] = 'MORE',
---   ['r?'] = 'CONFIRM',
---   ['!']  = 'SHELL',
---   ['t']  = 'TERMINAL'
--- }
+local mode_alias = {
+  ['n']  = 'NORMAL',
+  ['no'] = 'N·Operator Pending',
+  ['ni'] = '(INSERT)',
+  ['v']  = 'VISUAL',
+  ['V']  = 'V·LINE',
+  [''] = 'V·BLOCK',
+  ['s']  = 'SELECT',
+  ['S']  = 'S·LINE',
+  [''] = 'S·BLOCK',
+  ['i']  = 'INSERT',
+  ['ic'] = 'INS-COMPLETE',
+  ['ix'] = 'INSERT',
+  ['R']  = 'REPLACE',
+  ['Rv'] = 'V·REPLACE',
+  ['c']  = 'COMMAND',
+  ['cv'] = 'VIM Ex',
+  ['ce'] = 'Ex',
+  ['r']  = 'PROMPT',
+  ['rm'] = 'MORE',
+  ['r?'] = 'CONFIRM',
+  ['!']  = 'SHELL',
+  ['t']  = 'TERMINAL'
+}
 
 local mode_color = {
   ['n']  = colors.mode_normal,
@@ -109,7 +120,7 @@ local components = {
   },
   right = {
     active = {},
-    inactive = {}
+    inactive ={}
   }
 }
 
@@ -131,32 +142,72 @@ properties.force_inactive.filetypes = {
 
 table.insert(components.left.active, {
   provider = function()
-    return vi_mode_utils.get_vim_mode()
+    -- return vi_mode_utils.get_vim_mode()
+    return mode_alias[vim.fn.mode()]
   end,
-  hl = {
-    fg = colors.black,
-    bg = mode_color[vim.fn.mode()],
-  },
-  right_sep = '',
-  left_sep = '',
-  -- Component info here
+  hl = function()
+    local val = {}
+
+    val.name = vi_mode_utils.get_mode_highlight_name()
+    val.fg = colors.black
+    val.bg = mode_color[vim.fn.mode()]
+    val.style = 'bold'
+
+    return val
+  end,
+  left_sep = {'', 'left_rounded'},
+  right_sep = {'right_rounded', ' '}
 })
 -- components.left.active[1] = {
 --  }
 
 table.insert(components.left.active, {
-  provider = function() return string.format(' ') end,
+  provider = function()
+    if vim.o.paste then
+      return string.format('ραstɛ')
+    end
+  end,
+  hl = {
+    fg = colors.black,
+    bg = colors.mode_replace,
+  },
+  enabled = function() return vim.o.paste end,
+  right_sep = ' ',
+  left_sep = '',
 })
 
 table.insert(components.left.active, {
-  is_project_valid = vim.call('utils#getprojectname'),
   provider = function() return string.format('%s', vim.call('utils#getprojectname')) end,
   hl = {
-    fg = colors.projfg,
+    fg = colors.black,
     bg = colors.projbg,
   },
-  right_sep = '',
+  enabled = is_project_valid,
+  -- right_sep = '',
   left_sep = '',
+})
+
+table.insert(components.left.active, {
+  provider = function() return string.format(' ') end,
+
+  hl = function()
+    local val = {}
+    val.name = 'project_right_sep'
+    val.fg = colors.projbg
+    if is_project_valid() == true then val.bg = colors.bgrey else val.bg = colors.black end
+    return val
+  end,
+  enabled = is_project_valid,
+})
+
+table.insert(components.left.active, {
+  provider = function() return string.format('') end,
+
+  hl = {
+    fg = colors.bgrey,
+    bg = colors.black,
+  },
+  enabled = function() return not is_project_valid() end,
 })
 
 table.insert(components.left.active, {
@@ -166,7 +217,8 @@ table.insert(components.left.active, {
     bg = colors.bgrey,
     style = 'italic'
   },
-  left_sep = {'', 'left_rounded'},
+
+  left_sep = '',
   right_sep = {'right_rounded', ' '}
 })
 
@@ -193,6 +245,7 @@ table.insert(components.left.active, {
     bg = colors.black,
   }
 })
+
 ----------------------------------------- right segment ----------------------------------------
 
 table.insert(components.right.active, {
@@ -232,6 +285,7 @@ table.insert(components.right.active, {
 })
 
 table.insert(components.right.active, {
+  -- provider = 'lsp_client_names',
   provider = function()
     local msg = ''
     msg = msg or 'No Active Lsp'
@@ -251,7 +305,7 @@ table.insert(components.right.active, {
   end,
 
   hl = {
-    fg = colors.white,
+    fg = colors.cream,
     bg = colors.black,
   }
 })
@@ -282,11 +336,19 @@ table.insert(components.right.active, {
   }
 })
 
+-- table.insert(components.right.active, {
+--   provider = 'file_encoding',
+--   hl = {
+--     fg = colors.black,
+--     bg = colors.white,
+--   },
+-- })
+
 table.insert(components.right.active, {
   provider = function()
     local sw = vim.bo.shiftwidth
     local et = vim.bo.expandtab
-    local im=''
+    local im = ''
     if et == true then
       im='•'
     else
@@ -320,7 +382,7 @@ table.insert(components.right.active, {
     fg = colors.yellow,
     bg = colors.bgrey,
   },
-  left_sep = '█',
+  left_sep  = '█',
   right_sep = '█'
 })
 
