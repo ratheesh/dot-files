@@ -22,20 +22,20 @@ local fileinfo   = require('galaxyline.provider_fileinfo')
 local diagnostic = require('galaxyline.provider_diagnostic')
 local lspclient  = require('galaxyline.provider_lsp')
 local icons      = require('galaxyline.provider_fileinfo').define_file_icon()
-local sbar       = require('galaxyline.provider_extensions').scrollbar_instance()
+-- local sbar       = require('galaxyline.provider_extensions').scrollbar_instance()
 
 -----------------------
-local function get_basename(file)
-  return file:match("^.+/(.+)$")
-end
+-- local function get_basename(file)
+--   return file:match("^.+/(.+)$")
+-- end
 
-local GetGitRoot = function()
-  local git_dir = require('galaxyline.provider_vcs').get_git_dir()
-  if not git_dir then return '' end
+-- local GetGitRoot = function()
+--   local git_dir = require('galaxyline.provider_vcs').get_git_dir()
+--   if not git_dir then return '' end
 
-  local git_root = git_dir:gsub('/.git/?$','')
-  return get_basename(git_root)
-end
+--   local git_root = git_dir:gsub('/.git/?$','')
+--   return get_basename(git_root)
+-- end
 ----------------------
 local colors = {
   dark      = '#000000',
@@ -67,21 +67,22 @@ local colors = {
   green       = "#99c794",
   yellow1     = "#deb974",
   blue        = "#6cb6eb",
-  purple      = "#d38aea",
-  cyan        = "#5dbbc1",
-  white       = "#eeeeee",
   lightgrey   = "#4c5870",
   darkgrey    = "#404247",
   brightgreen = "#66d28e",
-  cream       = '#EFEAD8',
   hexcharbg   = '#007799',
   curfn_fg    = '#FDC46D',
-  yellow1     = '#FDC46D',
   ftbg        = '#B6919E',
   ftbg1       = '#8F7C76',
   pathbg1     = '#7C32C8',
   pathbg2     = '#9f369f',
   modifiedfg  = '#5CD96F',
+
+  mode_normal  = "#d38aea",
+  mode_insert  = '#4eb899',
+  mode_visual  = '#E0AF8F',
+  mode_select  = "#AE8A7E",
+  mode_replace = '#d65b84'
 }
 
 icons['man'] = {colors.green, ''}
@@ -89,6 +90,7 @@ icons['man'] = {colors.green, ''}
 local mode_alias = {
   ['n']  = 'NORMAL',
   ['no'] = 'N·Operator Pending',
+  ['ni'] = '(INSERT)',
   ['v']  = 'VISUAL',
   ['V']  = 'V·LINE',
   [''] = 'V·BLOCK',
@@ -96,7 +98,7 @@ local mode_alias = {
   ['S']  = 'S·LINE',
   [''] = 'S·BLOCK',
   ['i']  = 'INSERT',
-  ['ic'] = 'INSERT',
+  ['ic'] = 'INS-COMPLETE',
   ['ix'] = 'INSERT',
   ['R']  = 'REPLACE',
   ['Rv'] = 'V·REPLACE',
@@ -111,27 +113,27 @@ local mode_alias = {
 }
 
 local mode_color = {
-  n      = colors.purple,
-  no     = colors.purple,
-  i      = colors.green1,
-  v      = colors.blue,
-  V      = colors.blue,
-  [''] = colors.blue,
-  c      = colors.purple,
-  no     = colors.magenta,
-  s      = colors.orange,
-  S      = colors.orange,
-  [''] = colors.orange,
-  ic     = colors.yellow,
-  R      = colors.red,
-  Rv     = colors.red,
-  cv     = colors.red,
-  ce     = colors.red,
-  r      = colors.cyan,
-  rm     = colors.cyan,
+  ['n']  = colors.mode_normal,
+  ['ni'] = colors.mode_normal,
+  ['no'] = colors.mode_normal,
+  ['i']  = colors.mode_insert,
+  ['ic'] = colors.mode_insert,
+  ['v']  = colors.mode_visual,
+  ['V']  = colors.mode_visual,
+  [''] = colors.mode_visual,
+  ['c']  = colors.purple,
+  ['s']  = colors.mode_select,
+  ['S']  = colors.mode_select,
+  [''] = colors.mode_select,
+  ['R']  = colors.mode_replace,
+  ['Rv'] = colors.mode_replace,
+  ['cv'] = colors.red,
+  ['ce'] = colors.red,
+  ['r']  = colors.cyan,
+  ['rm'] = colors.cyan,
   ['r?'] = colors.cyan,
   ['!']  = colors.red,
-  t      = colors.red,
+  ['t']  = colors.red,
 }
 
 gls.left = {
@@ -148,7 +150,7 @@ gls.left = {
         -- local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',v= 'VISUAL',V= 'VISUAL LINE', [''] = 'VISUAL BLOCK'}
 
         if not condition.hide_in_width() then
-          -- alias = {n = 'N', i = 'I', c = 'C', V= 'V', [''] = 'V'}
+          local alias = {n = 'N', i = 'I', c = 'C', V= 'V', [''] = 'V'}
         end
 
         vim.api.nvim_command('hi GalaxyMode guifg=#000000 guibg='..mode_color[vim.fn.mode()])
@@ -346,6 +348,13 @@ gls.right = {
       highlight = {colors.white, colors.black}
     }
   },
+  -- {
+  --   FileIndent = {
+  --     provider = function() return string.format(' %s ', buffer.get_buffer_filetype()) end,
+  --     condition = function() return buffer.get_buffer_filetype() ~= '' end,
+  --     highlight = {colors.white, colors.black}
+  --   }
+  -- },
   {
     FileFormat = {
       provider = function() return string.format('   %s ', fileinfo.get_file_format()) end,
@@ -362,7 +371,7 @@ gls.right = {
   -- },
   {
     LineInfo = {
-      provider = function() return string.format('  ≡%s ', fileinfo.line_column()) end,
+      provider = function() return string.format('  ☲ %s', fileinfo.line_column()) end,
       highlight = {colors.dark, colors.magenta}
     }
   },
@@ -380,38 +389,38 @@ gls.right = {
   },
 }
 
--- gl.short_line_list = {'NvimTree'}
--- gls.short_line_left = {
---   {
---     BufferIcon = {
---       provider = function()
---         local icon = buffer.get_buffer_type_icon()
---         if icon ~= nil then
---           return string.format(' %s ', icon)
---         end
---       end,
---       highlight = {colors.white, colors.black}
---     }
---   },
---   {
---     BufferName = {
---       provider = function()
---         if vim.fn.index(gl.short_line_list, vim.bo.filetype) ~= -1 then
---           local filetype = vim.bo.filetype
---           if filetype == 'NvimTree' then
---             return ' Explorer '
---           end
---         else
---           if fileinfo.get_current_file_name() ~= '' then
---             return string.format(' %s %s| %s ', fileinfo.get_file_icon(), fileinfo.get_file_size() , fileinfo.get_current_file_name())
---           end
---         end
---       end,
---       separator = '',
---       highlight = {colors.white, colors.black}
---     }
---   }
--- }
+gl.short_line_list = {'NvimTree'}
+gls.short_line_left = {
+  {
+    BufferIcon = {
+      provider = function()
+        local icon = buffer.get_buffer_type_icon()
+        if icon ~= nil then
+          return string.format(' %s ', icon)
+        end
+      end,
+      highlight = {colors.white, colors.black}
+    }
+  },
+  {
+    BufferName = {
+      provider = function()
+        if vim.fn.index(gl.short_line_list, vim.bo.filetype) ~= -1 then
+          local filetype = vim.bo.filetype
+          if filetype == 'NvimTree' then
+            return ' Explorer '
+          end
+        else
+          if fileinfo.get_current_file_name() ~= '' then
+            return string.format(' %s %s| %s ', fileinfo.get_file_icon(), fileinfo.get_file_size() , fileinfo.get_current_file_name())
+          end
+        end
+      end,
+      separator = '',
+      highlight = {colors.white, colors.black}
+    }
+  }
+}
 
 -- End of File
 
