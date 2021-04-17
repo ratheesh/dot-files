@@ -29,7 +29,7 @@ require('telescope').setup {
 
       n = {
         ["<esc>"] = actions.close,
-        ["<C-i>"] = my_cool_custom_action,
+        -- ["<C-i>"] = my_cool_custom_action,
       },
     },
 
@@ -44,7 +44,7 @@ require('telescope').setup {
     },
     prompt_position = "bottom",
     prompt_prefix = "➜ ",
-    selection_caret = "➤ ",
+    selection_caret = " ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
