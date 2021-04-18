@@ -99,8 +99,8 @@ if has('nvim')
 endif
 Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
 " Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'rhysd/git-messenger.vim'
+" Plug 'davidhalter/jedi-vim', {'for': 'python'}
+" Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
 Plug 'junegunn/vim-peekaboo'
