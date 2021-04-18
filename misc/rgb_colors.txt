@@ -60,7 +60,7 @@ Oceanic Next Theme
 #4d708c #a5abb8 #f06372
 
 #df678f #62AFBF
-#d3869b #b16286 #7ED07E
+#d3869b #b16286 #7ED07E #74baac
 
 #00edbd #d876e3 #28a745
 
