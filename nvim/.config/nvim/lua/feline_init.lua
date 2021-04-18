@@ -114,21 +114,16 @@ local mode_color = {
 }
 
 local components = {
-  left = {
-    active = {},
-    inactive = {}
-  },
-  right = {
-    active = {},
-    inactive ={}
-  }
+  left  = { active = {}, inactive = {} },
+  mid   = { active = {}, inactive = {} },
+  right = { active = {}, inactive = {} }
 }
 
 local properties = {
   force_inactive = {
     filetypes = {},
-    buftypes = {},
-    bufnames = {}
+    buftypes  = {},
+    bufnames  = {}
   }
 }
 
@@ -365,7 +360,7 @@ table.insert(components.right.active, {
 
 table.insert(components.right.active, {
   provider = function()
-    return string.format('≡%d:%d', vim.fn.line('.'), vim.fn.col('.'))
+    return string.format('≡%d:%d', vim.fn.line('.'), vim.fn.virtcol('.'))
   end,
 
   hl = {
