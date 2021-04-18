@@ -159,6 +159,7 @@ Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 " Plug 'ray-x/lsp_signature.nvim'
+Plug 'sumneko/lua-language-server'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
