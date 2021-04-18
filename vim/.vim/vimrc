@@ -70,7 +70,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'glepnir/galaxyline.nvim'
 Plug 'famiu/feline.nvim'
 Plug 'romgrk/barbar.nvim'
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 " Plug 'delphinus/vim-auto-cursorline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
@@ -1113,51 +1113,51 @@ let g:startify_bookmarks = [
 " }}}
 
 " vim-signify {{{
-let g:signify_vcs_list               = [ 'git', 'svn' ]
-let g:signify_realtime               = 0
-let g:signify_update_on_bufenter     = 0
-let g:signify_sign_add               = '+'
-let g:signify_sign_delete            = '_'
-let g:signify_sign_delete_first_line = '‾'
-let g:signify_sign_change            = '='
-let g:signify_sign_show_count        = 1
-nmap <silent><leader>sn <plug>(signify-next-hunk)
-nmap <silent><leader>sp <plug>(signify-prev-hunk)
+" let g:signify_vcs_list               = [ 'git', 'svn' ]
+" let g:signify_realtime               = 0
+" let g:signify_update_on_bufenter     = 0
+" let g:signify_sign_add               = '+'
+" let g:signify_sign_delete            = '_'
+" let g:signify_sign_delete_first_line = '‾'
+" let g:signify_sign_change            = '='
+" let g:signify_sign_show_count        = 1
+" nmap <silent><leader>sn <plug>(signify-next-hunk)
+" nmap <silent><leader>sp <plug>(signify-prev-hunk)
 " }}}
 
 " vim-gitgutter {{{
-let g:gitgutter_map_keys=0
-let g:gitgutter_override_sign_column_highlight = 0
-if exists('&signcolumn')  " Vim 7.4.2201
-    if has('nvim')
-        set signcolumn=auto
-    else
-        set signcolumn=yes
-    endif " if nvim
-else
-    let g:gitgutter_sign_column_always = 1
-endif
+" let g:gitgutter_map_keys=0
+" let g:gitgutter_override_sign_column_highlight = 0
+" if exists('&signcolumn')  " Vim 7.4.2201
+"     if has('nvim')
+"         set signcolumn=auto
+"     else
+"         set signcolumn=yes
+"     endif " if nvim
+" else
+"     let g:gitgutter_sign_column_always = 1
+" endif
 
-let g:gitgutter_max_signs = 1000
-let g:gitgutter_eager     = 1 " Update when switching/writing buffers
-let g:gitgutter_realtime  = 1
-let g:gitgutter_diff_args = '--ignore-space-at-eol'
-autocmd FileType tagbar,nerdtree setlocal signcolumn=no
+" let g:gitgutter_max_signs = 1000
+" let g:gitgutter_eager     = 1 " Update when switching/writing buffers
+" let g:gitgutter_realtime  = 1
+" let g:gitgutter_diff_args = '--ignore-space-at-eol'
+" autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
-let g:gitgutter_sign_modified = '='
+" let g:gitgutter_sign_modified = '='
 
-nmap <silent><Leader>gn <Plug>(GitGutterNextHunk)
-nmap <silent><Leader>gp <Plug>(GitGutterPrevHunk)
-nmap <silent><Leader>ga <Plug>(GitGutterStageHunk)
-nmap <silent><Leader>gr <Plug>(GitGutterRevertHunk)
-nmap <silent><Leader>gu <Plug>(GitGutterUndoHunk)
-nmap <silent><Leader>gP <Plug>(GitGutterPreviewHunk)
+" nmap <silent><Leader>gn <Plug>(GitGutterNextHunk)
+" nmap <silent><Leader>gp <Plug>(GitGutterPrevHunk)
+" nmap <silent><Leader>ga <Plug>(GitGutterStageHunk)
+" nmap <silent><Leader>gr <Plug>(GitGutterRevertHunk)
+" nmap <silent><Leader>gu <Plug>(GitGutterUndoHunk)
+" nmap <silent><Leader>gP <Plug>(GitGutterPreviewHunk)
 
-" textobj for hunks (i/a)h
-omap ih <Plug>(GitGutterTextObjectInnerPending)
-omap ah <Plug>(GitGutterTextObjectOuterPending)
-xmap ih <Plug>(GitGutterTextObjectInnerVisual)
-xmap ah <Plug>(GitGutterTextObjectOuterVisual)
+" " textobj for hunks (i/a)h
+" omap ih <Plug>(GitGutterTextObjectInnerPending)
+" omap ah <Plug>(GitGutterTextObjectOuterPending)
+" xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+" xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " }}}
 
