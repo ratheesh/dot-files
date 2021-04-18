@@ -1407,6 +1407,13 @@ nnoremap <leader>ff <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <Leader>fr <cmd>lua require'telescope.builtin'.oldfiles{}<cr>
 nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 
+" LSP related commands
+nnoremap <Leader>lr <cmd>Telescope lsp_references<cr>
+nnoremap <Leader>la <cmd>Telescope lsp_code_actions<cr>
+nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
+nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
+" nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
+" nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
 " }}}
 
 " compe {{{
