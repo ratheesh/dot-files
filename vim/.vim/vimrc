@@ -1222,6 +1222,14 @@ augroup gitCommmit
 augroup END
 " }}}
 
+" conflict-marker.vim {{{
+" Default values
+let g:conflict_marker_begin = '^<<<<<<< \@='
+let g:conflict_marker_common_ancestors = '^||||||| .*$'
+let g:conflict_marker_separator = '^=======$'
+let g:conflict_marker_end   = '^>>>>>>> \@='
+" }}}
+
 " devicons {{{
 let g:webdevicons_enable                    = 1
 let g:webdevicons_enable_startify           = 1
