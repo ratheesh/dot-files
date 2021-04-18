@@ -58,7 +58,8 @@ Plug 'sjl/gundo.vim'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -1157,6 +1158,54 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " }}}
 
+" git-signs {{{
+lua << EOF
+require('gitsigns').setup {
+  signs = {
+    add          = {hl = 'GitSignsAdd'   , text = '▌', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = '▌', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+  },
+
+numhl = false,
+linehl = false,
+
+keymaps = {
+    -- Default keymap options
+    noremap = true,
+    buffer = true,
+
+    -- ['n <leader>gn'] = { expr = true, "&diff ? '<leader>gn' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'" },
+    -- ['n <leader>gp'] = { expr = true, "&diff ? '<leader>gp' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
+
+    ['n <leader>ga'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+    ['n <leader>gu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+    ['n <leader>gr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+    ['n <leader>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
+    ['n <leader>gP'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+    ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
+
+    -- Text objects
+    ['o ih'] = ':<C-U>lua require"gitsigns".select_hunk()<CR>',
+    ['x ih'] = ':<C-U>lua require"gitsigns".select_hunk()<CR>'
+  },
+
+  watch_index = {
+    interval = 1000
+  },
+
+  current_line_blame = false,
+  sign_priority      = 6,
+  update_debounce    = 100,
+  status_formatter   = nil, -- Use default
+  use_decoration_api = true,
+  use_internal_diff  = true,  -- If luajit is present
+}
+EOF
+" }}}
+
 " git-patch-tags {{{
 augroup gitCommmit
   au!
@@ -1923,11 +1972,11 @@ let g:submode_keyseqs_to_leave    = ['<Esc>']
 let g:submode_timeout             = 0
 
 " Submode for Gitgutter plugin -> navigate next/prev hunk using j/k keys
-call submode#enter_with('git-gutter', 'n', 'r', '<leader>gn', '<Plug>(GitGutterNextHunk)')
-call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<Plug>(GitGutterPrevHunk)')
+call submode#enter_with('git-gutter', 'n', 'r', '<leader>gn', '<cmd>lua require"gitsigns".next_hunk()<CR>')
+call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<cmd>lua require"gitsigns".prev_hunk()<CR>')
 call submode#leave_with('git-gutter', 'n', '', '<Esc>')
-call submode#map('git-gutter', 'n', 'r', 'j', '<Plug>(GitGutterNextHunk)')
-call submode#map('git-gutter', 'n', 'r', 'k', '<Plug>(GitGutterPrevHunk)')
+call submode#map('git-gutter', 'n', 'r', 'j', '<cmd>lua require"gitsigns".next_hunk()<CR>')
+call submode#map('git-gutter', 'n', 'r', 'k', '<cmd>lua require"gitsigns".prev_hunk()<CR>')
 call submode#map('git-gutter', 'n', 'r', '.', '.')
 
 " Submode for undo/redo with g-/+ -> use -/= to undo and redo
