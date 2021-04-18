@@ -1339,6 +1339,21 @@ nnoremap <silent>gr :Lspsaga rename<CR>
 " nvim-ts-rainbow {{{
 lua << EOF
 require'nvim-treesitter.configs'.setup {
+ensure_installed = {
+  "bash",
+  "go",
+  "json",
+  "lua",
+  "c",
+  "cpp",
+  "python",
+},
+
+highlight = {
+  enable = true,
+  use_languagetree = true
+},
+
 rainbow = {
     enable = true
   }
