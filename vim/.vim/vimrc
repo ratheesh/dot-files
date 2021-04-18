@@ -49,7 +49,8 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-surround'
 Plug 't9md/vim-textmanip'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
-Plug 'karb94/neoscroll.nvim'
+Plug 'psliwka/vim-smoothie'
+" Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
@@ -62,6 +63,8 @@ Plug 'tpope/vim-git', { 'for':'gitcommit' }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ryanoasis/vim-devicons'
+Plug 'rhysd/conflict-marker.vim'
+" Plug 'yamatsum/nvim-nonicons'
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'datwaft/bubbly.nvim', { 'branch' : 'custom' }
 " Plug 'glepnir/galaxyline.nvim'
