@@ -1,0 +1,92 @@
+{
+    "suggest.enablePreview"                : true,
+    "suggest.removeDuplicateItems"         : true,
+    "codeLens.enable"                      : true,
+    "coc.preferences.rootPatterns"         : [".git", ".svn" ,".vscode"],
+    "diagnostic.checkCurrentLine"          : true,
+    "suggest.echodocSupport"               : true,
+    "signature.enable"                     : false,
+    "diagnostic.enable"                    : true,
+    "diagnostic.errorSign"                 : "",
+    "diagnostic.infoSign"                  : "",
+    "diagnostic.hintSign"                  : "",
+    "diagnostic.enableHighlightLineNumber" : false,
+
+    "git.enableGutters": false,
+
+    "suggest.completionItemKindLabels": {
+        "keyword"       : "\uf1de",
+        "variable"      : "\ue79b",
+        "value"         : "\uf89f",
+        "operator"      : "\u03a8",
+        "constructor"   : "\uf0ad",
+        "function"      : "\u0192",
+        "reference"     : "\ufa46",
+        "constant"      : "\uf8fe",
+        "method"        : "\uf09a",
+        "struct"        : "\ufb44",
+        "class"         : "\uf0e8",
+        "interface"     : "\uf417",
+        "text"          : "\ue612",
+        "enum"          : "\uf435",
+        "enumMember"    : "\uf02b",
+        "module"        : "\uf40d",
+        "color"         : "\ue22b",
+        "property"      : "\ue624",
+        "field"         : "\uf9be",
+        "unit"          : "\uf475",
+        "event"         : "\ufacd",
+        "file"          : "\uf723",
+        "folder"        : "\uf114",
+        "snippet"       : "\ue60b",
+        "typeParameter" : "\uf728",
+        "default"       : "\uf29c"
+    },
+
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".git"],
+            "trace.server": "verbose",
+            "filetypes": ["go"]
+        },
+
+        "clangd": {
+            "command": "clangd",
+            "args": ["--background-index", "--header-insertion=iwyu", "--suggest-missing-includes", "--cross-file-rename"],
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": ["compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "clangdFileStatus"     : true,
+                "usePlaceholders"      : false,
+                "completeUnimported"   : true,
+                "semanticHighlighting" : true,
+                "detailedLabel"        : false
+            }
+        },
+
+        "jedi": {
+            "command": "jedi-language-server",
+            "filetypes": ["python"],
+            "rootPatterns": ["compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+
+        "vimls": {
+            "command": "vim-language-server",
+            "args": ["--stdio"],
+            "filetypes": ["vim"]
+        },
+
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"]
+        }
+    }
+
+}
