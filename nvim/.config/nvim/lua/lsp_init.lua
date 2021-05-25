@@ -19,6 +19,7 @@
 -- Notes
 -- Python LSP -> use jedi_language_server
 -- $ pip3 install -U -user jedi_language_server
+-- Python pyright -> $ npm i -g pyright
 --
 -- C/C++ -> Using CCLS
 -- $ sudo apt get install ccls libtinfo5
@@ -28,6 +29,7 @@
 
 local lspconfig  = require'lspconfig'
 -- local diagnostic = require'diagnostic'
+-- local lsp_status = require'lsp-status'
 -- local ncm2       = require('ncm2')
 -- local configs    = require 'lspconfig/configs'
 -- local util       = require 'lspconfig/util'
@@ -41,42 +43,59 @@ vim.o.pumheight   = 10
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text     = true,
+    underline        = false,
+    signs            = true,
+    update_in_insert = false,
+}
+)
 
 local on_attach = function(_, bufnr)
-  -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- don't enable omnifunc for nvim-compe plugin
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- require'lsp_signature'.on_attach()
+  -- lsp_status.register_progress()
 
 -- lspkind config
 require('lspkind').init({
   with_text  = false,
   symbol_map = {
-    Text        = 'ﮜ',
-    Method      = '',
-    Function    = '',
-    Constructor = '',
-    Variable    = '',
-    Class       = '',
-    Interface   = '',
-    Module      = '',
-    Operator    = '',
-    Property    = '',
-    Unit        = '',
-    Value       = '',
-    Enum        = '',
-    Keyword     = '',
-    Snippet     = '﬌',
-    Color       = '',
-    File        = '',
-    Folder      = '',
-    EnumMember  = '',
-    Constant    = '',
-    Struct      = '',
-    Field       = 'ﰠ',
-    Type        = '⌂',
+      Text          = ' [text]',
+      Method        = ' [method]',
+      Function      = ' [function]',
+      Constructor   = ' [constructor]',
+      Field         = 'ﰠ [field]',
+      Variable      = '𝒙 [Variable]',
+      Class         = ' [class]',
+      Interface     = ' [interface]',
+      Module        = ' [module]',
+      Property      = ' [property]',
+      Unit          = ' [unit]',
+      Value         = ' [value]',
+      Enum          = ' [enum]',
+      Keyword       = ' [key]',
+      Snippet       = '﬌ [snippet]',
+      Color         = ' [color]',
+      File          = ' [file]',
+      Reference     = ' [reference]',
+      Folder        = ' [folder]',
+      EnumMember    = ' [enumMember]',
+      Constant      = ' [constant]',
+      Struct        = ' [struct]',
+      Event         = ' [event]',
+      Operator      = ' [operator]',
+      TypeParameter = ' [typeParameter]',
   },
 })
 
@@ -85,21 +104,14 @@ require('lspkind').init({
   local opts = { noremap=true, silent=true  }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<C-p>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '<C-n>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>rr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-
 end
 
 local servers = {'jedi_language_server','bashls', 'vimls'}
@@ -120,6 +132,7 @@ lspconfig.gopls.setup {
   init_options = {
      usePlaceholders         = true,
      completionDocumentation = true,
+     completeUnimported      = true,
   },
 }
 
@@ -215,6 +228,18 @@ require('lspconfig').sumneko_lua.setup({
   },
   on_attach = on_attach
 })
+
+vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
+
+-- borders for floating windows
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})
+-- vim.lsp.handlers["textDocument/declaration"] = vim.lsp.with(vim.lsp.handlers.declaration, {border = "single"})
+-- vim.lsp.handlers["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.definition, {border = "single"})
+
 
 vim.api.nvim_command('echomsg "NeoViM LSP Client configured!"')
 
