@@ -34,7 +34,7 @@ let g:colors_name = "darktheme"
 
 hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#bbbbbb   guibg=#181B28   gui=NONE
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#152030   gui=NONE
-hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#201f23   gui=NONE
+hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#181B28   gui=NONE
 " hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#435068   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#052460   gui=NONE
@@ -62,7 +62,7 @@ hi ErrorMsg     ctermfg=7       ctermbg=212     cterm=NONE              guifg=#f
 hi WarningMsg   ctermfg=162     ctermbg=212     cterm=NONE              guifg=#fccc82   guibg=#303030   gui=NONE
 hi Float        ctermfg=141     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
 hi Function     ctermfg=61      ctermbg=NONE    cterm=NONE              guifg=#1BB1E7   guibg=NONE      gui=NONE
-hi Identifier   ctermfg=246     ctermbg=NONE    cterm=NONE              guifg=#0097a7   guibg=NONE      gui=NONE
+hi Identifier   ctermfg=246     ctermbg=NONE    cterm=NONE              guifg=#00a3cc   guibg=NONE      gui=NONE
 hi Keyword      ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6272a4   guibg=NONE      gui=NONE
 hi Label        ctermfg=132     ctermbg=NONE    cterm=NONE              guifg=#698bb8   guibg=NONE      gui=NONE
 hi NonText      ctermfg=244     ctermbg=NONE    cterm=NONE              guifg=#525563   guibg=NONE      gui=NONE
@@ -115,12 +115,12 @@ hi cCharacter           ctermfg=7       ctermbg=NONE    cterm=NONE      guifg=#b
 hi cLogicalOperator     ctermfg=93      ctermbg=NONE    cterm=NONE      guifg=#6089b7   guibg=NONE      gui=NONE
 hi cPointerOperator     ctermfg=60      ctermbg=NONE    cterm=NONE      guifg=#6089b7   guibg=NONE      gui=NONE
 hi cStorageClass        ctermfg=66      ctermbg=NONE    cterm=NONE      guifg=#a580ff   guibg=NONE      gui=NONE
-hi cStructure           ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#ad5d60   guibg=NONE      gui=italic
-hi cType                ctermfg=25      ctermbg=NONE    cterm=italic    guifg=#AA4499   guibg=NONE      gui=italic
+hi cStructure           ctermfg=132     ctermbg=NONE    cterm=NONE      guifg=#00a3cc   guibg=NONE      gui=italic
+hi cType                ctermfg=25      ctermbg=NONE    cterm=italic    guifg=#ce6f8f   guibg=NONE      gui=italic
 hi cConstant            ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#ac547e   guibg=NONE      gui=italic
 hi cFormat              ctermfg=96      ctermbg=NONE    cterm=NONE      guifg=#458b74   guibg=NONE      gui=NONE
 hi cStatement           ctermfg=25      ctermbg=NONE    cterm=NONE      guifg=#bd74d2   guibg=NONE      gui=NONE
-hi cUserFunction        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#bbbbbb   guibg=NONE      gui=NONE
+" hi cUserFunction        ctermfg=7       ctermbg=233     cterm=NONE      guifg=#bbbbbb   guibg=NONE      gui=NONE
 hi cFunctionTag         ctermfg=7       ctermbg=233     cterm=NONE      guifg=#ac547e   guibg=NONE      gui=NONE
 hi cFloat               ctermfg=180     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c   guibg=NONE      gui=NONE
 hi cOctalZero           ctermfg=180     ctermbg=NONE    cterm=NONE      guifg=#f1fa8c   guibg=NONE      gui=NONE
@@ -240,8 +240,8 @@ hi TelescopePromptPrefix       ctermfg=NONE    ctermbg=NONE    cterm=NONE      g
 
 " vim-clap {{{
 hi ClapInput                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=#314457   gui=NONE
-hi ClapDisplay                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#2a456e   gui=NONE
-hi ClapPreview                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#909090   guibg=#2a456e   gui=NONE
+hi ClapDisplay                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#314457   gui=NONE
+hi ClapPreview                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#909090   guibg=#314457   gui=NONE
 hi ClapMatches                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=bold,underline,italic
 hi ClapMatches1                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=NONE      gui=NONE
 hi ClapMatches2                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00BEFF   guibg=NONE      gui=bold
@@ -267,7 +267,7 @@ hi ClapSelected                 ctermfg=NONE    ctermbg=NONE    cterm=NONE   gui
 hi ClapCurrentSelected          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=#356088   gui=NONE
 hi ClapCurrentSelection         ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#F7CAB8   guibg=#356088   gui=NONE
 hi ClapSelectedSign             ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#DDCC77   guibg=NONE      gui=NONE
-hi ClapCurrentSelectedSign      ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#2BBAEF   guibg=NONE      gui=NONE
+hi ClapCurrentSelectedSign      ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#ec5f67   guibg=NONE      gui=NONE
 hi ClapDefaultCurrentSelection  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=NONE      gui=NONE
 hi ClapQuery                    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#c0c0c0   guibg=NONE      gui=NONE
 hi ClapSpinner                  ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FF9933   guibg=#314457   gui=NONE
@@ -279,14 +279,18 @@ hi ClapColumn               ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#
 hi ClapLinNrColumn          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#2BBAEF   guibg=NONE   gui=NONE
 " }}}
 
+" coc.nvim {{{
+hi  CocFloating     ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#CCCCCC   guibg=#232F3E   gui=NONE
+" }}}
+
 " nvim-ts-rainbow {{{
-hi rainbowcol1          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#4473C5   guibg=NONE   gui=bold
+hi rainbowcol1          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#6699cc   guibg=NONE   gui=bold
 hi rainbowcol2          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#E0AF8F   guibg=NONE   gui=bold
-hi rainbowcol3          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#FC0697   guibg=NONE   gui=bold
-hi rainbowcol4          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#4d708c   guibg=NONE   gui=bold
-hi rainbowcol5          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#28a745   guibg=NONE   gui=bold
-hi rainbowcol6          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#8040B0   guibg=NONE   gui=bold
-hi rainbowcol7          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#BB3E79   guibg=NONE   gui=bold
+hi rainbowcol3          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#DC0687   guibg=NONE   gui=bold
+hi rainbowcol4          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#8E44BD   guibg=NONE   gui=bold
+hi rainbowcol5          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#0D9775   guibg=NONE   gui=bold
+hi rainbowcol6          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#F28B82   guibg=NONE   gui=bold
+hi rainbowcol7          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#AE8A7E   guibg=NONE   gui=bold
 " }}}
 
 " tagbar {{{
@@ -651,5 +655,5 @@ hi markdownUrlTitleDelimiter  ctermfg=84      ctermbg=NONE    cterm=NONE guifg=#
 "      TERM=xterm-256color
 "      export $TERM
 
-execute "set background=dark"
+" execute "set background=dark"
 "-------------------
