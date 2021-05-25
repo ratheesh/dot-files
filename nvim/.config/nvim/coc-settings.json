@@ -1,18 +1,19 @@
 {
-    "suggest.enablePreview"                : true,
+    "suggest.enablePreview"                : false,
+    "suggest.detailField"                  : "preview",
     "suggest.removeDuplicateItems"         : true,
+    "suggest.detailMaxLength"              : 50,
     "codeLens.enable"                      : true,
     "coc.preferences.rootPatterns"         : [".git", ".svn" ,".vscode"],
-    "diagnostic.checkCurrentLine"          : true,
-    "suggest.echodocSupport"               : true,
-    "signature.enable"                     : false,
+    "diagnostic.checkCurrentLine"          : false,
+    "suggest.echodocSupport"               : false,
+    "signature.enable"                     : true,
     "diagnostic.enable"                    : true,
     "diagnostic.errorSign"                 : "",
     "diagnostic.infoSign"                  : "",
     "diagnostic.hintSign"                  : "",
     "diagnostic.enableHighlightLineNumber" : false,
-
-    "git.enableGutters": false,
+    "git.enableGutters"                    : false,
 
     "suggest.completionItemKindLabels": {
         "keyword"       : "\uf1de",
@@ -48,19 +49,24 @@
             "command": "gopls",
             "rootPatterns": ["go.mod", ".git"],
             "trace.server": "verbose",
-            "filetypes": ["go"]
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "usePlaceholders"      : true,
+                "completeUnimported"   : true
+            }
         },
 
         "clangd": {
             "command": "clangd",
-            "args": ["--background-index", "--header-insertion=iwyu", "--suggest-missing-includes", "--cross-file-rename"],
+            "args": ["--background-index", "--header-insertion=iwyu", "--suggest-missing-includes", "--all-scopes-completion",
+				"--cross-file-rename"],
             "filetypes": ["c", "cpp", "objc", "objcpp"],
-            "rootPatterns": ["compile_commands.json", ".git/", ".hg/"],
+            "rootPatterns": ["compile_commands.json", ".git/", ".hg/", ".svn"],
             "initializationOptions": {
-                "clangdFileStatus"     : true,
+                "clangdFileStatus"     : false,
                 "usePlaceholders"      : false,
-                "completeUnimported"   : true,
-                "semanticHighlighting" : true,
+                "completeUnimported"   : false,
+                "semanticHighlighting" : false,
                 "detailedLabel"        : false
             }
         },
@@ -88,5 +94,4 @@
             "filetypes": ["sh"]
         }
     }
-
 }
