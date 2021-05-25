@@ -15,19 +15,23 @@
 
 -- nvim-compe settings
 
+vim.cmd [[set shortmess+=c]]
+
 require'compe'.setup {
-  enabled          = true;
-  autocomplete     = true;
-  debug            = false;
-  min_length       = 2;
-  preselect        = 'disable';
-  throttle_time    = 80;
-  source_timeout   = 200;
-  incomplete_delay = 400;
-  max_abbr_width   = 100;
-  max_kind_width   = 100;
-  max_menu_width   = 100;
-  documentation    = true;
+  enabled              = true;
+  autocomplete         = true;
+  debug                = false;
+  omni                 = false;
+  min_length           = 1;
+  preselect            = 'enable';
+  allow_prefix_unmatch = false;
+  throttle_time        = 80;
+  source_timeout       = 200;
+  incomplete_delay     = 400;
+  max_abbr_width       = 100;
+  max_kind_width       = 100;
+  max_menu_width       = 100;
+  documentation        = true;
 
   source = {
     ultisnips     = {priority = 50};
@@ -40,6 +44,7 @@ require'compe'.setup {
     nvim_lua      = {priority = 43};
     treesitter    = true;
     vsnip         = false;
+    tmux          = true;
     snippets_nvim = false;
   };
 }
