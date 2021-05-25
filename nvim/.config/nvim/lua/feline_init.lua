@@ -3,6 +3,8 @@
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
 
+-- local components = require('feline.presets')[default].components
+-- local properties = require('feline.presets')[default].properties
 -- local is_project_valid = false
 
 local function is_project_valid()
@@ -33,9 +35,9 @@ local colors = {
   bmagenta  = '#d3869b',
   cyan      = '#729FCF',
   bcyan     = '#47A4A5',
-  white     = '#cccccc',
+  white     = '#EEEEEE',
   bwhite    = '#ebdbb2',
-  projbg    = "#89B7B5",
+  projbg    = "#c1c3cc",
   projfg    = "#000000",
   cream     = '#EFEAD8',
 
@@ -52,7 +54,8 @@ local colors = {
   curfn_fg    = '#FDC46D',
   ftbg        = '#B6919E',
   ftbg1       = '#8F7C76',
-  projbg1     = '#337AB7',
+  projfg1     = '#F7CAB8',
+  projbg1     = '#0087AF',
   pathbg1     = '#7C32C8',
   pathbg2     = '#9f369f',
   modifiedfg  = '#5CD96F',
@@ -174,8 +177,8 @@ table.insert(components.left.active, {
 table.insert(components.left.active, {
   provider = function() return string.format('%s', vim.call('utils#getprojectname')) end,
   hl = {
-    fg = colors.black,
-    bg = colors.projbg,
+    fg = colors.white,
+    bg = colors.projbg1,
   },
   enabled = is_project_valid,
   -- right_sep = '',
@@ -188,7 +191,7 @@ table.insert(components.left.active, {
   hl = function()
     local val = {}
     val.name = 'project_right_sep'
-    val.fg = colors.projbg
+    val.fg = colors.projbg1
     if is_project_valid() == true then val.bg = colors.bgrey else val.bg = colors.black end
     return val
   end,
@@ -280,29 +283,14 @@ table.insert(components.right.active, {
 })
 
 table.insert(components.right.active, {
-  -- provider = 'lsp_client_names',
-  provider = function()
-    local msg = ''
-    msg = msg or 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0,'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-
-    for _,client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes,buf_ft) ~= -1 then
-        return string.format('  %s ',client.name)
-      end
-    end
-    return msg
-  end,
-
+  provider = 'lsp_client_names',
   hl = {
     fg = colors.cream,
     bg = colors.black,
-  }
+  },
+    left_sep = {
+      str = '█',
+    },
 })
 
 table.insert(components.right.active, {
