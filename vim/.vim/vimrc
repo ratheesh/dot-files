@@ -30,7 +30,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         execute "q!"
     endif
   silent execute "!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | q | echom "Installed new Plugins"
 endif
 
 " disable shallow cloning
@@ -40,6 +40,7 @@ let g:plug_shallow=0
 " Plugins {{{
 call plug#begin('$HOME/.vim/plugged')
 
+" Plug 'famiu/nvim-reload'
 Plug 'junegunn/fzf', {'branch': 'master' ,'dir': '$HOME/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
 Plug 'mhinz/vim-startify'
@@ -50,7 +51,7 @@ Plug 'tpope/vim-fugitive'
 Plug 't9md/vim-textmanip'
 " Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'psliwka/vim-smoothie'
-" Plug 'karb94/neoscroll.nvim'
+Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
@@ -74,14 +75,15 @@ Plug 'romgrk/barbar.nvim'
 " Plug 'delphinus/vim-auto-cursorline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
-Plug 'MaxMEllon/vim-shiny'
+" Plug 'MaxMEllon/vim-shiny'
+Plug 'inside/vim-search-pulse'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
 Plug 'machakann/vim-sandwich'
-Plug 'ckarnell/Antonys-macro-repeater'
+" Plug 'ckarnell/Antonys-macro-repeater'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
-Plug 'cometsong/CommentFrame.vim'
+" Plug 'cometsong/CommentFrame.vim'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'tweekmonster/wstrip.vim'
 " Plug 'axelf4/vim-strip-trailing-whitespace'
@@ -89,8 +91,8 @@ Plug 'terryma/vim-expand-region'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
-Plug 'cohama/lexima.vim'
-" Plug 'jiangmiao/auto-pairs'
+" Plug 'cohama/lexima.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 " Plug 'rhysd/endwize.vim'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
@@ -119,28 +121,28 @@ Plug 'andymass/vim-matchup'
 
 Plug 'kana/vim-submode'
 " Custom text objects related
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-function'
-Plug 'rhysd/vim-textobj-anyblock'
-Plug 'FooSoft/vim-argwrap'
-Plug 'augustold/vim-custom-surround'
-Plug 'kana/vim-textobj-line'
-Plug 'junegunn/vim-after-object'
+" Plug 'kana/vim-textobj-user'
+" Plug 'kana/vim-operator-user'
+" Plug 'kana/vim-textobj-function'
+" Plug 'rhysd/vim-textobj-anyblock'
+" Plug 'FooSoft/vim-argwrap'
+" Plug 'augustold/vim-custom-surround'
+" Plug 'kana/vim-textobj-line'
+" Plug 'junegunn/vim-after-object'
 " Plug 'glts/vim-textobj-comment'
-Plug 'machakann/vim-swap' " to swap args
-Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
+" Plug 'machakann/vim-swap' " to swap args
+" Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
 Plug 'tommcdo/vim-exchange' " exchange regions
 Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'haya14busa/vim-operator-flashy'
-Plug 'idbrii/textobj-word-column.vim'
+" Plug 'haya14busa/vim-operator-flashy'
+" Plug 'idbrii/textobj-word-column.vim'
 
 " writing prose
-Plug 'reedes/vim-pencil'
-Plug 'reedes/vim-colors-pencil'
-Plug 'reedes/vim-textobj-sentence'
-Plug 'reedes/vim-lexical'
-Plug 'reedes/vim-textobj-quote'
+" Plug 'reedes/vim-pencil'
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'reedes/vim-textobj-sentence'
+" Plug 'reedes/vim-lexical'
+" Plug 'reedes/vim-textobj-quote'
 " Plug 'beloglazov/vim-online-thesaurus'
 
 " Plug 'autozimu/LanguageClient-neovim', {
@@ -150,14 +152,15 @@ Plug 'reedes/vim-textobj-quote'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romgrk/nvim-treesitter-context'
+Plug 'haringsrob/nvim_context_vt'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'nvim-treesitter/completion-treesitter'
-" Plug 'onsails/lspkind-nvim'
+Plug 'nvim-treesitter/completion-treesitter'
+Plug 'onsails/lspkind-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 " Plug 'romgrk/searchReplace.vim'
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
-" Plug 'nvim-lua/diagnostic-nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
+Plug 'nvim-lua/diagnostic-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 " Plug 'ray-x/lsp_signature.nvim'
 Plug 'sumneko/lua-language-server'
@@ -168,12 +171,16 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
 
+Plug 'TimUntersberger/neogit'
+
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'steelsojka/completion-buffers'
 " Plug 'nvim-treesitter/completion-treesitter'
 " Plug 'albertoCaroM/completion-tmux'
-" Plug 'hrsh7th/nvim-compe'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'hrsh7th/nvim-compe'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --frozen-lockfile'}
 
 Plug 'wellle/tmux-complete.vim'
 " Plug 'wellle/targets.vim'
@@ -183,7 +190,7 @@ Plug 'Shougo/echodoc.vim'
 if has('nvim')
     " Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
-    Plug 'ncm2/float-preview.nvim',      { 'do': ':UpdateRemotePlugins' }
+    " Plug 'ncm2/float-preview.nvim',      { 'do': ':UpdateRemotePlugins' }
 else
     " Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/denite.nvim'
@@ -221,7 +228,7 @@ Plug 'honza/vim-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Run $ go get -u github.com/stamblerre/gocode for below plugin to work properly
-" Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Under testing plugins
@@ -884,8 +891,8 @@ lua require ("feline_init")
 nnoremap <silent><C-s> :BufferPick<CR>
 
 " Sort automatically by...
-" nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-" nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+" nnoremap <silent> <Leader>bd :BufferOrderByDirectory<CR>
+" nnoremap <silent> <Leader>bl :BufferOrderByLanguage<CR>
 
 " Move to previous/next
 nnoremap <silent><Leader>h :BufferPrevious<CR>
@@ -1328,26 +1335,26 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 " }}}
 
 " neovim_lspconfig {{{
-" lua require("lsp_init")
+lua require("lsp_init")
 " }}}
 
 " lspsaga.nvim {{{
-" lua require("lspsaga_init")
+lua require("lspsaga_init")
 " nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 
-" nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-" vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 
-" nnoremap <silent>K :Lspsaga hover_doc<CR>
-" nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
-" nnoremap <silent><leader>gs :Lspsaga signature_help<CR>
-" nnoremap <silent><leader>gr :Lspsaga rename<CR>
-" nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>gs :Lspsaga signature_help<CR>
+nnoremap <silent><leader>gr :Lspsaga rename<CR>
+nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>
 " }}}
 
-" nvim-ts-rainbow {{{
+" nvim-treesitter {{{
 lua << EOF
 require'nvim-treesitter.configs'.setup {
 ensure_installed = {
@@ -1360,34 +1367,115 @@ ensure_installed = {
   "python",
 },
 
-highlight = {
-  enable = true,
-  use_languagetree = true
+highlight = {enable = false, use_languagetree = true},
+indent = {enable = true},
+autopairs = {enable = true},
+incremental_selection = {
+   enable = true,
+   keymaps = {
+       -- init_selection = ";nn",
+       -- node_incremental = ";rn",
+       -- scope_incremental = ";rc",
+       -- node_decremental = ";rm"
+   }
 },
 
-rainbow = {
-    enable = true
-  }
-}
-EOF
-" }}}
-
-" treesitter {{{
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = fase,
+textobjects = {
+  select = {
+    enable = true,
+    keymaps = {
+      ["af"] = "@function.outer",
+      ["if"] = "@function.inner",
+      ["aC"] = "@class.outer",
+      ["iC"] = "@class.inner",
+      ['ac'] = '@conditional.outer',
+      ['ic'] = '@conditional.inner',
+      ['ae'] = '@block.outer',
+      ['ie'] = '@block.inner',
+      ['al'] = '@loop.outer',
+      ['il'] = '@loop.inner',
+      ['is'] = '@statement.inner',
+      ['as'] = '@statement.outer',
+      ['ad'] = '@comment.outer',
+      ['id'] = '@comment.inner',
+      ['am'] = '@call.outer',
+      ['im'] = '@call.inner',
+      ["iF"] = {
+        supercollider = "(function_definition) @function",
+        cpp = "(function_definition) @function",
+        c = "(function_definition) @function"
+      }
+    }
   },
 
-  indent = {
-    enable = true
+move = {
+  enable = true,
+  set_jumps = false,
+  goto_next_start = {
+      ["]n"] = "@function.outer",
+      ["]="] = "@class.outer",
+      ["]i"] = "@function.inner",
+      ["<Down>"] = "@block.outer",
+      ["<Right>"] = "@block.inner"
+  },
+  goto_next_end = {
+      ["]N"] = "@function.outer",
+      -- ["]="] = "@class.outer",
+      ["]I"] = "@function.inner"
+  },
+  goto_previous_start = {
+      ["[n"] = "@function.outer",
+      ["[="] = "@class.outer",
+      ["[i"] = "@function.inner",
+      ["<Up>"] = "@block.outer",
+      ["<Left>"] = "@block.inner"
+  },
+  goto_previous_end = {
+      ["[N"] = "@function.outer",
+      -- ["[="] = "@class.outer",
+      ["[I"] = "@function.inner"
   }
+},
+swap = {
+  enable = true,
+  swap_next = {
+      -- [";ss"] = "@statement.outer",
+      -- [";sp"] = "@parameter.inner",
+      -- [";sF"] = "@function.inner",
+      -- [";sf"] = "@function.outer",
+      -- [";sc"] = "@conditional.outer",
+      -- [";sl"] = "@loop.outer",
+      -- [";so"] = "@comment.outer",
+      -- [";sa"] = "@call.outer"
+  },
+  swap_previous = {
+      -- [";Ss"] = "@statement.outer",
+      -- [";Sp"] = "@parameter.inner",
+      -- [";SF"] = "@function.inner",
+      -- [";Sf"] = "@function.outer",
+      -- [";Sc"] = "@conditional.outer",
+      -- [";Sl"] = "@loop.outer",
+      -- [";So"] = "@comment.outer",
+      -- [";Sa"] = "@call.outer"
+  }
+},
+
+lsp_interop = {
+    -- enable = true,
+    -- peek_definition_code = {[";pf"] = "@function.outer", [";pF"] = "@class.outer"}
+}
+},
+playground = {enable = true, disable = {}, updatetime = 25, persist_queries = false},
+query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = {"BufWrite", "CursorHold"}
+},
+rainbow = {enable = true},
+extended_mode = true
+
 }
 EOF
-" }}}
-
-" treesitter-textobjects {{{
-" lua require("treesitter-textobjs_init")
 " }}}
 
 " lsp_signature.nvim {{{
@@ -1410,49 +1498,65 @@ nnoremap <Leader>fr <cmd>lua require'telescope.builtin'.oldfiles{}<cr>
 nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 
 " LSP related commands
-nnoremap <Leader>lr <cmd>Telescope lsp_references<cr>
-nnoremap <Leader>la <cmd>Telescope lsp_code_actions<cr>
-nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
-nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
+" nnormap <Leader>lr <cmd>Telescope lsp_references<cr>
+" nnoremap <Leader>la <cmd>Telescope lsp_code_actions<cr>
+" nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
+" nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
 " nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
 " nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
 " }}}
 
-" compe {{{
-" lua require("nvim-compe_init")
+" neogit {{{
+lua << EOF
+local neogit = require('neogit')
+neogit.setup {}
+EOF
+" }}}
 
-" inoremap <silent><expr> <C-Space> compe#complete()
-" " inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-" " inoremap <silent><expr> <BS>      <BS>compe#complete()
-" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4  })
-" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
+" compe {{{
+lua require("nvim-compe_init")
+
+inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+" inoremap <silent><expr> <BS>      <BS>compe#complete()
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4  })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
 " }}}
 
 " coc.nvim {{{
-set pumheight=12
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tag', 'coc-omni', 'coc-syntax', 'coc-ultisnips']
+" set pumheight=12
+" " Use tab for trigger completion with characters ahead and navigate.
+" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" " other plugin before putting this into your config.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" 
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" 
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+" 
+" " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" 
+" if exists('*complete_info')
+"     " inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
+" endif
+" 
+" " use <c-space>for trigger completion
+" inoremap <silent><expr><C-Space> coc#refresh()
+" 
+" " Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+" 
+" " Symbol renaming.
+" nmap <leader>rn <Plug>(coc-rename)
+" 
+" let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tag', 'coc-omni', 'coc-syntax', 'coc-ultisnips']
 " }}}
 
 " deoplete {{{
@@ -1731,10 +1835,10 @@ let g:highlightedyank_highlight_duration=200
 " }}}
 
 " vim-shiny {{{
-nmap p  <Plug>(shiny-p)
-nmap P  <Plug>(shiny-P)
-nmap gp <Plug>(shiny-gp)
-nmap gP <Plug>(shiny-gP)
+" nmap p  <Plug>(shiny-p)
+" nmap P  <Plug>(shiny-P)
+" nmap gp <Plug>(shiny-gp)
+" nmap gP <Plug>(shiny-gP)
 " }}}
 
 " nerd-commentar {{{
@@ -1806,9 +1910,9 @@ let g:indent_blankline_strict_tabs = 1
 " let g:indent_blankline_extra_indent_level = -1
 let g:indent_blankline_show_trailing_blankline_indent = v:false
 let g:indent_blankline_show_first_indent_level = v:false
-let g:indentLine_fileTypeExclude = ['help', 'chadtre', 'startify', 'fzf', 'tagbar']
+let g:indentLine_fileTypeExclude = ['help', 'chadtre', 'startify','dashboard', 'fzf', 'tagbar']
 
-" let g:indent_blankline_use_treesitter       = v:true
+let g:indent_blankline_use_treesitter       = v:true
 let g:indent_blankline_show_current_context = v:true
 let g:indent_blankline_context_highlight    = 'BlankLineContext'
 let g:indent_blankline_context_patterns     = ['class', 'function', 'method', 'if', 'while', 'for', 'do', 'switch']
@@ -1857,16 +1961,16 @@ let g:sandwich#recipes += [
 " }}}
 
 " vim-pencil {{{
-let g:pencil#autoformat      = 0     " 0 = disable, 1 = enable (def)
-let g:pencil#textwidth       = 80
-let g:pencil#cursorwrap      = 0     " 0 = disable, 1 = enable (def)
-let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
+" let g:pencil#autoformat      = 0     " 0 = disable, 1 = enable (def)
+" let g:pencil#textwidth       = 80
+" let g:pencil#cursorwrap      = 0     " 0 = disable, 1 = enable (def)
+" let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
 
-augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init({'wrap': 'hard'})
-    autocmd FileType text call pencil#init({'wrap': 'hard'})
-augroup END
+" augroup pencil
+"     autocmd!
+"     autocmd FileType markdown,mkd call pencil#init({'wrap': 'hard'})
+"     autocmd FileType text call pencil#init({'wrap': 'hard'})
+" augroup END
 
 " manual reformatting shortcuts
 nnoremap Q gqap<CR>
@@ -1875,24 +1979,24 @@ nnoremap <silent><leader>Q vapJgqap<CR>
 " }}}
 
 " vim-textobj-quote {{{
-augroup textobj_quote
-    autocmd!
-    autocmd FileType markdown call textobj#quote#init()
-    autocmd FileType textile call textobj#quote#init()
-    autocmd FileType text call textobj#quote#init({'educate': 0})
-augroup END
+" augroup textobj_quote
+"     autocmd!
+"     autocmd FileType markdown call textobj#quote#init()
+"     autocmd FileType textile call textobj#quote#init()
+"     autocmd FileType text call textobj#quote#init({'educate': 0})
+" augroup END
 " }}}
 
 " vim-argumentative {{{
 let g:argumentative_no_mappings=1
 
 " custom mappings
-nmap <a <Plug>Argumentative_MoveLeft
-nmap >a <Plug>Argumentative_MoveRight
-xmap ia <Plug>Argumentative_InnerTextObject
-xmap aa <Plug>Argumentative_OuterTextObject
-omap ia <Plug>Argumentative_OpPendingInnerTextObject
-omap aa <Plug>Argumentative_OpPendingOuterTextObject
+" nmap <a <Plug>Argumentative_MoveLeft
+" nmap >a <Plug>Argumentative_MoveRight
+" xmap ia <Plug>Argumentative_InnerTextObject
+" xmap aa <Plug>Argumentative_OuterTextObject
+" omap ia <Plug>Argumentative_OpPendingInnerTextObject
+" omap aa <Plug>Argumentative_OpPendingOuterTextObject
 " }}}
 
 " vim-easy-align {{{
@@ -2003,7 +2107,7 @@ if has('nvim')
           \   'select_accent'   : s:select_acc_hl,
           \ },
           \ 'apply_highlights' : wilder#query_common_subsequence_spans(),
-          \ 'separator'        : ' • ',
+          \ 'separator'        : ' ✦ ',
           \ 'separator_hl'     : s:sep_hl,
           \ 'hl'               : s:status_hl,
           \ 'ellipsis'         : '...',
@@ -2030,12 +2134,12 @@ let g:submode_keyseqs_to_leave    = ['<Esc>']
 let g:submode_timeout             = 0
 
 " Submode for Gitgutter plugin -> navigate next/prev hunk using j/k keys
-call submode#enter_with('git-gutter', 'n', 'r', '<leader>gn', '<cmd>lua require"gitsigns".next_hunk()<CR>')
-call submode#enter_with('git-gutter', 'n', 'r', '<leader>gp', '<cmd>lua require"gitsigns".prev_hunk()<CR>')
-call submode#leave_with('git-gutter', 'n', '', '<Esc>')
-call submode#map('git-gutter', 'n', 'r', 'j', '<cmd>lua require"gitsigns".next_hunk()<CR>')
-call submode#map('git-gutter', 'n', 'r', 'k', '<cmd>lua require"gitsigns".prev_hunk()<CR>')
-call submode#map('git-gutter', 'n', 'r', '.', '.')
+call submode#enter_with('git-signs', 'n', 'r', '<leader>gn', '<cmd>lua require"gitsigns".next_hunk()<CR>')
+call submode#enter_with('git-signs', 'n', 'r', '<leader>gp', '<cmd>lua require"gitsigns".prev_hunk()<CR>')
+call submode#leave_with('git-signs', 'n', '', '<Esc>')
+call submode#map('git-signs', 'n', 'r', 'j', '<cmd>lua require"gitsigns".next_hunk()<CR>')
+call submode#map('git-signs', 'n', 'r', 'k', '<cmd>lua require"gitsigns".prev_hunk()<CR>')
+call submode#map('git-signs', 'n', 'r', '.', '.')
 
 " Submode for undo/redo with g-/+ -> use -/= to undo and redo
 call submode#enter_with('undo/redo', 'n', '', 'g-', 'g-')
@@ -2074,13 +2178,30 @@ call submode#map('marks', 'n', 'r', 'k', '[`')
 let g:vim_textobj_parameter_mapping = 'a'
 " }}}
 
+" vim-search-pulse {{{
+let g:vim_search_pulse_mode = 'pattern'
+let g:vim_search_pulse_disable_auto_mappings = 1
+nmap n <Plug>(anzu-n-with-echo)<Plug>Pulse
+nmap N <Plug>(anzu-N-with-echo)<Plug>Pulse
+nmap * <Plug>(anzu-star-with-echo)<Plug>Pulse
+nmap # <Plug>(anzu-sharp-with-echo)<Plug>Pulse
+" Pulses cursor line on first match
+" " when doing search with / or ?
+cmap <silent> <expr> <enter> search_pulse#PulseFirst()"
+
+" Pulses the first match after hitting the enter keyan
+autocmd! User IncSearchExecute
+autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+" }}}
+
 " vim-peekaboo {{{
 let g:peekaboo_window='vert bo 60new'
 " }}}
 
 " nvim-visual-eof {{{
 lua << EOF
-    require'visual-eof'.setup()
+  require'visual-eof'.setup()
 EOF
 " }}}
 
