@@ -69,7 +69,8 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'datwaft/bubbly.nvim', { 'branch' : 'custom' }
 " Plug 'glepnir/galaxyline.nvim'
-Plug 'famiu/feline.nvim'
+" Plug 'famiu/feline.nvim'
+Plug 'windwp/windline.nvim'
 Plug 'romgrk/barbar.nvim'
 " Plug 'mhinz/vim-signify'
 " Plug 'delphinus/vim-auto-cursorline'
@@ -883,7 +884,11 @@ let g:bubbly_tabline = 0
 " }}}
 
 " feline.nvim {{{
-lua require ("feline_init")
+" lua require ("feline_init")
+" }}}
+
+" windline {{{
+lua require ("windline_init")
 " }}}
 
 " barbar.nvim {{{
