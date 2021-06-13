@@ -99,6 +99,19 @@ require('lspkind').init({
   },
 })
 
+  require "lsp_signature".on_attach({
+    bind            = true,
+    -- doc_lines       = 2,
+    floating_window = true,
+    hint_enable     = true,
+    hi_parameter    = "LSPSignatureCurParam",
+    hint_scheme     = "LSPSignatureHint",
+    hint_prefix     = "🐼 ",
+    handler_opts    = {
+      border = "single"
+    }
+  })
+
   -- Mappings
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local opts = { noremap=true, silent=true  }
@@ -114,7 +127,7 @@ require('lspkind').init({
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
-local servers = {'jedi_language_server','bashls', 'vimls'}
+local servers = {'gopls','jedi_language_server','bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -125,73 +138,73 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.gopls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+-- lspconfig.gopls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
 
-  init_options = {
-     usePlaceholders         = true,
-     completionDocumentation = true,
-     completeUnimported      = true,
-  },
-}
+--   init_options = {
+--      -- usePlaceholders         = false,
+--      -- completionDocumentation = false,
+--      -- completeUnimported      = false,
+--   },
+-- }
 
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  -- on_init = ncm2.register_lsp_source,
-  cmd = {
-    '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
-  };
+-- lspconfig.clangd.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   -- on_init = ncm2.register_lsp_source,
+--   cmd = {
+--     '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
+--   };
 
-  init_options = {
-    clangdFileStatus = true,
-    usePlaceholders = false,
-    completeUnimported = true,
-    semanticHighlighting = true
-  };
+--   init_options = {
+--     clangdFileStatus = true,
+--     usePlaceholders = false,
+--     completeUnimported = true,
+--     semanticHighlighting = true
+--   };
 
-  completion = {
-    placeholder   = false;
-    detailedLabel = false;
-    spellChecking = true;
-    -- filterAndSort = false;
-  };
-}
+--   completion = {
+--     placeholder   = false;
+--     detailedLabel = false;
+--     spellChecking = true;
+--     -- filterAndSort = false;
+--   };
+-- }
 
 -- placeholder option will only work in recent (after 7-Oct-2019)
--- lspconfig.ccls.setup {
---   on_attach = on_attach,
---   -- on_init = ncm2.register_lsp_source,
---   capabilities = capabilities,
---   init_options = {
---     cache = {
---       directory    = "/home/ratheesh/.ccls-cache";
---       cacheFormat  = "json",
---       rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
---       clang = {
---         extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
---         excludeArgs = {},
---       },
---     },
---     codeLens = {
---       localVariables = true;
---     },
---     client = {
---       snippetSupport = true;
---     };
---     completion = {
---       placeholder   = true;
---       detailedLabel = true;
---       spellChecking = true;
---       -- filterAndSort = false;
---     };
---     index = {
---       onChange        = true,
---       trackDependency = 1
---     },
---   }
--- }
+lspconfig.ccls.setup {
+  on_attach = on_attach,
+  -- on_init = ncm2.register_lsp_source,
+  capabilities = capabilities,
+  init_options = {
+    cache = {
+      directory    = "/home/ratheesh/.ccls-cache";
+      cacheFormat  = "json",
+      rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
+      clang = {
+        extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
+        excludeArgs = {},
+      },
+    },
+    codeLens = {
+      localVariables = true;
+    },
+    client = {
+      snippetSupport = true;
+    };
+    completion = {
+      placeholder   = true;
+      detailedLabel = false;
+      spellChecking = true;
+      -- filterAndSort = false;
+    };
+    index = {
+      onChange        = true,
+      trackDependency = 1
+    },
+  }
+}
 
 -- sumneko lua server
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
@@ -234,6 +247,14 @@ vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
 vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
 
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--   vim.lsp.diagnostic.on_publish_diagnostics, {
+--     update_in_insert = false,
+--     signs = true,
+--     virtual_text = true,
+--   }
+-- )
+
 -- borders for floating windows
 -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
 -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})
@@ -241,7 +262,7 @@ vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
 -- vim.lsp.handlers["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.definition, {border = "single"})
 
 
-vim.api.nvim_command('echomsg "NeoViM LSP Client configured!"')
+vim.api.nvim_command('echohl WarningMsg | echomsg "NeoVIM LSP Client configured!"| echohl None')
 
 -- End of File
 
