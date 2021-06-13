@@ -3,18 +3,22 @@
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
 
--- local components = require('feline.presets')[default].components
--- local properties = require('feline.presets')[default].properties
--- local is_project_valid = false
-
-local function is_project_valid()
-  local project = vim.call('utils#getprojectname')
-  if project == '' then
+local function is_gitrepo()
+    local git_dict = vim.b.gitsigns_status_dict
+    if git_dict and git_dict.head and #git_dict.head > 0 then
+        return true
+    end
     return false
-  else
-    return true
-  end
 end
+
+-- local function is_project_valid()
+--   local project = vim.call('utils#getprojectname')
+--   if project == '' then
+--     return false
+--   else
+--     return true
+--   end
+-- end
 
 
 local colors = {
@@ -28,6 +32,7 @@ local colors = {
   green1    = '#66d28e',
   grey      = '#909090',
   bgrey     = "#4c5870",
+  bgrey1    = "#595B83",
   yellow    = '#f99157',
   byellow   = '#deb974',
   bblue     = '#6cb6eb',
@@ -54,11 +59,17 @@ local colors = {
   curfn_fg    = '#FDC46D',
   ftbg        = '#B6919E',
   ftbg1       = '#8F7C76',
-  projfg1     = '#F7CAB8',
-  projbg1     = '#0087AF',
+  projfg1     = '#000000',
+  projbg1     = '#F7CAB8',
   pathbg1     = '#7C32C8',
   pathbg2     = '#9f369f',
   modifiedfg  = '#5CD96F',
+  filetypebg  = '#d3869b',
+  cursorfg    = '#eeeeee',
+  cursorbg    = '#025A60',
+  indentfg    = '#000000',
+  indentbg    = '#B3C1A9',
+  pastebg     = '#BB3E79',
 
   mode_normal  = "#d38aea",
   mode_insert  = '#4eb899',
@@ -166,8 +177,8 @@ table.insert(components.left.active, {
     end
   end,
   hl = {
-    fg = colors.black,
-    bg = colors.mode_replace,
+    fg = colors.white,
+    bg = colors.pastebg,
   },
   enabled = function() return vim.o.paste end,
   right_sep = ' ',
@@ -175,12 +186,13 @@ table.insert(components.left.active, {
 })
 
 table.insert(components.left.active, {
-  provider = function() return string.format('%s', vim.call('utils#getprojectname')) end,
+  provider = function() return string.format(' %s', vim.call('utils#getprojectname')) end,
   hl = {
-    fg = colors.white,
+    fg = colors.projfg1,
     bg = colors.projbg1,
+    style = 'italic'
   },
-  enabled = is_project_valid,
+  enabled = is_gitrepo,
   -- right_sep = '',
   left_sep = '',
 })
@@ -192,28 +204,28 @@ table.insert(components.left.active, {
     local val = {}
     val.name = 'project_right_sep'
     val.fg = colors.projbg1
-    if is_project_valid() == true then val.bg = colors.bgrey else val.bg = colors.black end
+    if is_gitrepo() == true then val.bg = colors.bgrey1 else val.bg = colors.black end
     return val
   end,
-  enabled = is_project_valid,
+  enabled = is_gitrepo,
 })
 
 table.insert(components.left.active, {
   provider = function() return string.format('') end,
-
   hl = {
-    fg = colors.bgrey,
+    fg = colors.bgrey1,
     bg = colors.black,
   },
-  enabled = function() return not is_project_valid() end,
+  enabled = function() return not is_gitrepo() end,
 })
 
 table.insert(components.left.active, {
   provider = 'file_info',
+  file_modified_icon = '✱',
   hl = {
     fg = colors.cream,
-    bg = colors.bgrey,
-    style = 'italic'
+    bg = colors.bgrey1,
+    -- style = ''
   },
 
   left_sep = '',
@@ -284,6 +296,7 @@ table.insert(components.right.active, {
 
 table.insert(components.right.active, {
   provider = 'lsp_client_names',
+  icon = '  ',
   hl = {
     fg = colors.cream,
     bg = colors.black,
@@ -301,22 +314,14 @@ table.insert(components.right.active, {
 })
 
 table.insert(components.right.active, {
-  provider = 'file_type',
+  provider = function() return string.format(" %s ", vim.bo.filetype) end,
   hl = {
-    fg = 'white',
-    bg = 'oceanblue',
+    fg = colors.black,
+    bg = colors.filetypebg,
   },
 
-  left_sep = {
-    str = '█',
-  },
-
-  right_sep = {
-    {
-      str = '█',
-    },
-    ''
-  }
+  left_sep = '',
+  right_sep = ''
 })
 
 -- table.insert(components.right.active, {
@@ -341,39 +346,44 @@ table.insert(components.right.active, {
   end,
 
   hl = {
-    fg = colors.blue,
-    bg = colors.bgrey,
+    fg = colors.indentfg,
+    bg = colors.indentbg,
   },
 })
 
 table.insert(components.right.active, {
-  provider = function()
-    return string.format('≡%d:%d', vim.fn.line('.'), vim.fn.virtcol('.'))
-  end,
-
+  provider = function() return ' ch:%02Bh| %l:%v|%p%% ' end,
   hl = {
-    fg = colors.black,
-    bg = colors.ftbg,
+    fg = colors.cursorfg,
+    bg = colors.cursorbg,
   },
-  left_sep  = '█',
-  right_sep = '█'
+  left_sep  = '',
+  right_sep = ''
 })
 
-table.insert(components.right.active, {
-  provider = 'line_percentage',
-  hl = {
-    fg = colors.yellow,
-    bg = colors.bgrey,
-  },
-  left_sep  = '█',
-  right_sep = '█'
-})
+-- table.insert(components.right.active, {
+--   provider = function() return ' %p%% ' end,
+--   hl = {
+--     fg = colors.yellow,
+--     bg = colors.bgrey1,
+--   },
+--   left_sep  = '',
+--   right_sep = ''
+-- })
+
+-- table.insert(components.right.active, {
+--   provider = 'scroll_bar',
+--   hl = {
+--     fg = colors.ftbg,
+--     bg = colors.black
+--   },
+-- })
 
 table.insert(components.right.active, {
-  provider = 'scroll_bar',
+  provider = function() return string.format('█') end,
   hl = {
-    fg = colors.ftbg,
-    bg = colors.black
+    fg = colors.dark,
+    bg = colors.dark
   },
 })
 
