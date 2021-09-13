@@ -49,34 +49,24 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-surround'
 Plug 't9md/vim-textmanip'
-" Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
 Plug 'psliwka/vim-smoothie'
 Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
 " The Rust extension will only be installed if cargo is available.
-" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
 Plug 'bootleq/vim-cycle', { 'as': 'bootleq_vim-cycle' }
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-git', { 'for':'gitcommit' }
-" Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ratheesh/git_patch_tags.vim', { 'for':'gitcommit' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/conflict-marker.vim'
-" Plug 'yamatsum/nvim-nonicons'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'datwaft/bubbly.nvim', { 'branch' : 'custom' }
-" Plug 'glepnir/galaxyline.nvim'
-" Plug 'famiu/feline.nvim'
 Plug 'windwp/windline.nvim'
 Plug 'romgrk/barbar.nvim'
-" Plug 'mhinz/vim-signify'
-" Plug 'delphinus/vim-auto-cursorline'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
-" Plug 'MaxMEllon/vim-shiny'
 Plug 'inside/vim-search-pulse'
 Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
@@ -86,25 +76,18 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
 " Plug 'cometsong/CommentFrame.vim'
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'tweekmonster/wstrip.vim'
-" Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'terryma/vim-expand-region'
 Plug 'antoyo/vim-licenses'
 Plug 'kshenoy/vim-signature'
 Plug 'ratheesh/hiPairs'
-" Plug 'cohama/lexima.vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-endwise'
-" Plug 'rhysd/endwize.vim'
+Plug 'JoseConseco/vim-case-change'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
     Plug 'IMOKURI/line-number-interval.nvim'
     Plug 'lambdalisue/suda.vim'
 endif
-Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
-" Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
-" Plug 'davidhalter/jedi-vim', {'for': 'python'}
-" Plug 'rhysd/git-messenger.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
 Plug 'junegunn/vim-peekaboo'
@@ -122,28 +105,30 @@ Plug 'andymass/vim-matchup'
 
 Plug 'kana/vim-submode'
 " Custom text objects related
-" Plug 'kana/vim-textobj-user'
-" Plug 'kana/vim-operator-user'
-" Plug 'kana/vim-textobj-function'
-" Plug 'rhysd/vim-textobj-anyblock'
-" Plug 'FooSoft/vim-argwrap'
-" Plug 'augustold/vim-custom-surround'
-" Plug 'kana/vim-textobj-line'
-" Plug 'junegunn/vim-after-object'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-function'
+Plug 'rhysd/vim-textobj-anyblock'
+Plug 'FooSoft/vim-argwrap'
+Plug 'augustold/vim-custom-surround'
+Plug 'kana/vim-textobj-line'
+Plug 'junegunn/vim-after-object'
 " Plug 'glts/vim-textobj-comment'
-" Plug 'machakann/vim-swap' " to swap args
-" Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
+Plug 'machakann/vim-swap' " to swap args
+Plug 'PeterRincker/vim-argumentative' " (c/d/v)(i/a),
 Plug 'tommcdo/vim-exchange' " exchange regions
 Plug 'vim-scripts/ReplaceWithRegister'
-" Plug 'haya14busa/vim-operator-flashy'
+Plug 'haya14busa/vim-operator-flashy'
 " Plug 'idbrii/textobj-word-column.vim'
+
+Plug 'kristijanhusak/orgmode.nvim'
 
 " writing prose
 " Plug 'reedes/vim-pencil'
 " Plug 'reedes/vim-colors-pencil'
-" Plug 'reedes/vim-textobj-sentence'
-" Plug 'reedes/vim-lexical'
-" Plug 'reedes/vim-textobj-quote'
+Plug 'reedes/vim-textobj-sentence'
+Plug 'reedes/vim-lexical'
+Plug 'reedes/vim-textobj-quote'
 " Plug 'beloglazov/vim-online-thesaurus'
 
 " Plug 'autozimu/LanguageClient-neovim', {
@@ -153,47 +138,59 @@ Plug 'vim-scripts/ReplaceWithRegister'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romgrk/nvim-treesitter-context'
-Plug 'haringsrob/nvim_context_vt'
+" Plug 'haringsrob/nvim_context_vt'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'onsails/lspkind-nvim'
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'mizlan/iswap.nvim'
 " Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
+" Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
-Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
-" Plug 'ray-x/lsp_signature.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'sumneko/lua-language-server'
+Plug 'ahmedkhalf/lsp-rooter.nvim'
+" Plug 'edluffy/specs.nvim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
-
-Plug 'TimUntersberger/neogit'
-
-" Plug 'nvim-lua/completion-nvim'
-" Plug 'steelsojka/completion-buffers'
-" Plug 'nvim-treesitter/completion-treesitter'
-" Plug 'albertoCaroM/completion-tmux'
 Plug 'hrsh7th/nvim-compe'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --frozen-lockfile'}
 
+" ddc autocompletion suite
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc-sorter_rank'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'matsui54/ddc-matcher_fuzzy'
+Plug 'Shougo/ddc-around'
+Plug 'matsui54/ddc-buffer'
+Plug 'matsui54/ddc-ultisnips'
+" Plug 'Shougo/ddc-zsh'
+Plug 'Shougo/ddc-nvim-lsp'
+Plug 'octaltree/cmp-look'
+Plug 'high-moctane/nextword'
+Plug 'high-moctane/nextword-data'
+Plug 'matsui54/ddc-dictionary'
+Plug 'Shougo/ddc.vim'
+
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':UpdateRemotePlugins'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
 Plug 'wellle/tmux-complete.vim'
 " Plug 'wellle/targets.vim'
 
 " Shougo's plugins
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/echodoc.vim'
 if has('nvim')
-    " Plug 'Shougo/deoplete.nvim',         { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
-    " Plug 'ncm2/float-preview.nvim',      { 'do': ':UpdateRemotePlugins' }
 else
-    " Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/denite.nvim'
 
     " Following are required for deoplete to work in ViM
@@ -201,36 +198,13 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-" Plug 'Shougo/neco-syntax'
-" Plug 'deoplete-plugins/deoplete-jedi'
-" Plug 'deoplete-plugins/deoplete-tag'
-" Plug 'deathlyfrantic/deoplete-spell', {'branch': 'main'}
-" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-" Plug 'Shougo/deoplete-lsp'
-
-" Assuming you're using vim-plug: https://github.com/junegunn/vim-plug
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2-match-highlight'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-tagprefix'
-" Plug 'ncm2/ncm2-go'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-ultisnips'
-" Plug 'oncomouse/ncm2-lsp'
-
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Run $ go get -u github.com/stamblerre/gocode for below plugin to work properly
 Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim/symlink.sh' }
-" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Under testing plugins
 Plug 'LumaKernel/nvim-visual-eof.lua'
@@ -267,9 +241,10 @@ set numberwidth=1
 " set whichwrap=<,>,h,l
 set whichwrap=<,>,[,]
 set showmatch
+set matchtime=0
 " set matchtime=4
 " set colorcolumn=81
-" execute "set colorcolumn=" . join(range(81,335), ',')
+execute "set colorcolumn=" . join(range(81,335), ',')
 " set columns=80
 set ruler
 set nofoldenable    " disable folding
@@ -305,7 +280,7 @@ set ttimeout
 set ttimeoutlen=0
 set wildmenu
 set fileformats=unix,dos,mac
-set virtualedit=block
+" set virtualedit=block
 
 " What to save for views:
 set viewoptions-=options
@@ -828,32 +803,6 @@ let g:cycle_default_groups = [
             \ ]
 " }}}
 
-" python-mode {{{
-" let g:pymode_python            = 'python2'
-" let g:pymode_python              = 'python'
-let g:pymode_options             = 0
-let g:pymode_options_colorcolumn = 1
-let g:pymode_virtualenv          = 1
-let g:pymode_indent              = 0
-let g:pymode_rope                = 0
-let g:pymode_lint                = 1
-let g:pymode_lint_cwindow        = 0
-let g:pymode_lint_signs          = 0
-let g:pymode_syntax_space_errors = 0
-let g:pymode_trim_whitespaces    = 0
-let g:pymode_debug               = 0
-let g:pymode_rope                = 0
-let g:pydoc_perform_mappings     = 0
-" let g:pymode_lint_checkers       = ['pylint', 'pep8', 'mccabe']
-let g:pymode_lint_checkers       = ['pep8']
-" let g:pymode_lint_ignore       = "E501"
-
-augroup autopep
-    autocmd!
-    au FileType python setlocal formatprg=autopep8\ -
-augroup END
-" }}}
-
 " yankmatches {{{
 let g:YankMatches#ClipboardRegister='a'
 nnoremap <silent><Leader>dm    :call ForAllMatches('delete', {})<CR>
@@ -906,6 +855,7 @@ nnoremap <silent><Leader>l :BufferNext<CR>
 " Re-order to previous/next
 nnoremap <silent><A-<> :BufferMovePrevious<CR>
 nnoremap <silent><A->> :BufferMoveNext<CR>
+nnoremap <silent><A-p> :BufferPin<CR>
 
 " Goto buffer in position...
 nnoremap <silent><Leader>1 :BufferGoto 1<CR>
@@ -926,10 +876,11 @@ let bufferline = {}
 
 " Enable/disable animations
 let g:bufferline.animation = v:true
-let g:bufferline.auto_hide = v:true
+let g:bufferline.auto_hide = v:false
 " Enable/disable auto-hiding the tab bar when there is a single buffer
 let g:bufferline.icons = 'both'
 let g:bufferline.maximum_padding = 0
+let bufferline.tabpages = v:true
 
 " Configure icons on the bufferline.
 let g:bufferline.icon_separator_active   = '▌'
@@ -938,6 +889,7 @@ let g:bufferline.icon_close_tab          = ''
 let g:bufferline.closable                = v:true
 let g:bufferline.clickable               = v:false
 let g:bufferline.icon_close_tab_modified = '●'
+let g:bufferline.icon_pinned             = '車'
 let g:bufferline.semantic_letters        = v:true
 
 hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=italic
@@ -1187,7 +1139,7 @@ require('gitsigns').setup {
     changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
 
-numhl = false,
+numhl  = false,
 linehl = false,
 
 keymaps = {
@@ -1199,8 +1151,10 @@ keymaps = {
     -- ['n <leader>gp'] = { expr = true, "&diff ? '<leader>gp' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
 
     ['n <leader>ga'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+    ['v <leader>ga'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
     ['n <leader>gu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
     ['n <leader>gr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+    ['v <leader>gr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
     ['n <leader>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
     ['n <leader>gP'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
     ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
@@ -1211,15 +1165,18 @@ keymaps = {
   },
 
   watch_index = {
-    interval = 1000
+    interval = 1000,
+    follow_files = true
   },
 
-  current_line_blame = false,
-  sign_priority      = 6,
-  update_debounce    = 100,
-  status_formatter   = nil, -- Use default
-  use_decoration_api = true,
-  use_internal_diff  = true,  -- If luajit is present
+  -- current_line_blame          = false,
+  -- current_line_blame_delay    = 1000,
+  -- current_line_blame_position = 'eol',
+  sign_priority               = 6,
+  update_debounce             = 100,
+  status_formatter            = nil, -- Use default
+  use_internal_diff           = true,  -- If luajit is present
+  -- use_decoration_api          = true,
 }
 EOF
 " }}}
@@ -1253,6 +1210,11 @@ let g:WebDevIconsOS                         = 'unix'
 " }}}
 
 " nvim-web-devicons {{{
+lua << EOF
+require'nvim-web-devicons'.setup {
+ default = true;
+}
+EOF
 hi IconNameDevicon          ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 " }}}
 
@@ -1341,22 +1303,6 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 
 " neovim_lspconfig {{{
 lua require("lsp_init")
-" }}}
-
-" lspsaga.nvim {{{
-lua require("lspsaga_init")
-" nnoremap <silent>gh :Lspsaga lsp_finder<CR>
-
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
-
-nnoremap <silent>K :Lspsaga hover_doc<CR>
-nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-
-nnoremap <silent><leader>gs :Lspsaga signature_help<CR>
-nnoremap <silent><leader>gr :Lspsaga rename<CR>
-nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>
 " }}}
 
 " nvim-treesitter {{{
@@ -1476,9 +1422,46 @@ query_linter = {
     use_virtual_text = true,
     lint_events = {"BufWrite", "CursorHold"}
 },
-rainbow = {enable = true},
-extended_mode = true
 
+rainbow = {
+    enable = true,
+    extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+    --colors = {
+    --  "#bf616a",
+    --  "#d08770",
+    --  "#ebcb8b",
+    --  "#a3be8c",
+    --  "#88c0d0",
+    --  "#5e81ac",
+    --  "#b48ead"
+    --  }
+}
+}
+EOF
+" }}}
+
+" iswap {{{
+lua << EOF
+require('iswap').setup{
+  -- The keys that will be used as a selection, in order
+  -- ('asdfghjklqwertyuiopzxcvbnm' by default)
+  keys = 'qwertyuiop',
+
+  -- Grey out the rest of the text when making a selection
+  -- (enabled by default)
+  grey = 'disable',
+
+  -- Highlight group for the sniping value (asdf etc.)
+  -- default 'Search'
+  hl_snipe = 'ErrorMsg',
+
+  -- Highlight group for the visual selection of terms
+  -- default 'Visual'
+  hl_selection = 'WarningMsg',
+
+  -- Highlight group for the greyed background
+  -- default 'Comment'
+  hl_grey = 'LineNr'
 }
 EOF
 " }}}
@@ -1511,22 +1494,16 @@ nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 " nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
 " }}}
 
-" neogit {{{
-lua << EOF
-local neogit = require('neogit')
-neogit.setup {}
-EOF
 " }}}
 
-" compe {{{
-lua require("nvim-compe_init")
+" neogit {{{
+lua << EOF
+-- local neogit = require('neogit')
+-- neogit.setup {}
+EOF
 
-inoremap <silent><expr> <C-Space> compe#complete()
-" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-" inoremap <silent><expr> <BS>      <BS>compe#complete()
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4  })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
+" compe {{{
+" lua require("nvim-compe_init")
 " }}}
 
 " coc.nvim {{{
@@ -1538,209 +1515,96 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4  })
 "       \ pumvisible() ? "\<C-n>" :
 "       \ <SID>check_back_space() ? "\<TAB>" :
 "       \ coc#refresh()
-" 
+
 " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" 
+
 " function! s:check_back_space() abort
 "   let col = col('.') - 1
 "   return !col || getline('.')[col - 1]  =~# '\s'
 " endfunction
-" 
+
 " " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" 
+
 " if exists('*complete_info')
 "     " inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
 " endif
-" 
+
 " " use <c-space>for trigger completion
 " inoremap <silent><expr><C-Space> coc#refresh()
-" 
+
 " " Highlight the symbol and its references when holding the cursor.
 " autocmd CursorHold * silent call CocActionAsync('highlight')
-" 
+
 " " Symbol renaming.
 " nmap <leader>rn <Plug>(coc-rename)
-" 
+
 " let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tag', 'coc-omni', 'coc-syntax', 'coc-ultisnips']
 " }}}
 
-" deoplete {{{
-" let g:deoplete#enable_at_startup = 1
-" if !has('nvim')
-"     let g:deoplete#enable_yarp   = 1
-" endif
-" " let g:deoplete#file#enable_buffer_path      = 1
-" " let deoplete#tag#cache_limit_size           = 10000000
-" let g:deoplete#buffer#require_same_filetype = 0
+" ddc.vim {{{
+" Customize global settings
+" Use around source.
+" https://github.com/Shougo/ddc-around
+call ddc#custom#patch_global('sources', ['ultisnips', 'nvimlsp', 'buffer', 'around'])
 
-"             " \ 'skip_multibyte'      : v:false,
-" call deoplete#custom#option({
-"             \ 'auto_complete_delay' : 0,
-"             \ 'auto_refresh_delay'  : 10,
-"             \ 'auto_complete_popup' : 'auto',
-"             \ 'max_list'            : 100,
-"             \ 'ignore_case'         : v:true,
-"             \ 'smart_case'          : v:true,
-"             \ 'complete_method'     : 'omnifunc',
-"             \ 'min_pattern_length'  : 2,
-"             \ 'async_timeout'       : 500,
-"             \ 'refresh_always'      : v:true,
-"             \ 'refresh_backspace'   : v:true,
-"             \ 'nofile_complete_filetypes': ['denite-filter', 'zsh'],
-"             \ 'num_processes'       : 1,
-"             \ 'max_abbr_width'      : 0,
-"             \ 'max_menu_width'      : 150,
-"             \ })
+call ddc#custom#patch_global({
+      \ 'sources': ['ultisnips', 'nvimlsp', 'buffer', 'around'],
+      \ 'keywordPattern': '[a-zA-Z_]\w*',
+      \ 'smartCase': v:true,
+      \ })
 
-" call deoplete#custom#var('file', {
-"       \   'enable_buffer_path': 1,
-"       \ })
+" Use matcher_head and sorter_rank.
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+        \  'matchers': ['matcher_fuzzy'],
+        \  'sorters': ['sorter_rank']
+        \   },
+        \  'ultisnips': {'mark': 'US'},
+        \  'nvimlsp'  : {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
+        \  'clangd'   : {'mark': 'C'},
+        \  'buffer'   : {'mark': 'B'},
+        \  })
 
-" call deoplete#custom#option('candidate_marks',
-"       \ ['<F1>', '<F2>', '<F3>', '<F4>', '<F5>'])
-" inoremap <expr><F1> pumvisible() ? deoplete#insert_candidate(0) : '<F1>'
-" inoremap <expr><F2> pumvisible() ? deoplete#insert_candidate(1) : '<F2>'
-" inoremap <expr><F3> pumvisible() ? deoplete#insert_candidate(2) : '<F3>'
-" inoremap <expr><F4> pumvisible() ? deoplete#insert_candidate(3) : '<F4>'
-" inoremap <expr><F5> pumvisible() ? deoplete#insert_candidate(4) : '<F5>'
+call ddc#custom#patch_global('filterParams', {
+      \ 'matcher_fuzzy': {'camelcase': v:true},
+      \ 'buffer': {'requireSameFiletype': v:false},
+      \ })
 
-" call deoplete#custom#option('refresh_always', v:true)
-" call deoplete#custom#option('num_processes', 0)
+call ddc#custom#patch_global('sourceParams', {
+      \ 'around': {'maxSize': 500},
+      \ 'nvimlsp': {'useIcon': v:true},
+      \ })
 
-" " Don't align these lines!
-" set pumheight=10 " set max. Height of popup menu
+" Mappings
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ "\<TAB>" : ddc#manual_complete()
 
-" " let g:deoplete#sources  = {}
-" " let g:deoplete#sources_ = [] " includes all sources
-" call deoplete#custom#option('sources', {
-"             \ '_': [],
-"             \})
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" " Use partial fuzzy matches like YouCompleteMe
-" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-" " call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
-
-" " Disable the candidates in Comment/String syntaxes.
-" call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
-
-" call deoplete#custom#source('buffer'         , 'mark' , '[Buf]')
-" call deoplete#custom#source('clangx'         , 'mark' , '[CLang]')
-" call deoplete#custom#source('clang'          , 'mark' , '[CLang]')
-" " call deoplete#custom#source('LanguageClient' , 'mark' , '[LSP]')
-" call deoplete#custom#source('member'         , 'mark' , '[M]')
-" call deoplete#custom#source('function'       , 'mark' , '[Func]')
-
-" call deoplete#custom#source('_', 'sorters', ['sorter_mru', 'sorter_rank'])
-
-" call deoplete#custom#source('ultisnips'      , 'rank' , 9965)
-" call deoplete#custom#source('neosnippet'     , 'rank' , 9964)
-" call deoplete#custom#source('LanguageClient' , 'rank' , 9963)
-" call deoplete#custom#source('lsp'            , 'rank' , 9962)
-" call deoplete#custom#source('go'             , 'rank' , 9961)
-" call deoplete#custom#source('member'         , 'rank' , 9957)
-" call deoplete#custom#source('tag'            , 'rank' , 9955)
-" call deoplete#custom#source('buffer'         , 'rank' , 9952)
-" call deoplete#custom#source('function'       , 'rank' , 9951)
-
-" call deoplete#custom#var('around', {
-"       \   'range_above'  : 500,
-"       \   'range_below'  : 500,
-"       \   'mark_above'   : '[↑]',
-"       \   'mark_below'   : '[↓]',
-"       \   'mark_changes' : '[*]',
-"       \ })
-
-" " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><C-\> pumvisible() ? "\<C-w>" : "\<C-\>"
-" " inoremap <expr><Esc> pumvisible() ?deoplete#close_popup():"\<Esc>"
-
-" inoremap <expr><C-l>   pumvisible() ? deoplete#refresh() : "\<C-l>"
-" " Undo completion i.e remove whole completed word (default plugin mapping)
-" inoremap <expr><C-g> deoplete#undo_completion()
-
-" " endfunction"}}}
-
-" " Use Tab to forward cycle
-" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" " use tab to backward cycle
-" inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function() abort
-"     return deoplete#close_popup() . "\<CR>"
-" endfunction
-
-" " \ 'converter_remove_overlap',
-" " \ 'converter_truncate_abbr',
-" " \ 'converter_auto_delimiter',
-" " \ 'converter_truncate_menu',
-" " \ 'max_menu_width',
-" call deoplete#custom#source('_', 'converters', [
-"             \ 'converter_remove_paren',
-"             \ ])
-
-" " show doc strings for jedi
-" let g:deoplete#sources#jedi#show_docstring = 1
-" let g:deoplete#lsp#handler_enabled = v:false
-" call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+" Use ddc.
+call ddc#enable()
 
 " }}}
 
-" ncm2 {{{
-" set pumheight=12
-" " enable ncm2 for all buffers
-" set completeopt=noinsert,menuone,noselect
-" set shortmess+=c
+" coq_nvim {{{
 
-" " let g:ncm2#complete_delay = 50
+" let g:coq_settings = {
+"       \ "auto_start": v:false,
+"       \ "keymap.recommended": v:false,
+"       \ "display.pum.fast_close": v:false,
+"       \ }
 
-" augroup ncm2_completion
-"   autocmd!
-"   autocmd BufEnter      * call ncm2#enable_for_buffer()
-"   autocmd TextChangedI  * call ncm2#auto_trigger()
-" augroup END
-
-" inoremap <c-c> <ESC>
-
-" " Use <TAB> to select the popup menu:
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" inoremap <silent><expr> <TAB>
-" 		\ pumvisible() ? "\<C-n>" :
-" 		\ <SID>check_back_space() ? "\<TAB>" :
-" 		\ ncm2#manual_trigger()
-
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction
-
-" inoremap <silent><expr> <C-Space> ncm2#manual_trigger()
-
-" call ncm2#override_source('ultisnips' , {'priority': 10})
-" call ncm2#override_source('lsp'       , {'priority': 9})
-" call ncm2#override_source('nlc'       , {'priority': 8})
-" call ncm2#override_source('tag'       , {'priority': 7})
-" call ncm2#override_source('bufword'   , {'priority': 6})
-" call ncm2#override_source('path'      , {'priority': 5})
-" call ncm2#override_source('tmux'      , {'priority': 4})
-
-" call ncm2#override_source('tmux', {
-"       \ 'filter'     : {
-"       \   'name'     : 'abbr_ellipsis',
-"       \   'ellipsis' : '..',
-"       \   'priority' : 5,
-"       \   'limit'    : 80,
-"       \ }})
-
-" " let ncm2#complete_length = [[1, 1]]
-" let g:ncm2#matcher = 'substrfuzzy'
-" let g:ncm2#sorter  = 'abbrfuzzy'
-
+" " Keybindings
+" inoremap <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
+" inoremap <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
+" inoremap <silent><expr> <BS>    pumvisible() ? "\<C-e><BS>"  : "\<BS>"
+" inoremap <silent><expr> <CR>    pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"
+" inoremap <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
 " }}}
 
 " vim-go {{
@@ -1774,18 +1638,6 @@ let g:go_auto_type_info                  = 1
 let g:go_fmt_command                     = "goimports"
 let g:go_updatetime                      = &updatetime
 let g:go_def_mode                        = 'gopls'
-" }}}
-
-" deoplete-go {{{
-" for supporting completion of unimported packages issue
-" $ gocode set unimported-packages true --> from shell
-" let g:deoplete#sources#go#gocode_binary       = '$HOME./bin/gopls'
-" let g:deoplete#sources#jedi#show_docstring    = 1
-" let g:go_textobj_include_function_doc         = 1
-" let g:deoplete#sources#go#fallback_to_source  = 1
-" let g:deoplete#sources#go#unimported_packages = 1
-" let g:deoplete#sources#go#package_dot         = 0
-" let g:deoplete#sources#go#sort_class          = ['package', 'func', 'type', 'var', 'const']
 " }}}
 
 " vim-textobj-anyblock {{{
@@ -1907,6 +1759,19 @@ let g:AutoPairsMultilineClose     = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 " }}}
 
+" nvim-autopairs {{{
+lua <<EOF
+require('nvim-autopairs').setup({
+  disable_filetype          = { "TelescopePrompt" , "vim" },
+  ignored_next_char         = string.gsub([[ [%w%%%'%[%"%.] ]],"%s+", ""),
+  enable_moveright          = true,
+  enable_afterquote         = true,  -- add bracket pairs after quote
+  enable_check_bracket_line = true,  --- check bracket in same line
+  check_ts                  = false,
+})
+EOF
+" }}}
+
 " indent-blankline {{{
 let g:indent_blankline_char = '│'
 " let g:indent_blankline_space_char = '│'
@@ -1963,6 +1828,15 @@ let g:sandwich#recipes += [
       \    'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'],
       \    'action': ['delete'], 'input': ['(']},
       \ ]
+" }}}
+
+" orgmode.nvim {{{
+lua <<EOF
+require('orgmode').setup({
+  org_agenda_files = {'~/org/*', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/org/refile.org',
+})
+EOF
 " }}}
 
 " vim-pencil {{{
@@ -2038,6 +1912,8 @@ if has('nvim')
     " Enable cmdline completion (for Neovim only)
     call wilder#set_option('modes', ['/', '?', ':', '-'])
 
+    " call wilder#set_option('noselect', 0)
+
     let s:wilder_show_history = 0
     function! s:wilder_toggle_history() abort
         let s:wilder_show_history = 1 - s:wilder_show_history
@@ -2059,9 +1935,9 @@ if has('nvim')
           \       wilder#history(100),
           \     ],
           \     wilder#python_file_finder_pipeline({
-          \       'file_command': [ 'fd','-tf', '--follow', '--hidden', '--color=never'],
-          \       'dir_command' : [ 'fd','-td', '--follow', '--hidden', '--color=never'],
-          \       'filters': ['fuzzy_filter'],
+          \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
+          \       'dir_command': ['fdfind', '-td'],
+          \       'cache_timestamp': {-> 1},
           \       'debounce': 50,
           \     }),
           \     wilder#substitute_pipeline({
@@ -2070,14 +1946,19 @@ if has('nvim')
           \       'debounce': 50,
           \     }),
           \     wilder#cmdline_pipeline({
+          \       'language': 'python',
           \       'fuzzy': 1,
+          \       'set_pcre2_pattern': 0,
           \       'use_python': 1,
           \       'debounce': 50,
           \     }),
           \     wilder#python_search_pipeline({
           \       'regex': 'fuzzy',
-          \       'engine': 're',
+          \       'engine': 're2',
           \       'debounce': 50,
+          \       'pattern': wilder#python_fuzzy_pattern({
+          \        'start_at_boundary': 0,
+          \     }),
           \       'sort': wilder#python_sorter_difflib(),
           \     }),
           \     ),
@@ -2191,8 +2072,8 @@ nmap N <Plug>(anzu-N-with-echo)<Plug>Pulse
 nmap * <Plug>(anzu-star-with-echo)<Plug>Pulse
 nmap # <Plug>(anzu-sharp-with-echo)<Plug>Pulse
 " Pulses cursor line on first match
-" " when doing search with / or ?
-cmap <silent> <expr> <enter> search_pulse#PulseFirst()"
+" when doing search with / or ?
+cmap <silent><expr><enter> search_pulse#PulseFirst()"
 
 " Pulses the first match after hitting the enter keyan
 autocmd! User IncSearchExecute
