@@ -205,4 +205,52 @@
 " Plug 'ratheesh/ncm2-tagprefix', {'branch': 'func_signature'}
 " Plug 'ncm2/ncm2-syntax'
 
+" Plug 'yamatsum/nvim-nonicons'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+" Plug 'w0rp/ale' " This requires vim > v.8.0 with +timers +job +channel
+" Plug 'datwaft/bubbly.nvim', { 'branch' : 'custom' }
+" Plug 'mhinz/vim-signify'
+" Plug 'delphinus/vim-auto-cursorline'
+" Plug 'glepnir/galaxyline.nvim'
+" Plug 'famiu/feline.nvim'
+" Plug 'MaxMEllon/vim-shiny'
+" Plug 'tweekmonster/wstrip.vim'
+" Plug 'cohama/lexima.vim'
+" Plug 'rhysd/endwize.vim'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'axelf4/vim-strip-trailing-whitespace'
+" Plug 'python-mode/python-mode', {'branch': 'develop', 'for': 'python'}
+" Plug 'tweekmonster/braceless.vim', { 'for': 'python'}
+" Plug 'davidhalter/jedi-vim', {'for': 'python'}
+" Plug 'rhysd/git-messenger.vim'
+" Plug 'TimUntersberger/neogit'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'steelsojka/completion-buffers'
+" Plug 'nvim-treesitter/completion-treesitter'
+" Plug 'albertoCaroM/completion-tmux'
+" Plug 'Shougo/neco-syntax'
+" Plug 'deoplete-plugins/deoplete-jedi'
+" Plug 'deoplete-plugins/deoplete-tag'
+" Plug 'deathlyfrantic/deoplete-spell', {'branch': 'main'}
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+" Plug 'Shougo/deoplete-lsp'
+
+" Assuming you're using vim-plug: https://github.com/junegunn/vim-plug
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2-match-highlight'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-tagprefix'
+" Plug 'ncm2/ncm2-go'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-ultisnips'
+" Plug 'oncomouse/ncm2-lsp'
+
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+
+
+
 " End of File
