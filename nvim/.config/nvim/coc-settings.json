@@ -51,8 +51,12 @@
             "trace.server": "verbose",
             "filetypes": ["go"],
             "initializationOptions": {
-                "usePlaceholders"      : true,
-                "completeUnimported"   : true
+                "usePlaceholders"              : true,
+                "completeUnimported"           : true,
+		"staticcheck"                  : true,
+		"matcher"                      : "fuzzy",
+		"experimentalDiagnosticsDelay" : "500ms",
+		"symbolMatcher"                : "fuzzy"
             }
         },
 
@@ -64,10 +68,10 @@
             "rootPatterns": ["compile_commands.json", ".git/", ".hg/", ".svn"],
             "initializationOptions": {
                 "clangdFileStatus"     : false,
-                "usePlaceholders"      : false,
-                "completeUnimported"   : false,
-                "semanticHighlighting" : false,
-                "detailedLabel"        : false
+                "usePlaceholders"      : true,
+                "completeUnimported"   : true,
+                "semanticHighlighting" : true,
+                "detailedLabel"        : true
             }
         },
 
