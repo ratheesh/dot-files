@@ -19,11 +19,11 @@ local hl_list = {
   LeftSpace = { 'ActiveFg', 'ActiveBg' },
 
   -- Mode
-  ModeNormal  = {'black', 'ModeNormalBg', 'bold'},
-  ModeInsert  = {'black', 'ModeInsertBg', 'bold'},
-  ModeVisual  = {'black', 'ModeVisualBg', 'bold'},
-  ModeReplace = {'white', 'ModeReplaceBg', 'bold'},
-  ModeCommand = {'black', 'ModeCommandBg', 'bold'},
+  ModeNormal  = {'ModeNormalFg', 'ModeNormalBg', 'bold'},
+  ModeInsert  = {'ModeInsertFg', 'ModeInsertBg', 'bold'},
+  ModeVisual  = {'ModeVisualFg', 'ModeVisualBg', 'bold'},
+  ModeReplace = {'ModeReplaceFg', 'ModeReplaceBg', 'bold'},
+  ModeCommand = {'ModeCommandFg', 'ModeCommandBg', 'bold'},
 
   -- File
   File      = { 'FileNameBg', 'ActiveBg' },
@@ -138,15 +138,15 @@ basic.paste_mode = {
   text = function()
     if vim.o.paste then
       if git_comps.is_git() then
-	return {
-	  { 'ραstɛ', 'paste_mode', },
-	  { sep.right_rounded..' ', 'sep_right_proj' },
-	}
+        return {
+          { 'ραstɛ', 'paste_mode', },
+          { sep.right_rounded..' ', 'sep_right_proj' },
+        }
       else
-	return {
-	  { 'ραstɛ', 'paste_mode', },
-	  { sep.right_rounded..' ', 'sep_right_file' },
-	}
+        return {
+          { 'ραstɛ', 'paste_mode', },
+          { sep.right_rounded..' ', 'sep_right_file' },
+        }
       end
     end
   end,
@@ -155,7 +155,7 @@ basic.paste_mode = {
 local function project_name()
   local icon = ''
   if git_comps.is_git() then
-    icon = ' '
+    icon = ' '
     return  icon .. vim.call('utils#getprojectname')
   end
   return ''
@@ -297,7 +297,7 @@ basic.lsp_client = {
   hl_colors = {
     sep_before       = { 'LSPClientBg', 'NormalBg' },
     sep_before_empty = { 'FileInfoBg', 'NormalBg' },
-    lsp_cl           = { 'LSPClientFg', 'LSPClientBg' },
+    lsp_cl           = { 'LSPClientFg', 'LSPClientBg', 'italic' },
     sep_after        = { 'FileInfoBg', 'LSPClientBg' },
   },
   text = function()
@@ -320,12 +320,13 @@ basic.fileinfo = {
   name = 'fileinfo',
   hl_colors = {
     sep_before = { 'FileInfoBg', 'ActiveBg' },
+    sep        = { 'black', 'FileInfoBg' },
     file_type  = { 'FileInfoFg', 'FileInfoBg' },
   },
   text = function()
       return {
         -- { sep.left_rounded, 'sep_before' },
-        { b_components.file_icon(), 'file_type' },
+        { b_components.file_icon({ icon = '' }), 'file_type' },
         { ' ', '' },
         { b_components.file_type(), 'file_type' },
         {'│','sep'},
@@ -351,14 +352,14 @@ basic.indent = {
     end
     return {
       { sep.left_rounded, 'sep_before' },
-      {string.format('%s%s≡', sw, im), 'color'}
+      {string.format('%s%s≡ ', sw, im), 'color'}
     }
   end,
 }
 
 basic.right = {
   hl_colors = {
-    sep_before = { 'IndentBg', 'RightBg' },
+    sep_before = { 'RightBg', 'IndentBg' },
     sep_after  = { 'RightBg', 'black' },
     text       = { 'black', 'RightBg' },
     lineno     = { 'LineNoFg', 'LineNoBg' },
@@ -366,8 +367,8 @@ basic.right = {
   },
   text = function()
     return {
-      { sep.right_rounded, 'sep_before' },
-      { ' ch:%02Bh', 'text' },
+      { sep.left_rounded, 'sep_before' },
+      { 'ch:%02Bh', 'text' },
       {'│','sep'},
       { '', 'text' },
       {' %l:%v','text'},
@@ -401,7 +402,7 @@ local default = {
     { ' ', hl_list.Black },
   },
 
-  in_active = {
+  inactive = {
     basic.file_name_inactive,
     basic.divider,
     basic.divider,
@@ -424,8 +425,14 @@ windline.setup({
     colors.InActiveBg    = "#383a4c"
 
     -- Mode
-    colors.ModeNormalBg  = "#B0B7CF"
-    colors.ModeInsertBg  = "#00A59E"
+    colors.ModeNormalFg  = "#000000"
+    colors.ModeInsertFg  = "#000000"
+    colors.ModeVisualFg  = "#000000"
+    colors.ModeReplaceFg = "#000000"
+    colors.ModeCommandFg = "#000000"
+
+    colors.ModeNormalBg  = "#d1a3cf"
+    colors.ModeInsertBg  = "#91CA95"
     colors.ModeVisualBg  = "#F7CAB8"
     colors.ModeReplaceBg = "#D85A93"
     colors.ModeCommandBg = "#AE8A7E"
