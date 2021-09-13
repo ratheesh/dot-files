@@ -149,62 +149,62 @@ end
 --   },
 -- }
 
--- lspconfig.clangd.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   -- on_init = ncm2.register_lsp_source,
---   cmd = {
---     '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
---   };
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  -- on_init = ncm2.register_lsp_source,
+  cmd = {
+    '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
+  };
 
---   init_options = {
---     clangdFileStatus = true,
---     usePlaceholders = false,
---     completeUnimported = true,
---     semanticHighlighting = true
---   };
+  init_options = {
+    clangdFileStatus = true,
+    usePlaceholders = false,
+    completeUnimported = true,
+    semanticHighlighting = true
+  };
 
---   completion = {
---     placeholder   = false;
---     detailedLabel = false;
---     spellChecking = true;
---     -- filterAndSort = false;
---   };
--- }
+  completion = {
+    placeholder   = false;
+    detailedLabel = false;
+    spellChecking = true;
+    -- filterAndSort = false;
+  };
+}
 
 -- placeholder option will only work in recent (after 7-Oct-2019)
-lspconfig.ccls.setup {
-  on_attach = on_attach,
-  -- on_init = ncm2.register_lsp_source,
-  capabilities = capabilities,
-  init_options = {
-    cache = {
-      directory    = "/home/ratheesh/.ccls-cache";
-      cacheFormat  = "json",
-      rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
-      clang = {
-        extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
-        excludeArgs = {},
-      },
-    },
-    codeLens = {
-      localVariables = true;
-    },
-    client = {
-      snippetSupport = true;
-    };
-    completion = {
-      placeholder   = true;
-      detailedLabel = false;
-      spellChecking = true;
-      -- filterAndSort = false;
-    };
-    index = {
-      onChange        = true,
-      trackDependency = 1
-    },
-  }
-}
+-- lspconfig.ccls.setup {
+--   on_attach = on_attach,
+--   -- on_init = ncm2.register_lsp_source,
+--   capabilities = capabilities,
+--   init_options = {
+--     cache = {
+--       directory    = vim.env.HOME.."/.ccls-cache";
+--       cacheFormat  = "json",
+--       rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
+--       clang = {
+--         extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
+--         excludeArgs = {},
+--       },
+--     },
+--     codeLens = {
+--       localVariables = true;
+--     },
+--     client = {
+--       snippetSupport = true;
+--     };
+--     completion = {
+--       placeholder   = false;
+--       detailedLabel = false;
+--       spellChecking = true;
+--       -- filterAndSort = false;
+--     };
+--     index = {
+--       onChange        = true,
+--       trackDependency = 1
+--     },
+--   }
+-- }
 
 -- sumneko lua server
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
