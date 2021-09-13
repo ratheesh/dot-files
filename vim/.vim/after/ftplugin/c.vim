@@ -44,7 +44,7 @@ setlocal cinkeys=0{,0},:,0#,!^F,o,O,e
 " Taken from https://github.com/halostatue/vim-config/blob/master/vimfiles/macros/c-style.vim
 " with few modifications
 setlocal cinoptions  =
-" setlocal cinoptions=:0,l1,t0,g0,(0
+setlocal cinoptions=:0,l1,t0,g0,(0
 setlocal cinoptions=
 setlocal cinoptions+=>s     " Normal indent by shiftwidth
 setlocal cinoptions+=e0     " modify indent ±0 when /{$/
