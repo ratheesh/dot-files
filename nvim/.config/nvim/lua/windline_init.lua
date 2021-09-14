@@ -1,6 +1,7 @@
 local windline = require('windline')
 local helper = require('windline.helpers')
 local sep = helper.separators
+local gps = require("nvim-gps")
 -- local vim_components = require('windline.components.vim')
 
 local b_components = require('windline.components.basic')
@@ -238,6 +239,29 @@ basic.git = {
       }
     end
     return ''
+  end,
+}
+
+local function gps_info()
+if gps.is_available() then
+  return gps.get_location()
+end
+  return ''
+end
+
+
+basic.gps = {
+  name = 'gps',
+  hl_colors = {
+    GpsHL     = {'FileNameFg', 'FileNameBg'},
+    },
+  text = function()
+    if gps.is_available() then
+      return {
+        { '', '' },
+        {  gps_info(), 'GpsHL' },
+      }
+    end
   end,
 }
 
