@@ -160,7 +160,19 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
-Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/nvim-compe'
+
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-look'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-latex-symbols'
+Plug 'hrsh7th/cmp-calc'
+
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --frozen-lockfile'}
@@ -1512,8 +1524,8 @@ nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 " nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
 " nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
 " nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
-" }}}
 
+autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }
 " }}}
 
 " neogit {{{
@@ -1525,6 +1537,10 @@ EOF
 " compe {{{
 " lua require("nvim-compe_init")
 " }}}
+
+" nvim-cmp {{{
+lua require("nvim-cmp_init")
+"}}}
 
 " coc.nvim {{{
 " set pumheight=12
