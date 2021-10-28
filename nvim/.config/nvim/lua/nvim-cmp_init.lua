@@ -19,8 +19,8 @@
 -- CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 local cmp = require("cmp")
--- local luasnip = require("luasnip")
 local lspkind = require('lspkind')
+local types = require('cmp.types')
 
 local has_words_before = function()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
@@ -39,15 +39,11 @@ local check_back_space = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
--- local t = function(str)
---     return vim.api.nvim_replace_termcodes(str, true, true, true)
--- end
-
 cmp.setup({
     snippet = {
-     expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
-          end,
+    expand = function(args) vim.fn["vsnip#anonymous"](args.body) end,
+    -- expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end,
+    -- expand = function(args) require('luasnip').lsp_expand(args.body) end,
     },
     completion = {
         completeopt = "menu,menuone,noselect",
@@ -58,84 +54,76 @@ cmp.setup({
                 return char ~= ' '
             end, trigger_characters)
         end,
+      -- autocomplete = {
+      --   types.cmp.TriggerEvent.TextChanged,
+      -- },
+        autocomplete = {
+          cmp.TriggerEvent.InsertEnter,
+          cmp.TriggerEvent.TextChanged
+        }
     },
     formatting = {
+        fields = { 'abbr', 'kind', 'menu' },
         format = function(entry, vim_item)
             vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
              -- set a name for each source
             vim_item.menu = ({
+                vsnip         = "[VSnip]",
                 spell         = "[Spell]",
                 buffer        = "[Buffer]",
                 calc          = "[Calc]",
                 emoji         = "[Emoji]",
                 nvim_lsp      = "[LSP]",
                 path          = "[Path]",
-                cmp_tabnine   = "[TabNine]",
+                cmp_tabnine   = "[T9]",
                 look          = "[Look]",
-                treesitter    = "[treesitter]",
-                ultisnips     = "[UltiSnips]",
+                treesitter    = "[TS]",
+                -- ultisnips     = "[US]",
                 luasnip       = "[LuaSnip]",
                 nvim_lua      = "[Lua]",
                 latex_symbols = "[Latex]",
                 })[entry.source.name]
             return vim_item
-        end
+        end,
+        -- format = lspkind.cmp_format({with_text = false, maxwidth = 50})
     },
+
     experimental = {
-        ghost_text = true,
+        ghost_text  = true,
     },
+
     mapping = {
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-n>']     = cmp.mapping.select_next_item({ behavior = types.cmp.SelectBehavior.Insert }),
+        ['<C-p>']     = cmp.mapping.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert }),
+        ['<C-d>']     = cmp.mapping.scroll_docs(-4),
+        ['<C-f>']     = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm {
-                behavior = cmp.ConfirmBehavior.Replace, -- try Insert in leue of Replace
+        ['<C-e>']     = cmp.mapping.close(),
+        ['<CR>']      = cmp.mapping.confirm {
+                behavior = cmp.ConfirmBehavior.Select, -- try Insert in lieu of Replace
                 select = true,
         },
 
-        -- ["<Tab>"] = cmp.mapping(function(fallback)
-        --   if vim.fn.pumvisible() == 1 then
-        --     if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 or
-        --       vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-        --       return vim.fn.feedkeys(t(
-        --         "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>"))
-        --     end
-
-        --     vim.fn.feedkeys(t("<C-n>"), "n")
-        --   elseif check_back_space() then
-        --     vim.fn.feedkeys(t("<tab>"), "n")
-        --   else
-        --     fallback()
-        --   end
-        -- end, {"i", "s"}),
-
-        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-        --   if vim.fn.pumvisible() == 1 then
-        --     vim.fn.feedkeys(t("<C-p>"), "n")
-        --   else
-        --     fallback()
-        --   end
-        -- end, {"i", "s"})
-
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if vim.fn.pumvisible() == 1 then
+          if cmp.visible() then
+             cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Select })
+          elseif vim.fn.pumvisible() == 1 then
             feedkey("<C-n>", "n")
           elseif vim.fn["vsnip#available"]() == 1 then
             feedkey("<Plug>(vsnip-expand-or-jump)", "")
           elseif has_words_before() then
             cmp.complete()
           elseif check_back_space() then
-            vim.fn.feedkey("<tab>", "n")
+            feedkey("<tab>", "n")
           else
             fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
           end
         end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function()
-          if vim.fn.pumvisible() == 1 then
+          if cmp.visible() then
+             cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Select })
+           elseif vim.fn.pumvisible() == 1 then
             feedkey("<C-p>", "n")
           elseif vim.fn["vsnip#jumpable"](-1) == 1 then
             feedkey("<Plug>(vsnip-jump-prev)", "")
@@ -143,28 +131,22 @@ cmp.setup({
         end, { "i", "s" }),
    },
    documentation = {
-      border = "rounded",
+      border       = "rounded",
       winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-      max_width = 50,
-      min_width = 50,
-      max_height = math.floor(vim.o.lines * 0.4),
-      min_height = 3,
+      max_width    = 50,
+      min_width    = 50,
+      max_height   = math.floor(vim.o.lines * 0.4),
+      min_height   = 3,
     },
     sources = {
+        -- {name = "ultisnips"},
         {name = 'vsnip'},
         {name = 'nvim_lsp'},
         {name = 'path'},
-        {name = 'treesitter'},
-        {name = 'nvim_lua'},
-        {name = 'latex_symbols'},
-        {name = 'calc'},
-        {name = 'look'},
+        -- {name = 'cmp_tabnine'},
+        {name = 'rg'},
         {name = 'buffer',
           opts = {
-            -- get_bufnrs = function()
-            --   return vim.api.nvim_list_bufs()
-            -- end
-
             get_bufnrs = function()
               local bufs = {}
                   for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -174,18 +156,18 @@ cmp.setup({
                 end
               }
             },
-
-        --{ name = 'spell' },
-        --{ name = 'emoji' },
-        -- { name = 'luasnip' },
+        {name = 'treesitter'},
+        {name = 'nvim_lua'},
+        {name = 'calc'},
+        {name = 'look'},
     },
 })
 
 -- Autopairs
 require("nvim-autopairs.completion.cmp").setup({
-  map_cr = true,
+  map_cr       = true,
   map_complete = true,
-  auto_select = true
+  auto_select  = true
 })
 
 -- End of File
