@@ -27,7 +27,7 @@ plugins/themes and others
 #D68771 #5E477D #277A9A #845A52 #3D5CB1 #2F706D #B3C1A9 #89B7B5 #A49D6F #8E44AD
 #2AA198 #D85A93 #BC6A6C #3572A5 #135394 #00796B #1DAA89 #D59572 #B09C83 #756969
 #AE9E9F #B77662 #615A62 #982257 #5E7A56 #DD808B #C44D58 #91848D #863D68 #47D68E
-#007rgb#755757 #2C77A2 #3385A1 #F46C77 #F3C74F #5F4AA1
+#00796A #755757 #2C77A2 #3385A1 #F46C77 #F3C74F #5F4AA1
 #286090 #337AB7 #D9534F #185886 #FDC46D #F46E6A #6F42C1 #FD4F57 #81356C #F16272
 #353840 #5159AC #DEA584 #8F3A81 #704390 #5FBA7D #2187C9 #F5981B #F79D27 #E99695
 #558ED5 #17375E #92D050 #E46C0A #7030A0 #00B050 #62913F #FAC090 #9F005C #C0504D
@@ -71,5 +71,18 @@ Oceanic Next Theme
 #994C5F #6494ed #025660 #335078
 #FCA27F #3E5062
 
+# From https://observablehq.com/@d3/color-schemes?collection=@d3/d3-scale-chromatic
+#1f77b4 #ff7f0e #2ca02c #d62728 #9467bd #8c564b #e377c2 #7f7f7f #bcbd22 #17becf
+#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #999999
+#1b9e77 #d95f02 #7570b3 #e7298a #66a61e #e6ab02 #a6761d #666666
+#a6cee3 #1f78b4 #b2df8a #33a02c #fb9a99 #e31a1c #fdbf6f #ff7f00 #cab2d6 #6a3d9a #ffff99 #b15928
+#fbb4ae #b3cde3 #ccebc5 #decbe4 #fed9a6 #ffffcc #e5d8bd #fddaec #f2f2f2
+#b3e2cd #fdcdac #cbd5e8 #f4cae4 #e6f5c9 #fff2ae #f1e2cc #cccccc
+#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #999999
+#66c2a5 #fc8d62 #8da0cb #e78ac3 #a6d854 #ffd92f #e5c494 #b3b3b3
+#8dd3c7 #ffffb3 #bebada #fb8072 #80b1d3 #fdb462 #b3de69 #fccde5 #d9d9d9 #bc80bd #ccebc5 #ffed6f
+#4e79a7 #f28e2c #e15759 #76b7b2 #59a14f #edc949 #af7aa1 #ff9da7 #9c755f #bab0ab
+
+#6B717C #FFE4B5
 
 -*- END OF FILE -*-
