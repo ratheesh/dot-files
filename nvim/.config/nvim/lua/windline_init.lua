@@ -31,6 +31,8 @@ local hl_list = {
   FileIcon  = { 'FileNameFg', 'FileNameBg' },
   SearchCnt = { 'SearchCntFg', 'FileNameBg' },
 
+  Gps       = { 'GpsBg', 'ActiveBg' },
+
   -- Git status
   GitDiffAdded   = { 'GitAddedFg', 'ActiveBg' },
   GitDiffRemoved = { 'GitRemovedFg', 'ActiveBg' },
@@ -253,7 +255,7 @@ end
 basic.gps = {
   name = 'gps',
   hl_colors = {
-    GpsHL     = {'FileNameFg', 'FileNameBg'},
+    GpsHL     = {'GpsFg', 'GpsBg'},
     },
   text = function()
     if gps.is_available() then
@@ -346,12 +348,13 @@ basic.fileinfo = {
     sep_before = { 'FileInfoBg', 'ActiveBg' },
     sep        = { 'black', 'FileInfoBg' },
     file_type  = { 'FileInfoFg', 'FileInfoBg' },
+    FileIcon     = hl_list.FileIcon
   },
   text = function()
       return {
         -- { sep.left_rounded, 'sep_before' },
         { b_components.file_icon({ icon = '' }), 'file_type' },
-        { ' ', '' },
+        { ' ', 'file_type' },
         { b_components.file_type(), 'file_type' },
         {'│','sep'},
         { b_components.file_format({icon = true}), 'file_type' },
@@ -414,6 +417,7 @@ local default = {
     basic.file_leftsep,
     basic.file,
     -- {vim_components.search_count(), hl_list.SearchCnt},
+    -- basic.gps,
     { sep.right_rounded, hl_list.File },
     basic.git,
     basic.divider,
@@ -456,7 +460,7 @@ windline.setup({
     colors.ModeCommandFg = "#000000"
 
     colors.ModeNormalBg  = "#d1a3cf"
-    colors.ModeInsertBg  = "#91CA95"
+    colors.ModeInsertBg  = "#8dd3c7"
     colors.ModeVisualBg  = "#F7CAB8"
     colors.ModeReplaceBg = "#D85A93"
     colors.ModeCommandBg = "#AE8A7E"
@@ -478,8 +482,11 @@ windline.setup({
     colors.LSPDiagWarnFg = "#729FCF"
     colors.LSPDiagHintFg = "#9987A4"
 
+    colors.GpsFg         = "#FEFEFE"
+    colors.GpsBg         = "#984ea3"
+
     colors.LSPClientFg   = "#eeeeee"
-    colors.LSPClientBg   = "#595B83"
+    colors.LSPClientBg   = "#356088"
 
     colors.ProjectNameFg = "#EEEEEE"
     colors.ProjectNameBg = "#2087CF"
@@ -502,4 +509,19 @@ windline.setup({
     default,
   },
 })
+
+-- setup floating point based status line
+-- require('wlfloatline').setup({
+--     interval = 300,
+--     ui = {
+--         active_char = '▁',
+--         active_color = 'blue',
+--         active_hl = nil,
+--     },
+--     skip_filetypes = {
+--         'NvimTree',
+--         'lir',
+--     },
+-- })
+
 -- End of File
