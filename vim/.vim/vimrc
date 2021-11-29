@@ -52,6 +52,7 @@ Plug 't9md/vim-textmanip'
 Plug 'psliwka/vim-smoothie'
 Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
+Plug 'folke/which-key.nvim'
 " The Rust extension will only be installed if cargo is available.
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -121,8 +122,6 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'haya14busa/vim-operator-flashy'
 " Plug 'idbrii/textobj-word-column.vim'
 
-Plug 'kristijanhusak/orgmode.nvim'
-
 " writing prose
 " Plug 'reedes/vim-pencil'
 " Plug 'reedes/vim-colors-pencil'
@@ -138,82 +137,108 @@ Plug 'reedes/vim-textobj-quote'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romgrk/nvim-treesitter-context'
+Plug 'kristijanhusak/orgmode.nvim'
 " Plug 'haringsrob/nvim_context_vt'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'Jason-M-Chan/ts-textobjects'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'onsails/lspkind-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'SmiteshP/nvim-gps'
+" Plug 'axlebedev/footprints'
 Plug 'mizlan/iswap.nvim'
 " Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'filipdutescu/renamer.nvim'
 " Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'ray-x/lsp_signature.nvim'
+" Plug 'ray-x/lsp_signature.nvim'
 Plug 'sumneko/lua-language-server'
-Plug 'ahmedkhalf/lsp-rooter.nvim'
+" Plug 'ahmedkhalf/lsp-rooter.nvim'
+Plug 'svermeulen/vim-yoink'
 " Plug 'edluffy/specs.nvim'
+Plug 'lukas-reineke/virt-column.nvim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-telescope/telescope-project.nvim'
+
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" Plug 'nvim-telescope/telescope-project.nvim'
 " Plug 'hrsh7th/nvim-compe'
+
+Plug 'Yggdroot/LeaderF'
+
+Plug 'tjdevries/astronauta.nvim'
+Plug 'RishabhRD/lspactions'
+
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'craigmac/vim-vsnip-snippets'
+Plug 'rafamadriz/friendly-snippets'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'dcampos/nvim-snippy'
+Plug 'honza/vim-snippets'
 Plug 'hrsh7th/cmp-vsnip'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'hrsh7th/cmp-look'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-latex-symbols'
 Plug 'hrsh7th/cmp-calc'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'lukas-reineke/cmp-under-comparator'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+" Plug 'lukas-reineke/cmp-rg'
+" Plug 'saadparwaiz1/cmp_luasnip'
+" Plug 'L3MON4D3/LuaSnip'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --frozen-lockfile'}
 
 " ddc autocompletion suite
-Plug 'vim-denops/denops.vim'
-Plug 'Shougo/ddc-sorter_rank'
-Plug 'Shougo/ddc-matcher_head'
-Plug 'matsui54/ddc-matcher_fuzzy'
-Plug 'Shougo/ddc-around'
-Plug 'matsui54/ddc-buffer'
-Plug 'matsui54/ddc-ultisnips'
-" Plug 'Shougo/ddc-zsh'
-Plug 'Shougo/ddc-nvim-lsp'
-Plug 'octaltree/cmp-look'
-Plug 'high-moctane/nextword'
-Plug 'high-moctane/nextword-data'
-Plug 'matsui54/ddc-dictionary'
-Plug 'Shougo/ddc.vim'
+" Plug 'vim-denops/denops.vim'
+" Plug 'Shougo/ddc-sorter_rank'
+" Plug 'Shougo/ddc-matcher_head'
+" Plug 'matsui54/ddc-matcher_fuzzy'
+" Plug 'Shougo/ddc-around'
+" Plug 'matsui54/ddc-buffer'
+" Plug 'matsui54/ddc-ultisnips'
+" " Plug 'Shougo/ddc-zsh'
+" Plug 'Shougo/ddc-nvim-lsp'
+" Plug 'octaltree/cmp-look'
+" Plug 'high-moctane/nextword'
+" Plug 'high-moctane/nextword-data'
+" Plug 'matsui54/ddc-dictionary'
+" Plug 'Shougo/ddc.vim'
 
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':UpdateRemotePlugins'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':UpdateRemotePlugins'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 Plug 'wellle/tmux-complete.vim'
 " Plug 'wellle/targets.vim'
 
 " Shougo's plugins
-" Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/echodoc.vim'
 if has('nvim')
-    Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/denite.nvim'
+    " Plug 'Shougo/denite.nvim'
 
     " Following are required for deoplete to work in ViM
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'rafamadriz/friendly-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'rafamadriz/friendly-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Run $ go get -u github.com/stamblerre/gocode for below plugin to work properly
@@ -258,6 +283,7 @@ set matchtime=0
 " set matchtime=4
 " set colorcolumn=81
 execute "set colorcolumn=" . join(range(81,335), ',')
+set signcolumn=yes
 " set columns=80
 set ruler
 set nofoldenable    " disable folding
@@ -905,8 +931,8 @@ let g:bufferline.icon_close_tab_modified = '●'
 let g:bufferline.icon_pinned             = '車'
 let g:bufferline.semantic_letters        = v:true
 
-hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=italic
-hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#1BB1E7  guibg=#383a4c      gui=NONE
+hi BufferCurrent           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#99c794  guibg=#383a4c      gui=italic
+hi BufferCurrentMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#99c794  guibg=#383a4c      gui=NONE
 hi BufferCurrentTarget     ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#FA2C77  guibg=#383a4c      gui=bold,italic,underline
 hi BufferVisible           ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 hi BufferVisibleMod        ctermfg=15      ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
@@ -919,7 +945,7 @@ hi BufferInactiveTarget    ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=
 hi BufferTabLineSel        ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 hi BufferTabLineFill       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#EFEAD8  guibg=#383a4c      gui=NONE
 
-hi BufferCurrentIndex      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#ec7279  guibg=#383a4c      gui=NONE
+hi BufferCurrentIndex      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#e7b898  guibg=#383a4c      gui=NONE
 hi BufferCurrentSign       ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#ec7279  guibg=#383a4c      gui=NONE
 hi BufferVisibleIndex      ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
 hi BufferInactiveIndex     ctermfg=6       ctermbg=NONE    cterm=NONE     guifg=#988C99  guibg=#383a4c      gui=NONE
@@ -967,83 +993,83 @@ let g:licenses_default_commands       = ['gplv2', 'apache', 'mit']
 " denite {{{
 
 " reset 50% winheight on window resize
-augroup deniteresize
-    autocmd!
-    autocmd VimResized,VimEnter * call denite#custom#option('default',
-                \'winheight', winheight(0) / 3)
-augroup end
+"augroup deniteresize
+"    autocmd!
+"    autocmd VimResized,VimEnter * call denite#custom#option('default',
+"                \'winheight', winheight(0) / 3)
+"augroup end
 
-call denite#custom#option('default', {
-            \ 'prompt'                      : '➜ ',
-            \ 'auto-accel'                  : v:true,
-            \ 'auto-highlight'              : v:true,
-            \ 'auto_resize'                 : 1,
-            \ 'start_filter'                : v:false,
-            \ 'source_names'                : 'short',
-            \ 'mode'                        : 'normal',
-            \ 'direction'                   : 'dynamicbottom',
-            \ 'start-filter'                : v:true,
-            \ 'empty'                       : v:false,
-            \ 'reversed'                    : v:true,
-            \ 'root-markers'                : '.git,.hg,.svn',
-            \ 'smartcase'                   : v:true,
-            \ 'statusline'                  : v:false,
-            \ 'highlight_mode_normal'       : 'DeniteNormalHLLine',
-            \ 'highlight-filter-background' : 'DeniteFloatWin',
-            \ 'prompt_highlight'            : 'DenitePrompt',
-            \ 'split'                       : 'horizontal',
-            \ })
+"call denite#custom#option('default', {
+"            \ 'prompt'                      : '➜ ',
+"            \ 'auto-accel'                  : v:true,
+"            \ 'auto-highlight'              : v:true,
+"            \ 'auto_resize'                 : 1,
+"            \ 'start_filter'                : v:false,
+"            \ 'source_names'                : 'short',
+"            \ 'mode'                        : 'normal',
+"            \ 'direction'                   : 'dynamicbottom',
+"            \ 'start-filter'                : v:true,
+"            \ 'empty'                       : v:false,
+"            \ 'reversed'                    : v:true,
+"            \ 'root-markers'                : '.git,.hg,.svn',
+"            \ 'smartcase'                   : v:true,
+"            \ 'statusline'                  : v:false,
+"            \ 'highlight_mode_normal'       : 'DeniteNormalHLLine',
+"            \ 'highlight-filter-background' : 'DeniteFloatWin',
+"            \ 'prompt_highlight'            : 'DenitePrompt',
+"            \ 'split'                       : 'horizontal',
+"            \ })
 
-" Remove date from buffer list
-call denite#custom#var('buffer', 'date_format', '')
+"" Remove date from buffer list
+"call denite#custom#var('buffer', 'date_format', '')
 
-" Define mappings
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-    nnoremap <silent><buffer><expr><CR>    denite#do_map('do_action')
-    nnoremap <silent><buffer><expr>d       denite#do_map('do_action', 'delete')
-    nnoremap <silent><buffer><expr>p       denite#do_map('do_action', 'preview')
-    nnoremap <silent><buffer><expr>q       denite#do_map('quit')
-    nnoremap <silent><buffer><expr><Esc>   denite#do_map('quit')
-    nnoremap <silent><buffer><expr>i       denite#do_map('open_filter_buffer')
-    nnoremap <silent><buffer><expr>a       denite#do_map('open_filter_buffer')
-    nnoremap <silent><buffer><expr><C-l>   denite#do_map('redraw')
-    nnoremap <silent><buffer><expr><C-h>   denite#do_map('restore_sources')
-    nnoremap <silent><buffer><expr><Space> denite#do_map('toggle_select').'j'
-    nnoremap <silent><buffer><expr><Tab>   denite#do_map('choose_action')
-endfunction
+"" Define mappings
+"autocmd FileType denite call s:denite_my_settings()
+"function! s:denite_my_settings() abort
+"    nnoremap <silent><buffer><expr><CR>    denite#do_map('do_action')
+"    nnoremap <silent><buffer><expr>d       denite#do_map('do_action', 'delete')
+"    nnoremap <silent><buffer><expr>p       denite#do_map('do_action', 'preview')
+"    nnoremap <silent><buffer><expr>q       denite#do_map('quit')
+"    nnoremap <silent><buffer><expr><Esc>   denite#do_map('quit')
+"    nnoremap <silent><buffer><expr>i       denite#do_map('open_filter_buffer')
+"    nnoremap <silent><buffer><expr>a       denite#do_map('open_filter_buffer')
+"    nnoremap <silent><buffer><expr><C-l>   denite#do_map('redraw')
+"    nnoremap <silent><buffer><expr><C-h>   denite#do_map('restore_sources')
+"    nnoremap <silent><buffer><expr><Space> denite#do_map('toggle_select').'j'
+"    nnoremap <silent><buffer><expr><Tab>   denite#do_map('choose_action')
+"endfunction
 
-" Denite filter mappings
-autocmd FileType denite-filter call s:denite_filter_settings()
-function! s:denite_filter_settings() abort
-    " call deoplete#custom#buffer_option('auto_complete', v:false)
-    imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
-    nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
-endfunction
+"" Denite filter mappings
+"autocmd FileType denite-filter call s:denite_filter_settings()
+"function! s:denite_filter_settings() abort
+"    " call deoplete#custom#buffer_option('auto_complete', v:false)
+"    imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
+"    nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
+"endfunction
 
-" Denite variables
-call denite#custom#var('file/rec', 'command',
-            \ ['rg', '--files', '--glob', '!.git', '--no-messages'])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-            \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
+"" Denite variables
+"call denite#custom#var('file/rec', 'command',
+"            \ ['rg', '--files', '--glob', '!.git', '--no-messages'])
+"call denite#custom#var('grep', 'command', ['rg'])
+"call denite#custom#var('grep', 'default_opts',
+"            \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
+"call denite#custom#var('grep', 'recursive_opts', [])
+"call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+"call denite#custom#var('grep', 'separator', ['--'])
+"call denite#custom#var('grep', 'final_opts', [])
 
-" Denite sources
-"
+"" Denite sources
+""
 
-nnoremap <silent><Leader>do   :<C-u>DeniteProjectDir -buffer-name=git -start-filter file/rec<CR>
-nnoremap <silent><Leader>db   :<C-u>Denite buffer<CR>
-nnoremap <silent><Leader>dd   :P<C-u>DeniteCursorWord grep<CR>
-nnoremap <silent><Leader>d/   :P<C-u>DeniteProjectDir grep<CR>
-nnoremap <silent><Leader>dp   :<C-u>Denite register<CR>
-nnoremap <silent><Leader>dl   :<C-u>Denite location_list -no-empty<CR>
-nnoremap <silent><Leader>du   :<C-u>Denite file_mru<CR>
-nnoremap <silent><Leader>dy   :<C-u>Denite neoyank<CR>
-nnoremap <silent><Leader>dr   :<C-u>Denite -resume<CR>
+"nnoremap <silent><Leader>do   :<C-u>DeniteProjectDir -buffer-name=git -start-filter file/rec<CR>
+"nnoremap <silent><Leader>db   :<C-u>Denite buffer<CR>
+"nnoremap <silent><Leader>dd   :P<C-u>DeniteCursorWord grep<CR>
+"nnoremap <silent><Leader>d/   :P<C-u>DeniteProjectDir grep<CR>
+"nnoremap <silent><Leader>dp   :<C-u>Denite register<CR>
+"nnoremap <silent><Leader>dl   :<C-u>Denite location_list -no-empty<CR>
+"nnoremap <silent><Leader>du   :<C-u>Denite file_mru<CR>
+"nnoremap <silent><Leader>dy   :<C-u>Denite neoyank<CR>
+"nnoremap <silent><Leader>dr   :<C-u>Denite -resume<CR>
 " nnoremap <silent><leader>ds   :<C-u>Denite history:search -mode=normal<CR>
 " nnoremap <silent><leader>dc   :<C-u>Denite history:cmd -mode=normal<CR>
 
@@ -1103,42 +1129,6 @@ let g:startify_bookmarks = [
 " let g:signify_sign_show_count        = 1
 " nmap <silent><leader>sn <plug>(signify-next-hunk)
 " nmap <silent><leader>sp <plug>(signify-prev-hunk)
-" }}}
-
-" vim-gitgutter {{{
-" let g:gitgutter_map_keys=0
-" let g:gitgutter_override_sign_column_highlight = 0
-" if exists('&signcolumn')  " Vim 7.4.2201
-"     if has('nvim')
-"         set signcolumn=auto
-"     else
-"         set signcolumn=yes
-"     endif " if nvim
-" else
-"     let g:gitgutter_sign_column_always = 1
-" endif
-
-" let g:gitgutter_max_signs = 1000
-" let g:gitgutter_eager     = 1 " Update when switching/writing buffers
-" let g:gitgutter_realtime  = 1
-" let g:gitgutter_diff_args = '--ignore-space-at-eol'
-" autocmd FileType tagbar,nerdtree setlocal signcolumn=no
-
-" let g:gitgutter_sign_modified = '='
-
-" nmap <silent><Leader>gn <Plug>(GitGutterNextHunk)
-" nmap <silent><Leader>gp <Plug>(GitGutterPrevHunk)
-" nmap <silent><Leader>ga <Plug>(GitGutterStageHunk)
-" nmap <silent><Leader>gr <Plug>(GitGutterRevertHunk)
-" nmap <silent><Leader>gu <Plug>(GitGutterUndoHunk)
-" nmap <silent><Leader>gP <Plug>(GitGutterPreviewHunk)
-
-" " textobj for hunks (i/a)h
-" omap ih <Plug>(GitGutterTextObjectInnerPending)
-" omap ah <Plug>(GitGutterTextObjectOuterPending)
-" xmap ih <Plug>(GitGutterTextObjectInnerVisual)
-" xmap ah <Plug>(GitGutterTextObjectOuterVisual)
-
 " }}}
 
 " git-signs {{{
@@ -1248,11 +1238,18 @@ xmap <Leader>j <Plug>(smalls)
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger         = "<C-y>"
 let g:UltiSnipsListSnippets          = "<C-Tab>"
-let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger   = "<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger    = "<C-l>"
+let g:UltiSnipsJumpBackwardTrigger   = "<C-j>"
 let g:indentLine_faster              = 1
 let g:UltiSnipsEditSplit             = "vertical"
 "}}}
+
+" vsnip {{{
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+imap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-jump-prev)' : '<C-j>'
+smap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-jump-prev)' : '<C-j>'
+" }}}
 
 " hipairs {{{
 " let g:hiPairs_timeout=20
@@ -1309,6 +1306,7 @@ else
     let g:echodoc#type="echo"
 endif
 
+let g:echodoc#type                 = "signature"
 let g:echodoc#highlight_identifier = "EchoDocFunc"
 let g:echodoc#highlight_arguments  = "EchoDocParam"
 let g:echodoc#highlight_trailing   = "EchoDocTrailing"
@@ -1318,8 +1316,24 @@ let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 lua require("lsp_init")
 " }}}
 
+" renamer.nvim {{{
+" inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
+nnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
+vnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
+" }}}
+
 " nvim-treesitter {{{
 lua << EOF
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.org = {
+    install_info = {
+      url = 'https://github.com/milisims/tree-sitter-org',
+      revision = 'main',
+      files = {'src/parser.c', 'src/scanner.cc'},
+    },
+    filetype = 'org',
+  }
+
 require'nvim-treesitter.configs'.setup {
 ensure_installed = {
   "bash",
@@ -1329,6 +1343,7 @@ ensure_installed = {
   "c",
   "cpp",
   "python",
+  "org",
 },
 
 highlight = {enable = false, use_languagetree = true},
@@ -1439,16 +1454,53 @@ query_linter = {
 rainbow = {
     enable = true,
     extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-    --colors = {
-    --  "#bf616a",
-    --  "#d08770",
-    --  "#ebcb8b",
-    --  "#a3be8c",
-    --  "#88c0d0",
-    --  "#5e81ac",
-    --  "#b48ead"
-    --  }
+    colors = {
+      "#bf616a",
+      "#d08770",
+      "#ebcb8b",
+      "#a3be8c",
+      "#88c0d0",
+      "#5e81ac",
+      "#b48ead"
+      }
 }
+}
+EOF
+" }}}
+
+" orgmode.nvim {{{
+lua <<EOF
+require('orgmode').setup({
+    org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
+    org_default_notes_file = '~/Dropbox/org/refile.org',
+    })
+EOF
+" }}}
+
+
+" nvim-treesitter-context {{{
+lua << EOF
+require("treesitter-context").setup{
+    enable    = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+    throttle  = true, -- Throttles plugin updates (may improve performance)
+    max_lines = 0, -- How many lines the window should span. Values <                            = 0 mean no limit.
+    patterns  = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+        default = {
+            'class',
+            'function',
+            'method',
+            'for',
+            'while',
+            'if',
+            'switch',
+            'case',
+        },
+        -- Example for a specific filetype.
+        -- If a pattern is missing, *open a PR* so everyone can benefit.
+        --   rust = {
+        --       'impl_item',
+        --   },
+    },
 }
 EOF
 " }}}
@@ -1498,34 +1550,104 @@ require('iswap').setup{
 EOF
 " }}}
 
+" yoink {{{
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+" Also replace the default gp with yoink paste so we can toggle paste in this case too
+nmap gp <plug>(YoinkPaste_gp)
+nmap gP <plug>(YoinkPaste_gP)
+
+nmap [y <plug>(YoinkRotateBack)
+nmap ]y <plug>(YoinkRotateForward)
+
+nmap y <plug>(YoinkYankPreserveCursorPosition)
+xmap y <plug>(YoinkYankPreserveCursorPosition)
+" }}}
+
 " lsp_signature.nvim {{{
 " lua require'lsp_signature'.on_attach()
 " lua require'lsp_signature'.signature()
 " }}}
 
+" virt-column.nvim {{{
+highlight clear ColorColumn
+lua require("virt-column").setup()
+" }}}
+
+" Leaderf {{{
+" Do not use cache file
+let g:Lf_UseCache = 0
+" Refresh each time we call leaderf
+let g:Lf_UseMemoryCache = 0
+
+" Ignore certain files and directories when searching files
+let g:Lf_WildIgnore = {
+  \ 'dir': ['.git', '__pycache__', '.DS_Store'],
+  \ 'file': ['*.exe', '*.dll', '*.so', '*.o', '*.pyc', '*.jpg', '*.png',
+  \ '*.gif', '*.svg', '*.ico', '*.db', '*.tgz', '*.tar.gz', '*.gz',
+  \ '*.zip', '*.bin', '*.pptx', '*.xlsx', '*.docx', '*.pdf', '*.tmp',
+  \ '*.wmv', '*.mkv', '*.mp4', '*.rmvb', '*.ttf', '*.ttc', '*.otf',
+  \ '*.mp3', '*.aac']
+  \}
+
+" Do not show fancy icons for Linux server.
+let g:Lf_ShowDevIcons = 0
+
+" Only fuzzy-search files names
+let g:Lf_DefaultMode = 'NameOnly'
+
+" Popup window settings
+let g:Lf_WindowHeight          = 0.3
+let g:Lf_PopupWidth            = 0.9
+" let g:Lf_PopupPosition       = [0, &columns/4]
+let g:Lf_PopupPosition         = [0, 0]
+let g:Lf_UseVersionControlTool = 0
+
+" set up working directory for git repository
+let g:Lf_WorkingDirectoryMode = 'a'
+let g:Lf_ShowRelativePath     = 0
+let g:Lf_StlSeparator         = { 'left': '', 'right': '', 'font': '' }
+let g:Lf_RememberLastSearch   = 0
+let g:Lf_ShowHidden           = 1
+let g:Lf_ShowDevIcons         = 1
+let g:Lf_SpinSymbols          = ["●••", "•●•", "••●"]
+
+let g:Lf_WindowPosition = 'popup'
+
+nnoremap <silent> <leader>fo :<C-U>Leaderf file<CR>
+nnoremap <silent> <leader>fr :<C-U>Leaderf mru<CR>
+nnoremap <silent> <leader>ft :<C-U>Leaderf bufTag<CR>
+nnoremap <silent> <leader>d/ :<C-U>LeaderfRgInteractive<CR>
+
+" }}}
+
 " {{{ telescope.nvim
-lua require("telescope_init")
+" lua require("telescope_init")
 
-nnoremap <leader>fo <cmd>Telescope find_files<cr>
-nnoremap <leader>F  <cmd>Telescope git_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fl <cmd>Telescope git_files<cr>
-nnoremap <leader>ft <cmd>Telescope treesitter<cr>
-" nnoremap <leader>ft <cmd>Telescope current_buffer_tags<cr>
-nnoremap <leader>ff <cmd>Telescope current_buffer_fuzzy_find<cr>
-nnoremap <Leader>fr <cmd>lua require'telescope.builtin'.oldfiles{}<cr>
-nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
+" nnoremap <leader>fo <cmd>Telescope find_files<cr>
+" nnoremap <leader>F  <cmd>Telescope git_files<cr>
+" nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fb <cmd>Telescope buffers<cr>
+" nnoremap <leader>fl <cmd>Telescope git_files<cr>
+" nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+" " nnoremap <leader>ft <cmd>Telescope current_buffer_tags<cr>
+" nnoremap <leader>ff <cmd>Telescope current_buffer_fuzzy_find<cr>
+" nnoremap <Leader>fr <cmd>lua require'telescope.builtin'.oldfiles{}<cr>
+" nnoremap <Leader>gr <cmd>lua require'telescope.builtin'.lsp_references{}<cr>
 
-" LSP related commands
-" nnormap <Leader>lr <cmd>Telescope lsp_references<cr>
-" nnoremap <Leader>la <cmd>Telescope lsp_code_actions<cr>
-" nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
-" nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
-" nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
-" nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
+" " LSP related commands
+" " nnormap <Leader>lr <cmd>Telescope lsp_references<cr>
+" " nnoremap <Leader>la <cmd>Telescope lsp_code_actions<cr>
+" " nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
+" " nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
+" " nnoremap <Leader>ld <cmd>Telescope lsp_definitions<cr>
+" " nnoremap <Leader>l/ <cmd>Telescope lsp_workspace_symbols<cr>
 
-autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }
+" autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }
 " }}}
 
 " neogit {{{
@@ -1578,51 +1700,51 @@ lua require("nvim-cmp_init")
 " }}}
 
 " ddc.vim {{{
-" Customize global settings
-" Use around source.
-" https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['ultisnips', 'nvimlsp', 'buffer', 'around'])
+" " Customize global settings
+" " Use around source.
+" " https://github.com/Shougo/ddc-around
+" call ddc#custom#patch_global('sources', ['ultisnips', 'nvimlsp', 'buffer', 'around'])
 
-call ddc#custom#patch_global({
-      \ 'sources': ['ultisnips', 'nvimlsp', 'buffer', 'around'],
-      \ 'keywordPattern': '[a-zA-Z_]\w*',
-      \ 'smartCase': v:true,
-      \ })
+" call ddc#custom#patch_global({
+"       \ 'sources': ['ultisnips', 'nvimlsp', 'buffer', 'around'],
+"       \ 'keywordPattern': '[a-zA-Z_]\w*',
+"       \ 'smartCase': v:true,
+"       \ })
 
-" Use matcher_head and sorter_rank.
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-        \  'matchers': ['matcher_fuzzy'],
-        \  'sorters': ['sorter_rank']
-        \   },
-        \  'ultisnips': {'mark': 'US'},
-        \  'nvimlsp'  : {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
-        \  'clangd'   : {'mark': 'C'},
-        \  'buffer'   : {'mark': 'B'},
-        \  })
+" " Use matcher_head and sorter_rank.
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ '_': {
+"         \  'matchers': ['matcher_fuzzy'],
+"         \  'sorters': ['sorter_rank']
+"         \   },
+"         \  'ultisnips': {'mark': 'US'},
+"         \  'nvimlsp'  : {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
+"         \  'clangd'   : {'mark': 'C'},
+"         \  'buffer'   : {'mark': 'B'},
+"         \  })
 
-call ddc#custom#patch_global('filterParams', {
-      \ 'matcher_fuzzy': {'camelcase': v:true},
-      \ 'buffer': {'requireSameFiletype': v:false},
-      \ })
+" call ddc#custom#patch_global('filterParams', {
+"       \ 'matcher_fuzzy': {'camelcase': v:true},
+"       \ 'buffer': {'requireSameFiletype': v:false},
+"       \ })
 
-call ddc#custom#patch_global('sourceParams', {
-      \ 'around': {'maxSize': 500},
-      \ 'nvimlsp': {'useIcon': v:true},
-      \ })
+" call ddc#custom#patch_global('sourceParams', {
+"       \ 'around': {'maxSize': 500},
+"       \ 'nvimlsp': {'useIcon': v:true},
+"       \ })
 
-" Mappings
-" <TAB>: completion.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-      \ "\<TAB>" : ddc#manual_complete()
+" " Mappings
+" " <TAB>: completion.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+"       \ "\<TAB>" : ddc#manual_complete()
 
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
+" " <S-TAB>: completion back.
+" inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Use ddc.
-call ddc#enable()
+" " Use ddc.
+" call ddc#enable()
 
 " }}}
 
@@ -1699,6 +1821,10 @@ else
     xmap h <Plug>(textmanip-move-left)
     xmap l <Plug>(textmanip-move-right)
 endif
+
+" which-key.nvim {{{
+lua require('which-key_init')
+" }}}
 
 " line-number-interval {{{
 if has('nvim')
@@ -1803,7 +1929,9 @@ require('nvim-autopairs').setup({
   enable_moveright          = true,
   enable_afterquote         = true,  -- add bracket pairs after quote
   enable_check_bracket_line = true,  --- check bracket in same line
-  check_ts                  = false,
+  check_ts                  = true,
+  map_bs                    = true,
+  map_c_w                   = false,
 })
 EOF
 " }}}
@@ -1969,17 +2097,24 @@ if has('nvim')
           \     [
           \       wilder#check({_, x -> empty(x)}),
           \       wilder#history(100),
+          \       wilder#result({
+          \         'draw': [{_, x -> ' ' . x}],
+          \     }),
           \     ],
           \     wilder#python_file_finder_pipeline({
           \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
-          \       'dir_command': ['fdfind', '-td'],
+          \       'dir_command': ['fd', '-td'],
           \       'cache_timestamp': {-> 1},
           \       'debounce': 50,
           \     }),
           \     wilder#substitute_pipeline({
+          \     'pipeline': wilder#vim_search_pipeline({
+          \       'skip_cmdtype_check': 1,
+          \       }),
           \       'fuzzy':1,
           \       'use_python':1,
           \       'debounce': 50,
+          \       'hide_in_replace': 1,
           \     }),
           \     wilder#cmdline_pipeline({
           \       'language': 'python',
@@ -1993,7 +2128,7 @@ if has('nvim')
           \       'engine': 're2',
           \       'debounce': 50,
           \       'pattern': wilder#python_fuzzy_pattern({
-          \        'start_at_boundary': 0,
+          \       'start_at_boundary': 0,
           \     }),
           \       'sort': wilder#python_sorter_difflib(),
           \     }),
@@ -2029,7 +2164,7 @@ if has('nvim')
           \   'select_accent'   : s:select_acc_hl,
           \ },
           \ 'apply_highlights' : wilder#query_common_subsequence_spans(),
-          \ 'separator'        : ' ✦ ',
+          \ 'separator'        : ' • ',
           \ 'separator_hl'     : s:sep_hl,
           \ 'hl'               : s:status_hl,
           \ 'ellipsis'         : '...',
@@ -2210,8 +2345,8 @@ nnoremap <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> t
 
 " Use guicolors in terminal (we need to place this here as it is easy to disable!)
 if has("termguicolors")
-  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  " let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  " let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 else
     echom "24Bit colors are not supported in this ViM!"
