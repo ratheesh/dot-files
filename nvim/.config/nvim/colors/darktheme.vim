@@ -84,7 +84,7 @@ hi Underlined   ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=NO
 hi ModeMsg      ctermfg=NONE    ctermbg=NONE    cterm=underline         guifg=#dd808b   guibg=NONE      gui=NONE
 hi WildMenu     ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#000000   guibg=#909090   gui=NONE
 hi Whitespace   ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#505050   guibg=NONE      gui=NONE
-hi NormalFloat  ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#213447   gui=NONE
+hi NormalFloat  ctermfg=NONE    ctermbg=NONE    cterm=NONE              guifg=#e0e0e0   guibg=#364466   gui=NONE
 
 " spelling {{{
 hi SpellBad             ctermfg=NONE       ctermbg=NONE    cterm=underline guifg=NONE   guibg=NONE   gui=underline
@@ -292,11 +292,11 @@ hi  CocFloating     ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#CCCCCC  
 " nvim-ts-rainbow {{{
 hi rainbowcol1          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00A7CF   guibg=NONE   gui=bold
 hi rainbowcol2          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#CBAB65   guibg=NONE   gui=bold
-hi rainbowcol3          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#AD75D6   guibg=NONE   gui=bold
+hi rainbowcol3          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#bc80bd   guibg=NONE   gui=bold
 hi rainbowcol4          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#d08770   guibg=NONE   gui=bold
 hi rainbowcol5          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#ac547e   guibg=NONE   gui=bold
 hi rainbowcol6          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#a3be8c   guibg=NONE   gui=bold
-hi rainbowcol7          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#fa2c77   guibg=NONE   gui=bold
+hi rainbowcol7          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#f781bf   guibg=NONE   gui=bold
 " }}}
 
 " tagbar {{{
@@ -363,8 +363,9 @@ highlight SM_CharSearchGroup  ctermfg=NONE    ctermbg=NONE    cterm=bold,italic,
 " }}}
 
 " indent-blankline.nvim {{{
-hi BlankLine          ctermfg=244     ctermbg=NONE    cterm=NONE      guifg=#525563  guibg=NONE      gui=NONE
-hi BlankLineContext   ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#9275A3  guibg=NONE      gui=bold
+hi BlankLine                    ctermfg=244     ctermbg=NONE    cterm=NONE      guifg=#525563  guibg=NONE      gui=NONE
+hi BlankLineContext             ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#9275A3  guibg=NONE      gui=bold
+" hi IndentBlanklineContextChar   ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#f7ca88  guibg=NONE      gui=bold
 " }}}
 
 " vim-sandwitch {{{
@@ -441,29 +442,46 @@ hi ShowPairsHLp  ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008f
 hi ShowPairsHL   ctermfg=27  ctermbg=NONE    cterm=underline,bold    guifg=#008fff   guibg=NONE gui=bold,underline
 " }}}
 
+" nvim-cmp {{{
+hi  CmpItemAbbr             ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#cccccc  guibg=NONE  gui=NONE
+hi  CmpItemAbbrMatchFuzzy   ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00A7CF  guibg=NONE  gui=bold
+hi  CmpItemAbbrMatch        ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#f06372  guibg=NONE  gui=underline
+hi  CmpItemMatch            ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#eeeeee  guibg=NONE  gui=bold,underline
+hi  CmpItemAbbrDeprecated   ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#eeeeee  guibg=NONE  gui=NONE
+hi  CmpItemKind             ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#F7B0BA  guibg=NONE  gui=NONE
+hi  CmpItemMenu             ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#8C7F70  guibg=NONE  gui=NONE
+
+hi  CmpItemKindVariable     ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#C76D83  guibg=NONE  gui=NONE
+hi  CmpItemKindInterface    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00A7CF  guibg=NONE  gui=NONE
+hi  CmpItemKindText         ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#00A7CF  guibg=NONE  gui=NONE
+hi  CmpItemKindFunction     ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#C586C0  guibg=NONE  gui=italic
+hi  CmpItemKindMethod       ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#C586C0  guibg=NONE  gui=NONE
+hi  CmpItemKindKeyword      ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#D4D4D4  guibg=NONE  gui=italic
+" }}}
+
 " Menu selection {{{
-hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#c0c0c0  guibg=#505C74 gui=NONE
-hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#000000  guibg=#79A7A5 gui=NONE
+hi Pmenu                ctermfg=7       ctermbg=237     cterm=NONE guifg=#a0a0a0  guibg=#232F39 gui=NONE
+hi PmenuSel             ctermfg=0       ctermbg=137     cterm=NONE guifg=#e0e0e0  guibg=#335078 gui=NONE
 hi PmenuSbar            ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#414349 gui=NONE
 hi PmenuThumb           ctermfg=NONE    ctermbg=NONE    cterm=NONE guifg=#000000  guibg=#8C7F70 gui=NONE
 "}}}
 
 " GitCommit {{{
-hi gitcommitcomment             ctermfg=240     ctermbg=none    cterm=none     guifg=#686868 guibg=NONE    gui=NONE
-hi gitcommitoverflow            ctermfg=162     ctermbg=237     cterm=NONE     guifg=#db080b guibg=#404040 gui=NONE
-hi gitcommitsummary             ctermfg=7       ctermbg=none    cterm=none     guifg=#eeeeee guibg=NONE    gui=NONE
-hi gitcommitbranch              ctermfg=180     ctermbg=none    cterm=none     guifg=#f7cab8 guibg=NONE    gui=NONE
-hi gitcommitblank               ctermfg=9       ctermbg=237     cterm=NONE     guifg=#db080b guibg=#404040 gui=NONE
-hi gitcommitheader              ctermfg=246     ctermbg=none    cterm=none     guifg=#808080 guibg=NONE    gui=NONE
-hi gitcommitdiff                ctermfg=245     ctermbg=none    cterm=none     guifg=#c0c0c0 guibg=NONE    gui=NONE
-hi gitcommitselectedfile        ctermfg=66      ctermbg=none    cterm=none     guifg=#3e8c75 guibg=NONE    gui=NONE
-hi gitcommitselectedtype        ctermfg=25      ctermbg=none    cterm=NONE     guifg=#689d61 guibg=NONE    gui=NONE
-hi gitcommitdiscardedfile       ctermfg=60      ctermbg=none    cterm=none     guifg=#8f575a guibg=NONE    gui=NONE
-hi gitcommitdiscardedtype       ctermfg=95      ctermbg=none    cterm=NONE     guifg=#7a8a80 guibg=NONE    gui=NONE
-hi gitcommitPatchLabel          ctermfg=132     ctermbg=NONE    cterm=NONE     guifg=#bdb76b guibg=NONE    gui=NONE
-hi gitcommitEmailAddr           ctermfg=65      ctermbg=NONE    cterm=NONE     guifg=#5f9ea0 guibg=NONE    gui=NONE
-hi gitcommitSignedAuthor        ctermfg=25      ctermbg=NONE    cterm=NONE     guifg=#367bf0 guibg=NONE    gui=NONE
-hi gitcommitAuthor              ctermfg=24      ctermbg=NONE    cterm=NONE     guifg=#7a8a80 guibg=NONE    gui=NONE
+hi gitcommitcomment             ctermfg=240  ctermbg=none  cterm=none  guifg=#686868 guibg=NONE    gui=NONE
+hi gitcommitoverflow            ctermfg=162  ctermbg=237   cterm=NONE  guifg=#db080b guibg=#404040 gui=NONE
+hi gitcommitsummary             ctermfg=7    ctermbg=none  cterm=none  guifg=#eeeeee guibg=NONE    gui=NONE
+hi gitcommitbranch              ctermfg=180  ctermbg=none  cterm=none  guifg=#f7cab8 guibg=NONE    gui=NONE
+hi gitcommitblank               ctermfg=9    ctermbg=237   cterm=NONE  guifg=#db080b guibg=#404040 gui=NONE
+hi gitcommitheader              ctermfg=246  ctermbg=none  cterm=none  guifg=#808080 guibg=NONE    gui=NONE
+hi gitcommitdiff                ctermfg=245  ctermbg=none  cterm=none  guifg=#c0c0c0 guibg=NONE    gui=NONE
+hi gitcommitselectedfile        ctermfg=66   ctermbg=none  cterm=none  guifg=#3e8c75 guibg=NONE    gui=NONE
+hi gitcommitselectedtype        ctermfg=25   ctermbg=none  cterm=NONE  guifg=#689d61 guibg=NONE    gui=NONE
+hi gitcommitdiscardedfile       ctermfg=60   ctermbg=none  cterm=none  guifg=#8f575a guibg=NONE    gui=NONE
+hi gitcommitdiscardedtype       ctermfg=95   ctermbg=none  cterm=NONE  guifg=#7a8a80 guibg=NONE    gui=NONE
+hi gitcommitPatchLabel          ctermfg=132  ctermbg=NONE  cterm=NONE  guifg=#bdb76b guibg=NONE    gui=NONE
+hi gitcommitEmailAddr           ctermfg=65   ctermbg=NONE  cterm=NONE  guifg=#5f9ea0 guibg=NONE    gui=NONE
+hi gitcommitSignedAuthor        ctermfg=25   ctermbg=NONE  cterm=NONE  guifg=#367bf0 guibg=NONE    gui=NONE
+hi gitcommitAuthor              ctermfg=24   ctermbg=NONE  cterm=NONE  guifg=#7a8a80 guibg=NONE    gui=NONE
 " }}}
 
 " Diff {{{
@@ -653,7 +671,6 @@ hi markdownHeadingDelimiter   ctermfg=117     ctermbg=NONE    cterm=bold guifg=#
 hi markdownUrl                ctermfg=141     ctermbg=NONE    cterm=NONE guifg=#bd93f9 guibg=NONE gui=NONE
 hi markdownUrlTitleDelimiter  ctermfg=84      ctermbg=NONE    cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 " }}}
-
 
 "
 "cygwin has an annoying behavior where it resets background to light
