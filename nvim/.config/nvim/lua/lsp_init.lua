@@ -29,37 +29,67 @@
 
 local lspconfig  = require'lspconfig'
 -- local diagnostic = require'diagnostic'
--- local lsp_status = require'lsp-status'
--- local ncm2       = require('ncm2')
--- local configs    = require 'lspconfig/configs'
--- local util       = require 'lspconfig/util'
--- local compe      = require 'compe'
 
 -- ViM specific settings
 vim.o.completeopt = "noinsert,menuone,noselect"
-vim.o.pumheight   = 10
+vim.o.pumheight   = 12
 
 -- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- Add additional capabilities supported by nvim-cmp
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text     = true,
-    underline        = false,
-    signs            = true,
-    update_in_insert = false,
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat     = { 'markdown', 'plaintext' }
+capabilities.textDocument.completion.completionItem.snippetSupport          = true
+capabilities.textDocument.completion.completionItem.preselectSupport        = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport    = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport     = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport       = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport              = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport          = {
+properties = {
+'documentation',
+'detail',
+'additionalTextEdits',
+},
 }
-)
+
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+-- vim.lsp.diagnostic.on_publish_diagnostics, {
+--     underline    = true,
+--     signs        = true,
+--     virtual_text = false,
+--     float = {
+--         show_header = true,
+--         source      = 'if_many',
+--         border      = 'rounded',
+--         focusable   = false,
+--     },
+--     show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
+--     update_in_insert = false,
+--     severity_sort    = false,
+-- }
+-- )
+
+vim.diagnostic.config({
+    underline    = true,
+    signs        = true,
+    virtual_text = true,
+    float = {
+        show_header = true,
+        source      = 'always',
+        border      = 'rounded',
+        focusable   = false,
+    },
+    show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
+    update_in_insert = false,
+    severity_sort    = false,
+})
 
 local on_attach = function(_, bufnr)
 
@@ -68,107 +98,134 @@ local on_attach = function(_, bufnr)
 
   -- lsp_status.register_progress()
 
--- lspkind config
-require('lspkind').init({
-  with_text  = false,
-  symbol_map = {
-      Text          = ' [text]',
-      Method        = ' [method]',
-      Function      = ' [function]',
-      Constructor   = ' [constructor]',
-      Field         = 'ﰠ [field]',
-      Variable      = '𝒙 [Variable]',
-      Class         = ' [class]',
-      Interface     = ' [interface]',
-      Module        = ' [module]',
-      Property      = ' [property]',
-      Unit          = ' [unit]',
-      Value         = ' [value]',
-      Enum          = ' [enum]',
-      Keyword       = ' [key]',
-      Snippet       = '﬌ [snippet]',
-      Color         = ' [color]',
-      File          = ' [file]',
-      Reference     = ' [reference]',
-      Folder        = ' [folder]',
-      EnumMember    = ' [enumMember]',
-      Constant      = ' [constant]',
-      Struct        = ' [struct]',
-      Event         = ' [event]',
-      Operator      = ' [operator]',
-      TypeParameter = ' [typeParameter]',
-  },
-})
-
-  require "lsp_signature".on_attach({
-    bind            = true,
-    -- doc_lines       = 2,
-    floating_window = true,
-    hint_enable     = true,
-    hi_parameter    = "LSPSignatureCurParam",
-    hint_scheme     = "LSPSignatureHint",
-    hint_prefix     = "🐼 ",
-    handler_opts    = {
-      border = "single"
-    }
-  })
+  -- require "lsp_signature".on_attach({
+  --   bind            = true,
+  --   doc_lines       = 0,
+  --   floating_window = true,
+  --   hint_enable     = true,
+  --   hi_parameter    = "LSPSignatureCurParam",
+  --   hint_scheme     = "LSPSignatureHint",
+  --   hint_prefix     = "🐼 ",
+  --   handler_opts    = {
+  --     border = "single"
+  --   }
+  -- })
 
   -- Mappings
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local opts = { noremap=true, silent=true  }
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<C-p>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', '<C-n>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+
+  buf_set_keymap('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n','gR','<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  -- buf_set_keymap('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n','gs','<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n','gt','<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n','<leader>gw','<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
+  buf_set_keymap('n','<leader>gW','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  buf_set_keymap('n','<leader>ah','<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  -- buf_set_keymap('n','<leader>af','<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n','<leader>ee','<cmd>lua vim.diagnostic.open_float(0, { scope="line" })<CR>', opts)
+  buf_set_keymap('n','<leader>ar','<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n','<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n','<leader>ai','<cmd>lua vim.lsp.buf.incoming_calls()<CR>', opts)
+  buf_set_keymap('n','<leader>ao','<cmd>lua vim.lsp.buf.outgoing_calls()<CR>', opts)
+
+  -- vim.cmd [[ nnoremap gR :lua require'lspactions'.rename()<CR> ]]
+
+  -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
+  -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})
+  -- vim.lsp.handlers["textDocument/declaration"] = vim.lsp.with(vim.lsp.handlers.declaration, {border = "single"})
+  -- vim.lsp.handlers["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.definition, {border = "single"})
+
+  vim.lsp.handlers["textDocument/codeAction"] = require'lspactions'.codeaction
+  vim.cmd [[ nnoremap <leader>ca :lua require'lspactions'.code_action()<CR> ]]
+
+  vim.lsp.handlers["textDocument/references"] = require'lspactions'.references
+  vim.cmd [[ nnoremap gr :lua vim.lsp.buf.references()<CR> ]]
+
+  vim.lsp.handlers["textDocument/definition"] = require'lspactions'.definition
+  vim.cmd [[ nnoremap gd :lua vim.lsp.buf.definition()<CR> ]]
+
+  vim.lsp.handlers["textDocument/declaration"] = require'lspactions'.declaration
+  vim.cmd [[ nnoremap gD :lua vim.lsp.buf.declaration()<CR> ]]
+
+  vim.lsp.handlers["textDocument/implementation"] = require'lspactions'.implementation
+  vim.cmd [[ nnoremap gi :lua vim.lsp.buf.implementation()<CR> ]]
+
+  vim.lsp.handlers["textDocument/hover"] =
+  vim.lsp.with(vim.lsp.handlers.hover, {
+    -- Use a sharp border with `FloatBorder` highlights
+    border = "single",
+  })
+
+  -- enable border for signature
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {
+    border = "single",
+  })
+
 end
 
-local servers = {'gopls','jedi_language_server','bashls', 'vimls'}
+-- jedi_language_server
+local servers = {'jedi_language_server','bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
-    -- on_init = ncm2.register_lsp_source,
     capabilities = capabilities,
     init_options = {
     },
+
+  flags = {
+    debounce_text_changes = 150,
+  };
+
   }
 end
 
--- lspconfig.gopls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
-
---   init_options = {
---      -- usePlaceholders         = false,
---      -- completionDocumentation = false,
---      -- completeUnimported      = false,
---   },
--- }
+lspconfig.gopls.setup {
+  cmd = {'gopls'},
+  capabilities = capabilities,
+  settings = {
+    gopls =     {
+      experimentalPostfixCompletions = true,
+      analyses = {
+      unusedparams = true,
+      shadow       = true,
+    },
+    staticcheck = true,
+    },
+  },
+on_attach = on_attach,
+}
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  -- on_init = ncm2.register_lsp_source,
   cmd = {
-    '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename'
+    '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename', '--completion-style=detailed', '--pch-storage=memory', '--header-insertion-decorators', '--all-scopes-completion'
+  };
+
+  filetypes = { "c", "cpp", "objc", "objcpp" };
+
+  flags = {
+    debounce_text_changes = 150,
   };
 
   init_options = {
-    clangdFileStatus = true,
-    usePlaceholders = false,
-    completeUnimported = true,
+    clangdFileStatus     = true,
+    usePlaceholders      = false,
+    completeUnimported   = true,
     semanticHighlighting = true
   };
 
   completion = {
     placeholder   = false;
-    detailedLabel = false;
-    spellChecking = true;
+    detail = false;
+    -- spellChecking = true;
     -- filterAndSort = false;
   };
 }
@@ -176,7 +233,6 @@ lspconfig.clangd.setup {
 -- placeholder option will only work in recent (after 7-Oct-2019)
 -- lspconfig.ccls.setup {
 --   on_attach = on_attach,
---   -- on_init = ncm2.register_lsp_source,
 --   capabilities = capabilities,
 --   init_options = {
 --     cache = {
@@ -184,18 +240,25 @@ lspconfig.clangd.setup {
 --       cacheFormat  = "json",
 --       rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
 --       clang = {
---         extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
---         excludeArgs = {},
+--         -- extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
+--         -- excludeArgs = {},
 --       },
 --     },
+
+--     flags = {
+--       debounce_text_changes = 150,
+--     };
+
 --     codeLens = {
 --       localVariables = true;
 --     },
+
 --     client = {
 --       snippetSupport = true;
 --     };
+
 --     completion = {
---       placeholder   = false;
+--       placeholder   = true;
 --       detailedLabel = false;
 --       spellChecking = true;
 --       -- filterAndSort = false;
@@ -247,26 +310,6 @@ vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
 vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
 vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs            = true,
-    underline        = false,
-    virtual_text     = true,
-    update_in_insert = false,
-    -- show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
-    -- diagnostic_delay         = 500
-  }
-)
-
--- borders for floating windows
--- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
--- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})
--- vim.lsp.handlers["textDocument/declaration"] = vim.lsp.with(vim.lsp.handlers.declaration, {border = "single"})
--- vim.lsp.handlers["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.definition, {border = "single"})
-
-
-vim.api.nvim_command('echohl WarningMsg | echomsg "NeoVIM LSP Client configured!"| echohl None')
 
 -- End of File
 
