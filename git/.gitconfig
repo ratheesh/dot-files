@@ -138,7 +138,7 @@
     followTags = true
 
 [pull]
-    rebase = true
+    ; rebase = true
     ff = only
 
 [rerere]
