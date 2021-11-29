@@ -48,6 +48,7 @@ cmp.setup({
     completion = {
         completeopt = "menu,menuone,noselect",
         keyword_length = 2,
+        border = 'rounded',
         -- completeopt = "menu,menuone,noinsert",
         get_trigger_characters = function(trigger_characters)
             return vim.tbl_filter(function(char)
@@ -86,6 +87,20 @@ cmp.setup({
             return vim_item
         end,
         -- format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+    },
+
+    sorting = {
+      comparators = {
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+
+        require("cmp-under-comparator").under,
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+      },
     },
 
     experimental = {
@@ -142,20 +157,21 @@ cmp.setup({
         -- {name = "ultisnips"},
         {name = 'vsnip'},
         {name = 'nvim_lsp'},
+        {name = 'orgmode'},
         {name = 'path'},
         -- {name = 'cmp_tabnine'},
-        {name = 'rg'},
+        -- {name = 'rg'},
         {name = 'buffer',
           opts = {
             get_bufnrs = function()
-              local bufs = {}
-                  for _, win in ipairs(vim.api.nvim_list_wins()) do
-                    bufs[vim.api.nvim_win_get_buf(win)] = true
-                  end
-                  return vim.tbl_keys(bufs)
-                end
-              }
-            },
+            local bufs = {}
+              for _, win in ipairs(vim.api.nvim_list_wins()) do
+                bufs[vim.api.nvim_win_get_buf(win)] = true
+              end
+              return vim.tbl_keys(bufs)
+              end
+          }
+        },
         {name = 'treesitter'},
         {name = 'nvim_lua'},
         {name = 'calc'},
