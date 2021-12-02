@@ -282,7 +282,7 @@ set showmatch
 set matchtime=0
 " set matchtime=4
 " set colorcolumn=81
-execute "set colorcolumn=" . join(range(81,335), ',')
+" execute "set colorcolumn=" . join(range(81,335), ',')
 set signcolumn=yes
 " set columns=80
 set ruler
@@ -1575,7 +1575,11 @@ xmap y <plug>(YoinkYankPreserveCursorPosition)
 
 " virt-column.nvim {{{
 highlight clear ColorColumn
-lua require("virt-column").setup()
+lua << EOF
+require("virt-column").setup{
+  char = "│"
+}
+EOF
 " }}}
 
 " Leaderf {{{
