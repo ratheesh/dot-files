@@ -2084,6 +2084,15 @@ if has('nvim')
     call wilder#set_option('modes', ['/', '?', ':', '-'])
 
     " call wilder#set_option('noselect', 0)
+    " call wilder#setup({'modes': [':', '/', '?']})
+
+    call wilder#setup({
+      \ 'modes': [':', '/', '?', '-'],
+      \ 'next_key'    : '<Tab>',
+      \ 'previous_key': '<S-Tab>',
+      \ 'accept_key'  : '<Down>',
+      \ 'reject_key'  : '<Up>',
+      \ })
 
     let s:wilder_show_history = 0
     function! s:wilder_toggle_history() abort
@@ -2095,53 +2104,91 @@ if has('nvim')
     cmap <expr> <C-F> wilder#in_context() ? <SID>wilder_toggle_history() : "\<C-F>"
 
     call wilder#set_option('pipeline', [
-          \    wilder#branch(
-          \     [
-          \       wilder#check({-> s:wilder_show_history}),
-          \       wilder#history(100),
-          \       {ctx, xs -> filter(xs, {i, x -> match(x, ctx.input) != -1})},
-          \     ],
-          \     [
-          \       wilder#check({_, x -> empty(x)}),
-          \       wilder#history(100),
-          \       wilder#result({
-          \         'draw': [{_, x -> ' ' . x}],
-          \     }),
-          \     ],
-          \     wilder#python_file_finder_pipeline({
-          \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
-          \       'dir_command': ['fd', '-td'],
-          \       'cache_timestamp': {-> 1},
-          \       'debounce': 50,
-          \     }),
-          \     wilder#substitute_pipeline({
-          \     'pipeline': wilder#vim_search_pipeline({
-          \       'skip_cmdtype_check': 1,
-          \       }),
-          \       'fuzzy':1,
-          \       'use_python':1,
-          \       'debounce': 50,
-          \       'hide_in_replace': 1,
-          \     }),
-          \     wilder#cmdline_pipeline({
-          \       'language': 'python',
-          \       'fuzzy': 1,
-          \       'set_pcre2_pattern': 0,
-          \       'use_python': 1,
-          \       'debounce': 50,
-          \     }),
-          \     wilder#python_search_pipeline({
-          \       'regex': 'fuzzy',
-          \       'engine': 're2',
-          \       'debounce': 50,
-          \       'pattern': wilder#python_fuzzy_pattern({
-          \       'start_at_boundary': 0,
-          \     }),
-          \       'sort': wilder#python_sorter_difflib(),
-          \     }),
-          \     ),
-          \   wilder#result_draw_devicons(),
-          \  ])
+      \   wilder#debounce(50),
+      \   wilder#branch(
+      \     wilder#python_file_finder_pipeline({
+      \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
+      \       'dir_command': ['fd', '-td'],
+      \       'cache_timestamp': {-> 1},
+      \     }),
+      \     wilder#substitute_pipeline({
+      \       'pipeline': wilder#python_search_pipeline({
+      \         'skip_cmdtype_check': 1,
+      \         'pattern': wilder#python_fuzzy_pattern({
+      \           'start_at_boundary': 0,
+      \         }),
+      \       }),
+      \     }),
+      \     wilder#cmdline_pipeline({
+      \       'language': 'python',
+      \       'fuzzy': 1,
+      \     }),
+      \     [
+      \       wilder#check({-> s:wilder_show_history}),
+      \       wilder#history(100),
+      \       wilder#result({
+      \         'draw': [{_, x -> ' ' . x}],
+      \     }),
+      \     ],
+      \     wilder#python_search_pipeline({
+      \       'pattern': wilder#python_fuzzy_pattern({
+      \         'start_at_boundary': 0,
+      \       }),
+      \       'sorter': wilder#python_difflib_sorter(),
+      \       'engine': 're',
+      \     }),
+      \   ),
+      \   wilder#result_draw_devicons(),
+      \ ])
+
+    " call wilder#set_option('pipeline', [
+    "       \    wilder#branch(
+    "       \     [
+    "       \       wilder#check({-> s:wilder_show_history}),
+    "       \       wilder#history(100),
+    "       \       {ctx, xs -> filter(xs, {i, x -> match(x, ctx.input) != -1})},
+    "       \     ],
+    "       \     [
+    "       \       wilder#check({_, x -> empty(x)}),
+    "       \       wilder#history(100),
+    "       \       wilder#result({
+    "       \         'draw': [{_, x -> ' ' . x}],
+    "       \     }),
+    "       \     ],
+    "       \     wilder#python_file_finder_pipeline({
+    "       \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
+    "       \       'dir_command': ['fd', '-td'],
+    "       \       'cache_timestamp': {-> 1},
+    "       \       'debounce': 50,
+    "       \     }),
+    "       \     wilder#substitute_pipeline({
+    "       \     'pipeline': wilder#vim_search_pipeline({
+    "       \       'skip_cmdtype_check': 1,
+    "       \       }),
+    "       \       'fuzzy':1,
+    "       \       'use_python':1,
+    "       \       'debounce': 50,
+    "       \       'hide_in_replace': 1,
+    "       \     }),
+    "       \     wilder#cmdline_pipeline({
+    "       \       'language': 'python',
+    "       \       'fuzzy': 1,
+    "       \       'set_pcre2_pattern': 0,
+    "       \       'use_python': 1,
+    "       \       'debounce': 50,
+    "       \     }),
+    "       \     wilder#python_search_pipeline({
+    "       \       'regex': 'fuzzy',
+    "       \       'engine': 're2',
+    "       \       'debounce': 50,
+    "       \       'pattern': wilder#python_fuzzy_pattern({
+    "       \       'start_at_boundary': 0,
+    "       \     }),
+    "       \       'sort': wilder#python_sorter_difflib(),
+    "       \     }),
+    "       \     ),
+    "       \   wilder#result_draw_devicons(),
+    "       \  ])
 
     let s:status_hl       = wilder#make_hl('WilderStatus'  , 'WildStatus')
     let s:mode_hl         = wilder#make_hl('WilderMode'    , 'WildMode')
@@ -2157,33 +2204,41 @@ if has('nvim')
     endfunction
 
     call wilder#set_option('renderer', wilder#wildmenu_renderer({
-          \ 'spinner': [wilder#spinner({
-          \   'frames'   : '-\|/',
-          \   'done'     : '·',
-          \   'delay'    : 50,
-          \   'interval' : 100,
-          \ }),
-          \ ],
-          \ 'highlights': {
-          \   'default'         : s:status_hl,
-          \   'selected'        : s:selected_hl,
-          \   'accent'          : s:accent_hl,
-          \   'select_accent'   : s:select_acc_hl,
-          \ },
-          \ 'apply_highlights' : wilder#query_common_subsequence_spans(),
-          \ 'separator'        : ' • ',
-          \ 'separator_hl'     : s:sep_hl,
-          \ 'hl'               : s:status_hl,
-          \ 'ellipsis'         : '...',
-          \ 'left': [
-          \    {'value': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#spinner()], 'hl': s:mode_hl},
-          \    wilder#powerline_separator('', s:mode_hl, s:status_hl, 'left'), ' ',
-          \ ],
-          \ 'right': [
-          \    '', wilder#powerline_separator('', s:index_hl, s:status_hl, 'right'),
-          \    wilder#index({'hl': s:index_hl}),
-          \ ],
-          \ }))
+      \ 'highlighter': wilder#basic_highlighter(),
+      \ 'separator': ' • ',
+      \ 'left': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#wildmenu_spinner(), ' '],
+      \ 'right': [' ', wilder#wildmenu_index()],
+      \ }))
+
+    " call wilder#set_option('renderer', wilder#wildmenu_renderer({
+    "       \ 'spinner': [wilder#spinner({
+    "       \   'frames'   : '-\|/',
+    "       \   'done'     : '·',
+    "       \   'delay'    : 50,
+    "       \   'interval' : 100,
+    "       \ }),
+    "       \ ],
+    "       \ 'highlights': {
+    "       \   'default'         : s:status_hl,
+    "       \   'selected'        : s:selected_hl,
+    "       \   'accent'          : s:accent_hl,
+    "       \   'select_accent'   : s:select_acc_hl,
+    "       \ },
+	  " \  'highlighter': wilder#basic_highlighter(),
+    "       \ 'apply_highlights' : wilder#query_common_subsequence_spans(),
+    "       \ 'separator'        : ' • ',
+    "       \ 'separator_hl'     : s:sep_hl,
+    "       \ 'hl'               : s:status_hl,
+    "       \ 'ellipsis'         : '...',
+    "       \ 'left': [
+    "       \    {'value': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#spinner()], 'hl': s:mode_hl},
+    "       \    wilder#powerline_separator('', s:mode_hl, s:status_hl, 'left'), ' ',
+    "       \ ],
+    "       \ 'right': [
+    "       \    '', wilder#powerline_separator('', s:index_hl, s:status_hl, 'right'),
+    "       \    wilder#index({'hl': s:index_hl}),
+    "       \ ],
+    "       \ }))
 endif
 
 " }}}
