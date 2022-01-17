@@ -52,7 +52,7 @@ Plug 't9md/vim-textmanip'
 Plug 'psliwka/vim-smoothie'
 Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
-Plug 'folke/which-key.nvim'
+" Plug 'folke/which-key.nvim'
 " The Rust extension will only be installed if cargo is available.
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -1830,7 +1830,7 @@ else
 endif
 
 " which-key.nvim {{{
-lua require('which-key_init')
+" lua require('which-key_init')
 " }}}
 
 " line-number-interval {{{
