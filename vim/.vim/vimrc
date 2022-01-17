@@ -1347,7 +1347,10 @@ ensure_installed = {
 },
 
 highlight = {enable = false, use_languagetree = true},
-indent = {enable = true},
+indent = {
+  enable = true,
+  disable = {'python', },
+},
 autopairs = {enable = true},
 incremental_selection = {
    enable = true,
