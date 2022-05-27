@@ -43,10 +43,17 @@ call plug#begin('$HOME/.vim/plugged')
 " Plug 'famiu/nvim-reload'
 Plug 'junegunn/fzf', {'branch': 'master' ,'dir': '$HOME/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+
+" Plug 'tpope/vim-dadbod'
+" Plug 'kristijanhusak/vim-dadbod-ui'
+
+" Plug 'tpope/vim-sleuth'
 " Plug 'tpope/vim-surround'
 Plug 't9md/vim-textmanip'
 Plug 'psliwka/vim-smoothie'
@@ -2061,6 +2068,40 @@ let g:easy_align_bang_interactive_modes = ['c', 'r']
 let g:easy_align_ignore_groups = ['Comment', 'String']
 " }}}
 
+" vim-slime {{{
+let g:slime_python_ipython = 1
+" let g:slime_target = "neovim"
+let g:slime_target = "tmux"
+" let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_default_config = {
+            \ 'socket_name': get(split($TMUX, ','), 0),
+            \ 'target_pane': '{top-right}' }
+let g:slime_dont_ask_default = 1
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_cell_delimiter = "#%%"
+nmap <leader>s <Plug>SlimeSendCell
+" }}}
+
+" vim-ipython-cell {{{
+let g:ipython_cell_highlight_cells = 1
+let g:ipython_cell_regex = 1
+let g:ipython_cell_tag = '#\s%%( [^[].*)?'
+augroup vim-ipython-cell
+  au!
+  autocmd FileType python
+        \  nmap <buffer> <LocalLeader>s   :SlimeSend1 ipython --matplotlib
+        \| nmap <buffer> <LocalLeader>r   :IpythonCellRun
+        " \| nmap <buffer> <LocalLeader>ga  <Plug>GitAck
+        " \| nmap <buffer> <LocalLeader>gc  <Plug>GitCC
+        " \| nmap <buffer> <LocalLeader>gr  <Plug>GitReviewed
+        " \| nmap <buffer> <LocalLeader>gR  <Plug>GitReporter
+augroup END
+
+augroup ipython_cell_highlight
+    autocmd!
+    autocmd ColorScheme * highlight IPythonCell ctermbg=238 guifg=darkgrey guibg=#444d56
+augroup END
+" }}}
 
 " vim-visual-increment {{{
 set nrformats=alpha,octal,hex
