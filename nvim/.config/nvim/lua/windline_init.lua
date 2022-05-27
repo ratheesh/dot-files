@@ -27,7 +27,7 @@ local hl_list = {
   ModeCommand = {'ModeCommandFg', 'ModeCommandBg', 'bold'},
 
   -- File
-  File      = { 'FileNameBg', 'ActiveBg' },
+  File      = { 'FileNameBg', 'ActiveBg', 'italic' },
   FileIcon  = { 'FileNameFg', 'FileNameBg' },
   SearchCnt = { 'SearchCntFg', 'FileNameBg' },
 
@@ -53,15 +53,6 @@ basic.bg      = { ' ', 'StatusLine' }
 basic.file_name_inactive = { b_components.full_file_name, hl_list.Inactive }
 basic.line_col_inactive  = { b_components.line_col, hl_list.Inactive }
 basic.progress_inactive  = { b_components.progress, hl_list.Inactive }
-
-local function is_project_valid()
-  local project = vim.call('utils#getprojectname')
-  if project == '' then
-    return false
-  else
-    return true
-  end
-end
 
 basic.vi_mode = {
   name = 'vi_mode',
@@ -111,13 +102,13 @@ basic.mode_rightsep = {
     ProjectReplaceAfter = { 'ProjectNameBg', 'ModeReplaceBg' },
     ProjectCommandAfter = { 'ProjectNameBg', 'ModeCommandBg' },
   },
-  text = function()
+  text = function(bufnr)
   if vim.o.paste then
     return {
       { sep.left_rounded, 'Paste' .. state.mode[2] .. 'After' }
     }
   end
-  if git_comps.is_git() then
+  if git_comps.is_git(bufnr) then
     return {
       { sep.left_rounded, 'Project' .. state.mode[2] .. 'After' },
     }
@@ -138,9 +129,9 @@ basic.paste_mode = {
     FileNormalAfter     = { 'FileNameBg', 'ModeNormalBg' },
     FileInsertAfter     = { 'FileNameBg', 'ModeInsertBg' },
   },
-  text = function()
+  text = function(bufnr)
     if vim.o.paste then
-      if git_comps.is_git() then
+      if git_comps.is_git(bufnr) then
         return {
           { 'ραstɛ', 'paste_mode', },
           { sep.right_rounded..' ', 'sep_right_proj' },
@@ -155,26 +146,17 @@ basic.paste_mode = {
   end,
 }
 
-local function project_name()
-  local icon = ''
-  if git_comps.is_git() then
-    icon = ' '
-    return  icon .. vim.call('utils#getprojectname')
-  end
-  return ''
-end
-
 basic.projectname = {
   name = 'projectname',
   hl_colors = {
     sep_right = {'ProjectNameFg', 'FileNameBg'},
-    project   = {'ProjectNameFg', 'ProjectNameBg', 'italic'}
+    project   = {'ProjectNameFg', 'ProjectNameBg', 'bold'}
 
   },
-  text = function()
-    if git_comps.is_git() then
+  text = function(bufnr)
+    if git_comps.is_git(bufnr) then
       return {
-        { project_name(), 'project' },
+        { git_comps.git_branch({icon = ' '}), 'project' },
       }
     end
   end,
@@ -185,11 +167,11 @@ basic.file_leftsep = {
     default  = {'FileNameFg', 'FileNameBg'},
     sep_left = {'ProjectNameBg', 'FileNameBg'},
   },
-  text = function()
-  if git_comps.is_git() then
+  text = function(bufnr)
+  if git_comps.is_git(bufnr) then
     return {
       { sep.right_rounded, 'sep_left' },
-      { ' ', 'default' },
+      { '', 'default' },
     }
     else
       return ''
@@ -208,19 +190,54 @@ basic.file = {
   name = 'file',
   hl_colors = {
     default      = hl_list.File,
-    FileName     = {'FileNameFg', 'FileNameBg'},
-    FileModified = {'FileNameModFg', 'FileNameBg'},
-    FileRO       = {'FileNameROFg', 'FileNameBg'},
+    FileName     = { 'FileNameFg', 'FileNameBg', 'italic' },
+    FileModified = { 'FileNameModFg', 'FileNameBg' },
+    FileRO       = { 'FileNameROFg', 'FileNameBg' },
     FileIcon     = hl_list.FileIcon
   },
   text = function()
     return {
-      { b_components.file_icon(''), 'FileIcon' },
       { ' ', 'FileName' },
+      -- { b_components.cache_file_name('[No Name]', 'unique') },
+      -- {b_components.cache_file_icon({ default = '' }), 'default'},
+      { b_components.file_icon(''), 'FileIcon' },
+      { ' ', '' },
       { b_components.file_name(''), 'FileName' },
-      { b_components.file_modified(' '), 'FileModified' },
+      { b_components.file_modified('✱ '), 'FileModified' },
       { is_file_ro(), 'FileRO' },
     }
+  end,
+}
+
+local function gps_info()
+  if gps.is_available() then
+    local data = gps.get_location()
+    if data == '' then
+      return ''
+    else
+      return ' ' .. data
+    end
+  end
+  return ''
+end
+
+basic.file_rightsep = {
+  hl_colors = {
+    default  = {'FileNameBg', 'ActiveBg'},
+    sep_right_file = {'FileNameBg', 'GpsBg'},
+  },
+  text = function()
+    if gps_info() ~= "" then
+      return {
+        { sep.right_rounded, 'sep_right_file' },
+        { '', 'default' },
+      }
+    else
+      return {
+        { sep.right_rounded, 'default' },
+        { '', 'default' },
+      }
+    end
   end,
 }
 
@@ -231,8 +248,8 @@ basic.git = {
     changed = hl_list.GitDiffChanged,
     removed = hl_list.GitDiffRemoved
   },
-  text = function()
-    if git_comps.is_git() and hide_in_width() then
+  text = function(bufnr)
+    if git_comps.is_git(bufnr) and hide_in_width() then
       return {
         { ' ', ' ' },
         { git_comps.diff_added({ format = ' %s', show_zero = false }), 'added' },
@@ -244,24 +261,42 @@ basic.git = {
   end,
 }
 
-local function gps_info()
-if gps.is_available() then
-  return gps.get_location()
-end
-  return ''
-end
-
-
 basic.gps = {
   name = 'gps',
+  width = 20,
   hl_colors = {
-    GpsHL     = {'GpsFg', 'GpsBg'},
+    GpsHL           = {'GpsFg', 'GpsBg'},
+    GpsRightSep     = {'GpsBg', 'ActiveBg'},
     },
   text = function()
     if gps.is_available() then
       return {
-        { '', '' },
         {  gps_info(), 'GpsHL' },
+        -- {  sep.right_rounded, 'GpsRightSep' },
+      }
+    else
+      return {
+        { '', '' }
+      }
+    end
+  end,
+}
+
+basic.gps_right_sep = {
+  name = 'gps',
+  width = 20,
+  hl_colors = {
+    GpsHL           = {'GpsFg', 'GpsBg'},
+    GpsRightSep     = {'GpsBg', 'ActiveBg'},
+    },
+  text = function()
+    if gps_info() ~= "" then
+      return {
+        {  sep.right_rounded, 'GpsRightSep' },
+      }
+    else
+      return {
+        { '', '' }
       }
     end
   end,
@@ -278,8 +313,8 @@ basic.lsp_diagnos = {
     yellow = { 'yellow', 'ActiveBg' },
     blue   = { 'blue', 'ActiveBg' },
   },
-  text = function()
-    if lsp_comps.check_lsp() then
+  text = function(bufnr)
+    if lsp_comps.check_lsp(bufnr) then
       return {
         { lsp_comps.lsp_hint({ format = '  %s', show_zero = false }), 'blue' },
         { lsp_comps.lsp_warning({ format = '  %s', show_zero = false}), 'yellow' },
@@ -289,23 +324,6 @@ basic.lsp_diagnos = {
     return ''
   end,
 }
-
--- local get_lsp_client = function (msg)
---   msg = msg or 'No Active Lsp'
---   local buf_ft = vim.api.nvim_buf_get_option(0,'filetype')
---   local clients = vim.lsp.get_active_clients()
---   if next(clients) == nil then
---     return msg
---   end
-
---   for _,client in ipairs(clients) do
---     local filetypes = client.config.filetypes
---     if filetypes and vim.fn.index(filetypes,buf_ft) ~= -1 then
---       return client.name
---     end
---   end
---   return msg
--- end
 
 local function lsp_client_names(component)
     local clients = {}
@@ -416,11 +434,13 @@ local default = {
     basic.projectname,
     basic.file_leftsep,
     basic.file,
-    -- {vim_components.search_count(), hl_list.SearchCnt},
-    -- basic.gps,
-    { sep.right_rounded, hl_list.File },
+    basic.file_rightsep,
+    basic.gps,
+    basic.gps_right_sep,
+    -- { sep.right_rounded, hl_list.File },
     basic.git,
     basic.divider,
+    -- basic.lsp_progress,
     basic.lsp_diagnos,
     { ' ', hl_list.Active },
     basic.lsp_client,
@@ -438,6 +458,28 @@ local default = {
     { '', { 'white', 'InactiveBg' } },
     basic.progress_inactive,
   },
+}
+
+local quickfix = {
+    filetypes = { 'qf', 'Trouble' },
+    active = {
+        { '🚦 Quickfix ', { 'white', 'black' } },
+        { helper.separators.slant_right, { 'black', 'black_light' } },
+        {
+            function()
+                return vim.fn.getqflist({ title = 0 }).title
+            end,
+            { 'cyan', 'black_light' },
+        },
+        { ' Total : %L ', { 'cyan', 'black_light' } },
+        { helper.separators.slant_right, { 'black_light', 'InactiveBg' } },
+        { ' ', { 'InactiveFg', 'InactiveBg' } },
+        basic.divider,
+        { helper.separators.slant_right, { 'InactiveBg', 'black' } },
+        { '🧛 ', { 'white', 'black' } },
+    },
+    always_active = true,
+    show_last_status = true
 }
 
 windline.setup({
@@ -467,7 +509,7 @@ windline.setup({
 
     -- termguicolors
     colors.FileNameFg    = "#FEFEFE"
-    colors.FileNameBg    = "#595B83"
+    colors.FileNameBg    = "#505C74"
     colors.FileNameModFg = "#00AFDB"
     colors.FileNameROFg  = "#EC5F67"
 
@@ -507,21 +549,39 @@ windline.setup({
 
   statuslines = {
     default,
+    quickfix,
   },
 })
 
--- setup floating point based status line
--- require('wlfloatline').setup({
---     interval = 300,
---     ui = {
---         active_char = '▁',
---         active_color = 'blue',
---         active_hl = nil,
---     },
---     skip_filetypes = {
---         'NvimTree',
---         'lir',
---     },
--- })
+-- local windline = require('windline')
+local winbar = {
+  filetypes = { 'winbar' },
+  active = {
+    { ' ' },
+    { '%=' },
+    {
+      function(bufnr)
+        local bufname = vim.api.nvim_buf_get_name(bufnr)
+        local path = vim.fn.fnamemodify(bufname, ':~:.')
+        return path
+      end,
+      { 'red', 'white' },
+    },
+  },
+  inactive = {
+    { ' ', { 'white', 'InactiveBg' } },
+    { '%=' },
+    {
+      function(bufnr)
+        local bufname = vim.api.nvim_buf_get_name(bufnr)
+        local path = vim.fn.fnamemodify(bufname, ':~:.')
+        return path
+      end,
+      { 'white', 'InactiveBg' },
+    },
+  },
+}
+
+-- windline.add_status(winbar)
 
 -- End of File
