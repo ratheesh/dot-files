@@ -171,7 +171,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- jedi_language_server
-local servers = {'jedi_language_server','bashls', 'vimls'}
+local servers = {'jedi_language_server', 'bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -202,73 +202,76 @@ lspconfig.gopls.setup {
 on_attach = on_attach,
 }
 
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename', '--completion-style=detailed', '--pch-storage=memory', '--header-insertion-decorators', '--all-scopes-completion'
-  };
-
-  filetypes = { "c", "cpp", "objc", "objcpp" };
-
-  flags = {
-    debounce_text_changes = 150,
-  };
-
-  init_options = {
-    clangdFileStatus     = true,
-    usePlaceholders      = false,
-    completeUnimported   = true,
-    semanticHighlighting = true
-  };
-
-  completion = {
-    placeholder   = false;
-    detail = false;
-    -- spellChecking = true;
-    -- filterAndSort = false;
-  };
-}
-
--- placeholder option will only work in recent (after 7-Oct-2019)
--- lspconfig.ccls.setup {
+-- lspconfig.clangd.setup {
 --   on_attach = on_attach,
 --   capabilities = capabilities,
+--   cmd = {
+--     '/bin/clangd', '--background-index', '--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename', '--completion-style=detailed', '--pch-storage=memory', '--header-insertion-decorators', '--all-scopes-completion'
+--   };
+
+--   filetypes = { "c", "cpp", "objc", "objcpp" };
+
+--   flags = {
+--     debounce_text_changes = 150,
+--   };
+
 --   init_options = {
---     cache = {
---       directory    = vim.env.HOME.."/.ccls-cache";
---       cacheFormat  = "json",
---       rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
---       clang = {
---         -- extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
---         -- excludeArgs = {},
---       },
---     },
+--     clangdFileStatus     = true,
+--     usePlaceholders      = false,
+--     completeUnimported   = true,
+--     semanticHighlighting = true
+--   };
 
---     flags = {
---       debounce_text_changes = 150,
---     };
-
---     codeLens = {
---       localVariables = true;
---     },
-
---     client = {
---       snippetSupport = true;
---     };
-
---     completion = {
---       placeholder   = true;
---       detailedLabel = false;
---       spellChecking = true;
---       -- filterAndSort = false;
---     };
---     index = {
---       onChange        = true,
---       trackDependency = 1
---     },
---   }
+--   completion = {
+--     detailedLabel = false;
+--     placeholder   = false;
+--     detail = false;
+--     -- spellChecking = true;
+--     -- filterAndSort = false;
+--   };
 -- }
+
+-- placeholder option will only work in recent (after 7-Oct-2019)
+lspconfig.ccls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { 'ccls' };
+  init_options = {
+    cache = {
+      directory    = vim.env.HOME.."/.ccls-cache";
+      cacheFormat  = "json",
+      rootPatterns = {"compile_commands.json", ".prettierrc.json", ".ccls", ".git/", ".svn/", ".hg/"},
+      clang = {
+        -- extraArgs   = {"-fms-extensions", "-fms-compatibility", "-f1elayed-template-parsing"},
+        extraArgs   = {'--header-insertion=iwyu', '--suggest-missing-includes', '--cross-file-rename', '--completion-style=detailed', '--pch-storage=memory', '--header-insertion-decorators', '--all-scopes-completion'},
+        -- excludeArgs = {},
+      },
+    },
+
+    flags = {
+      debounce_text_changes = 150,
+    };
+
+    codeLens = {
+      localVariables = true;
+    },
+
+    client = {
+      snippetSupport = true;
+    };
+
+    completion = {
+      placeholder   = true;
+      detailedLabel = false;
+      spellChecking = true;
+      -- filterAndSort = false;
+    };
+    index = {
+      onChange        = false,
+      trackDependency = 1
+    },
+  }
+}
 
 -- sumneko lua server
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
@@ -303,7 +306,7 @@ require('lspconfig').sumneko_lua.setup({
       },
     }
   },
-  on_attach = on_attach
+  -- on_attach = on_attach
 })
 
 vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
