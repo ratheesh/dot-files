@@ -1,3 +1,23 @@
+-- Copyright (c) 2022 Ratheesh <ratheeshreddy@gmail.com>
+-- Author: Ratheesh S
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the Software without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+-- the Software, and to permit persons to whom the Software is furnished to do so,
+-- subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in all
+-- copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+-- FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+-- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+-- IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+-- CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 local windline = require('windline')
 local helper = require('windline.helpers')
 local sep = helper.separators
@@ -190,7 +210,7 @@ basic.file = {
   name = 'file',
   hl_colors = {
     default      = hl_list.File,
-    FileName     = { 'FileNameFg', 'FileNameBg', 'italic' },
+    FileName     = { 'FileFg', 'FileBg', 'italic' },
     FileModified = { 'FileNameModFg', 'FileNameBg' },
     FileRO       = { 'FileNameROFg', 'FileNameBg' },
     FileIcon     = hl_list.FileIcon
@@ -198,11 +218,11 @@ basic.file = {
   text = function()
     return {
       { ' ', 'FileName' },
-      -- { b_components.cache_file_name('[No Name]', 'unique') },
-      -- {b_components.cache_file_icon({ default = '' }), 'default'},
-      { b_components.file_icon(''), 'FileIcon' },
+      {b_components.cache_file_icon({ default = '' }), 'FileIcon'},
       { ' ', '' },
-      { b_components.file_name(''), 'FileName' },
+      { b_components.cache_file_name('[No Name]', 'unique'), 'FileName' },
+      -- { b_components.file_icon(''), 'FileIcon' },
+      -- { b_components.file_name(''), 'FileName' },
       { b_components.file_modified('✱ '), 'FileModified' },
       { is_file_ro(), 'FileRO' },
     }
@@ -413,7 +433,7 @@ basic.right = {
   text = function()
     return {
       { sep.left_rounded, 'sep_before' },
-      { 'ch:%02Bh', 'text' },
+      { 'ch:%02BH', 'text' },
       {'│','sep'},
       { '', 'text' },
       {' %l:%v','text'},
@@ -501,13 +521,15 @@ windline.setup({
     colors.ModeReplaceFg = "#000000"
     colors.ModeCommandFg = "#000000"
 
-    colors.ModeNormalBg  = "#d1a3cf"
+    colors.ModeNormalBg  = "#d0a2c7"
     colors.ModeInsertBg  = "#8dd3c7"
     colors.ModeVisualBg  = "#F7CAB8"
     colors.ModeReplaceBg = "#D85A93"
     colors.ModeCommandBg = "#AE8A7E"
 
     -- termguicolors
+    colors.FileFg        = "#F4C493"
+    colors.FileBg        = "#505C74"
     colors.FileNameFg    = "#FEFEFE"
     colors.FileNameBg    = "#505C74"
     colors.FileNameModFg = "#00AFDB"
