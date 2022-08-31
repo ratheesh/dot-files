@@ -130,7 +130,7 @@ cmp.setup({
     ['<C-f>']     = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>']     = cmp.mapping.close(),
-    ['<CR>']      = cmp.mapping.confirm {select = false},
+    ['<CR>']      = cmp.mapping.confirm {select = true},
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Select })
@@ -182,6 +182,15 @@ cmp.setup({
     {name = 'calc'},
     {name = 'look'},
   },
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+  }, {
+      { name = 'buffer' },
+    })
 })
 
 -- Autopairs

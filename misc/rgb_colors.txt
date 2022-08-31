@@ -73,5 +73,7 @@ https://observablehq.com/@d3/color-schemes?collection=@d3/d3-scale-chromatic
 #edc949 #af7aa1 #ff9da7 #9c755f #bab0ab
 
 #6B717C #FFE4B5
+#215650
 
+#5F2425
 -*- END OF FILE -*-

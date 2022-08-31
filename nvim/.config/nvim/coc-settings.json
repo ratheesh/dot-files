@@ -1,19 +1,37 @@
 {
-    "suggest.enablePreview"                : false,
-    "suggest.detailField"                  : "preview",
-    "suggest.removeDuplicateItems"         : true,
-    "suggest.detailMaxLength"              : 50,
-    "codeLens.enable"                      : true,
-    "coc.preferences.rootPatterns"         : [".git", ".svn" ,".vscode"],
+    "coc.preferences.rootPatterns"         : [".git", ".svn" ,".vscode", ".project"],
     "diagnostic.checkCurrentLine"          : false,
-    "suggest.echodocSupport"               : false,
-    "signature.enable"                     : true,
+    "signature.enable"                     : false,
     "diagnostic.enable"                    : true,
     "diagnostic.errorSign"                 : "",
     "diagnostic.infoSign"                  : "",
     "diagnostic.hintSign"                  : "",
     "diagnostic.enableHighlightLineNumber" : false,
     "git.enableGutters"                    : false,
+    "formatOnType"                         : true,
+
+    "codeLens": {
+	"enable": false,
+	"position": "eol",
+	"separator": "->",
+	"subseparator": "-->"
+	},
+
+    "suggest": {
+	"enable": false,
+	"detailsField": "preview",
+	"enablePreselect":false,
+	"noselect": false,
+	"removeDuplicateItems": true,
+	"detailMaxLength": 50,
+	"echodocSupport": false,
+	"formatItems" : ["menu", "kind", "abbr"],
+	"floatConfig": {
+		"border": true,
+		"rounded":true,
+		"focusable": false
+	}
+    },
 
     "suggest.completionItemKindLabels": {
         "keyword"       : "\uf1de",
@@ -60,20 +78,25 @@
             }
         },
 
-        "clangd": {
-            "command": "clangd",
-            "args": ["--background-index", "--header-insertion=iwyu", "--suggest-missing-includes", "--all-scopes-completion",
-				"--cross-file-rename"],
-            "filetypes": ["c", "cpp", "objc", "objcpp"],
-            "rootPatterns": ["compile_commands.json", ".git/", ".hg/", ".svn"],
-            "initializationOptions": {
-                "clangdFileStatus"     : false,
-                "usePlaceholders"      : true,
-                "completeUnimported"   : true,
-                "semanticHighlighting" : true,
-                "detailedLabel"        : true
-            }
-        },
+	"ccls": {
+		"command": "ccls",
+		"filetypes": ["c", "cpp", "objc", "objcpp"],
+		"rootPatterns": [".git/", ".svn/", ".hg/"],
+		"initializationOptions": {
+			"cache": {
+				"directory": "/tmp/ccls"
+			},
+			"client": {
+				"snippetSupport": true
+			},
+			"compilationDatabaseDirectory": "build",
+				"completion" : {
+				"placeholder"   : true,
+				"detailedLabel" : false,
+				"spellChecking" : true
+			}
+		}
+	},
 
         "jedi": {
             "command": "jedi-language-server",

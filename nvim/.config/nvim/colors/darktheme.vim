@@ -35,7 +35,6 @@ let g:colors_name = "darktheme"
 hi Normal       ctermfg=7       ctermbg=233     cterm=NONE              guifg=#bbbbbb   guibg=#181B28   gui=NONE
 hi ColorColumn  ctermfg=NONE    ctermbg=232     cterm=NONE              guifg=NONE      guibg=#152030   gui=NONE
 hi SignColumn   ctermfg=246     ctermbg=233     cterm=bold              guifg=#909194   guibg=#181B28   gui=NONE
-" hi Cursor       ctermfg=NONE    ctermbg=NONE    cterm=inverse,bold      guifg=NONE      guibg=NONE      gui=inverse,bold
 hi Visual       ctermfg=NONE    ctermbg=237     cterm=NONE              guifg=NONE      guibg=#264466   gui=NONE
 hi CursorLine   ctermfg=NONE    ctermbg=235     cterm=NONE              guifg=NONE      guibg=#153450   gui=NONE
 hi CursorColumn ctermbg=234     ctermbg=NONE    cterm=NONE              guifg=NONE      guibg=#031226   gui=NONE
@@ -62,7 +61,7 @@ hi Define       ctermfg=66      ctermbg=NONE    cterm=NONE              guifg=#f
 hi ErrorMsg     ctermfg=7       ctermbg=212     cterm=NONE              guifg=#fa2c77   guibg=#303030   gui=NONE
 hi WarningMsg   ctermfg=162     ctermbg=212     cterm=NONE              guifg=#fccc82   guibg=#303030   gui=NONE
 hi Float        ctermfg=141     ctermbg=NONE    cterm=NONE              guifg=#bd93f9   guibg=NONE      gui=NONE
-hi FloatBorder  ctermfg=196     ctermbg=196    cterm=NONE               guifg=#1BB1E7   guibg=#1BB1E7   gui=NONE
+hi FloatBorder  ctermfg=196     ctermbg=196    cterm=NONE               guifg=#9c755f   guibg=#263446   gui=NONE
 hi Function     ctermfg=61      ctermbg=NONE    cterm=NONE              guifg=#1BB1E7   guibg=NONE      gui=NONE
 hi Identifier   ctermfg=246     ctermbg=NONE    cterm=NONE              guifg=#00a3cc   guibg=NONE      gui=NONE
 hi Keyword      ctermfg=126     ctermbg=NONE    cterm=NONE              guifg=#6272a4   guibg=NONE      gui=NONE
@@ -116,6 +115,11 @@ hi TSKeywordOperator     ctermfg=61      ctermbg=NONE    cterm=NONE      guifg=#
 
 " python related
 " hi pythonTSFuncBuiltin   ctermfg=67      ctermbg=NONE    cterm=NONE      guifg=#4997C5   guibg=NONE      gui=NONE
+" }}}
+
+" nvim-treesitter-context {{{
+hi TreesitterContext            ctermfg=NONE    ctermbg=NONE    cterm=NONE  guifg=NONE   guibg=#263446   gui=NONE
+" hi TreesitterContextLineNumber  ctermfg=NONE    ctermbg=NONE    cterm=NONE  guifg=NONE   guibg=#364466   gui=NONE
 " }}}
 
 " spelling {{{
@@ -323,7 +327,9 @@ hi ClapLinNrColumn          ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#
 " }}}
 
 " coc.nvim {{{
-hi  CocFloating     ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#CCCCCC   guibg=#232F3E   gui=NONE
+hi  CocFloating    ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#b0b0b0   guibg=#232F3E   gui=NONE
+hi  CocMenuSel     ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=NONE      guibg=#43554A   gui=NONE
+hi  CocSearch      ctermfg=NONE    ctermbg=NONE    cterm=NONE   guifg=#08a3eF   guibg=NONE      gui=bold
 " }}}
 
 " nvim-ts-rainbow {{{

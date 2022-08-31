@@ -349,13 +349,13 @@ local function lsp_client_names(component)
     local clients = {}
     local icon = component.icon or ' '
 
-    for _, client in pairs(vim.lsp.buf_get_clients()) do
-        clients[#clients+1] = icon .. client.name
-        -- clients[#clients+1] = client.name
+    for _, client in pairs(vim.lsp.get_active_clients()) do
+        table.insert(clients, client.name)
     end
 
-    return table.concat(clients, ' ')
+    return icon .. '(' .. table.concat(clients, ',') .. ')'
 end
+
 -- local lsp_server_name = lsp_comps.lsp_name()
 basic.lsp_client = {
   hl_colors = {
@@ -576,33 +576,33 @@ windline.setup({
 })
 
 -- local windline = require('windline')
-local winbar = {
-  filetypes = { 'winbar' },
-  active = {
-    { ' ' },
-    { '%=' },
-    {
-      function(bufnr)
-        local bufname = vim.api.nvim_buf_get_name(bufnr)
-        local path = vim.fn.fnamemodify(bufname, ':~:.')
-        return path
-      end,
-      { 'red', 'white' },
-    },
-  },
-  inactive = {
-    { ' ', { 'white', 'InactiveBg' } },
-    { '%=' },
-    {
-      function(bufnr)
-        local bufname = vim.api.nvim_buf_get_name(bufnr)
-        local path = vim.fn.fnamemodify(bufname, ':~:.')
-        return path
-      end,
-      { 'white', 'InactiveBg' },
-    },
-  },
-}
+-- local winbar = {
+--   filetypes = { 'winbar' },
+--   active = {
+--     { ' ' },
+--     { '%=' },
+--     {
+--       function(bufnr)
+--         local bufname = vim.api.nvim_buf_get_name(bufnr)
+--         local path = vim.fn.fnamemodify(bufname, ':~:.')
+--         return path
+--       end,
+--       { 'red', 'white' },
+--     },
+--   },
+--   inactive = {
+--     { ' ', { 'white', 'InactiveBg' } },
+--     { '%=' },
+--     {
+--       function(bufnr)
+--         local bufname = vim.api.nvim_buf_get_name(bufnr)
+--         local path = vim.fn.fnamemodify(bufname, ':~:.')
+--         return path
+--       end,
+--       { 'white', 'InactiveBg' },
+--     },
+--   },
+-- }
 
 -- windline.add_status(winbar)
 

@@ -30,13 +30,12 @@
 local lspconfig  = require'lspconfig'
 -- local diagnostic = require'diagnostic'
 
+-- local util = require("lspconfig/util")
+-- local path = util.path
+
 -- ViM specific settings
 vim.o.completeopt = "noinsert,menuone,noselect"
 vim.o.pumheight   = 12
-
--- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
-
--- Add additional capabilities supported by nvim-cmp
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat     = { 'markdown', 'plaintext' }
@@ -48,129 +47,81 @@ capabilities.textDocument.completion.completionItem.deprecatedSupport       = tr
 capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
 capabilities.textDocument.completion.completionItem.tagSupport              = { valueSet = { 1 } }
 capabilities.textDocument.completion.completionItem.resolveSupport          = {
-properties = {
-'documentation',
-'detail',
-'additionalTextEdits',
-},
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  },
 }
 
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
--- vim.lsp.diagnostic.on_publish_diagnostics, {
---     underline    = true,
---     signs        = true,
---     virtual_text = false,
---     float = {
---         show_header = true,
---         source      = 'if_many',
---         border      = 'rounded',
---         focusable   = false,
---     },
---     show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
---     update_in_insert = false,
---     severity_sort    = false,
--- }
--- )
-
 vim.diagnostic.config({
-    underline    = true,
-    signs        = true,
-    virtual_text = true,
-    float = {
-        show_header = true,
-        source      = 'always',
-        border      = 'rounded',
-        focusable   = false,
-    },
-    show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
-    update_in_insert = false,
-    severity_sort    = false,
+  float = {
+    source = 'always',
+    border = "rounded"
+  },
 })
 
+-- vim.diagnostic.config({
+--   underline    = true,
+--   signs        = true,
+--   virtual_text = true,
+--   float = {
+--     show_header = true,
+--     source      = 'always',
+--     border      = 'rounded',
+--     focusable   = false,
+--   },
+--   show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
+--   update_in_insert = false,
+--   severity_sort    = false,
+-- })
+
 local on_attach = function(_, bufnr)
-
-  -- don't enable omnifunc for nvim-compe plugin
-  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- lsp_status.register_progress()
-
-  -- require "lsp_signature".on_attach({
-  --   bind            = true,
-  --   doc_lines       = 0,
-  --   floating_window = true,
-  --   hint_enable     = true,
-  --   hi_parameter    = "LSPSignatureCurParam",
-  --   hint_scheme     = "LSPSignatureHint",
-  --   hint_prefix     = "🐼 ",
-  --   handler_opts    = {
-  --     border = "single"
-  --   }
-  -- })
-
   -- Mappings
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local opts = { noremap=true, silent=true  }
+  -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  -- local opts = { noremap=true, silent=true  }
+  --
+  -- buf_set_keymap('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  -- buf_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  -- buf_set_keymap('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  -- buf_set_keymap('n','gR','<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  -- -- buf_set_keymap('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  -- buf_set_keymap('n','gs','<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  -- buf_set_keymap('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  -- buf_set_keymap('n','gt','<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  -- buf_set_keymap('n','<leader>gw','<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
+  -- buf_set_keymap('n','<leader>gW','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  -- buf_set_keymap('n','<leader>ah','<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  -- buf_set_keymap('n','<leader>ca','<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  -- buf_set_keymap('n','<leader>ee','<cmd>lua vim.diagnostic.open_float(0, { scope="line" })<CR>', opts)
+  -- buf_set_keymap('n','<leader>ar','<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  -- buf_set_keymap('n','<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  -- buf_set_keymap('n','<leader>ai','<cmd>lua vim.lsp.buf.incoming_calls()<CR>', opts)
+  -- buf_set_keymap('n','<leader>ao','<cmd>lua vim.lsp.buf.outgoing_calls()<CR>', opts)
 
-  buf_set_keymap('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n','gR','<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  -- buf_set_keymap('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n','gs','<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n','gt','<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n','<leader>gw','<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
-  buf_set_keymap('n','<leader>gW','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
-  buf_set_keymap('n','<leader>ah','<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  -- buf_set_keymap('n','<leader>af','<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n','<leader>ee','<cmd>lua vim.diagnostic.open_float(0, { scope="line" })<CR>', opts)
-  buf_set_keymap('n','<leader>ar','<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n','<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_set_keymap('n','<leader>ai','<cmd>lua vim.lsp.buf.incoming_calls()<CR>', opts)
-  buf_set_keymap('n','<leader>ao','<cmd>lua vim.lsp.buf.outgoing_calls()<CR>', opts)
-
-  -- vim.cmd [[ nnoremap gR :lua require'lspactions'.rename()<CR> ]]
-
-  -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
-  -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})
-  -- vim.lsp.handlers["textDocument/declaration"] = vim.lsp.with(vim.lsp.handlers.declaration, {border = "single"})
-  -- vim.lsp.handlers["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.definition, {border = "single"})
-
-  vim.lsp.handlers["textDocument/codeAction"] = require'lspactions'.codeaction
-  vim.cmd [[ nnoremap <leader>ca :lua require'lspactions'.code_action()<CR> ]]
-
-  vim.lsp.handlers["textDocument/references"] = require'lspactions'.references
-  vim.cmd [[ nnoremap gr :lua vim.lsp.buf.references()<CR> ]]
-
-  vim.lsp.handlers["textDocument/definition"] = require'lspactions'.definition
-  vim.cmd [[ nnoremap gd :lua vim.lsp.buf.definition()<CR> ]]
-
-  vim.lsp.handlers["textDocument/declaration"] = require'lspactions'.declaration
-  vim.cmd [[ nnoremap gD :lua vim.lsp.buf.declaration()<CR> ]]
-
-  vim.lsp.handlers["textDocument/implementation"] = require'lspactions'.implementation
-  vim.cmd [[ nnoremap gi :lua vim.lsp.buf.implementation()<CR> ]]
-
-  vim.lsp.handlers["textDocument/hover"] =
-  vim.lsp.with(vim.lsp.handlers.hover, {
-    -- Use a sharp border with `FloatBorder` highlights
-    border = "single",
-  })
-
-  -- enable border for signature
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {
-    border = "single",
-  })
-
+  local function bufmap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local opts = { noremap = true, silent = true }
+  bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  bufmap("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  bufmap("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+  bufmap("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+  bufmap("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+  bufmap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+  bufmap("n", "<leader>gR", "<cmd>lua vim.lsp.buf.rename.float()<CR>", opts)
+  bufmap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  bufmap("v", "<leader>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", opts)
+  bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  bufmap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line' })<CR>", opts)
+  bufmap("n", "gx", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+  bufmap("n", "gz", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+  bufmap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  bufmap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  -- require("illuminate").on_attach(client)
 end
 
--- jedi_language_server
 local servers = {'jedi_language_server', 'bashls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -179,9 +130,9 @@ for _, lsp in ipairs(servers) do
     init_options = {
     },
 
-  flags = {
-    debounce_text_changes = 150,
-  };
+    flags = {
+      debounce_text_changes = 150,
+    };
 
   }
 end
@@ -193,13 +144,13 @@ lspconfig.gopls.setup {
     gopls =     {
       experimentalPostfixCompletions = true,
       analyses = {
-      unusedparams = true,
-      shadow       = true,
-    },
-    staticcheck = true,
+        unusedparams = true,
+        shadow       = true,
+      },
+      staticcheck = true,
     },
   },
-on_attach = on_attach,
+  on_attach = on_attach,
 }
 
 -- lspconfig.clangd.setup {
@@ -309,10 +260,13 @@ require('lspconfig').sumneko_lua.setup({
   -- on_attach = on_attach
 })
 
-vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
-vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
+vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticError" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticHint" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticInfo" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticWarn" })
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+vim.diagnostic.config( { virtual_text = false, float = { show_header = false, border = "rounded" } })
 
 -- End of File
 

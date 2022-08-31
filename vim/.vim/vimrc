@@ -43,6 +43,7 @@ call plug#begin('$HOME/.vim/plugged')
 " Plug 'famiu/nvim-reload'
 Plug 'junegunn/fzf', {'branch': 'master' ,'dir': '$HOME/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align', { 'on': '<plug>(LiveEasyAlign)' }
+Plug 'jgdavey/tslime.vim'
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'mhinz/vim-startify'
@@ -55,7 +56,8 @@ Plug 'tpope/vim-fugitive'
 
 " Plug 'tpope/vim-sleuth'
 " Plug 'tpope/vim-surround'
-Plug 't9md/vim-textmanip'
+" Plug 't9md/vim-textmanip'
+Plug 'booperlv/nvim-gomove'
 Plug 'psliwka/vim-smoothie'
 Plug 'karb94/neoscroll.nvim'
 " Plug 'liuchengxu/vim-which-key'
@@ -76,12 +78,13 @@ Plug 'romgrk/barbar.nvim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ratheesh/vim-extended-ft'
 Plug 'inside/vim-search-pulse'
-Plug 'machakann/vim-highlightedyank'
+" Plug 'machakann/vim-highlightedyank'
 Plug 'machakann/vim-highlightedundo'
 Plug 'machakann/vim-sandwich'
 " Plug 'ckarnell/Antonys-macro-repeater'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-commentary'
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 " Plug 'cometsong/CommentFrame.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'terryma/vim-expand-region'
@@ -91,6 +94,7 @@ Plug 'ratheesh/hiPairs'
 Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-endwise'
 Plug 'JoseConseco/vim-case-change'
+" Plug 'mzarnitsa/psql'
 Plug 'ratheesh/vim-c-slash', {'for': ['c', 'cpp', 'cxx', 'cmake', 'clang']}
 if has('nvim')
     Plug 'IMOKURI/line-number-interval.nvim'
@@ -98,7 +102,7 @@ if has('nvim')
 endif
 Plug 'lilydjwg/colorizer'
 Plug 'ratheesh/yankmatches'
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-peekaboo'
 " Plug 'gennaro-tedesco/nvim-peekup'
 Plug 'ojroques/vim-oscyank', { 'branch' : 'main' }
 Plug 'dhruvasagar/vim-table-mode'
@@ -118,6 +122,7 @@ Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-function'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'FooSoft/vim-argwrap'
+Plug 'AndrewRadev/sideways.vim'
 Plug 'augustold/vim-custom-surround'
 Plug 'kana/vim-textobj-line'
 Plug 'junegunn/vim-after-object'
@@ -143,8 +148,11 @@ Plug 'reedes/vim-textobj-quote'
 "             \ }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'romgrk/nvim-treesitter-context'
-Plug 'kristijanhusak/orgmode.nvim'
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-orgmode/orgmode'
+Plug 'akinsho/org-bullets.nvim'
 " Plug 'haringsrob/nvim_context_vt'
 " Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 " Plug 'Jason-M-Chan/ts-textobjects'
@@ -157,31 +165,36 @@ Plug 'mizlan/iswap.nvim'
 " Plug 'romgrk/searchReplace.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'filipdutescu/renamer.nvim'
+Plug 'j-hui/fidget.nvim'
 " Plug 'glepnir/lspsaga.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'ray-x/lsp_signature.nvim'
 Plug 'sumneko/lua-language-server'
-" Plug 'ahmedkhalf/lsp-rooter.nvim'
 Plug 'svermeulen/vim-yoink'
-" Plug 'edluffy/specs.nvim'
 Plug 'lukas-reineke/virt-column.nvim'
+
+" Plug 'python-mode/python-mode'
+Plug 'metakirby5/codi.vim'
+Plug 'gotcha/vimpdb'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'RishabhRD/lspactions'
 
 " Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Plug 'nvim-telescope/telescope-project.nvim'
 " Plug 'hrsh7th/nvim-compe'
 
-Plug 'Yggdroot/LeaderF'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
-Plug 'tjdevries/astronauta.nvim'
-Plug 'RishabhRD/lspactions'
+" Plug 'tjdevries/astronauta.nvim'
 
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
+
+Plug 'folke/lua-dev.nvim'
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
@@ -201,6 +214,10 @@ Plug 'hrsh7th/cmp-calc'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-nvim-lsp'
+
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
 " Plug 'lukas-reineke/cmp-rg'
 " Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'L3MON4D3/LuaSnip'
@@ -209,43 +226,17 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --frozen-lockfile'}
 
-" ddc autocompletion suite
-" Plug 'vim-denops/denops.vim'
-" Plug 'Shougo/ddc-sorter_rank'
-" Plug 'Shougo/ddc-matcher_head'
-" Plug 'matsui54/ddc-matcher_fuzzy'
-" Plug 'Shougo/ddc-around'
-" Plug 'matsui54/ddc-buffer'
-" Plug 'matsui54/ddc-ultisnips'
-" " Plug 'Shougo/ddc-zsh'
-" Plug 'Shougo/ddc-nvim-lsp'
-" Plug 'octaltree/cmp-look'
-" Plug 'high-moctane/nextword'
-" Plug 'high-moctane/nextword-data'
-" Plug 'matsui54/ddc-dictionary'
-" Plug 'Shougo/ddc.vim'
-
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':UpdateRemotePlugins'}
-" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-
 Plug 'wellle/tmux-complete.vim'
 " Plug 'wellle/targets.vim'
 
 " Shougo's plugins
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/echodoc.vim'
 if has('nvim')
-    " Plug 'Shougo/denite.nvim',           { 'do': ':UpdateRemotePlugins' }
 else
-    " Plug 'Shougo/denite.nvim'
-
     " Following are required for deoplete to work in ViM
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-" Plug 'rafamadriz/friendly-snippets'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Run $ go get -u github.com/stamblerre/gocode for below plugin to work properly
@@ -254,6 +245,7 @@ Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '$HOME/.vim/plugged/gocode/nvim
 " Under testing plugins
 Plug 'LumaKernel/nvim-visual-eof.lua'
 " Plug 'semanticart/tag-peek.vim'
+" Plug 'danilamihailov/beacon.nvim'
 
 call plug#end()
 
@@ -395,7 +387,8 @@ set fillchars+=vert:\│,fold:-
 set list
 " set listchars=eol:¬,trail:·,extends:❯,precedes:❮
 " set listchars=trail:·,extends:❯,precedes:❮
-set listchars=tab:│\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+" set listchars=tab:│\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set fillchars+=diff:⣿
 set completeopt-=preview
 set cscopetag
@@ -554,6 +547,11 @@ autocmd VimEnter * set noshowmode
 autocmd VimEnter * set showcmd
 autocmd VimEnter * set wrap
 
+augroup highlight_yank
+autocmd!
+au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
+augroup END
+
 " Treat c-header as C source file type
 autocmd BufNewFile,BufRead .h set filetype=ch
 
@@ -577,7 +575,7 @@ inoremap <Right>   <NOP>
 " imap jj <Esc>
 imap <Esc> l
 " vmap <Esc> l
-inoremap jj l
+" inoremap jj l
 nnoremap K i<CR><Esc>
 " vnoremap jj l
 
@@ -681,7 +679,7 @@ nnoremap <silent><Leader>sp :split<CR>
 nnoremap <silent><Leader>vs :vsplit<CR>
 
 " Make current window the only one on screen
-nnoremap <A-o> <C-w>ozv
+" nnoremap <A-o> <C-w>ozv
 
 " nnoremap <Leader>j :
 nmap <silent><Leader><Leader> V
@@ -717,7 +715,7 @@ nnoremap zr zR
 " map <tab> %
 
 "spell suggestion in a popup
-nnoremap \s ea<C-X><C-S>
+" nnoremap \s ea<C-X><C-S>
 " }}}
 
 " Plugins Customization
@@ -1300,23 +1298,23 @@ let g:hardtime_maxcount               = 2
 " }}}
 
 " echodoc {{{
-let g:echodoc#enable_at_startup      = 1
-let g:echodoc#enable_force_overwrite = 1
+" let g:echodoc#enable_at_startup      = 1
+" let g:echodoc#enable_force_overwrite = 1
 " let g:deoplete#_prev_completion      = 1
-if has('nvim')
-    if exists('*nvim_open_win')
-        let g:echodoc#type="floating"
-    else
-        let g:echodoc#type="virtual"
-    endif
-else
-    let g:echodoc#type="echo"
-endif
+" if has('nvim')
+"     if exists('*nvim_open_win')
+"         let g:echodoc#type="floating"
+"     else
+"         let g:echodoc#type="virtual"
+"     endif
+" else
+"     let g:echodoc#type="echo"
+" endif
 
-let g:echodoc#type                 = "signature"
-let g:echodoc#highlight_identifier = "EchoDocFunc"
-let g:echodoc#highlight_arguments  = "EchoDocParam"
-let g:echodoc#highlight_trailing   = "EchoDocTrailing"
+" let g:echodoc#type                 = "signature"
+" let g:echodoc#highlight_identifier = "EchoDocFunc"
+" let g:echodoc#highlight_arguments  = "EchoDocParam"
+" let g:echodoc#highlight_trailing   = "EchoDocTrailing"
 " }}}
 
 " neovim_lspconfig {{{
@@ -1327,6 +1325,19 @@ lua require("lsp_init")
 " inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
 nnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
 vnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
+" }}}
+
+" fidget.nvim {{{
+lua << EOF
+require"fidget".setup{
+  text = {
+    spinner = "dots",         -- animation shown when tasks are ongoing
+    done = "✔",               -- character shown when all tasks are complete
+    commenced = "Gestartet",  -- message shown when task starts
+    completed = "Fertig",     -- message shown when task completes
+  },
+}
+EOF
 " }}}
 
 " nvim-treesitter {{{
@@ -1353,7 +1364,14 @@ ensure_installed = {
   "org",
 },
 
-highlight = {enable = false, use_languagetree = true},
+highlight = {
+    enable = true,
+    use_languagetree = false,
+    -- disable = { "c", "rust" },
+    disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
+    -- additional_vim_regex_highlighting = true,
+},
 indent = {
   enable = true,
   disable = {'python', },
@@ -1462,9 +1480,10 @@ query_linter = {
 },
 
 rainbow = {
-    enable = true,
-    extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-    colors = {
+    enable         = true,
+    extended_mode  = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+    max_file_lines = 1000,
+    colors         = {
       "#bf616a",
       "#d08770",
       "#ebcb8b",
@@ -1473,20 +1492,31 @@ rainbow = {
       "#5e81ac",
       "#b48ead"
       }
-}
+},
+
+context_commentstring = {
+  enable = true
+},
 }
 EOF
 " }}}
 
 " orgmode.nvim {{{
 lua <<EOF
-require('orgmode').setup({
+require('orgmode').setup_ts_grammar({
     org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
     org_default_notes_file = '~/Dropbox/org/refile.org',
     })
 EOF
 " }}}
 
+" org-bullets.nvim {{{
+lua <<EOF
+require("org-bullets").setup({
+    symbols = { "◉", "○", "✸", "✿" }
+  })
+EOF
+" }}}
 
 " nvim-treesitter-context {{{
 lua << EOF
@@ -1511,6 +1541,8 @@ require("treesitter-context").setup{
         --       'impl_item',
         --   },
     },
+  separator = '━',
+  mode = 'topline'
 }
 EOF
 " }}}
@@ -1592,6 +1624,16 @@ require("virt-column").setup{
 EOF
 " }}}
 
+" codi.vim {{{
+let g:codi#virtual_text_prefix = '>>> '
+let g:codi#interpreters = {
+    \     'python': {
+    \     'bin': 'python',
+    \     'prompt': '^\(>>>\|\.\.\.\) ',
+    \     },
+    \ }
+" }}}
+
 " Leaderf {{{
 " Do not use cache file
 let g:Lf_UseCache = 0
@@ -1610,6 +1652,7 @@ let g:Lf_WildIgnore = {
 
 " Do not show fancy icons for Linux server.
 let g:Lf_ShowDevIcons = 0
+let g:Lf_CursorBlink  = 0
 
 " Only fuzzy-search files names
 let g:Lf_DefaultMode = 'NameOnly'
@@ -1619,9 +1662,11 @@ let g:Lf_WindowHeight          = 0.3
 let g:Lf_PopupWidth            = 0.8
 " let g:Lf_PopupPosition       = [0, &columns/4]
 let g:Lf_PopupPosition         = [0, 0]
-let g:Lf_UseVersionControlTool = 0
+let g:Lf_UseVersionControlTool = 1
 let g:Lf_PopupShowBorder       = 1
 let g:Lf_PopupBorders          = ["─","│","─","│","╭","╮","╯","╰"]
+let g:Lf_PreviewInPopup        = 1
+let g:Lf_PreviewResult         = {'Function': 0, 'BufTag': 0 }
 
 " set up working directory for git repository
 let g:Lf_WorkingDirectoryMode = 'Ac'
@@ -1680,105 +1725,67 @@ EOF
 lua require("nvim-cmp_init")
 "}}}
 
+" lsp-null {{{
+lua require("null-ls_init").setup({})
+" }}}
+
 " coc.nvim {{{
 " set pumheight=12
-" " Use tab for trigger completion with characters ahead and navigate.
-" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" " other plugin before putting this into your config.
+" " " " Use tab for trigger completion with characters ahead and navigate.
+" " " " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" " " " other plugin before putting this into your config.
+" " " inoremap <silent><expr> <TAB>
+" " "       \ pumvisible() ? "\<C-n>" :
+" " "       \ <SID>check_back_space() ? "\<TAB>" :
+" " "       \ coc#refresh()
+" "
+" " " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" "
+" " " function! s:check_back_space() abort
+" " "   let col = col('.') - 1
+" " "   return !col || getline('.')[col - 1]  =~# '\s'
+" " " endfunction
+" "
+" " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" "
+" " if exists('*complete_info')
+" "   inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
+" " endif
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" "
+" " " " use <c-space>for trigger completion
+" inoremap <silent><expr><C-Space> coc#refresh()
+" "
+" " " " Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+" "
+" " " " Symbol renaming.
+" " nmap <leader>gR <Plug>(coc-rename)
+" "
+" " let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tag', 'coc-omni', 'coc-syntax']
+" "
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
+" " remap for complete to use tab and <cr>
 " inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#pum#visible() ? coc#pum#next(1):
+"       \ <SID>check_back_space() ? "\<Tab>" :
 "       \ coc#refresh()
-
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
+"
 " function! s:check_back_space() abort
 "   let col = col('.') - 1
 "   return !col || getline('.')[col - 1]  =~# '\s'
 " endfunction
-
-" " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" if exists('*complete_info')
-"     " inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
-" endif
-
-" " use <c-space>for trigger completion
-" inoremap <silent><expr><C-Space> coc#refresh()
-
-" " Highlight the symbol and its references when holding the cursor.
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" " Symbol renaming.
-" nmap <leader>rn <Plug>(coc-rename)
-
-" let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tag', 'coc-omni', 'coc-syntax', 'coc-ultisnips']
-" }}}
-
-" ddc.vim {{{
-" " Customize global settings
-" " Use around source.
-" " https://github.com/Shougo/ddc-around
-" call ddc#custom#patch_global('sources', ['ultisnips', 'nvimlsp', 'buffer', 'around'])
-
-" call ddc#custom#patch_global({
-"       \ 'sources': ['ultisnips', 'nvimlsp', 'buffer', 'around'],
-"       \ 'keywordPattern': '[a-zA-Z_]\w*',
-"       \ 'smartCase': v:true,
-"       \ })
-
-" " Use matcher_head and sorter_rank.
-" call ddc#custom#patch_global('sourceOptions', {
-"       \ '_': {
-"         \  'matchers': ['matcher_fuzzy'],
-"         \  'sorters': ['sorter_rank']
-"         \   },
-"         \  'ultisnips': {'mark': 'US'},
-"         \  'nvimlsp'  : {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
-"         \  'clangd'   : {'mark': 'C'},
-"         \  'buffer'   : {'mark': 'B'},
-"         \  })
-
-" call ddc#custom#patch_global('filterParams', {
-"       \ 'matcher_fuzzy': {'camelcase': v:true},
-"       \ 'buffer': {'requireSameFiletype': v:false},
-"       \ })
-
-" call ddc#custom#patch_global('sourceParams', {
-"       \ 'around': {'maxSize': 500},
-"       \ 'nvimlsp': {'useIcon': v:true},
-"       \ })
-
-" " Mappings
-" " <TAB>: completion.
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-"       \ "\<TAB>" : ddc#manual_complete()
-
-" " <S-TAB>: completion back.
-" inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" " Use ddc.
-" call ddc#enable()
-
-" }}}
-
-" coq_nvim {{{
-
-" let g:coq_settings = {
-"       \ "auto_start": v:false,
-"       \ "keymap.recommended": v:false,
-"       \ "display.pum.fast_close": v:false,
-"       \ }
-
-" " Keybindings
-" inoremap <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
-" inoremap <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
-" inoremap <silent><expr> <BS>    pumvisible() ? "\<C-e><BS>"  : "\<BS>"
-" inoremap <silent><expr> <CR>    pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"
-" inoremap <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
+"
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" inoremap <silent><expr> <c-space> coc#refresh()
+"
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+"
+" nmap <leader>gR <Plug>(coc-rename)
 " }}}
 
 " vim-go {{
@@ -1818,6 +1825,11 @@ let g:go_def_mode                        = 'gopls'
 let g:textobj#anyblock#blocks = [ '(', '{', '[', '"', "'"]
 " }}}
 
+" sideways {{{
+nnoremap <silent><c-h> :SidewaysLeft<cr>
+nnoremap <silent><c-l> :SidewaysRight<cr>
+" }}}
+
 " vim-textmanip {{{
 xmap <Leader>dj <Plug>(textmanip-duplicate-down)
 nmap <Leader>dj <Plug>(textmanip-duplicate-down)
@@ -1846,7 +1858,8 @@ endif
 if has('nvim')
     let g:line_number_interval#enable_at_startup = 1
     let g:line_number_interval = 5
-    " let g:line_number_interval#use_custom = 1
+    let g:line_number_interval#use_custom = 1
+    let g:line_number_interval#custom_interval = [1,3,5,10,15,20,25,30,35,40,45,50]
 endif " if
 " }}}
 
@@ -1863,52 +1876,39 @@ let g:scratch_persistence_file=1
 let g:scratch_filetype = 'text'
 " }}}
 
-" vim-highlightedyank {{{
-" NOTE: Enabling yankring plugin breaks this functionality!
-nnoremap Y yy
-let g:highlightedyank_highlight_duration=200
-" }}}
+" comment.nvim {{{
+lua << EOF
+require('Comment').setup({
+        padding = true,
+        sticky = true,
+        ignore = nil,
+        toggler = {
+            line = 'gcc',
+            block = 'gbc',
+        },
+        opleader = {
+            ---Line-comment keymap
+            line = 'gc',
+            ---Block-comment keymap
+            block = 'gb',
+        },
 
-" vim-shiny {{{
-" nmap p  <Plug>(shiny-p)
-" nmap P  <Plug>(shiny-P)
-" nmap gp <Plug>(shiny-gp)
-" nmap gP <Plug>(shiny-gP)
-" }}}
+        extra = {
+            above = 'gcO',
+            below = 'gco',
+            eol   = '<A-;>',
+        },
 
-" nerd-commentar {{{
-let g:NERDCreateDefaultMappings  = 0
-let g:NERDSpaceDelims            = 1
-let g:NERDCompactSexyComs        = 1
-let g:NERDDefaultAlign           = 'left'
-" let g:NERDCustomDelimiters       = { 'c': { 'left': '/*','right': '*/' } }
-let g:NERDCommentEmptyLines      = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-if has('nvim')
-    nnoremap <silent><M-;>  :call NERDComment("n", "Append")<CR>
-else
-    nnoremap <silent>;    :call NERDComment("n", "Append")<CR>
-endif
-
-nnoremap <silent><Leader>cc :call NERDComment("n", "Comment")<CR>
-xnoremap <silent><Leader>cc :call NERDComment("x", "Comment")<CR>
-
-nnoremap <silent><Leader>cu :call NERDComment("n", "Uncomment")<CR>
-xnoremap <silent><Leader>cu :call NERDComment("x", "Uncomment")<CR>
-
-nnoremap <silent><Leader>ci :call NERDComment("n", "Invert")<CR>
-xnoremap <silent><Leader>ci :call NERDComment("x", "Invert")<CR>
-
-nnoremap <silent><Leader>cs :call NERDComment("n", "Sexy")<CR>
-xnoremap <silent><Leader>cs :call NERDComment("x", "Sexy")<CR>
-
-nnoremap <silent><Leader>ct :call NERDComment("n", "Toggle")<CR>
-xnoremap <silent><Leader>ct :call NERDComment("x", "Toggle")<CR>
-
-" this does not work on ftypes that does not support multipart delimiters
-nnoremap <silent><Leader>cm :call NERDComment("n", "Minimal")<CR>
-xnoremap <silent><Leader>cm :call NERDComment("x", "Minimal")<CR>
+        mappings = {
+            basic = true,
+            extra = true,
+            extended = false,
+        },
+        pre_hook = nil,
+        post_hook = nil,
+    }
+)
+EOF
 " }}}
 
 " vim-better-whitespace {{{
@@ -1918,11 +1918,6 @@ let g:strip_whitespace_on_save      = 1
 let g:strip_whitespace_confirm      = 0
 let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_filetypes_blacklist= ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
-" }}}
-
-" vim-expand-region {{{
-map <C-l> <Plug>(expand_region_expand)
-map <C-h> <Plug>(expand_region_shrink)
 " }}}
 
 " lexima {{{
@@ -1947,7 +1942,9 @@ require('nvim-autopairs').setup({
   enable_check_bracket_line = true,  --- check bracket in same line
   check_ts                  = true,
   map_bs                    = true,
-  map_c_w                   = false,
+  map_c_w                   = true,
+  map_c_h                   = true,
+  map_cr                    = false,
 })
 EOF
 " }}}
@@ -2149,6 +2146,18 @@ if has('nvim')
     call wilder#set_option('pipeline', [
       \   wilder#debounce(50),
       \   wilder#branch(
+      \     [
+      \       wilder#check({-> s:wilder_show_history}),
+      \       wilder#history(100),
+      \       {ctx, xs -> filter(xs, {i, x -> match(x, ctx.input) != -1})},
+      \     ],
+      \     [
+      \       wilder#check({_, x -> empty(x)}),
+      \       wilder#history(100),
+      \       wilder#result({
+      \         'draw': [{_, x -> ' ' . x}],
+      \     }),
+      \     ],
       \     wilder#python_file_finder_pipeline({
       \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
       \       'dir_command': ['fd', '-td'],
@@ -2166,13 +2175,6 @@ if has('nvim')
       \       'language': 'python',
       \       'fuzzy': 1,
       \     }),
-      \     [
-      \       wilder#check({-> s:wilder_show_history}),
-      \       wilder#history(100),
-      \       wilder#result({
-      \         'draw': [{_, x -> ' ' . x}],
-      \     }),
-      \     ],
       \     wilder#python_search_pipeline({
       \       'pattern': wilder#python_fuzzy_pattern({
       \         'start_at_boundary': 0,
@@ -2248,9 +2250,20 @@ if has('nvim')
 
     call wilder#set_option('renderer', wilder#wildmenu_renderer({
       \ 'highlighter': wilder#basic_highlighter(),
+      \ 'highlights': {
+      \   'default'         : wilder#make_hl('WilderStatus', 'WildStatus'),
+      \   'selected'        : wilder#make_hl('WilderSelected', 'WildSelected'),
+      \   'mode'            : wilder#make_hl('WilderMode', 'WildMode'),
+      \   'accent'          : wilder#make_hl('WilderAccent', 'WildAccent'),
+      \   'selected_accent' : wilder#make_hl('WilderSelectedAccent', 'WildSelectedAccent'),
+      \   'left'            : wilder#make_hl('WilderLeft', 'WildLeft'),
+      \   'right'           : wilder#make_hl('WilderRight', 'WildRight'),
+      \   'index'           : wilder#make_hl('WilderIndex', 'WildIndex'),
+      \   'separator'       : wilder#make_hl('WilderSeparator', 'WildSeparator'),
+      \ },
       \ 'separator': ' • ',
-      \ 'left': [{-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#wildmenu_spinner(), ' '],
-      \ 'right': [' ', wilder#wildmenu_index()],
+      \ 'left': [' ', {-> s:wilder_adjust_cmdmode(getcmdtype())}, wilder#wildmenu_spinner(), ' '],
+      \ 'right': [' ', wilder#wildmenu_index(), ' '],
       \ }))
 
     " call wilder#set_option('renderer', wilder#wildmenu_renderer({
@@ -2358,7 +2371,7 @@ autocmd User IncSearchExecute :call search_pulse#Pulse()
 " }}}
 
 " vim-peekaboo {{{
-let g:peekaboo_window='vert bo 60new'
+" let g:peekaboo_window='vert bo 60new'
 " }}}
 
 " nvim-visual-eof {{{

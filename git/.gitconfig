@@ -1,3 +1,7 @@
+; Copyright (c) 2022 Ratheesh <ratheeshreddy@gmail.com>
+; License: MIT
+; Git Configuration
+
 [alias]
     lg          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
     undopush    = push -f origin HEAD^:master
@@ -8,10 +12,10 @@
     checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
 
 [user]
-    name = Ratheesh S
-    email = ratheeshreddy@gmail.com
+    name          = Ratheesh S
+    email         = ratheeshreddy@gmail.com
     useConfigOnly = true
-    signingkey = B5A8692EC05DCFEA
+    signingkey    = B5A8692EC05DCFEA
 
 [color]
     ui          = auto
@@ -64,7 +68,7 @@
     newHighlight = green bold 22
 
 [pager]
-; Procedure to get diff-highlight on Linux OS(Procedure mentioned below is tested on Ubuntu based system)
+; Procedure to get diff-highlight on Linux OS(Ubuntu)
 ; Create and add $HOME/bin to PATH env variable
 ; cd /usr/share/doc/git/contrib/diff-highlight; sudo make; mv diff-highlight $HOME/bin
     log  = $HOME/bin/diff-highlight | less -R
@@ -117,7 +121,7 @@
     ; autosetuprebase = always
 
 [credential]
-    helper = cache --timeout=3600
+    helper = cache --timeout=60
 
 [commit]
     verbose = true
