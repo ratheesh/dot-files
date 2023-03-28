@@ -10,8 +10,6 @@ org-clock-save.el
 tags
 TAGS
 *bookmarks*
-**/nvim/.config/*
-!**/nvim/.config/nvim/**
 *auto-save-list*
 **/.emacs.d/elpa
 **/.emacs.d/recentf
