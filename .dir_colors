@@ -27,6 +27,7 @@ TERM rxvt-unicode256
 TERM screen-256color
 TERM xterm-256color
 TERM gnome-256color
+TERM wezterm
 
 # EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
 EIGHTBIT 1
@@ -91,19 +92,19 @@ EXEC			3;38;5;34
 .tzo	00;38;5;126
 .t7z	00;38;5;126
 .zip	00;38;5;126
-.z	00;38;5;126
-.Z	00;38;5;126
-.dz	00;38;5;126
-.gz	00;38;5;126
+.z		00;38;5;126
+.Z		00;38;5;126
+.dz		00;38;5;126
+.gz		00;38;5;126
 .lrz	00;38;5;126
-.lz	00;38;5;126
+.lz		00;38;5;126
 .lzo	00;38;5;126
-.xz    00;38;5;126
+.xz     00;38;5;126
 .bz2	00;38;5;126
-.bz	00;38;5;126
+.bz		00;38;5;126
 .tbz	00;38;5;126
 .tbz2	00;38;5;126
-.tz	00;38;5;126
+.tz		00;38;5;126
 .deb	00;38;5;126
 .rpm	00;38;5;126
 .jar	00;38;5;126
@@ -115,8 +116,8 @@ EXEC			3;38;5;34
 .ace	00;38;5;126
 .zoo	00;38;5;126
 .cpio	00;38;5;126
-.7z	00;38;5;126
-.rz	00;38;5;126
+.7z		00;38;5;126
+.rz		00;38;5;126
 .cab	00;38;5;126
 
 # image formats
@@ -148,18 +149,18 @@ EXEC			3;38;5;34
 .m4v	00;35
 .mp4v	00;35
 .vob	00;35
-.qt	00;35
+.qt		00;35
 .nuv	00;35
 .wmv	00;35
 .asf	00;35
-.rm	00;35
+.rm		00;35
 .rmvb	00;35
 .flc	00;35
 .avi	00;35
 .fli	00;35
 .flv	00;35
-.gl	00;35
-.dl	00;35
+.gl		00;35
+.dl		00;35
 .xcf	00;35
 .xwd	00;35
 .yuv	00;35
@@ -172,7 +173,7 @@ EXEC			3;38;5;34
 
 # audio formats
 .aac	00;36
-.au	00;36
+.au		00;36
 .flac	00;36
 .m4a	00;36
 .mid	00;36
@@ -181,7 +182,7 @@ EXEC			3;38;5;34
 .mp3	00;36
 .mpc	00;36
 .ogg	00;36
-.ra	00;36
+.ra		00;36
 .wav	00;36
 
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
