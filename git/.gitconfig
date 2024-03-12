@@ -187,4 +187,7 @@
 [https]
 	postBuffer = 512M
 
+[am]
+	threeWay = true
+
 ; End of File
