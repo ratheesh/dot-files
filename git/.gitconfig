@@ -117,6 +117,7 @@
     ; pager = diff-highlight | less -R
     pager = delta --diff-highlight
     preloadIndex = true ; help in getting git status faster
+	compression = 0
 
 [interactive]
 	diffFilter = delta --color-only
@@ -180,6 +181,10 @@
 	light = true
 
 [http]
-    sslverify = false
+  sslverify = false
+	maxRequestBuffer = 100M
+
+[https]
+	postBuffer = 512M
 
 ; End of File
