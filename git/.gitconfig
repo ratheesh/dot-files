@@ -10,12 +10,14 @@
     remotes     = remote -v
     cv          = commit -v
     checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
+    fixup       = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf --height=40% --border --margin=1 | cut -c -7 | xargs -o git commit --fixup"
+    reword      = !git commit --fixup reword:$1 && GIT_EDITOR=true && git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"Reword Finished!\"
+    autofixup   = !git commit --fixup $1 && git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"autofixup finished\"
 
 [user]
     name          = Ratheesh S
     email         = ratheeshreddy@gmail.com
     useConfigOnly = true
-    signingkey    = B5A8692EC05DCFEA
 
 [color]
     ui          = auto
@@ -77,11 +79,11 @@
 
 [merge]
     ; include summaries of merged commits in newly created merge commit messages
-	conflictstyle = diff3
+    conflictstyle = diff3
     log = true
 
 [diff]
-	colorMoved = default
+    colorMoved = default
 
 [sendemail]
     from           = Ratheesh S <ratheeshreddy@gmail.com>
@@ -110,17 +112,17 @@
     ; Treat spaces before tabs, lines that are indented with 8 or more spaces,
     ; and all kinds of trailing whitespace as an error
     ;editor       = nvr --remote-wait-silent
-	; delta -> $ sudo apt install git-delta
-	; for bat related error remove ~/.cache/bat folder
+    ; delta -> $ sudo apt install git-delta
+    ; for bat related error remove ~/.cache/bat folder
     editor       = vim
     whitespace   = space-before-tab,trailing-space
     ; pager = diff-highlight | less -R
     pager = delta --diff-highlight
     preloadIndex = true ; help in getting git status faster
-	compression = 0
+    compression = 0
 
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
 
 [apply]
     ; detect whitespace errors when applying a patch
@@ -152,6 +154,8 @@
 [push]
     default    = current
     followTags = true
+    useForceIfIncludes = true
+    autoSetupRemote = true
 
 [pull]
     ; rebase = true
@@ -162,6 +166,8 @@
 
 [rebase]
     missingCommitsCheck = error
+    autosquash = true
+	updateRefs = true
 
 [svn]
     rmdir = true
@@ -174,20 +180,26 @@
     verbose = true
 
 [delta]
-	; side-by-side = true
-	line-numbers = true
-	true-color = always
-	navigate = true
-	light = true
+    ; side-by-side = true
+    line-numbers = false
+    true-color = always
+    navigate = true
+    light = true
 
 [http]
   sslverify = false
-	maxRequestBuffer = 100M
+    maxRequestBuffer = 100M
 
 [https]
-	postBuffer = 512M
+    postBuffer = 512M
+
+[absorb]
+    oneFixupPerCommit = true
 
 [am]
-	threeWay = true
+    threeWay = true
+
+[remote "origin"]
+    prune = true
 
 ; End of File
