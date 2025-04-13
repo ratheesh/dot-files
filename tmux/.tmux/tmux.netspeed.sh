@@ -24,5 +24,5 @@ done
 RXDIF=$(echo $((RXBN - RXB)) )
 TXDIF=$(echo $((TXBN - TXB)) )
 
-echo -e "#[fg=colour34,bold]↓#[fg=colour244,nobold]$((RXDIF/1024))#[fg=colour231,italics]K \
-#[fg=colour197,bold,noitalics]↑#[fg=colour244,nobold]$((TXDIF/1024))#[fg=colour231,italics]K#[default]"
+echo -e "#[fg=colour15,bold]󰜮#[fg=colour15,nobold]$((RXDIF/1024))#[fg=colour15,italics]KiB \
+#[fg=colour15,bold,noitalics]󰜷#[fg=colour15,nobold]$((TXDIF/1024))#[fg=colour15,italics]KiB#[default]"
