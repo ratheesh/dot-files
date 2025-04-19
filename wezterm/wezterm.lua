@@ -26,11 +26,14 @@ local wezterm = require 'wezterm'
 
 return {
   -- font = wezterm.font ('Consolas Nerd Font', { weight = 'Medium'}),
-  font = wezterm.font ('Consolas Nerd Font', { weight = 'Medium'}),
+  -- font = wezterm.font ('Consolas Nerd Font', { weight = 'Medium'}),
+  font = wezterm.font ('Maple Mono NF', { weight = 'Medium'}),
 
   -- font = wezterm.font ('JetBrains Mono', { weight = 'Medium'}),
   -- font = wezterm.font ('CodeSaver Nerd Font', { weight = 'Medium'}),
-  font_size = 15.0,
+  -- font = wezterm.font ('CodeSaver Nerd Font'),
+
+  font_size = 14.0,
 
   -- default_prog = { 'C:\\Windows\\System32\\bash.exe', '--login', '-i' },
   enable_tab_bar = false,
