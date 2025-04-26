@@ -193,6 +193,14 @@
 [https]
     postBuffer = 512M
 
+; [url "ssh://git@github.com"]
+    ; insteadOf = https://github.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
 [absorb]
     oneFixupPerCommit = true
 
