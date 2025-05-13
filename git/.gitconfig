@@ -193,8 +193,10 @@
 [https]
     postBuffer = 512M
 
+; Convert https repo -> ssh repo
 ; [url "ssh://git@github.com"]
     ; insteadOf = https://github.com
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -209,5 +211,11 @@
 
 [remote "origin"]
     prune = true
+
+[includeIf "gitdir:$HOME/ppcport"]
+    [user]
+        email = "ratheeshreddy@gmail.com"
+    [core]
+        sshCommand = "ssh -i $HOME/.ssh/id_rsa"
 
 ; End of File
