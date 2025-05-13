@@ -1,0 +1,20 @@
+# License: MiT
+# About Unicode symbols to decorate the terminal
+
+# Useful symbols
+
+Arrows:
+       󰶼 󰶹    󰁆 󰁞      🠩🠫🠨🠪
+
+Docker:
+        
+
+Languages:
+Python: 󰌠    
+
+Git Prompt:
+󰊢         ✓ ✔ 🞺 🞹  🗘
+❰❱ ❮❯ ⏎
+
+Misc
+     󱇬            🢙        󰥳      󰽘
