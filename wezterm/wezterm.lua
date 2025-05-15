@@ -24,40 +24,62 @@
 local wezterm = require 'wezterm'
 -- local act = wezterm.action
 
+-- config.font = wt.font_with_fallback({
+--     { family = "Inconsolata", weight = "Regular" },
+--     { family = "Symbols Nerd Font Mono", scale = 0.80 },
+-- })
+
 return {
+  font = wezterm.font ('Consolas Nerd Font', { weight = "Regular"}),
   -- font = wezterm.font ('Consolas Nerd Font', { weight = 'Medium'}),
-  -- font = wezterm.font ('Consolas Nerd Font', { weight = 'Medium'}),
-  font = wezterm.font ('Maple Mono NF', { weight = 'Medium'}),
 
-  -- font = wezterm.font ('JetBrains Mono', { weight = 'Medium'}),
   -- font = wezterm.font ('CodeSaver Nerd Font', { weight = 'Medium'}),
-  -- font = wezterm.font ('CodeSaver Nerd Font'),
 
-  font_size = 14.0,
+  -- font = wezterm.font ('Maple Mono NF', { weight = 'Medium'}),
+  -- font = wezterm.font ('Maple Mono NF', { weight = 'Regular'}),
+  -- font = wezterm.font ('Maple Mono Normal NF', { weight = 'Medium'}),
+
+  -- fallback fonts
+  --[[ font = wezterm.font_with_fallback({
+      { family = "Consolas Nerd Font", weight = "Regular", scale = 1.00 },
+      -- { family = "Maple Mono NF"  , weight = "Medium", scale = 1.00 },
+      { family = "Symbols Nerd Font" , scale = 1.00 },
+  }), ]]
+  font_size = 15.35,
 
   -- default_prog = { 'C:\\Windows\\System32\\bash.exe', '--login', '-i' },
+
+  font_hinting = "Full",
+  freetype_load_flags = 'NO_BITMAP',
   enable_tab_bar = false,
   window_close_confirmation = 'NeverPrompt',
   cursor_thickness = 2,
-  underline_position = -4,
-  underline_thickness = "250%",
+  underline_position = -2,
+  underline_thickness = "300%",
   -- force_reverse_video_cursor = false,
 
-  front_end = "WebGpu",
-  max_fps = 120,
+  enable_wayland = true,
+  front_end = "OpenGL"; --"WebGpu",
   webgpu_power_preference = "HighPerformance",
 
   ssh_backend = "LibSsh",
 
   enable_kitty_graphics = true,
-  cursor_blink_ease_out = "Constant",
-  cursor_blink_ease_in  = "Constant",
-  cursor_blink_rate     = 0,
+  -- cursor_blink_ease_out = "Constant",
+  -- cursor_blink_ease_in  = "Constant",
+  -- cursor_blink_rate     = 0,
   window_padding = {
       left   = 2,
       right  = 2,
-      top    = 15,
+      top    = 1,
       bottom = 0,
+  },
+
+  visual_bell = {
+      fade_in_function = "Constant",
+      fade_in_duration_ms  = 0,
+      fade_out_function = "Constant",
+      fade_out_duration_ms = 0,
   },
 
   colors = {
@@ -66,14 +88,14 @@ return {
     cursor_border = '#52ad70',
 	},
 	ssh_domains = {
-    {
-      name = 'nnbuild',
-      remote_address = '192.168.229.150:9000',
-	  username = 'ratheesh',
+    --[[ {
+      name = 'xxxxxx',
+      remote_address = '192.168.XXX.XXX:XXXX',
+	  username = 'xxxxxxxx',
       ssh_option = {
-        identityfile = '~/.ssh/id_rsa.pub',
+        identityfile = '~/.ssh/id_xxx.pub',
       },
-    },
+    }, ]]
 	},
 	audible_bell = "Disabled",
 	force_reverse_video_cursor = true,
