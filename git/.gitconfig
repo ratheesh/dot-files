@@ -146,6 +146,7 @@
 
 [advice]
     waitingforeditor = false  # ignore "hint: Waiting for your editor to close the file..." message
+	detached = head
 
 [fetch] # https://git-scm.com/docs/git-config#git-config-fetchrecurseSubmodules
     recurseSubmodules = true
