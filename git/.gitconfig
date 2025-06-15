@@ -16,7 +16,7 @@
 
 [user]
     name          = Ratheesh S
-    email         = ratheeshreddy@gmail.com
+    ; email         = ratheeshreddy@gmail.com
     useConfigOnly = true
 
 [color]
@@ -79,11 +79,12 @@
 
 [merge]
     ; include summaries of merged commits in newly created merge commit messages
-    conflictstyle = diff3
+    conflictstyle = zdiff3
     log = true
 
 [diff]
     colorMoved = default
+    tool = vimdiff
 
 [sendemail]
     from           = Ratheesh S <ratheeshreddy@gmail.com>
@@ -132,7 +133,7 @@
     submodulesummary = 1
 
 [branch]
-    ; autosetuprebase = always
+    ; autoSetupRebase = always
 
 [credential]
     helper = cache --timeout=60
@@ -147,9 +148,10 @@
 [advice]
     waitingforeditor = false  # ignore "hint: Waiting for your editor to close the file..." message
 	detached = head
+    skippedCherryPicks = false
 
 [fetch] # https://git-scm.com/docs/git-config#git-config-fetchrecurseSubmodules
-    recurseSubmodules = true
+    all = true
     prune = true
 
 [push]
@@ -218,5 +220,11 @@
         email = "ratheeshreddy@gmail.com"
     [core]
         sshCommand = "ssh -i $HOME/.ssh/id_rsa"
+
+[init]
+    defaultBranch = main
+
+[log]
+    date = short
 
 ; End of File
