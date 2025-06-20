@@ -22,40 +22,34 @@
 -- Windows: Place it in C:\Program Files\wezterm\ folder
 -- Linux:   Place it in $HOME/.config/wezterm/ folder
 local wezterm = require 'wezterm'
--- local act = wezterm.action
-
--- config.font = wt.font_with_fallback({
---     { family = "Inconsolata", weight = "Regular" },
---     { family = "Symbols Nerd Font Mono", scale = 0.80 },
--- })
 
 return {
-  font = wezterm.font ('Consolas Nerd Font', { weight = "Regular"}),
-  -- font = wezterm.font ('Consolas Nerd Font', { weight = 'Medium'}),
-
-  -- font = wezterm.font ('CodeSaver Nerd Font', { weight = 'Medium'}),
-
+  -- font = wezterm.font ('Consolas Nerd Font', { weight = "Regular"}),
   -- font = wezterm.font ('Maple Mono NF', { weight = 'Medium'}),
-  -- font = wezterm.font ('Maple Mono NF', { weight = 'Regular'}),
-  -- font = wezterm.font ('Maple Mono Normal NF', { weight = 'Medium'}),
 
   -- fallback fonts
-  --[[ font = wezterm.font_with_fallback({
-      { family = "Consolas Nerd Font", weight = "Regular", scale = 1.00 },
+  font = wezterm.font_with_fallback({
+      { family = "Consolas Nerd Font", weight = "Regular", scale = 1.01 },
       -- { family = "Maple Mono NF"  , weight = "Medium", scale = 1.00 },
       { family = "Symbols Nerd Font" , scale = 1.00 },
-  }), ]]
-  font_size = 15.35,
+  }),
+  font_size = 15.25,
 
   -- default_prog = { 'C:\\Windows\\System32\\bash.exe', '--login', '-i' },
 
-  font_hinting = "Full",
-  freetype_load_flags = 'NO_BITMAP',
+  term='wezterm',
+  -- use_cap_height_to_scale_fallback_fonts = true,
+  -- font_hinting = "Full",
+  -- freetype_load_flags = 'NO_BITMAP',
   enable_tab_bar = false,
   window_close_confirmation = 'NeverPrompt',
   cursor_thickness = 2,
   underline_position = -2,
-  underline_thickness = "300%",
+  underline_thickness = "250%",
+  -- line_height=1.1,
+  line_width=1.1,
+  adjust_window_size_when_changing_font_size = false,
+  allow_square_glyphs_to_overflow_width = "Always",
   -- force_reverse_video_cursor = false,
 
   enable_wayland = true,
@@ -69,10 +63,10 @@ return {
   -- cursor_blink_ease_in  = "Constant",
   -- cursor_blink_rate     = 0,
   window_padding = {
-      left   = 2,
-      right  = 2,
-      top    = 1,
-      bottom = 0,
+      left   = 3,
+      right  = 1,
+      top    = 2,
+      bottom = 2,
   },
 
   visual_bell = {
