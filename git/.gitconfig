@@ -69,6 +69,11 @@
     newNormal    = 65
     newHighlight = green bold 22
 
+[advice]
+    statusHints = false
+    detachedHead = false
+    diverging = false
+
 [pager]
 ; Procedure to get diff-highlight on Linux OS(Ubuntu)
 ; Create and add $HOME/bin to PATH env variable
