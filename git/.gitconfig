@@ -79,7 +79,7 @@
 
 [merge]
     ; include summaries of merged commits in newly created merge commit messages
-    conflictstyle = zdiff3
+    conflictstyle = diff3
     log = true
 
 [diff]
