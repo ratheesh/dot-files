@@ -31,7 +31,8 @@ return {
   font = wezterm.font_with_fallback({
       { family = "Consolas Nerd Font", weight = "Regular", scale = 1.01 },
       -- { family = "Maple Mono NF"  , weight = "Medium", scale = 1.00 },
-      { family = "Symbols Nerd Font" , scale = 1.00 },
+      -- { family = "Symbols Nerd Font" , scale = 1.00 },
+     { family = "Symbola" , scale = 1.00 },
   }),
   font_size = 15.25,
 
@@ -47,8 +48,7 @@ return {
   underline_position = -2,
   underline_thickness = "250%",
   -- line_height=1.1,
-  line_width=1.1,
-  adjust_window_size_when_changing_font_size = false,
+  -- line_width=1.1,
   allow_square_glyphs_to_overflow_width = "Always",
   -- force_reverse_video_cursor = false,
 
