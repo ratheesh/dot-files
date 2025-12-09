@@ -1,0 +1,5 @@
+; gitconfig for personal repos
+
+[user]
+    name  = "Ratheesh"
+    email = "ratheeshreddy@gmail.com"

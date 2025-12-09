@@ -15,8 +15,8 @@
     autofixup   = !git commit --fixup $1 && git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"autofixup finished\"
 
 [user]
-    name          = Ratheesh S
-    ; email         = ratheeshreddy@gmail.com
+    name          = Ratheesh
+    email         = ratheeshreddy@gmail.com
     useConfigOnly = true
 
 [color]
@@ -84,7 +84,7 @@
 
 [merge]
     ; include summaries of merged commits in newly created merge commit messages
-    conflictstyle = diff3
+    conflictstyle = zdiff3
     log = true
 
 [diff]
@@ -220,11 +220,11 @@
 [remote "origin"]
     prune = true
 
-[includeIf "gitdir:$HOME/ppcport"]
-    [user]
-        email = "ratheeshreddy@gmail.com"
-    [core]
-        sshCommand = "ssh -i $HOME/.ssh/id_rsa"
+[includeIf "gitdir:~/ppcport/"]
+    path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/arbeit/"]
+    path = ~/.gitconfig-arbeit
 
 [init]
     defaultBranch = main

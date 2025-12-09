@@ -1,0 +1,5 @@
+; gitconfig for work purposes
+
+[user]
+    name  = "Ratheesh"
+    email = "xxxxx@company.com"
