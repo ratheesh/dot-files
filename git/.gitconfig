@@ -164,6 +164,7 @@
     followTags = true
     useForceIfIncludes = true
     autoSetupRemote = true
+    autoSetupRemote    = true
 
 [pull]
     ; rebase = true
