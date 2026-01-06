@@ -123,6 +123,48 @@ export PAGER=less
 export _ZO_ECHO=1
 eval "$(zoxide init --cmd j bash)"
 
+# Set up fzf key bindings and fuzzy completion
+
+if [[ -x "$(command -v fzf)" ]]; then
+    export FZF_DEFAULT_OPTS="--height 50% --tmux 60%,50%          \
+        --layout reverse --multi --min-height 20+ --border        \
+        --header-border horizontal                                \
+        --pointer='➤ ' --marker='•' --prompt='➜  '                \
+        --border-label-pos 1                                      \
+        --color 'label:blue'                                      \
+        --preview-window 'hidden,right,50%' --preview-border line \
+        --bind 'f2:toggle-preview'"
+
+	export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+	  --info=inline-right                      \
+	  --ansi                                   \
+	  --layout=reverse                         \
+	  --border=rounded                         \
+	  --color=border:#283838                   \
+	  --color=fg:#c0c0c0                       \
+	  --color=header:#73918C                   \
+	  --color=bg+:#000000                      \
+	  --color=hl+:#ff007c:italic               \
+	  --color=hl:#2ac3de                       \
+	  --color=info:#545c7e                     \
+	  --color=marker:#ff007c                   \
+	  --color=pointer:#029456                  \
+	  --color=prompt:#D8226C                   \
+	  --color=query:#c0caf5:regular            \
+	  --color=scrollbar:#5f547d                \
+	  --color=separator:#6C8494                \
+	  --color=spinner:#ff007c                  \
+	"
+    export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
+fi
+
+if [[ -x "$(command -v fdfind)" ]];then
+    export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --color=never --exclude .git'
+fi
+
+FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
