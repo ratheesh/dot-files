@@ -116,12 +116,23 @@ shopt -s histappend # don't overwrite history
 shopt -s extglob
 PROMPT_COMMAND='history -a'
 
-export EDITOR=nvim
+if [[ -x $(command -v nvim) ]];then
+    export EDITOR=nvim
+elif [[ -x $(command -v vim) ]];then
+    export EDITOR=vim
+else
+    export EDITOR=nano
+fi
 export VISUAL=$EDITOR
 export PAGER=less
 
 export _ZO_ECHO=1
-eval "$(zoxide init --cmd j bash)"
+if [[ -x "$(command -v zoxide)" ]];then
+    eval "$(zoxide init --cmd j bash)"
+else
+    echo "zoxide utility not installed! Install it using the command:"
+    echo "curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh"
+fi
 
 # Set up fzf key bindings and fuzzy completion
 
@@ -156,14 +167,23 @@ if [[ -x "$(command -v fzf)" ]]; then
 	  --color=spinner:#ff007c                  \
 	"
     export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
+
+    FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+else
+    echo "fzf binary not installed!"
+    echo "Install this using the following command"
+    echo "$HOME/.fzf/install --key-bindings --no-completion --no-update-rc --no-fish"
 fi
 
 if [[ -x "$(command -v fdfind)" ]];then
     export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --color=never --exclude .git'
+else
+    echo "fdfind command not found!"
 fi
 
-FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+[[ -f "$HOME/.fzf.bash" ]] && source $HOME/.fzf.bash
 
+export PATH=$HOME/bin:$HOME/.local/bin/:$HOME/.fzf/bin:$HOME/.cargo/bin:$PATH
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
