@@ -16,19 +16,24 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # 02110-1301, USA.
 
-TARGET_DIR=$HOME
-
-`hash stow` > /dev/null 2>&1
-if [ $? -ne 0 ];then
-    echo "Error: stow is not installed in the system"
-    echo "Install GNU Stow and retry."
-    exit 1
+if ! command -v stow &>/dev/null; then
+	echo "Error: stow is not installed in the system"
+	echo "Install GNU Stow and retry."
+	exit 1
 fi
 
-for i in "cgdb" "emacs" "screen" "tmux" "vim" "X" "zsh" "gitconfig";do
-    echo "Installing $i ..."
-    stow -v -R -t $TARGET_DIR $i
-    echo
+TARGET_DIR=$HOME
+for i in "bash" "cgdb" "docker" "emacs" "grc" "misc" "screen" "spacemacs" "sway" "tmux" "vim" "windows" "X"; do
+	echo "Installing $i ..."
+	stow -v -R -t $TARGET_DIR $i
+	echo
+done
+
+TARGET_DIR=$XDG_HOME/.config
+for i in "sway" "wezterm" "X" "zellij"; do
+	echo "Installing $i ..."
+	stow -v -R -t $TARGET_DIR $i
+	echo
 done
 
 # This should be copied manually due to email id difference

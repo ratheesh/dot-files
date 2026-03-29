@@ -11,7 +11,7 @@
     cv          = commit -v
     checkout-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1;  }; f"
     fixup       = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf --height=40% --border --margin=1 | cut -c -7 | xargs -o git commit --fixup"
-    reword      = !git commit --fixup reword:$1 && GIT_EDITOR=true && git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"Reword Finished!\"
+    reword      = !git commit --fixup reword:$1 && GIT_EDITOR=true git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"Reword Finished!\"
     autofixup   = !git commit --fixup $1 && git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"autofixup finished\"
 
 [user]
@@ -70,9 +70,11 @@
     newHighlight = green bold 22
 
 [advice]
-    statusHints  = false
-    detachedHead = false
-    diverging    = false
+    statusHints        = false
+    detachedHead       = false
+    diverging          = false
+    waitingforeditor   = false
+    skippedCherryPicks = false
 
 [pager]
 ; Procedure to get diff-highlight on Linux OS(Ubuntu)
@@ -103,7 +105,8 @@
     hide-status = 1
 
 [log]
-    decorate    = auto
+    decorate = auto
+    date     = short
 
 [format]
     pretty      = format:"%C(60)Commit%C(162): %C(137)%H%C(auto)%d\
@@ -150,11 +153,6 @@
 [pack] # https://git-scm.com/docs/git-config#git-config-packwindow
     compression = 9
 
-[advice]
-    waitingforeditor   = false  # ignore "hint: Waiting for your editor to close the file..." message
-	detached           = head
-    skippedCherryPicks = false
-
 [fetch] # https://git-scm.com/docs/git-config#git-config-fetchrecurseSubmodules
     all = true
     prune = true
@@ -163,7 +161,6 @@
     default            = current
     followTags         = true
     useForceIfIncludes = true
-    autoSetupRemote    = true
     autoSetupRemote    = true
 
 [pull]
@@ -175,18 +172,11 @@
 
 [rebase]
     missingCommitsCheck = error
-    autosquash = true
-	updateRefs = true
+    autosquash          = true
+    updateRefs          = true
 
 [svn]
     rmdir = true
-
-[commit] ; https://git-scm.com/docs/git-config#git-config-commitcleanup
-    ; GPG-signed and Sign off the Developer Certificate of Origin <http://developercertificate.org>
-    ; See also: <http://gerrit.googlecode.com/svn/documentation/2.0/user-signedoffby.html>
-    ;           <http://stackoverflow.com/a/1962112/5228839>
-    ; gpgSign = true
-    verbose = true
 
 [delta]
     ; side-by-side = true
@@ -229,8 +219,5 @@
 
 [init]
     defaultBranch = main
-
-[log]
-    date = short
 
 ; End of File
