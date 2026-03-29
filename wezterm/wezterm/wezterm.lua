@@ -54,7 +54,6 @@ return {
 
   enable_wayland = true,
   front_end = "OpenGL"; --"WebGpu",
-  webgpu_power_preference = "HighPerformance",
 
   ssh_backend = "LibSsh",
 
@@ -80,18 +79,18 @@ return {
     cursor_bg = '#52ad70',
     cursor_fg = 'black',
     cursor_border = '#52ad70',
-	},
-	ssh_domains = {
+  },
+  ssh_domains = {
     --[[ {
       name = 'xxxxxx',
       remote_address = '192.168.XXX.XXX:XXXX',
-	  username = 'xxxxxxxx',
+      username = 'xxxxxxxx',
       ssh_option = {
         identityfile = '~/.ssh/id_xxx.pub',
       },
     }, ]]
-	},
-	audible_bell = "Disabled",
-	force_reverse_video_cursor = true,
-	warn_about_missing_glyphs = false,
-  }
+  },
+  audible_bell = "Disabled",
+  force_reverse_video_cursor = true,
+  warn_about_missing_glyphs = false,
+}
