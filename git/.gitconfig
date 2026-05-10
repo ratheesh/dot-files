@@ -4,7 +4,17 @@
 
 [alias]
     lg          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-    undopush    = push -f origin HEAD^:master
+    undopush    = push -f origin HEAD^:main
+    stashes     = stash list --pretty=format:'%gd %ci %s'
+    amend       = commit --amend --no-edit
+    unstage     = reset HEAD --
+    undo        = reset --soft HEAD^
+    last        = log -1 --stat
+    contrib     = shortlog -sn --no-merges
+    hist        = log --graph --oneline --decorate
+    done        = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+    sync        = "!git fetch --all && git rebase -i origin/main"
+    worktree-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git worktree add pr-$1 pr-$1; }; f"
     tags        = tag -l
     branches    = branch -a
     remotes     = remote -v
@@ -129,6 +139,10 @@
     pager        = delta --diff-highlight
     preloadIndex = true ; help in getting git status faster
     compression  = 0
+    blameignorefile = ~/.gitignore_commit
+
+[gc]
+    autoDetach = false
 
 [interactive]
     diffFilter = delta --color-only
@@ -186,7 +200,7 @@
     light        = true
 
 [http]
-    sslverify        = false
+    ; sslverify = false  ; WARNING: security risk - only use on trusted networks
     maxRequestBuffer = 100M
 
 [https]
