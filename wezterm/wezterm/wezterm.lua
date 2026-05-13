@@ -31,8 +31,8 @@ return {
   font = wezterm.font_with_fallback({
       { family = "Consolas Nerd Font", weight = "Regular", scale = 1.01 },
       -- { family = "Maple Mono NF"  , weight = "Medium", scale = 1.00 },
-      -- { family = "Symbols Nerd Font" , scale = 1.00 },
-     { family = "Symbola" , scale = 1.00 },
+      { family = "Symbola" , scale = 1.00 },
+      { family = "Symbols Nerd Font" , scale = 1.00 },
   }),
   font_size = 15.25,
 
@@ -45,15 +45,17 @@ return {
   enable_tab_bar = false,
   window_close_confirmation = 'NeverPrompt',
   cursor_thickness = 2,
-  underline_position = -2,
+  underline_position = -3,
   underline_thickness = "250%",
   -- line_height=1.1,
   -- line_width=1.1,
+  adjust_window_size_when_changing_font_size = false,
   allow_square_glyphs_to_overflow_width = "Always",
   -- force_reverse_video_cursor = false,
 
   enable_wayland = true,
   front_end = "OpenGL"; --"WebGpu",
+  webgpu_power_preference = "HighPerformance",
 
   ssh_backend = "LibSsh",
 
@@ -79,18 +81,26 @@ return {
     cursor_bg = '#52ad70',
     cursor_fg = 'black',
     cursor_border = '#52ad70',
-  },
-  ssh_domains = {
+	},
+
+	ssh_domains = {
     --[[ {
       name = 'xxxxxx',
       remote_address = '192.168.XXX.XXX:XXXX',
-      username = 'xxxxxxxx',
+	  username = 'xxxxxxxx',
       ssh_option = {
         identityfile = '~/.ssh/id_xxx.pub',
       },
     }, ]]
+	},
+	audible_bell = "Disabled",
+	force_reverse_video_cursor = true,
+	warn_about_missing_glyphs = false,
+  keys = {
+    {
+      key = "Return",
+      mods = "CTRL",
+      action = wezterm.action.SendString("\x1b[13;5u"),
+    },
   },
-  audible_bell = "Disabled",
-  force_reverse_video_cursor = true,
-  warn_about_missing_glyphs = false,
-}
+  }
