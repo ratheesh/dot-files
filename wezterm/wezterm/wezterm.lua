@@ -63,6 +63,8 @@ return {
   -- cursor_blink_ease_out = "Constant",
   -- cursor_blink_ease_in  = "Constant",
   -- cursor_blink_rate     = 0,
+  enable_wayland = false,
+  window_decorations = "TITLE|INTEGRATED_BUTTONS|RESIZE",
   window_padding = {
       left   = 3,
       right  = 1,
