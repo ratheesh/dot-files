@@ -134,6 +134,8 @@
     ; delta -> $ sudo apt install git-delta
     ; for bat related error remove ~/.cache/bat folder
     editor       = vim
+    fsmonitor    = true ; install watchman for linux
+    untrackedcache = true
     whitespace   = space-before-tab,trailing-space
     ; pager      = diff-highlight | less -R
     pager        = delta --diff-highlight
