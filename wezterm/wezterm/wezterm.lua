@@ -39,6 +39,8 @@ return {
   -- default_prog = { 'C:\\Windows\\System32\\bash.exe', '--login', '-i' },
 
   term='wezterm',
+  scrollback_lines = 50000,
+  hyperlink_rules = wezterm.default_hyperlink_rules(),
   -- use_cap_height_to_scale_fallback_fonts = true,
   -- font_hinting = "Full",
   -- freetype_load_flags = 'NO_BITMAP',
@@ -53,7 +55,6 @@ return {
   allow_square_glyphs_to_overflow_width = "Always",
   -- force_reverse_video_cursor = false,
 
-  enable_wayland = true,
   front_end = "OpenGL"; --"WebGpu",
   webgpu_power_preference = "HighPerformance",
 

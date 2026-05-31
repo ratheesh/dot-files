@@ -16,8 +16,9 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=50000
+HISTFILESIZE=100000
+HISTTIMEFORMAT="%F %T "
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -25,7 +26,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -85,13 +86,17 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias mux='tmuxinator'
+[[ -x "$(command -v bat)" ]] && alias cat='bat --style=plain'
+[[ -x "$(command -v rg)" ]] && alias rg='rg --smart-case'
+[[ -x "$(command -v fdfind)" ]] && alias fd='fdfind'
+mkcd() { mkdir -p "$1" && cd "$1"; }
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,6 +130,8 @@ else
 fi
 export VISUAL=$EDITOR
 export PAGER=less
+export LESS='-R --use-color -Dd+r$Du+b'
+[[ -x "$(command -v bat)" ]] && export LESSOPEN='|bat --color=always %s'
 
 export _ZO_ECHO=1
 if [[ -x "$(command -v zoxide)" ]];then
@@ -165,7 +172,7 @@ if [[ -x "$(command -v fzf)" ]]; then
     "
     export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
 
-    FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+    eval "$(fzf --bash)"
 else
     echo "fzf binary not installed!"
     echo "Install this using the following command"

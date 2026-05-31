@@ -4,7 +4,7 @@
 
 [alias]
     lg          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-    undopush    = push -f origin HEAD^:main
+    undopush    = push -f origin HEAD^:HEAD
     stashes     = stash list --pretty=format:'%gd %ci %s'
     amend       = commit --amend --no-edit
     unstage     = reset HEAD --
@@ -13,7 +13,7 @@
     contrib     = shortlog -sn --no-merges
     hist        = log --graph --oneline --decorate
     done        = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-    sync        = "!git fetch --all && git rebase -i origin/main"
+    sync        = "!git fetch --all && git rebase origin/main"
     worktree-pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git worktree add pr-$1 pr-$1; }; f"
     tags        = tag -l
     branches    = branch -a
@@ -23,6 +23,12 @@
     fixup       = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf --height=40% --border --margin=1 | cut -c -7 | xargs -o git commit --fixup"
     reword      = !git commit --fixup reword:$1 && GIT_EDITOR=true git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"Reword Finished!\"
     autofixup   = !git commit --fixup $1 && git rebase --autosquash --interactive --rebase-merges $1~1 && echo \"autofixup finished\"
+    absorb      = absorb --and-rebase
+    fp          = format-patch --cover-letter -o patches/
+    fp1         = format-patch -1 HEAD
+    sp          = stash pop
+    ss          = stash show -p
+    sub         = submodule update --init --recursive
 
 [user]
     name          = Ratheesh
@@ -160,7 +166,7 @@
     ; autoSetupRebase = always
 
 [credential]
-    helper = cache --timeout=60
+    helper = cache --timeout=28800
 
 [commit]
     verbose = true
@@ -184,7 +190,7 @@
     ff = only
 
 [rerere]
-    enabled = false
+    enabled = true
 
 [rebase]
     missingCommitsCheck = error
@@ -199,7 +205,7 @@
     line-numbers = false
     true-color   = always
     navigate     = true
-    light        = true
+    light        = false
 
 [http]
     ; sslverify = false  ; WARNING: security risk - only use on trusted networks

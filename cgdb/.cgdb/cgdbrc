@@ -8,11 +8,14 @@ set wrapscan
 map <c>   :clear<CR>
 map <b>   :break<CR>
 map <F5>  :run<CR>
-map <F7>  imake<CR><Esc>
+map <F7>  :shell make<CR>
 map <F8>  :continue<CR>
 map <F10> :next<CR>
 map <F11> :step<CR>
 map <F12> :finish<CR>
+map <F9>  :until<CR>
+map <F6>  :return<CR>
+map <w>   :watch<CR>
 
 hi Statement ctermfg=5
 hi Type      ctermfg=2
