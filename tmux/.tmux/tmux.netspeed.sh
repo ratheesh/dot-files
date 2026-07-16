@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Copyright (c) 2026 Ratheesh <ratheeshreddy@gmail.com>
 # Author: Ratheesh
 #
@@ -40,9 +40,9 @@ function readable_format() {
   local secs=${2:-1}
 
   if [[ $bytes -lt 1048576 ]]; then
-    echo "$(bc -l <<<"scale=1; $bytes / 1024 / $secs")KB/s"
+    echo "$(bc -l <<<"scale=1; $bytes / 1024 / $secs" | sed 's/^\./0./')KB/s"
   else
-    echo "$(bc -l <<<"scale=1; $bytes / 1048576 / $secs")MB/s"
+    echo "$(bc -l <<<"scale=1; $bytes / 1048576 / $secs" | sed 's/^\./0./')MB/s"
   fi
 }
 
@@ -61,8 +61,8 @@ function find_interface() {
 
 # Icons
 declare -A NET_ICONS
-NET_ICONS[traffic_tx]="#[fg=colour167]\U000f06f6"    # nf-md-upload_network
-NET_ICONS[traffic_rx]="#[fg=colour72]\U000f06f4"   # nf-md-download_network
+NET_ICONS[traffic_tx]="#[fg=colour168]󰛶"  # nf-md-upload_network
+NET_ICONS[traffic_rx]="#[fg=colour72]󰛴"   # nf-md-download_network
 
 # Determine interface if not set
 if [[ -z $INTERFACE ]]; then
@@ -73,6 +73,7 @@ if [[ -z $INTERFACE ]]; then
 fi
 
 # Echo network speed
+TIME_DIFF=${TIME_DIFF:-1}
 read -r RX1 TX1 < <(get_bytes "$INTERFACE")
 sleep "$TIME_DIFF"
 read -r RX2 TX2 < <(get_bytes "$INTERFACE")
@@ -83,7 +84,7 @@ TX_DIFF=$((TX2 - TX1))
 RX_SPEED="#[fg=colour252]$(readable_format "$RX_DIFF" "$TIME_DIFF")"
 TX_SPEED="#[fg=colour252]$(readable_format "$TX_DIFF" "$TIME_DIFF")"
 
-OUTPUT="${RESET}${NET_ICONS[traffic_rx]} $RX_SPEED ${NET_ICONS[traffic_tx]} $TX_SPEED#{RESET}"
+OUTPUT="${RESET}$RX_SPEED ${NET_ICONS[traffic_rx]} ${NET_ICONS[traffic_tx]} $TX_SPEED#{RESET}"
 echo -e "$OUTPUT"
 
 # End of File
