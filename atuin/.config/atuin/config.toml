@@ -71,11 +71,11 @@ filter_mode = "global"
 
 ## which style to use
 ## possible values: auto, full, compact
-# style = "auto"
+style = "compact"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
-# inline_height = 0
+inline_height = 20
 
 ## the maximum number of lines the interface should take up
 ## when atuin is invoked from a shell up-key binding
@@ -306,7 +306,7 @@ name = "ratheesh"
 ## The list of enabled filter modes, in order of priority.
 ## The "workspace" mode is skipped when not in a workspace or workspaces = false.
 ## Default filter mode can be overridden with the filter_mode setting.
-# filters = [ "global", "host", "session", "session-preload", "workspace", "directory" ]
+filters = [ "global", "session", "workspace", "directory" ]
 
 [tmux]
 ## Enable using atuin with tmux popup (requires tmux >= 3.2)

@@ -69,7 +69,7 @@ if [[ -z $INTERFACE ]]; then
   INTERFACE=$(find_interface)
   [[ -z $INTERFACE ]] && exit 1
   # Update tmux option for this session
-  tmux set-option -g @tokyo-night-tmux_netspeed_iface "$INTERFACE"
+  #tmux set-option -g @tokyo-night-tmux_netspeed_iface "$INTERFACE"
 fi
 
 # Echo network speed
@@ -84,7 +84,7 @@ TX_DIFF=$((TX2 - TX1))
 RX_SPEED="#[fg=colour252]$(readable_format "$RX_DIFF" "$TIME_DIFF")"
 TX_SPEED="#[fg=colour252]$(readable_format "$TX_DIFF" "$TIME_DIFF")"
 
-OUTPUT="${RESET}$RX_SPEED ${NET_ICONS[traffic_rx]} ${NET_ICONS[traffic_tx]} $TX_SPEED#{RESET}"
+OUTPUT="${RESET}$RX_SPEED${NET_ICONS[traffic_rx]} ${NET_ICONS[traffic_tx]} $TX_SPEED#{RESET}"
 echo -e "$OUTPUT"
 
 # End of File
