@@ -65,7 +65,8 @@ return {
   -- cursor_blink_ease_in  = "Constant",
   -- cursor_blink_rate     = 0,
   enable_wayland = false,
-  window_decorations = "TITLE|INTEGRATED_BUTTONS|RESIZE",
+  window_decorations = "TITLE|RESIZE",
+  window_background_opacity = 1.0,
   window_padding = {
       left   = 3,
       right  = 1,
