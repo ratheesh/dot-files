@@ -102,7 +102,7 @@
 
 [merge]
     ; include summaries of merged commits in newly created merge commit messages
-    conflictstyle = zdiff3
+    ; conflictstyle = zdiff3
     log = true
 
 [diff]
@@ -182,8 +182,11 @@
 [push]
     default            = current
     followTags         = true
-    useForceIfIncludes = true
-    autoSetupRemote    = true
+    ; useForceIfIncludes = true
+    ; autoSetupRemote    = true
+
+[gpg]
+    format = ssh
 
 [pull]
     ; rebase = true
@@ -210,6 +213,7 @@
 [http]
     ; sslverify = false  ; WARNING: security risk - only use on trusted networks
     maxRequestBuffer = 100M
+	postBuffer = 524288000
 
 [https]
     postBuffer = 512M
