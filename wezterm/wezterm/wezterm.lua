@@ -56,7 +56,7 @@ return {
   -- force_reverse_video_cursor = false,
 
   front_end = "OpenGL"; --"WebGpu",
-  webgpu_power_preference = "HighPerformance",
+  webgpu_power_preference = "LowPower",
 
   ssh_backend = "LibSsh",
 
